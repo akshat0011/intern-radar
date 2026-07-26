@@ -44,6 +44,16 @@ function initTheme() {
 
 /* ---------------- helpers ---------------- */
 
+/** Compact, monospace-friendly age: 12m, 4h, 3d. */
+function shortAge(ms) {
+  if (!ms) return '—';
+  const mins = Math.round((Date.now() - ms) / 60000);
+  if (mins < 60) return `${Math.max(1, mins)}m`;
+  const hrs = Math.round(mins / 60);
+  if (hrs < 24) return `${hrs}h`;
+  return `${Math.round(hrs / 24)}d`;
+}
+
 function relTime(ms) {
   if (!ms) return '';
   const mins = Math.round((Date.now() - ms) / 60000);
@@ -56,24 +66,6 @@ function relTime(ms) {
 }
 
 /**
- * A stable colour per company, derived from the name. Gives every card a
- * distinct identity without needing to fetch a single logo.
- */
-function companyGradient(name) {
-  // FNV-1a. A naive `h * 31 + c` reduced mod 360 each step clusters badly —
-  // Salesforce, Optiver and Razorpay all came out the same shade of green.
-  let h = 2166136261;
-  for (let i = 0; i < name.length; i++) {
-    h ^= name.charCodeAt(i);
-    h = Math.imul(h, 16777619);
-  }
-  const hue = Math.abs(h) % 360;
-  // Nudge away from the muddy yellow-green band.
-  const safe = hue > 60 && hue < 95 ? hue + 45 : hue;
-  return `linear-gradient(140deg, hsl(${safe} 72% 56%), hsl(${(safe + 38) % 360} 76% 45%))`;
-}
-
-/**
  * The company's real logo when we have one, initials when we don't.
  *
  * The initials are rendered underneath rather than instead: if the image fails
@@ -81,16 +73,15 @@ function companyGradient(name) {
  * and no flash of nothing.
  */
 function companyBadge(job) {
-  const badge = el('div', 'co-badge', companyInitials(job.company));
-  badge.style.background = companyGradient(job.company);
+  const badge = el('div', 'crest', companyInitials(job.company));
 
   if (job.logo) {
-    const img = el('img', 'co-logo');
+    const img = el('img', 'crest-img');
     img.src = job.logo;
     img.alt = '';               // decorative: the company name is right beside it
     img.loading = 'lazy';
     img.decoding = 'async';
-    img.addEventListener('load', () => badge.classList.add('has-logo'));
+    img.addEventListener('load', () => badge.classList.add('lit'));
     img.addEventListener('error', () => img.remove());
     badge.append(img);
   }
@@ -140,16 +131,16 @@ async function loadJobs() {
 
 function renderFreshness() {
   $('freshness-text').textContent = state.generatedAt
-    ? `checked ${relTime(state.generatedAt)}`
-    : 'no data yet';
+    ? `swept ${relTime(state.generatedAt)}`
+    : 'standing by';
 }
 
-function renderPitchMeta() {
-  const el2 = $('pitch-meta');
-  if (!el2) return;
-  const n = state.jobs.length;
-  const co = new Set(state.jobs.map((j) => j.company)).size;
-  el2.textContent = n ? `${n} live roles · ${co} companies` : 'checking every hour';
+function renderScore() {
+  $('s-total').textContent = state.jobs.length || '0';
+  $('s-co').textContent = new Set(state.jobs.map((j) => j.company)).size || '0';
+  // Deliberately not "added today": straight after a backfill every job was
+  // added today, so it just repeated the total. A stipend count never does.
+  $('s-new').textContent = state.jobs.filter((j) => j.stipend).length;
 }
 
 function renderTabCounts() {
@@ -208,52 +199,57 @@ function anyFilterActive() {
 /* ---------------- rendering ---------------- */
 
 function jobCard(job, index) {
-  const li = el('li');
-  const card = el('article', 'card');
-  card.tabIndex = 0;
-  card.setAttribute('role', 'button');
-  card.dataset.id = job.id;
-  // Stagger the entrance, but cap it so a long list is not slow to appear.
-  card.style.animationDelay = `${Math.min(index, 12) * 45}ms`;
-  if (job.id === state.selectedId) card.setAttribute('aria-current', 'true');
-
-  const head = el('div', 'card-head');
-
-  head.append(companyBadge(job));
-
-  const block = el('div', 'co-block');
-  block.append(el('div', 'co-name', job.company));
-  block.append(el('div', 'role-name', job.title));
-  head.append(block);
+  const li = document.createElement('li');
+  const row = el('article', 'row');
+  row.tabIndex = 0;
+  row.setAttribute('role', 'button');
+  row.dataset.id = job.id;
+  row.style.animationDelay = `${Math.min(index, 14) * 32}ms`;
+  if (job.id === state.selectedId) row.setAttribute('aria-current', 'true');
 
   const age = job.postedAt ? Date.now() - job.postedAt : null;
-  const when = el('div', 'card-when');
-  if (age != null && age < HOT_MS) {
-    const hot = el('span', 'hot-badge', '⚡ just posted');
-    when.append(hot);
-  } else {
-    when.append(el('div', null, job.postedText || relTime(job.postedAt)));
+  const blazing = age != null && age < HOT_MS;
+  if (blazing) row.classList.add('is-hot');
+
+  // rank, monospace, zero-padded — a register, not a card grid
+  row.append(el('span', 'rank', String(index + 1).padStart(2, '0')));
+
+  row.append(companyBadge(job));
+
+  const mid = el('div');
+  mid.append(el('h3', 'co', job.company));
+  mid.append(el('p', 'role', job.title));
+
+  const meta = el('div', 'meta');
+  if (job.stipend) meta.append(el('span', 'cash', job.stipend));
+  if (job.location) meta.append(el('span', null, job.location));
+  if (job.workplaceType) meta.append(el('span', null, job.workplaceType));
+  if (job.duration) meta.append(el('span', null, job.duration));
+  if (job.easyApply) meta.append(el('span', 'ea', 'easy apply'));
+  if (meta.children.length) mid.append(meta);
+
+  if (job.summary) mid.append(el('p', 'gist', job.summary));
+  row.append(mid);
+
+  // Age, plus a bar that drains over the first 24 hours. Turning "how long do I
+  // have" into something you can see at a glance is the whole point of the site.
+  const ageBox = el('div', `age${blazing ? ' blazing' : age != null && age < FRESH_MS ? ' fresh' : ''}`);
+  ageBox.append(el('b', null, blazing ? 'JUST NOW' : shortAge(job.postedAt)));
+  if (age != null && age < FRESH_MS) {
+    const bar = el('s');
+    const fill = el('i');
+    fill.style.width = `${Math.max(4, Math.round((1 - age / FRESH_MS) * 100))}%`;
+    bar.append(fill);
+    ageBox.append(bar);
   }
-  head.append(when);
-  card.append(head);
+  row.append(ageBox);
 
-  const tags = el('div', 'tags');
-  if (age != null && age >= HOT_MS && age < FRESH_MS) tags.append(el('span', 'tag tag-new', 'New'));
-  if (job.stipend) tags.append(el('span', 'tag tag-money', job.stipend));
-  if (job.location) tags.append(el('span', 'tag', job.location));
-  if (job.workplaceType) tags.append(el('span', 'tag', job.workplaceType));
-  if (job.duration) tags.append(el('span', 'tag', job.duration));
-  if (job.easyApply) tags.append(el('span', 'tag tag-easy', 'Easy Apply'));
-  if (tags.children.length) card.append(tags);
-
-  if (job.summary) card.append(el('p', 'card-blurb', job.summary));
-
-  card.addEventListener('click', () => selectJob(job.id));
-  card.addEventListener('keydown', (e) => {
+  row.addEventListener('click', () => selectJob(job.id));
+  row.addEventListener('keydown', (e) => {
     if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); selectJob(job.id); }
   });
 
-  li.append(card);
+  li.append(row);
   return li;
 }
 
@@ -263,23 +259,23 @@ function renderList() {
 
   const n = state.filtered.length;
   $('result-count').textContent = state.jobs.length === 0
-    ? 'Nothing on the radar yet'
-    : `${n} ${n === 1 ? 'role' : 'roles'}${anyFilterActive() ? ` of ${state.jobs.length}` : ''}`;
+    ? 'nothing on the radar yet'
+    : `${n} ${n === 1 ? 'role' : 'roles'}${anyFilterActive() ? ` / ${state.jobs.length}` : ''}`;
   $('reset').hidden = !anyFilterActive();
 
   const empty = $('empty');
   if (n === 0) {
     empty.hidden = false;
     if (state.jobs.length === 0) {
-      $('empty-title').textContent = 'Radar is warming up';
+      $('empty-title').textContent = 'Warming up';
       $('empty-body').textContent = 'No listings have been published here yet. New roles appear within minutes of going live.';
     } else if (!anyFilterActive()) {
-      $('empty-title').textContent = state.showTech ? 'No tech roles right now' : 'No other roles right now';
+      $('empty-title').textContent = state.showTech ? 'No engineering roles yet' : 'Nothing else right now';
       $('empty-body').textContent = state.showTech
         ? 'Nothing software-side has been posted in this window. Check the Other roles tab.'
         : 'Everything currently listed is a tech role.';
     } else {
-      $('empty-title').textContent = 'Radar is clear';
+      $('empty-title').textContent = 'Radar clear';
       $('empty-body').textContent = 'Nothing matches those filters. Try clearing the search or widening the company filter.';
     }
     return;
@@ -296,7 +292,7 @@ function selectJob(id) {
   const job = state.jobs.find((j) => j.id === id);
   if (!job) return;
 
-  for (const card of document.querySelectorAll('.card')) {
+  for (const card of document.querySelectorAll('.row')) {
     if (card.dataset.id === id) card.setAttribute('aria-current', 'true');
     else card.removeAttribute('aria-current');
   }
@@ -304,14 +300,14 @@ function selectJob(id) {
   renderDetail(job);
   history.replaceState(null, '', `#job-${id}`);
 
-  if (matchMedia('(max-width: 980px)').matches) {
-    $('detail-col').classList.add('is-open');
+  if (matchMedia('(max-width: 1000px)').matches) {
+    $('detail-col').classList.add('open');
     document.body.style.overflow = 'hidden';
   }
 }
 
 function closeDetail() {
-  $('detail-col').classList.remove('is-open');
+  $('detail-col').classList.remove('open');
   document.body.style.overflow = '';
 }
 
@@ -324,27 +320,27 @@ function renderDetail(job) {
   // Replay the entrance animation on every selection. Dropping the class and
   // re-adding it on the next frame restarts it; reassigning style.animation
   // did not, and left the pane stuck at opacity 0.
-  d.classList.remove('is-entering');
-  requestAnimationFrame(() => d.classList.add('is-entering'));
+  d.classList.remove('is-in');
+  requestAnimationFrame(() => d.classList.add('is-in'));
 
-  const back = el('button', 'detail-back');
+  const back = el('button', 'back');
   back.type = 'button';
-  back.textContent = '← All roles';
+  back.textContent = '\u2190 all roles';
   back.addEventListener('click', closeDetail);
   d.append(back);
 
-  d.append(el('div', 'detail-co', job.company));
-  d.append(el('h2', null, job.title));
-  if (job.location) d.append(el('div', 'detail-loc', job.location));
+  d.append(el('div', 'p-co', job.company));
+  d.append(el('p', 'p-role', job.title));
+  if (job.location) d.append(el('div', 'p-loc', job.location));
 
-  const actions = el('div', 'detail-actions');
-  const apply = el('a', 'btn btn-primary btn-glow', 'Apply on LinkedIn →');
+  const actions = el('div', 'p-acts');
+  const apply = el('a', 'go', 'Apply on LinkedIn \u2192');
   apply.href = job.applyUrl || job.url;
   apply.target = '_blank';
   apply.rel = 'noopener noreferrer';
   actions.append(apply);
 
-  const tailorBtn = el('button', 'btn', '✨ Tailor my resume');
+  const tailorBtn = el('button', 'alt', 'Tailor my resume');
   tailorBtn.type = 'button';
   tailorBtn.addEventListener('click', () => openTailor(job));
   actions.append(tailorBtn);
@@ -357,26 +353,26 @@ function renderDetail(job) {
     f.append(el('dt', null, label), el('dd', cls, value));
     facts.append(f);
   };
-  addFact('Stipend', job.stipend || 'Not stated', job.stipend ? 'money' : null);
-  addFact('Work mode', job.workplaceType || '—');
-  addFact('Duration', job.duration || '—');
-  addFact('Posted', job.postedText || relTime(job.postedAt));
-  if (job.applicants) addFact('Applicants', job.applicants);
+  addFact('stipend', job.stipend || 'not stated', job.stipend ? 'cash' : null);
+  addFact('mode', job.workplaceType || '\u2014');
+  addFact('duration', job.duration || '\u2014');
+  addFact('posted', job.postedText || relTime(job.postedAt));
+  if (job.applicants) addFact('applicants', job.applicants);
   d.append(facts);
 
   if (job.summary) {
-    d.append(el('h3', null, 'What the role is'));
-    d.append(el('p', 'detail-summary', job.summary));
+    d.append(el('h3', null, 'the role'));
+    d.append(el('p', 'p-gist', job.summary));
   }
 
   if (job.skills?.length) {
-    d.append(el('h3', null, 'Skills mentioned'));
-    const row = el('div', 'skillrow');
-    for (const s of job.skills) row.append(el('span', 'skill', s));
+    d.append(el('h3', null, 'skills'));
+    const row = el('div', 'chips');
+    for (const s of job.skills) row.append(el('span', 'chip', s));
     d.append(row);
   }
 
-  const note = el('p', 'source-note');
+  const note = el('p', 'src');
   note.append(document.createTextNode('This is an automatic summary. '));
   const link = el('a', null, 'Read the full posting on LinkedIn');
   link.href = job.url;
@@ -403,7 +399,7 @@ function openTailor(job) {
 function closeTailor() {
   $('tailor').hidden = true;
   $('tailor-backdrop').hidden = true;
-  if (!$('detail-col').classList.contains('is-open')) document.body.style.overflow = '';
+  if (!$('detail-col').classList.contains('open')) document.body.style.overflow = '';
 }
 
 function showStep(name) {
@@ -416,7 +412,7 @@ function setResumeText(text, label, ok = true) {
   state.resumeText = ok ? text : '';
   const box = $('file-state');
   box.hidden = false;
-  box.classList.toggle('is-bad', !ok);
+  box.classList.toggle('bad', !ok);
   box.replaceChildren(el('span', null, ok
     ? `${label} · ${text.length.toLocaleString()} characters read`
     : label));
@@ -469,7 +465,7 @@ async function handleFile(file) {
   }
 
   setResumeText('', `Reading ${file.name}…`, false);
-  $('file-state').classList.remove('is-bad');
+  $('file-state').classList.remove('bad');
 
   try {
     const text = isTxt ? await file.text() : await extractPdfText(file);
@@ -510,7 +506,7 @@ async function runTailor() {
     state.tailored = data.tailored;
     renderTailored(data.tailored);
     showStep('result');
-    toast('Resume tailored ✨');
+    toast('resume tailored');
   } catch (err) {
     $('error-text').textContent = err.message;
     showStep('error');
@@ -659,7 +655,7 @@ function wireTailor() {
   document.addEventListener('keydown', (e) => {
     if (e.key !== 'Escape') return;
     if (!$('tailor').hidden) closeTailor();
-    else if ($('detail-col').classList.contains('is-open')) closeDetail();
+    else if ($('detail-col').classList.contains('open')) closeDetail();
   });
 
   const zone = $('dropzone');
@@ -671,10 +667,10 @@ function wireTailor() {
   input.addEventListener('change', () => handleFile(input.files[0]));
 
   for (const type of ['dragenter', 'dragover']) {
-    zone.addEventListener(type, (e) => { e.preventDefault(); zone.classList.add('is-over'); });
+    zone.addEventListener(type, (e) => { e.preventDefault(); zone.classList.add('over'); });
   }
   for (const type of ['dragleave', 'drop']) {
-    zone.addEventListener(type, (e) => { e.preventDefault(); zone.classList.remove('is-over'); });
+    zone.addEventListener(type, (e) => { e.preventDefault(); zone.classList.remove('over'); });
   }
   zone.addEventListener('drop', (e) => handleFile(e.dataTransfer?.files?.[0]));
 
@@ -698,7 +694,7 @@ function wireTailor() {
   });
 
   $('download-pdf').addEventListener('click', () => {
-    toast('Choose "Save as PDF" in the print dialog');
+    toast('choose Save as PDF');
     setTimeout(() => window.print(), 350);
   });
 
@@ -706,9 +702,9 @@ function wireTailor() {
     if (!state.tailored) return;
     try {
       await navigator.clipboard.writeText(resumeAsText(state.tailored));
-      toast('Resume copied to clipboard');
+      toast('copied');
     } catch {
-      toast('Could not copy — select the text manually');
+      toast('could not copy');
     }
   });
 }
@@ -723,7 +719,7 @@ async function init() {
   await loadJobs();
   renderFreshness();
   renderTabCounts();
-  renderPitchMeta();
+  renderScore();
   populateFilters();
   applyFilters();
 
