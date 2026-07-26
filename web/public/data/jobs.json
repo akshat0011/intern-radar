@@ -1,8 +1,8 @@
 {
- "generatedAt": 1785083604867,
- "count": 179,
+ "generatedAt": 1785087530385,
+ "count": 180,
  "techCount": 26,
- "otherCount": 153,
+ "otherCount": 154,
  "companies": [
   "A.P. Moller - Maersk",
   "Accenture in India",
@@ -122,6 +122,32 @@
   "West Bengal, India (On-site)"
  ],
  "jobs": [
+  {
+   "id": "4442375433",
+   "title": "CA Industrial Trainee",
+   "company": "HARMAN India",
+   "matchedWatchlist": "Harman",
+   "isTech": false,
+   "roleSource": "gemini-description",
+   "logo": "/logos/harman-india.jpg",
+   "location": "Bengaluru, Karnataka, India",
+   "workplaceType": "Hybrid",
+   "stipend": null,
+   "duration": null,
+   "applicants": null,
+   "easyApply": false,
+   "skills": [
+    ".net",
+    "excel"
+   ],
+   "summary": "Introduction: A Career at HARMAN Corporate Obtain 360-degree support throughout your career life cycle, from early-stage to seasoned leader We are looking for highly motivated CA Industrial Trainees to join our Finance – Record to Report (R2R) team in Bangalore. This role offers hands-on exposure to global accounting operations, financial reporting, month-end close activities, balance sheet reconciliations, and compliance processes across international business operations.",
+   "postedText": "45 minutes ago",
+   "postedAt": 1785084773663,
+   "firstSeenAt": 1785087473671,
+   "url": "https://www.linkedin.com/jobs/view/4442375433/",
+   "applyUrl": "https://www.linkedin.com/jobs/view/4442375433/",
+   "description": null
+  },
   {
    "id": "4444825831",
    "title": "Business Development / Sales Intern",
