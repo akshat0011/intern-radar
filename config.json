@@ -40,12 +40,16 @@
   },
 
   "roleClassifier": {
-    "useGemini": true,
-    "_useGemini_note": "Ask Gemini whether each captured role is a software role. Needs GEMINI_API_KEY in the environment - put it in a .env file at the project root (gitignored) and it is picked up automatically. Titles are sent as ONE batched request per run, not one per job. If the key is missing, the quota is spent, or the call fails for any reason, the offline vocabulary in src/roles.js decides instead - a job is never left unclassified because an API was down.",
+    "useGemini": false,
+    "_useGemini_note": "Currently OFF - the offline vocabulary in src/roles.js decides. Gemini was never the speed bottleneck (it runs as one batch after the walk, not per job), but the offline classifier is instant and free, so there is little reason to switch it on unless the vocabulary starts missing things. When true: ask Gemini whether each captured role is a software role. Needs GEMINI_API_KEY in the environment - put it in a .env file at the project root (gitignored) and it is picked up automatically. Titles are sent as ONE batched request per run, not one per job. If the key is missing, the quota is spent, or the call fails for any reason, the offline vocabulary in src/roles.js decides instead - a job is never left unclassified because an API was down.",
     "model": "gemini-2.5-flash"
   },
 
   "matching": {
+    "openNonTechRoles": false,
+    "_openNonTechRoles_note": "false = a role the classifier CONFIDENTLY calls non-tech is listed from its search-card data alone, with no page open. Ambiguous titles are still opened, since that is exactly when the description decides. On a real backfill this cut opens from 12 to 4 per dozen candidates. Card-only listings have no description, summary or skills, which is fine for the Other roles tab. Set true to open everything."
+    "skipViewedCards": true,
+    "_skipViewedCards_note": "LinkedIn marks cards you have already opened as Viewed. Skipping them avoids re-opening a job after an interrupted run. Tradeoff: a job you viewed manually in your own browsing will never be added.",
     "requireCompanyMatch": true,
     "_requireCompanyMatch_note": "true = the FIRST gate. A posting from a company not on the watchlist is skipped outright - no title parsing, no role classification, no Gemini call. Set false to consider every internship found, which is far more work and spends classifier quota on employers you do not care about.",
     "titleMustMatch": ["intern", "internship", "trainee", "co-op", "coop", "summer analyst", "apprentice"],
@@ -57,15 +61,15 @@
   },
 
   "pacing": {
-    "_note": "All values in milliseconds. Delays are randomised between min and max on every action. Raising these lowers ban risk and lengthens the run.",
-    "betweenCards": [4000, 9000],
-    "betweenPages": [8000, 16000],
+    "_note": "All values in milliseconds, randomised per action. These were roughly halved for speed, which roughly doubles the request rate - a real increase in ban risk. If LinkedIn ever rate-limits, raise these first; the 24h cooldown will have already stopped the run.",
+    "betweenCards": [1800, 3600],
+    "betweenPages": [4000, 8000],
     "betweenSearches": [20000, 40000],
-    "scrollStep": [500, 1400],
-    "afterNavigation": [3000, 6000],
-    "warmupOnFeed": [6000, 12000],
-    "longBreakEvery": 12,
-    "longBreak": [45000, 90000],
+    "scrollStep": [260, 700],
+    "afterNavigation": [1500, 3000],
+    "warmupOnFeed": [3000, 6000],
+    "longBreakEvery": 30,
+    "longBreak": [12000, 25000],
     "_longBreak_note": "Every N job cards, take a longer human-style break.",
     "startupJitter": [0, 240000],
     "_startupJitter_note": "Scheduled runs wait a random extra 0-4 min, so activity does not land at exactly HH:00:00 every hour. Kept short because runs are hourly - a long jitter would push one slot into the next."

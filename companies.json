@@ -26,7 +26,16 @@
     "Navan", "Toast", "Gusto", "Airtable", "Vercel", "Netlify", "Sentry",
     "LaunchDarkly", "Postman Labs", "SolarWinds", "Progress Software",
     "Teradata", "Informatica", "Talend", "Alteryx", "Qlik", "Tableau",
-    "Sisense", "ThoughtSpot", "Fivetran", "dbt Labs", "Starburst"
+    "Sisense", "ThoughtSpot", "Fivetran", "dbt Labs", "Starburst",
+    { "name": "Red Hat", "aliases": ["RedHat"] },
+    "Cloudera", "SUSE", "Canonical", "Docker", "Redis", "Neo4j",
+    "Grafana Labs", "Sonatype", "CircleCI", "Kong Inc", "MuleSoft", "Boomi",
+    "UiPath", "Automation Anywhere", "Blue Prism", "Temenos", "Finastra",
+    "Broadridge", "SS&C Technologies", "Clearwater Analytics", "Addepar",
+    "Databricks", "Cohesity", "Veritas", "Zscaler", "Illumio", "Sumo Logic",
+    "Twilio Segment", "Algolia", "Contentful", "Sanity", "Strapi",
+    "Auth0", "Clerk", "Supabase", "PlanetScale", "CockroachDB", "SingleStore",
+    "Couchbase", "InfluxData", "TimescaleDB", "ClickHouse", "Yugabyte"
   ],
 
   "semiconductor-hardware": [

@@ -272,6 +272,8 @@ export async function enumerateCards(page, cfg) {
         salaryText,
         easyApply: /easy apply/i.test(blob),
         promoted: /promoted/i.test(blob),
+        // LinkedIn marks cards you have already opened.
+        viewed: /\bviewed\b/i.test(blob),
         logoUrl: /^https?:\/\//.test(logoUrl) ? logoUrl : '',
         href: href.startsWith('http') ? href : href ? `https://www.linkedin.com${href}` : '',
       };

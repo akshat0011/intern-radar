@@ -13,6 +13,7 @@ import { ensureHealthy, assertSignedIn, assertListRendered, RunAborted, State } 
 import * as li from './linkedin.js';
 import { resolveSearches } from './searches.js';
 import { classifyRoles } from './gemini.js';
+import { classifyRole } from './roles.js';
 import { pause, sleep, idleFidget, humanDelay } from './human.js';
 import { summarize } from './summarize.js';
 import { extractStipend, extractDuration, extractSkills, extractWorkplaceType, parseRelativeTime } from './extract.js';
@@ -25,6 +26,43 @@ const DRY_RUN = ARGS.has('--dry-run');
 const NO_OPEN = ARGS.has('--no-open');
 /** Set by bin/run.sh so scheduled runs can behave slightly differently. */
 const SCHEDULED = ARGS.has('--scheduled');
+
+/**
+ * One-off numeric overrides, so a deep backfill does not require editing
+ * config.json — which is the kind of change that gets left in by accident and
+ * quietly triples every future run.
+ *
+ *   --window-days=30   look back 30 days instead of the adaptive window
+ *   --window-hours=72  same, in hours
+ *   --max-pages=40     pages per search
+ *   --max-details=200  jobs opened this run
+ *   --max-minutes=100  wall-clock budget
+ *   --sort=relevance   order by LinkedIn's relevance instead of newest-first
+ */
+function numArg(name) {
+  for (const a of ARGS) {
+    const m = a.match(new RegExp(`^--${name}=(\\d+(?:\\.\\d+)?)$`));
+    if (m) return Number(m[1]);
+  }
+  return null;
+}
+
+/** Non-numeric one-off overrides. */
+function strArg(name) {
+  for (const a of ARGS) {
+    const m = a.match(new RegExp(`^--${name}=(.+)$`));
+    if (m) return m[1];
+  }
+  return null;
+}
+
+const OVERRIDES = {
+  sortBy: strArg('sort'),
+  windowHours: numArg('window-hours') ?? (numArg('window-days') != null ? numArg('window-days') * 24 : null),
+  maxPages: numArg('max-pages'),
+  maxDetails: numArg('max-details'),
+  maxMinutes: numArg('max-minutes'),
+};
 
 function makeRunId() {
   return new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);
@@ -59,6 +97,24 @@ async function main() {
   loadEnv();
   ensureDirs();
   const cfg = loadConfig();
+
+  if (OVERRIDES.maxPages) cfg.limits.maxPagesPerSearch = OVERRIDES.maxPages;
+  if (OVERRIDES.maxDetails) cfg.limits.maxDetailsPerRun = OVERRIDES.maxDetails;
+  if (OVERRIDES.maxMinutes) cfg.limits.maxRuntimeMinutes = OVERRIDES.maxMinutes;
+  if (OVERRIDES.sortBy) {
+    // Relevance matters for a deep backfill: LinkedIn caps a search at ~1000
+    // results, so newest-first would return only the last couple of days of a
+    // 30-day window. Relevance spreads the sample across the whole period.
+    cfg.filters.sortBy = OVERRIDES.sortBy;
+  }
+  if (OVERRIDES.windowHours) {
+    // An explicit window beats the adaptive calculation entirely.
+    cfg.filters.adaptiveWindow = false;
+    cfg.filters.postedWithinHours = OVERRIDES.windowHours;
+  }
+  if (Object.values(OVERRIDES).some((v) => v != null)) {
+    log.warn(`One-off overrides active: ${Object.entries(OVERRIDES).filter(([, v]) => v != null).map(([k, v]) => `${k}=${v}`).join(' ')}`);
+  }
 
   // Company batches or role keywords, per config.searchMode.
   const allSearches = resolveSearches(cfg);
@@ -122,7 +178,7 @@ async function main() {
 
   const clock = budget(cfg.limits.maxRuntimeMinutes);
   const notes = [];
-  const counters = { pagesScanned: 0, cardsSeen: 0, detailsExtracted: 0, newJobs: 0, skippedStale: 0, skippedCompany: 0, skippedTitle: 0, techRoles: 0, nonTechRoles: 0, nearMisses: 0, logosBackfilled: 0, skippedKnown: 0, failedDetails: 0 };
+  const counters = { pagesScanned: 0, cardsSeen: 0, detailsExtracted: 0, newJobs: 0, skippedStale: 0, skippedCompany: 0, skippedTitle: 0, techRoles: 0, nonTechRoles: 0, nearMisses: 0, skippedViewed: 0, listedWithoutOpening: 0, logosBackfilled: 0, skippedKnown: 0, failedDetails: 0 };
 
   log.section(`Run ${runId}`);
   log.info(`${cfg.watchlist.length} watchlist terms across ${cfg.uniqueCompanyCount} companies · mode "${cfg.searchMode ?? 'companies'}" · ${allSearches.length} searches · budget ${cfg.limits.maxRuntimeMinutes}m`);
@@ -237,6 +293,55 @@ async function main() {
               card.company,
               card.title,
             );
+            continue;
+          }
+
+          if (cfg.matching.skipViewedCards && card.viewed) {
+            counters.skippedViewed++;
+            store.noteSkippedCard(card.jobId, 'already viewed on LinkedIn', card.company, card.title);
+            continue;
+          }
+
+          // Decide tech vs non-tech from the title BEFORE deciding whether to
+          // open the job. A real backfill came back 11 tech / 46 non-tech, so
+          // opening everything spent ~80% of the run's page loads on roles that
+          // only need to appear in a list. Non-tech gets stored from card data.
+          const titleVerdict = classifyRole(card.title, {
+            extraPositive: cfg.matching.extraTechTerms ?? [],
+            extraNegative: cfg.matching.extraNonTechTerms ?? [],
+          });
+          // Only a CONFIDENT non-tech verdict skips the page open. An
+          // ambiguous title ("Intern (Bachelor's)", "Intern-Product Analyst")
+          // is exactly the case where the description decides, so it is still
+          // opened. On the observed backfill that is 4 opens out of 12 rather
+          // than 12, while keeping recall on the ones that matter.
+          const confidentlyNonTech = titleVerdict.verdict === 'non-tech';
+
+          if (confidentlyNonTech && cfg.matching.openNonTechRoles === false) {
+            const stipend = extractStipend(card.salaryText);
+            const isNew = store.upsertJob({
+              jobId: card.jobId,
+              title: card.title,
+              company: card.company,
+              companyMatched: matched,
+              location: card.location,
+              workplaceType: extractWorkplaceType(card.location),
+              postedText: card.postedText,
+              postedAt: parseRelativeTime(card.postedText),
+              salaryText: card.salaryText,
+              stipend,
+              easyApply: card.easyApply,
+              jobUrl: li.jobUrl(card.jobId),
+              logoUrl: card.logoUrl || null,
+              searchKeywords: search.label ?? search.keywords,
+              // Already decided; the batch pass will leave it alone.
+              isTech: false,
+              roleSource: 'offline-card',
+            }, runId);
+            if (isNew) {
+              counters.newJobs++;
+              counters.listedWithoutOpening++;
+            }
             continue;
           }
 
@@ -391,7 +496,8 @@ async function main() {
   const summaryLine =
     `${counters.cardsSeen} cards scanned · ${counters.detailsExtracted} opened · ${counters.newJobs} new · ` +
     `skipped ${counters.skippedCompany} off-watchlist, ${counters.skippedTitle} title not an internship, ` +
-    `${counters.skippedStale} older than ${cfg.filters.postedWithinHours}h, ${counters.skippedKnown} already known` +
+    `${counters.skippedStale} older than ${cfg.filters.postedWithinHours}h, ${counters.skippedKnown} already known, ` +
+    `${counters.skippedViewed} already viewed · ${counters.listedWithoutOpening} listed without opening` +
     (counters.failedDetails ? ` · ${counters.failedDetails} failed to read` : '');
 
   log.section('Summary');
