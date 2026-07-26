@@ -249,6 +249,11 @@ export class Store {
     ).all(sinceMs);
   }
 
+  /** The stored description, for classifying an ambiguous title. */
+  descriptionFor(jobId) {
+    return this.db.prepare('SELECT description FROM jobs WHERE job_id = ?').get(jobId)?.description ?? '';
+  }
+
   /** Record a role verdict once the batch classifier has run. */
   setRoleVerdict(jobId, isTech, source) {
     this.db.prepare('UPDATE jobs SET is_tech = ?, role_source = ? WHERE job_id = ?')

@@ -7,6 +7,23 @@ import { open } from '../src/notify.js';
 
 const store = new Store();
 
+if (process.argv.includes('--learned')) {
+  const { loadLearned, learnedPath } = await import('../src/learned.js');
+  const store = loadLearned();
+  const rows = Object.entries(store.terms).sort((a, b) => (b[1].n ?? 0) - (a[1].n ?? 0));
+  if (!rows.length) {
+    console.log('\nNothing learned yet. Terms are added when Gemini judges an ambiguous title.\n');
+  } else {
+    console.log(`\n${rows.length} term(s) learned from Gemini — these are now decided offline:\n`);
+    for (const [term, m] of rows) {
+      console.log(`  ${(m.isTech ? 'TECH ' : 'OTHER')}  ${String(m.n ?? 1).padStart(3)}x  ${term.padEnd(28)} ${m.from ?? ''}`);
+    }
+    console.log(`\nStored at ${learnedPath()}`);
+    console.log('Delete that file to forget everything and relearn from scratch.\n');
+  }
+  process.exit(0);
+}
+
 if (process.argv.includes('--roles')) {
   const nearMiss = store.skippedByRole('title lacks intern (watchlist tech role)', 40);
   const unclear = store.skippedByRole('role unclear', 40);

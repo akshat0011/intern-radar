@@ -203,6 +203,7 @@ want them anyway, understanding what that means.
 | `node bin/show-report.js --runs` | History of past runs and their counts |
 | `node bin/show-report.js --skipped` | Companies seen but skipped — use this to tune the watchlist |
 | `node bin/show-report.js --roles` | Role-classifier decisions — use this to tune the software filter |
+| `node bin/show-report.js --learned` | Terms learned from Gemini, now decided offline |
 | `npm run install-schedule` | Register the hourly LaunchAgent |
 | `npm run uninstall-schedule` | Remove the schedule (keeps your data) |
 
@@ -244,6 +245,30 @@ Add `--force` to override an active cooldown: `node src/index.js --force`.
    cards get read; a handful get opened, and all the filtering is free.
 
 6. **Classify the role.** Every captured job is labelled tech or non-tech.
+
+   Most titles are settled offline and free by the vocabulary in `src/roles.js`.
+   Only the ones it *cannot* settle reach Gemini — a bare "Trainee", an
+   "Apprentice", or a title resting on nothing but the word "Engineer". Those get
+   their **description** read instead, because "Graduate Engineer Trainee" is
+   automotive R&D at Valeo and software at Wipro, and only the description tells
+   them apart.
+
+   **It learns.** Gemini also names the phrase its decision turned on, and that
+   phrase joins the offline vocabulary — so the next title containing it is
+   answered instantly, with no API call. The classifier gets better and the API
+   gets called less the longer this runs. Review what it has picked up:
+
+   ```bash
+   node bin/show-report.js --learned
+   ```
+
+   Nothing is learned unvetted: the phrase must actually appear in the posting
+   (so the model cannot invent vocabulary), must not contradict a built-in rule
+   (a hand-written term with tests behind it wins), and must be a sane length. A
+   term Gemini later contradicts itself on is deleted rather than left to
+   flip-flop.
+
+6b. **Old behaviour, for reference.** Every captured job is labelled tech or non-tech.
    Gemini does it in **one batched request per run** — not one per job, because
    on a free tier the request count is the scarce resource. Before that call is
    even made, the offline vocabulary in `src/roles.js` has already assigned a

@@ -113,6 +113,9 @@ const NEGATIVE = [
   'counselling', 'counsellor', 'counselor', 'psychosocial', 'psychology',
   'social work', 'community outreach', 'fundraising', 'csr',
   'fashion design', 'fashion', 'textile', 'culinary', 'agriculture', 'agronomy',
+  // Some postings say so outright: "Intern- Content Developer (Non-technical)"
+  // was being filed as tech because of the word "Developer".
+  'non-technical', 'non technical', 'nontechnical', 'content developer',
   // Observed in real runs, all correctly unwanted but previously "unclear".
   'mechanical', 'chemical', 'technician', 'telecaller', 'telecalling',
   'customer acquisition', 'client acquisition', 'market analyst',
@@ -121,6 +124,17 @@ const NEGATIVE = [
   'article trainee', 'articleship', 'leasing', 'tenant representation',
   'founder\'s office', 'founders office', 'growth intern', 'sports',
 ];
+
+/**
+ * Built-in terms with their polarity, for vetting learned vocabulary. A
+ * hand-written rule with tests behind it outranks a model's suggestion.
+ */
+export function builtInPolarity() {
+  const map = new Map();
+  for (const t of POSITIVE) map.set(t.toLowerCase(), true);
+  for (const t of NEGATIVE) map.set(t.toLowerCase(), false);
+  return map;
+}
 
 const cache = new Map();
 
@@ -180,6 +194,30 @@ export function classifyRole(title, options = {}) {
 }
 
 /** Convenience: should this title reach a software job board? */
+/**
+ * Terms too generic to settle the question on their own. "Graduate Engineer
+ * Trainee" is automotive R&D at Valeo and software at Wipro; only the
+ * description tells them apart.
+ */
+const GENERIC = new Set([
+  'engineer', 'engineering', 'technical', 'technology', 'r&d',
+  'research and development', 'engineering intern', 'engineering trainee',
+  'technical intern', 'interim engineering', 'trainee', 'apprentice',
+]);
+
+/**
+ * Should this title be sent to Gemini with its description?
+ *
+ * True when the vocabulary could not decide, or when it decided on nothing more
+ * than a generic engineering word.
+ */
+export function needsDescription(title, options = {}) {
+  const { verdict, matched } = classifyRole(title, options);
+  if (verdict === 'uncertain') return true;
+  if (verdict === 'tech' && matched && GENERIC.has(matched.toLowerCase())) return true;
+  return false;
+}
+
 export function isSoftwareRole(title, { includeUncertain = false, ...options } = {}) {
   const { verdict } = classifyRole(title, options);
   return verdict === 'tech' || (includeUncertain && verdict === 'uncertain');

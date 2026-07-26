@@ -144,6 +144,14 @@ function renderFreshness() {
     : 'no data yet';
 }
 
+function renderPitchMeta() {
+  const el2 = $('pitch-meta');
+  if (!el2) return;
+  const n = state.jobs.length;
+  const co = new Set(state.jobs.map((j) => j.company)).size;
+  el2.textContent = n ? `${n} live roles · ${co} companies` : 'checking every hour';
+}
+
 function renderTabCounts() {
   const tech = state.jobs.filter((j) => j.isTech === true).length;
   $('n-tech').textContent = tech;
@@ -715,6 +723,7 @@ async function init() {
   await loadJobs();
   renderFreshness();
   renderTabCounts();
+  renderPitchMeta();
   populateFilters();
   applyFilters();
 

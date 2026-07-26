@@ -20,6 +20,38 @@ const API_BASE = 'https://generativelanguage.googleapis.com/v1beta/models';
 const TIMEOUT_MS = 30_000;
 const MAX_TITLES_PER_CALL = 60;
 
+const DESC_SYSTEM = `You label internship postings for a software-internship board, using the description because the title alone is too generic to judge.
+
+Decide whether the ACTUAL WORK is software or technology — writing code, building systems, working with data, designing software products, or engineering hardware/silicon.
+
+Count as tech: software engineering of any kind, data science and analytics, machine learning and AI, infrastructure and DevOps and cloud, QA and test automation, cybersecurity, chip and hardware design, quantitative and algorithmic trading, and product management or UI/UX for software products.
+
+Count as NOT tech: sales, business development, marketing, content, HR, recruiting, finance, accounting, legal, admin, operations, customer support, teaching, social work, media design and video, and non-software engineering such as mechanical, civil, electrical power, chemical or industrial plant work.
+
+Judge by the primary work, not by the employer being a technology company. A finance internship at a software firm is still finance.
+
+For each posting also return keyTerm: the single most decisive phrase, two to four words, copied EXACTLY as it appears in the title or description, that a future classifier could match on to reach the same conclusion. Prefer a phrase naming the discipline ("mechanical design", "backend services", "financial reporting") over a generic one ("good communication"). If nothing is decisive, return an empty keyTerm.`;
+
+const DESC_SCHEMA = {
+  type: 'OBJECT',
+  properties: {
+    verdicts: {
+      type: 'ARRAY',
+      items: {
+        type: 'OBJECT',
+        properties: {
+          id: { type: 'INTEGER' },
+          isTech: { type: 'BOOLEAN' },
+          keyTerm: { type: 'STRING' },
+          reason: { type: 'STRING' },
+        },
+        required: ['id', 'isTech', 'keyTerm'],
+      },
+    },
+  },
+  required: ['verdicts'],
+};
+
 const SYSTEM = `You label job titles for a software-internship board.
 
 For each title, decide whether it is a SOFTWARE or TECHNOLOGY role — something a computer-science or engineering student would take to write code, build systems, work with data, or design software products.
@@ -183,4 +215,89 @@ export async function classifyRoles(items, cfg) {
     log.ok(`Gemini classified ${refined}/${items.length} roles (${disagreed} differed from the offline guess).`);
   }
   return verdicts;
+}
+
+/**
+ * Classify ambiguous postings from their descriptions, and report the term each
+ * decision hinged on so the offline vocabulary can absorb it.
+ *
+ * Only called for titles the vocabulary could not settle — see needsDescription
+ * in roles.js. That is what keeps this to a handful of postings per run rather
+ * than every one.
+ *
+ * @returns {Promise<Map<number, {isTech: boolean, keyTerm: string, reason: string}>|null>}
+ *          null when Gemini is unavailable, so the caller keeps its offline verdicts
+ */
+export async function classifyFromDescriptions(items, cfg) {
+  if (!items.length) return new Map();
+  if (cfg.roleClassifier?.useGeminiForAmbiguous === false) return null;
+  if (!geminiAvailable()) {
+    log.info(`No GEMINI_API_KEY — ${items.length} ambiguous role(s) keep their offline verdict.`);
+    return null;
+  }
+
+  const model = process.env.GEMINI_MODEL || cfg.roleClassifier?.model || 'gemini-2.5-flash';
+  const out = new Map();
+
+  // Descriptions are long, so batch far more conservatively than titles.
+  const PER_CALL = 8;
+  for (let start = 0; start < items.length; start += PER_CALL) {
+    const slice = items.slice(start, start + PER_CALL);
+    const body = slice.map((it, i) => [
+      `### ${i}`,
+      `Title: ${it.title}`,
+      `Company: ${it.company ?? 'unknown'}`,
+      `Description: ${String(it.description ?? '').slice(0, 3500) || '(none captured)'}`,
+    ].join('\n')).join('\n\n');
+
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
+    try {
+      const res = await fetch(`${API_BASE}/${model}:generateContent`, {
+        method: 'POST',
+        headers: { 'content-type': 'application/json', 'x-goog-api-key': process.env.GEMINI_API_KEY },
+        body: JSON.stringify({
+          systemInstruction: { parts: [{ text: DESC_SYSTEM }] },
+          contents: [{ role: 'user', parts: [{ text: `Label these ${slice.length} postings:\n\n${body}` }] }],
+          generationConfig: {
+            temperature: 0,
+            maxOutputTokens: 3_000,
+            responseMimeType: 'application/json',
+            responseSchema: DESC_SCHEMA,
+          },
+        }),
+        signal: controller.signal,
+      });
+
+      if (!res.ok) {
+        const why = res.status === 429 ? 'daily free quota exhausted'
+          : res.status === 400 || res.status === 403 ? 'API key rejected'
+          : `HTTP ${res.status}`;
+        log.warn(`Gemini unavailable (${why}) — remaining ambiguous roles keep their offline verdict.`);
+        return out.size ? out : null;
+      }
+
+      const payload = await res.json();
+      if (payload.promptFeedback?.blockReason) {
+        log.warn('Gemini refused a batch (content filter) — offline verdicts stand for it.');
+        continue;
+      }
+
+      const raw = (payload.candidates?.[0]?.content?.parts ?? [])
+        .map((p) => p.text).filter(Boolean).join('').trim();
+      const parsed = JSON.parse(raw);
+      for (const v of parsed.verdicts ?? []) {
+        if (!Number.isInteger(v?.id) || typeof v.isTech !== 'boolean') continue;
+        if (v.id < 0 || v.id >= slice.length) continue;
+        out.set(start + v.id, { isTech: v.isTech, keyTerm: v.keyTerm ?? '', reason: v.reason ?? '' });
+      }
+    } catch (err) {
+      const why = err.name === 'AbortError' ? 'timed out' : err.message.split('\n')[0];
+      log.warn(`Gemini call failed (${why}) — offline verdicts stand for the rest.`);
+      return out.size ? out : null;
+    } finally {
+      clearTimeout(timer);
+    }
+  }
+  return out;
 }

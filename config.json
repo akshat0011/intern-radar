@@ -42,6 +42,8 @@
   "roleClassifier": {
     "useGemini": false,
     "_useGemini_note": "Currently OFF - the offline vocabulary in src/roles.js decides. Gemini was never the speed bottleneck (it runs as one batch after the walk, not per job), but the offline classifier is instant and free, so there is little reason to switch it on unless the vocabulary starts missing things. When true: ask Gemini whether each captured role is a software role. Needs GEMINI_API_KEY in the environment - put it in a .env file at the project root (gitignored) and it is picked up automatically. Titles are sent as ONE batched request per run, not one per job. If the key is missing, the quota is spent, or the call fails for any reason, the offline vocabulary in src/roles.js decides instead - a job is never left unclassified because an API was down.",
+    "useGeminiForAmbiguous": true,
+    "_useGeminiForAmbiguous_note": "The one place Gemini still earns its keep. A title the vocabulary cannot settle - a bare 'Trainee', 'Apprentice', or something resting only on the word 'Engineer' - gets its DESCRIPTION read instead. Gemini also names the phrase its decision turned on, and that phrase is added to the offline vocabulary, so the same kind of title is answered instantly and free from then on. The vocabulary therefore gets better and the API gets called less the longer this runs. Vetted before anything is learned: the phrase must actually appear in the posting, must not contradict a built-in rule, and must be a sane length.",
     "model": "gemini-2.5-flash"
   },
 

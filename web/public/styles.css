@@ -266,6 +266,46 @@ button, input, select, textarea { font: inherit; color: inherit; }
   :root[data-theme="light"] .i-moon { display: none; }
 }
 
+/* ---------- pitch banner ---------- */
+
+.pitch { padding: 20px 0 4px; }
+.pitch-inner {
+  display: flex; align-items: center; gap: 14px;
+  padding: 16px 20px; border-radius: var(--radius);
+  background:
+    linear-gradient(var(--surface), var(--surface)) padding-box,
+    linear-gradient(100deg, var(--accent), var(--accent-2) 50%, var(--accent-3)) border-box;
+  border: 1.5px solid transparent;
+  box-shadow: var(--shadow-sm);
+}
+.pitch-badge {
+  flex: none; display: grid; place-items: center;
+  width: 34px; height: 34px; border-radius: 11px; color: #fff;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  box-shadow: 0 3px 12px color-mix(in oklab, var(--accent) 45%, transparent);
+  animation: bolt 3.2s var(--ease) infinite;
+}
+@keyframes bolt {
+  0%, 88%, 100% { transform: none; }
+  92%           { transform: scale(1.16) rotate(-8deg); }
+}
+.pitch-text { font-size: 14px; color: var(--ink-2); line-height: 1.5; }
+.pitch-text b {
+  color: var(--ink); font-weight: 680; letter-spacing: -.015em;
+  font-size: 15.5px; display: block; margin-bottom: 2px;
+}
+.pitch-meta {
+  flex: none; margin-left: auto; font-size: 12px; color: var(--ink-3);
+  font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap;
+}
+
+@media (max-width: 720px) {
+  .pitch-inner { flex-wrap: wrap; gap: 11px; padding: 14px 16px; }
+  .pitch-text { flex: 1 1 100%; order: 2; font-size: 13.5px; }
+  .pitch-text b { font-size: 15px; }
+  .pitch-meta { margin-left: 0; order: 1; }
+}
+
 /* ---------- controls ---------- */
 
 .controls-shell {

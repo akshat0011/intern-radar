@@ -12,8 +12,9 @@ import { launchBrave, closeBrave } from './browser.js';
 import { ensureHealthy, assertSignedIn, assertListRendered, RunAborted, State } from './guard.js';
 import * as li from './linkedin.js';
 import { resolveSearches } from './searches.js';
-import { classifyRoles } from './gemini.js';
-import { classifyRole } from './roles.js';
+import { classifyRoles, classifyFromDescriptions } from './gemini.js';
+import { classifyRole, needsDescription, builtInPolarity } from './roles.js';
+import { loadLearned, learnedVocabulary, learn, learnedPath } from './learned.js';
 import { pause, sleep, idleFidget, humanDelay, pageAlive } from './human.js';
 import { summarize } from './summarize.js';
 import { extractStipend, extractDuration, extractSkills, extractWorkplaceType, parseRelativeTime } from './extract.js';
@@ -102,6 +103,16 @@ async function main() {
   ensureDirs();
   const cfg = loadConfig();
 
+  // Everything Gemini has taught us so far joins the offline vocabulary, so a
+  // term learned once is answered instantly and for free from then on.
+  const learnedStore = loadLearned();
+  const learnedVocab = learnedVocabulary(learnedStore);
+  cfg.matching.extraTechTerms = [...(cfg.matching.extraTechTerms ?? []), ...learnedVocab.positive];
+  cfg.matching.extraNonTechTerms = [...(cfg.matching.extraNonTechTerms ?? []), ...learnedVocab.negative];
+  if (learnedVocab.positive.length || learnedVocab.negative.length) {
+    log.info(`Learned vocabulary: ${learnedVocab.positive.length} tech, ${learnedVocab.negative.length} non-tech terms in play.`);
+  }
+
   if (OVERRIDES.maxPages) cfg.limits.maxPagesPerSearch = OVERRIDES.maxPages;
   if (OVERRIDES.maxDetails) cfg.limits.maxDetailsPerRun = OVERRIDES.maxDetails;
   if (OVERRIDES.maxMinutes) cfg.limits.maxRuntimeMinutes = OVERRIDES.maxMinutes;
@@ -182,7 +193,7 @@ async function main() {
 
   const clock = budget(cfg.limits.maxRuntimeMinutes);
   const notes = [];
-  const counters = { pagesScanned: 0, cardsSeen: 0, detailsExtracted: 0, newJobs: 0, skippedStale: 0, skippedCompany: 0, skippedTitle: 0, techRoles: 0, nonTechRoles: 0, nearMisses: 0, skippedViewed: 0, listedWithoutOpening: 0, logosBackfilled: 0, skippedKnown: 0, failedDetails: 0 };
+  const counters = { pagesScanned: 0, cardsSeen: 0, detailsExtracted: 0, newJobs: 0, skippedStale: 0, skippedCompany: 0, skippedTitle: 0, techRoles: 0, nonTechRoles: 0, geminiJudged: 0, termsLearned: 0, nearMisses: 0, skippedViewed: 0, listedWithoutOpening: 0, logosBackfilled: 0, skippedKnown: 0, failedDetails: 0 };
 
   log.section(`Run ${runId}`);
   log.info(`${cfg.watchlist.length} watchlist terms across ${cfg.uniqueCompanyCount} companies · mode "${cfg.searchMode ?? 'companies'}" · ${allSearches.length} searches · budget ${cfg.limits.maxRuntimeMinutes}m`);
@@ -500,17 +511,75 @@ async function main() {
   // shipped: five real jobs, all filed as "other", tech tab empty.
   const publishWindowMs = (cfg.publish?.maxAgeDays ?? 14) * 86_400_000;
   const unclassified = store.jobsNeedingRoleVerdict(Date.now() - publishWindowMs);
+
   if (unclassified.length) {
-    const verdicts = await classifyRoles(
-      unclassified.map((j) => ({ title: j.title, company: j.company })),
-      cfg,
-    );
-    unclassified.forEach((job, i) => {
-      const v = verdicts[i];
-      store.setRoleVerdict(job.job_id, v.isTech, v.source);
-      if (v.isTech) counters.techRoles++; else counters.nonTechRoles++;
-    });
-    log.info(`Classified ${unclassified.length} role(s): ${counters.techRoles} tech, ${counters.nonTechRoles} other (via ${verdicts[0]?.source ?? 'offline'}).`);
+    const roleOpts = {
+      extraPositive: cfg.matching.extraTechTerms,
+      extraNegative: cfg.matching.extraNonTechTerms,
+    };
+
+    // Only titles the vocabulary cannot settle — generic ones like "Trainee",
+    // or ones resting on nothing but the word "Engineer" — are worth an API
+    // call. Everything else is decided offline for free.
+    const ambiguous = [];
+    const clear = [];
+    for (const job of unclassified) {
+      (needsDescription(job.title, roleOpts) ? ambiguous : clear).push(job);
+    }
+
+    for (const job of clear) {
+      const r = classifyRole(job.title, roleOpts);
+      const isTech = r.verdict === 'tech';
+      store.setRoleVerdict(job.job_id, isTech, 'offline');
+      if (isTech) counters.techRoles++; else counters.nonTechRoles++;
+    }
+
+    if (ambiguous.length) {
+      log.info(`${ambiguous.length} title(s) too generic to judge — reading their descriptions.`);
+      const withDesc = ambiguous.map((j) => ({
+        title: j.title,
+        company: j.company,
+        description: store.descriptionFor(j.job_id),
+      }));
+      const answers = await classifyFromDescriptions(withDesc, cfg);
+      const polarity = builtInPolarity();
+
+      ambiguous.forEach((job, i) => {
+        const a = answers?.get(i);
+        if (a) {
+          store.setRoleVerdict(job.job_id, a.isTech, 'gemini-description');
+          if (a.isTech) counters.techRoles++; else counters.nonTechRoles++;
+          counters.geminiJudged++;
+
+          if (a.keyTerm) {
+            const { result, why } = learn(learnedStore, {
+              term: a.keyTerm,
+              isTech: a.isTech,
+              title: job.title,
+              description: withDesc[i].description,
+              company: job.company,
+            }, polarity);
+            if (result === 'added') {
+              counters.termsLearned++;
+              log.ok(`  learned "${a.keyTerm.toLowerCase()}" -> ${a.isTech ? 'tech' : 'other'}`);
+            } else if (result === 'rejected') {
+              log.debug(`  did not learn "${a.keyTerm}" (${why})`);
+            }
+          }
+        } else {
+          // Gemini unavailable: keep the offline reading rather than nothing.
+          const r = classifyRole(job.title, roleOpts);
+          const isTech = r.verdict === 'tech';
+          store.setRoleVerdict(job.job_id, isTech, 'offline-fallback');
+          if (isTech) counters.techRoles++; else counters.nonTechRoles++;
+        }
+      });
+    }
+
+    log.info(`Classified ${unclassified.length} role(s): ${counters.techRoles} tech, ${counters.nonTechRoles} other · ${clear.length} offline, ${counters.geminiJudged} from descriptions`);
+    if (counters.termsLearned) {
+      log.ok(`Learned ${counters.termsLearned} new term(s) — future runs decide these offline. ${learnedPath().replace(process.env.HOME ?? '', '~')}`);
+    }
   }
 
   const summaryLine =
