@@ -25,6 +25,8 @@ CREATE TABLE IF NOT EXISTS jobs (
   description       TEXT,
   summary           TEXT,
   logo_url          TEXT,
+  is_tech           INTEGER,
+  role_source       TEXT,
   search_keywords   TEXT,
   first_seen_at     INTEGER NOT NULL,
   last_seen_at      INTEGER NOT NULL,
@@ -100,8 +102,10 @@ export class Store {
     }
 
     const jobCols = this.db.prepare('PRAGMA table_info(jobs)').all().map((c) => c.name);
-    if (!jobCols.includes('logo_url')) {
-      this.db.exec('ALTER TABLE jobs ADD COLUMN logo_url TEXT');
+    for (const [name, type] of [['logo_url', 'TEXT'], ['is_tech', 'INTEGER'], ['role_source', 'TEXT']]) {
+      if (!jobCols.includes(name)) {
+        this.db.exec(`ALTER TABLE jobs ADD COLUMN ${name} ${type}`);
+      }
     }
   }
 
@@ -231,6 +235,12 @@ export class Store {
     return out;
   }
 
+  /** Record a role verdict once the batch classifier has run. */
+  setRoleVerdict(jobId, isTech, source) {
+    this.db.prepare('UPDATE jobs SET is_tech = ?, role_source = ? WHERE job_id = ?')
+      .run(isTech ? 1 : 0, source, jobId);
+  }
+
   // ---- cards ----------------------------------------------------------------
 
   /** Have we already fully extracted this job in an earlier run? */
@@ -334,8 +344,8 @@ export class Store {
         posted_text, posted_at, salary_text, stipend_min, stipend_max,
         stipend_currency, stipend_period, applicants, easy_apply, apply_url,
         job_url, duration, skills, description, summary, search_keywords,
-        logo_url, first_seen_at, last_seen_at, first_run_id, reported
-      ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,0)
+        logo_url, is_tech, role_source, first_seen_at, last_seen_at, first_run_id, reported
+      ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,0)
     `).run(
       job.jobId,
       job.title ?? '(untitled)',
@@ -360,6 +370,8 @@ export class Store {
       job.summary ?? null,
       job.searchKeywords ?? null,
       job.logoUrl ?? null,
+      job.isTech == null ? null : (job.isTech ? 1 : 0),
+      job.roleSource ?? null,
       now,
       now,
       runId,

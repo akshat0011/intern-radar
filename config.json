@@ -39,15 +39,18 @@
     "_jobTypes_note": "DELIBERATELY EMPTY. Setting this to ['INTERNSHIP'] sends f_JT=I, which trusts the recruiter's employment-type tag - and they get it wrong constantly. A real case: Salesforce's 'Summer 2027 Intern - Software Engineer' is tagged Full-time, so f_JT=I hid it completely. The title filter and role classifier below decide what is an internship instead, from the title itself. LinkedIn f_JT codes if you ever want them: F=full-time P=part-time C=contract T=temporary I=internship V=volunteer O=other."
   },
 
+  "roleClassifier": {
+    "useGemini": true,
+    "_useGemini_note": "Ask Gemini whether each captured role is a software role. Needs GEMINI_API_KEY in the environment - put it in a .env file at the project root (gitignored) and it is picked up automatically. Titles are sent as ONE batched request per run, not one per job. If the key is missing, the quota is spent, or the call fails for any reason, the offline vocabulary in src/roles.js decides instead - a job is never left unclassified because an API was down.",
+    "model": "gemini-2.5-flash"
+  },
+
   "matching": {
     "requireCompanyMatch": true,
-    "_requireCompanyMatch_note": "true = only open+extract jobs from companies in the watchlist above. Set false to capture every job in the last 24h (much slower, much higher ban risk).",
+    "_requireCompanyMatch_note": "true = the FIRST gate. A posting from a company not on the watchlist is skipped outright - no title parsing, no role classification, no Gemini call. Set false to consider every internship found, which is far more work and spends classifier quota on employers you do not care about.",
     "titleMustMatch": ["intern", "internship", "trainee", "co-op", "coop", "summer analyst", "apprentice"],
     "_titleMustMatch_note": "A job must contain one of these in its title. Use [] to disable.",
-    "softwareRolesOnly": true,
-    "_softwareRolesOnly_note": "A broad 'internship' search returns sales, marketing, HR, teaching and video editing too. This keeps only software and tech roles. Titles that match neither list are reported as uncertain rather than guessed at - see `node bin/show-report.js --roles` and add terms to extraTechTerms below.",
-    "includeUncertainRoles": false,
-    "_includeUncertainRoles_note": "true = also keep titles the classifier could not decide (e.g. a bare 'Summer Intern'). Raises recall, adds noise.",
+    "_roles_note": "Non-software roles at watchlist companies are no longer discarded - they are published under the site's Other roles tab. Only the company gate discards anything.",
     "extraTechTerms": [],
     "extraNonTechTerms": [],
     "_extraTerms_note": "Your own additions to the classifier, checked ahead of the built-in lists."

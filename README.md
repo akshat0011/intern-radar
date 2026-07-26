@@ -234,29 +234,37 @@ Add `--force` to override an active cooldown: `node src/index.js --force`.
    **It then keeps turning pages until LinkedIn's own "Next" button runs out**,
    which is the only reliable proof that every job in the window has been seen.
    A page count is never assumed.
-5. **Filter before opening.** A card is only opened if it clears four cheap
-   local checks: posted inside the window, the title reads as an internship,
-   **the role is software**, and the company is on your watchlist. Hundreds of
-   cards get read; a handful get opened. All of it is free — no extra requests.
+5. **Company first.** The employer is the first thing checked. A posting from a
+   company not on your watchlist is dropped immediately — no title parsing, no
+   role classification, no API call. That is what keeps the classifier budget
+   spent only on jobs that could actually be published.
 
-   The software check matters because a broad `internship` search also returns
-   sales, marketing, HR, teaching, cinematography and field sales. Negative
-   signals beat positive ones, so "Software Sales Intern" is correctly rejected.
-   A title matching neither list is recorded as **uncertain** rather than
-   guessed at:
+   What survives is then checked for being an internship at all (by title, since
+   LinkedIn's employment-type tag proved unreliable) and opened. Hundreds of
+   cards get read; a handful get opened, and all the filtering is free.
 
-   ```bash
-   node bin/show-report.js --roles
-   ```
+6. **Classify the role.** Every captured job is labelled tech or non-tech.
+   Gemini does it in **one batched request per run** — not one per job, because
+   on a free tier the request count is the scarce resource. Before that call is
+   even made, the offline vocabulary in `src/roles.js` has already assigned a
+   verdict, so if the key is missing, the quota is spent, or the network is
+   down, the offline verdict simply stands. **No job is ever left unclassified
+   because an API was unavailable.**
 
-   That shows what it could not decide and a sample of what it rejected. If a
-   real software role is in either list, add a distinguishing word to
-   `matching.extraTechTerms`; if junk survived, add to `extraNonTechTerms`.
-6. **Extract.** Full description, applicant count, salary badge, apply target.
-7. **Summarise and store.** Stipend, duration, work mode and skills are parsed
+   Non-tech roles at watchlist companies are **not discarded** — they are
+   published under the site's *Other roles* tab. Only the company gate throws
+   anything away.
+
+   Put your key in a `.env` file at the project root (see `.env.example`). It
+   has to live there rather than in your shell profile: launchd gives a
+   scheduled run almost no environment, so an exported variable would never
+   reach it.
+
+7. **Extract.** Full description, applicant count, salary badge, apply target.
+8. **Summarise and store.** Stipend, duration, work mode and skills are parsed
    out; the description is condensed. Everything lands in SQLite so the same job
    is never reported twice.
-8. **Report.** A self-contained HTML page, plus a notification.
+9. **Report.** A self-contained HTML page, plus a notification.
 
 ---
 

@@ -16,6 +16,9 @@ const el = (tag, cls, text) => {
 
 const state = {
   jobs: [],
+  // Which tab is showing. A job with an unknown verdict counts as "other" so it
+  // is still reachable rather than hidden.
+  showTech: true,
   filtered: [],
   selectedId: null,
   resumeText: '',
@@ -141,6 +144,12 @@ function renderFreshness() {
     : 'no data yet';
 }
 
+function renderTabCounts() {
+  const tech = state.jobs.filter((j) => j.isTech === true).length;
+  $('n-tech').textContent = tech;
+  $('n-other').textContent = state.jobs.length - tech;
+}
+
 function populateFilters() {
   const companies = [...new Set(state.jobs.map((j) => j.company))].sort((a, b) => a.localeCompare(b));
   const locations = [...new Set(state.jobs.map((j) => j.location).filter(Boolean))].sort((a, b) => a.localeCompare(b));
@@ -160,6 +169,7 @@ function applyFilters() {
   const easyOnly = $('f-easy').getAttribute('aria-pressed') === 'true';
 
   const list = state.jobs.filter((j) => {
+    if ((j.isTech === true) !== state.showTech) return false;
     if (company && j.company !== company) return false;
     if (location && j.location !== location) return false;
     if (mode && (j.workplaceType ?? '').toLowerCase() !== mode.toLowerCase()) return false;
@@ -255,6 +265,11 @@ function renderList() {
     if (state.jobs.length === 0) {
       $('empty-title').textContent = 'Radar is warming up';
       $('empty-body').textContent = 'No listings have been published here yet. New roles appear within minutes of going live.';
+    } else if (!anyFilterActive()) {
+      $('empty-title').textContent = state.showTech ? 'No tech roles right now' : 'No other roles right now';
+      $('empty-body').textContent = state.showTech
+        ? 'Nothing software-side has been posted in this window. Check the Other roles tab.'
+        : 'Everything currently listed is a tech role.';
     } else {
       $('empty-title').textContent = 'Radar is clear';
       $('empty-body').textContent = 'Nothing matches those filters. Try clearing the search or widening the company filter.';
@@ -605,6 +620,21 @@ function wireControls() {
       rerun();
     });
   }
+  for (const id of ['tab-tech', 'tab-other']) {
+    $(id).addEventListener('click', () => {
+      const wantTech = $(id).dataset.tech === '1';
+      if (wantTech === state.showTech) return;
+      state.showTech = wantTech;
+      $('tab-tech').setAttribute('aria-selected', String(wantTech));
+      $('tab-other').setAttribute('aria-selected', String(!wantTech));
+      // The open detail belongs to the other tab now; clear it.
+      state.selectedId = null;
+      $('detail').hidden = true;
+      $('detail-placeholder').hidden = false;
+      rerun();
+    });
+  }
+
   $('reset').addEventListener('click', () => {
     $('q').value = '';
     $('clear-q').hidden = true;
@@ -684,11 +714,22 @@ async function init() {
 
   await loadJobs();
   renderFreshness();
+  renderTabCounts();
   populateFilters();
   applyFilters();
 
   const hash = location.hash.match(/^#job-(.+)$/);
-  if (hash && state.jobs.some((j) => j.id === hash[1])) selectJob(hash[1]);
+  const target = hash && state.jobs.find((j) => j.id === hash[1]);
+  if (target) {
+    // Switch to whichever tab actually holds it, or the link looks broken.
+    if ((target.isTech === true) !== state.showTech) {
+      state.showTech = target.isTech === true;
+      $('tab-tech').setAttribute('aria-selected', String(state.showTech));
+      $('tab-other').setAttribute('aria-selected', String(!state.showTech));
+      applyFilters();
+    }
+    selectJob(target.id);
+  }
 
   setInterval(renderFreshness, 60000);
 }

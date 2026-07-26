@@ -4,14 +4,15 @@
  * Invoked by launchd at 12:00 and 18:00, or by hand via `npm run`.
  */
 import { loadConfig, matchCompany, matchTitle, resolveWindowHours } from './config.js';
-import { ensureDirs, PATHS } from './paths.js';
+import { join } from 'node:path';
+import { ensureDirs, PATHS, ROOT } from './paths.js';
 import { log } from './logger.js';
 import { Store } from './store.js';
 import { launchBrave, closeBrave } from './browser.js';
 import { ensureHealthy, assertSignedIn, assertListRendered, RunAborted, State } from './guard.js';
 import * as li from './linkedin.js';
 import { resolveSearches } from './searches.js';
-import { classifyRole } from './roles.js';
+import { classifyRoles } from './gemini.js';
 import { pause, sleep, idleFidget, humanDelay } from './human.js';
 import { summarize } from './summarize.js';
 import { extractStipend, extractDuration, extractSkills, extractWorkplaceType, parseRelativeTime } from './extract.js';
@@ -40,7 +41,22 @@ function budget(maxMinutes) {
   };
 }
 
+/**
+ * Load a .env file if one exists, so GEMINI_API_KEY can live in the project
+ * rather than in a shell profile. launchd gives the job almost no environment,
+ * so a key exported in .zshrc would never reach a scheduled run — this is the
+ * only way it works both from a terminal and from the schedule.
+ */
+function loadEnv() {
+  try {
+    process.loadEnvFile(join(ROOT, '.env'));
+  } catch {
+    // No .env, or unreadable. Not an error: the classifier falls back offline.
+  }
+}
+
 async function main() {
+  loadEnv();
   ensureDirs();
   const cfg = loadConfig();
 
@@ -106,7 +122,7 @@ async function main() {
 
   const clock = budget(cfg.limits.maxRuntimeMinutes);
   const notes = [];
-  const counters = { pagesScanned: 0, cardsSeen: 0, detailsExtracted: 0, newJobs: 0, skippedStale: 0, skippedCompany: 0, skippedTitle: 0, skippedNonTech: 0, skippedRoleUnclear: 0, nearMisses: 0, logosBackfilled: 0, skippedKnown: 0, failedDetails: 0 };
+  const counters = { pagesScanned: 0, cardsSeen: 0, detailsExtracted: 0, newJobs: 0, skippedStale: 0, skippedCompany: 0, skippedTitle: 0, techRoles: 0, nonTechRoles: 0, nearMisses: 0, logosBackfilled: 0, skippedKnown: 0, failedDetails: 0 };
 
   log.section(`Run ${runId}`);
   log.info(`${cfg.watchlist.length} watchlist terms across ${cfg.uniqueCompanyCount} companies · mode "${cfg.searchMode ?? 'companies'}" · ${allSearches.length} searches · budget ${cfg.limits.maxRuntimeMinutes}m`);
@@ -180,14 +196,23 @@ async function main() {
           if (clock.exceeded() || counters.detailsExtracted >= cfg.limits.maxDetailsPerRun) break;
           if (!card.jobId) continue;
 
-          // --- cheap filters, evaluated without opening the job -------------
+          // --- cheap local filters, in priority order ----------------------
           if (store.hasJob(card.jobId)) {
             counters.skippedKnown++;
             store.touchJob(card.jobId);
-            // Free logo backfill: this card carries the URL even though we are
-            // not opening the job, and rows stored before logo capture existed
-            // would otherwise never get one.
             if (store.backfillLogo(card.jobId, card.logoUrl)) counters.logosBackfilled++;
+            continue;
+          }
+
+          // COMPANY IS THE FIRST GATE. If the employer is not one we care
+          // about, nothing else about the posting matters — no title parsing,
+          // no role classification, and above all no Gemini call. This is what
+          // keeps the classifier budget spent only on jobs that could actually
+          // be published.
+          const matched = matchCompany(card.company, cfg.watchlist);
+          if (cfg.matching.requireCompanyMatch && !matched) {
+            counters.skippedCompany++;
+            store.noteSkippedCard(card.jobId, 'company not on watchlist', card.company, card.title);
             continue;
           }
 
@@ -200,61 +225,18 @@ async function main() {
             continue;
           }
 
+          // The title is the only internship signal left, since LinkedIn's
+          // employment-type tag proved unreliable. A watchlist company whose
+          // title lacks an internship word is a near miss worth reporting.
           if (!matchTitle(card.title, cfg.titleTerms)) {
-            // The title is now the only internship signal we have, because
-            // LinkedIn's employment-type tag proved untrustworthy (Salesforce
-            // files internships as Full-time). So a posting that turns up in an
-            // internship search but is titled without "intern" — e.g. "Full
-            // Stack Web Developer" — gets dropped here.
-            //
-            // When such a card is ALSO a tech role at a watchlist company it is
-            // a high-value near miss, worth a human glance rather than a silent
-            // discard. Flag it distinctly.
-            const nearMiss = !!matchCompany(card.company, cfg.watchlist)
-              && classifyRole(card.title, {
-                extraPositive: cfg.matching.extraTechTerms ?? [],
-                extraNegative: cfg.matching.extraNonTechTerms ?? [],
-              }).verdict === 'tech';
-
             counters.skippedTitle++;
-            if (nearMiss) counters.nearMisses++;
+            counters.nearMisses++;
             store.noteSkippedCard(
               card.jobId,
-              nearMiss ? 'title lacks intern (watchlist tech role)' : 'title did not match',
+              'title lacks intern (watchlist tech role)',
               card.company,
               card.title,
             );
-            continue;
-          }
-
-          // One broad "internship" sweep also returns sales, marketing, HR and
-          // teaching. Keep only software roles, and record anything the
-          // classifier could not decide so its vocabulary can be tuned from
-          // real titles rather than guesswork.
-          if (cfg.matching.softwareRolesOnly) {
-            const role = classifyRole(card.title, {
-              extraPositive: cfg.matching.extraTechTerms ?? [],
-              extraNegative: cfg.matching.extraNonTechTerms ?? [],
-            });
-            const keep = role.verdict === 'tech'
-              || (role.verdict === 'uncertain' && cfg.matching.includeUncertainRoles);
-            if (!keep) {
-              if (role.verdict === 'uncertain') counters.skippedRoleUnclear++;
-              else counters.skippedNonTech++;
-              store.noteSkippedCard(
-                card.jobId,
-                role.verdict === 'uncertain' ? 'role unclear' : 'not a software role',
-                card.company,
-                card.title,
-              );
-              continue;
-            }
-          }
-
-          const matched = matchCompany(card.company, cfg.watchlist);
-          if (cfg.matching.requireCompanyMatch && !matched) {
-            counters.skippedCompany++;
-            store.noteSkippedCard(card.jobId, 'company not on watchlist', card.company, card.title);
             continue;
           }
 
@@ -302,6 +284,9 @@ async function main() {
             logoUrl: detail.logoUrl || card.logoUrl || null,
           };
           job.summary = await summarize(job, description, cfg.summarizer);
+          // Verdict is filled in by one batched classifier pass after the walk.
+          job.isTech = null;
+          job.roleSource = null;
 
           if (store.upsertJob(job, runId)) {
             counters.newJobs++;
@@ -379,10 +364,28 @@ async function main() {
 
   // ---- report ---------------------------------------------------------------
 
+  // ---- classify the roles we captured, in one batch ------------------------
+  // Deliberately after the walk rather than during it: on a free tier the
+  // request count is the scarce resource, so forty candidates should cost one
+  // call rather than forty. Nothing here gates publication — a non-tech role
+  // still reaches the site, just in the other section.
+  const captured = store.jobsForRun(runId);
+  if (captured.length) {
+    const verdicts = await classifyRoles(
+      captured.map((j) => ({ title: j.title, company: j.company })),
+      cfg,
+    );
+    captured.forEach((job, i) => {
+      const v = verdicts[i];
+      store.setRoleVerdict(job.job_id, v.isTech, v.source);
+      if (v.isTech) counters.techRoles++; else counters.nonTechRoles++;
+    });
+    log.info(`Roles: ${counters.techRoles} tech, ${counters.nonTechRoles} other (via ${verdicts[0]?.source ?? 'offline'}).`);
+  }
+
   const summaryLine =
     `${counters.cardsSeen} cards scanned · ${counters.detailsExtracted} opened · ${counters.newJobs} new · ` +
-    `skipped ${counters.skippedCompany} off-watchlist, ${counters.skippedNonTech} non-tech, ` +
-    `${counters.skippedRoleUnclear} role unclear, ${counters.skippedTitle} wrong title, ` +
+    `skipped ${counters.skippedCompany} off-watchlist, ${counters.skippedTitle} title not an internship, ` +
     `${counters.skippedStale} older than ${cfg.filters.postedWithinHours}h, ${counters.skippedKnown} already known` +
     (counters.failedDetails ? ` · ${counters.failedDetails} failed to read` : '');
 

@@ -32,6 +32,10 @@ function toPublicJob(row, { includeFullDescription, matchedNow, logoIndex }) {
     title: row.title,
     company: row.company || matchedNow || 'Unknown',
     matchedWatchlist: matchedNow,
+    // null means the verdict pass has not run for this row yet; the site treats
+    // an unknown verdict as non-tech rather than hiding the job.
+    isTech: row.is_tech == null ? null : !!row.is_tech,
+    roleSource: row.role_source ?? null,
     // Local path, never LinkedIn's CDN — see src/logos.js for why.
     logo: logoPathFor(row.company || matchedNow || '', logoIndex),
     location: row.location || null,
@@ -88,9 +92,12 @@ export async function writeJobsFile(store, cfg) {
     log.warn(`Held back ${dropped} stored job${dropped === 1 ? '' : 's'} whose company no longer matches the watchlist.`);
   }
 
+  const techCount = publicJobs.filter((j) => j.isTech).length;
   const payload = {
     generatedAt: Date.now(),
     count: publicJobs.length,
+    techCount,
+    otherCount: publicJobs.length - techCount,
     companies: [...new Set(publicJobs.map((j) => j.company))].sort(),
     locations: [...new Set(publicJobs.map((j) => j.location).filter(Boolean))].sort(),
     jobs: publicJobs,
@@ -102,7 +109,7 @@ export async function writeJobsFile(store, cfg) {
   writeFileSync(JOBS_FILE, next);
 
   const withLogo = publicJobs.filter((j) => j.logo).length;
-  return { count: publicJobs.length, path: JOBS_FILE, withLogo, logoBytes: logoDirSize() };
+  return { count: publicJobs.length, techCount, path: JOBS_FILE, withLogo, logoBytes: logoDirSize() };
 }
 
 function git(args, { allowFail = false } = {}) {
@@ -160,8 +167,8 @@ export async function publish(store, cfg, newJobCount) {
   if (cfg.publish?.enabled === false) return;
 
   try {
-    const { count, path, withLogo, logoBytes } = await writeJobsFile(store, cfg);
-    log.info(`Wrote ${count} jobs to ${path.replace(ROOT, '.')} (${withLogo} with a logo, ${Math.round(logoBytes / 1024)} KB stored)`);
+    const { count, techCount, path, withLogo, logoBytes } = await writeJobsFile(store, cfg);
+    log.info(`Wrote ${count} jobs (${techCount} tech, ${count - techCount} other) to ${path.replace(ROOT, '.')} — ${withLogo} with a logo, ${Math.round(logoBytes / 1024)} KB stored`);
     if (cfg.publish?.autoPush !== false) pushToSite(newJobCount);
   } catch (err) {
     log.warn(`Publish step failed: ${err.message}`);

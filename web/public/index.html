@@ -93,6 +93,14 @@
 
   <div class="wrap layout" id="results">
     <section class="list-col" aria-label="Internship listings">
+      <div class="tabs" role="tablist" aria-label="Role type">
+        <button class="tab" id="tab-tech" role="tab" aria-selected="true" data-tech="1">
+          Tech roles <span class="tab-n" id="n-tech">0</span>
+        </button>
+        <button class="tab" id="tab-other" role="tab" aria-selected="false" data-tech="0">
+          Other roles <span class="tab-n" id="n-other">0</span>
+        </button>
+      </div>
       <div class="list-head">
         <span id="result-count">Loading…</span>
         <button class="link-btn" id="reset" type="button" hidden>Reset filters</button>

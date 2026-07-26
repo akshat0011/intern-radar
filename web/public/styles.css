@@ -327,6 +327,34 @@ button, input, select, textarea { font: inherit; color: inherit; }
   display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
   gap: 24px; align-items: start; padding: 24px 0 70px;
 }
+/* Tech / Other split. Non-software roles at watchlist companies are still
+   published, just not mixed in with the ones being searched for. */
+.tabs {
+  display: flex; gap: 6px; padding: 4px;
+  background: var(--surface-2); border: 1px solid var(--line);
+  border-radius: var(--radius-pill); margin-bottom: 16px; width: fit-content;
+}
+.tab {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: none; border: 0; cursor: pointer;
+  padding: 8px 18px; border-radius: var(--radius-pill);
+  font-size: 14px; font-weight: 600; color: var(--ink-2);
+  transition: color .2s, background .25s var(--ease), box-shadow .25s;
+}
+.tab:hover { color: var(--ink); }
+.tab[aria-selected="true"] {
+  background: var(--surface); color: var(--ink);
+  box-shadow: var(--shadow-sm), 0 0 0 1px var(--line);
+}
+.tab-n {
+  font-size: 11.5px; font-weight: 700; font-variant-numeric: tabular-nums;
+  background: var(--surface); color: var(--ink-3);
+  padding: 2px 8px; border-radius: var(--radius-pill); min-width: 24px; text-align: center;
+}
+.tab[aria-selected="true"] .tab-n {
+  background: linear-gradient(120deg, var(--accent), var(--accent-2)); color: #fff;
+}
+
 .list-head { display: flex; align-items: center; justify-content: space-between; padding: 0 4px 14px; font-size: 13.5px; color: var(--ink-2); }
 .link-btn { background: none; border: 0; color: var(--accent); cursor: pointer; font-size: 13px; padding: 0; font-weight: 600; }
 .link-btn:hover { text-decoration: underline; }
@@ -697,6 +725,8 @@ button, input, select, textarea { font: inherit; color: inherit; }
 
 @media (max-width: 640px) {
   .wrap { width: calc(100% - 28px); }
+  .tabs { width: 100%; }
+  .tab { flex: 1; justify-content: center; padding: 8px 10px; font-size: 13.5px; }
   .brand-tag { display: none; }
   .live { display: none; }
   .co-name { font-size: 19px; }
