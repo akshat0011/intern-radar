@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Intern Radar — fresh internships, tailored resumes</title>
-<meta name="description" content="Internships posted in the last 24 hours at companies worth working for. Pick a role and tailor your resume to it in seconds.">
+<title>Intern Radar</title>
+<meta name="description" content="Software internships, surfaced the moment they go live. Tailor your resume to any of them in seconds.">
 <meta name="color-scheme" content="light dark">
 <meta property="og:title" content="Intern Radar">
-<meta property="og:description" content="Fresh internships, checked twice a day. Tailor your resume to any of them in seconds.">
+<meta property="og:description" content="Software internships, the moment they go live.">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
 <link rel="stylesheet" href="/styles.css">
@@ -15,16 +15,51 @@
 <body>
 
 <a class="skip" href="#results">Skip to listings</a>
+<div class="aurora" aria-hidden="true"><span></span><span></span><span></span></div>
 
 <header class="topbar">
   <div class="wrap topbar-inner">
-    <a class="brand" href="/">
-      <span class="brand-mark" aria-hidden="true"></span>
-      <span class="brand-name">Intern<span>Radar</span></span>
+    <a class="brand" href="/" aria-label="Intern Radar home">
+      <span class="avatar" aria-hidden="true">
+        <svg viewBox="0 0 56 56" role="img">
+          <defs>
+            <radialGradient id="scope" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="var(--av-deep)"/>
+              <stop offset="100%" stop-color="var(--av-dark)"/>
+            </radialGradient>
+            <linearGradient id="sweepg" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="var(--av-beam)" stop-opacity="0"/>
+              <stop offset="65%" stop-color="var(--av-beam)" stop-opacity=".45"/>
+              <stop offset="100%" stop-color="var(--av-beam)" stop-opacity=".95"/>
+            </linearGradient>
+          </defs>
+          <circle cx="28" cy="28" r="26" fill="url(#scope)"/>
+          <g class="av-grid">
+            <circle cx="28" cy="28" r="19"/>
+            <circle cx="28" cy="28" r="12.5"/>
+            <circle cx="28" cy="28" r="6"/>
+            <line x1="28" y1="4" x2="28" y2="52"/>
+            <line x1="4" y1="28" x2="52" y2="28"/>
+          </g>
+          <g class="av-sweep">
+            <path d="M28 28 L28 2 A26 26 0 0 1 50.5 15 Z" fill="url(#sweepg)"/>
+          </g>
+          <circle class="av-blip av-blip-1" cx="38" cy="19" r="2.6"/>
+          <circle class="av-blip av-blip-2" cx="19" cy="35" r="2"/>
+          <circle class="av-blip av-blip-3" cx="34" cy="38" r="1.7"/>
+          <circle class="av-core" cx="28" cy="28" r="3.2"/>
+          <circle class="av-rim" cx="28" cy="28" r="26"/>
+        </svg>
+      </span>
+      <span class="brand-text">
+        <span class="brand-name">Intern<span>Radar</span></span>
+        <span class="brand-tag">scanned multiple times every day</span>
+      </span>
     </a>
+
     <div class="topbar-right">
-      <span class="pulse" id="freshness" title="When the listings were last refreshed">
-        <span class="pulse-dot" aria-hidden="true"></span>
+      <span class="live" id="freshness" title="When the listings were last refreshed">
+        <span class="live-dot" aria-hidden="true"></span>
         <span id="freshness-text">loading…</span>
       </span>
       <button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch colour theme">
@@ -36,34 +71,18 @@
 </header>
 
 <main>
-  <section class="hero">
-    <div class="wrap">
-      <h1>Internships posted <em>in the last 24 hours</em>.</h1>
-      <p class="lede">
-        Scanned twice a day across hundreds of companies. Pick a role, and rewrite your
-        resume to target it — grounded strictly in what your resume already says.
-      </p>
-      <div class="stats" id="stats" aria-live="polite">
-        <div class="stat"><b id="stat-jobs">–</b><span>open roles</span></div>
-        <div class="stat"><b id="stat-companies">–</b><span>companies</span></div>
-        <div class="stat"><b id="stat-fresh">–</b><span>added today</span></div>
-        <div class="stat"><b id="stat-paid">–</b><span>stipend listed</span></div>
-      </div>
-    </div>
-  </section>
-
   <div class="controls-shell">
     <div class="wrap controls">
       <div class="search">
         <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg>
-        <input type="search" id="q" placeholder="Search role, company, skill or city…" autocomplete="off" aria-label="Search internships">
+        <input type="search" id="q" placeholder="Search company, role, skill or city…" autocomplete="off" aria-label="Search internships">
         <button class="clear-q" id="clear-q" type="button" aria-label="Clear search" hidden>&times;</button>
       </div>
       <div class="selects">
         <label class="sel"><span>Company</span><select id="f-company"><option value="">All</option></select></label>
         <label class="sel"><span>Location</span><select id="f-location"><option value="">Anywhere</option></select></label>
         <label class="sel"><span>Mode</span><select id="f-mode"><option value="">Any</option><option>Remote</option><option>Hybrid</option><option>On-site</option></select></label>
-        <label class="sel"><span>Sort</span><select id="f-sort"><option value="new">Newest first</option><option value="stipend">Highest stipend</option><option value="company">Company A–Z</option></select></label>
+        <label class="sel"><span>Sort</span><select id="f-sort"><option value="new">Freshest first</option><option value="stipend">Highest stipend</option><option value="company">Company A–Z</option></select></label>
       </div>
       <div class="toggles">
         <button class="chip-toggle" id="f-paid" type="button" aria-pressed="false">Stipend listed</button>
@@ -80,16 +99,18 @@
       </div>
       <ol class="joblist" id="joblist"></ol>
       <div class="empty" id="empty" hidden>
-        <div class="empty-mark" aria-hidden="true">🔍</div>
-        <h3 id="empty-title">Nothing matches those filters</h3>
-        <p id="empty-body">Try clearing the search box or widening the company filter.</p>
+        <div class="empty-mark" aria-hidden="true">
+          <svg viewBox="0 0 48 48" width="46" height="46" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="24" cy="24" r="20" opacity=".3"/><circle cx="24" cy="24" r="12" opacity=".55"/><circle cx="24" cy="24" r="4"/></svg>
+        </div>
+        <h3 id="empty-title">Radar is clear</h3>
+        <p id="empty-body">Nothing matching right now. New roles appear here within minutes of going live.</p>
       </div>
     </section>
 
     <aside class="detail-col" id="detail-col" aria-label="Selected internship">
       <div class="detail-placeholder" id="detail-placeholder">
-        <div class="ph-mark" aria-hidden="true">👈</div>
-        <p>Select a role to see the details and tailor your resume to it.</p>
+        <div class="ph-radar" aria-hidden="true"><span></span><span></span><span></span></div>
+        <p>Pick a role to see the details — and tailor your resume to it in one click.</p>
       </div>
       <article class="detail" id="detail" hidden></article>
     </aside>
@@ -121,7 +142,6 @@
   </div>
 
   <div class="sheet-body">
-    <!-- step 1 -->
     <section class="step" id="step-upload">
       <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Upload your resume PDF">
         <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4M7 9l5-5 5 5"/><path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg>
@@ -148,22 +168,20 @@
           the tailorer actually needs.
         </p>
       </div>
-      <button class="btn btn-primary btn-block" id="do-tailor" type="button" disabled>Tailor my resume</button>
+      <button class="btn btn-primary btn-block btn-glow" id="do-tailor" type="button" disabled>Tailor my resume</button>
     </section>
 
-    <!-- step 2 -->
     <section class="step" id="step-working" hidden>
       <div class="working">
-        <div class="spinner" aria-hidden="true"></div>
+        <div class="working-radar" aria-hidden="true"><span></span><span></span><span></span><i></i></div>
         <b id="working-label">Reading your resume…</b>
         <span>This usually takes 10–20 seconds.</span>
       </div>
     </section>
 
-    <!-- step 3 -->
     <section class="step" id="step-result" hidden>
       <div class="result-actions">
-        <button class="btn btn-primary" id="download-pdf" type="button">Download PDF</button>
+        <button class="btn btn-primary btn-glow" id="download-pdf" type="button">Download PDF</button>
         <button class="btn" id="copy-text" type="button">Copy as text</button>
         <button class="btn btn-quiet" id="start-over" type="button">Start over</button>
       </div>
