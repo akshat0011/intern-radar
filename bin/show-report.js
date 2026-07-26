@@ -7,6 +7,23 @@ import { open } from '../src/notify.js';
 
 const store = new Store();
 
+if (process.argv.includes('--skipped')) {
+  const rows = store.topSkippedCompanies(50);
+  if (!rows.length) {
+    console.log('\nNo skipped companies recorded yet. Run a scan first.\n');
+  } else {
+    console.log('\nCompanies seen but skipped because they are not on your watchlist:\n');
+    for (const { company, n } of rows) {
+      console.log(`  ${String(n).padStart(4)}×  ${company}`);
+    }
+    console.log('\nAdd any worth watching to the `companies` list in config.json.');
+    console.log('If most of these look like companies you would happily intern at, consider');
+    console.log('setting matching.requireCompanyMatch to false instead.\n');
+  }
+  store.close();
+  process.exit(0);
+}
+
 if (process.argv.includes('--runs')) {
   const runs = store.recentRuns(10);
   if (!runs.length) {

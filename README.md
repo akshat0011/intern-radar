@@ -181,6 +181,7 @@ want them anyway, understanding what that means.
 | `npm run report` | Open the most recent report |
 | `npm test` | Run the extraction unit tests |
 | `node bin/show-report.js --runs` | History of past runs and their counts |
+| `node bin/show-report.js --skipped` | Companies seen but skipped — use this to tune the watchlist |
 | `npm run install-schedule` | Register the 12:00 / 18:00 LaunchAgent |
 | `npm run uninstall-schedule` | Remove the schedule (keeps your data) |
 
@@ -278,6 +279,25 @@ logged you out. `npm run login` again.
 **Report is empty but you expected jobs** → `node bin/show-report.js --runs`. If
 `cards_seen` is healthy but `new_jobs` is 0, the filters worked and nothing new
 came from your watchlist. If `cards_seen` is 0, see below.
+
+**Zero results run after run** → this is the normal state, not a fault. A
+watchlist of large companies posts internships rarely; the tool is a tripwire
+for the moment one does, not a daily digest. To check that assumption rather
+than trust it:
+
+```bash
+node bin/show-report.js --skipped
+```
+
+That lists the companies that keep appearing and getting skipped. If they are
+all tiny agencies you have never heard of, the filter is doing its job. If you
+recognise names worth working for, add them to `config.json`.
+
+Also worth knowing: a broad keyword like `internship` returns mostly non-tech
+postings from very small companies, which burns most of a run's card budget on
+noise. Narrower searches — `software engineer intern`, `data science intern`,
+`SDE intern` — surface the companies you actually care about far more
+efficiently. Add several narrow searches rather than one broad one.
 
 **"Job list rendered 0 cards … LinkedIn changed its markup"** → the expected
 failure mode over time. LinkedIn rotates its CSS class names. This error is

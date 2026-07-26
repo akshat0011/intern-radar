@@ -146,20 +146,20 @@ async function main() {
           // given the benefit of the doubt rather than silently dropped.
           if (postedAt && postedAt < cutoff) {
             counters.skippedStale++;
-            store.noteSkippedCard(card.jobId, 'older than window');
+            store.noteSkippedCard(card.jobId, 'older than window', card.company, card.title);
             continue;
           }
 
           if (!matchTitle(card.title, cfg.titleTerms)) {
             counters.skippedTitle++;
-            store.noteSkippedCard(card.jobId, 'title did not match');
+            store.noteSkippedCard(card.jobId, 'title did not match', card.company, card.title);
             continue;
           }
 
           const matched = matchCompany(card.company, cfg.watchlist);
           if (cfg.matching.requireCompanyMatch && !matched) {
             counters.skippedCompany++;
-            store.noteSkippedCard(card.jobId, 'company not on watchlist');
+            store.noteSkippedCard(card.jobId, 'company not on watchlist', card.company, card.title);
             continue;
           }
 
@@ -287,6 +287,17 @@ async function main() {
   log.section('Summary');
   log.info(summaryLine);
   log.info(`Took ${clock.elapsedSeconds()}s`);
+
+  // "0 new jobs, 97 off-watchlist" invites the question "which 97?". Answer it
+  // here, so the watchlist can be tuned from evidence rather than guesswork.
+  if (counters.newJobs === 0 && counters.skippedCompany > 0) {
+    const top = store.topSkippedCompanies(8, Date.now() - 7 * 86_400_000);
+    if (top.length) {
+      log.info('Most frequent companies skipped as off-watchlist (last 7 days):');
+      for (const { company, n } of top) log.info(`    ${String(n).padStart(3)}×  ${company}`);
+      log.info('Add any of these to config.json, or see the full list with `node bin/show-report.js --skipped`.');
+    }
+  }
 
   store.finishRun(runId, {
     status,

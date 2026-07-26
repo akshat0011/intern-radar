@@ -51,7 +51,9 @@ CREATE TABLE IF NOT EXISTS runs (
 CREATE TABLE IF NOT EXISTS seen_cards (
   job_id       TEXT PRIMARY KEY,
   last_seen_at INTEGER NOT NULL,
-  reason       TEXT
+  reason       TEXT,
+  company      TEXT,
+  title        TEXT
 );
 
 CREATE TABLE IF NOT EXISTS settings (
@@ -67,6 +69,17 @@ export class Store {
     this.db.exec('PRAGMA journal_mode = WAL');
     this.db.exec('PRAGMA foreign_keys = ON');
     this.db.exec(SCHEMA);
+    this.#migrate();
+  }
+
+  /** Additive migrations for databases created by an earlier version. */
+  #migrate() {
+    const columns = this.db.prepare('PRAGMA table_info(seen_cards)').all().map((c) => c.name);
+    for (const [name, type] of [['company', 'TEXT'], ['title', 'TEXT']]) {
+      if (!columns.includes(name)) {
+        this.db.exec(`ALTER TABLE seen_cards ADD COLUMN ${name} ${type}`);
+      }
+    }
   }
 
   close() {
@@ -143,11 +156,32 @@ export class Store {
    * Cheap record of a card we saw but chose not to open (wrong company, wrong
    * title). Lets later runs skip re-evaluating it and gives us honest counts.
    */
-  noteSkippedCard(jobId, reason) {
+  noteSkippedCard(jobId, reason, company = null, title = null) {
     this.db.prepare(`
-      INSERT INTO seen_cards (job_id, last_seen_at, reason) VALUES (?, ?, ?)
+      INSERT INTO seen_cards (job_id, last_seen_at, reason, company, title)
+      VALUES (?, ?, ?, ?, ?)
       ON CONFLICT(job_id) DO UPDATE SET last_seen_at = excluded.last_seen_at
-    `).run(jobId, Date.now(), reason);
+    `).run(jobId, Date.now(), reason, company, title);
+  }
+
+  /**
+   * Which companies keep turning up and getting skipped.
+   *
+   * When a run reports "0 new jobs, 97 off-watchlist", this is the answer to
+   * the obvious next question — who were those 97? Without it the watchlist is
+   * impossible to tune from evidence.
+   */
+  topSkippedCompanies(limit = 30, sinceMs = 0) {
+    return this.db.prepare(`
+      SELECT company, COUNT(*) AS n
+      FROM seen_cards
+      WHERE reason = 'company not on watchlist'
+        AND company IS NOT NULL AND company != ''
+        AND last_seen_at >= ?
+      GROUP BY LOWER(company)
+      ORDER BY n DESC, company ASC
+      LIMIT ?
+    `).all(sinceMs, limit);
   }
 
   wasSkipped(jobId) {
