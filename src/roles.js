@@ -32,8 +32,10 @@ const POSITIVE = [
   'data analyst', 'data analytics', 'business intelligence', 'machine learning',
   'deep learning', 'artificial intelligence', 'computer vision', 'nlp',
   'generative ai', 'genai', 'mlops', 'llm', 'ml', 'ai',
-  // infra
-  'devops', 'sre', 'site reliability', 'cloud', 'aws', 'azure', 'kubernetes',
+  // infra. The compound forms are listed explicitly: \bcloud\b cannot match
+  // "CloudOps", which cost us eight real postings before it was noticed.
+  'devops', 'cloudops', 'dataops', 'secops', 'sysops', 'platformops',
+  'sre', 'site reliability', 'cloud', 'aws', 'azure', 'kubernetes',
   'docker', 'infrastructure', 'platform engineer', 'systems engineer',
   'network engineer', 'database', 'dba', 'sql', 'api', 'microservices',
   // quality
@@ -51,7 +53,13 @@ const POSITIVE = [
   'technology', 'technical', 'r&d', 'research and development',
   // product & design, adjacent but usually part of a software team
   'product management', 'product manager', 'associate product manager', 'apm',
-  'ui/ux', 'ui ux', 'uiux', 'user experience', 'user interface', 'product design',
+  'ui/ux', 'ui ux', 'uiux', 'ux', 'ui', 'user experience', 'user interface',
+  'product design', 'ux research', 'ux designer', 'ui designer', 'interaction design',
+  // Quant roles. Ambiguous on their own, but leaning positive is the safe
+  // direction: the company filter runs afterwards, so a trading internship at
+  // an unknown shop is still dropped while one at Optiver survives. Leaning
+  // negative would silently lose the watchlist ones.
+  'quantitative', 'quant', 'algorithmic trading', 'trading',
 ];
 
 const NEGATIVE = [
@@ -84,7 +92,14 @@ const NEGATIVE = [
   'teaching', 'teacher', 'tutor', 'lecturer', 'academic',
   'counselling', 'counsellor', 'counselor', 'psychosocial', 'psychology',
   'social work', 'community outreach', 'fundraising', 'csr',
-  'fashion design', 'textile', 'culinary', 'agriculture', 'agronomy',
+  'fashion design', 'fashion', 'textile', 'culinary', 'agriculture', 'agronomy',
+  // Observed in real runs, all correctly unwanted but previously "unclear".
+  'mechanical', 'chemical', 'technician', 'telecaller', 'telecalling',
+  'customer acquisition', 'client acquisition', 'market analyst',
+  'content creator', 'student ambassador', 'management trainee',
+  'character animation', 'curation', 'cataloging', 'cataloguing',
+  'article trainee', 'articleship', 'leasing', 'tenant representation',
+  'founder\'s office', 'founders office', 'growth intern', 'sports',
 ];
 
 const cache = new Map();

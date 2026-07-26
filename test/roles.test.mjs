@@ -109,6 +109,37 @@ for (const t of [
   'Operations Intern',
 ]) check(t, 'uncertain');
 
+console.log('\n== real titles from a live run (regression corpus) ==');
+// Harvested from `show-report.js --roles` after a real scheduled run. Two of
+// these were genuine misses: \bcloud\b could not match "CloudOps" (8 postings
+// lost), and bare "ux" was absent while "ui/ux" was present.
+for (const t of [
+  'CloudOps Trainee',
+  'UX Researcher Intern',
+  'Trading Intern',
+  'Quantitative Trading Intern',
+]) check(t, 'tech');
+
+for (const t of [
+  'Global Market Analyst Intern',
+  'Telecaller / Customer Acquisition Intern',
+  'Client Acquisition Intern',
+  'Mechanical Design Intern',
+  'Content creator Intern',
+  'Student Ambassador Intern',
+  'Management Trainee',
+  'Character Animation Intern',
+  'Curation Intern',
+  'Article Trainee',
+  'Fashion Intern',
+  'Sports Intern',
+  'Field Executive Trainee-Chemical-DMD ( 82820935 )',
+  'SUE Graduate Trainee Technician',
+  'EIC Apprentice - Leasing Tenant Representation_Bangalore',
+  "Growth & Founder's Office Intern",
+  'Quick Commerce – Cataloging Intern',
+]) check(t, 'non-tech');
+
 console.log('\n== degenerate input ==');
 let d = 0;
 for (const [label, v] of [['empty', ''], ['null', null], ['undefined', undefined], ['spaces', '   ']]) {
