@@ -1,8 +1,8 @@
 {
- "generatedAt": 1785076413031,
- "count": 178,
+ "generatedAt": 1785080001223,
+ "count": 179,
  "techCount": 26,
- "otherCount": 152,
+ "otherCount": 153,
  "companies": [
   "A.P. Moller - Maersk",
   "Accenture in India",
@@ -71,6 +71,7 @@
   "Swiggy",
   "Times Internet",
   "UBS",
+  "Urban Raga – Performing Arts & Learning Centre",
   "Valeo",
   "Volvo Group",
   "Wipro",
@@ -121,6 +122,29 @@
   "West Bengal, India (On-site)"
  ],
  "jobs": [
+  {
+   "id": "4444825831",
+   "title": "Business Development / Sales Intern",
+   "company": "Urban Raga – Performing Arts & Learning Centre",
+   "matchedWatchlist": "Urban Company",
+   "isTech": false,
+   "roleSource": "offline-card",
+   "logo": "/logos/urban-raga-performing-arts-and-learning-centre.jpg",
+   "location": "Bengaluru, Karnataka, India (On-site)",
+   "workplaceType": "On-site",
+   "stipend": null,
+   "duration": null,
+   "applicants": null,
+   "easyApply": true,
+   "skills": [],
+   "summary": null,
+   "postedText": "5 minutes ago",
+   "postedAt": 1785079662571,
+   "firstSeenAt": 1785079962571,
+   "url": "https://www.linkedin.com/jobs/view/4444825831/",
+   "applyUrl": "https://www.linkedin.com/jobs/view/4444825831/",
+   "description": null
+  },
   {
    "id": "4439768016",
    "title": "Sales Trainee - Collections - Retail Unsecured Flows - Jaipur",
