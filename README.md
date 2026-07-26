@@ -1,7 +1,7 @@
 # LinkedIn internship watcher
 
-Every three hours, opens Brave and checks LinkedIn for internships posted in the
-last day at the companies on your watchlist, pulls out the details, and hands
+Every hour, opens Brave and checks LinkedIn for internships just posted at the
+companies on your watchlist, pulls out the details, and hands
 you an HTML report — plus a public site students can browse.
 
 It does **not** apply for you. It finds and summarises; you click Apply.
@@ -203,7 +203,7 @@ want them anyway, understanding what that means.
 | `node bin/show-report.js --runs` | History of past runs and their counts |
 | `node bin/show-report.js --skipped` | Companies seen but skipped — use this to tune the watchlist |
 | `node bin/show-report.js --roles` | Role-classifier decisions — use this to tune the software filter |
-| `npm run install-schedule` | Register the every-3-hours LaunchAgent |
+| `npm run install-schedule` | Register the hourly LaunchAgent |
 | `npm run uninstall-schedule` | Remove the schedule (keeps your data) |
 
 Add `--force` to override an active cooldown: `node src/index.js --force`.
@@ -218,12 +218,16 @@ Add `--force` to override an active cooldown: `node src/index.js --force`.
    LinkedIn will serve a public job page to a signed-out visitor that looks
    perfectly healthy — without this check the tool would scrape that and store
    worse data thinking all was well.
-3. **Search.** One broad `internship` query, restricted to internships
-   (`f_JT=I`), a rolling 30-hour window, sorted newest-first (`sortBy=DD`), and
-   paginated until LinkedIn's own Next control runs out — which is the only
-   reliable proof the result set is exhausted. If more searches are configured
-   than fit the time budget, the next run resumes where this one stopped rather
-   than cutting the same tail every time.
+3. **Search.** One broad boolean query, sorted newest-first (`sortBy=DD`), and
+   paginated until LinkedIn's own Next control runs out — the only reliable
+   proof the result set is exhausted.
+
+   The lookback window is **sized from the gap since the last successful run**,
+   not fixed. After a normal hourly run it is ~3 hours; after an overnight
+   sleep it stretches to cover the whole gap, capped at 36. This matters at an
+   hourly cadence: a fixed 30-hour window would re-paginate a full day of
+   postings every hour to find the newest one, for roughly ten times the page
+   loads and no extra coverage.
 4. **Read the list without clicking.** The results column is virtualised, so it
    gets scrolled in small steps to force every card to render; title, company,
    location and posted-time are then read straight off the cards.
@@ -362,4 +366,11 @@ switch the agent off.
 **Asleep at a slot** → launchd fires once shortly after you open the lid, and
 coalesces several missed slots into a single run rather than replaying each one.
 **Powered off at a slot** → that slot is dropped and does not catch up; the next
-scheduled slot three hours later is the recovery.
+hour is the recovery. Either way nothing is lost, because the run widens its own
+lookback window to cover however long the gap was.
+
+**Two runs never overlap.** A run takes a lock on start and releases it at the
+end, so a slot that fires while the previous run is still going is skipped
+rather than launching a second browser against the same profile. The lock
+self-expires after `maxRuntimeMinutes`, so a crashed run cannot wedge the
+schedule. Keep `maxRuntimeMinutes` comfortably under 60.

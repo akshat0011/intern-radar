@@ -3,7 +3,7 @@
  * One scan of LinkedIn for new internships at the watchlist companies.
  * Invoked by launchd at 12:00 and 18:00, or by hand via `npm run`.
  */
-import { loadConfig, matchCompany, matchTitle } from './config.js';
+import { loadConfig, matchCompany, matchTitle, resolveWindowHours } from './config.js';
 import { ensureDirs, PATHS } from './paths.js';
 import { log } from './logger.js';
 import { Store } from './store.js';
@@ -56,6 +56,22 @@ async function main() {
   const runId = makeRunId();
   const store = new Store();
 
+  // Refuse to start while another run holds the lock. Hourly slots plus a
+  // 45-minute budget leave little headroom, and two runs would fight over the
+  // Brave profile lock and double the request rate. The lock self-expires after
+  // the runtime budget so a crashed run cannot wedge the schedule forever.
+  const LOCK_KEY = 'run_started_at';
+  const heldSince = Number(store.getSetting(LOCK_KEY) ?? 0);
+  const lockAgeMin = heldSince ? (Date.now() - heldSince) / 60_000 : Infinity;
+  if (heldSince && lockAgeMin < cfg.limits.maxRuntimeMinutes && !ARGS.has('--force')) {
+    log.warn(`Another run started ${lockAgeMin.toFixed(0)} min ago and is still going. Skipping this slot.`);
+    store.close();
+    return;
+  }
+  if (heldSince && lockAgeMin >= cfg.limits.maxRuntimeMinutes) {
+    log.warn(`Clearing a stale run lock (${lockAgeMin.toFixed(0)} min old — the previous run probably crashed).`);
+  }
+
   // Refuse to run while a cooldown from a previous rate limit is in force.
   const cooldown = store.activeCooldown();
   if (cooldown && !ARGS.has('--force')) {
@@ -75,7 +91,18 @@ async function main() {
     }
   }
 
+  store.setSetting(LOCK_KEY, Date.now());
   store.startRun(runId);
+
+  // Size the lookback from the gap since the last successful run. A fixed wide
+  // window would make every hourly run re-paginate a day of postings to find
+  // the newest hour; a fixed narrow one would lose everything posted while the
+  // lid was shut. This does both jobs.
+  const lastRun = store.lastCompletedRun();
+  cfg.filters.postedWithinHours = resolveWindowHours(lastRun?.started_at ?? null, cfg.filters);
+  log.info(lastRun?.started_at
+    ? `Lookback window: ${cfg.filters.postedWithinHours}h (last run ${((Date.now() - lastRun.started_at) / 3_600_000).toFixed(1)}h ago).`
+    : `Lookback window: ${cfg.filters.postedWithinHours}h (no previous run to measure from).`);
 
   const clock = budget(cfg.limits.maxRuntimeMinutes);
   const notes = [];
@@ -438,6 +465,7 @@ async function main() {
   // listings that have aged out of the window.
   if (!DRY_RUN) await publish(store, cfg, newJobs.length);
 
+  store.setSetting(LOCK_KEY, 0);
   store.close();
   process.exitCode = status === 'error' ? 1 : 0;
 }

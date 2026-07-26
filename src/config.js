@@ -235,3 +235,30 @@ export function matchTitle(title, titleTerms) {
   const t = String(title || '');
   return titleTerms.some((term) => titleRegex(term).test(t));
 }
+
+/**
+ * How many hours back a run should look.
+ *
+ * Derived from the gap since the last successful run rather than fixed. With
+ * hourly runs a fixed 30-hour window means re-paginating a day of postings
+ * every time to find the newest hour; a fixed 3-hour one loses everything
+ * posted while the lid was shut. Two hours of slack keeps a posting sitting
+ * right on the boundary from slipping through.
+ *
+ * @param {number|null} lastRunStartedAt epoch ms, or null if there is none
+ * @param {object} filters config.filters
+ * @param {number} now epoch ms
+ */
+export function resolveWindowHours(lastRunStartedAt, filters, now = Date.now()) {
+  const min = filters.minWindowHours ?? 3;
+  const max = filters.maxWindowHours ?? 36;
+
+  if (!filters.adaptiveWindow) return filters.postedWithinHours ?? 24;
+  if (!lastRunStartedAt) return max;
+
+  const gapHours = (now - lastRunStartedAt) / 3_600_000;
+  // A clock skew or a future timestamp must not produce a negative window.
+  if (!Number.isFinite(gapHours) || gapHours < 0) return max;
+
+  return Math.round(Math.min(max, Math.max(min, gapHours + 2)));
+}

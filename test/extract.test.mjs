@@ -1,5 +1,5 @@
 import { extractStipend, formatStipend, extractDuration, extractSkills, extractWorkplaceType, parseRelativeTime, jobIdFromUrl } from '../src/extract.js';
-import { normaliseCompany, matchCompany, matchTitle } from '../src/config.js';
+import { normaliseCompany, matchCompany, matchTitle, resolveWindowHours } from '../src/config.js';
 import { offlineSummary } from '../src/summarize.js';
 
 let pass = 0, fail = 0;
@@ -100,6 +100,24 @@ check('full time rejected', matchTitle('Senior Software Engineer', terms), false
 check('International NOT intern', matchTitle('International Sales Manager', terms), false);
 check('Internal NOT intern', matchTitle('Internal Audit Manager', terms), false);
 check('disabled passes all', matchTitle('Senior Software Engineer', []), true);
+
+console.log('\n== adaptive lookback window ==');
+{
+  const f = { adaptiveWindow: true, minWindowHours: 3, maxWindowHours: 36, postedWithinHours: 30 };
+  const now = Date.parse('2026-07-26T12:00:00Z');
+  const ago = (h) => now - h * 3600000;
+  check('hourly run floors at min', resolveWindowHours(ago(1), f, now), 3);
+  check('half-hour gap floors too', resolveWindowHours(ago(0.5), f, now), 3);
+  check('2h gap -> 4h', resolveWindowHours(ago(2), f, now), 4);
+  check('9h overnight -> 11h', resolveWindowHours(ago(9), f, now), 11);
+  check('60h gap caps at max', resolveWindowHours(ago(60), f, now), 36);
+  check('no previous run -> max', resolveWindowHours(null, f, now), 36);
+  // A future timestamp (clock skew, restored backup) must never yield a
+  // negative or tiny window that would silently drop everything.
+  check('future timestamp -> max', resolveWindowHours(now + 9e6, f, now), 36);
+  check('adaptive off uses fixed', resolveWindowHours(ago(1), { ...f, adaptiveWindow: false }, now), 30);
+  check('adaptive off, no fixed set', resolveWindowHours(ago(1), { adaptiveWindow: false }, now), 24);
+}
 
 console.log('\n== offline summary ==');
 const desc = `About us

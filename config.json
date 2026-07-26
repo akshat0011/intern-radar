@@ -28,8 +28,12 @@
   ],
 
   "filters": {
+    "adaptiveWindow": true,
+    "_adaptiveWindow_note": "Sizes the lookback from how long ago the last successful run was, instead of using one fixed number. With hourly runs a fixed 30-hour window would re-paginate 30 hours of postings every time to find the newest hour - roughly 30x the page loads for nothing. After a normal hourly run the window is ~3h; after an overnight sleep it stretches to cover the gap, so nothing is missed.",
+    "minWindowHours": 3,
+    "maxWindowHours": 36,
     "postedWithinHours": 30,
-    "_postedWithinHours_note": "Deliberately wider than 24, so a run delayed by a closed lid or a missed slot still catches everything posted since the last one. The overlap costs nothing because jobs are de-duplicated by id - a repeat is one database lookup, not a page load.",
+    "_postedWithinHours_note": "Used only when adaptiveWindow is false, or when there is no previous run to measure from.",
     "sortBy": "recent",
     "jobTypes": [],
     "_jobTypes_note": "DELIBERATELY EMPTY. Setting this to ['INTERNSHIP'] sends f_JT=I, which trusts the recruiter's employment-type tag - and they get it wrong constantly. A real case: Salesforce's 'Summer 2027 Intern - Software Engineer' is tagged Full-time, so f_JT=I hid it completely. The title filter and role classifier below decide what is an internship instead, from the title itself. LinkedIn f_JT codes if you ever want them: F=full-time P=part-time C=contract T=temporary I=internship V=volunteer O=other."
@@ -60,14 +64,15 @@
     "longBreakEvery": 12,
     "longBreak": [45000, 90000],
     "_longBreak_note": "Every N job cards, take a longer human-style break.",
-    "startupJitter": [0, 900000],
-    "_startupJitter_note": "Scheduled runs wait a random extra 0-15 min before starting, so activity does not land at exactly 12:00:00 every single day. Manual runs ignore this."
+    "startupJitter": [0, 240000],
+    "_startupJitter_note": "Scheduled runs wait a random extra 0-4 min, so activity does not land at exactly HH:00:00 every hour. Kept short because runs are hourly - a long jitter would push one slot into the next."
   },
 
   "limits": {
-    "maxRuntimeMinutes": 90,
+    "maxRuntimeMinutes": 45,
     "maxPagesPerSearch": 40,
     "maxDetailsPerRun": 100,
+    "_maxRuntimeMinutes_note": "Must stay comfortably under 60 with hourly runs, or two runs would overlap and fight over the Brave profile lock. A run already refuses to start while another is in progress, but the budget should not rely on that.",
     "_note": "Safety backstops, not the normal stopping point. Paging normally ends when LinkedIn's 'Next' button runs out, which means every job in the window has been seen. These caps only bite if a search is unusually deep - and when one does bite, the report says so explicitly rather than pretending the search finished.",
     "_maxPagesPerSearch_note": "40 pages x 25 = 1000 results, which is roughly LinkedIn's own ceiling for a single search. With the 24-hour filter on, most searches end far sooner."
   },
