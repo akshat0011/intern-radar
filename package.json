@@ -1,0 +1,24 @@
+{
+  "name": "linkedin-internship-watcher",
+  "version": "1.0.0",
+  "description": "Watches LinkedIn for new internships at a watchlist of companies, twice daily, and reports them.",
+  "author": "akshat0011",
+  "license": "MIT",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "login": "node --no-warnings=ExperimentalWarning bin/login.js",
+    "start": "node --no-warnings=ExperimentalWarning src/index.js",
+    "dry-run": "node --no-warnings=ExperimentalWarning src/index.js --dry-run",
+    "report": "node --no-warnings=ExperimentalWarning bin/show-report.js",
+    "test": "node test/extract.test.mjs",
+    "install-schedule": "bash bin/install-schedule.sh",
+    "uninstall-schedule": "bash bin/uninstall-schedule.sh"
+  },
+  "dependencies": {
+    "playwright-core": "^1.56.0"
+  }
+}

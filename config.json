@@ -1,0 +1,85 @@
+{
+  "_comment": "Edit this file to control what gets watched. Everything else has sane defaults.",
+
+  "companiesFile": "companies.json",
+  "_companiesFile_note": "The main watchlist, ~600 companies grouped by sector. Delete whole groups from that file to narrow coverage. Anything added to the inline 'companies' list below is merged on top of it.",
+
+  "_companies_note": "Your own additions go here - they are merged with companiesFile.",
+  "companies": [
+    { "name": "Dream11", "aliases": ["Dream Sports"] }
+  ],
+
+  "searches": [
+    { "keywords": "internship", "location": "India" },
+    { "keywords": "software engineer intern", "location": "India" },
+    { "keywords": "SDE intern", "location": "India" }
+  ],
+
+  "filters": {
+    "postedWithinHours": 24,
+    "sortBy": "recent",
+    "jobTypes": ["INTERNSHIP"],
+    "_jobTypes_note": "LinkedIn f_JT codes: F=full-time P=part-time C=contract T=temporary I=internship V=volunteer O=other. Use [] to disable this filter entirely (recommended - many internships are mislabelled as full-time by recruiters)."
+  },
+
+  "matching": {
+    "requireCompanyMatch": true,
+    "_requireCompanyMatch_note": "true = only open+extract jobs from companies in the watchlist above. Set false to capture every job in the last 24h (much slower, much higher ban risk).",
+    "titleMustMatch": ["intern", "internship", "trainee", "co-op", "coop", "summer analyst", "apprentice"],
+    "_titleMustMatch_note": "A job must contain one of these in its title. Use [] to disable."
+  },
+
+  "pacing": {
+    "_note": "All values in milliseconds. Delays are randomised between min and max on every action. Raising these lowers ban risk and lengthens the run.",
+    "betweenCards": [4000, 9000],
+    "betweenPages": [8000, 16000],
+    "betweenSearches": [20000, 40000],
+    "scrollStep": [500, 1400],
+    "afterNavigation": [3000, 6000],
+    "warmupOnFeed": [6000, 12000],
+    "longBreakEvery": 12,
+    "longBreak": [45000, 90000],
+    "_longBreak_note": "Every N job cards, take a longer human-style break.",
+    "startupJitter": [0, 900000],
+    "_startupJitter_note": "Scheduled runs wait a random extra 0-15 min before starting, so activity does not land at exactly 12:00:00 every single day. Manual runs ignore this."
+  },
+
+  "limits": {
+    "maxRuntimeMinutes": 90,
+    "maxPagesPerSearch": 40,
+    "maxDetailsPerRun": 100,
+    "_note": "Safety backstops, not the normal stopping point. Paging normally ends when LinkedIn's 'Next' button runs out, which means every job in the window has been seen. These caps only bite if a search is unusually deep - and when one does bite, the report says so explicitly rather than pretending the search finished.",
+    "_maxPagesPerSearch_note": "40 pages x 25 = 1000 results, which is roughly LinkedIn's own ceiling for a single search. With the 24-hour filter on, most searches end far sooner."
+  },
+
+  "notifications": {
+    "onCaptcha": true,
+    "onNewJobs": true,
+    "onError": true,
+    "openReportWhenDone": true,
+    "_openReportWhenDone_note": "Auto-open the HTML report in your default browser when new jobs are found."
+  },
+
+  "browser": {
+    "headed": true,
+    "_headed_note": "Must stay true. Headless Chromium reports 'HeadlessChrome' in its user agent and an 800x600 screen - trivially detectable, and you could not solve a CAPTCHA in a window you cannot see. The tool refuses to start if this is false.",
+    "windowSize": [1512, 950],
+    "windowPosition": [40, 40],
+    "_windowPosition_note": "Where the Brave window opens. Set to [-2400, -2400] to park it off-screen if you find it distracting - but then you would have to drag it back into view to solve a CAPTCHA.",
+    "returnFocus": true,
+    "_returnFocus_note": "Brave always steals keyboard focus when it launches. This hands focus straight back to whatever app you were using, so a run at 12:00 does not interrupt you.",
+    "disableBraveShields": true,
+    "_disableBraveShields_note": "Passes --disable-brave-extension. Mostly belt-and-braces: on a fresh profile Shields has no filter lists to work from, and LinkedIn was verified to load fine either way."
+  },
+
+  "safety": {
+    "cooldownHoursAfterRateLimit": 24,
+    "_cooldownHoursAfterRateLimit_note": "If LinkedIn ever rate-limits or restricts the session, the tool refuses to run again for this many hours instead of walking back into it. Set 0 to disable."
+  },
+
+  "summarizer": {
+    "mode": "offline",
+    "_mode_note": "'offline' = regex/extractive summary, no API key, free. 'claude' = better summaries via the Claude API; set ANTHROPIC_API_KEY in your environment and change this to 'claude'.",
+    "model": "claude-haiku-4-5-20251001"
+  }
+}

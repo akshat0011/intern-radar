@@ -1,0 +1,237 @@
+{
+  "_note": "Company watchlist, grouped for readability. config.js flattens every group into one list — the grouping is purely so you can find and delete whole categories easily. An entry is either a plain string or { name, aliases }. Matching is normalised and whole-word, so 'Razorpay' already catches 'Razorpay Software Private Limited'.",
+
+  "global-tech": [
+    { "name": "Google", "aliases": ["Google DeepMind", "YouTube"] },
+    { "name": "Microsoft", "aliases": ["GitHub"] },
+    { "name": "Amazon", "aliases": ["AWS", "Amazon Web Services"] },
+    { "name": "Meta", "aliases": ["Facebook", "Instagram", "WhatsApp"] },
+    "Apple", "Netflix", "Adobe", "Salesforce", "Oracle", "IBM", "SAP",
+    "ServiceNow", "Atlassian", "Workday", "Intuit", "Autodesk", "PayPal",
+    "eBay", "Expedia", "Booking.com", "Dropbox", "Zoom", "Twilio", "Okta",
+    "Splunk", "Datadog", "MongoDB", "Elastic", "Confluent", "HashiCorp",
+    "GitLab", "JFrog", "Databricks", "Snowflake", "Palantir", "Stripe",
+    "Uber", "Airbnb", "Snap", "Pinterest", "Coinbase", "Shopify", "Squarespace",
+    "Unity Technologies", "Epic Games", "Roblox", "Electronic Arts",
+    "Activision Blizzard", "Spotify", "SoundCloud", "Grammarly", "Canva",
+    "Figma", "Notion", "Miro", "Asana", "Monday.com", "Zendesk", "Freshdesk",
+    "HubSpot", "Klaviyo", "Braze", "Amplitude", "Mixpanel", "Segment",
+    "New Relic", "PagerDuty", "Sumo Logic", "Dynatrace", "AppDynamics",
+    "Nutanix", "VMware", "Citrix", "Rubrik", "Cohesity", "Veeam", "Commvault",
+    "Pure Storage", "NetApp", "Dell Technologies", "HPE", "Lenovo",
+    "Juniper Networks", "Arista Networks", "Extreme Networks", "F5 Networks",
+    "Akamai", "Cloudflare", "Fastly", "DigitalOcean",
+    { "name": "Walmart", "aliases": ["Walmart Global Tech"] },
+    "Lowe's", "Tesco", "Wayfair", "DoorDash", "Instacart", "Rippling",
+    "Navan", "Toast", "Gusto", "Airtable", "Vercel", "Netlify", "Sentry",
+    "LaunchDarkly", "Postman Labs", "SolarWinds", "Progress Software",
+    "Teradata", "Informatica", "Talend", "Alteryx", "Qlik", "Tableau",
+    "Sisense", "ThoughtSpot", "Fivetran", "dbt Labs", "Starburst"
+  ],
+
+  "semiconductor-hardware": [
+    "Nvidia", "Intel", "AMD", "Qualcomm", "Broadcom", "Marvell Technology",
+    "Micron Technology", "Texas Instruments", "Analog Devices", "NXP Semiconductors",
+    "Infineon Technologies", "STMicroelectronics", "Renesas Electronics",
+    { "name": "Samsung Semiconductor", "aliases": ["Samsung R&D", "Samsung Research"] },
+    "MediaTek", "Synopsys", "Cadence Design Systems", "Siemens EDA",
+    "Lam Research", "Applied Materials", "KLA Corporation", "ASML",
+    "GlobalFoundries", "Western Digital", "Seagate Technology", "Arm",
+    "SiFive", "Ambarella", "Cirrus Logic", "Skyworks Solutions", "Qorvo",
+    "Microchip Technology", "onsemi", "Nordic Semiconductor", "Silicon Labs",
+    "Rambus", "Tessolve", "Sasken Technologies", "Ittiam Systems",
+    "Signalchip", "InCore Semiconductors", "Mindgrove Technologies",
+    "Cisco", "Nokia", "Ericsson", "Samsung", "LG Electronics", "Sony",
+    "Panasonic", "Hitachi", "Fujitsu", "Toshiba", "Canon", "Philips"
+  ],
+
+  "indian-it-services": [
+    { "name": "Tata Consultancy Services", "aliases": ["TCS"] },
+    "Infosys", "Wipro", "HCLTech", "Tech Mahindra", "LTIMindtree",
+    "L&T Technology Services", "Mphasis", "Persistent Systems", "Zensar Technologies",
+    "Cyient", "KPIT Technologies", "Coforge", "Hexaware Technologies",
+    "Birlasoft", "Sonata Software", "Happiest Minds", "Mastek",
+    "Newgen Software", "Ramco Systems", "Nucleus Software", "eClerx",
+    "Firstsource", "WNS Global Services", "Genpact", "Accenture",
+    "Cognizant", "Capgemini", "DXC Technology", "NTT DATA", "Atos",
+    "Tata Elxsi", "Tata Technologies", "Quest Global", "Alten",
+    "Harman", "Bosch", "Siemens", "ABB", "Schneider Electric", "Honeywell",
+    "Emerson", "Rockwell Automation", "GE", "Cummins", "Caterpillar",
+    "John Deere", "Danaher", "Thermo Fisher Scientific"
+  ],
+
+  "consulting-analytics": [
+    "McKinsey & Company", "Boston Consulting Group", "Bain & Company",
+    "Deloitte", "PwC", "EY", "KPMG", "ZS Associates", "Kearney",
+    "Oliver Wyman", "Alvarez & Marsal", "Analysys Mason",
+    "Fractal Analytics", "Mu Sigma", "Tiger Analytics", "LatentView Analytics",
+    "Course5 Intelligence", "Gramener", "Quantiphi", "Tredence", "Brillio",
+    "Affine", "TheMathCompany", "Sigmoid", "Polestar Solutions",
+    "Absolutdata", "Axtria", "Indegene", "Nielsen", "Kantar", "Ipsos",
+    "GfK", "Gartner", "Forrester", "S&P Global", "Moody's", "MSCI",
+    "FactSet", "Morningstar", "Bloomberg", "Refinitiv", "Crisil", "ICRA"
+  ],
+
+  "banking-quant-trading": [
+    "Goldman Sachs", { "name": "JPMorgan Chase", "aliases": ["JP Morgan", "J.P. Morgan"] },
+    "Morgan Stanley", "Citi", "Barclays", "Deutsche Bank", "UBS", "HSBC",
+    "Standard Chartered", "Wells Fargo", "Bank of America", "BNY Mellon",
+    "State Street", "Northern Trust", "Fidelity Investments", "BlackRock",
+    "Nomura", "Macquarie", "Societe Generale", "BNP Paribas", "NatWest",
+    "Credit Agricole", "Mizuho", "MUFG", "American Express", "Visa",
+    "Mastercard", "Discover", "Synchrony", "Fiserv", "FIS", "Global Payments",
+    { "name": "D. E. Shaw", "aliases": ["DE Shaw", "D.E. Shaw"] },
+    "Jane Street", "Optiver", "Tower Research Capital", "Quadeye",
+    "Graviton Research Capital", "WorldQuant", "AlphaGrep Securities",
+    "Squarepoint Capital", "Millennium Management", "Citadel", "Two Sigma",
+    "IMC Trading", "DRW", "Jump Trading", "Hudson River Trading",
+    "Susquehanna International Group", "Arcesium", "Balyasny Asset Management",
+    "Point72", "Man Group", "Marshall Wace", "XTX Markets", "Akuna Capital",
+    "Da Vinci Derivatives", "Maven Securities", "Dolat Capital",
+    "Futures First", "Estee Advisors", "iRage Capital", "NK Securities",
+    "Open Futures", "Mansukh Securities"
+  ],
+
+  "indian-fintech": [
+    "Razorpay", { "name": "Paytm", "aliases": ["One97 Communications"] },
+    "PhonePe", "CRED", "Zerodha", "Groww", "Upstox", "Angel One", "Smallcase",
+    "INDmoney", "Jupiter", "Fi Money", "Slice", "Uni Cards", "KreditBee",
+    "Navi", "Lendingkart", "Aye Finance", "Pine Labs", "BharatPe", "Mswipe",
+    "Cashfree Payments", "Juspay", "Setu", "Decentro", "Zeta", "M2P Fintech",
+    "Perfios", "Signzy", "IDfy", "Karza Technologies", "ClearTax", "Vayana",
+    "Yubi", "Rupeek", "Khatabook", "OkCredit", "Instamojo", "PayU",
+    "BillDesk", "CCAvenue", "MobiKwik", "Freecharge", "Jio Financial Services",
+    "Bajaj Finserv", "HDFC Bank", "ICICI Bank", "Axis Bank", "Kotak Mahindra Bank",
+    "IDFC First Bank", "IndusInd Bank", "Yes Bank", "AU Small Finance Bank",
+    "Policybazaar", "Acko", "Digit Insurance", "Turtlemint", "InsuranceDekho",
+    "Coverfox", "Plum", "Onsurity", "Refyne", "Jai Kisan", "Samunnati"
+  ],
+
+  "indian-consumer-ecommerce": [
+    "Flipkart", "Myntra", "Meesho", "Nykaa", "Ajio", "Snapdeal", "FirstCry",
+    "Purplle", "Mamaearth", "boAt", "Noise", "Wakefit", "Pepperfry",
+    "Urban Company", "Licious", "Country Delight", "BigBasket", "Blinkit",
+    "Zepto", "Swiggy", "Zomato", "Rapido", { "name": "Ola", "aliases": ["Ola Cabs", "ANI Technologies"] },
+    "Oyo", "MakeMyTrip", "Goibibo", "Cleartrip", "Yatra", "EaseMyTrip",
+    "ixigo", "RedBus", "Lenskart", "Titan Company", "Bata India", "Raymond",
+    "Trent", "Reliance Retail", "Avenue Supermarts", "Tata Cliq", "Bluestone",
+    "CaratLane", "Melorra", "Sugar Cosmetics", "Plum Goodness", "Bombay Shaving Company",
+    "The Man Company", "Beardo", "WOW Skin Science", "Minimalist", "Foxtale",
+    "Zouk", "Chumbak", "Nicobar", "FabIndia", "Westside", "Max Fashion"
+  ],
+
+  "indian-saas-product": [
+    "Freshworks", "Zoho", "Postman", "BrowserStack", "Chargebee", "Sprinklr",
+    "Druva", "Icertis", "Innovaccer", "Darwinbox", "Whatfix", "MoEngage",
+    "CleverTap", "WebEngage", "Netcore Cloud", "Exotel", "Knowlarity",
+    "Ozonetel", "Kaleyra", "Gupshup", "Haptik", "Yellow.ai", "Verloop",
+    "Observe.ai", "Uniphore", "LeadSquared", "Zluri", "Atlan", "Hasura",
+    "Appsmith", "ToolJet", "Fyle", "Keka", "greytHR", "Zimyo", "Springworks",
+    "Multiplier", "Skuad", "Turing", "Chargezen", "Rocketlane", "Everstage",
+    "Nurture Farm", "SirionLabs", "HighRadius", "Zenoti", "Capillary Technologies",
+    "Vymo", "Locus", "FarEye", "Shipsy", "Loginext", "Bizom", "Wingify",
+    "VWO", "Kissflow", "Facilio", "Zluri", "Scalefusion", "42Gears",
+    "MindTickle", "Eightfold AI", "Entropik", "Mad Street Den", "Vue.ai",
+    "Slintel", "Avoma", "Airmeet", "Hippo Video", "Animaker", "InVideo",
+    "Rocketium", "Toch AI", "Gan.ai"
+  ],
+
+  "indian-deeptech-ai": [
+    "Sarvam AI", "Krutrim", "Qure.ai", "SigTuple", "Niramai", "Tricog Health",
+    "Wadhwani AI", "Ati Motors", "GreyOrange", "Rapyuta Robotics",
+    "Niqo Robotics", "CynLr", "Peppermint Robotics", "Botlab Dynamics",
+    "Skyroot Aerospace", "Agnikul Cosmos", "Pixxel", "Dhruva Space",
+    "Bellatrix Aerospace", "Digantara", "GalaxEye Space", "TakeMe2Space",
+    "Ideaforge", "NewSpace Research", "Tonbo Imaging", "Sagar Defence",
+    "Log9 Materials", "Ather Energy", "Ola Electric", "Ultraviolette Automotive",
+    "Simple Energy", "River Mobility", "Euler Motors", "Battery Smart",
+    "SUN Mobility", "Zypp Electric", "Yulu", "Bounce Infinity", "Exponent Energy",
+    "Chara Technologies", "Sedemac", "Minus Zero", "Swaayatt Robots"
+  ],
+
+  "indian-edtech": [
+    "BYJU'S", "Unacademy", "Vedantu", "PhysicsWallah", "Cuemath", "upGrad",
+    "Simplilearn", "Great Learning", "Scaler", "Coding Ninjas", "GeeksforGeeks",
+    "InterviewBit", "Newton School", "AlmaBetter", "Masai School",
+    "Emeritus", "Eruditus", "Skill-Lync", "LEAD School", "Teachmint",
+    "Classplus", "Doubtnut", "Toppr", "Testbook", "Adda247", "Oliveboard",
+    "iNeuron", "Board Infinity", "Crio.Do", "Relevel", "Sunstone",
+    "Career Launcher", "Aakash Educational Services", "Allen Career Institute",
+    "FIITJEE", "Extramarks", "Cuvette", "Talentedge"
+  ],
+
+  "indian-healthtech-biotech": [
+    "Practo", "Tata 1mg", "PharmEasy", "Netmeds", "Apollo 24/7", "MediBuddy",
+    "HealthifyMe", "Cult.fit", "Portea Medical", "Pristyn Care", "Wysa",
+    "Mfine", "Lybrate", "DocsApp", "Onsurity", "Nintee",
+    "Sun Pharmaceutical", "Cipla", "Dr. Reddy's Laboratories", "Lupin",
+    "Biocon", "Aurobindo Pharma", "Zydus Lifesciences", "Torrent Pharmaceuticals",
+    "Glenmark Pharmaceuticals", "Divi's Laboratories", "Syngene International",
+    "Serum Institute of India", "Bharat Biotech", "Mankind Pharma",
+    "Alkem Laboratories", "Piramal", "Wockhardt", "Strides Pharma",
+    "Novartis", "Pfizer", "AstraZeneca", "GSK", "Sanofi", "Roche",
+    "Novo Nordisk", "Bristol Myers Squibb", "Eli Lilly", "Merck", "Amgen",
+    "Johnson & Johnson", "Abbott", "Medtronic", "Boston Scientific",
+    "Becton Dickinson", "Baxter", "Stryker"
+  ],
+
+  "logistics-supplychain": [
+    "Delhivery", "Ecom Express", "Shadowfax", "Xpressbees", "Blue Dart",
+    "BlackBuck", "Porter", "Rivigo", "Zetwerk", "Moglix", "Infra.Market",
+    "OfBusiness", "Udaan", "ElasticRun", "Jumbotail", "DeHaat", "WayCool",
+    "Ninjacart", "Captain Fresh", "Vegrow", "Bijak", "Arya.ag",
+    "Stellapps", "Fasal", "Cropin", "AgNext", "Intello Labs",
+    "Maersk", "DHL", "FedEx", "UPS", "DP World", "Kuehne+Nagel", "Flexport"
+  ],
+
+  "media-telecom-gaming": [
+    "Bharti Airtel", { "name": "Reliance Jio", "aliases": ["Jio Platforms"] },
+    "Vodafone Idea", "JioHotstar", "Disney Star", "Sony Pictures Networks",
+    "ZEE Entertainment", "Times Internet", "InMobi", "Glance", "ShareChat",
+    "Dailyhunt", "Pratilipi", "Pocket FM", "Kuku FM", "Spotify India",
+    "Dream11", "Mobile Premier League", "Games24x7", "Zupee", "WinZO",
+    "Nazara Technologies", "Krafton India", "Ubisoft", "Rockstar Games",
+    "Zynga", "SuperGaming", "Moonfrog Labs", "Lightfury Games", "Dhruva Interactive",
+    "Sumo Digital", "Technicolor", "DNEG", "Prime Focus", "Framestore",
+    "Netflix India", "Amazon Prime Video", "JioSaavn", "Gaana", "Wynk"
+  ],
+
+  "cybersecurity": [
+    "Palo Alto Networks", "Fortinet", "CrowdStrike", "Zscaler", "SentinelOne",
+    "Trellix", "Sophos", "Check Point Software", "Rapid7", "Tenable",
+    "Qualys", "Netskope", "Varonis", "Proofpoint", "Imperva", "Forcepoint",
+    "Thales", "Entrust", "CyberArk", "BeyondTrust", "Delinea", "Snyk",
+    "Aqua Security", "Sysdig", "Wiz", "Lacework", "Arctic Wolf",
+    "Seclore", "Lucideus", "SafeHouse Tech", "AppSecure", "CloudSEK",
+    "Traceable", "ArmorCode", "Uptycs", "Cyware", "Sequretek"
+  ],
+
+  "automotive-aerospace-industrial": [
+    "Maruti Suzuki", "Tata Motors", "Mahindra & Mahindra", "Hyundai Motor India",
+    "Kia India", "Toyota Kirloskar Motor", "Honda Cars India", "Ashok Leyland",
+    "Eicher Motors", "TVS Motor Company", "Bajaj Auto", "Hero MotoCorp",
+    "Royal Enfield", "Mercedes-Benz Research and Development India",
+    "BMW TechWorks India", "Volvo Group", "Continental", "ZF Group",
+    "Valeo", "Faurecia", "Magna International", "Aptiv", "Denso",
+    "Boeing India", "Airbus India", "Collins Aerospace", "Safran",
+    "GE Aerospace", "Rolls-Royce", "Pratt & Whitney", "Hindustan Aeronautics",
+    "Bharat Electronics", "Bharat Dynamics", "Larsen & Toubro", "Godrej Aerospace",
+    "Tata Advanced Systems", "Adani Defence", "Kalyani Group", "Bharat Forge",
+    "Thermax", "Kirloskar", "Voltas", "Blue Star", "Havells", "Polycab",
+    "Amara Raja", "Exide Industries", "Sona Comstar", "Uno Minda",
+    "Motherson", "Endurance Technologies", "Varroc"
+  ],
+
+  "fmcg-conglomerates": [
+    "Hindustan Unilever", "ITC", "Nestle India", "Procter & Gamble",
+    "Mondelez International", "PepsiCo", "Coca-Cola", "Britannia Industries",
+    "Marico", "Dabur", "Godrej Consumer Products", "Emami", "Colgate-Palmolive",
+    "Reckitt", "Kellogg's", "Amul", "Parle Products", "Haldiram's",
+    "Tata Consumer Products", "Adani Group", "Reliance Industries",
+    "Aditya Birla Group", "JSW Group", "Vedanta", "Hindalco", "Tata Steel",
+    "Jindal Steel", "UltraTech Cement", "Ambuja Cements", "Shree Cement",
+    "Asian Paints", "Berger Paints", "Pidilite Industries", "Indian Oil",
+    "Bharat Petroleum", "Hindustan Petroleum", "ONGC", "NTPC", "Power Grid",
+    "Tata Power", "Adani Green Energy", "ReNew Power", "Suzlon", "Waaree Energies"
+  ]
+}
