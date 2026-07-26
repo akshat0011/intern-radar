@@ -88,6 +88,10 @@ if [ "$MODE" = "--relocate" ]; then
       exit 1
     fi
     ORIGINAL="$HERE"
+    # Step out of the directory before deleting it. Your shell is almost
+    # certainly sitting in it, and removing the cwd makes every later command
+    # print "getcwd: cannot access parent directories".
+    cd / || exit 1
     rm -rf "$ORIGINAL"
     ln -s "$TARGET_DIR" "$ORIGINAL"
     echo "Done. $ORIGINAL is now a symlink to the real location."
