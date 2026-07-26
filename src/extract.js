@@ -82,6 +82,24 @@ const MONEY_KEYWORD = /\b(stipend|salary|compensation|remuneration|pay|payment|p
 const CURRENCY_HINT = /[₹$€£¥]|\b(inr|usd|eur|gbp|rs|lpa|lakhs?|lac|crore)\b/i;
 
 /**
+ * Money that is emphatically not the candidate's.
+ *
+ * Company blurbs are full of large currency figures — "received more than $410
+ * million in funding" got published as a $410,000,000 intern stipend before this
+ * existed. A line matching any of these is not a compensation line.
+ */
+const NOT_COMPENSATION = /\b(funding|funded|valuation|valued|raised|raising|investors?|investment|revenue|turnover|arr|gmv|market\s+cap|series\s+[a-f]\b|acquisition|acquired|profit|assets under management|aum|portfolio|transactions?|processed|donat|grant)\b/i;
+
+/** A stipend must be quoted against a period, or be a plausible one-off. */
+const PERIOD_HINT = /\b(per|\/|monthly|weekly|yearly|annually|annum|month|week|year|hour|day|pm\b|pa\b|lpa)\b/i;
+
+/**
+ * Nothing an intern is paid runs to a crore as an unqualified lump sum. A
+ * figure this large with no period attached is a company statistic, not pay.
+ */
+const IMPLAUSIBLE_LUMP = 10_000_000;
+
+/**
  * Find stipend/salary in text. Prefers an explicit range, then a figure with a
  * currency marker, then a bare figure on a line that talks about money.
  * Returns null when nothing credible is found — a wrong number is worse than
@@ -98,8 +116,14 @@ export function extractStipend(...texts) {
 
   for (const line of haystack.split('\n')) {
     if (line.length > 2000) continue; // Runaway line; not worth scanning.
+
+    // Funding, valuation and revenue figures are the single biggest source of
+    // wrong stipends. Drop those lines before looking for numbers at all.
+    if (NOT_COMPENSATION.test(line)) continue;
+
     const hasKeyword = MONEY_KEYWORD.test(line);
     if (!hasKeyword && !CURRENCY_HINT.test(line)) continue;
+    const hasPeriod = PERIOD_HINT.test(line);
 
     // 1. An explicit range: "₹20,000 - ₹40,000", "$25 to $45".
     const range = new RegExp(
@@ -124,7 +148,11 @@ export function extractStipend(...texts) {
     }
 
     // 2. A figure carrying a currency marker: "₹30,000", "Rs. 15,000".
-    const withCurrency = new RegExp(`(${CURRENCY})\\s*(${AMOUNT})`, 'i').exec(line);
+    // A currency symbol on its own is not evidence of pay — the line must also
+    // either talk about compensation or quote a period.
+    const withCurrency = (hasKeyword || hasPeriod)
+      ? new RegExp(`(${CURRENCY})\\s*(${AMOUNT})`, 'i').exec(line)
+      : null;
     if (withCurrency) {
       const amount = parseAmount(withCurrency[2]);
       if (amount && (amount.scaled || amount.value >= 10)) {
@@ -157,9 +185,13 @@ export function extractStipend(...texts) {
     }
   }
 
-  if (!candidates.length) return null;
-  candidates.sort((a, b) => b.score - a.score || b.max - a.max);
-  const best = candidates[0];
+  const plausible = candidates.filter(
+    (c) => c.period || c.max < IMPLAUSIBLE_LUMP,
+  );
+  if (!plausible.length) return null;
+
+  plausible.sort((a, b) => b.score - a.score || b.max - a.max);
+  const best = plausible[0];
   return { min: best.min, max: best.max, currency: best.currency, period: best.period, raw: best.raw };
 }
 

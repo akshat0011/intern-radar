@@ -33,6 +33,20 @@ check('formatted undefined', formatStipend(null), null);
 // The abbreviation full-stop in "Rs." used to split the line and lose the figure.
 money('Rs. mid-sentence', 'The selected intern receives Rs. 20,000 per month. Apply soon.', 20000, 20000, 'INR', 'month');
 
+console.log('\n== company money is not the candidate\'s money ==');
+// A live bug: "received more than $410 million in funding" was published as a
+// $410,000,000 intern stipend on the public site.
+money('funding round', 'To date, Eightfold AI has received more than $410 million in funding and a valuation of over $2B from leading investors', null);
+money('annual revenue', 'The company crossed $50 million in annual revenue last year.', null);
+money('series round', 'We raised $120 million in our Series C round.', null);
+money('assets under mgmt', 'The fund manages Rs 12,000 crore in assets under management.', null);
+money('transaction volume', 'Our platform processed Rs 5,00,00,000 in transactions last month.', null);
+money('market cap', 'A market cap of $2 billion.', null);
+// A currency symbol with neither a compensation word nor a period is not pay.
+money('bare figure, no period', 'The office is a $30 million campus.', null);
+// ...but a period alone is enough, even without the word "stipend".
+money('period without keyword', 'The selected intern receives Rs 20,000 per month.', 20000, 20000, 'INR', 'month');
+
 console.log('\n== duration ==');
 check('6 months', extractDuration('This is a 6 months internship'), '6 months internship');
 check('range', extractDuration('Duration: 3-6 months'), '3-6 months');
