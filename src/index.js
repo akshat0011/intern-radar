@@ -38,6 +38,9 @@ const SCHEDULED = ARGS.has('--scheduled');
  *   --max-details=200  jobs opened this run
  *   --max-minutes=100  wall-clock budget
  *   --sort=relevance   order by LinkedIn's relevance instead of newest-first
+ *   --start-page=15    begin pagination at page 15 (start=350), to resume a
+ *                      backfill that stopped partway rather than re-walking
+ *                      the pages already covered
  */
 function numArg(name) {
   for (const a of ARGS) {
@@ -58,6 +61,7 @@ function strArg(name) {
 
 const OVERRIDES = {
   sortBy: strArg('sort'),
+  startPage: numArg('start-page'),
   windowHours: numArg('window-hours') ?? (numArg('window-days') != null ? numArg('window-days') * 24 : null),
   maxPages: numArg('max-pages'),
   maxDetails: numArg('max-details'),
@@ -215,7 +219,13 @@ async function main() {
         : `${search.keywords}${search.location ? ` @ ${search.location}` : ''}`;
       log.section(`Search: ${label} — ${searchIndex + 1}/${ordered.length}`);
 
-      for (let pageIndex = 0; pageIndex < cfg.limits.maxPagesPerSearch; pageIndex++) {
+      // Resuming a partial backfill starts deeper into the result set. The page
+      // budget counts from there, and LinkedIn's own Next control still decides
+      // where the results actually end.
+      const firstPage = OVERRIDES.startPage ? OVERRIDES.startPage - 1 : 0;
+      const lastPage = firstPage + cfg.limits.maxPagesPerSearch;
+
+      for (let pageIndex = firstPage; pageIndex < lastPage; pageIndex++) {
         if (clock.exceeded()) {
           notes.push(`Stopped at the ${cfg.limits.maxRuntimeMinutes}-minute time limit, partway through "${label}" (page ${pageIndex + 1}). Remaining searches were not scanned.`);
           status = 'partial';
@@ -429,7 +439,7 @@ async function main() {
           log.info(`No pagination control and a short page — treating page ${pageIndex + 1} as the last.`);
           break;
         }
-        if (pageIndex === cfg.limits.maxPagesPerSearch - 1) {
+        if (pageIndex === lastPage - 1) {
           notes.push(`Stopped at the ${cfg.limits.maxPagesPerSearch}-page safety cap for "${label}", and LinkedIn still had a Next page. Raise limits.maxPagesPerSearch in config.json to go deeper.`);
           log.warn(`Hit the ${cfg.limits.maxPagesPerSearch}-page cap for "${label}" with more pages still available.`);
         }
