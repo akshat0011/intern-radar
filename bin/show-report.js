@@ -7,6 +7,29 @@ import { open } from '../src/notify.js';
 
 const store = new Store();
 
+if (process.argv.includes('--roles')) {
+  const unclear = store.skippedByRole('role unclear', 40);
+  const nonTech = store.skippedByRole('not a software role', 25);
+
+  if (!unclear.length && !nonTech.length) {
+    console.log('\nNo role decisions recorded yet. Run a scan first.\n');
+  } else {
+    console.log('\nTitles the classifier could NOT decide — review these:\n');
+    if (!unclear.length) console.log('  (none)');
+    for (const r of unclear) console.log(`  ${String(r.title).slice(0, 62).padEnd(64)} ${r.company ?? ''}`);
+
+    console.log('\nRejected as non-software (a sample, to check for mistakes):\n');
+    if (!nonTech.length) console.log('  (none)');
+    for (const r of nonTech) console.log(`  ${String(r.title).slice(0, 62).padEnd(64)} ${r.company ?? ''}`);
+
+    console.log('\nIf a software role appears in either list, add a distinguishing word to');
+    console.log('matching.extraTechTerms in config.json. If junk survived, add to');
+    console.log('matching.extraNonTechTerms. Both are checked before the built-in lists.\n');
+  }
+  store.close();
+  process.exit(0);
+}
+
 if (process.argv.includes('--skipped')) {
   const rows = store.topSkippedCompanies(50);
   if (!rows.length) {

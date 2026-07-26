@@ -245,6 +245,23 @@ export class Store {
   }
 
   /**
+   * Titles the role classifier could not decide, plus ones it rejected.
+   *
+   * These are the evidence for tuning `extraTechTerms` / `extraNonTechTerms`.
+   * A software role sitting in the 'role unclear' list is a miss, and this is
+   * the only way to notice it.
+   */
+  skippedByRole(reason = 'role unclear', limit = 60) {
+    return this.db.prepare(`
+      SELECT title, company, last_seen_at
+      FROM seen_cards
+      WHERE reason = ? AND title IS NOT NULL AND title != ''
+      ORDER BY last_seen_at DESC
+      LIMIT ?
+    `).all(reason, limit);
+  }
+
+  /**
    * Which companies keep turning up and getting skipped.
    *
    * When a run reports "0 new jobs, 97 off-watchlist", this is the answer to

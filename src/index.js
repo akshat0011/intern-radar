@@ -11,6 +11,7 @@ import { launchBrave, closeBrave } from './browser.js';
 import { ensureHealthy, assertSignedIn, assertListRendered, RunAborted, State } from './guard.js';
 import * as li from './linkedin.js';
 import { resolveSearches } from './searches.js';
+import { classifyRole } from './roles.js';
 import { pause, sleep, idleFidget, humanDelay } from './human.js';
 import { summarize } from './summarize.js';
 import { extractStipend, extractDuration, extractSkills, extractWorkplaceType, parseRelativeTime } from './extract.js';
@@ -78,7 +79,7 @@ async function main() {
 
   const clock = budget(cfg.limits.maxRuntimeMinutes);
   const notes = [];
-  const counters = { pagesScanned: 0, cardsSeen: 0, detailsExtracted: 0, newJobs: 0, skippedStale: 0, skippedCompany: 0, skippedTitle: 0, skippedKnown: 0, failedDetails: 0 };
+  const counters = { pagesScanned: 0, cardsSeen: 0, detailsExtracted: 0, newJobs: 0, skippedStale: 0, skippedCompany: 0, skippedTitle: 0, skippedNonTech: 0, skippedRoleUnclear: 0, skippedKnown: 0, failedDetails: 0 };
 
   log.section(`Run ${runId}`);
   log.info(`${cfg.watchlist.length} watchlist terms across ${cfg.uniqueCompanyCount} companies · mode "${cfg.searchMode ?? 'companies'}" · ${allSearches.length} searches · budget ${cfg.limits.maxRuntimeMinutes}m`);
@@ -172,6 +173,30 @@ async function main() {
             counters.skippedTitle++;
             store.noteSkippedCard(card.jobId, 'title did not match', card.company, card.title);
             continue;
+          }
+
+          // One broad "internship" sweep also returns sales, marketing, HR and
+          // teaching. Keep only software roles, and record anything the
+          // classifier could not decide so its vocabulary can be tuned from
+          // real titles rather than guesswork.
+          if (cfg.matching.softwareRolesOnly) {
+            const role = classifyRole(card.title, {
+              extraPositive: cfg.matching.extraTechTerms ?? [],
+              extraNegative: cfg.matching.extraNonTechTerms ?? [],
+            });
+            const keep = role.verdict === 'tech'
+              || (role.verdict === 'uncertain' && cfg.matching.includeUncertainRoles);
+            if (!keep) {
+              if (role.verdict === 'uncertain') counters.skippedRoleUnclear++;
+              else counters.skippedNonTech++;
+              store.noteSkippedCard(
+                card.jobId,
+                role.verdict === 'uncertain' ? 'role unclear' : 'not a software role',
+                card.company,
+                card.title,
+              );
+              continue;
+            }
           }
 
           const matched = matchCompany(card.company, cfg.watchlist);
@@ -302,7 +327,8 @@ async function main() {
 
   const summaryLine =
     `${counters.cardsSeen} cards scanned · ${counters.detailsExtracted} opened · ${counters.newJobs} new · ` +
-    `skipped ${counters.skippedCompany} off-watchlist, ${counters.skippedTitle} wrong title, ` +
+    `skipped ${counters.skippedCompany} off-watchlist, ${counters.skippedNonTech} non-tech, ` +
+    `${counters.skippedRoleUnclear} role unclear, ${counters.skippedTitle} wrong title, ` +
     `${counters.skippedStale} older than ${cfg.filters.postedWithinHours}h, ${counters.skippedKnown} already known` +
     (counters.failedDetails ? ` · ${counters.failedDetails} failed to read` : '');
 

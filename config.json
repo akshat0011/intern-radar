@@ -9,8 +9,8 @@
     { "name": "Dream11", "aliases": ["Dream Sports"] }
   ],
 
-  "searchMode": "companies",
-  "_searchMode_note": "'companies' = search the watchlist directly, as boolean OR batches (~30 companies per query, so 862 companies costs ~30 queries instead of 862). 'keywords' = use the role keyword list below instead. 'both' = company batches first, then role keywords.",
+  "searchMode": "keywords",
+  "_searchMode_note": "'keywords' (default) = run the searches list below; with a single broad entry that means one sweep paginated to exhaustion, filtered locally. 'companies' = boolean OR batches of the watchlist - NOT recommended: LinkedIn treats those names as loose text and returns mostly unrelated employers. 'both' = company batches then the searches list.",
 
   "companySearch": {
     "batchSize": 30,
@@ -22,63 +22,14 @@
   "defaultLocation": "India",
   "_defaultLocation_note": "Applied to any search written as a plain string. Change this one value to move the whole watch to another city or country.",
 
-  "_searches_note": "One LinkedIn search each. Keep them NARROW - a broad keyword like plain 'internship' returns mostly non-tech postings from tiny companies and burns the run budget on noise. Searches that do not fit the time budget are carried over to the next run rather than dropped, so the whole list gets covered even when one run cannot finish it.",
+  "_searches_note": "One broad search, paginated to exhaustion. Every internship in the window is looked at, then filtered locally by company and by whether the role is software. Add more entries only if you find the broad sweep is missing things - each one costs a full pagination pass.",
   "searches": [
-    "software engineer intern",
-    "software developer intern",
-    "SDE intern",
-    "software engineering internship",
-    "backend developer intern",
-    "frontend developer intern",
-    "full stack developer intern",
-    "web developer intern",
-    "android developer intern",
-    "ios developer intern",
-    "mobile app developer intern",
-    "flutter developer intern",
-    "react developer intern",
-    "node js developer intern",
-    "python developer intern",
-    "java developer intern",
-    "data science intern",
-    "data analyst intern",
-    "data engineer intern",
-    "machine learning intern",
-    "artificial intelligence intern",
-    "deep learning intern",
-    "computer vision intern",
-    "nlp intern",
-    "generative ai intern",
-    "devops intern",
-    "cloud engineer intern",
-    "site reliability engineer intern",
-    "platform engineer intern",
-    "infrastructure intern",
-    "qa intern",
-    "software testing intern",
-    "sdet intern",
-    "automation testing intern",
-    "cybersecurity intern",
-    "security engineer intern",
-    "embedded software intern",
-    "firmware intern",
-    "game developer intern",
-    "blockchain developer intern",
-    "database intern",
-    "api developer intern",
-    "product management intern",
-    "ui ux design intern",
-    "product design intern",
-    "technology analyst intern",
-    "graduate engineer trainee",
-    "software engineer trainee",
-    "research intern computer science",
-    "summer analyst technology"
+    "internship"
   ],
 
   "filters": {
     "postedWithinHours": 30,
-    "_postedWithinHours_note": "Deliberately wider than 24. With 50 keywords rotating across runs, a given keyword may only get its turn once a day; a strict 24-hour window would drop anything posted just before its slot. The overlap costs nothing because jobs are de-duplicated by id - a repeat is one database lookup, not a page load.",
+    "_postedWithinHours_note": "Deliberately wider than 24, so a run delayed by a closed lid or a missed slot still catches everything posted since the last one. The overlap costs nothing because jobs are de-duplicated by id - a repeat is one database lookup, not a page load.",
     "sortBy": "recent",
     "jobTypes": ["INTERNSHIP"],
     "_jobTypes_note": "LinkedIn f_JT codes: F=full-time P=part-time C=contract T=temporary I=internship V=volunteer O=other. Use [] to disable this filter entirely (recommended - many internships are mislabelled as full-time by recruiters)."
@@ -88,7 +39,14 @@
     "requireCompanyMatch": true,
     "_requireCompanyMatch_note": "true = only open+extract jobs from companies in the watchlist above. Set false to capture every job in the last 24h (much slower, much higher ban risk).",
     "titleMustMatch": ["intern", "internship", "trainee", "co-op", "coop", "summer analyst", "apprentice"],
-    "_titleMustMatch_note": "A job must contain one of these in its title. Use [] to disable."
+    "_titleMustMatch_note": "A job must contain one of these in its title. Use [] to disable.",
+    "softwareRolesOnly": true,
+    "_softwareRolesOnly_note": "A broad 'internship' search returns sales, marketing, HR, teaching and video editing too. This keeps only software and tech roles. Titles that match neither list are reported as uncertain rather than guessed at - see `node bin/show-report.js --roles` and add terms to extraTechTerms below.",
+    "includeUncertainRoles": false,
+    "_includeUncertainRoles_note": "true = also keep titles the classifier could not decide (e.g. a bare 'Summer Intern'). Raises recall, adds noise.",
+    "extraTechTerms": [],
+    "extraNonTechTerms": [],
+    "_extraTerms_note": "Your own additions to the classifier, checked ahead of the built-in lists."
   },
 
   "pacing": {

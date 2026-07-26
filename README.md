@@ -12,14 +12,16 @@ It does **not** apply for you. It finds and summarises; you click Apply.
 
 **Automated scraping is against LinkedIn's Terms of Service.** LinkedIn can
 restrict or ban accounts for it. The pacing is deliberately slow and the volume
-small — a run queries the watchlist in batches rather than one company at a
-time, so a full sweep of ~880 companies costs on the order of 20 page loads
-rather than 880. That keeps it well below the thresholds that usually trigger
-enforcement, but it cannot make the risk zero. You are choosing to accept that.
+small: **one** search paginated to exhaustion, then all the filtering done
+locally. Checking 860 companies costs nothing extra, because the company match
+happens in memory against cards already on screen — no per-company request. That
+keeps it well below the thresholds that usually trigger enforcement, but it
+cannot make the risk zero. You are choosing to accept that.
 
-**Request volume is the thing that gets accounts banned**, far more than total
-runtime. If you ever raise the run frequency or drop the pacing values, that is
-the number to keep an eye on.
+**Request volume is what gets accounts banned**, far more than total runtime.
+That is why the design pushes work into local filtering rather than more
+queries. Visiting one jobs page per company would be ~880 loads a run against
+the ~10–30 this does, for the same result.
 
 Three design choices follow from it:
 
@@ -66,10 +68,11 @@ Now set your location in **`config.json`** — one value covers every search:
 "defaultLocation": "India"
 ```
 
-`searches` ships with 50 keywords covering software internships: general SWE,
-backend/frontend/mobile, data and ML, DevOps and cloud, QA, security, embedded,
-games, blockchain, product and design, plus trainee and summer-analyst
-phrasings. Add your own as plain strings.
+`searches` is a single broad entry — `internship`. That one query, paginated
+until LinkedIn runs out of Next, returns every internship in the window; the
+filtering then happens locally, which is free. Role-specific keywords were tried
+and removed: they cost a full pagination pass each and found nothing the broad
+sweep missed.
 
 The watchlist itself lives in **`companies.json`** — about 860 companies with an
 India presence, grouped by sector (global tech, semiconductor, Indian IT
@@ -189,6 +192,7 @@ want them anyway, understanding what that means.
 | `npm test` | Run the extraction unit tests |
 | `node bin/show-report.js --runs` | History of past runs and their counts |
 | `node bin/show-report.js --skipped` | Companies seen but skipped — use this to tune the watchlist |
+| `node bin/show-report.js --roles` | Role-classifier decisions — use this to tune the software filter |
 | `npm run install-schedule` | Register the every-3-hours LaunchAgent |
 | `npm run uninstall-schedule` | Remove the schedule (keeps your data) |
 
@@ -204,26 +208,36 @@ Add `--force` to override an active cooldown: `node src/index.js --force`.
    LinkedIn will serve a public job page to a signed-out visitor that looks
    perfectly healthy — without this check the tool would scrape that and store
    worse data thinking all was well.
-3. **Search.** One URL per entry in `searches`, filtered to a rolling 30-hour
-   window and sorted newest-first (`sortBy=DD`).
-
-   With 50 keywords, a single run may not reach the end of the list before the
-   time budget expires. Rather than cutting the same tail every time — which
-   would mean those keywords never ran at all — the run **resumes where the
-   last one stopped** and wraps around. Every keyword gets its turn within a
-   run or two, and the report says how far it got. The 30-hour window (rather
-   than 24) is the safety margin that makes this lossless: a keyword whose turn
-   comes a little over a day later still sees everything posted since.
+3. **Search.** One broad `internship` query, restricted to internships
+   (`f_JT=I`), a rolling 30-hour window, sorted newest-first (`sortBy=DD`), and
+   paginated until LinkedIn's own Next control runs out — which is the only
+   reliable proof the result set is exhausted. If more searches are configured
+   than fit the time budget, the next run resumes where this one stopped rather
+   than cutting the same tail every time.
 4. **Read the list without clicking.** The results column is virtualised, so it
    gets scrolled in small steps to force every card to render; title, company,
    location and posted-time are then read straight off the cards.
    **It then keeps turning pages until LinkedIn's own "Next" button runs out**,
    which is the only reliable proof that every job in the window has been seen.
    A page count is never assumed.
-5. **Filter before opening.** A card is only opened if the company is on your
-   watchlist, the title looks like an internship, it was posted inside the
-   window, and you have not already seen it. This is what makes "every job in
-   the last 24 hours" tractable — hundreds of cards read, a handful opened.
+5. **Filter before opening.** A card is only opened if it clears four cheap
+   local checks: posted inside the window, the title reads as an internship,
+   **the role is software**, and the company is on your watchlist. Hundreds of
+   cards get read; a handful get opened. All of it is free — no extra requests.
+
+   The software check matters because a broad `internship` search also returns
+   sales, marketing, HR, teaching, cinematography and field sales. Negative
+   signals beat positive ones, so "Software Sales Intern" is correctly rejected.
+   A title matching neither list is recorded as **uncertain** rather than
+   guessed at:
+
+   ```bash
+   node bin/show-report.js --roles
+   ```
+
+   That shows what it could not decide and a sample of what it rejected. If a
+   real software role is in either list, add a distinguishing word to
+   `matching.extraTechTerms`; if junk survived, add to `extraNonTechTerms`.
 6. **Extract.** Full description, applicant count, salary badge, apply target.
 7. **Summarise and store.** Stipend, duration, work mode and skills are parsed
    out; the description is condensed. Everything lands in SQLite so the same job
@@ -308,11 +322,9 @@ That lists the companies that keep appearing and getting skipped. If they are
 all tiny agencies you have never heard of, the filter is doing its job. If you
 recognise names worth working for, add them to `config.json`.
 
-Also worth knowing: a broad keyword like `internship` returns mostly non-tech
-postings from very small companies, which burns most of a run's card budget on
-noise. Narrower searches — `software engineer intern`, `data science intern`,
-`SDE intern` — surface the companies you actually care about far more
-efficiently. Add several narrow searches rather than one broad one.
+Also check `node bin/show-report.js --roles`. If genuine software roles are
+sitting in the "could not decide" list, the classifier is silently dropping
+matches and needs a term added.
 
 **"Job list rendered 0 cards … LinkedIn changed its markup"** → the expected
 failure mode over time. LinkedIn rotates its CSS class names. This error is

@@ -14,7 +14,7 @@
     "start": "node --no-warnings=ExperimentalWarning src/index.js",
     "dry-run": "node --no-warnings=ExperimentalWarning src/index.js --dry-run",
     "report": "node --no-warnings=ExperimentalWarning bin/show-report.js",
-    "test": "node test/extract.test.mjs && node test/tailor.test.mjs",
+    "test": "node test/extract.test.mjs && node test/roles.test.mjs && node test/tailor.test.mjs",
     "web": "node web/serve.js",
     "install-schedule": "bash bin/install-schedule.sh",
     "uninstall-schedule": "bash bin/uninstall-schedule.sh"
