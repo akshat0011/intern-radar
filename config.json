@@ -47,7 +47,7 @@
 
   "matching": {
     "openNonTechRoles": false,
-    "_openNonTechRoles_note": "false = a role the classifier CONFIDENTLY calls non-tech is listed from its search-card data alone, with no page open. Ambiguous titles are still opened, since that is exactly when the description decides. On a real backfill this cut opens from 12 to 4 per dozen candidates. Card-only listings have no description, summary or skills, which is fine for the Other roles tab. Set true to open everything."
+    "_openNonTechRoles_note": "false = a role the classifier CONFIDENTLY calls non-tech is listed from its search-card data alone, with no page open. Ambiguous titles are still opened, since that is exactly when the description decides. On a real backfill this cut opens from 12 to 4 per dozen candidates. Card-only listings have no description, summary or skills, which is fine for the Other roles tab. Set true to open everything.",
     "skipViewedCards": true,
     "_skipViewedCards_note": "LinkedIn marks cards you have already opened as Viewed. Skipping them avoids re-opening a job after an interrupted run. Tradeoff: a job you viewed manually in your own browsing will never be added.",
     "requireCompanyMatch": true,
