@@ -111,6 +111,57 @@ bash bin/install-schedule.sh --relocate
 
 ---
 
+## The public site
+
+`web/` is a separate, deployable site where students browse the listings and
+tailor a resume to any of them.
+
+```
+you run npm start  →  scraper finds jobs  →  writes web/public/data/jobs.json
+                   →  commits + pushes    →  Vercel redeploys  →  live in ~1 min
+```
+
+Preview it locally at <http://localhost:4321>:
+
+```bash
+npm run web
+```
+
+**Deploying.** Import the GitHub repo at [vercel.com/new](https://vercel.com/new),
+set **Root Directory** to `web`, and add one environment variable:
+
+| Variable | Value |
+| --- | --- |
+| `ANTHROPIC_API_KEY` | your key — powers resume tailoring |
+| `TAILOR_DISABLED` | set to `true` to switch tailoring off instantly |
+| `RATE_LIMIT_PER_IP_HOURLY` | default 5 |
+| `RATE_LIMIT_PER_IP_DAILY` | default 15 |
+| `RATE_LIMIT_GLOBAL_DAILY` | default 400 |
+
+**About the resume tailoring.** It rewrites what the student already has — it
+reorders, rephrases, and re-emphasises to match the job. It is explicitly
+forbidden from adding a skill, employer, date or metric that is not in the
+source resume, and a server-side check strips any skill that appears in the
+output but not the input, telling the student exactly what was removed. It also
+lists what the job asks for that their resume does not evidence. A tool that
+quietly pads a resume is handing a student a fraudulent document.
+
+Resume text is held in memory for the length of one request and never written
+to disk or logged.
+
+**A note on cost.** The site is public and the API key is yours, so the rate
+limits above exist to stop a stranger spending your money. They are in-memory,
+which makes them a speed bump rather than a guarantee — **set a monthly spend
+cap in the Anthropic console**, which is the only limit that cannot be evaded.
+
+**What is published.** Company, role, stipend, location, work mode, duration,
+the generated summary, and a link to the original posting. Full job descriptions
+are deliberately *not* republished — they are the posting company's copyrighted
+text. Set `publish.includeFullDescription` to `true` in `config.json` if you
+want them anyway, understanding what that means.
+
+---
+
 ## Commands
 
 | Command | What it does |

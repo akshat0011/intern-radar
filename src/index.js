@@ -14,6 +14,7 @@ import { pause, sleep, idleFidget, humanDelay } from './human.js';
 import { summarize } from './summarize.js';
 import { extractStipend, extractDuration, extractSkills, extractWorkplaceType, parseRelativeTime } from './extract.js';
 import { buildReport, writeReport } from './report.js';
+import { publish } from './publish.js';
 import { notify, open as openFile } from './notify.js';
 
 const ARGS = new Set(process.argv.slice(2));
@@ -323,6 +324,10 @@ async function main() {
   } else {
     log.info('No new matching internships this run.');
   }
+
+  // Push the public job list. Runs even with 0 new jobs so the site drops
+  // listings that have aged out of the window.
+  if (!DRY_RUN) publish(store, cfg, newJobs.length);
 
   store.close();
   process.exitCode = status === 'error' ? 1 : 0;

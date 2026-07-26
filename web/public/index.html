@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Intern Radar — fresh internships, tailored resumes</title>
+<meta name="description" content="Internships posted in the last 24 hours at companies worth working for. Pick a role and tailor your resume to it in seconds.">
+<meta name="color-scheme" content="light dark">
+<meta property="og:title" content="Intern Radar">
+<meta property="og:description" content="Fresh internships, checked twice a day. Tailor your resume to any of them in seconds.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<a class="skip" href="#results">Skip to listings</a>
+
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="/">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-name">Intern<span>Radar</span></span>
+    </a>
+    <div class="topbar-right">
+      <span class="pulse" id="freshness" title="When the listings were last refreshed">
+        <span class="pulse-dot" aria-hidden="true"></span>
+        <span id="freshness-text">loading…</span>
+      </span>
+      <button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch colour theme">
+        <svg class="i-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a6.8 6.8 0 0 0 10.5 10.5z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <h1>Internships posted <em>in the last 24 hours</em>.</h1>
+      <p class="lede">
+        Scanned twice a day across hundreds of companies. Pick a role, and rewrite your
+        resume to target it — grounded strictly in what your resume already says.
+      </p>
+      <div class="stats" id="stats" aria-live="polite">
+        <div class="stat"><b id="stat-jobs">–</b><span>open roles</span></div>
+        <div class="stat"><b id="stat-companies">–</b><span>companies</span></div>
+        <div class="stat"><b id="stat-fresh">–</b><span>added today</span></div>
+        <div class="stat"><b id="stat-paid">–</b><span>stipend listed</span></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="controls-shell">
+    <div class="wrap controls">
+      <div class="search">
+        <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg>
+        <input type="search" id="q" placeholder="Search role, company, skill or city…" autocomplete="off" aria-label="Search internships">
+        <button class="clear-q" id="clear-q" type="button" aria-label="Clear search" hidden>&times;</button>
+      </div>
+      <div class="selects">
+        <label class="sel"><span>Company</span><select id="f-company"><option value="">All</option></select></label>
+        <label class="sel"><span>Location</span><select id="f-location"><option value="">Anywhere</option></select></label>
+        <label class="sel"><span>Mode</span><select id="f-mode"><option value="">Any</option><option>Remote</option><option>Hybrid</option><option>On-site</option></select></label>
+        <label class="sel"><span>Sort</span><select id="f-sort"><option value="new">Newest first</option><option value="stipend">Highest stipend</option><option value="company">Company A–Z</option></select></label>
+      </div>
+      <div class="toggles">
+        <button class="chip-toggle" id="f-paid" type="button" aria-pressed="false">Stipend listed</button>
+        <button class="chip-toggle" id="f-easy" type="button" aria-pressed="false">Easy Apply</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap layout" id="results">
+    <section class="list-col" aria-label="Internship listings">
+      <div class="list-head">
+        <span id="result-count">Loading…</span>
+        <button class="link-btn" id="reset" type="button" hidden>Reset filters</button>
+      </div>
+      <ol class="joblist" id="joblist"></ol>
+      <div class="empty" id="empty" hidden>
+        <div class="empty-mark" aria-hidden="true">🔍</div>
+        <h3 id="empty-title">Nothing matches those filters</h3>
+        <p id="empty-body">Try clearing the search box or widening the company filter.</p>
+      </div>
+    </section>
+
+    <aside class="detail-col" id="detail-col" aria-label="Selected internship">
+      <div class="detail-placeholder" id="detail-placeholder">
+        <div class="ph-mark" aria-hidden="true">👈</div>
+        <p>Select a role to see the details and tailor your resume to it.</p>
+      </div>
+      <article class="detail" id="detail" hidden></article>
+    </aside>
+  </div>
+
+  <footer class="site-foot">
+    <div class="wrap">
+      <p>
+        Listings are collected from LinkedIn and link back to the original posting —
+        always apply on the company's own page. Summaries are generated automatically
+        and may be imperfect; the linked posting is the source of truth.
+      </p>
+      <p class="muted-note">
+        Your resume is processed in memory to tailor it and is never stored on this site.
+      </p>
+    </div>
+  </footer>
+</main>
+
+<!-- Resume tailoring -->
+<div class="sheet-backdrop" id="tailor-backdrop" hidden></div>
+<div class="sheet" id="tailor" role="dialog" aria-modal="true" aria-labelledby="tailor-title" hidden>
+  <div class="sheet-head">
+    <div>
+      <h2 id="tailor-title">Tailor your resume</h2>
+      <p class="sheet-sub" id="tailor-job"></p>
+    </div>
+    <button class="icon-btn" id="tailor-close" type="button" aria-label="Close">&times;</button>
+  </div>
+
+  <div class="sheet-body">
+    <!-- step 1 -->
+    <section class="step" id="step-upload">
+      <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Upload your resume PDF">
+        <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4M7 9l5-5 5 5"/><path d="M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg>
+        <b>Drop your resume PDF here</b>
+        <span>or click to choose a file · PDF, max 5 MB</span>
+        <input type="file" id="resume-file" accept="application/pdf,.pdf,.txt" hidden>
+      </div>
+      <details class="paste-fallback">
+        <summary>Or paste your resume as text</summary>
+        <textarea id="resume-paste" rows="9" placeholder="Paste the full text of your resume…"></textarea>
+      </details>
+      <div class="file-state" id="file-state" hidden></div>
+      <p class="fineprint">
+        Nothing is stored. Your resume text is sent once to generate the tailored version,
+        then discarded. Remove anything you would not want processed before uploading.
+      </p>
+      <button class="btn btn-primary btn-block" id="do-tailor" type="button" disabled>Tailor my resume</button>
+    </section>
+
+    <!-- step 2 -->
+    <section class="step" id="step-working" hidden>
+      <div class="working">
+        <div class="spinner" aria-hidden="true"></div>
+        <b id="working-label">Reading your resume…</b>
+        <span>This usually takes 10–20 seconds.</span>
+      </div>
+    </section>
+
+    <!-- step 3 -->
+    <section class="step" id="step-result" hidden>
+      <div class="result-actions">
+        <button class="btn btn-primary" id="download-pdf" type="button">Download PDF</button>
+        <button class="btn" id="copy-text" type="button">Copy as text</button>
+        <button class="btn btn-quiet" id="start-over" type="button">Start over</button>
+      </div>
+      <div class="callout" id="removed-note" hidden></div>
+      <div class="callout callout-gap" id="gaps-note" hidden></div>
+      <div class="changes" id="changes"></div>
+      <div class="resume-preview" id="resume-preview"></div>
+    </section>
+
+    <section class="step" id="step-error" hidden>
+      <div class="errorbox">
+        <b>That didn't work</b>
+        <p id="error-text"></p>
+        <button class="btn" id="error-retry" type="button">Try again</button>
+      </div>
+    </section>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+<script src="/app.js" type="module"></script>
+</body>
+</html>

@@ -72,6 +72,16 @@
     "_disableBraveShields_note": "Passes --disable-brave-extension. Mostly belt-and-braces: on a fresh profile Shields has no filter lists to work from, and LinkedIn was verified to load fine either way."
   },
 
+  "publish": {
+    "enabled": true,
+    "autoPush": true,
+    "_autoPush_note": "After each run, commit web/public/data/jobs.json and push. Vercel is watching the repo, so the push is what makes the public site update.",
+    "maxAgeDays": 14,
+    "_maxAgeDays_note": "How long a job stays on the public site after it was first seen.",
+    "includeFullDescription": false,
+    "_includeFullDescription_note": "Leave false. Full descriptions are the posting company's copyrighted text; the site shows your generated summary and links to the original instead."
+  },
+
   "safety": {
     "cooldownHoursAfterRateLimit": 24,
     "_cooldownHoursAfterRateLimit_note": "If LinkedIn ever rate-limits or restricts the session, the tool refuses to run again for this many hours instead of walking back into it. Set 0 to disable."

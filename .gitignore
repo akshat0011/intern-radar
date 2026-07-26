@@ -1,4 +1,9 @@
 node_modules/
-data/
 *.log
 .DS_Store
+.vercel
+
+# Leading slash matters: this is the scraper's local state directory only.
+# Without it, web/public/data/jobs.json — which the site needs — is also
+# ignored, and the deployed site silently has no listings.
+/data/
