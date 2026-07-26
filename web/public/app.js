@@ -1,5 +1,10 @@
 /* Intern Radar — listings browser + resume tailoring */
 
+import { inject } from '@vercel/analytics';
+
+// Initialize Vercel Web Analytics
+inject();
+
 const PDFJS_VERSION = '4.6.82';
 const PDFJS_BASE = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${PDFJS_VERSION}`;
 const MAX_FILE_BYTES = 5 * 1024 * 1024;
