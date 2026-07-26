@@ -4,7 +4,7 @@
  *
  * Serves web/public and answers /api/tailor by loading the same handler Vercel
  * runs in production, so the whole flow can be exercised before deploying.
- * Set ANTHROPIC_API_KEY in your shell to test resume tailoring locally.
+ * Set GEMINI_API_KEY in your shell to test resume tailoring locally.
  *
  *   node web/serve.js          →  http://localhost:4321
  */
@@ -89,7 +89,7 @@ const server = createServer(async (req, res) => {
 
 server.listen(PORT, () => {
   console.log(`Intern Radar preview → http://localhost:${PORT}`);
-  if (!process.env.ANTHROPIC_API_KEY) {
-    console.log('ANTHROPIC_API_KEY is not set — resume tailoring will return an error until it is.');
+  if (!process.env.GEMINI_API_KEY) {
+    console.log('GEMINI_API_KEY is not set — resume tailoring will return an error until it is.');
   }
 });

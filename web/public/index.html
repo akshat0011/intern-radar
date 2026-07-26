@@ -134,10 +134,20 @@
         <textarea id="resume-paste" rows="9" placeholder="Paste the full text of your resume…"></textarea>
       </details>
       <div class="file-state" id="file-state" hidden></div>
-      <p class="fineprint">
-        Nothing is stored. Your resume text is sent once to generate the tailored version,
-        then discarded. Remove anything you would not want processed before uploading.
-      </p>
+      <div class="fineprint">
+        <p><b>Before you upload, read this.</b></p>
+        <p>
+          This site never stores your resume — the text is held only for as long as the
+          request takes, then discarded. But it is sent to <b>Google's Gemini API</b> to do
+          the rewriting, and this site runs on Gemini's <b>free tier</b>, which permits
+          Google to use submitted data to improve their models.
+        </p>
+        <p>
+          So: remove your home address, ID numbers, and anything else you would not want
+          processed by a third party. Your name, email, education and experience are all
+          the tailorer actually needs.
+        </p>
+      </div>
       <button class="btn btn-primary btn-block" id="do-tailor" type="button" disabled>Tailor my resume</button>
     </section>
 

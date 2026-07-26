@@ -128,15 +128,16 @@ npm run web
 ```
 
 **Deploying.** Import the GitHub repo at [vercel.com/new](https://vercel.com/new),
-set **Root Directory** to `web`, and add one environment variable:
+set **Root Directory** to `web`, and add the environment variables:
 
 | Variable | Value |
 | --- | --- |
-| `ANTHROPIC_API_KEY` | your key — powers resume tailoring |
+| `GEMINI_API_KEY` | from [aistudio.google.com/apikey](https://aistudio.google.com/apikey) — free, no card |
+| `GEMINI_MODEL` | optional, default `gemini-2.5-flash` |
 | `TAILOR_DISABLED` | set to `true` to switch tailoring off instantly |
 | `RATE_LIMIT_PER_IP_HOURLY` | default 5 |
 | `RATE_LIMIT_PER_IP_DAILY` | default 15 |
-| `RATE_LIMIT_GLOBAL_DAILY` | default 400 |
+| `RATE_LIMIT_GLOBAL_DAILY` | default 200 — keep at or under your Gemini daily quota |
 
 **About the resume tailoring.** It rewrites what the student already has — it
 reorders, rephrases, and re-emphasises to match the job. It is explicitly
@@ -149,10 +150,18 @@ quietly pads a resume is handing a student a fraudulent document.
 Resume text is held in memory for the length of one request and never written
 to disk or logged.
 
-**A note on cost.** The site is public and the API key is yours, so the rate
-limits above exist to stop a stranger spending your money. They are in-memory,
-which makes them a speed bump rather than a guarantee — **set a monthly spend
-cap in the Anthropic console**, which is the only limit that cannot be evaded.
+**A note on cost and privacy.** The whole thing runs on free tiers — Vercel
+Hobby for hosting, Gemini's free tier for tailoring — so there is nothing to
+pay and no card on file. The tradeoff is that Google's free tier permits them
+to use submitted data to improve their models, and students are uploading
+resumes. The upload screen says so in plain language before anyone picks a
+file; **do not remove that notice.** If you ever move to a paid Gemini tier,
+that permission no longer applies and the notice can be softened.
+
+The rate limits exist because the free quota is shared by everyone using the
+site — without them one person could exhaust the day's allowance before lunch.
+Requests are validated before they count against the limit, so a student who
+mistypes six times has not burned their hourly allowance.
 
 **What is published.** Company, role, stipend, location, work mode, duration,
 the generated summary, and a link to the original posting. Full job descriptions

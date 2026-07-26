@@ -2,34 +2,40 @@
  * POST /api/tailor
  *
  * Takes a student's resume text plus a job, and returns a rewritten version
- * targeted at that job.
+ * targeted at that job. Backed by Google's Gemini free tier, so the site costs
+ * nothing to run.
  *
  * Two things this endpoint will not do:
- *   1. Invent anything. The model is instructed, and the output is checked, so
- *      that every claim traces back to the resume it was given. A tool that
- *      quietly adds skills a student does not have is handing them a fraudulent
- *      document to send to real employers.
+ *   1. Invent anything. The model is instructed, the output is schema-checked,
+ *      and skills are verified against the source, so every claim traces back
+ *      to the resume it was given. A tool that quietly adds skills a student
+ *      does not have is handing them a fraudulent document to send to real
+ *      employers.
  *   2. Store anything. Resume text is personal data; it lives in memory for the
  *      length of the request and is never written down or logged.
+ *
+ * Note on the free tier: Google's free tier permits them to use submitted data
+ * to improve their models. Students are told this on the upload screen before
+ * they choose a file — see the disclosure in index.html.
  */
 
-const MODEL = process.env.TAILOR_MODEL || 'claude-haiku-4-5-20251001';
+const MODEL = process.env.GEMINI_MODEL || 'gemini-2.5-flash';
+const API_BASE = 'https://generativelanguage.googleapis.com/v1beta/models';
 const MAX_RESUME_CHARS = 18_000;
-const MAX_OUTPUT_TOKENS = 3_000;
+const MAX_OUTPUT_TOKENS = 4_000;
 
-// ---- spend protection -------------------------------------------------------
-// The site is public and the API key is the site owner's, so throttling is not
-// optional. These are deliberately conservative; raise them once you have seen
-// real traffic.
+// ---- spend / quota protection ----------------------------------------------
+// The free tier has a finite daily quota shared by everyone using the site.
+// These limits keep one person from consuming the whole day's allowance and
+// let us fail with a clear message instead of an opaque 429 from Google.
 const PER_IP_PER_HOUR = Number(process.env.RATE_LIMIT_PER_IP_HOURLY || 5);
 const PER_IP_PER_DAY = Number(process.env.RATE_LIMIT_PER_IP_DAILY || 15);
-const GLOBAL_PER_DAY = Number(process.env.RATE_LIMIT_GLOBAL_DAILY || 400);
+const GLOBAL_PER_DAY = Number(process.env.RATE_LIMIT_GLOBAL_DAILY || 200);
 
 /**
  * In-memory counters. Serverless instances recycle, so this is a speed bump
  * rather than a vault — it stops runaway loops and casual abuse, which is what
- * it is for. For a hard guarantee, set a monthly spend cap in the Anthropic
- * console; that is the only limit that cannot be evaded.
+ * it is for.
  */
 const hits = new Map();
 
@@ -46,7 +52,7 @@ function rateLimit(ip, now) {
 
   const globalTimes = hits.get('__global__') ?? [];
   if (globalTimes.filter((t) => now - t < 86_400_000).length >= GLOBAL_PER_DAY) {
-    return { ok: false, status: 503, message: "Today's tailoring limit for the whole site has been reached. Please try again tomorrow." };
+    return { ok: false, status: 503, message: "Today's free tailoring allowance for the whole site has been used up. Please try again tomorrow." };
   }
 
   const times = (hits.get(ip) ?? []).filter((t) => now - t < 86_400_000);
@@ -78,22 +84,44 @@ How to tailor well:
 - Prefer concrete outcomes already stated in the resume over vague duties.
 - Keep it to one page of content unless the source clearly warrants two.
 - Keep the candidate's real contact details exactly as given.
+- In "gaps", be honest about what the job asks for that the resume does not evidence. That is useful information, not a failure.`;
 
-Return ONLY valid JSON, no markdown fence, matching:
-{
-  "name": "candidate's name from the resume",
-  "contact": "one line: email · phone · city · links, only what the resume actually has",
-  "summary": "2-3 sentence positioning statement grounded strictly in the resume",
-  "sections": [
-    { "heading": "Experience", "items": [
-        { "title": "Role or project name", "org": "Employer or context, if the resume gives one",
-          "dates": "as written in the resume, else empty string",
-          "bullets": ["achievement-focused line", "..."] } ] }
-  ],
-  "skills": ["only skills that appear in the resume"],
-  "changeNotes": ["short plain-English note on each significant change you made and why it fits this job"],
-  "gaps": ["requirements in the job description the resume does NOT evidence - state them honestly so the candidate knows what they are missing"]
-}`;
+/** Gemini enforces this shape, which removes a whole class of parsing failure. */
+const RESPONSE_SCHEMA = {
+  type: 'OBJECT',
+  properties: {
+    name: { type: 'STRING' },
+    contact: { type: 'STRING' },
+    summary: { type: 'STRING' },
+    sections: {
+      type: 'ARRAY',
+      items: {
+        type: 'OBJECT',
+        properties: {
+          heading: { type: 'STRING' },
+          items: {
+            type: 'ARRAY',
+            items: {
+              type: 'OBJECT',
+              properties: {
+                title: { type: 'STRING' },
+                org: { type: 'STRING' },
+                dates: { type: 'STRING' },
+                bullets: { type: 'ARRAY', items: { type: 'STRING' } },
+              },
+              required: ['title', 'bullets'],
+            },
+          },
+        },
+        required: ['heading', 'items'],
+      },
+    },
+    skills: { type: 'ARRAY', items: { type: 'STRING' } },
+    changeNotes: { type: 'ARRAY', items: { type: 'STRING' } },
+    gaps: { type: 'ARRAY', items: { type: 'STRING' } },
+  },
+  required: ['name', 'summary', 'sections', 'skills', 'changeNotes', 'gaps'],
+};
 
 function buildUserPrompt(resumeText, job) {
   const facts = [
@@ -126,7 +154,7 @@ Rewrite this resume to target the job above. Remember: reorganise and rephrase w
  * safety net under the prompt, not a replacement for it.
  */
 export function findInventedSkills(resumeText, skills) {
-  const haystack = resumeText.toLowerCase().replace(/[^a-z0-9+#./ ]/g, ' ');
+  const haystack = String(resumeText).toLowerCase().replace(/[^a-z0-9+#./ ]/g, ' ');
   return (skills ?? []).filter((skill) => {
     const s = String(skill).toLowerCase().trim();
     if (s.length < 2) return false;
@@ -154,12 +182,11 @@ export default async function handler(req, res) {
   if (process.env.TAILOR_DISABLED === 'true') {
     return res.status(503).json({ error: 'Resume tailoring is switched off right now.' });
   }
-  if (!process.env.ANTHROPIC_API_KEY) {
+
+  const apiKey = process.env.GEMINI_API_KEY;
+  if (!apiKey) {
     return res.status(500).json({ error: 'The site is missing its API key. Contact the site owner.' });
   }
-
-  const limit = rateLimit(clientIp(req), Date.now());
-  if (!limit.ok) return res.status(limit.status).json({ error: limit.message });
 
   const { resumeText, job } = req.body ?? {};
 
@@ -170,42 +197,61 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'No job was selected.' });
   }
 
+  const limit = rateLimit(clientIp(req), Date.now());
+  if (!limit.ok) return res.status(limit.status).json({ error: limit.message });
+
   const resume = resumeText.slice(0, MAX_RESUME_CHARS);
 
   try {
-    const upstream = await fetch('https://api.anthropic.com/v1/messages', {
+    const upstream = await fetch(`${API_BASE}/${MODEL}:generateContent`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
-        'x-api-key': process.env.ANTHROPIC_API_KEY,
-        'anthropic-version': '2023-06-01',
+        'x-goog-api-key': apiKey,
       },
       body: JSON.stringify({
-        model: MODEL,
-        max_tokens: MAX_OUTPUT_TOKENS,
-        system: SYSTEM,
-        messages: [{ role: 'user', content: buildUserPrompt(resume, job) }],
+        systemInstruction: { parts: [{ text: SYSTEM }] },
+        contents: [{ role: 'user', parts: [{ text: buildUserPrompt(resume, job) }] }],
+        generationConfig: {
+          temperature: 0.4,
+          maxOutputTokens: MAX_OUTPUT_TOKENS,
+          responseMimeType: 'application/json',
+          responseSchema: RESPONSE_SCHEMA,
+        },
       }),
     });
 
     if (!upstream.ok) {
       const status = upstream.status;
-      const message = status === 429
-        ? 'The AI service is busy. Try again in a moment.'
-        : status === 401
-          ? 'The site\'s API key was rejected. Contact the site owner.'
-          : 'The AI service could not be reached. Try again shortly.';
-      return res.status(status === 401 ? 500 : 502).json({ error: message });
+      const message =
+        status === 429 ? "The site's free daily allowance for resume tailoring has run out. Please try again tomorrow."
+        : status === 400 || status === 403 ? "The site's API key was rejected. Contact the site owner."
+        : 'The AI service could not be reached. Try again shortly.';
+      return res.status(status === 429 ? 503 : status === 400 || status === 403 ? 500 : 502)
+        .json({ error: message });
     }
 
     const payload = await upstream.json();
-    const raw = (payload.content ?? [])
-      .filter((b) => b.type === 'text')
-      .map((b) => b.text)
+
+    const blocked = payload.promptFeedback?.blockReason;
+    if (blocked) {
+      return res.status(422).json({ error: 'The content filter rejected this request. If your resume contains anything unusual, try removing it.' });
+    }
+
+    const candidate = payload.candidates?.[0];
+    if (candidate?.finishReason === 'MAX_TOKENS') {
+      return res.status(502).json({ error: 'Your resume is longer than the tailorer can handle in one pass. Try trimming it to the most relevant two pages.' });
+    }
+
+    const raw = (candidate?.content?.parts ?? [])
+      .map((p) => p.text)
+      .filter(Boolean)
       .join('')
-      .trim()
-      .replace(/^```(?:json)?\s*/i, '')
-      .replace(/\s*```$/, '');
+      .trim();
+
+    if (!raw) {
+      return res.status(502).json({ error: 'The AI returned an empty response. Please try again.' });
+    }
 
     let tailored;
     try {
@@ -224,10 +270,7 @@ export default async function handler(req, res) {
 
     return res.status(200).json({
       tailored,
-      meta: {
-        model: MODEL,
-        job: { title: job.title, company: job.company },
-      },
+      meta: { model: MODEL, job: { title: job.title, company: job.company } },
     });
   } catch {
     return res.status(500).json({ error: 'Something went wrong while tailoring. Please try again.' });

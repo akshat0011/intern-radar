@@ -524,7 +524,13 @@ button, input, select, textarea { font: inherit; color: inherit; }
 }
 .file-state.is-bad { background: var(--danger-soft); color: var(--danger); }
 
-.fineprint { margin: 13px 0 16px; font-size: 12px; color: var(--ink-3); line-height: 1.5; }
+.fineprint {
+  margin: 13px 0 16px; font-size: 12px; color: var(--ink-2); line-height: 1.55;
+  background: var(--warn-soft); border: 1px solid color-mix(in oklab, var(--warn) 22%, transparent);
+  border-radius: var(--radius-sm); padding: 12px 14px;
+  display: flex; flex-direction: column; gap: 7px;
+}
+.fineprint b { color: var(--warn); }
 
 /* working */
 .working { display: grid; place-items: center; gap: 9px; text-align: center; padding: 56px 20px; }
