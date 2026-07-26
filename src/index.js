@@ -79,7 +79,7 @@ async function main() {
 
   const clock = budget(cfg.limits.maxRuntimeMinutes);
   const notes = [];
-  const counters = { pagesScanned: 0, cardsSeen: 0, detailsExtracted: 0, newJobs: 0, skippedStale: 0, skippedCompany: 0, skippedTitle: 0, skippedNonTech: 0, skippedRoleUnclear: 0, skippedKnown: 0, failedDetails: 0 };
+  const counters = { pagesScanned: 0, cardsSeen: 0, detailsExtracted: 0, newJobs: 0, skippedStale: 0, skippedCompany: 0, skippedTitle: 0, skippedNonTech: 0, skippedRoleUnclear: 0, nearMisses: 0, skippedKnown: 0, failedDetails: 0 };
 
   log.section(`Run ${runId}`);
   log.info(`${cfg.watchlist.length} watchlist terms across ${cfg.uniqueCompanyCount} companies · mode "${cfg.searchMode ?? 'companies'}" · ${allSearches.length} searches · budget ${cfg.limits.maxRuntimeMinutes}m`);
@@ -170,8 +170,29 @@ async function main() {
           }
 
           if (!matchTitle(card.title, cfg.titleTerms)) {
+            // The title is now the only internship signal we have, because
+            // LinkedIn's employment-type tag proved untrustworthy (Salesforce
+            // files internships as Full-time). So a posting that turns up in an
+            // internship search but is titled without "intern" — e.g. "Full
+            // Stack Web Developer" — gets dropped here.
+            //
+            // When such a card is ALSO a tech role at a watchlist company it is
+            // a high-value near miss, worth a human glance rather than a silent
+            // discard. Flag it distinctly.
+            const nearMiss = !!matchCompany(card.company, cfg.watchlist)
+              && classifyRole(card.title, {
+                extraPositive: cfg.matching.extraTechTerms ?? [],
+                extraNegative: cfg.matching.extraNonTechTerms ?? [],
+              }).verdict === 'tech';
+
             counters.skippedTitle++;
-            store.noteSkippedCard(card.jobId, 'title did not match', card.company, card.title);
+            if (nearMiss) counters.nearMisses++;
+            store.noteSkippedCard(
+              card.jobId,
+              nearMiss ? 'title lacks intern (watchlist tech role)' : 'title did not match',
+              card.company,
+              card.title,
+            );
             continue;
           }
 
@@ -356,6 +377,11 @@ async function main() {
 
   // "0 new jobs, 97 off-watchlist" invites the question "which 97?". Answer it
   // here, so the watchlist can be tuned from evidence rather than guesswork.
+  if (counters.nearMisses > 0) {
+    log.warn(`${counters.nearMisses} tech role(s) at watchlist companies were skipped only because the title lacks an internship word.`);
+    log.info('Review them with `node bin/show-report.js --roles` — they may be internships titled unconventionally.');
+  }
+
   if (counters.newJobs === 0 && counters.skippedCompany > 0) {
     const top = store.topSkippedCompanies(8, Date.now() - 7 * 86_400_000);
     if (top.length) {

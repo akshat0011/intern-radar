@@ -8,10 +8,18 @@ import { open } from '../src/notify.js';
 const store = new Store();
 
 if (process.argv.includes('--roles')) {
+  const nearMiss = store.skippedByRole('title lacks intern (watchlist tech role)', 40);
   const unclear = store.skippedByRole('role unclear', 40);
   const nonTech = store.skippedByRole('not a software role', 25);
 
-  if (!unclear.length && !nonTech.length) {
+  if (nearMiss.length) {
+    console.log('\nNEAR MISSES — tech roles at watchlist companies, skipped only because');
+    console.log('the title has no internship word. Check whether these are internships:\n');
+    for (const r of nearMiss) console.log(`  ${String(r.title).slice(0, 62).padEnd(64)} ${r.company ?? ''}`);
+    console.log('\nIf they are, add the missing word to matching.titleMustMatch in config.json.');
+  }
+
+  if (!unclear.length && !nonTech.length && !nearMiss.length) {
     console.log('\nNo role decisions recorded yet. Run a scan first.\n');
   } else {
     console.log('\nTitles the classifier could NOT decide — review these:\n');

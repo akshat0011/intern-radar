@@ -22,17 +22,17 @@
   "defaultLocation": "India",
   "_defaultLocation_note": "Applied to any search written as a plain string. Change this one value to move the whole watch to another city or country.",
 
-  "_searches_note": "One broad search, paginated to exhaustion. Every internship in the window is looked at, then filtered locally by company and by whether the role is software. Add more entries only if you find the broad sweep is missing things - each one costs a full pagination pass.",
+  "_searches_note": "One broad search, paginated to exhaustion, then filtered locally by title, role and company. The boolean form matters: a plain 'internship' keyword misses postings titled only 'Intern' (Salesforce's 'Summer 2027 Intern - Software Engineer' is one), and the OR list covers every phrasing the title filter accepts. Keep it as ONE entry - each extra search costs a full pagination pass.",
   "searches": [
-    "internship"
+    "(intern OR internship OR trainee OR \"co-op\" OR apprentice)"
   ],
 
   "filters": {
     "postedWithinHours": 30,
     "_postedWithinHours_note": "Deliberately wider than 24, so a run delayed by a closed lid or a missed slot still catches everything posted since the last one. The overlap costs nothing because jobs are de-duplicated by id - a repeat is one database lookup, not a page load.",
     "sortBy": "recent",
-    "jobTypes": ["INTERNSHIP"],
-    "_jobTypes_note": "LinkedIn f_JT codes: F=full-time P=part-time C=contract T=temporary I=internship V=volunteer O=other. Use [] to disable this filter entirely (recommended - many internships are mislabelled as full-time by recruiters)."
+    "jobTypes": [],
+    "_jobTypes_note": "DELIBERATELY EMPTY. Setting this to ['INTERNSHIP'] sends f_JT=I, which trusts the recruiter's employment-type tag - and they get it wrong constantly. A real case: Salesforce's 'Summer 2027 Intern - Software Engineer' is tagged Full-time, so f_JT=I hid it completely. The title filter and role classifier below decide what is an internship instead, from the title itself. LinkedIn f_JT codes if you ever want them: F=full-time P=part-time C=contract T=temporary I=internship V=volunteer O=other."
   },
 
   "matching": {
