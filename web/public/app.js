@@ -135,14 +135,6 @@ function renderFreshness() {
     : 'standing by';
 }
 
-function renderScore() {
-  $('s-total').textContent = state.jobs.length || '0';
-  $('s-co').textContent = new Set(state.jobs.map((j) => j.company)).size || '0';
-  // Deliberately not "added today": straight after a backfill every job was
-  // added today, so it just repeated the total. A stipend count never does.
-  $('s-new').textContent = state.jobs.filter((j) => j.stipend).length;
-}
-
 function renderTabCounts() {
   const tech = state.jobs.filter((j) => j.isTech === true).length;
   $('n-tech').textContent = tech;
@@ -340,8 +332,14 @@ function renderDetail(job) {
   apply.rel = 'noopener noreferrer';
   actions.append(apply);
 
-  const tailorBtn = el('button', 'alt', 'Tailor my resume');
+  const tailorBtn = el('button', 'alt');
   tailorBtn.type = 'button';
+  tailorBtn.innerHTML =
+    '<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" '
+    + 'stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
+    + '<path d="M15 4V2M15 16v-2M8 9h2M20 9h2M17.8 11.8l1.4 1.4M17.8 6.2l1.4-1.4M12.2 11.8l-1.4 1.4M3 21l9-9"/>'
+    + '<circle cx="15" cy="9" r="3"/></svg>';
+  tailorBtn.append(document.createTextNode('Tailor my resume'));
   tailorBtn.addEventListener('click', () => openTailor(job));
   actions.append(tailorBtn);
   d.append(actions);
@@ -719,7 +717,6 @@ async function init() {
   await loadJobs();
   renderFreshness();
   renderTabCounts();
-  renderScore();
   populateFilters();
   applyFilters();
 
