@@ -17,7 +17,8 @@ function stripNotes(value) {
 
 const DEFAULTS = {
   companies: [],
-  searches: [{ keywords: 'internship', location: '' }],
+  defaultLocation: '',
+  searches: [{ keywords: 'software engineer intern', location: '' }],
   filters: { postedWithinHours: 24, sortBy: 'recent', jobTypes: [] },
   matching: { requireCompanyMatch: true, titleMustMatch: [] },
   pacing: {
@@ -123,6 +124,14 @@ export function loadConfig() {
     }
   }
   cfg.uniqueCompanyCount = seenCompanies.size;
+
+  // A search may be written as a bare keyword string, which picks up
+  // defaultLocation — 50 entries are far more readable that way.
+  cfg.searches = (cfg.searches ?? []).map((entry) =>
+    typeof entry === 'string'
+      ? { keywords: entry, location: cfg.defaultLocation ?? '' }
+      : { ...entry, location: entry.location ?? cfg.defaultLocation ?? '' },
+  );
 
   cfg.titleTerms = (cfg.matching.titleMustMatch || []).map((t) => t.toLowerCase());
 

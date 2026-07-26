@@ -56,13 +56,16 @@ While you are in that window, click the Brave lion and set **Shields down for
 linkedin.com**. Not strictly required, but it keeps your browser fingerprint
 stable between runs instead of being randomised each session.
 
-Now set your location in **`config.json`**:
+Now set your location in **`config.json`** — one value covers every search:
 
 ```json
-"searches": [
-  { "keywords": "internship", "location": "Bengaluru" }
-]
+"defaultLocation": "India"
 ```
+
+`searches` ships with 50 keywords covering software internships: general SWE,
+backend/frontend/mobile, data and ML, DevOps and cloud, QA, security, embedded,
+games, blockchain, product and design, plus trainee and summer-analyst
+phrasings. Add your own as plain strings.
 
 The watchlist itself lives in **`companies.json`** — about 860 companies with an
 India presence, grouped by sector (global tech, semiconductor, Indian IT
@@ -197,8 +200,16 @@ Add `--force` to override an active cooldown: `node src/index.js --force`.
    LinkedIn will serve a public job page to a signed-out visitor that looks
    perfectly healthy — without this check the tool would scrape that and store
    worse data thinking all was well.
-3. **Search.** One URL per entry in `searches`, filtered to the last 24 hours
-   (`f_TPR=r86400`) and sorted newest-first (`sortBy=DD`).
+3. **Search.** One URL per entry in `searches`, filtered to a rolling 30-hour
+   window and sorted newest-first (`sortBy=DD`).
+
+   With 50 keywords, a single run may not reach the end of the list before the
+   time budget expires. Rather than cutting the same tail every time — which
+   would mean those keywords never ran at all — the run **resumes where the
+   last one stopped** and wraps around. Every keyword gets its turn within a
+   run or two, and the report says how far it got. The 30-hour window (rather
+   than 24) is the safety margin that makes this lossless: a keyword whose turn
+   comes a little over a day later still sees everything posted since.
 4. **Read the list without clicking.** The results column is virtualised, so it
    gets scrolled in small steps to force every card to render; title, company,
    location and posted-time are then read straight off the cards.

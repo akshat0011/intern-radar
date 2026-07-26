@@ -82,6 +82,8 @@ async function main() {
   let session;
   let status = 'ok';
   let fatalError = null;
+  let searchesDone = 0;
+  let searchStart = 0;
 
   try {
     session = await launchBrave(cfg);
@@ -92,10 +94,20 @@ async function main() {
     await assertSignedIn(page, context, cfg);
     log.ok('Signed in.');
 
+    // Rotate the starting point. With a long keyword list one run cannot
+    // always reach the end, and starting from index 0 every time would mean
+    // the tail never runs at all. Picking up where the last run stopped gives
+    // every keyword its turn across consecutive runs.
+    const cursor = DRY_RUN ? 0 : Number(store.getSetting('search_cursor') ?? 0) % cfg.searches.length;
+    const ordered = [...cfg.searches.slice(cursor), ...cfg.searches.slice(0, cursor)];
+    if (cursor > 0) {
+      log.info(`Resuming the keyword rotation at "${ordered[0].keywords}" (position ${cursor + 1} of ${cfg.searches.length}).`);
+    }
+
     searchLoop:
-    for (const [searchIndex, search] of cfg.searches.entries()) {
+    for (const [searchIndex, search] of ordered.entries()) {
       const label = `${search.keywords}${search.location ? ` @ ${search.location}` : ''}`;
-      log.section(`Search: ${label}`);
+      log.section(`Search: ${label} — ${searchIndex + 1}/${ordered.length}`);
 
       for (let pageIndex = 0; pageIndex < cfg.limits.maxPagesPerSearch; pageIndex++) {
         if (clock.exceeded()) {
@@ -239,11 +251,15 @@ async function main() {
         await pause(cfg.pacing.betweenPages);
       }
 
-      if (searchIndex < cfg.searches.length - 1) {
+      searchesDone++;
+
+      if (searchIndex < ordered.length - 1) {
         log.info('Pausing between searches…');
         await pause(cfg.pacing.betweenSearches);
       }
     }
+
+    searchStart = cursor;
   } catch (err) {
     if (err instanceof RunAborted) {
       status = counters.newJobs > 0 ? 'partial' : 'aborted';
@@ -287,6 +303,24 @@ async function main() {
   log.section('Summary');
   log.info(summaryLine);
   log.info(`Took ${clock.elapsedSeconds()}s`);
+
+  // Persist the rotation cursor on every path, including an aborted run —
+  // searches that did complete should not be repeated at the expense of ones
+  // that never got their turn.
+  if (!DRY_RUN && cfg.searches.length > 0) {
+    const next = searchesDone >= cfg.searches.length
+      ? 0
+      : (searchStart + searchesDone) % cfg.searches.length;
+    store.setSetting('search_cursor', next);
+
+    if (searchesDone >= cfg.searches.length) {
+      log.ok(`Covered all ${cfg.searches.length} keyword searches.`);
+    } else {
+      const remaining = cfg.searches.length - searchesDone;
+      notes.push(`Covered ${searchesDone} of ${cfg.searches.length} keyword searches this run. The other ${remaining} are first in the queue next time, so no keyword is permanently skipped.`);
+      log.info(`Covered ${searchesDone}/${cfg.searches.length} searches — next run resumes at "${cfg.searches[next].keywords}".`);
+    }
+  }
 
   // "0 new jobs, 97 off-watchlist" invites the question "which 97?". Answer it
   // here, so the watchlist can be tuned from evidence rather than guesswork.
