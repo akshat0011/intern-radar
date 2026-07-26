@@ -180,6 +180,7 @@ function applyFilters() {
 
   state.filtered = list;
   renderList();
+  syncStickyOffset();
 }
 
 function anyFilterActive() {
@@ -707,12 +708,35 @@ function wireTailor() {
   });
 }
 
+/**
+ * Measure the sticky stack (top bar + filter rail) and publish it as a CSS
+ * variable.
+ *
+ * The detail pane sticks below both of them. Its offset used to be a hardcoded
+ * guess, so shrinking the header pushed the pane's heading underneath the rail —
+ * and the rail's height is not fixed anyway: it wraps to two or three lines
+ * depending on viewport width. Measuring is the only version that stays correct.
+ */
+function syncStickyOffset() {
+  const bar = document.querySelector('.bar');
+  const rail = document.querySelector('.rail');
+  if (!bar || !rail) return;
+  const h = Math.round(bar.getBoundingClientRect().height + rail.getBoundingClientRect().height);
+  document.documentElement.style.setProperty('--stack-h', `${h}px`);
+}
+
 /* ---------------- boot ---------------- */
 
 async function init() {
   initTheme();
   wireControls();
   wireTailor();
+
+  syncStickyOffset();
+  // The rail rewraps on resize, and again once the web fonts land and change
+  // the text metrics — both move the stack height.
+  addEventListener('resize', syncStickyOffset, { passive: true });
+  document.fonts?.ready.then(syncStickyOffset);
 
   await loadJobs();
   renderFreshness();

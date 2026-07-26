@@ -29,6 +29,8 @@
 
   --snap:    cubic-bezier(.2,.9,.25,1);
   --bar-h:   62px;
+  /* Replaced at runtime by syncStickyOffset(); this is only the first paint. */
+  --stack-h: 152px;
 }
 
 :root[data-theme="light"] {
@@ -230,6 +232,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 /* Each job is its own bordered block. Hairline-separated rows blurred into one
    another; an outline makes every listing a distinct object you can aim at. */
 .row {
+  scroll-margin-top: calc(var(--stack-h) + 16px);
   position: relative; display: grid;
   grid-template-columns: 24px 42px minmax(0,1fr) auto;
   gap: 15px; align-items: start;
@@ -311,7 +314,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 
 /* ---------- detail pane ---------- */
 
-.pane-col { position: sticky; top: calc(var(--bar-h) + 70px); }
+.pane-col { position: sticky; top: calc(var(--stack-h) + 16px); }
 .pane, .pane-idle { border: 1px solid var(--rule); border-radius: var(--r-2); background: var(--card); }
 .pane-idle { display: grid; place-items: center; text-align: center; padding: 84px 30px; min-height: 380px; }
 .pane-idle p { font-family: var(--display); font-weight: 800; font-size: 20px; text-transform: uppercase; letter-spacing: -.03em; }
@@ -326,7 +329,7 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .idle-scope i:nth-child(3), .wait-scope i:nth-child(3) { animation-delay: 1.9s; }
 @keyframes ripple { 0% { transform: scale(.3); opacity: .9; } 100% { transform: scale(1); opacity: 0; } }
 
-.pane { padding: 26px; max-height: calc(100vh - var(--bar-h) - 110px); overflow: auto; overscroll-behavior: contain; }
+.pane { padding: 26px; max-height: calc(100vh - var(--stack-h) - 44px); overflow: auto; overscroll-behavior: contain; }
 .pane.is-in { animation: rowIn .3s var(--snap) both; }
 .back {
   display: none; background: none; border: 0; color: var(--live); cursor: pointer;
