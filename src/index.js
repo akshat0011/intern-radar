@@ -369,18 +369,23 @@ async function main() {
   // request count is the scarce resource, so forty candidates should cost one
   // call rather than forty. Nothing here gates publication — a non-tech role
   // still reaches the site, just in the other section.
-  const captured = store.jobsForRun(runId);
-  if (captured.length) {
+  // Everything still lacking a verdict, not merely this run's catch. A row
+  // stored before the verdict column existed would otherwise sit in the wrong
+  // tab forever — which is exactly what happened on the first run after this
+  // shipped: five real jobs, all filed as "other", tech tab empty.
+  const publishWindowMs = (cfg.publish?.maxAgeDays ?? 14) * 86_400_000;
+  const unclassified = store.jobsNeedingRoleVerdict(Date.now() - publishWindowMs);
+  if (unclassified.length) {
     const verdicts = await classifyRoles(
-      captured.map((j) => ({ title: j.title, company: j.company })),
+      unclassified.map((j) => ({ title: j.title, company: j.company })),
       cfg,
     );
-    captured.forEach((job, i) => {
+    unclassified.forEach((job, i) => {
       const v = verdicts[i];
       store.setRoleVerdict(job.job_id, v.isTech, v.source);
       if (v.isTech) counters.techRoles++; else counters.nonTechRoles++;
     });
-    log.info(`Roles: ${counters.techRoles} tech, ${counters.nonTechRoles} other (via ${verdicts[0]?.source ?? 'offline'}).`);
+    log.info(`Classified ${unclassified.length} role(s): ${counters.techRoles} tech, ${counters.nonTechRoles} other (via ${verdicts[0]?.source ?? 'offline'}).`);
   }
 
   const summaryLine =

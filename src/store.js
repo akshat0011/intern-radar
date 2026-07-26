@@ -235,6 +235,20 @@ export class Store {
     return out;
   }
 
+  /**
+   * Jobs still lacking a role verdict.
+   *
+   * Not just this run's: a row stored before the verdict column existed, or one
+   * whose classification pass was skipped, must still be labelled or it lands
+   * in the wrong tab forever. Classifying by "needs a verdict" rather than "was
+   * captured this run" is what keeps the site correct.
+   */
+  jobsNeedingRoleVerdict(sinceMs) {
+    return this.db.prepare(
+      'SELECT job_id, title, company FROM jobs WHERE is_tech IS NULL AND first_seen_at >= ? ORDER BY first_seen_at DESC',
+    ).all(sinceMs);
+  }
+
   /** Record a role verdict once the batch classifier has run. */
   setRoleVerdict(jobId, isTech, source) {
     this.db.prepare('UPDATE jobs SET is_tech = ?, role_source = ? WHERE job_id = ?')
