@@ -79,7 +79,7 @@ async function main() {
 
   const clock = budget(cfg.limits.maxRuntimeMinutes);
   const notes = [];
-  const counters = { pagesScanned: 0, cardsSeen: 0, detailsExtracted: 0, newJobs: 0, skippedStale: 0, skippedCompany: 0, skippedTitle: 0, skippedNonTech: 0, skippedRoleUnclear: 0, nearMisses: 0, skippedKnown: 0, failedDetails: 0 };
+  const counters = { pagesScanned: 0, cardsSeen: 0, detailsExtracted: 0, newJobs: 0, skippedStale: 0, skippedCompany: 0, skippedTitle: 0, skippedNonTech: 0, skippedRoleUnclear: 0, nearMisses: 0, logosBackfilled: 0, skippedKnown: 0, failedDetails: 0 };
 
   log.section(`Run ${runId}`);
   log.info(`${cfg.watchlist.length} watchlist terms across ${cfg.uniqueCompanyCount} companies · mode "${cfg.searchMode ?? 'companies'}" · ${allSearches.length} searches · budget ${cfg.limits.maxRuntimeMinutes}m`);
@@ -157,6 +157,10 @@ async function main() {
           if (store.hasJob(card.jobId)) {
             counters.skippedKnown++;
             store.touchJob(card.jobId);
+            // Free logo backfill: this card carries the URL even though we are
+            // not opening the job, and rows stored before logo capture existed
+            // would otherwise never get one.
+            if (store.backfillLogo(card.jobId, card.logoUrl)) counters.logosBackfilled++;
             continue;
           }
 
@@ -267,6 +271,8 @@ async function main() {
             skills: extractSkills(description),
             description,
             searchKeywords: search.label ?? search.keywords,
+            // Detail-pane logo is higher resolution; fall back to the card's.
+            logoUrl: detail.logoUrl || card.logoUrl || null,
           };
           job.summary = await summarize(job, description, cfg.summarizer);
 
@@ -430,7 +436,7 @@ async function main() {
 
   // Push the public job list. Runs even with 0 new jobs so the site drops
   // listings that have aged out of the window.
-  if (!DRY_RUN) publish(store, cfg, newJobs.length);
+  if (!DRY_RUN) await publish(store, cfg, newJobs.length);
 
   store.close();
   process.exitCode = status === 'error' ? 1 : 0;

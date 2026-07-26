@@ -24,6 +24,7 @@ CREATE TABLE IF NOT EXISTS jobs (
   skills            TEXT,
   description       TEXT,
   summary           TEXT,
+  logo_url          TEXT,
   search_keywords   TEXT,
   first_seen_at     INTEGER NOT NULL,
   last_seen_at      INTEGER NOT NULL,
@@ -91,11 +92,16 @@ export class Store {
 
   /** Additive migrations for databases created by an earlier version. */
   #migrate() {
-    const columns = this.db.prepare('PRAGMA table_info(seen_cards)').all().map((c) => c.name);
+    const seenCols = this.db.prepare('PRAGMA table_info(seen_cards)').all().map((c) => c.name);
     for (const [name, type] of [['company', 'TEXT'], ['title', 'TEXT']]) {
-      if (!columns.includes(name)) {
+      if (!seenCols.includes(name)) {
         this.db.exec(`ALTER TABLE seen_cards ADD COLUMN ${name} ${type}`);
       }
+    }
+
+    const jobCols = this.db.prepare('PRAGMA table_info(jobs)').all().map((c) => c.name);
+    if (!jobCols.includes('logo_url')) {
+      this.db.exec('ALTER TABLE jobs ADD COLUMN logo_url TEXT');
     }
   }
 
@@ -289,6 +295,22 @@ export class Store {
     this.db.prepare('UPDATE jobs SET last_seen_at = ? WHERE job_id = ?').run(Date.now(), jobId);
   }
 
+  /**
+   * Fill in a logo for a job we already hold.
+   *
+   * An already-known job is skipped without being opened, so upsertJob never
+   * runs for it — meaning rows stored before logo capture existed would never
+   * acquire one. Their card still carries the URL, so take it from there. Only
+   * writes when the column is empty.
+   */
+  backfillLogo(jobId, logoUrl) {
+    if (!logoUrl) return false;
+    const changes = this.db.prepare(
+      'UPDATE jobs SET logo_url = ? WHERE job_id = ? AND (logo_url IS NULL OR logo_url = \'\')',
+    ).run(logoUrl, jobId).changes;
+    return changes > 0;
+  }
+
   // ---- jobs -----------------------------------------------------------------
 
   /** Insert a newly extracted job. Returns true if it was genuinely new. */
@@ -299,9 +321,10 @@ export class Store {
     if (existing) {
       this.db.prepare(`
         UPDATE jobs SET last_seen_at = ?, salary_text = COALESCE(?, salary_text),
-                        applicants = COALESCE(?, applicants), apply_url = COALESCE(?, apply_url)
+                        applicants = COALESCE(?, applicants), apply_url = COALESCE(?, apply_url),
+                        logo_url = COALESCE(logo_url, ?)
         WHERE job_id = ?
-      `).run(now, job.salaryText ?? null, job.applicants ?? null, job.applyUrl ?? null, job.jobId);
+      `).run(now, job.salaryText ?? null, job.applicants ?? null, job.applyUrl ?? null, job.logoUrl ?? null, job.jobId);
       return false;
     }
 
@@ -311,8 +334,8 @@ export class Store {
         posted_text, posted_at, salary_text, stipend_min, stipend_max,
         stipend_currency, stipend_period, applicants, easy_apply, apply_url,
         job_url, duration, skills, description, summary, search_keywords,
-        first_seen_at, last_seen_at, first_run_id, reported
-      ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,0)
+        logo_url, first_seen_at, last_seen_at, first_run_id, reported
+      ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,0)
     `).run(
       job.jobId,
       job.title ?? '(untitled)',
@@ -336,6 +359,7 @@ export class Store {
       job.description ?? null,
       job.summary ?? null,
       job.searchKeywords ?? null,
+      job.logoUrl ?? null,
       now,
       now,
       runId,

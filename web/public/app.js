@@ -70,6 +70,30 @@ function companyGradient(name) {
   return `linear-gradient(140deg, hsl(${safe} 72% 56%), hsl(${(safe + 38) % 360} 76% 45%))`;
 }
 
+/**
+ * The company's real logo when we have one, initials when we don't.
+ *
+ * The initials are rendered underneath rather than instead: if the image fails
+ * to load for any reason, removing it reveals the fallback with no layout shift
+ * and no flash of nothing.
+ */
+function companyBadge(job) {
+  const badge = el('div', 'co-badge', companyInitials(job.company));
+  badge.style.background = companyGradient(job.company);
+
+  if (job.logo) {
+    const img = el('img', 'co-logo');
+    img.src = job.logo;
+    img.alt = '';               // decorative: the company name is right beside it
+    img.loading = 'lazy';
+    img.decoding = 'async';
+    img.addEventListener('load', () => badge.classList.add('has-logo'));
+    img.addEventListener('error', () => img.remove());
+    badge.append(img);
+  }
+  return badge;
+}
+
 function companyInitials(name) {
   const words = String(name).replace(/[^\w\s]/g, ' ').trim().split(/\s+/).filter(Boolean);
   if (!words.length) return '?';
@@ -177,9 +201,7 @@ function jobCard(job, index) {
 
   const head = el('div', 'card-head');
 
-  const badge = el('div', 'co-badge', companyInitials(job.company));
-  badge.style.background = companyGradient(job.company);
-  head.append(badge);
+  head.append(companyBadge(job));
 
   const block = el('div', 'co-block');
   block.append(el('div', 'co-name', job.company));

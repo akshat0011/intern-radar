@@ -173,6 +173,16 @@ site — without them one person could exhaust the day's allowance before lunch.
 Requests are validated before they count against the limit, so a student who
 mistypes six times has not burned their hourly allowance.
 
+**Company logos.** Each job card on LinkedIn carries the employer's logo, so the
+URL comes free with a page we are already loading. It is **downloaded once**
+into `web/public/logos/` and served from your own site rather than hotlinked:
+LinkedIn's CDN links are signed and carry an expiry, so a hotlinked logo would
+silently break after a few weeks and would point every visitor at LinkedIn.
+Anything that is not a real image, is over 400 KB, or fails to download is
+skipped, and the card falls back to a coloured badge with the company's
+initials. The browser falls back too — if a stored file ever goes missing the
+image removes itself and the initials show through, with no layout shift.
+
 **What is published.** Company, role, stipend, location, work mode, duration,
 the generated summary, and a link to the original posting. Full job descriptions
 are deliberately *not* republished — they are the posting company's copyrighted

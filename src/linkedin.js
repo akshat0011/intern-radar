@@ -248,6 +248,11 @@ export async function enumerateCards(page, cfg) {
       // --- metadata ---
       // The <time> element carries trailing filter text ("16 minutes ago
       // Within the past 24 hours"), so pull out just the relative phrase.
+      // The card carries the company logo as an <img>. Grabbing the URL here
+      // costs nothing — the page is already loaded.
+      const logoEl = card.querySelector('img[src*="licdn.com"], img[alt*="logo" i], img');
+      const logoUrl = logoEl?.getAttribute('src') || logoEl?.getAttribute('data-delayed-url') || '';
+
       const timeEl = card.querySelector('time');
       const rawPosted = `${text(timeEl)} ${blob}`;
       const postedText =
@@ -267,6 +272,7 @@ export async function enumerateCards(page, cfg) {
         salaryText,
         easyApply: /easy apply/i.test(blob),
         promoted: /promoted/i.test(blob),
+        logoUrl: /^https?:\/\//.test(logoUrl) ? logoUrl : '',
         href: href.startsWith('http') ? href : href ? `https://www.linkedin.com${href}` : '',
       };
     }).filter((c) => {
@@ -444,7 +450,10 @@ export async function openAndExtract(page, card, cfg) {
       if (href && !href.startsWith('#')) applyUrl = href.startsWith('http') ? href : `https://www.linkedin.com${href}`;
     }
 
-    return { title, company, location, workplaceType, applicants, postedText, salaryText, description, easyApply, applyUrl, applyLabel };
+    const detailLogo = pane.querySelector('img[src*="licdn.com"]')?.getAttribute('src') ?? '';
+
+    return { title, company, location, workplaceType, applicants, postedText, salaryText, description, easyApply, applyUrl, applyLabel,
+             logoUrl: /^https?:\/\//.test(detailLogo) ? detailLogo : '' };
   }, DESCRIPTION_SELECTORS);
 
   if (!detail.description || detail.description.length < 60) {

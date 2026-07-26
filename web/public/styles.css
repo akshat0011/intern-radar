@@ -374,13 +374,25 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .card-head { display: flex; gap: 15px; align-items: flex-start; }
 
 .co-badge {
+  position: relative; overflow: hidden;
   width: 52px; height: 52px; flex: none; border-radius: 15px;
   display: grid; place-items: center;
   font-size: 20px; font-weight: 750; letter-spacing: -.03em; color: #fff;
   box-shadow: 0 3px 12px rgba(0,0,0,.16), inset 0 1px 0 rgba(255,255,255,.22);
-  transition: transform .3s var(--spring);
+  transition: transform .3s var(--spring), background .2s;
 }
 .card:hover .co-badge { transform: scale(1.07) rotate(-3deg); }
+
+/* The logo covers the initials once it has actually loaded. A white plate sits
+   behind it because most company marks are drawn for a light background. */
+.co-logo {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: contain; padding: 5px; background: #fff;
+}
+.co-badge.has-logo {
+  background: #fff !important;
+  box-shadow: 0 3px 12px rgba(0,0,0,.14), 0 0 0 1px var(--line);
+}
 
 .co-block { flex: 1; min-width: 0; }
 /* The company is the headline — this is the thing a student scans for. */
