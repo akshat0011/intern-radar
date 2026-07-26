@@ -99,7 +99,11 @@ export async function humanScrollContainer(page, selector, { steps = 10, stepPau
 /** Scroll the window itself in human-sized increments. */
 export async function humanScrollPage(page, { steps = 6, stepPause = [400, 900] } = {}) {
   for (let i = 0; i < steps; i++) {
-    await page.mouse.wheel(0, rand(200, 500));
+    try {
+      await page.mouse.wheel(0, rand(200, 500));
+    } catch {
+      return; // page gone; the caller's next real action will report it
+    }
     await pause(stepPause);
   }
 }
@@ -107,16 +111,41 @@ export async function humanScrollPage(page, { steps = 6, stepPause = [400, 900] 
 /**
  * Occasionally do something pointless — a small scroll back up, a stray mouse
  * drift. Real sessions are noisy; perfectly purposeful ones are not.
+ *
+ * This is decoration, so it must never be able to fail a run. It once did: a
+ * mouse.wheel on a browser that had just crashed threw, and aborted a run that
+ * had already collected 51 jobs. Anything purely cosmetic swallows its errors.
  */
 export async function idleFidget(page) {
-  if (Math.random() < 0.35) {
-    await page.mouse.wheel(0, -rand(80, 260));
-    await sleep(rand(300, 1200));
+  try {
+    if (Math.random() < 0.35) {
+      await page.mouse.wheel(0, -rand(80, 260));
+      await sleep(rand(300, 1200));
+    }
+    if (Math.random() < 0.3) {
+      const w = page.viewportSize()?.width ?? 1200;
+      const h = page.viewportSize()?.height ?? 800;
+      await humanMouseTo(page, rand(100, w - 100), rand(100, h - 100));
+      await sleep(rand(200, 700));
+    }
+  } catch {
+    // Page or browser gone. The next real interaction will surface that
+    // properly; a failed flourish is not itself news.
   }
-  if (Math.random() < 0.3) {
-    const w = page.viewportSize()?.width ?? 1200;
-    const h = page.viewportSize()?.height ?? 800;
-    await humanMouseTo(page, rand(100, w - 100), rand(100, h - 100));
-    await sleep(rand(200, 700));
+}
+
+/**
+ * Is the browser still there?
+ *
+ * Used to turn "mouse.wheel: Target page, context or browser has been closed"
+ * into a statement of what actually happened.
+ */
+export async function pageAlive(page) {
+  try {
+    if (page.isClosed?.()) return false;
+    await page.evaluate(() => 1);
+    return true;
+  } catch {
+    return false;
   }
 }

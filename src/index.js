@@ -14,7 +14,7 @@ import * as li from './linkedin.js';
 import { resolveSearches } from './searches.js';
 import { classifyRoles } from './gemini.js';
 import { classifyRole } from './roles.js';
-import { pause, sleep, idleFidget, humanDelay } from './human.js';
+import { pause, sleep, idleFidget, humanDelay, pageAlive } from './human.js';
 import { summarize } from './summarize.js';
 import { extractStipend, extractDuration, extractSkills, extractWorkplaceType, parseRelativeTime } from './extract.js';
 import { buildReport, writeReport } from './report.js';
@@ -350,6 +350,16 @@ async function main() {
 
           await pause(cfg.pacing.betweenCards);
           await idleFidget(page);
+
+          // Brave can die mid-run (it crashed once under memory pressure). Say
+          // so plainly and stop, rather than failing on whatever call happened
+          // to touch the dead page next.
+          if (!(await pageAlive(page))) {
+            notes.push('Brave closed unexpectedly partway through the run. Everything captured before that point was kept and published.');
+            log.error('Brave is no longer responding — ending the run and keeping what was collected.');
+            status = 'partial';
+            break searchLoop;
+          }
 
           let detail;
           try {
