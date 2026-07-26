@@ -10,6 +10,7 @@ import { Store } from './store.js';
 import { launchBrave, closeBrave } from './browser.js';
 import { ensureHealthy, assertSignedIn, assertListRendered, RunAborted, State } from './guard.js';
 import * as li from './linkedin.js';
+import { resolveSearches } from './searches.js';
 import { pause, sleep, idleFidget, humanDelay } from './human.js';
 import { summarize } from './summarize.js';
 import { extractStipend, extractDuration, extractSkills, extractWorkplaceType, parseRelativeTime } from './extract.js';
@@ -42,9 +43,12 @@ async function main() {
   ensureDirs();
   const cfg = loadConfig();
 
+  // Company batches or role keywords, per config.searchMode.
+  const allSearches = resolveSearches(cfg);
+
   if (DRY_RUN) {
     log.warn('DRY RUN — one search, one page, at most 3 job details.');
-    cfg.searches = cfg.searches.slice(0, 1);
+    allSearches.splice(1);
     cfg.limits = { ...cfg.limits, maxPagesPerSearch: 1, maxDetailsPerRun: 3, maxRuntimeMinutes: Math.min(cfg.limits.maxRuntimeMinutes, 15) };
   }
 
@@ -77,7 +81,7 @@ async function main() {
   const counters = { pagesScanned: 0, cardsSeen: 0, detailsExtracted: 0, newJobs: 0, skippedStale: 0, skippedCompany: 0, skippedTitle: 0, skippedKnown: 0, failedDetails: 0 };
 
   log.section(`Run ${runId}`);
-  log.info(`${cfg.watchlist.length} watchlist terms across ${cfg.companies.length} companies · ${cfg.searches.length} searches · budget ${cfg.limits.maxRuntimeMinutes}m`);
+  log.info(`${cfg.watchlist.length} watchlist terms across ${cfg.uniqueCompanyCount} companies · mode "${cfg.searchMode ?? 'companies'}" · ${allSearches.length} searches · budget ${cfg.limits.maxRuntimeMinutes}m`);
 
   let session;
   let status = 'ok';
@@ -98,15 +102,17 @@ async function main() {
     // always reach the end, and starting from index 0 every time would mean
     // the tail never runs at all. Picking up where the last run stopped gives
     // every keyword its turn across consecutive runs.
-    const cursor = DRY_RUN ? 0 : Number(store.getSetting('search_cursor') ?? 0) % cfg.searches.length;
-    const ordered = [...cfg.searches.slice(cursor), ...cfg.searches.slice(0, cursor)];
+    const cursor = DRY_RUN ? 0 : Number(store.getSetting('search_cursor') ?? 0) % allSearches.length;
+    const ordered = [...allSearches.slice(cursor), ...allSearches.slice(0, cursor)];
     if (cursor > 0) {
-      log.info(`Resuming the keyword rotation at "${ordered[0].keywords}" (position ${cursor + 1} of ${cfg.searches.length}).`);
+      log.info(`Resuming the rotation at position ${cursor + 1} of ${allSearches.length}.`);
     }
 
     searchLoop:
     for (const [searchIndex, search] of ordered.entries()) {
-      const label = `${search.keywords}${search.location ? ` @ ${search.location}` : ''}`;
+      const label = search.label
+        ? `${search.label} (${search.companyCount} companies)`
+        : `${search.keywords}${search.location ? ` @ ${search.location}` : ''}`;
       log.section(`Search: ${label} — ${searchIndex + 1}/${ordered.length}`);
 
       for (let pageIndex = 0; pageIndex < cfg.limits.maxPagesPerSearch; pageIndex++) {
@@ -214,7 +220,7 @@ async function main() {
             duration: extractDuration(description, detail.title || card.title),
             skills: extractSkills(description),
             description,
-            searchKeywords: search.keywords,
+            searchKeywords: search.label ?? search.keywords,
           };
           job.summary = await summarize(job, description, cfg.summarizer);
 
@@ -307,18 +313,18 @@ async function main() {
   // Persist the rotation cursor on every path, including an aborted run —
   // searches that did complete should not be repeated at the expense of ones
   // that never got their turn.
-  if (!DRY_RUN && cfg.searches.length > 0) {
-    const next = searchesDone >= cfg.searches.length
+  if (!DRY_RUN && allSearches.length > 0) {
+    const next = searchesDone >= allSearches.length
       ? 0
-      : (searchStart + searchesDone) % cfg.searches.length;
+      : (searchStart + searchesDone) % allSearches.length;
     store.setSetting('search_cursor', next);
 
-    if (searchesDone >= cfg.searches.length) {
-      log.ok(`Covered all ${cfg.searches.length} keyword searches.`);
+    if (searchesDone >= allSearches.length) {
+      log.ok(`Covered all ${allSearches.length} searches — every watchlist company was queried.`);
     } else {
-      const remaining = cfg.searches.length - searchesDone;
-      notes.push(`Covered ${searchesDone} of ${cfg.searches.length} keyword searches this run. The other ${remaining} are first in the queue next time, so no keyword is permanently skipped.`);
-      log.info(`Covered ${searchesDone}/${cfg.searches.length} searches — next run resumes at "${cfg.searches[next].keywords}".`);
+      const remaining = allSearches.length - searchesDone;
+      notes.push(`Covered ${searchesDone} of ${allSearches.length} searches this run. The other ${remaining} are first in the queue next time, so no company batch is permanently skipped.`);
+      log.info(`Covered ${searchesDone}/${allSearches.length} searches — next run resumes at position ${next + 1}.`);
     }
   }
 

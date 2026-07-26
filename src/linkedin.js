@@ -45,7 +45,17 @@ const DESCRIPTION_SELECTORS = [
  */
 export function buildSearchUrl(search, filters, { start = 0 } = {}) {
   const params = new URLSearchParams();
-  params.set('keywords', search.keywords);
+
+  // A company-id search carries no keywords at all: f_C already restricts the
+  // results to those exact employers, and adding a keyword could only narrow
+  // it further and drop postings that do not happen to contain the word.
+  if (search.companyIds?.length) {
+    params.set('f_C', search.companyIds.join(','));
+    if (search.keywords) params.set('keywords', search.keywords);
+  } else {
+    params.set('keywords', search.keywords ?? '');
+  }
+
   if (search.location) params.set('location', search.location);
   if (search.geoId) params.set('geoId', String(search.geoId));
 

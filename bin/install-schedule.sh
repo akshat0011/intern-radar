@@ -130,20 +130,21 @@ cat > "$PLIST" <<PLIST_EOF
     <key>WorkingDirectory</key>
     <string>$HERE</string>
 
-    <!-- 12:00 and 18:00 every day. Two times require an ARRAY of dicts.
-         Asleep at the time: launchd fires once shortly after wake, and
-         coalesces several missed intervals into one run. Powered off at the
-         time: that run is dropped entirely and does not catch up. -->
+    <!-- Every 3 hours. Each time needs its own dict in the array.
+         Asleep at the time: launchd fires once shortly after the lid opens,
+         and coalesces several missed slots into a single run rather than
+         replaying each one. Powered off at the time: that slot is dropped and
+         does not catch up, so the next scheduled slot is the recovery. -->
     <key>StartCalendarInterval</key>
     <array>
-        <dict>
-            <key>Hour</key><integer>12</integer>
-            <key>Minute</key><integer>0</integer>
-        </dict>
-        <dict>
-            <key>Hour</key><integer>18</integer>
-            <key>Minute</key><integer>0</integer>
-        </dict>
+        <dict><key>Hour</key><integer>0</integer><key>Minute</key><integer>0</integer></dict>
+        <dict><key>Hour</key><integer>3</integer><key>Minute</key><integer>0</integer></dict>
+        <dict><key>Hour</key><integer>6</integer><key>Minute</key><integer>0</integer></dict>
+        <dict><key>Hour</key><integer>9</integer><key>Minute</key><integer>0</integer></dict>
+        <dict><key>Hour</key><integer>12</integer><key>Minute</key><integer>0</integer></dict>
+        <dict><key>Hour</key><integer>15</integer><key>Minute</key><integer>0</integer></dict>
+        <dict><key>Hour</key><integer>18</integer><key>Minute</key><integer>0</integer></dict>
+        <dict><key>Hour</key><integer>21</integer><key>Minute</key><integer>0</integer></dict>
     </array>
 
     <key>RunAtLoad</key>
@@ -188,7 +189,8 @@ launchctl bootstrap "gui/$UID_NUM" "$PLIST"
 launchctl enable "gui/$UID_NUM/$LABEL"
 
 echo
-echo "Scheduled: 12:00 and 18:00 daily (plus up to 15 min of random jitter)."
+echo "Scheduled: every 3 hours (00,03,06,09,12,15,18,21) plus up to 15 min of random jitter."
+echo "If the Mac is asleep at a slot, the run fires shortly after you open the lid."
 echo
 echo "  Verify it registered:  launchctl print gui/$UID_NUM/$LABEL | head -20"
 echo "  Fire one run now:      launchctl kickstart -k gui/$UID_NUM/$LABEL"

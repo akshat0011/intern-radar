@@ -9,6 +9,16 @@
     { "name": "Dream11", "aliases": ["Dream Sports"] }
   ],
 
+  "searchMode": "companies",
+  "_searchMode_note": "'companies' = search the watchlist directly, as boolean OR batches (~30 companies per query, so 862 companies costs ~30 queries instead of 862). 'keywords' = use the role keyword list below instead. 'both' = company batches first, then role keywords.",
+
+  "companySearch": {
+    "batchSize": 30,
+    "_batchSize_note": "Companies per query. Batches are also capped by URL length, so a group of long names may hold fewer than this.",
+    "extraKeywords": "",
+    "_extraKeywords_note": "Prepended to every batch query. Deliberately empty: filters.jobTypes already restricts results to internships, and adding the literal word 'internship' would ALSO require it to appear in the job text - excluding postings titled e.g. 'SDE Intern' that never spell it out. Set it only if you want that narrowing."
+  },
+
   "defaultLocation": "India",
   "_defaultLocation_note": "Applied to any search written as a plain string. Change this one value to move the whole watch to another city or country.",
 

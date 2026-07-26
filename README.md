@@ -1,9 +1,8 @@
 # LinkedIn internship watcher
 
-Twice a day, opens Brave, walks LinkedIn's job search for anything posted in the
-last 24 hours, opens only the postings from companies on your watchlist, pulls
-out the details, and hands you an HTML report you can act on in a couple of
-minutes.
+Every three hours, opens Brave and checks LinkedIn for internships posted in the
+last day at the companies on your watchlist, pulls out the details, and hands
+you an HTML report — plus a public site students can browse.
 
 It does **not** apply for you. It finds and summarises; you click Apply.
 
@@ -12,10 +11,15 @@ It does **not** apply for you. It finds and summarises; you click Apply.
 ## Read this first
 
 **Automated scraping is against LinkedIn's Terms of Service.** LinkedIn can
-restrict or ban accounts for it. The pacing here is deliberately slow and the
-volume tiny — two short sessions a day, a few dozen page loads — which keeps it
-well below the thresholds that usually trigger enforcement, but it cannot make
-the risk zero. You are choosing to accept that risk.
+restrict or ban accounts for it. The pacing is deliberately slow and the volume
+small — a run queries the watchlist in batches rather than one company at a
+time, so a full sweep of ~880 companies costs on the order of 20 page loads
+rather than 880. That keeps it well below the thresholds that usually trigger
+enforcement, but it cannot make the risk zero. You are choosing to accept that.
+
+**Request volume is the thing that gets accounts banned**, far more than total
+runtime. If you ever raise the run frequency or drop the pacing values, that is
+the number to keep an eye on.
 
 Three design choices follow from it:
 
@@ -104,7 +108,7 @@ The installer will **stop and refuse** if the project is in `~/Desktop`,
 TCC-protected, and a job started by launchd runs as a bare interpreter with no
 stable code signature — so it gets no permission grant. It works perfectly when
 you run it in Terminal (which already has a grant) and then fails silently at
-12:00, which is the worst possible failure mode.
+the next scheduled slot, which is the worst possible failure mode.
 
 The fix, which keeps `cd ~/Desktop/projects/tbd` working via a symlink:
 
@@ -185,7 +189,7 @@ want them anyway, understanding what that means.
 | `npm test` | Run the extraction unit tests |
 | `node bin/show-report.js --runs` | History of past runs and their counts |
 | `node bin/show-report.js --skipped` | Companies seen but skipped — use this to tune the watchlist |
-| `npm run install-schedule` | Register the 12:00 / 18:00 LaunchAgent |
+| `npm run install-schedule` | Register the every-3-hours LaunchAgent |
 | `npm run uninstall-schedule` | Remove the schedule (keeps your data) |
 
 Add `--force` to override an active cooldown: `node src/index.js --force`.
@@ -238,7 +242,7 @@ hours: much slower, much higher risk.
 put 4–9s between job clicks and a 45–90s break every 12 jobs. **Raising these
 lowers your risk.** Anything under 1.5s between cards is rejected outright.
 `startupJitter` adds a random 0–15 min to scheduled runs so activity does not
-land at exactly 12:00:00 every day.
+land at exactly the same second every slot.
 
 **`limits`** — backstops, not the normal stopping point: 90 minutes, 40 pages
 per search (≈1000 results, LinkedIn's own ceiling), 60 jobs opened. Paging
@@ -333,6 +337,7 @@ tail -20 ~/Library/Logs/linkedin-watcher/run.log
 System Settings → General → Login Items & Extensions, where macOS lets you
 switch the agent off.
 
-**Asleep at 12:00** → launchd fires once shortly after wake, coalescing missed
-intervals. **Powered off at 12:00** → that run is dropped entirely and does not
-catch up.
+**Asleep at a slot** → launchd fires once shortly after you open the lid, and
+coalesces several missed slots into a single run rather than replaying each one.
+**Powered off at a slot** → that slot is dropped and does not catch up; the next
+scheduled slot three hours later is the recovery.

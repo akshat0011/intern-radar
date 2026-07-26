@@ -60,6 +60,23 @@ CREATE TABLE IF NOT EXISTS settings (
   key   TEXT PRIMARY KEY,
   value TEXT
 );
+
+-- Cache of watchlist company name -> LinkedIn numeric company id, so the
+-- expensive resolution pass happens once rather than every run. The status
+-- column lets a name that genuinely cannot be resolved be remembered as such
+-- instead of being retried forever.
+CREATE TABLE IF NOT EXISTS company_ids (
+  name        TEXT PRIMARY KEY,
+  display     TEXT,
+  linkedin_id TEXT,
+  slug        TEXT,
+  matched_as  TEXT,
+  status      TEXT NOT NULL DEFAULT 'pending',
+  attempts    INTEGER NOT NULL DEFAULT 0,
+  resolved_at INTEGER
+);
+
+CREATE INDEX IF NOT EXISTS idx_company_ids_status ON company_ids(status);
 `;
 
 export class Store {
@@ -143,6 +160,69 @@ export class Store {
 
   clearCooldown() {
     this.setSetting('cooldown_until', 0);
+  }
+
+  // ---- company id cache -----------------------------------------------------
+
+  /** Register every watchlist name so the resolver has a work queue. */
+  seedCompanyNames(entries) {
+    const stmt = this.db.prepare(`
+      INSERT INTO company_ids (name, display, status) VALUES (?, ?, 'pending')
+      ON CONFLICT(name) DO NOTHING
+    `);
+    let added = 0;
+    for (const { name, display } of entries) {
+      const before = this.db.prepare('SELECT 1 FROM company_ids WHERE name = ?').get(name);
+      stmt.run(name, display ?? name);
+      if (!before) added++;
+    }
+    return added;
+  }
+
+  recordCompanyId(name, { linkedinId, slug, matchedAs }) {
+    this.db.prepare(`
+      UPDATE company_ids
+      SET linkedin_id = ?, slug = ?, matched_as = ?, status = 'resolved',
+          attempts = attempts + 1, resolved_at = ?
+      WHERE name = ?
+    `).run(linkedinId ?? null, slug ?? null, matchedAs ?? null, Date.now(), name);
+  }
+
+  /**
+   * Mark a name as unresolvable. Kept distinct from 'pending' so the resolver
+   * does not spend every future run retrying the same hopeless lookups; three
+   * failures is treated as settled.
+   */
+  markCompanyUnresolved(name, reason) {
+    this.db.prepare(`
+      UPDATE company_ids
+      SET attempts = attempts + 1,
+          matched_as = ?,
+          status = CASE WHEN attempts + 1 >= 3 THEN 'unresolved' ELSE 'pending' END
+      WHERE name = ?
+    `).run(reason ?? null, name);
+  }
+
+  pendingCompanyNames(limit = 150) {
+    return this.db.prepare(
+      "SELECT name, display, attempts FROM company_ids WHERE status = 'pending' ORDER BY attempts ASC, rowid ASC LIMIT ?",
+    ).all(limit);
+  }
+
+  resolvedCompanyIds() {
+    return this.db.prepare(
+      "SELECT name, display, linkedin_id FROM company_ids WHERE status = 'resolved' AND linkedin_id IS NOT NULL ORDER BY rowid",
+    ).all();
+  }
+
+  companyIdStats() {
+    const rows = this.db.prepare('SELECT status, COUNT(*) AS n FROM company_ids GROUP BY status').all();
+    const out = { pending: 0, resolved: 0, unresolved: 0, total: 0 };
+    for (const { status, n } of rows) {
+      out[status] = n;
+      out.total += n;
+    }
+    return out;
   }
 
   // ---- cards ----------------------------------------------------------------

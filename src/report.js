@@ -191,7 +191,7 @@ export function buildReport({ jobs, run, notes = [], stats = {} }) {
 <div class="wrap">
 <header>
   <h1>New internships on your watchlist</h1>
-  <div class="sub">Run finished ${esc(absTime(run.finishedAt || Date.now()))} · scanned ${esc(run.pagesScanned ?? 0)} pages, ${esc(run.cardsSeen ?? 0)} cards · next run at 12:00 / 18:00</div>
+  <div class="sub">Run finished ${esc(absTime(run.finishedAt || Date.now()))} · scanned ${esc(run.pagesScanned ?? 0)} pages, ${esc(run.cardsSeen ?? 0)} cards · next run within 3 hours</div>
 </header>
 
 ${notes.map((n) => `<div class="note">${esc(n)}</div>`).join('')}
