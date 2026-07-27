@@ -1,8 +1,8 @@
 {
- "generatedAt": 1785175078856,
- "count": 224,
+ "generatedAt": 1785177643744,
+ "count": 225,
  "techCount": 49,
- "otherCount": 175,
+ "otherCount": 176,
  "companies": [
   "A.P. Moller - Maersk",
   "Accenture in India",
@@ -150,6 +150,45 @@
  ],
  "jobs": [
   {
+   "id": "4445977931",
+   "title": "Apprentice Hiring for 2026- 2027",
+   "company": "Deutsche Bank",
+   "matchedWatchlist": "Deutsche Bank",
+   "isTech": false,
+   "roleSource": "gemini-enrich",
+   "logo": "/logos/deutsche-bank.jpg",
+   "location": "Mumbai, Maharashtra, India",
+   "workplaceType": "Hybrid",
+   "stipend": null,
+   "duration": null,
+   "applicants": null,
+   "easyApply": false,
+   "skills": [
+    "excel"
+   ],
+   "summary": "Job Title: Apprentice Hiring for 2026- 2027 Location: Mumbai, India About the programme: This 12-month apprenticeship, under India's National Apprenticeship Training Scheme, provides valuable on-the-job training; Please note, there is no obligation for permanent employment with Deutsche Bank Group upon completion of the Apprenticeship Training tenure.",
+   "bullets": [
+    "Analyze data to identify trends and translate insights into clear reports and decision-making materials",
+    "Proficient in Microsoft Office, strong Excel skills, experience with Power Query, and leveraging AI tools"
+   ],
+   "degreeLevel": "UG",
+   "degreeText": "Diploma",
+   "keySkills": [
+    "microsoft office",
+    "excel",
+    "power query",
+    "data analysis",
+    "ai tools"
+   ],
+   "stipendStatus": "unknown",
+   "postedText": "21 minutes ago",
+   "postedAt": 1785175121654,
+   "firstSeenAt": 1785176381660,
+   "url": "https://www.linkedin.com/jobs/view/4445977931/",
+   "applyUrl": "https://www.linkedin.com/jobs/view/4445977931/",
+   "description": null
+  },
+  {
    "id": "4445173006",
    "title": "Intern-SE PMO",
    "company": "Philips",
@@ -261,7 +300,7 @@
    "company": "Volvo Group",
    "matchedWatchlist": "Volvo Group",
    "isTech": false,
-   "roleSource": "offline-fallback",
+   "roleSource": "gemini-enrich",
    "logo": "/logos/volvo-group.jpg",
    "location": "Bengaluru, Karnataka, India",
    "workplaceType": "On-site",
@@ -274,10 +313,17 @@
     "excel"
    ],
    "summary": "At Volvo Group, you will contribute to the transformation of our company, the transport industry, and society at large. In this role, you will play a key part in optimizing our production lines by conducting value-added and non-value-added activity studies, including time studies and motion analysis. You will perform advanced product assembly simulations for both global and local projects, analyzing complex assembly kinematics and ensuring ergonomic standards are met. You will also coordinate with tooling and equipment engineers across global Volvo factories to document and manage virtual CAD data in our Global…",
-   "bullets": [],
-   "degreeLevel": null,
-   "degreeText": null,
-   "keySkills": [],
+   "bullets": [
+    "Perform advanced product assembly simulations, analyzing kinematics and ensuring ergonomic standards",
+    "Prepare and present virtual and material data for reviews, collaborating with cross-functional stakeholders"
+   ],
+   "degreeLevel": "UG",
+   "degreeText": "B.E/B.Tech",
+   "keySkills": [
+    "cad",
+    "ergonomics",
+    "assembly simulation"
+   ],
    "stipendStatus": "unknown",
    "postedText": "1 hour ago",
    "postedAt": 1785170837172,
@@ -958,7 +1004,7 @@
    "company": "Newton School",
    "matchedWatchlist": "Newton School",
    "isTech": true,
-   "roleSource": "gemini-description",
+   "roleSource": "gemini-enrich",
    "logo": "/logos/newton-school.jpg",
    "location": "Bengaluru, Karnataka, India",
    "workplaceType": "On-site",
@@ -972,10 +1018,19 @@
     "excel"
    ],
    "summary": "About Newton School : Newton School is a technology education company bridging the gap between academic learning and industry application. Founded by IIT alumni, it is building an ecosystem where technology, pedagogy, and employability come together to create meaningful outcomes for learners. You'll work closely with our Academic, Admissions, and Growth teams, contributing to learner assessments, content creation, analytics, and AI-focused initiatives.",
-   "bullets": [],
-   "degreeLevel": null,
+   "bullets": [
+    "Interact with prospective learners, assessing technical aptitude and problem-solving skills",
+    "Use SQL and Excel to track metrics, analyze data, and uncover actionable insights, building simple dashboards"
+   ],
+   "degreeLevel": "Pursuing",
    "degreeText": null,
-   "keySkills": [],
+   "keySkills": [
+    "sql",
+    "excel",
+    "google sheets",
+    "ai",
+    "machine learning"
+   ],
    "stipendStatus": "unknown",
    "postedText": "8 minutes ago",
    "postedAt": 1785151496890,
@@ -990,7 +1045,7 @@
    "company": "State Street",
    "matchedWatchlist": "State Street",
    "isTech": true,
-   "roleSource": "gemini-description",
+   "roleSource": "gemini-enrich",
    "logo": "/logos/state-street.jpg",
    "location": "Hyderabad, Telangana, India",
    "workplaceType": "On-site",
@@ -1006,10 +1061,20 @@
     "excel"
    ],
    "summary": "The ideal candidate will have predominantly project management skills with technical background implementing banking software applications, preferably within a cloud deployment environment. The team you will be joining is a part of Charles River Development (or CRD), that became a part of State Street in 2018. What You Will Be Responsible For As Apprentice IT PMO Analyst you will:",
-   "bullets": [],
-   "degreeLevel": null,
-   "degreeText": null,
-   "keySkills": [],
+   "bullets": [
+    "Implement solutions to automate BAU processes using SharePoint, Python, C++, or Java",
+    "Maintain project artifacts, document lessons learned, and provide status reporting on assigned tasks",
+    "Track and monitor timesheets and dashboards, consolidating technical artifacts to meet SDLC standards"
+   ],
+   "degreeLevel": "Pursuing",
+   "degreeText": "Bachelor's",
+   "keySkills": [
+    "sharepoint",
+    "python",
+    "c++",
+    "java",
+    "sql"
+   ],
    "stipendStatus": "unknown",
    "postedText": "15 minutes ago",
    "postedAt": 1785151082517,
@@ -1255,7 +1320,7 @@
    "company": "InMobi",
    "matchedWatchlist": "InMobi",
    "isTech": false,
-   "roleSource": "gemini-description",
+   "roleSource": "gemini-enrich",
    "logo": "/logos/inmobi.jpg",
    "location": "Bengaluru, Karnataka, India",
    "workplaceType": "On-site",
@@ -1265,7 +1330,12 @@
    "easyApply": false,
    "skills": [],
    "summary": "Who are we, and what do we do? Its businesses across advertising, marketing, data and content platforms are shaping consumer experience in a world of connected devices. InMobi Group has been recognized on both the 2018 and 2019 CNBC Disruptor 50 list and as one of Fast Company’s 2018 World’s Most Innovative Companies. What you will be doing:",
-   "bullets": [],
+   "bullets": [
+    "Capitalize fixed assets in the ERP system, verifying documentation",
+    "Coordinate with procurement and project teams for timely capitalization and asset tagging",
+    "Prepare schedules for audit purposes related to fixed assets",
+    "Perform monthly intercompany reconciliation and verify BRS"
+   ],
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -1311,7 +1381,7 @@
    "company": "upGrad",
    "matchedWatchlist": "upGrad",
    "isTech": false,
-   "roleSource": "gemini-description",
+   "roleSource": "gemini-enrich",
    "logo": "/logos/upgrad.jpg",
    "location": "Noida, Uttar Pradesh, India",
    "workplaceType": "On-site",
@@ -1321,8 +1391,13 @@
    "easyApply": false,
    "skills": [],
    "summary": "Location: Noida- 5 Days Working Duration : 3 Months eWe’re looking for a proactive intern to support our Study Abroad programs and learner lifecycle. sRequired Skills & Qualification",
-   "bullets": [],
-   "degreeLevel": null,
+   "bullets": [
+    "Coordinate with students and internal teams for study abroad programs",
+    "Engage with enrolled students via calls, emails, and webinars",
+    "Manage learner journey: onboarding, documentation, application tracking, and follow-ups",
+    "Work on projects to improve learner experience and optimize application/visa processes"
+   ],
+   "degreeLevel": "Pursuing",
    "degreeText": null,
    "keySkills": [],
    "stipendStatus": "paid",
@@ -1339,7 +1414,7 @@
    "company": "Kairo Urban Group Pvt Ltd",
    "matchedWatchlist": "Urban Company",
    "isTech": false,
-   "roleSource": "gemini-description",
+   "roleSource": "gemini-enrich",
    "logo": "/logos/kairo-urban-group-pvt-ltd.jpg",
    "location": "Gurugram, Haryana, India",
    "workplaceType": "On-site",
@@ -1351,10 +1426,20 @@
     "excel"
    ],
    "summary": "Backed by a strong builder legacy, the company offers premium residential and commercial real estate solutions that blend lifestyle, value, and long-term growth potential. Services include end-to-end support for sales, resale, renting, leasing, and investment advisory, tailored to the needs of homebuyers, investors, and businesses. Role Description The Real Estate Intern role is a full-time, on-site position based in Gurugram. The intern will support day-to-day activities such as assisting with property listings, coordinating site visits, and maintaining client databases.",
-   "bullets": [],
-   "degreeLevel": null,
+   "bullets": [
+    "Help with property listings, site visits, and client databases for luxury real estate",
+    "Assist the sales team with lead generation, market research, and customer interactions",
+    "Support documentation and follow-up for sales, renting, and leasing transactions",
+    "Use MS Office tools for data management and reporting"
+   ],
+   "degreeLevel": "Pursuing",
    "degreeText": null,
-   "keySkills": [],
+   "keySkills": [
+    "ms office",
+    "excel",
+    "powerpoint",
+    "word"
+   ],
    "stipendStatus": "unknown",
    "postedText": "50 minutes ago",
    "postedAt": 1785145460693,
@@ -1397,7 +1482,7 @@
    "company": "Fractal",
    "matchedWatchlist": "Fractal Analytics",
    "isTech": false,
-   "roleSource": "gemini-description",
+   "roleSource": "gemini-enrich",
    "logo": "/logos/fractal.jpg",
    "location": "Mumbai, Maharashtra, India",
    "workplaceType": "On-site",
@@ -1409,7 +1494,12 @@
     "excel"
    ],
    "summary": "It's fun to work in a company where people truly BELIEVE in what they are doing! We're committed to bringing passion and customer focus to the business. Opening 1: Corporate tax intern and international tax Assisting In The Business Advisory Solutions Which Includes",
-   "bullets": [],
+   "bullets": [
+    "Advise on tax implications based on international tax treaties and local laws",
+    "Review business and inter-company agreements for tax/regulatory/transfer pricing risks",
+    "Assist in representation for global tax litigations and assessment proceedings",
+    "Manage global tax compliance for the group across 30 entities and 10 countries"
+   ],
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -1427,7 +1517,7 @@
    "company": "S&P Global",
    "matchedWatchlist": "S&P Global",
    "isTech": false,
-   "roleSource": "gemini-description",
+   "roleSource": "gemini-enrich",
    "logo": "/logos/s-and-p-global.jpg",
    "location": "Gurugram, Haryana, India",
    "workplaceType": "On-site",
@@ -1437,9 +1527,14 @@
    "easyApply": false,
    "skills": [],
    "summary": "Grade Level (for internal use): The Team: WSO Operations Responsibilities and Impact: What We’re Looking For",
-   "bullets": [],
-   "degreeLevel": null,
-   "degreeText": null,
+   "bullets": [
+    "Support processing and maintenance of structured finance transactions by updating data",
+    "Assist in trade settlement activities and ensure timely processing of borrowing transactions",
+    "Review transaction documentation to capture and maintain accurate financial records",
+    "Help monitor daily operational activities, investigate discrepancies, and support reconciliation"
+   ],
+   "degreeLevel": "UG/PG",
+   "degreeText": "B.Com/BBA",
    "keySkills": [],
    "stipendStatus": "unknown",
    "postedText": "40 minutes ago",
@@ -1455,7 +1550,7 @@
    "company": "Tata CLiQ Fashion",
    "matchedWatchlist": "Tata Technologies",
    "isTech": false,
-   "roleSource": "gemini-description",
+   "roleSource": "gemini-enrich",
    "logo": "/logos/tata-cliq-fashion.jpg",
    "location": "Mumbai Metropolitan Region",
    "workplaceType": "Hybrid",
@@ -1465,7 +1560,11 @@
    "easyApply": false,
    "skills": [],
    "summary": "Internship Charter To support the content team in creating high-quality content for CRM channels on Tata CLiQ Fashion. Writing BAU Push Notifications for CRM Stipend: 10,000/month",
-   "bullets": [],
+   "bullets": [
+    "Write CRM copy for various channels like push notifications, emailers, WhatsApps, and SMSes",
+    "Collect and compile CRM data reports regularly",
+    "Support the content team in creating high-quality content for CRM channels"
+   ],
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -1511,7 +1610,7 @@
    "company": "Country Delight",
    "matchedWatchlist": "Country Delight",
    "isTech": false,
-   "roleSource": "gemini-description",
+   "roleSource": "gemini-enrich",
    "logo": "/logos/country-delight.jpg",
    "location": "Gurugram, Haryana, India",
    "workplaceType": "On-site",
@@ -1521,10 +1620,20 @@
    "easyApply": true,
    "skills": [],
    "summary": "Location: Gurugram / Hyderabad (Exceptional candidates from other locations willing to relocate are encouraged to apply.) Country Delight is one of India’s fastest-growing D2C dairy and fresh food brands, serving over 500,000 households across urban India. Every product our customers experience begins long before it reaches the shelf. We’re looking for final-year students and recent graduates who want to work on real business challenges alongside experienced professionals and contribute to products used by millions of consumers.",
-   "bullets": [],
-   "degreeLevel": null,
+   "bullets": [
+    "Work on product concepts, packaging innovation, consumer experience, and prototype development",
+    "Support new product development, ingredient evaluation, formulation trials, and documentation",
+    "Ideal for final-year students or recent graduates in industrial design or food technology"
+   ],
+   "degreeLevel": "UG/PG",
    "degreeText": null,
-   "keySkills": [],
+   "keySkills": [
+    "product design",
+    "industrial design",
+    "structural packaging",
+    "cad modelling",
+    "product visualisation"
+   ],
    "stipendStatus": "unknown",
    "postedText": "8 minutes ago",
    "postedAt": 1785131692245,
@@ -1567,7 +1676,7 @@
    "company": "MedTourEasy Navi Mumbai",
    "matchedWatchlist": "Navi",
    "isTech": true,
-   "roleSource": "offline",
+   "roleSource": "gemini-enrich",
    "logo": "/logos/medtoureasy-navi-mumbai.jpg",
    "location": "India",
    "workplaceType": "Remote",
@@ -1577,8 +1686,12 @@
    "easyApply": true,
    "skills": [],
    "summary": "We are looking for enthusiastic and motivated current college students to join our upcoming Data Analytics Traineeship Program. This structured one-month program is designed to provide practical exposure to data analytics through guided learning, hands-on project experience, and professional report preparation. Data Analytics Trainee Responsibilities Week 1 & 2: Training Modules",
-   "bullets": [],
-   "degreeLevel": null,
+   "bullets": [
+    "Complete data analytics learning modules in the first two weeks",
+    "Work on a live project assigned by the company in the third week",
+    "Prepare and submit a project report based on the live project in the fourth week"
+   ],
+   "degreeLevel": "Pursuing",
    "degreeText": null,
    "keySkills": [],
    "stipendStatus": "unknown",
@@ -1595,7 +1708,7 @@
    "company": "UBS",
    "matchedWatchlist": "UBS",
    "isTech": false,
-   "roleSource": "gemini-description",
+   "roleSource": "gemini-enrich",
    "logo": "/logos/ubs.jpg",
    "location": "Pune Division, Maharashtra, India",
    "workplaceType": "On-site",
@@ -1608,10 +1721,21 @@
     "excel"
    ],
    "summary": "Are you passionate about balance sheet, leverage, capital and liquidity & funding reporting? Are you an expert at analyzing financial results for Treasury business? We’re looking for a Reporting Specialist to: Higher Accounting degree or professional qualification",
-   "bullets": [],
+   "bullets": [
+    "Deliver high-quality reporting and analytics for Group and Legal Entities, compiling financial information",
+    "Prepare financial statements and reports for the business and external auditors",
+    "Work with MS Office, with exposure to PowerBI, Alteryx, and Python as an advantage",
+    "Team provides reporting and analysis to support decision-making for Group Treasury division"
+   ],
    "degreeLevel": null,
    "degreeText": null,
-   "keySkills": [],
+   "keySkills": [
+    "ms office",
+    "excel",
+    "word",
+    "ms access",
+    "powerbi"
+   ],
    "stipendStatus": "unknown",
    "postedText": "1 hour ago",
    "postedAt": 1785124734159,
@@ -1626,7 +1750,7 @@
    "company": "Boston Scientific",
    "matchedWatchlist": "Boston Scientific",
    "isTech": false,
-   "roleSource": "gemini-description",
+   "roleSource": "gemini-enrich",
    "logo": "/logos/boston-scientific.jpg",
    "location": "Pune Division, Maharashtra, India",
    "workplaceType": "Onsite",
@@ -1636,10 +1760,17 @@
    "easyApply": false,
    "skills": [],
    "summary": "Additional Locations: Costa Rica-Coyol Diversity - Innovation - Caring - Global Collaboration - Winning Spirit - High Performance Did you know that the Boston Scientific Internship Program in Costa Rica is one of the most robust in the country and offers hiring possibilities? The Internship Program is designed for advanced-level university students seeking practical experience and skill development in their field of study, as well as the opportunity to join a leading company in the medical device sector.",
-   "bullets": [],
-   "degreeLevel": null,
-   "degreeText": null,
-   "keySkills": [],
+   "bullets": [
+    "Accompany EHS Engineer on incident investigations and complete information in Cority and Safe Works App",
+    "Obtain quotations, process purchases, and upload weekly Business Unit rotations",
+    "Conduct GEMBA walks, review GCIBS platform, and support during engineer absences",
+    "Requires active enrollment in a Bachelor's or Licentiate Degree in Occupational Health and Safety Engineering"
+   ],
+   "degreeLevel": "UG",
+   "degreeText": "Bachelor's",
+   "keySkills": [
+    "microsoft office"
+   ],
    "stipendStatus": "unknown",
    "postedText": "10 minutes ago",
    "postedAt": 1785122658506,
