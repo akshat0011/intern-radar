@@ -1,8 +1,8 @@
 {
- "generatedAt": 1785177643744,
- "count": 225,
+ "generatedAt": 1785179983695,
+ "count": 226,
  "techCount": 49,
- "otherCount": 176,
+ "otherCount": 177,
  "companies": [
   "A.P. Moller - Maersk",
   "Accenture in India",
@@ -149,6 +149,38 @@
   "West Bengal, India (On-site)"
  ],
  "jobs": [
+  {
+   "id": "4445996778",
+   "title": "Apprentice Hiring for 2026- 2027",
+   "company": "Deutsche Bank",
+   "matchedWatchlist": "Deutsche Bank",
+   "isTech": false,
+   "roleSource": "offline-fallback",
+   "logo": "/logos/deutsche-bank.jpg",
+   "location": "Mumbai, Maharashtra, India",
+   "workplaceType": "Hybrid",
+   "stipend": null,
+   "duration": null,
+   "applicants": null,
+   "easyApply": false,
+   "skills": [
+    "python",
+    "sql",
+    "excel"
+   ],
+   "summary": "Job Title: Apprentice Hiring for 2026- 2027 Location: Mumbai, India About the programme: This 12-month apprenticeship, under India's National Apprenticeship Training Scheme, provides valuable on-the-job training; Please note, there is no obligation for permanent employment with Deutsche Bank Group upon completion of the Apprenticeship Training tenure.",
+   "bullets": [],
+   "degreeLevel": null,
+   "degreeText": null,
+   "keySkills": [],
+   "stipendStatus": "unknown",
+   "postedText": "1 hour ago",
+   "postedAt": 1785175998258,
+   "firstSeenAt": 1785179598265,
+   "url": "https://www.linkedin.com/jobs/view/4445996778/",
+   "applyUrl": "https://www.linkedin.com/jobs/view/4445996778/",
+   "description": null
+  },
   {
    "id": "4445977931",
    "title": "Apprentice Hiring for 2026- 2027",
