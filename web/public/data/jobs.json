@@ -1,8 +1,8 @@
 {
- "generatedAt": 1785194046504,
- "count": 227,
+ "generatedAt": 1785195822923,
+ "count": 228,
  "techCount": 51,
- "otherCount": 176,
+ "otherCount": 177,
  "companies": [
   "A.P. Moller - Maersk",
   "Accenture in India",
@@ -151,6 +151,36 @@
   "West Bengal, India (On-site)"
  ],
  "jobs": [
+  {
+   "id": "4445413454",
+   "title": "Apprentice -Banking and Business Blueprint",
+   "company": "American Express",
+   "matchedWatchlist": "American Express",
+   "isTech": false,
+   "roleSource": "offline-fallback",
+   "logo": "/logos/american-express.jpg",
+   "location": "Gurugram, Haryana, India",
+   "workplaceType": "Hybrid",
+   "stipend": null,
+   "duration": null,
+   "applicants": null,
+   "easyApply": false,
+   "skills": [
+    "express"
+   ],
+   "summary": "Every one of our Operations Team Care Professionals represents the American Express Brand. They take their work personally because they’re more than a friendly voice, they’re problem solvers and relationship builders. The people you’ll work with, and the customers you’ll care for, value your passion and unique personality as much as we do. Not more than 5 years of difference between highest education degree completion date and joining date",
+   "bullets": [],
+   "degreeLevel": null,
+   "degreeText": null,
+   "keySkills": [],
+   "stipendStatus": "unknown",
+   "postedText": "27 minutes ago",
+   "postedAt": 1785194188128,
+   "firstSeenAt": 1785195808138,
+   "url": "https://www.linkedin.com/jobs/view/4445413454/",
+   "applyUrl": "https://www.linkedin.com/jobs/view/4445413454/",
+   "description": null
+  },
   {
    "id": "4442884354",
    "title": "Intern - Web/Mobile App Developer",
