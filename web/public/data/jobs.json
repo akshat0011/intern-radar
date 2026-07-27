@@ -1,8 +1,8 @@
 {
- "generatedAt": 1785166472555,
- "count": 216,
+ "generatedAt": 1785168758715,
+ "count": 217,
  "techCount": 46,
- "otherCount": 170,
+ "otherCount": 171,
  "companies": [
   "A.P. Moller - Maersk",
   "Accenture in India",
@@ -148,6 +148,34 @@
   "West Bengal, India (On-site)"
  ],
  "jobs": [
+  {
+   "id": "4445956388",
+   "title": "CA Intern",
+   "company": "UBS",
+   "matchedWatchlist": "UBS",
+   "isTech": false,
+   "roleSource": "gemini-description",
+   "logo": "/logos/ubs.jpg",
+   "location": "Pune Division, Maharashtra, India",
+   "workplaceType": "On-site",
+   "stipend": null,
+   "duration": null,
+   "applicants": null,
+   "easyApply": false,
+   "skills": [],
+   "summary": "Are you passionate about balance sheet, leverage, capital and liquidity & funding reporting? Are you an expert at analyzing financial results for Treasury business? We’re Looking For a Reporting Specialist To Deliver high quality reporting and analytics for Group, and Legal Entities",
+   "bullets": [],
+   "degreeLevel": null,
+   "degreeText": null,
+   "keySkills": [],
+   "stipendStatus": "unknown",
+   "postedText": "1 hour ago",
+   "postedAt": 1785165118936,
+   "firstSeenAt": 1785168718942,
+   "url": "https://www.linkedin.com/jobs/view/4445956388/",
+   "applyUrl": "https://www.linkedin.com/jobs/view/4445956388/",
+   "description": null
+  },
   {
    "id": "4445966386",
    "title": "CA Intern",
