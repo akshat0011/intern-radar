@@ -721,8 +721,13 @@ function syncStickyOffset() {
   const bar = document.querySelector('.bar');
   const rail = document.querySelector('.rail');
   if (!bar || !rail) return;
-  const h = Math.round(bar.getBoundingClientRect().height + rail.getBoundingClientRect().height);
-  document.documentElement.style.setProperty('--stack-h', `${h}px`);
+  // Count only what is actually pinned. Below 680px the rail goes position:static
+  // and scrolls away, so summing it there would reserve ~290px of offset that
+  // nothing occupies and push the listings down behind a gap.
+  const h = [bar, rail]
+    .filter((el) => getComputedStyle(el).position === 'sticky')
+    .reduce((sum, el) => sum + el.getBoundingClientRect().height, 0);
+  document.documentElement.style.setProperty('--stack-h', `${Math.round(h)}px`);
 }
 
 /* ---------------- boot ---------------- */

@@ -480,8 +480,20 @@ button, input, select, textarea { font: inherit; color: inherit; }
   .co { font-size: 20px; }
   .age { grid-column: 2; text-align: left; padding-top: 8px; }
   .age s { margin-left: 0; }
-  .picks label { flex: 1 1 calc(50% - 4px); }
-  .picks select { max-width: none; flex: 1; }
+  /* min-width:0 on both, or the select's intrinsic width — the widest company or
+     city name in the option list — becomes an unshrinkable floor and pushes the
+     rail ~150px past the viewport. That is what made the whole page scroll
+     sideways on a phone. The ellipsis keeps a long name from looking clipped. */
+  .picks label { flex: 1 1 calc(50% - 4px); min-width: 0; }
+  .picks select {
+    max-width: none; flex: 1; min-width: 0; width: 100%;
+    text-overflow: ellipsis; white-space: nowrap; overflow: hidden;
+  }
+
+  /* Only the 62px bar stays pinned. The rail wraps to three rows here, and
+     sticking it too froze ~350px — nearly half a phone screen — above every
+     scroll. It scrolls away now; the bar is what you need while scrolling. */
+  .rail { position: static; backdrop-filter: none; -webkit-backdrop-filter: none; }
   .modal { width: 100vw; max-width: 100vw; height: 100vh; max-height: 100vh; top: 0; left: 0; transform: none; border: 0; border-radius: 0; }
   @keyframes pop { from { opacity: 0; transform: translateY(14px); } }
   .sheet { padding: 24px 20px; }
