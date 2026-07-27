@@ -105,3 +105,73 @@ export async function open(target) {
     return false;
   }
 }
+
+/* ---------------- phone push ---------------- */
+
+const NTFY_TIMEOUT_MS = 8_000;
+
+/**
+ * Push a notification to the phone via ntfy.sh.
+ *
+ * A macOS banner is useless when you are not at the machine, which is most of the
+ * time — and the entire point of this project is being early. ntfy needs no account
+ * and no API key: the topic name IS the credential, which is why it belongs in .env
+ * beside the Gemini key and not in config.json.
+ *
+ * Silent no-op when NTFY_TOPIC is unset, so the watcher runs unchanged for anyone
+ * who has not set it up. Never throws: a missed notification must not fail a run
+ * that has already done the expensive work.
+ *
+ * @param {string} title  Notification title.
+ * @param {string} body   Notification body. Newlines render as separate lines.
+ * @param {{url?: string, tags?: string[], priority?: number}} [opts]
+ *        url      makes the notification tappable, opening that link
+ *        tags     ntfy renders known tag names as emoji
+ *        priority 1 (min) to 5 (max); 4+ breaks through a silent phone
+ * @returns {Promise<boolean>} true only if ntfy accepted it
+ */
+export async function pushToPhone(title, body, { url, tags, priority } = {}) {
+  const topic = process.env.NTFY_TOPIC;
+  if (!topic) return false;
+
+  // A topic is a URL path segment and anyone who knows it can publish to it.
+  // Reject anything that could escape the path rather than POSTing somewhere odd.
+  if (!/^[A-Za-z0-9_-]{4,64}$/.test(topic)) {
+    log.warn('NTFY_TOPIC must be 4-64 characters of letters, digits, hyphen or underscore — skipping phone push.');
+    return false;
+  }
+
+  const server = process.env.NTFY_SERVER || 'https://ntfy.sh';
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), NTFY_TIMEOUT_MS);
+
+  try {
+    // Headers must be latin-1 safe: ntfy carries the title and tags as headers, and
+    // a company name with an em dash or a rupee sign would otherwise throw here.
+    const headers = { 'content-type': 'text/plain; charset=utf-8' };
+    const asciiTitle = String(title).replace(/[^\x20-\x7E]/g, ' ').trim();
+    if (asciiTitle) headers.Title = asciiTitle;
+    if (tags?.length) headers.Tags = tags.join(',');
+    if (priority) headers.Priority = String(priority);
+    if (url) headers.Click = url;
+
+    const res = await fetch(`${server}/${topic}`, {
+      method: 'POST',
+      headers,
+      body: String(body).slice(0, 4000),
+      signal: controller.signal,
+    });
+
+    if (!res.ok) {
+      log.warn(`Phone push failed (HTTP ${res.status}) — the run itself is unaffected.`);
+      return false;
+    }
+    return true;
+  } catch (err) {
+    const why = err.name === 'AbortError' ? 'timed out' : err.message.split('\n')[0];
+    log.warn(`Phone push failed (${why}) — the run itself is unaffected.`);
+    return false;
+  } finally {
+    clearTimeout(timer);
+  }
+}

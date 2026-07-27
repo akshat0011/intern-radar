@@ -15,6 +15,7 @@
  */
 import { log } from './logger.js';
 import { classifyRole } from './roles.js';
+import { normaliseDegree } from './extract.js';
 
 const API_BASE = 'https://generativelanguage.googleapis.com/v1beta/models';
 const TIMEOUT_MS = 30_000;
@@ -331,7 +332,7 @@ degreeLevel — who is eligible, judged ONLY from the text:
   "Pursuing" when it requires a currently-enrolled student but names no level
   "none" when the posting genuinely does not say
 
-degreeText — the named qualification only, at most 30 characters: "B.Tech Computer Science", "M.Sc Statistics", "Diploma in Mechanical". It must name a degree or diploma. Return an empty string for anything that is a status rather than a qualification ("recent graduates", "freshers", "any discipline") — degreeLevel already carries that.
+degreeText — the degree NAME ONLY, never the field of study. Write "B.Tech", not "B.Tech Computer Science". Write "MBA", not "MBA in Finance". Write "B.E/B.Tech" when the posting accepts either. Use the short Indian forms: B.Tech, M.Tech, B.E, M.E, B.Sc, M.Sc, BCA, MCA, BBA, MBA, B.Com, PhD, Diploma, CA. At most two, separated by "/". The reader already knows what field they are searching in; the qualification is what decides whether they are eligible. Return an empty string for anything that is a status rather than a qualification ("recent graduates", "freshers", "any discipline") — degreeLevel already carries that.
 
 keySkills — 2 to 5 concrete, specific skills or technologies named in the posting: languages, frameworks, tools, named methods. Lowercase. Never soft skills ("communication", "teamwork", "attention to detail"), never vague nouns ("technology", "software"). Empty array if the posting names none.
 
@@ -473,7 +474,9 @@ export async function enrichJobs(items, cfg = {}) {
 
         // "none" is the schema's stand-in for "not stated"; normalise it back to empty.
         const level = ['UG', 'PG', 'UG/PG', 'Pursuing'].includes(v.degreeLevel) ? v.degreeLevel : '';
-        const degreeText = level && typeof v.degreeText === 'string' ? v.degreeText.trim().slice(0, 40) : '';
+        // The prompt asks for the degree name alone, but the model reliably volunteers
+        // the field of study too. Strip it here rather than trusting the instruction.
+        const degreeText = level ? normaliseDegree(v.degreeText) : '';
         // A captured amount outranks the model: the scraper read it off the posting.
         const stipendStatus = slice[v.id].stipend ? 'paid'
           : ['paid', 'unpaid', 'unknown'].includes(v.stipendStatus) ? v.stipendStatus

@@ -1,32 +1,30 @@
 {
   "_comment": "Edit this file to control what gets watched. Everything else has sane defaults.",
-
   "companiesFile": "companies.json",
   "_companiesFile_note": "The main watchlist, ~600 companies grouped by sector. Delete whole groups from that file to narrow coverage. Anything added to the inline 'companies' list below is merged on top of it.",
-
   "_companies_note": "Your own additions go here - they are merged with companiesFile.",
   "companies": [
-    { "name": "Dream11", "aliases": ["Dream Sports"] }
+    {
+      "name": "Dream11",
+      "aliases": [
+        "Dream Sports"
+      ]
+    }
   ],
-
   "searchMode": "keywords",
   "_searchMode_note": "'keywords' (default) = run the searches list below; with a single broad entry that means one sweep paginated to exhaustion, filtered locally. 'companies' = boolean OR batches of the watchlist - NOT recommended: LinkedIn treats those names as loose text and returns mostly unrelated employers. 'both' = company batches then the searches list.",
-
   "companySearch": {
     "batchSize": 30,
     "_batchSize_note": "Companies per query. Batches are also capped by URL length, so a group of long names may hold fewer than this.",
     "extraKeywords": "",
     "_extraKeywords_note": "Prepended to every batch query. Deliberately empty: filters.jobTypes already restricts results to internships, and adding the literal word 'internship' would ALSO require it to appear in the job text - excluding postings titled e.g. 'SDE Intern' that never spell it out. Set it only if you want that narrowing."
   },
-
   "defaultLocation": "India",
   "_defaultLocation_note": "Applied to any search written as a plain string. Change this one value to move the whole watch to another city or country.",
-
   "_searches_note": "One broad search, paginated to exhaustion, then filtered locally by title, role and company. The boolean form matters: a plain 'internship' keyword misses postings titled only 'Intern' (Salesforce's 'Summer 2027 Intern - Software Engineer' is one), and the OR list covers every phrasing the title filter accepts. Keep it as ONE entry - each extra search costs a full pagination pass.",
   "searches": [
     "(intern OR internship OR trainee OR \"co-op\" OR apprentice)"
   ],
-
   "filters": {
     "adaptiveWindow": true,
     "_adaptiveWindow_note": "Sizes the lookback from how long ago the last successful run was, instead of using one fixed number. With hourly runs a fixed 30-hour window would re-paginate 30 hours of postings every time to find the newest hour - roughly 30x the page loads for nothing. After a normal hourly run the window is ~3h; after an overnight sleep it stretches to cover the gap, so nothing is missed.",
@@ -38,7 +36,6 @@
     "jobTypes": [],
     "_jobTypes_note": "DELIBERATELY EMPTY. Setting this to ['INTERNSHIP'] sends f_JT=I, which trusts the recruiter's employment-type tag - and they get it wrong constantly. A real case: Salesforce's 'Summer 2027 Intern - Software Engineer' is tagged Full-time, so f_JT=I hid it completely. The title filter and role classifier below decide what is an internship instead, from the title itself. LinkedIn f_JT codes if you ever want them: F=full-time P=part-time C=contract T=temporary I=internship V=volunteer O=other."
   },
-
   "roleClassifier": {
     "useGemini": false,
     "_useGemini_note": "Currently OFF - the offline vocabulary in src/roles.js decides. Gemini was never the speed bottleneck (it runs as one batch after the walk, not per job), but the offline classifier is instant and free, so there is little reason to switch it on unless the vocabulary starts missing things. When true: ask Gemini whether each captured role is a software role. Needs GEMINI_API_KEY in the environment - put it in a .env file at the project root (gitignored) and it is picked up automatically. Titles are sent as ONE batched request per run, not one per job. If the key is missing, the quota is spent, or the call fails for any reason, the offline vocabulary in src/roles.js decides instead - a job is never left unclassified because an API was down.",
@@ -46,7 +43,6 @@
     "_useGeminiForAmbiguous_note": "The one place Gemini still earns its keep. A title the vocabulary cannot settle - a bare 'Trainee', 'Apprentice', or something resting only on the word 'Engineer' - gets its DESCRIPTION read instead. Gemini also names the phrase its decision turned on, and that phrase is added to the offline vocabulary, so the same kind of title is answered instantly and free from then on. The vocabulary therefore gets better and the API gets called less the longer this runs. Vetted before anything is learned: the phrase must actually appear in the posting, must not contradict a built-in rule, and must be a sane length.",
     "model": "gemini-2.5-flash"
   },
-
   "matching": {
     "openNonTechRoles": false,
     "_openNonTechRoles_note": "false = a role the classifier CONFIDENTLY calls non-tech is listed from its search-card data alone, with no page open. Ambiguous titles are still opened, since that is exactly when the description decides. On a real backfill this cut opens from 12 to 4 per dozen candidates. Card-only listings have no description, summary or skills, which is fine for the Other roles tab. Set true to open everything.",
@@ -54,29 +50,59 @@
     "_skipViewedCards_note": "LinkedIn marks cards you have already opened as Viewed. Skipping them avoids re-opening a job after an interrupted run. Tradeoff: a job you viewed manually in your own browsing will never be added.",
     "requireCompanyMatch": true,
     "_requireCompanyMatch_note": "true = the FIRST gate. A posting from a company not on the watchlist is skipped outright - no title parsing, no role classification, no Gemini call. Set false to consider every internship found, which is far more work and spends classifier quota on employers you do not care about.",
-    "titleMustMatch": ["intern", "internship", "trainee", "co-op", "coop", "summer analyst", "apprentice"],
+    "titleMustMatch": [
+      "intern",
+      "internship",
+      "trainee",
+      "co-op",
+      "coop",
+      "summer analyst",
+      "apprentice"
+    ],
     "_titleMustMatch_note": "A job must contain one of these in its title. Use [] to disable.",
     "_roles_note": "Non-software roles at watchlist companies are no longer discarded - they are published under the site's Other roles tab. Only the company gate discards anything.",
     "extraTechTerms": [],
     "extraNonTechTerms": [],
     "_extraTerms_note": "Your own additions to the classifier, checked ahead of the built-in lists."
   },
-
   "pacing": {
     "_note": "All values in milliseconds, randomised per action. These were roughly halved for speed, which roughly doubles the request rate - a real increase in ban risk. If LinkedIn ever rate-limits, raise these first; the 24h cooldown will have already stopped the run.",
-    "betweenCards": [1800, 3600],
-    "betweenPages": [4000, 8000],
-    "betweenSearches": [20000, 40000],
-    "scrollStep": [260, 700],
-    "afterNavigation": [1500, 3000],
-    "warmupOnFeed": [3000, 6000],
+    "betweenCards": [
+      1800,
+      3600
+    ],
+    "betweenPages": [
+      4000,
+      8000
+    ],
+    "betweenSearches": [
+      20000,
+      40000
+    ],
+    "scrollStep": [
+      260,
+      700
+    ],
+    "afterNavigation": [
+      1500,
+      3000
+    ],
+    "warmupOnFeed": [
+      3000,
+      6000
+    ],
     "longBreakEvery": 30,
-    "longBreak": [12000, 25000],
+    "longBreak": [
+      12000,
+      25000
+    ],
     "_longBreak_note": "Every N job cards, take a longer human-style break.",
-    "startupJitter": [0, 240000],
+    "startupJitter": [
+      0,
+      240000
+    ],
     "_startupJitter_note": "Scheduled runs wait a random extra 0-4 min, so activity does not land at exactly HH:00:00 every hour. Kept short because runs are hourly - a long jitter would push one slot into the next."
   },
-
   "limits": {
     "maxRuntimeMinutes": 45,
     "maxPagesPerSearch": 40,
@@ -85,7 +111,6 @@
     "_note": "Safety backstops, not the normal stopping point. Paging normally ends when LinkedIn's 'Next' button runs out, which means every job in the window has been seen. These caps only bite if a search is unusually deep - and when one does bite, the report says so explicitly rather than pretending the search finished.",
     "_maxPagesPerSearch_note": "40 pages x 25 = 1000 results, which is roughly LinkedIn's own ceiling for a single search. With the 24-hour filter on, most searches end far sooner."
   },
-
   "notifications": {
     "onCaptcha": true,
     "onNewJobs": true,
@@ -93,19 +118,23 @@
     "openReportWhenDone": true,
     "_openReportWhenDone_note": "Auto-open the HTML report in your default browser when new jobs are found."
   },
-
   "browser": {
     "headed": true,
     "_headed_note": "Must stay true. Headless Chromium reports 'HeadlessChrome' in its user agent and an 800x600 screen - trivially detectable, and you could not solve a CAPTCHA in a window you cannot see. The tool refuses to start if this is false.",
-    "windowSize": [1512, 950],
-    "windowPosition": [40, 40],
+    "windowSize": [
+      1512,
+      950
+    ],
+    "windowPosition": [
+      40,
+      40
+    ],
     "_windowPosition_note": "Where the Brave window opens. Set to [-2400, -2400] to park it off-screen if you find it distracting - but then you would have to drag it back into view to solve a CAPTCHA.",
     "returnFocus": true,
     "_returnFocus_note": "Brave always steals keyboard focus when it launches. This hands focus straight back to whatever app you were using, so a run at 12:00 does not interrupt you.",
     "disableBraveShields": true,
     "_disableBraveShields_note": "Passes --disable-brave-extension. Mostly belt-and-braces: on a fresh profile Shields has no filter lists to work from, and LinkedIn was verified to load fine either way."
   },
-
   "publish": {
     "enabled": true,
     "autoPush": true,
@@ -115,15 +144,18 @@
     "includeFullDescription": false,
     "_includeFullDescription_note": "Leave false. Full descriptions are the posting company's copyrighted text; the site shows your generated summary and links to the original instead."
   },
-
   "safety": {
     "cooldownHoursAfterRateLimit": 24,
     "_cooldownHoursAfterRateLimit_note": "If LinkedIn ever rate-limits or restricts the session, the tool refuses to run again for this many hours instead of walking back into it. Set 0 to disable."
   },
-
   "summarizer": {
     "mode": "offline",
     "_mode_note": "'offline' = regex/extractive summary, no API key, free. 'claude' = better summaries via the Claude API; set ANTHROPIC_API_KEY in your environment and change this to 'claude'.",
     "model": "claude-haiku-4-5-20251001"
+  },
+  "enrich": {
+    "perRunLimit": 24,
+    "_perRunLimit_note": "How many freshly scraped postings get sent to Gemini for bullets, eligibility and skills at the end of each run. The free tier has a daily request cap, and with runs every 30 minutes an uncapped run could spend the whole day's quota in one go. Anything skipped is picked up by the next run, because only postings with no bullets yet are ever selected.",
+    "useGemini": true
   }
 }

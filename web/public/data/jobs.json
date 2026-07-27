@@ -1,5 +1,5 @@
 {
- "generatedAt": 1785170024527,
+ "generatedAt": 1785172145999,
  "count": 219,
  "techCount": 46,
  "otherCount": 173,
@@ -2409,7 +2409,7 @@
     "Hyderabad or Bangalore, for students graduating in 2028"
    ],
    "degreeLevel": "UG",
-   "degreeText": "B.E/B.Tech CS or IT",
+   "degreeText": "B.E/B.Tech",
    "keySkills": [
     "java",
     "c++",
@@ -2485,7 +2485,7 @@
     "Work with Python, Golang, or similar programming languages"
    ],
    "degreeLevel": "Pursuing",
-   "degreeText": "bachelor's degree in Computer Science",
+   "degreeText": "Bachelor's",
    "keySkills": [
     "testing methodologies",
     "python",
@@ -2568,7 +2568,7 @@
     "Low-code work on Microsoft Power Platform; in office at least 3 days a week"
    ],
    "degreeLevel": "UG",
-   "degreeText": "Bachelor's in CS, IT or Engg",
+   "degreeText": "Bachelor's",
    "keySkills": [
     "python",
     "sql",
@@ -2613,7 +2613,7 @@
     "Pune-based, and Red Hat will not sponsor a visa for this role"
    ],
    "degreeLevel": "UG",
-   "degreeText": "Bachelor's in CS or IT",
+   "degreeText": "Bachelor's",
    "keySkills": [
     "python",
     "golang",
@@ -2657,7 +2657,7 @@
     "Use Copilot and custom GPTs in the workflow; office 3 days a week"
    ],
    "degreeLevel": "UG",
-   "degreeText": "Bachelor's in CS or IT",
+   "degreeText": "Bachelor's",
    "keySkills": [
     "python",
     "sql",
@@ -2695,7 +2695,7 @@
     "6 months, in office in Sector 62 Noida, 6-8k stipend, meals included"
    ],
    "degreeLevel": "PG",
-   "degreeText": "MBA (preferred)",
+   "degreeText": "MBA",
    "keySkills": [
     "procurement",
     "vendor management",
@@ -2737,7 +2737,7 @@
     "Contractual apprentice role, minimum 3 days a week in office"
    ],
    "degreeLevel": "UG",
-   "degreeText": "Bachelor's in Finance/Business",
+   "degreeText": "Bachelor's",
    "keySkills": [
     "agile",
     "ai tools",
@@ -2776,7 +2776,7 @@
     "Site commissioning in India and abroad, deputations running 5-6 months at a stretch"
    ],
    "degreeLevel": "UG",
-   "degreeText": "B.E. Electrical Engineering",
+   "degreeText": "B.E",
    "keySkills": [
     "matlab/simulink",
     "pscad/emtdc",
@@ -2823,7 +2823,7 @@
     "6-month full-time in-person stint, needs 2026 graduation and CGPA 8.0+"
    ],
    "degreeLevel": "UG/PG",
-   "degreeText": "Bachelors/Masters in CS",
+   "degreeText": "Bachelor's/Master's",
    "keySkills": [
     "python",
     "tensorflow",
@@ -2870,7 +2870,7 @@
     "Pune or Bangalore, in an intern cohort; no visa sponsorship"
    ],
    "degreeLevel": "UG",
-   "degreeText": "Bachelor's in CS or IT",
+   "degreeText": "Bachelor's",
    "keySkills": [
     "python",
     "golang",
@@ -2917,7 +2917,7 @@
     "Pune or Bangalore, in an intern cohort; no visa sponsorship"
    ],
    "degreeLevel": "UG",
-   "degreeText": "Bachelor's in CS or IT",
+   "degreeText": "Bachelor's",
    "keySkills": [
     "python",
     "golang",
@@ -3002,7 +3002,7 @@
     "Sits in Amex's Global Finance org; office at least 3 days a week"
    ],
    "degreeLevel": "UG",
-   "degreeText": "Bachelor's in Finance/CS",
+   "degreeText": "Bachelor's",
    "keySkills": [
     "user acceptance testing",
     "user stories",
@@ -3188,7 +3188,7 @@
     "6 months in Bangalore, owning a topic like market commentary or swap risk"
    ],
    "degreeLevel": "UG/PG",
-   "degreeText": "Bachelor's/Master's in STEM",
+   "degreeText": "Bachelor's/Master's",
    "keySkills": [
     "python",
     "pytorch",
@@ -3449,7 +3449,7 @@
     "Adhere to quality and compliance guidelines"
    ],
    "degreeLevel": "UG",
-   "degreeText": "Bachelor's degree",
+   "degreeText": "Bachelor's",
    "keySkills": [
     "microsoft office suite"
    ],
@@ -3489,7 +3489,7 @@
     "Undertake regular code reviews to align with development and performance standards"
    ],
    "degreeLevel": "UG",
-   "degreeText": "BSC",
+   "degreeText": "B.Sc",
    "keySkills": [
     "sql",
     "unica",
@@ -3613,7 +3613,7 @@
     "Contractual apprentice role, hybrid working, cab and free meals included"
    ],
    "degreeLevel": "UG",
-   "degreeText": "Bachelor's in CS or IT",
+   "degreeText": "Bachelor's",
    "keySkills": [
     "python",
     "pyspark",
@@ -3654,7 +3654,7 @@
     "3-6 months, full-time from the Noida office, ₹10K/month"
    ],
    "degreeLevel": "UG/PG",
-   "degreeText": "Business/Marketing degree",
+   "degreeText": null,
    "keySkills": [
     "excel",
     "powerpoint",
@@ -3771,7 +3771,7 @@
     "Figma, Miro, UserTesting and Qualtrics; partners with US-based teams"
    ],
    "degreeLevel": "UG/PG",
-   "degreeText": "Bachelor's or Master's in HCI",
+   "degreeText": "Bachelor's/Master's",
    "keySkills": [
     "usability testing",
     "user interviews",
@@ -3815,7 +3815,7 @@
     "Contractual apprentice role, hybrid model, cab and free meals"
    ],
    "degreeLevel": "UG",
-   "degreeText": "Bachelor's in Business/Finance",
+   "degreeText": "Bachelor's",
    "keySkills": [
     "excel",
     "power bi",
@@ -3898,7 +3898,7 @@
     "Structured training track, office at least 3 days a week, cab and meals per policy"
    ],
    "degreeLevel": "UG",
-   "degreeText": "Commerce or Business Admin",
+   "degreeText": null,
    "keySkills": [
     "excel",
     "powerpoint",
@@ -3939,7 +3939,7 @@
     "Sits with FP&A and cross-functional stakeholders, mentored by finance staff"
    ],
    "degreeLevel": "UG",
-   "degreeText": "CMA (Inter/Final)",
+   "degreeText": "CMA",
    "keySkills": [
     "ms excel",
     "cost analysis",
@@ -4122,7 +4122,7 @@
     "Work with Microsoft Office suite; SAP knowledge is a plus"
    ],
    "degreeLevel": "UG",
-   "degreeText": "Bachelor's Degree in Computer Science",
+   "degreeText": "Bachelor's",
    "keySkills": [
     "sap",
     "microsoft office",
@@ -4194,7 +4194,7 @@
     "Work on a rotating shift pattern after 8 weeks of training, with continuous coaching"
    ],
    "degreeLevel": "UG",
-   "degreeText": "Bachelor's degree",
+   "degreeText": "Bachelor's",
    "keySkills": [
     "communication",
     "computer literate",
@@ -4348,7 +4348,7 @@
     "12 months, minimum 3 days a week in office; cab and meals as per policy"
    ],
    "degreeLevel": "UG",
-   "degreeText": "IT, Commerce, Business Admin",
+   "degreeText": null,
    "keySkills": [
     "data management",
     "databases",
@@ -4468,7 +4468,7 @@
     "Eligibility: degree finished within 5 years, no prior government apprenticeship"
    ],
    "degreeLevel": "UG",
-   "degreeText": "Bachelor's degree",
+   "degreeText": "Bachelor's",
    "keySkills": [
     "microsoft office"
    ],
@@ -4503,7 +4503,7 @@
     "Run customs training for internal teams and push automation into customs processes"
    ],
    "degreeLevel": "UG",
-   "degreeText": "Degree in Supply Chain/Law",
+   "degreeText": null,
    "keySkills": [
     "hs tariff classification",
     "customs valuation",
@@ -4544,7 +4544,7 @@
     "Finance Control Management team, office at least 3 days a week"
    ],
    "degreeLevel": "UG",
-   "degreeText": "Graduate in Commerce/Finance",
+   "degreeText": null,
    "keySkills": [
     "excel",
     "powerpoint",
@@ -4661,7 +4661,7 @@
     "Asks for about a year of design work, ideally beauty, fashion or e-commerce"
    ],
    "degreeLevel": "UG",
-   "degreeText": "Bachelor's in Graphic Design",
+   "degreeText": "Bachelor's",
    "keySkills": [
     "photoshop",
     "illustrator",
@@ -4699,7 +4699,7 @@
     "2-3 months onsite in Chennai, Rs 5,000 a month plus up to Rs 5,000 incentives"
    ],
    "degreeLevel": "PG",
-   "degreeText": "Post-graduation in Marketing",
+   "degreeText": null,
    "keySkills": [
     "market research",
     "lead generation",
@@ -4778,7 +4778,7 @@
     "Commerce or business grad with basic accounting; 3 days a week in office"
    ],
    "degreeLevel": "UG",
-   "degreeText": "Graduate in Commerce/BBA",
+   "degreeText": "BBA",
    "keySkills": [
     "excel",
     "powerpoint",
@@ -4901,7 +4901,7 @@
     "Design and implement web-enabled systems for data collection during a 12-month paid program"
    ],
    "degreeLevel": "UG/PG",
-   "degreeText": "Bachelor's or Master's degree",
+   "degreeText": "Bachelor's/Master's",
    "keySkills": [
     "java",
     "javascript",
@@ -4942,7 +4942,7 @@
     "For CA students eligible for ICAI industrial training; 9-12 months, Bangalore office"
    ],
    "degreeLevel": "Pursuing",
-   "degreeText": "CA (ICAI industrial training)",
+   "degreeText": "CA",
    "keySkills": [
     "sap",
     "hyperion",
@@ -4990,7 +4990,7 @@
     "Finance team, three days a week in office, cab and meals as per policy"
    ],
    "degreeLevel": "UG",
-   "degreeText": "Bachelor's in CS or IT",
+   "degreeText": "Bachelor's",
    "keySkills": [
     "sql",
     "python",
@@ -5188,7 +5188,7 @@
     "Manage the end-to-end dispute lifecycle, liaising with various teams"
    ],
    "degreeLevel": "UG",
-   "degreeText": "Bachelor’s degree",
+   "degreeText": "Bachelor's",
    "keySkills": [],
    "stipendStatus": "unknown",
    "postedText": "5 days ago",
@@ -5304,7 +5304,7 @@
     "9-12 months in Pune, work from office, ₹28K a month"
    ],
    "degreeLevel": "Pursuing",
-   "degreeText": "CA (ICAI industrial training)",
+   "degreeText": "CA",
    "keySkills": [
     "sap",
     "hyperion",
@@ -5342,7 +5342,7 @@
     "11-12 month industrial training stint; needs 12-18 months of articleship left"
    ],
    "degreeLevel": "Pursuing",
-   "degreeText": "CA, IPCC cleared",
+   "degreeText": "CA",
    "keySkills": [
     "financial reporting",
     "data analysis",
@@ -5379,7 +5379,7 @@
     "28K a month, 9-12 months, Pune, fully work from office"
    ],
    "degreeLevel": "Pursuing",
-   "degreeText": "CA (ICAI industrial training)",
+   "degreeText": "CA",
    "keySkills": [
     "sap",
     "hyperion",
@@ -5422,7 +5422,7 @@
     "Bangalore, on the product team; strong performers get a full-time seat"
    ],
    "degreeLevel": "UG",
-   "degreeText": "BS Maths, CS or Statistics",
+   "degreeText": null,
    "keySkills": [
     "sql",
     "redshift",
@@ -5463,7 +5463,7 @@
     "6 months at the Noida office, 5 days a week, bring your own laptop"
    ],
    "degreeLevel": "UG",
-   "degreeText": "Bachelor's Marketing/Mass Comm",
+   "degreeText": "Bachelor's",
    "keySkills": [
     "google ads",
     "meta ads",
@@ -5504,7 +5504,7 @@
     "6 months, on-site in Gurugram"
    ],
    "degreeLevel": "UG/PG",
-   "degreeText": "MBA Marketing or Business",
+   "degreeText": "MBA",
    "keySkills": [
     "excel",
     "powerpoint",
@@ -5615,7 +5615,7 @@
     "Work in a shopfloor/production environment in Kancheepuram, potentially in shifts"
    ],
    "degreeLevel": "UG",
-   "degreeText": "Diploma in Mechanical Engineering",
+   "degreeText": "Diploma",
    "keySkills": [],
    "stipendStatus": "unknown",
    "postedText": "6 days ago",
@@ -5675,7 +5675,7 @@
     "One-year industrial traineeship on the P2P team in Chennai, 3 days a week in office"
    ],
    "degreeLevel": "Pursuing",
-   "degreeText": "Chartered Accountant (ICAI)",
+   "degreeText": null,
    "keySkills": [],
    "stipendStatus": "unknown",
    "postedText": "6 days ago",
@@ -5740,7 +5740,7 @@
     "Applications open year-round; shortlisting happens in Sept/Oct"
    ],
    "degreeLevel": "UG/PG",
-   "degreeText": "Bachelor's or Master's",
+   "degreeText": "Bachelor's/Master's",
    "keySkills": [],
    "stipendStatus": "unknown",
    "postedText": "6 days ago",
@@ -5811,7 +5811,7 @@
     "Proofread training decks and build quizzes, posters and learner communications"
    ],
    "degreeLevel": "UG/PG",
-   "degreeText": "Graduation/PG in HR",
+   "degreeText": "Master's",
    "keySkills": [
     "lms administration",
     "mis reporting"
@@ -5849,7 +5849,7 @@
     "Risk consulting team in Gurgaon or Mumbai; CISA or CIA is a plus"
    ],
    "degreeLevel": "UG/PG",
-   "degreeText": "BE/B.Tech/CA, PG preferred",
+   "degreeText": "B.E/B.Tech",
    "keySkills": [
     "itgc",
     "sox",
@@ -5993,7 +5993,7 @@
     "Work in the Logistics Competence Centre India (LCCI) team, a global support hub"
    ],
    "degreeLevel": "UG",
-   "degreeText": "Engineering",
+   "degreeText": null,
    "keySkills": [
     "tms",
     "erp systems",
@@ -6032,7 +6032,7 @@
     "Assist with debugging, testing, and documentation, working onsite in Gurugram"
    ],
    "degreeLevel": "UG",
-   "degreeText": "B.Tech in Computer Science",
+   "degreeText": "B.Tech",
    "keySkills": [
     "programming language"
    ],
@@ -6099,7 +6099,7 @@
     "Work with cross-functional teams in payroll, analytics, and technology"
    ],
    "degreeLevel": "UG",
-   "degreeText": "Bachelor's degree",
+   "degreeText": "Bachelor's",
    "keySkills": [
     "microsoft office",
     "powerbi",
@@ -6201,7 +6201,7 @@
     "3 months in office, Monday to Friday; you need your own laptop"
    ],
    "degreeLevel": "UG/PG",
-   "degreeText": "Business/Marketing/Media",
+   "degreeText": null,
    "keySkills": [
     "ms office",
     "google workspace"
@@ -6383,7 +6383,7 @@
     "Mumbai office, structured Payroll University training, 0-6 months experience"
    ],
    "degreeLevel": "UG",
-   "degreeText": "Bachelor's degree",
+   "degreeText": "Bachelor's",
    "keySkills": [
     "excel",
     "power bi",
@@ -6422,7 +6422,7 @@
     "Work alongside CISF and airline staff when resolving suspicious items"
    ],
    "degreeLevel": "UG",
-   "degreeText": "Bachelor's degree",
+   "degreeText": "Bachelor's",
    "keySkills": [
     "x-bis screening",
     "etd testing",
@@ -6464,7 +6464,7 @@
     "Mumbai office, with a structured Payroll University learning track"
    ],
    "degreeLevel": "UG",
-   "degreeText": "Bachelor's degree",
+   "degreeText": "Bachelor's",
    "keySkills": [
     "excel",
     "power bi",
@@ -6546,7 +6546,7 @@
     "Work with CISF and airline staff when a suspicious item needs resolving"
    ],
    "degreeLevel": "UG",
-   "degreeText": "Bachelor's degree",
+   "degreeText": "Bachelor's",
    "keySkills": [
     "x-bis",
     "etd testing",
@@ -6621,7 +6621,7 @@
     "Pre-shift checks on X-BIS, ETD and CT-EDS; work alongside CISF and airline staff"
    ],
    "degreeLevel": "UG",
-   "degreeText": "Bachelor's degree",
+   "degreeText": "Bachelor's",
    "keySkills": [
     "x-bis",
     "etd",
@@ -6659,7 +6659,7 @@
     "Pre-shift checks on X-BIS, ETD and CT-EDS; work alongside CISF and airline staff"
    ],
    "degreeLevel": "UG",
-   "degreeText": "Bachelor's degree",
+   "degreeText": "Bachelor's",
    "keySkills": [
     "x-bis",
     "etd",
@@ -6891,7 +6891,7 @@
     "Runs 12 months, each trainee gets an assigned mentor"
    ],
    "degreeLevel": "Pursuing",
-   "degreeText": "CA Intermediate",
+   "degreeText": "CA",
    "keySkills": [
     "concurrent audit",
     "financial reporting",
@@ -6930,7 +6930,7 @@
     "You need at least one semester left after the internship ends"
    ],
    "degreeLevel": "UG/PG",
-   "degreeText": "Bachelor's/Master's in CS",
+   "degreeText": "Bachelor's/Master's",
    "keySkills": [
     "data structures",
     "algorithms"
@@ -6993,7 +6993,7 @@
     "Need basic knowledge of diesel engines and fluent English speaking skills"
    ],
    "degreeLevel": "UG",
-   "degreeText": "Diploma in Mechanical Engineering",
+   "degreeText": "Diploma",
    "keySkills": [
     "diesel engine"
    ],
@@ -7027,7 +7027,7 @@
     "Conduct competitive teardowns and trend research across consumer electronics and lifestyle categories"
    ],
    "degreeLevel": "Pursuing",
-   "degreeText": "Industrial Design",
+   "degreeText": null,
    "keySkills": [
     "rhino",
     "fusion 360",
@@ -7137,7 +7137,7 @@
     "Adhere to policies, KYC norms, and regulatory guidelines for the bank"
    ],
    "degreeLevel": "UG",
-   "degreeText": "Graduate",
+   "degreeText": null,
    "keySkills": [
     "ms office",
     "amfi",
@@ -7225,7 +7225,7 @@
     "6 months in Bangalore, 40k per month, immediate joining"
    ],
    "degreeLevel": "UG/PG",
-   "degreeText": "Bachelor's/Master's in CS",
+   "degreeText": "Bachelor's/Master's",
    "keySkills": [
     "java",
     "python",
@@ -7264,7 +7264,7 @@
     "SAP or similar ERP exposure is a plus"
    ],
    "degreeLevel": "Pursuing",
-   "degreeText": "Degree in supply chain",
+   "degreeText": null,
    "keySkills": [
     "sap",
     "erp systems",
@@ -7301,7 +7301,7 @@
     "Full-time, work from office in Bengaluru"
    ],
    "degreeLevel": "UG/PG",
-   "degreeText": "MBA (HR)",
+   "degreeText": "MBA",
    "keySkills": [
     "linkedin",
     "naukri",
@@ -7460,7 +7460,7 @@
     "Sits with the IT org at the Mumbai general office, full time"
    ],
    "degreeLevel": "PG",
-   "degreeText": "Master's or PhD, quantitative",
+   "degreeText": "PhD",
    "keySkills": [
     "python",
     "spark",
@@ -7542,7 +7542,7 @@
     "Sits in the FP&A team as part of a CA internship program"
    ],
    "degreeLevel": "UG/PG",
-   "degreeText": "Bachelor's/Master's Finance",
+   "degreeText": "Bachelor's/Master's",
    "keySkills": [
     "excel",
     "financial modeling",
@@ -7623,7 +7623,7 @@
     "Structured training, workshops and on-the-job sessions, plus safety drills"
    ],
    "degreeLevel": "UG",
-   "degreeText": "Diploma in Engineering",
+   "degreeText": "Diploma",
    "keySkills": [
     "mechanical",
     "electrical",
@@ -7660,7 +7660,7 @@
     "For CA freshers or semi-qualified CAs from life insurance or mutual fund accounting"
    ],
    "degreeLevel": "Pursuing",
-   "degreeText": "CA / Semi-qualified CA",
+   "degreeText": "CA",
    "keySkills": [
     "fund accounting",
     "nav computation",
@@ -7743,7 +7743,7 @@
     "Code reviews and design discussions, with a dedicated intern manager"
    ],
    "degreeLevel": "UG/PG",
-   "degreeText": "Bachelor's/Master's/PhD in CS",
+   "degreeText": null,
    "keySkills": [
     "java",
     "ruby",

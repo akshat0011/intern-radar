@@ -253,6 +253,89 @@ export function extractSkills(...texts) {
   return [...found].slice(0, 14);
 }
 
+/**
+ * Degree names, longest first so "B.Tech" wins before a bare "B" pattern could
+ * match, and so "Bachelor" is only reached when no specific qualification is named.
+ */
+const DEGREE_PATTERNS = [
+  [/\bb\.?\s?tech\b/i, 'B.Tech'],
+  [/\bm\.?\s?tech\b/i, 'M.Tech'],
+  // Case-sensitive, and no /i. "B.E" and "M.E" without it match the ordinary English
+  // words "be" and "me" — a Stripe posting saying "will be used in production" was
+  // read as requiring a B.E. Degree abbreviations are always written uppercase.
+  [/\bB\.?\s?E\.?(?![a-zA-Z])/, 'B.E'],
+  [/\bM\.?\s?E\.?(?![a-zA-Z])/, 'M.E'],
+  [/\bb\.?\s?sc\b/i, 'B.Sc'],
+  [/\bm\.?\s?sc\b/i, 'M.Sc'],
+  [/\bb\.?\s?com\b/i, 'B.Com'],
+  [/\bm\.?\s?com\b/i, 'M.Com'],
+  [/\bbca\b/i, 'BCA'],
+  [/\bmca\b/i, 'MCA'],
+  [/\bbba\b/i, 'BBA'],
+  [/\bmba\b/i, 'MBA'],
+  // Same trap: "BA", "MA" and "CA" are all common words in lower case.
+  [/\bB\.?\s?A\.?(?![a-zA-Z])/, 'BA'],
+  [/\bM\.?\s?A\.?(?![a-zA-Z])/, 'MA'],
+  [/\bph\.?\s?d\b/i, 'PhD'],
+  [/\bCMA\b/, 'CMA'],
+  [/\bCA\b(?!\w)/, 'CA'],
+  [/\bdiploma\b/i, 'Diploma'],
+  // Generic levels are matched alongside the specific degrees, not as a fallback
+  // after them. "Bachelor's/Master's/PhD in CS" must not reduce to "PhD" just
+  // because PhD is in the specific list — that reads as "a doctorate is required".
+  [/\bbachelor|\bunder\s?graduate/i, "Bachelor's"],
+  [/\bmaster|\bpost\s?graduate/i, "Master's"],
+];
+
+/**
+ * Named qualifications that make a generic level redundant: "B.Tech or any
+ * bachelor's degree" says bachelor twice.
+ *
+ * PhD is deliberately absent from the master's set. A doctorate is a different
+ * level, not a master's, so "Bachelor's/Master's/PhD" must keep its Master's.
+ */
+const UG_DEGREES = new Set(['B.Tech', 'B.E', 'B.Sc', 'B.Com', 'BCA', 'BBA', 'BA', 'Diploma']);
+const PG_DEGREES = new Set(['M.Tech', 'M.E', 'M.Sc', 'M.Com', 'MCA', 'MBA', 'MA']);
+
+/**
+ * Reduce a qualification phrase to the degree name alone.
+ *
+ * The model is asked for just the degree, but it reliably volunteers the field of
+ * study too — "B.E/B.Tech CS or IT", "bachelor's degree in Computer Science". The
+ * field is noise on a card: the reader already knows they are looking at engineering
+ * roles, and "B.Tech" is the fact that decides whether they are eligible.
+ *
+ * Returns '' when nothing recognisable is named, which the card treats as "not stated"
+ * rather than printing something misleading.
+ */
+export function normaliseDegree(text) {
+  if (!text || typeof text !== 'string') return '';
+
+  const found = [];
+  for (const [pattern, name] of DEGREE_PATTERNS) {
+    const m = text.match(pattern);
+    if (m && !found.some((f) => f.name === name)) found.push({ name, at: m.index });
+  }
+
+  if (!found.length) return '';
+
+  // "B.Tech or any bachelor's degree" names the same level twice. Keep the specific
+  // one and drop the generic, but only for the level that is actually duplicated —
+  // in "B.Tech or Master's" the Master's is new information and must survive.
+  const names = new Set(found.map((f) => f.name));
+  const drop = new Set();
+  if ([...names].some((n) => UG_DEGREES.has(n))) drop.add("Bachelor's");
+  if ([...names].some((n) => PG_DEGREES.has(n))) drop.add("Master's");
+
+  const kept = found.filter((f) => !drop.has(f.name));
+  if (!kept.length) return '';
+
+  // Keep the order the posting used — "B.E/B.Tech" reads as written, not reshuffled.
+  // Two is already a mouthful in a chip; beyond that the qualification stops being
+  // the point. "B.E/B.Tech" is useful, "B.E/B.Tech/B.Sc/BCA" is not.
+  return kept.sort((a, b) => a.at - b.at).slice(0, 2).map((f) => f.name).join('/');
+}
+
 /** Remote / hybrid / on-site. */
 export function extractWorkplaceType(...texts) {
   const haystack = texts.filter(Boolean).join(' ').toLowerCase();

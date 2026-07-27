@@ -1,4 +1,4 @@
-import { extractStipend, formatStipend, extractDuration, extractSkills, extractWorkplaceType, parseRelativeTime, jobIdFromUrl } from '../src/extract.js';
+import { extractStipend, formatStipend, extractDuration, extractSkills, extractWorkplaceType, parseRelativeTime, jobIdFromUrl, normaliseDegree } from '../src/extract.js';
 import { normaliseCompany, matchCompany, matchTitle, resolveWindowHours } from '../src/config.js';
 import { offlineSummary } from '../src/summarize.js';
 
@@ -151,6 +151,29 @@ check('keeps deadline', /15 August/.test(summary), true);
 check('keeps requirements', /B\.Tech/.test(summary), true);
 check('empty description', offlineSummary(''), null);
 check('null description', offlineSummary(null), null);
+
+console.log('\nnormaliseDegree');
+// The card shows the qualification, never the field of study.
+check('strips the field', normaliseDegree('B.Tech Computer Science'), 'B.Tech');
+check('keeps both alternatives', normaliseDegree('B.E/B.Tech CS or IT'), 'B.E/B.Tech');
+check('source order, not list order', normaliseDegree('B.Tech/M.Tech in CSE'), 'B.Tech/M.Tech');
+check('generic level when nothing specific', normaliseDegree("bachelor's degree in Computer Science"), "Bachelor's");
+check('both levels survive', normaliseDegree('Bachelors/Masters in CS'), "Bachelor's/Master's");
+check('a PhD is not a masters', normaliseDegree("Bachelor's/Master's/PhD in CS"), "Bachelor's/Master's");
+check('specific beats generic at the same level', normaliseDegree("B.Tech or any bachelor's degree"), 'B.Tech');
+check('different level is new information', normaliseDegree("B.Tech or Master's"), "B.Tech/Master's");
+check('professional qualifications', normaliseDegree('CA / Semi-qualified CA'), 'CA');
+check('management degrees', normaliseDegree('MBA from a recognized institution'), 'MBA');
+check('diploma', normaliseDegree('Diploma in Mechanical Engineering'), 'Diploma');
+// A status is not a qualification; degreeLevel already carries it.
+check('status is not a degree', normaliseDegree('recent graduates and freshers'), '');
+check('empty input', normaliseDegree(''), '');
+check('null input', normaliseDegree(null), '');
+// Regression: an uppercase-only match, or "be" and "me" in ordinary prose read as
+// degrees. A Stripe posting saying "will be used in production" became a B.E.
+check('the word "be" is not a B.E', normaliseDegree('code that will be used in production'), '');
+check('the word "me" is not an M.E', normaliseDegree('send it to me when you can'), '');
+check('the word "ca" is not a CA', normaliseDegree('you can apply any time'), '');
 
 console.log(`\n${pass} passed, ${fail} failed\n`);
 process.exit(fail ? 1 : 0);

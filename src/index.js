@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * One scan of LinkedIn for new internships at the watchlist companies.
- * Invoked by launchd at 12:00 and 18:00, or by hand via `npm run`.
+ * Invoked by launchd every 30 minutes, or by hand via `npm run`.
  */
 import { loadConfig, matchCompany, matchTitle, resolveWindowHours } from './config.js';
 import { join } from 'node:path';
@@ -12,7 +12,7 @@ import { launchBrave, closeBrave } from './browser.js';
 import { ensureHealthy, assertSignedIn, assertListRendered, RunAborted, State } from './guard.js';
 import * as li from './linkedin.js';
 import { resolveSearches } from './searches.js';
-import { classifyRoles, classifyFromDescriptions } from './gemini.js';
+import { classifyRoles, classifyFromDescriptions, enrichJobs } from './gemini.js';
 import { classifyRole, needsDescription, builtInPolarity } from './roles.js';
 import { loadLearned, learnedVocabulary, learn, learnedPath } from './learned.js';
 import { pause, sleep, idleFidget, humanDelay, pageAlive } from './human.js';
@@ -20,7 +20,7 @@ import { summarize } from './summarize.js';
 import { extractStipend, extractDuration, extractSkills, extractWorkplaceType, parseRelativeTime } from './extract.js';
 import { buildReport, writeReport } from './report.js';
 import { publish } from './publish.js';
-import { notify, open as openFile } from './notify.js';
+import { notify, open as openFile, pushToPhone } from './notify.js';
 
 const ARGS = new Set(process.argv.slice(2));
 const DRY_RUN = ARGS.has('--dry-run');
@@ -96,6 +96,39 @@ function loadEnv() {
   } catch {
     // No .env, or unreadable. Not an error: the classifier falls back offline.
   }
+}
+
+/**
+ * Turn freshly scraped descriptions into card content: bullets, eligibility, key
+ * skills, a stipend state, and a tech verdict judged on the description rather than
+ * the title.
+ *
+ * Capped per run. This is the only step here that costs API quota, and a free tier
+ * is a shared, exhaustible resource — spending it all on one unusually large run
+ * would leave the next few runs with nothing. Anything skipped is picked up next
+ * time, because needingEnrichment only ever returns rows that have no bullets yet.
+ */
+async function enrichNewJobs(store, cfg) {
+  const limit = cfg.enrich?.perRunLimit ?? 24;
+  const pending = store.needingEnrichment(limit);
+  if (!pending.length) return;
+
+  log.info(`Enriching ${pending.length} new posting${pending.length === 1 ? '' : 's'}\u2026`);
+  const results = await enrichJobs(pending, cfg);
+  if (!results.size) {
+    log.info('Nothing enriched this run \u2014 those postings keep their plain summary.');
+    return;
+  }
+
+  let flipped = 0;
+  for (const [i, e] of results) {
+    const row = pending[i];
+    if (!row) continue;
+    const before = store.db.prepare('SELECT is_tech FROM jobs WHERE job_id = ?').get(row.job_id)?.is_tech;
+    store.saveEnrichment(row.job_id, e);
+    if (typeof e.isTech === 'boolean' && before != null && !!before !== e.isTech) flipped++;
+  }
+  log.ok(`Enriched ${results.size}/${pending.length}${flipped ? ` \u00b7 ${flipped} changed tech verdict` : ''}.`);
 }
 
 async function main() {
@@ -637,6 +670,12 @@ async function main() {
     error: fatalError,
   });
 
+  // Enrich before the report and the publish, so a job reaches the site with its
+  // bullets, eligibility and skills already attached. Doing this only in bin/enrich.js
+  // meant every freshly scraped job appeared as a boilerplate paragraph until the next
+  // manual run — the newest listings, which are the ones anyone actually looks at.
+  if (!DRY_RUN) await enrichNewJobs(store, cfg);
+
   const newJobs = store.jobsForRun(runId);
   const html = buildReport({
     jobs: newJobs,
@@ -660,6 +699,17 @@ async function main() {
     if (cfg.notifications.openReportWhenDone && !NO_OPEN) {
       await openFile(file);
     }
+
+    // The phone is the point: a banner on a sleeping Mac is a notification nobody
+    // sees, and this whole project is about applying in the first hour.
+    const tech = newJobs.filter((j) => j.is_tech);
+    const lead = (tech.length ? tech : newJobs).slice(0, 4);
+    await pushToPhone(
+      `${newJobs.length} new internship${newJobs.length === 1 ? '' : 's'}`,
+      lead.map((j) => `${j.company} — ${j.title}`).join('\n')
+        + (newJobs.length > lead.length ? `\n…and ${newJobs.length - lead.length} more` : ''),
+      { url: 'https://www.internradar.online/', tags: ['satellite'], priority: 4 },
+    );
   } else {
     log.info('No new matching internships this run.');
   }

@@ -134,16 +134,19 @@ cat > "$PLIST" <<PLIST_EOF
     <key>WorkingDirectory</key>
     <string>$HERE</string>
 
-    <!-- Every hour, on the hour. An omitted Hour key is a wildcard, so this
-         single entry covers all 24 slots.
+    <!-- Every 30 minutes, on the hour and the half hour. An omitted Hour key is
+         a wildcard, so these two entries cover all 48 slots in a day.
          Asleep at the time: launchd fires once shortly after the lid opens,
          and coalesces several missed slots into a single run rather than
          replaying each one. Powered off: that slot is dropped and the next
-         hour is the recovery. Either way the scan widens its own lookback
-         window to cover the gap - see filters.adaptiveWindow. -->
+         slot is the recovery. Either way the scan widens its own lookback
+         window to cover the gap - see filters.adaptiveWindow.
+         A run takes well under 30 minutes, and the lock in index.js refuses to
+         start a second one anyway, so overlapping slots are safe. -->
     <key>StartCalendarInterval</key>
     <array>
         <dict><key>Minute</key><integer>0</integer></dict>
+        <dict><key>Minute</key><integer>30</integer></dict>
     </array>
 
     <key>RunAtLoad</key>
