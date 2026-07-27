@@ -131,13 +131,20 @@ export class Store {
     `).all(limit);
   }
 
-  /** Persist one enrichment result. isTech is only overwritten when Gemini returned one. */
-  saveEnrichment(jobId, e) {
+  /**
+   * Persist one enrichment result. isTech is only overwritten when the caller
+   * actually produced one.
+   *
+   * `source` records who wrote the row. It is not cosmetic: a verdict from the
+   * model and a verdict from a one-off backfill should be distinguishable when
+   * you later ask why a job is filed where it is.
+   */
+  saveEnrichment(jobId, e, source = 'gemini-enrich') {
     this.db.prepare(`
       UPDATE jobs SET
         bullets = ?, degree_level = ?, degree_text = ?, key_skills = ?, stipend_status = ?,
         is_tech = COALESCE(?, is_tech),
-        role_source = CASE WHEN ? IS NULL THEN role_source ELSE 'gemini-enrich' END
+        role_source = CASE WHEN ? IS NULL THEN role_source ELSE ? END
       WHERE job_id = ?
     `).run(
       JSON.stringify(e.bullets ?? []),
@@ -147,6 +154,7 @@ export class Store {
       e.stipendStatus || 'unknown',
       typeof e.isTech === 'boolean' ? (e.isTech ? 1 : 0) : null,
       typeof e.isTech === 'boolean' ? 1 : null,
+      source,
       jobId,
     );
   }
