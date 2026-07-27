@@ -1,7 +1,7 @@
 {
- "generatedAt": 1785185907661,
- "count": 226,
- "techCount": 50,
+ "generatedAt": 1785187820308,
+ "count": 227,
+ "techCount": 51,
  "otherCount": 176,
  "companies": [
   "A.P. Moller - Maersk",
@@ -98,6 +98,7 @@
   "YES BANK",
   "boAt Lifestyle",
   "eBay",
+  "ideaForge",
   "slice",
   "upGrad",
   "upGrad International"
@@ -135,6 +136,7 @@
   "Mumbai Metropolitan Region (On-site)",
   "Mumbai, Maharashtra, India",
   "Mumbai, Maharashtra, India (On-site)",
+  "Navi Mumbai, Maharashtra, India",
   "Noida, Uttar Pradesh, India",
   "Noida, Uttar Pradesh, India (On-site)",
   "Phaltan, Maharashtra, India",
@@ -149,6 +151,34 @@
   "West Bengal, India (On-site)"
  ],
  "jobs": [
+  {
+   "id": "4442884354",
+   "title": "Intern - Web/Mobile App Developer",
+   "company": "ideaForge",
+   "matchedWatchlist": "Ideaforge",
+   "isTech": true,
+   "roleSource": "offline",
+   "logo": "/logos/ideaforge.jpg",
+   "location": "Navi Mumbai, Maharashtra, India",
+   "workplaceType": "On-site",
+   "stipend": null,
+   "duration": "3 months",
+   "applicants": null,
+   "easyApply": false,
+   "skills": [],
+   "summary": "Technical Prerequisites & Expectations: AI-Driven Development: The candidate must know how to build secure web/mobile applications using AI tools and methods. Core Engineering Skills: The candidate needs a basic understanding of front-end and back-end web frameworks, database management, mobile app and software engineering. Tenure of internship should be minimum of 3 months (Paid internship)",
+   "bullets": [],
+   "degreeLevel": null,
+   "degreeText": null,
+   "keySkills": [],
+   "stipendStatus": "unknown",
+   "postedText": "38 minutes ago",
+   "postedAt": 1785184910425,
+   "firstSeenAt": 1785187190432,
+   "url": "https://www.linkedin.com/jobs/view/4442884354/",
+   "applyUrl": "https://www.linkedin.com/jobs/view/4442884354/",
+   "description": null
+  },
   {
    "id": "4445996778",
    "title": "Apprentice Hiring for 2026- 2027",
