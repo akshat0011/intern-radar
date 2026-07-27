@@ -1,8 +1,8 @@
 {
- "generatedAt": 1785182546304,
+ "generatedAt": 1785185907661,
  "count": 226,
- "techCount": 49,
- "otherCount": 177,
+ "techCount": 50,
+ "otherCount": 176,
  "companies": [
   "A.P. Moller - Maersk",
   "Accenture in India",
@@ -154,8 +154,8 @@
    "title": "Apprentice Hiring for 2026- 2027",
    "company": "Deutsche Bank",
    "matchedWatchlist": "Deutsche Bank",
-   "isTech": false,
-   "roleSource": "offline-fallback",
+   "isTech": true,
+   "roleSource": "gemini-enrich",
    "logo": "/logos/deutsche-bank.jpg",
    "location": "Mumbai, Maharashtra, India",
    "workplaceType": "Hybrid",
@@ -169,10 +169,21 @@
     "excel"
    ],
    "summary": "Job Title: Apprentice Hiring for 2026- 2027 Location: Mumbai, India About the programme: This 12-month apprenticeship, under India's National Apprenticeship Training Scheme, provides valuable on-the-job training; Please note, there is no obligation for permanent employment with Deutsche Bank Group upon completion of the Apprenticeship Training tenure.",
-   "bullets": [],
-   "degreeLevel": null,
-   "degreeText": null,
-   "keySkills": [],
+   "bullets": [
+    "Build use cases with AI platforms to enhance existing risk analysis",
+    "Perform daily Historical Simulation VaR analysis and review other market risk metrics",
+    "Participate in projects like IBOR migration and automation of BAU activities using AI",
+    "Work with large datasets using MS Excel, MS Access, VBA, SQL, Python, and SAS"
+   ],
+   "degreeLevel": "UG/PG",
+   "degreeText": "MBA",
+   "keySkills": [
+    "ai platforms",
+    "google gemini",
+    "microsoft copilot",
+    "financial markets",
+    "ms excel"
+   ],
    "stipendStatus": "unknown",
    "postedText": "1 hour ago",
    "postedAt": 1785175998258,
