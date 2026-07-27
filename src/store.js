@@ -24,6 +24,11 @@ CREATE TABLE IF NOT EXISTS jobs (
   skills            TEXT,
   description       TEXT,
   summary           TEXT,
+  bullets           TEXT,
+  degree_level      TEXT,
+  degree_text       TEXT,
+  key_skills        TEXT,
+  stipend_status    TEXT,
   logo_url          TEXT,
   is_tech           INTEGER,
   role_source       TEXT,
@@ -102,11 +107,48 @@ export class Store {
     }
 
     const jobCols = this.db.prepare('PRAGMA table_info(jobs)').all().map((c) => c.name);
-    for (const [name, type] of [['logo_url', 'TEXT'], ['is_tech', 'INTEGER'], ['role_source', 'TEXT']]) {
+    for (const [name, type] of [
+      ['logo_url', 'TEXT'], ['is_tech', 'INTEGER'], ['role_source', 'TEXT'],
+      // Gemini enrichment. bullets and key_skills hold JSON arrays; they stay NULL
+      // until a posting has been enriched, which is what the card falls back on.
+      ['bullets', 'TEXT'], ['degree_level', 'TEXT'], ['degree_text', 'TEXT'],
+      ['key_skills', 'TEXT'], ['stipend_status', 'TEXT'],
+    ]) {
       if (!jobCols.includes(name)) {
         this.db.exec(`ALTER TABLE jobs ADD COLUMN ${name} ${type}`);
       }
     }
+  }
+
+  /** Postings that still need a Gemini pass — enriched rows are never re-sent. */
+  needingEnrichment(limit = 500) {
+    return this.db.prepare(`
+      SELECT job_id, title, company, description, salary_text AS stipend
+      FROM jobs
+      WHERE bullets IS NULL AND length(description) > 200
+      ORDER BY first_seen_at DESC
+      LIMIT ?
+    `).all(limit);
+  }
+
+  /** Persist one enrichment result. isTech is only overwritten when Gemini returned one. */
+  saveEnrichment(jobId, e) {
+    this.db.prepare(`
+      UPDATE jobs SET
+        bullets = ?, degree_level = ?, degree_text = ?, key_skills = ?, stipend_status = ?,
+        is_tech = COALESCE(?, is_tech),
+        role_source = CASE WHEN ? IS NULL THEN role_source ELSE 'gemini-enrich' END
+      WHERE job_id = ?
+    `).run(
+      JSON.stringify(e.bullets ?? []),
+      e.degreeLevel || null,
+      e.degreeText || null,
+      JSON.stringify(e.keySkills ?? []),
+      e.stipendStatus || 'unknown',
+      typeof e.isTech === 'boolean' ? (e.isTech ? 1 : 0) : null,
+      typeof e.isTech === 'boolean' ? 1 : null,
+      jobId,
+    );
   }
 
   close() {

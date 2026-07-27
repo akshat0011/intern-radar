@@ -282,9 +282,41 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .meta { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 10px; font-family: var(--mono); font-size: 10.5px; letter-spacing: .05em; color: var(--ink-3); text-transform: uppercase; }
 .meta .cash { color: var(--cash); font-weight: 700; }
 .meta .ea { color: var(--hot); }
+.meta .unpaid { color: var(--ink-3); }
+.meta .dunno { color: var(--ink-3); opacity: .72; }
+
+/* Eligibility. The only boxed item in the row, because it is the one fact that
+   can rule you out entirely — everything else is detail you read afterwards. */
+.elig {
+  display: inline-flex; align-items: center; gap: 6px;
+  border: 1px solid color-mix(in oklab, var(--live) 42%, transparent);
+  border-radius: var(--r); padding: 2px 7px; margin: -2px 0;
+}
+.elig b { color: var(--live); font-weight: 700; letter-spacing: .08em; }
+.elig i { font-style: normal; color: var(--ink-2); text-transform: none; letter-spacing: .02em; }
+
+.skills { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 9px; }
+.skill {
+  font-family: var(--mono); font-size: 10px; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--ink-2); background: var(--card-2); border: 1px solid var(--rule);
+  border-radius: 3px; padding: 3px 7px;
+}
+
 .gist {
   margin-top: 10px; font-size: 13.5px; color: var(--ink-2); max-width: 62ch;
   display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; line-clamp: 2; overflow: hidden;
+}
+
+/* Bullets replace the description blurb: the old paragraph was clamped to two
+   lines and almost always spent them on company boilerplate. */
+.gist-list { margin-top: 10px; max-width: 66ch; display: grid; gap: 5px; }
+.gist-list li {
+  position: relative; padding-left: 15px;
+  font-size: 13.5px; line-height: 1.45; color: var(--ink-2);
+}
+.gist-list li::before {
+  content: ""; position: absolute; left: 0; top: .55em;
+  width: 5px; height: 5px; background: var(--live); opacity: .55;
 }
 
 .age { text-align: right; padding-top: 4px; }

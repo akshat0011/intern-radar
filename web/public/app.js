@@ -191,6 +191,36 @@ function anyFilterActive() {
 
 /* ---------------- rendering ---------------- */
 
+/** Has this posting been through the Gemini pass yet? */
+function enriched(job) {
+  return (job.bullets ?? []).length > 0;
+}
+
+/**
+ * Who can apply. Highlighted because eligibility is the one fact that makes the
+ * rest of the card irrelevant, and it is absent from most postings — so when it
+ * IS known it deserves to be the loudest thing in the row.
+ */
+function degreeTag(job) {
+  if (!job.degreeLevel) return null;
+  const tag = el('span', 'elig');
+  tag.append(el('b', null, job.degreeLevel));
+  if (job.degreeText) tag.append(el('i', null, job.degreeText));
+  return tag;
+}
+
+/**
+ * Three states, never a blank. "Unknown" is a real and useful answer here: a
+ * missing stipend line usually means unpaid, and saying nothing let students
+ * assume otherwise.
+ */
+function stipendTag(job) {
+  if (job.stipend) return el('span', 'cash', job.stipend);
+  if (job.stipendStatus === 'paid') return el('span', 'cash', 'paid');
+  if (job.stipendStatus === 'unpaid') return el('span', 'unpaid', 'unpaid');
+  return el('span', 'dunno', 'stipend unknown');
+}
+
 function jobCard(job, index) {
   const li = document.createElement('li');
   const row = el('article', 'row');
@@ -213,15 +243,42 @@ function jobCard(job, index) {
   mid.append(el('h3', 'co', job.company));
   mid.append(el('p', 'role', job.title));
 
+  // Eligibility first, money second. A student's first question is "can I even
+  // apply", and that used to be buried in the description while the card spent
+  // its most-read line on a city they had already filtered by.
   const meta = el('div', 'meta');
-  if (job.stipend) meta.append(el('span', 'cash', job.stipend));
-  if (job.location) meta.append(el('span', null, job.location));
-  if (job.workplaceType) meta.append(el('span', null, job.workplaceType));
+  const degree = degreeTag(job);
+  if (degree) meta.append(degree);
+  meta.append(stipendTag(job));
+
+  // Enrichment runs against a daily API quota, so at any moment some postings
+  // have eligibility and skills and some do not. Where they do, that is the row.
+  // Where they do not, fall back to city and work mode rather than leaving a
+  // card with a single lonely "stipend unknown" on it.
+  if (!enriched(job)) {
+    if (job.location) meta.append(el('span', null, job.location));
+    if (job.workplaceType) meta.append(el('span', null, job.workplaceType));
+  }
   if (job.duration) meta.append(el('span', null, job.duration));
   if (job.easyApply) meta.append(el('span', 'ea', 'easy apply'));
-  if (meta.children.length) mid.append(meta);
+  mid.append(meta);
 
-  if (job.summary) mid.append(el('p', 'gist', job.summary));
+  const skills = (job.keySkills ?? []).slice(0, 4);
+  if (skills.length) {
+    const box = el('div', 'skills');
+    for (const s of skills) box.append(el('span', 'skill', s));
+    mid.append(box);
+  }
+
+  const bullets = job.bullets ?? [];
+  if (bullets.length) {
+    const ul = el('ul', 'gist-list');
+    for (const b of bullets) ul.append(el('li', null, b));
+    mid.append(ul);
+  } else if (job.summary) {
+    // Not yet enriched — the original blurb still beats an empty card.
+    mid.append(el('p', 'gist', job.summary));
+  }
   row.append(mid);
 
   // Age, plus a bar that drains over the first 24 hours. Turning "how long do I

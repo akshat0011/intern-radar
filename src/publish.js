@@ -19,6 +19,17 @@ const JOBS_FILE = join(WEB_DATA_DIR, 'jobs.json');
  * the summary plus every hard fact they need to decide; the Apply link takes
  * them to the real posting.
  */
+/** Stored as a JSON string; a row written before enrichment existed has null. */
+function parseJsonArray(raw) {
+  if (!raw) return [];
+  try {
+    const v = JSON.parse(raw);
+    return Array.isArray(v) ? v.filter((s) => typeof s === 'string' && s) : [];
+  } catch {
+    return [];
+  }
+}
+
 function toPublicJob(row, { includeFullDescription, matchedNow, logoIndex }) {
   const stipend = formatStipend({
     min: row.stipend_min, max: row.stipend_max,
@@ -46,6 +57,13 @@ function toPublicJob(row, { includeFullDescription, matchedNow, logoIndex }) {
     easyApply: !!row.easy_apply,
     skills: row.skills || [],
     summary: row.summary || null,
+    // Gemini enrichment. bullets is the card's primary body; an empty array means
+    // the posting has not been enriched yet and the card falls back to summary.
+    bullets: parseJsonArray(row.bullets),
+    degreeLevel: row.degree_level || null,
+    degreeText: row.degree_text || null,
+    keySkills: parseJsonArray(row.key_skills),
+    stipendStatus: row.stipend_status || (stipend ? 'paid' : 'unknown'),
     postedText: row.posted_text || null,
     postedAt: row.posted_at || row.first_seen_at,
     firstSeenAt: row.first_seen_at,
