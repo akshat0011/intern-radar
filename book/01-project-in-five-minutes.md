@@ -14,7 +14,7 @@ So what decides whether your application is seen is not how good your résumé i
 
 That game is unfair, and also solvable. If you knew within a few hours that Razorpay had posted a Software Engineering Intern role, you would be in the first fifty. The problem is that "knowing" means opening LinkedIn, typing "internship", scrolling, and doing it again tomorrow. Nobody keeps that up for four months.
 
-Intern Radar does the checking. Twice a day it looks at LinkedIn for new internships at a watchlist of about 860 companies with an India presence, pulls out the useful facts — stipend, duration, location, whether it is remote — and puts them on a public website at `internradar.online`. As the README says on line 7: it finds and summarises, you click Apply.
+Intern Radar does the checking. Every hour it looks at LinkedIn for new internships at a watchlist of about 920 companies with an India presence, pulls out the useful facts — stipend, duration, location, whether it is remote — and puts them on a public website at `internradar.online`. As the README says on line 7: it finds and summarises, you click Apply.
 
 ## 1.2 Who it is for
 
@@ -37,7 +37,7 @@ Intern Radar is **two separate programs that share one folder in git and never t
 ```
    PROGRAM 1                                   PROGRAM 2
    The watcher                                 The site
-   (author's Mac, twice a day)                 (Vercel, always up)
+   (author's Mac, every hour)                 (Vercel, always up)
 
    +--------------------+                      +--------------------+
    |  Node.js + Brave   |   writes a file      |  static HTML/CSS/JS |
@@ -66,7 +66,7 @@ Now the detailed version. Read it slowly; it answers most architecture questions
  ┌──────────────────────── THE AUTHOR'S MAC ────────────────────────┐
  │                                                                  │
  │  launchd (macOS scheduler)                                       │
- │      │  fires twice a day                                        │
+ │      │  fires every hour                                        │
  │      ▼                                                           │
  │  bin/run.sh  →  node src/index.js --scheduled                    │
  │      │                                                           │
@@ -184,7 +184,7 @@ An **npm dependency** is somebody else's code your project downloads and uses. M
 
 **Step 3 — search and read the list.** `src/linkedin.js` builds one broad search URL, sorted newest-first, and pages through it until LinkedIn's own "Next" button disappears — the only reliable proof the results are exhausted. The results column is *virtualised*, meaning the page only renders cards near the viewport, so the code scrolls in small steps to force every card into existence, then reads title, company, location and posted-time straight off them. Hundreds of cards are read; almost none are clicked.
 
-**Step 4 — filter, cheapest test first.** The employer is checked before anything else. A posting from a company not on the watchlist is dropped immediately — no title parsing, no classification, no API call. The README explains why (README lines 15–19): checking 860 companies costs nothing extra, because the match happens in memory against cards already on screen. Visiting one page per company would be about 880 page loads a run instead of 10–30, for the same result. Request volume is what gets accounts banned.
+**Step 4 — filter, cheapest test first.** The employer is checked before anything else. A posting from a company not on the watchlist is dropped immediately — no title parsing, no classification, no API call. The README explains why (README lines 15–19): checking 920 companies costs nothing extra, because the match happens in memory against cards already on screen. Visiting one page per company would be about 880 page loads a run instead of 10–30, for the same result. Request volume is what gets accounts banned.
 
 **Step 5 — classify the role.** Each surviving job is labelled tech or non-tech. `src/roles.js` does this offline from a vocabulary of title words — free, instant, no network. Only ambiguous titles ("Trainee", "Graduate Engineer Trainee") go to Google's **Gemini** model. An **API** (Application Programming Interface) is a way for one program to ask another a question over the network; here the description goes to Gemini and back comes "tech" or "not tech", plus the phrase that decided it. That phrase joins the offline vocabulary, so the next title containing it never costs a call.
 
@@ -275,7 +275,7 @@ Every design choice buys something and charges something. Name both.
 
 ### What it costs
 
-**The data is only as fresh as the last run.** Twice a day means a job posted at 12:05 waits until the evening run. For a project whose entire premise is "be early", that is the sharpest trade-off in the design, and you should say it out loud before an interviewer does.
+**The data is only as fresh as the last run.** Every hour means a job posted at 12:05 waits until the evening run. For a project whose entire premise is "be early", that is the sharpest trade-off in the design, and you should say it out loud before an interviewer does.
 
 **It dies when the Mac sleeps.** launchd fires once shortly after the lid opens and coalesces missed slots into a single run, so a nap costs one run, not many. A powered-off Mac drops the slot entirely. The adaptive lookback window in `src/index.js:188–189` softens this — the next run widens itself to cover the gap — but softening is not fixing. If the laptop is off for a week, jobs posted and expired inside that week are never seen.
 
@@ -289,7 +289,7 @@ Every design choice buys something and charges something. Name both.
 
 Practise this out loud until it is automatic.
 
-> "Intern Radar solves a timing problem: internships in India close in a day, so being early beats being polished. It is two programs, not one. A Node.js watcher runs on my Mac twice a day, drives a real Brave browser through LinkedIn, filters about 860 watchlist companies in memory, classifies each role offline and only asks Gemini about the ambiguous ones, and stores everything in SQLite. Its last step writes one JSON file, commits it, and pushes to GitHub. Vercel sees the push and redeploys a static site — no framework, no build step — which fetches that JSON and renders the list. The two halves never talk directly; a file in git is the interface. That means zero hosting cost, no server to maintain, and no LinkedIn credentials anywhere but my laptop. The price is that data is only as fresh as the last run, and if my Mac is off, the run does not happen."
+> "Intern Radar solves a timing problem: internships in India close in a day, so being early beats being polished. It is two programs, not one. A Node.js watcher runs on my Mac every hour, drives a real Brave browser through LinkedIn, filters about 920 watchlist companies in memory, classifies each role offline and only asks Gemini about the ambiguous ones, and stores everything in SQLite. Its last step writes one JSON file, commits it, and pushes to GitHub. Vercel sees the push and redeploys a static site — no framework, no build step — which fetches that JSON and renders the list. The two halves never talk directly; a file in git is the interface. That means zero hosting cost, no server to maintain, and no LinkedIn credentials anywhere but my laptop. The price is that data is only as fresh as the last run, and if my Mac is off, the run does not happen."
 
 ---
 
@@ -303,7 +303,7 @@ Practise this out loud until it is automatic.
 - The company check runs before everything else because request volume, not runtime, is what gets a LinkedIn account restricted.
 - The four directories are `src/` (watcher logic), `bin/` (human entry points), `web/` (the deployed site), `test/` (three files using Node's built-in `assert`).
 - The project has exactly one npm dependency, `playwright-core`, no frontend framework, no backend framework, no ORM, and no build step — which buys zero cost, nothing to maintain, and no credentials on any server.
-- It costs freshness (twice-daily), availability (the Mac must be awake), and scale (one operator only), and scraping LinkedIn remains against their Terms of Service.
+- It costs freshness (hourly), availability (the Mac must be awake), and scale (one operator only), and scraping LinkedIn remains against their Terms of Service.
 
 ## Key takeaways
 
@@ -312,10 +312,10 @@ The shape of this system is *push, not pull*: the expensive, risky, credential-h
 ## Interview questions
 
 **1. Describe the architecture of this project in under a minute.**
-It is two programs sharing a repository. The first is a Node.js watcher that runs on my Mac twice a day under launchd; it drives a real Brave browser through LinkedIn with Playwright, filters postings against a watchlist of about 860 companies, classifies each role, and stores everything in a SQLite file. Its final step writes `web/public/data/jobs.json`, commits it, and pushes to GitHub. The second program is a static site on Vercel — no framework, no build step — which Vercel redeploys automatically on that push; the browser fetches the JSON and renders the list. The only code that runs on demand in the cloud is one serverless function that tailors résumés. The two halves never open a connection to each other; a committed file is the entire interface.
+It is two programs sharing a repository. The first is a Node.js watcher that runs on my Mac every hour under launchd; it drives a real Brave browser through LinkedIn with Playwright, filters postings against a watchlist of about 920 companies, classifies each role, and stores everything in a SQLite file. Its final step writes `web/public/data/jobs.json`, commits it, and pushes to GitHub. The second program is a static site on Vercel — no framework, no build step — which Vercel redeploys automatically on that push; the browser fetches the JSON and renders the list. The only code that runs on demand in the cloud is one serverless function that tailors résumés. The two halves never open a connection to each other; a committed file is the entire interface.
 
 **2. Why is there no server?**
-Because nothing in the read path needs one. The list of jobs changes twice a day, so serving it from a database on every request would be doing expensive work to produce the same answer thousands of times. Publishing a static file lets a CDN cache it worldwide, which is cheaper and more reliable than any server I could run. The write path does need a real machine — a browser has to be driven — but that machine is my laptop, which I already own and which already holds the LinkedIn session. Adding a server would mean paying for idle time, patching it, and storing my session cookie on it.
+Because nothing in the read path needs one. The list of jobs changes every hour, so serving it from a database on every request would be doing expensive work to produce the same answer thousands of times. Publishing a static file lets a CDN cache it worldwide, which is cheaper and more reliable than any server I could run. The write path does need a real machine — a browser has to be driven — but that machine is my laptop, which I already own and which already holds the LinkedIn session. Adding a server would mean paying for idle time, patching it, and storing my session cookie on it.
 
 **3. What exactly is `jobs.json` and why is it in git?**
 It is the published list of jobs: company, role, stipend, location, work mode, duration, a generated summary, and a link to the original posting. It is in git because git is already the deployment trigger — Vercel watches the repository, so committing the file and deploying the site are the same action. That gives me version history for free: I can see exactly what the site showed on any past date, and roll back by reverting a commit. The cost is repository bloat, since every run rewrites the file and adds a commit, and git is not designed as a database.

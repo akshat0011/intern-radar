@@ -477,7 +477,7 @@ Both work, but the prefix is unambiguous. It guarantees the built-in — a packa
 
 **8. Your project has one dependency and hand-writes a server, a logger and a database layer. Isn't that reinventing wheels?**
 
-Sometimes, and I will name where. The server is 100 lines and runs only on localhost, so Express would add a dependency tree to save thirty lines — that one I defend. The logger is 54 lines with no rotation, no size cap and no structured output, printing to one laptop twice a day, so a file per day is the rotation it needs; defensible at this scale and wrong on a fleet. The proof of the cost is in the file: `src/logger.js:1` imports `createWriteStream` and never uses it, which a linter would have caught instantly, except there is no linter because there are no devDependencies. That is the policy's bill and I paid it. My switching point is stated in advance: a second person or a second machine, and I take the library.
+Sometimes, and I will name where. The server is 100 lines and runs only on localhost, so Express would add a dependency tree to save thirty lines — that one I defend. The logger is 54 lines with no rotation, no size cap and no structured output, printing to one laptop every hour, so a file per day is the rotation it needs; defensible at this scale and wrong on a fleet. The proof of the cost is in the file: `src/logger.js:1` imports `createWriteStream` and never uses it, which a linter would have caught instantly, except there is no linter because there are no devDependencies. That is the policy's bill and I paid it. My switching point is stated in advance: a second person or a second machine, and I take the library.
 
 **9. Isn't hand-rolling `readBody` a security problem? Walk me through what is wrong with it.**
 

@@ -9,7 +9,7 @@
 Two programs. One folder. One npm dependency.
 No React. No Express. No MongoDB. No build step.
 
-It watches LinkedIn for internships at 860 companies,
+It watches LinkedIn for internships at about 920 companies,
 stores them in SQLite, and publishes them to
 [internradar.online](https://internradar.online).
 

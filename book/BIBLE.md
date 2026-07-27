@@ -105,7 +105,7 @@ that.** Getting this wrong ruins the book.
 ### What it is
 **Two programs sharing one folder and one database.**
 
-1. **The watcher** (`src/`, `bin/`) — Node.js on the author's Mac, twice a day, driving a
+1. **The watcher** (`src/`, `bin/`) — Node.js on the author's Mac, every hour, driving a
    real Brave browser to search LinkedIn for internships at a watchlist of companies,
    extracting them, classifying them, storing them in SQLite.
 2. **The site** (`web/`) — a static site on Vercel that reads one JSON file the watcher

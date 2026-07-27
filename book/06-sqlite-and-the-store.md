@@ -8,7 +8,7 @@
 
 ## 6.1 Why not just a file?
 
-The watcher finds internships twice a day. It must remember them between runs, or it reports the same job as "new" forever.
+The watcher finds internships every hour. It must remember them between runs, or it reports the same job as "new" forever.
 
 The simplest memory is a **file** — a named blob of bytes on disk. Write every job to `jobs.json`, read it back next time. For a week that works. Then four things break.
 
@@ -358,7 +358,7 @@ An index is a sorted B-tree over chosen columns with pointers back to the rows, 
 It is external text escaping the data slot of a query and executing as SQL, letting an attacker read or destroy data. Prevention here is that every query uses `?` placeholders with a prepared statement: the SQL is parsed and planned before any value arrives, so a value can never become a command. That is structural, not escaping — there is no clever input that gets through. Placeholders cannot parameterise table or column names, which is why `#migrate()` builds `ALTER TABLE` strings only from a hardcoded array. The habit matters more than any one query being safe, because concatenated SQL gets copied to places where input is not trusted.
 
 **5. Why SQLite instead of PostgreSQL or MongoDB?**
-SQLite is a library inside the process with the whole database in one file — no server to install, run, secure or back up, which for a tool running twice a day on one Mac would be pure overhead. It is also built into Node 22, so it costs zero npm dependencies and no native compilation, which matters when the whole dependency list is `playwright-core`. Postgres would win the moment several machines needed concurrent writes or the data outgrew one disk. MongoDB is the wrong axis: the data is uniformly tabular and every query is relational. I would move to Postgres if this became multi-user, and I would call that a real ceiling rather than pretend SQLite scales forever.
+SQLite is a library inside the process with the whole database in one file — no server to install, run, secure or back up, which for a tool running every hour on one Mac would be pure overhead. It is also built into Node 22, so it costs zero npm dependencies and no native compilation, which matters when the whole dependency list is `playwright-core`. Postgres would win the moment several machines needed concurrent writes or the data outgrew one disk. MongoDB is the wrong axis: the data is uniformly tabular and every query is relational. I would move to Postgres if this became multi-user, and I would call that a real ceiling rather than pretend SQLite scales forever.
 
 **6. `node:sqlite` was experimental. Isn't building on an unstable API reckless?**
 It is a genuine risk. The API can change between Node versions, and for a library published to others that would be disqualifying. Three things make it acceptable: the surface used is tiny — `DatabaseSync`, `prepare`, `run`/`get`/`all`, `exec`; the deployment is one machine whose Node version the author controls; and the whole database layer sits behind one class, so swapping to `better-sqlite3` is one file with the same method signatures. The alternative had its own cost: a native module that compiles on install and breaks on every Node upgrade. I traded a stable-but-fragile dependency for an unstable-but-zero-install builtin, with an exit route.
