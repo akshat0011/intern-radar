@@ -1,7 +1,7 @@
 {
- "generatedAt": 1785159892081,
- "count": 212,
- "techCount": 44,
+ "generatedAt": 1785162791996,
+ "count": 213,
+ "techCount": 45,
  "otherCount": 168,
  "companies": [
   "A.P. Moller - Maersk",
@@ -76,6 +76,7 @@
   "ShareChat",
   "Siemens",
   "Siemens Energy",
+  "Siemens Healthineers",
   "Societe Generale",
   "Sprinklr",
   "State Street",
@@ -144,6 +145,42 @@
   "West Bengal, India (On-site)"
  ],
  "jobs": [
+  {
+   "id": "4442834690",
+   "title": "Intern - Technical",
+   "company": "Siemens Healthineers",
+   "matchedWatchlist": "Siemens",
+   "isTech": true,
+   "roleSource": "gemini-description",
+   "logo": "/logos/siemens-healthineers.jpg",
+   "location": "Bengaluru, Karnataka, India",
+   "workplaceType": "On-site",
+   "stipend": null,
+   "duration": null,
+   "applicants": null,
+   "easyApply": false,
+   "skills": [
+    "python",
+    "git",
+    "deep learning",
+    "computer vision",
+    "pytorch",
+    "numpy",
+    "algorithms"
+   ],
+   "summary": "Digital Technology & Innovation (DTI) at Siemens Healthineers develop breakthrough technologies that advance precision medicine, digital clinical workflows, and sustainable healthcare delivery. Our work spans deep learning for medical image analysis, multimodal intelligence, foundational models, and AI engineering for scalable clinical integration. As part of the Medical Image Analysis focus area, you will help create AI-enabled innovations that support clinicians, improve outcomes, and establish the future of intelligent imaging. Tasks and Responsibilities",
+   "bullets": [],
+   "degreeLevel": null,
+   "degreeText": null,
+   "keySkills": [],
+   "stipendStatus": "unknown",
+   "postedText": "51 minutes ago",
+   "postedAt": 1785159583034,
+   "firstSeenAt": 1785162643042,
+   "url": "https://www.linkedin.com/jobs/view/4442834690/",
+   "applyUrl": "https://www.linkedin.com/jobs/view/4442834690/",
+   "description": null
+  },
   {
    "id": "4442849357",
    "title": "Data Analyst Trainee",
