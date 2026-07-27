@@ -1,0 +1,128 @@
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:#f2f2ec; --ink-2:#9d9d94; --ink-3:#6a6a62;
+    --bg:#0a0a0b; --rule:#222226; --rule-2:#303036;
+    --live:#c8ff00;
+    --display:'Archivo','Helvetica Neue',Impact,sans-serif;
+    --ui:'Space Grotesk',ui-sans-serif,sans-serif;
+    --mono:'JetBrains Mono',ui-monospace,Menlo,monospace;
+  }
+  * { box-sizing:border-box; margin:0; }
+  body { margin:0; }
+
+  #card {
+    position:absolute; top:0; left:0; width:1200px; height:630px; overflow:hidden;
+    background:var(--bg); color:var(--ink); font-family:var(--ui);
+    padding:58px 64px; display:flex; flex-direction:column; justify-content:space-between;
+  }
+
+  /* radar bleeding off the right edge — the mark as environment, not sticker */
+  .scope-bleed { position:absolute; right:-170px; top:50%; transform:translateY(-50%);
+                 width:720px; height:720px; }
+  .scope-bleed svg { width:100%; height:100%; display:block; }
+  .ring { fill:none; stroke:var(--live); stroke-width:1.4; opacity:.22; }
+  .ring.faint { opacity:.11; }
+  .cross { stroke:var(--live); stroke-width:1.4; opacity:.10; }
+
+  /* film grain, same recipe and opacity as the site */
+  .grain { position:absolute; inset:0; pointer-events:none; opacity:.038;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E"); }
+
+  /* left column sits above the radar */
+  .row, .mid, .foot { position:relative; z-index:2; }
+
+  .row { display:flex; align-items:center; justify-content:space-between; }
+  .brand { display:flex; align-items:center; gap:16px; }
+  .brand .mark { width:46px; height:46px; flex:none; }
+  .brand .mark svg { width:100%; height:100%; display:block; overflow:visible; }
+  .m-ring { fill:none; stroke:var(--live); stroke-width:1.6; opacity:.34; }
+  .m-sweep { fill:var(--live); opacity:.32; }
+  .m-dot { fill:var(--live); }
+  .word { font-family:var(--display); font-weight:900; font-size:42px;
+          letter-spacing:-.045em; line-height:1; }
+  .word em { font-style:normal; color:var(--live); }
+
+  .stamp { font-family:var(--mono); font-size:19px; letter-spacing:.14em;
+           text-transform:uppercase; color:var(--ink-2);
+           border:1px solid var(--rule-2); border-radius:4px; padding:11px 18px;
+           display:flex; align-items:center; gap:11px; background:rgba(10,10,11,.72); }
+  .beat { width:9px; height:9px; background:var(--live); flex:none; }
+
+  .mid { max-width:770px; }
+  h1 { font-family:var(--display); font-weight:900; font-size:140px; line-height:.88;
+       letter-spacing:-.05em; text-transform:uppercase; }
+  h1 .dot { display:inline-block; width:.115em; height:.115em; margin-left:.04em;
+            background:var(--live); vertical-align:baseline; }
+  .sub { margin-top:28px; font-size:36px; line-height:1.35; color:var(--ink-2);
+         max-width:730px; letter-spacing:-.005em; }
+  .sub b { color:var(--ink); font-weight:600; }
+
+  .foot { display:flex; align-items:center; gap:14px; }
+  .chip { font-family:var(--mono); font-size:19px; letter-spacing:.1em;
+          text-transform:uppercase; color:var(--ink-2);
+          border:1px solid var(--rule); border-radius:4px; padding:10px 16px;
+          background:rgba(10,10,11,.72); }
+  .chip.hot { color:var(--live); border-color:rgba(200,255,0,.34); }
+  .spacer { flex:1; }
+  .url { font-family:var(--mono); font-size:21px; letter-spacing:.08em;
+         text-transform:uppercase; color:var(--ink-3);
+         background:rgba(10,10,11,.72); padding-left:14px; }
+</style>
+
+<div id="card">
+
+  <div class="scope-bleed">
+    <svg viewBox="0 0 720 720">
+      <circle class="ring faint" cx="360" cy="360" r="352"/>
+      <circle class="ring" cx="360" cy="360" r="272"/>
+      <circle class="ring faint" cx="360" cy="360" r="192"/>
+      <circle class="ring" cx="360" cy="360" r="112"/>
+      <line class="cross" x1="8" y1="360" x2="712" y2="360"/>
+      <line class="cross" x1="360" y1="8" x2="360" y2="712"/>
+      <defs>
+        <linearGradient id="sw" x1="0" y1="1" x2="1" y2="0">
+          <stop offset="0" stop-color="#c8ff00" stop-opacity="0"/>
+          <stop offset="1" stop-color="#c8ff00" stop-opacity=".30"/>
+        </linearGradient>
+      </defs>
+      <path d="M360 360 L360 88 A272 272 0 0 1 552 168 Z" fill="url(#sw)"/>
+      <circle cx="360" cy="360" r="7" fill="#c8ff00"/>
+      <circle cx="486" cy="243" r="6.5" fill="#c8ff00" opacity=".85"/>
+      <circle cx="424" cy="470" r="5" fill="#c8ff00" opacity=".45"/>
+    </svg>
+  </div>
+
+  <div class="grain"></div>
+
+  <div class="row">
+    <div class="brand">
+      <span class="mark">
+        <svg viewBox="0 0 44 44">
+          <circle class="m-ring" cx="22" cy="22" r="20"/>
+          <circle class="m-ring" cx="22" cy="22" r="13"/>
+          <circle class="m-ring" cx="22" cy="22" r="6"/>
+          <path class="m-sweep" d="M22 22 L22 1 A21 21 0 0 1 40 12 Z"/>
+          <circle class="m-dot" cx="22" cy="22" r="2.9"/>
+        </svg>
+      </span>
+      <span class="word">INTERN<em>RADAR</em></span>
+    </div>
+    <div class="stamp"><i class="beat"></i>Live</div>
+  </div>
+
+  <div class="mid">
+    <h1>Be early<span class="dot"></span></h1>
+    <p class="sub">Software internships in India, listed <b>minutes after they go live</b>.</p>
+  </div>
+
+  <div class="foot">
+    <span class="chip hot">Fresh roles daily</span>
+    <span class="chip">Free</span>
+    <span class="chip">No signup</span>
+    <span class="spacer"></span>
+    <span class="url">interneadar.in</span>
+  </div>
+
+</div>
