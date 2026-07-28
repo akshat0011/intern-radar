@@ -191,6 +191,23 @@ function anyFilterActive() {
 
 /* ---------------- rendering ---------------- */
 
+/**
+ * The URL of a job's generated page.
+ *
+ * Must produce byte-identical output to slugify/jobSlug in src/pages.js, which is
+ * what actually names the files at publish time. If the two ever drift, this links
+ * to a 404 — so any change to one has to be made in both.
+ */
+function jobPageSlug(job) {
+  const slug = (s) => String(s ?? '')
+    .toLowerCase()
+    .replace(/&/g, ' and ')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .slice(0, 70) || 'role';
+  return `${slug(job.company)}-${slug(job.title)}-${job.id}`;
+}
+
 /** Has this posting been through the Gemini pass yet? */
 function enriched(job) {
   return (job.bullets ?? []).length > 0;
@@ -471,6 +488,15 @@ function renderDetail(job) {
   tailorBtn.append(document.createTextNode('Tailor my resume'));
   tailorBtn.addEventListener('click', () => openTailor(job));
   actions.append(tailorBtn);
+
+  // The job's own page. Two reasons it belongs here: it is the only way to get a
+  // link to one role that survives being pasted into a WhatsApp group, and it is
+  // the internal link that lets a crawler reach a page the feed otherwise hides
+  // behind JavaScript.
+  const page = el('a', 'alt', 'Open full page ↗');
+  page.href = `/jobs/${jobPageSlug(job)}`;
+  actions.append(page);
+
   d.append(actions);
 
   const facts = el('dl', 'facts');
