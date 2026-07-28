@@ -1,8 +1,8 @@
 {
- "generatedAt": 1785240204769,
- "count": 260,
+ "generatedAt": 1785241983661,
+ "count": 261,
  "techCount": 50,
- "otherCount": 210,
+ "otherCount": 211,
  "companies": [
   "A.P. Moller - Maersk",
   "Accenture in India",
@@ -176,6 +176,37 @@
   "West Bengal, India (On-site)"
  ],
  "jobs": [
+  {
+   "id": "4443292202",
+   "title": "ICOO Apprentice role 2026",
+   "company": "Deutsche Bank",
+   "matchedWatchlist": "Deutsche Bank",
+   "isTech": false,
+   "roleSource": "gemini-description",
+   "logo": "/logos/deutsche-bank.jpg",
+   "location": "Mumbai, Maharashtra, India",
+   "workplaceType": "Hybrid",
+   "stipend": null,
+   "duration": null,
+   "applicants": null,
+   "easyApply": false,
+   "skills": [
+    "excel"
+   ],
+   "summary": "This includes acting responsibly, thinking commercially, taking initiative and working collaboratively. Together we share and celebrate the successes of our people. Together we are Deutsche Bank Group. We welcome applications from all people and promote a positive, fair and inclusive work environment.",
+   "bullets": [],
+   "roleLabel": null,
+   "degreeLevel": null,
+   "degreeText": null,
+   "keySkills": [],
+   "stipendStatus": "unknown",
+   "postedText": "33 minutes ago",
+   "postedAt": 1785239935856,
+   "firstSeenAt": 1785241915864,
+   "url": "https://www.linkedin.com/jobs/view/4443292202/",
+   "applyUrl": "https://www.linkedin.com/jobs/view/4443292202/",
+   "description": null
+  },
   {
    "id": "4445709381",
    "title": "Apprentice",
