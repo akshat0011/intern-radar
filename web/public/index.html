@@ -45,8 +45,11 @@
      "@vercel/analytics/next"`, which is the React build and cannot work here: there is
      no bundler and no build step, so nothing would ever resolve that specifier. Vercel
      serves this script from the same origin whenever Web Analytics is enabled on the
-     project, so the whole integration is one tag and no dependency.
+     project, so the whole integration is two inline lines and no dependency.
+     The window.va stub queues any event fired before the deferred script finishes
+     loading, so an early call is replayed rather than thrown away.
      It 404s on the local dev server — that path only exists on Vercel's edge. -->
+<script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
 <script defer src="/_vercel/insights/script.js"></script>
 
 <!-- Speed Insights: real users' Core Web Vitals, rather than a lab score from one
