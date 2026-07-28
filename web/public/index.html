@@ -48,6 +48,13 @@
      project, so the whole integration is one tag and no dependency.
      It 404s on the local dev server — that path only exists on Vercel's edge. -->
 <script defer src="/_vercel/insights/script.js"></script>
+
+<!-- Speed Insights: real users' Core Web Vitals, rather than a lab score from one
+     machine. Same deal as above — the documented install is a React component, and
+     the script is what works without a build step. Worth having on this page in
+     particular, because the layout shifts once app.js swaps the empty list for
+     ~220 job cards, and CLS is the metric that catches exactly that. -->
+<script defer src="/_vercel/speed-insights/script.js"></script>
 </head>
 <body>
 
