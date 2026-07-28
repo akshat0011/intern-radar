@@ -210,15 +210,82 @@ function degreeTag(job) {
 }
 
 /**
- * Three states, never a blank. "Unknown" is a real and useful answer here: a
- * missing stipend line usually means unpaid, and saying nothing let students
- * assume otherwise.
+ * Only shown when the posting actually says something.
+ *
+ * This began as three states including an explicit "stipend unknown", on the
+ * reasoning that silence usually means unpaid. In practice 89% of postings say
+ * nothing, so the chip appeared on nearly every card, in the most prominent slot,
+ * carrying no information and pushing the useful facts to the right. A label that
+ * is almost always present is not a label. Absence now means unknown.
  */
 function stipendTag(job) {
   if (job.stipend) return el('span', 'cash', job.stipend);
   if (job.stipendStatus === 'paid') return el('span', 'cash', 'paid');
   if (job.stipendStatus === 'unpaid') return el('span', 'unpaid', 'unpaid');
-  return el('span', 'dunno', 'stipend unknown');
+  return null;
+}
+
+/**
+ * Words that describe the shape of a job rather than the work in it. A title made
+ * only of these tells a reader nothing.
+ */
+const FILLER_TITLE_WORDS = new Set([
+  'intern', 'interns', 'internship', 'internships', 'apprentice', 'apprenticeship',
+  'trainee', 'traineeship', 'graduate', 'grad', 'summer', 'winter', 'management',
+  'program', 'programme', 'role', 'position', 'opportunity', 'hiring', 'new',
+  'full', 'time', 'part', 'fresher', 'freshers', 'entry', 'level', 'junior',
+]);
+
+/**
+ * Does this title distinguish the job from the others at the same company?
+ *
+ * A quarter of postings are titled only "Apprentice", "Intern" or "Trainee".
+ * American Express alone has 25 of them — 25 genuinely different jobs, from GenAI
+ * automation to credit-loss modelling, all sharing one useless label. Stacked in a
+ * feed they read as duplicates.
+ */
+function titleIsGeneric(title) {
+  const meaningful = String(title || '')
+    .toLowerCase()
+    .replace(/[^a-z0-9\s]/g, ' ')
+    .split(/\s+/)
+    .filter((w) => w && !FILLER_TITLE_WORDS.has(w) && !/^\d+$/.test(w));
+  return meaningful.length <= 1;
+}
+
+/**
+ * What the job actually is, for titles that do not say.
+ *
+ * Prefers Gemini's short label. Falls back to the opening of the first bullet,
+ * which already describes the work — worse than a real label, but it needs no extra
+ * API call and it works for every posting enriched before roleLabel existed.
+ *
+ * Returns whether the bullet was consumed, because the caller must then not print
+ * that same bullet three lines further down. The first draft did, and a card read
+ * "Apprentice · analyze data to identify trends…" directly above a bullet saying
+ * "Analyze data to identify trends into clear reports".
+ *
+ * @returns {{text: string, usedFirstBullet: boolean}|null}
+ */
+function roleQualifier(job) {
+  if (job.roleLabel) return { text: job.roleLabel, usedFirstBullet: false };
+  const first = (job.bullets ?? [])[0];
+  if (!first) return null;
+  const clipped = first.length > 58 ? `${first.slice(0, 57).replace(/[\s,;:.]+\S*$/, '')}…` : first;
+  return { text: clipped.charAt(0).toLowerCase() + clipped.slice(1), usedFirstBullet: true };
+}
+
+/**
+ * The role line, plus what the job is when the title hides it.
+ * @returns {{node: HTMLElement, usedFirstBullet: boolean}}
+ */
+function roleLine(job) {
+  const p = el('p', 'role', job.title);
+  if (!titleIsGeneric(job.title)) return { node: p, usedFirstBullet: false };
+  const q = roleQualifier(job);
+  if (!q) return { node: p, usedFirstBullet: false };
+  p.append(el('span', 'qual', q.text));
+  return { node: p, usedFirstBullet: q.usedFirstBullet };
 }
 
 function jobCard(job, index) {
@@ -241,7 +308,8 @@ function jobCard(job, index) {
 
   const mid = el('div');
   mid.append(el('h3', 'co', job.company));
-  mid.append(el('p', 'role', job.title));
+  const role = roleLine(job);
+  mid.append(role.node);
 
   // Eligibility first, money second. A student's first question is "can I even
   // apply", and that used to be buried in the description while the card spent
@@ -249,19 +317,20 @@ function jobCard(job, index) {
   const meta = el('div', 'meta');
   const degree = degreeTag(job);
   if (degree) meta.append(degree);
-  meta.append(stipendTag(job));
+  const stipend = stipendTag(job);
+  if (stipend) meta.append(stipend);
 
-  // Enrichment runs against a daily API quota, so at any moment some postings
-  // have eligibility and skills and some do not. Where they do, that is the row.
-  // Where they do not, fall back to city and work mode rather than leaving a
-  // card with a single lonely "stipend unknown" on it.
+  // Enrichment runs against a daily API quota, so at any moment some postings have
+  // eligibility and skills and some do not. Where they do, that is the row. Where
+  // they do not, fall back to city and work mode so the row is not left empty —
+  // which it now can be, since an unknown stipend prints nothing.
   if (!enriched(job)) {
     if (job.location) meta.append(el('span', null, job.location));
     if (job.workplaceType) meta.append(el('span', null, job.workplaceType));
   }
   if (job.duration) meta.append(el('span', null, job.duration));
   if (job.easyApply) meta.append(el('span', 'ea', 'easy apply'));
-  mid.append(meta);
+  if (meta.children.length) mid.append(meta);
 
   const skills = (job.keySkills ?? []).slice(0, 4);
   if (skills.length) {
@@ -270,7 +339,9 @@ function jobCard(job, index) {
     mid.append(box);
   }
 
-  const bullets = job.bullets ?? [];
+  // The role line may have consumed the first bullet as its qualifier; printing it
+  // again here would say the same sentence twice on one card.
+  const bullets = (job.bullets ?? []).slice(role.usedFirstBullet ? 1 : 0);
   if (bullets.length) {
     const ul = el('ul', 'gist-list');
     for (const b of bullets) ul.append(el('li', null, b));

@@ -1,5 +1,5 @@
 {
- "generatedAt": 1785206007569,
+ "generatedAt": 1785206656990,
  "count": 228,
  "techCount": 51,
  "otherCount": 177,
@@ -170,6 +170,7 @@
    ],
    "summary": "Every one of our Operations Team Care Professionals represents the American Express Brand. They take their work personally because they’re more than a friendly voice, they’re problem solvers and relationship builders. The people you’ll work with, and the customers you’ll care for, value your passion and unique personality as much as we do. Not more than 5 years of difference between highest education degree completion date and joining date",
    "bullets": [],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -198,6 +199,7 @@
    "skills": [],
    "summary": "Technical Prerequisites & Expectations: AI-Driven Development: The candidate must know how to build secure web/mobile applications using AI tools and methods. Core Engineering Skills: The candidate needs a basic understanding of front-end and back-end web frameworks, database management, mobile app and software engineering. Tenure of internship should be minimum of 3 months (Paid internship)",
    "bullets": [],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -235,6 +237,7 @@
     "Participate in projects like IBOR migration and automation of BAU activities using AI",
     "Work with large datasets using MS Excel, MS Access, VBA, SQL, Python, and SAS"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG/PG",
    "degreeText": "MBA",
    "keySkills": [
@@ -274,6 +277,7 @@
     "Analyze data to identify trends and translate insights into clear reports and decision-making materials",
     "Proficient in Microsoft Office, strong Excel skills, experience with Power Query, and leveraging AI tools"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG",
    "degreeText": "Diploma",
    "keySkills": [
@@ -308,6 +312,7 @@
    "skills": [],
    "summary": "Minimum required Education: High School Diploma plus Active student status/enrollment at the University, College or Vocational Education. Minimum required Experience: No prior experience required. Minimum required Certification: N/A Job title: One sentence description of role Your role: Onsite roles require full-time presence in the company’s facilities.",
    "bullets": [],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -344,6 +349,7 @@
     "Collaborate with other Finance teams, provide tactical support to projects, and assist in preparing SOPs",
     "Ensure adherence to company’s financial policies and maintain data integrity"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG",
    "degreeText": "B.Com/BBA",
    "keySkills": [
@@ -381,6 +387,7 @@
     "Collect and analyze market intelligence, property rates, competitor activities, and regulatory updates",
     "Generate periodic reports summarizing business development activities and pipeline deals for senior management"
    ],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [
@@ -420,6 +427,7 @@
     "Perform advanced product assembly simulations, analyzing kinematics and ensuring ergonomic standards",
     "Prepare and present virtual and material data for reviews, collaborating with cross-functional stakeholders"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG",
    "degreeText": "B.E/B.Tech",
    "keySkills": [
@@ -452,6 +460,7 @@
    "skills": [],
    "summary": "Transport is at the core of modern society. Imagine using your expertise to shape sustainable transport and infrastructure solutions for the future. At (ENTITY) you will contribute to the transformation of our company, the transport industry and society at large. We offer a solid package of compensation and benefits, plus you will enjoy:",
    "bullets": [],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -485,6 +494,7 @@
     "Work with proto manufacturing methods and consider plastic/sheet metal design aspects",
     "Use CAD tools like CATIA V5/Creo for part modeling, surfacing, assembly, and detailing"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG",
    "degreeText": "B.E/B.Tech",
    "keySkills": [
@@ -526,6 +536,7 @@
     "Learn and apply Volvo's engineering standards and procedures",
     "Work with CAE tools like ANSA, ALTAIR HYPERWORKS, NASTRAN, and MS Office tools"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG",
    "degreeText": "B.Tech/B.E",
    "keySkills": [
@@ -564,6 +575,7 @@
     "Compile and analyze financial information for Group and Regional Treasury",
     "Prepare financial statements and other financial reports for the business and external auditors"
    ],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -598,6 +610,7 @@
     "Support dashboarding on Power BI and help with process simplification and automation",
     "Collaborate with other teams in RAS, GPAA, IR, and related stakeholders"
    ],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [
@@ -638,6 +651,7 @@
     "Work with SQL, Python, and NoSQL tools like Hadoop, Hive, Spark, Pig, H2O",
     "Currently pursuing a Bachelor’s or Master’s, graduating in 2028"
    ],
+   "roleLabel": null,
    "degreeLevel": "Pursuing",
    "degreeText": null,
    "keySkills": [
@@ -672,6 +686,7 @@
    "skills": [],
    "summary": null,
    "bullets": [],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -713,6 +728,7 @@
     "Develop reproducible pipelines for model training, validation, and benchmarking",
     "Work with PyTorch, Python, NumPy, SciPy, OpenCV, and Git"
    ],
+   "roleLabel": null,
    "degreeLevel": "PG",
    "degreeText": "M.Sc/PhD",
    "keySkills": [
@@ -752,6 +768,7 @@
     "Prepare and submit a project report based on the live project in the fourth week",
     "This is a one-month structured traineeship program"
    ],
+   "roleLabel": null,
    "degreeLevel": "Pursuing",
    "degreeText": null,
    "keySkills": [],
@@ -787,6 +804,7 @@
     "Provide first-level support for learner queries and resolve data discrepancies",
     "Generate MIS, dashboards, and reports related to learning activities using MS Excel"
    ],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [
@@ -829,6 +847,7 @@
     "Collaborate with Finance teams and provide tactical support to ongoing projects",
     "Work with MS-Office (Excel, PowerPoint, Word)"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG",
    "degreeText": null,
    "keySkills": [
@@ -869,6 +888,7 @@
     "Perform monthly Trial Balance Reviews and reconcile bank accounts and regulatory liability accounts",
     "Support S&B reporting processes and US GAAP/Local GAAP audits"
    ],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -902,6 +922,7 @@
     "Conduct routine pre-operational checks of X-BIS, ETD, and other security equipment",
     "Follow BCAS and DGCA guidelines for compliance during baggage handling and inspection"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG",
    "degreeText": "Bachelor's",
    "keySkills": [],
@@ -940,6 +961,7 @@
     "Collaborate with other Finance teams and provide tactical support to ongoing projects",
     "Work with MS-Office, Python, SQL, and Power Apps"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG",
    "degreeText": null,
    "keySkills": [
@@ -986,6 +1008,7 @@
     "Work with Power BI, Excel, PPT, VBA, Tableau, Python, and SAS",
     "This is a marketing operations role within US Consumer Services Business"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG",
    "degreeText": "Bachelor's",
    "keySkills": [
@@ -1039,6 +1062,7 @@
     "Write and execute SQL queries to analyze and validate application data",
     "Assist in developing simple programs, utilities, and automation scripts using Java or C#"
    ],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [
@@ -1084,6 +1108,7 @@
     "Collaborate with other Finance teams to gather relevant financial information",
     "Assist in preparation/refresh of standard operating procedures and ensure adherence to policies"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG",
    "degreeText": "B.Com/BBA",
    "keySkills": [
@@ -1125,6 +1150,7 @@
     "Interact with prospective learners, assessing technical aptitude and problem-solving skills",
     "Use SQL and Excel to track metrics, analyze data, and uncover actionable insights, building simple dashboards"
    ],
+   "roleLabel": null,
    "degreeLevel": "Pursuing",
    "degreeText": null,
    "keySkills": [
@@ -1169,6 +1195,7 @@
     "Maintain project artifacts, document lessons learned, and provide status reporting on assigned tasks",
     "Track and monitor timesheets and dashboards, consolidating technical artifacts to meet SDLC standards"
    ],
+   "roleLabel": null,
    "degreeLevel": "Pursuing",
    "degreeText": "Bachelor's",
    "keySkills": [
@@ -1208,6 +1235,7 @@
     "Conduct routine pre-operational checks of X-BIS, ETD, CT-EDS, and other security equipment",
     "Work with CISF and Airlines staff during physical baggage inspections"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG",
    "degreeText": "Bachelor's",
    "keySkills": [],
@@ -1241,6 +1269,7 @@
     "Conduct routine pre-operational checks of X-BIS, ETD, CT-EDS, and other security equipment",
     "Work with CISF and Airlines staff during physical baggage inspections"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG",
    "degreeText": "Bachelor's",
    "keySkills": [],
@@ -1274,6 +1303,7 @@
     "Conduct routine pre-operational checks of X-BIS, ETD, CT-EDS, and other security equipment",
     "Work with CISF and Airlines staff during physical baggage inspections"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG",
    "degreeText": "Bachelor's",
    "keySkills": [],
@@ -1302,6 +1332,7 @@
    "skills": [],
    "summary": null,
    "bullets": [],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -1330,6 +1361,7 @@
    "skills": [],
    "summary": null,
    "bullets": [],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -1372,6 +1404,7 @@
     "Support post-implementation activities including testing, documentation, and customer assistance",
     "Work with HTML, CSS, JavaScript, databases, SQL, and potentially Java, Python, PHP, React, Angular"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG/PG",
    "degreeText": "B.E/B.Tech",
    "keySkills": [
@@ -1406,6 +1439,7 @@
    "skills": [],
    "summary": null,
    "bullets": [],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -1439,6 +1473,7 @@
     "Prepare schedules for audit purposes related to fixed assets",
     "Perform monthly intercompany reconciliation and verify BRS"
    ],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -1467,6 +1502,7 @@
    "skills": [],
    "summary": null,
    "bullets": [],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -1500,6 +1536,7 @@
     "Manage learner journey: onboarding, documentation, application tracking, and follow-ups",
     "Work on projects to improve learner experience and optimize application/visa processes"
    ],
+   "roleLabel": null,
    "degreeLevel": "Pursuing",
    "degreeText": null,
    "keySkills": [],
@@ -1535,6 +1572,7 @@
     "Support documentation and follow-up for sales, renting, and leasing transactions",
     "Use MS Office tools for data management and reporting"
    ],
+   "roleLabel": null,
    "degreeLevel": "Pursuing",
    "degreeText": null,
    "keySkills": [
@@ -1568,6 +1606,7 @@
    "skills": [],
    "summary": null,
    "bullets": [],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -1603,6 +1642,7 @@
     "Assist in representation for global tax litigations and assessment proceedings",
     "Manage global tax compliance for the group across 30 entities and 10 countries"
    ],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -1636,6 +1676,7 @@
     "Review transaction documentation to capture and maintain accurate financial records",
     "Help monitor daily operational activities, investigate discrepancies, and support reconciliation"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG/PG",
    "degreeText": "B.Com/BBA",
    "keySkills": [],
@@ -1668,6 +1709,7 @@
     "Collect and compile CRM data reports regularly",
     "Support the content team in creating high-quality content for CRM channels"
    ],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -1696,6 +1738,7 @@
    "skills": [],
    "summary": null,
    "bullets": [],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -1728,6 +1771,7 @@
     "Support new product development, ingredient evaluation, formulation trials, and documentation",
     "Ideal for final-year students or recent graduates in industrial design or food technology"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG/PG",
    "degreeText": null,
    "keySkills": [
@@ -1762,6 +1806,7 @@
    "skills": [],
    "summary": "Be the First to Apply Piramal Critical Care PCC has a strong manufacturing and process development experience with wholly-owned, state-of-the-art manufacturing facilities in the United States and India, inspected periodically by the US FDA and the UK MHRA and other regulators. Require technical & safety knowledge",
    "bullets": [],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -1794,6 +1839,7 @@
     "Work on a live project assigned by the company in the third week",
     "Prepare and submit a project report based on the live project in the fourth week"
    ],
+   "roleLabel": null,
    "degreeLevel": "Pursuing",
    "degreeText": null,
    "keySkills": [],
@@ -1830,6 +1876,7 @@
     "Work with MS Office, with exposure to PowerBI, Alteryx, and Python as an advantage",
     "Team provides reporting and analysis to support decision-making for Group Treasury division"
    ],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [
@@ -1869,6 +1916,7 @@
     "Conduct GEMBA walks, review GCIBS platform, and support during engineer absences",
     "Requires active enrollment in a Bachelor's or Licentiate Degree in Occupational Health and Safety Engineering"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG",
    "degreeText": "Bachelor's",
    "keySkills": [
@@ -1905,6 +1953,7 @@
     "Reconcile balance sheet GL accounts, list open items with action plans, and follow up for timely resolution",
     "Requires CA finalists pursuing 1 year industrial training with strong accounting knowledge, US GAAP, and IFRS"
    ],
+   "roleLabel": null,
    "degreeLevel": "Pursuing",
    "degreeText": null,
    "keySkills": [
@@ -1939,6 +1988,7 @@
    "skills": [],
    "summary": null,
    "bullets": [],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -1967,6 +2017,7 @@
    "skills": [],
    "summary": null,
    "bullets": [],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -1995,6 +2046,7 @@
    "skills": [],
    "summary": null,
    "bullets": [],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -2023,6 +2075,7 @@
    "skills": [],
    "summary": null,
    "bullets": [],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -2051,6 +2104,7 @@
    "skills": [],
    "summary": null,
    "bullets": [],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -2079,6 +2133,7 @@
    "skills": [],
    "summary": null,
    "bullets": [],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -2107,6 +2162,7 @@
    "skills": [],
    "summary": null,
    "bullets": [],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -2135,6 +2191,7 @@
    "skills": [],
    "summary": null,
    "bullets": [],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -2163,6 +2220,7 @@
    "skills": [],
    "summary": null,
    "bullets": [],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -2191,6 +2249,7 @@
    "skills": [],
    "summary": null,
    "bullets": [],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -2219,6 +2278,7 @@
    "skills": [],
    "summary": null,
    "bullets": [],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -2247,6 +2307,7 @@
    "skills": [],
    "summary": null,
    "bullets": [],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -2275,6 +2336,7 @@
    "skills": [],
    "summary": null,
    "bullets": [],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -2303,6 +2365,7 @@
    "skills": [],
    "summary": null,
    "bullets": [],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -2331,6 +2394,7 @@
    "skills": [],
    "summary": null,
    "bullets": [],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -2359,6 +2423,7 @@
    "skills": [],
    "summary": null,
    "bullets": [],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -2387,6 +2452,7 @@
    "skills": [],
    "summary": null,
    "bullets": [],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -2415,6 +2481,7 @@
    "skills": [],
    "summary": null,
    "bullets": [],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -2443,6 +2510,7 @@
    "skills": [],
    "summary": null,
    "bullets": [],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -2471,6 +2539,7 @@
    "skills": [],
    "summary": null,
    "bullets": [],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -2499,6 +2568,7 @@
    "skills": [],
    "summary": null,
    "bullets": [],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -2527,6 +2597,7 @@
    "skills": [],
    "summary": null,
    "bullets": [],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -2555,6 +2626,7 @@
    "skills": [],
    "summary": null,
    "bullets": [],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -2583,6 +2655,7 @@
    "skills": [],
    "summary": null,
    "bullets": [],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -2611,6 +2684,7 @@
    "skills": [],
    "summary": null,
    "bullets": [],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -2639,6 +2713,7 @@
    "skills": [],
    "summary": null,
    "bullets": [],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -2667,6 +2742,7 @@
    "skills": [],
    "summary": null,
    "bullets": [],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -2695,6 +2771,7 @@
    "skills": [],
    "summary": null,
    "bullets": [],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -2723,6 +2800,7 @@
    "skills": [],
    "summary": null,
    "bullets": [],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -2751,6 +2829,7 @@
    "skills": [],
    "summary": null,
    "bullets": [],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -2779,6 +2858,7 @@
    "skills": [],
    "summary": null,
    "bullets": [],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -2807,6 +2887,7 @@
    "skills": [],
    "summary": null,
    "bullets": [],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -2835,6 +2916,7 @@
    "skills": [],
    "summary": null,
    "bullets": [],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -2868,6 +2950,7 @@
     "Liaise with internal credit teams and clients for proposal discussions and approvals",
     "Ensure timely renewals, limit compliance, documentation, and monitor early warning signals"
    ],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -2896,6 +2979,7 @@
    "skills": [],
    "summary": "BE Mechanical / Electrical Knowledge in CATIA / GD&T / Stackup / Knowledge in Alternator / Starter Motor is mandatory. Process knowledge (Casting / Stamping) is an added advantage.",
    "bullets": [],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -2924,6 +3008,7 @@
    "skills": [],
    "summary": null,
    "bullets": [],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -2967,6 +3052,7 @@
     "Java, C++ or Python, with React, Angular or Vue on the web side plus SQL",
     "Hyderabad or Bangalore, for students graduating in 2028"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG",
    "degreeText": "B.E/B.Tech",
    "keySkills": [
@@ -3005,6 +3091,7 @@
     "Reconcile internal CASA accounts, GL balances, and GST entries, investigating any discrepancies",
     "Analyze stock statements and cash flows for DP computation, and maintain MIS reports"
    ],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -3043,6 +3130,7 @@
     "Collaborate with Engineering, QE, Product Management, Documentation, and product build teams",
     "Work with Python, Golang, or similar programming languages"
    ],
+   "roleLabel": null,
    "degreeLevel": "Pursuing",
    "degreeText": "Bachelor's",
    "keySkills": [
@@ -3080,6 +3168,7 @@
     "Help achieve monthly sales, cross-selling, and acquisition targets",
     "Work with MS Office tools and adhere to KYC norms"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG",
    "degreeText": null,
    "keySkills": [
@@ -3126,6 +3215,7 @@
     "Integrate LLMs into workflows: prompt design, testing and iteration",
     "Low-code work on Microsoft Power Platform; in office at least 3 days a week"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG",
    "degreeText": "Bachelor's",
    "keySkills": [
@@ -3171,6 +3261,7 @@
     "Python or Golang on Linux, with public cloud basics expected",
     "Pune-based, and Red Hat will not sponsor a visa for this role"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG",
    "degreeText": "Bachelor's",
    "keySkills": [
@@ -3215,6 +3306,7 @@
     "Dig through large datasets for trends, variances and emerging portfolio risk",
     "Use Copilot and custom GPTs in the workflow; office 3 days a week"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG",
    "degreeText": "Bachelor's",
    "keySkills": [
@@ -3253,6 +3345,7 @@
     "Keep trackers, MIS reports and dashboards; prep analysis decks for leadership",
     "6 months, in office in Sector 62 Noida, 6-8k stipend, meals included"
    ],
+   "roleLabel": null,
    "degreeLevel": "PG",
    "degreeText": "MBA",
    "keySkills": [
@@ -3295,6 +3388,7 @@
     "Agile ceremonies, status reporting and follow-ups across Finance and Tech teams",
     "Contractual apprentice role, minimum 3 days a week in office"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG",
    "degreeText": "Bachelor's",
    "keySkills": [
@@ -3334,6 +3428,7 @@
     "Model-based testing in Simulink and hardware-in-the-loop runs on RTDS",
     "Site commissioning in India and abroad, deputations running 5-6 months at a stretch"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG",
    "degreeText": "B.E",
    "keySkills": [
@@ -3381,6 +3476,7 @@
     "Python, TensorFlow, SQL, React, Spark, Solr, Docker and a long list of AWS services",
     "6-month full-time in-person stint, needs 2026 graduation and CGPA 8.0+"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG/PG",
    "degreeText": "Bachelor's/Master's",
    "keySkills": [
@@ -3428,6 +3524,7 @@
     "Projects across Global Engineering touching Ansible, OpenShift and AI",
     "Pune or Bangalore, in an intern cohort; no visa sponsorship"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG",
    "degreeText": "Bachelor's",
    "keySkills": [
@@ -3475,6 +3572,7 @@
     "Projects across Global Engineering touching Ansible, OpenShift and AI",
     "Pune or Bangalore, in an intern cohort; no visa sponsorship"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG",
    "degreeText": "Bachelor's",
    "keySkills": [
@@ -3519,6 +3617,7 @@
     "Excel/Sheets plus SQL, Power BI or Tableau; AI tools for research and automation",
     "3 months full-time in Mumbai, sitting with the founder strategy team"
    ],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [
@@ -3560,6 +3659,7 @@
     "Documenting process, system and accounting flows, plus post-launch support",
     "Sits in Amex's Global Finance org; office at least 3 days a week"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG",
    "degreeText": "Bachelor's",
    "keySkills": [
@@ -3593,6 +3693,7 @@
    "skills": [],
    "summary": "Qualcomm India Private Limited Interns Group, Interns Group > Interim Engineering Intern - HW Qualcomm is a company of inventors that unlocked 5G ushering in an age of rapid acceleration in connectivity and new possibilities that will transform industries, create jobs, and enrich lives. It takes inventive minds with diverse skills, backgrounds, and cultures to transform 5Gs potential into world-changing technologies and products.",
    "bullets": [],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -3625,6 +3726,7 @@
     "Assist unit testing, verify expected results and document them in set formats",
     "Domain is Health and Welfare (HW) tech, listed as the mandatory skill"
    ],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [
@@ -3662,6 +3764,7 @@
     "Keep employee records, HR trackers and onboarding documentation in order",
     "In Servd's Mumbai office, Swiggy's food media arm; wants 6+ months of HR experience"
    ],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [
@@ -3699,6 +3802,7 @@
     "Handle salary negotiations with selected candidates to close offers",
     "Pune-based, at FirstCry's kids and baby products business"
    ],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [
@@ -3746,6 +3850,7 @@
     "Python with pytorch, scikit-learn, pandas, langchain and huggingface",
     "6 months in Bangalore, owning a topic like market commentary or swap risk"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG/PG",
    "degreeText": "Bachelor's/Master's",
    "keySkills": [
@@ -3787,6 +3892,7 @@
     "Coordinate with internal teams, vendors, and clients to facilitate training administration",
     "Requires recent graduates or freshers with basic MS-Excel experience"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG/PG",
    "degreeText": null,
    "keySkills": [
@@ -3822,6 +3928,7 @@
     "Assist with report preparation, review system data for accuracy, and identify/correct discrepancies",
     "Support clients with low complexity matters and contribute to client engagement"
    ],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -3857,6 +3964,7 @@
     "Accurately upload certificates and create Purchase Orders",
     "Work with MS-Excel and interact with clients"
    ],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [
@@ -3891,6 +3999,7 @@
     "Review content for pedagogy, sequencing, consistency, grammar, and formatting",
     "Coordinate with academic faculty and Subject Matter Experts (SMEs) to track deliverables"
    ],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -3924,6 +4033,7 @@
     "Perform basic color correction, subtitles, transitions, and audio syncing",
     "Work with Adobe Premiere Pro, After Effects is a plus"
    ],
+   "roleLabel": null,
    "degreeLevel": "Pursuing",
    "degreeText": null,
    "keySkills": [
@@ -3966,6 +4076,7 @@
     "Ensure compliance with control documents and internal processes",
     "Focus on corporate finance, accounting operations, and global stakeholder management"
    ],
+   "roleLabel": null,
    "degreeLevel": "Pursuing",
    "degreeText": null,
    "keySkills": [
@@ -4007,6 +4118,7 @@
     "Document account information and offer custom solutions",
     "Adhere to quality and compliance guidelines"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG",
    "degreeText": "Bachelor's",
    "keySkills": [
@@ -4047,6 +4159,7 @@
     "Create and maintain best practices for production processes to ensure scalability and efficiency",
     "Undertake regular code reviews to align with development and performance standards"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG",
    "degreeText": "B.Sc",
    "keySkills": [
@@ -4088,6 +4201,7 @@
     "Tag feedback into themes and write weekly sentiment summaries for product and marketing",
     "Tracking runs on Excel or Google Sheets; the products are Noise Junior, made for kids"
    ],
+   "roleLabel": null,
    "degreeLevel": "Pursuing",
    "degreeText": null,
    "keySkills": [
@@ -4126,6 +4240,7 @@
     "Turn user and competitive research into design decisions and recommendations",
     "Agentic AI flows where the system plans, explains itself and asks for confirmation"
    ],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [
@@ -4171,6 +4286,7 @@
     "Python/PySpark, SQL and BigQuery, with processes being migrated to Google Cloud",
     "Contractual apprentice role, hybrid working, cab and free meals included"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG",
    "degreeText": "Bachelor's",
    "keySkills": [
@@ -4212,6 +4328,7 @@
     "Email and WhatsApp campaigns to drive school enrolment, plus CRM and query handling",
     "3-6 months, full-time from the Noida office, ₹10K/month"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG/PG",
    "degreeText": null,
    "keySkills": [
@@ -4255,6 +4372,7 @@
     "Tracking deliverables and timelines with Marketing, Legal, Compliance and Product",
     "6 months, paid, working the Agile way inside Amex's marketing ops team"
    ],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [
@@ -4291,6 +4409,7 @@
     "Plan and run functional audits across corporate, risk and control teams at ABSLI",
     "Scope audits around risk direction, scale of operations, regulation and vendor use"
    ],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [
@@ -4329,6 +4448,7 @@
     "Own a multi-phase study and present a capstone to product leadership",
     "Figma, Miro, UserTesting and Qualtrics; partners with US-based teams"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG/PG",
    "degreeText": "Bachelor's/Master's",
    "keySkills": [
@@ -4373,6 +4493,7 @@
     "Excel mainly, Power BI or Tableau a plus; works with Ops, Analytics and Tech",
     "Contractual apprentice role, hybrid model, cab and free meals"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG",
    "degreeText": "Bachelor's",
    "keySkills": [
@@ -4414,6 +4535,7 @@
     "Excel work: formulas, pivot tables, forecasting, ad hoc sales and expense analysis",
     "Pull data from Marketing, Sales, Commercial and accounting teams"
    ],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [
@@ -4456,6 +4578,7 @@
     "Excel, PowerPoint and Word all day; need to know how financial statements are built",
     "Structured training track, office at least 3 days a week, cab and meals per policy"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG",
    "degreeText": null,
    "keySkills": [
@@ -4497,6 +4620,7 @@
     "Heavy MS Excel, plus process improvement and finance automation projects",
     "Sits with FP&A and cross-functional stakeholders, mentored by finance staff"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG",
    "degreeText": "CMA",
    "keySkills": [
@@ -4531,6 +4655,7 @@
    "skills": [],
    "summary": null,
    "bullets": [],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -4562,6 +4687,7 @@
     "Prepare financial statements and other financial reports for the business and external auditors",
     "Collaborate on continuous improvement of quality, efficiency, and effectiveness of controls"
    ],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -4598,6 +4724,7 @@
     "Prepare financial statements and reports for business and external auditors",
     "Work with MS Office, with PowerBI, Alteryx, and Python as a plus"
    ],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [
@@ -4640,6 +4767,7 @@
     "Prepare financial statements and reports for business and external auditors",
     "Work with MS Office, with PowerBI, Alteryx, and Python as a plus"
    ],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [
@@ -4680,6 +4808,7 @@
     "Troubleshoot malfunctions, manage ticket queues, and update technical documentation",
     "Work with Microsoft Office suite; SAP knowledge is a plus"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG",
    "degreeText": "Bachelor's",
    "keySkills": [
@@ -4717,6 +4846,7 @@
     "Learn about banking sales strategy, products, customer engagement, and account opening",
     "Help achieve monthly sales, cross-selling, and acquisition targets"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG",
    "degreeText": null,
    "keySkills": [],
@@ -4752,6 +4882,7 @@
     "Offer consultative support and recommend tailored products or solutions to Card Members",
     "Work on a rotating shift pattern after 8 weeks of training, with continuous coaching"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG",
    "degreeText": "Bachelor's",
    "keySkills": [
@@ -4791,6 +4922,7 @@
     "Learn to explain significant P&L changes and build relationships with internal/external clients",
     "Understand the industry, culture, and strategy during a 12-month internship program"
    ],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [
@@ -4831,6 +4963,7 @@
     "Assist in compliance with applicable rules and regulations and Societe Generale Group policies",
     "Prepare and update secretarial records, organize Board/Committee meetings"
    ],
+   "roleLabel": null,
    "degreeLevel": "Pursuing",
    "degreeText": null,
    "keySkills": [
@@ -4870,6 +5003,7 @@
     "Clear breaks, post journals, and explain significant P&L changes",
     "Build relationships with internal and external clients"
    ],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -4906,6 +5040,7 @@
     "Work with Technology partners to build, test and deploy solutions, and write test cases",
     "12 months, minimum 3 days a week in office; cab and meals as per policy"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG",
    "degreeText": null,
    "keySkills": [
@@ -4947,6 +5082,7 @@
     "Prepare financial statements for the business and external auditors",
     "Excel and MS Access daily; Power BI, Alteryx and Python are a plus"
    ],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [
@@ -4986,6 +5122,7 @@
     "Learn to explain what moved the P&L, for internal and external clients",
     "12-month 2026 program inside Group Finance"
    ],
+   "roleLabel": null,
    "degreeLevel": "Pursuing",
    "degreeText": null,
    "keySkills": [
@@ -5026,6 +5163,7 @@
     "24/7 rotational shifts including nights, hybrid working",
     "Eligibility: degree finished within 5 years, no prior government apprenticeship"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG",
    "degreeText": "Bachelor's",
    "keySkills": [
@@ -5061,6 +5199,7 @@
     "Liaise with customs authorities, forwarders and internal legal on compliance issues",
     "Run customs training for internal teams and push automation into customs processes"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG",
    "degreeText": null,
    "keySkills": [
@@ -5102,6 +5241,7 @@
     "Sit in on risk meetings, take minutes, keep issue logs and dashboards current",
     "Finance Control Management team, office at least 3 days a week"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG",
    "degreeText": null,
    "keySkills": [
@@ -5140,6 +5280,7 @@
     "Run T0 vs T1 checks and write commentary on what moved the P&L",
     "Do reconciliations, flag breaks and make sure controls are followed"
    ],
+   "roleLabel": null,
    "degreeLevel": "Pursuing",
    "degreeText": "CA",
    "keySkills": [
@@ -5180,6 +5321,7 @@
     "Excel, PowerPoint and SAP, with Ind AS and internal controls throughout",
     "Sits in Siemens Mobility; ends in an independent finance role"
    ],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [
@@ -5219,6 +5361,7 @@
     "Adobe Photoshop, Illustrator and InDesign; After Effects or Premiere a plus",
     "Asks for about a year of design work, ideally beauty, fashion or e-commerce"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG",
    "degreeText": "Bachelor's",
    "keySkills": [
@@ -5257,6 +5400,7 @@
     "Attend events and meetings, talk to prospects and keep client relationships going",
     "2-3 months onsite in Chennai, Rs 5,000 a month plus up to Rs 5,000 incentives"
    ],
+   "roleLabel": null,
    "degreeLevel": "PG",
    "degreeText": null,
    "keySkills": [
@@ -5296,6 +5440,7 @@
     "Build and update Excel workbooks, schedules and reconciliations for the tax team",
     "Coordinate with Global Tax, Finance and outside advisors; 3 days a week in office"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG",
    "degreeText": null,
    "keySkills": [
@@ -5336,6 +5481,7 @@
     "Build monthly and quarterly reports, spreadsheets and variance commentary",
     "Commerce or business grad with basic accounting; 3 days a week in office"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG",
    "degreeText": "BBA",
    "keySkills": [
@@ -5378,6 +5524,7 @@
     "Help document platform behavior, test cases, and coordinate with cross-functional teams",
     "Assist in maintaining dashboards, trackers, and reporting for SuperApp and digital experience initiatives"
    ],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [
@@ -5419,6 +5566,7 @@
     "Coordinate with cross-functional teams like Instructional Design, Learning Experience, and Operations",
     "Contribute to process improvement, automation, and operational efficiency initiatives"
    ],
+   "roleLabel": null,
    "degreeLevel": "PG",
    "degreeText": "MBA",
    "keySkills": [],
@@ -5459,6 +5607,7 @@
     "Design and develop new customer-facing applications for iOS, Android, web, and Java services",
     "Design and implement web-enabled systems for data collection during a 12-month paid program"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG/PG",
    "degreeText": "Bachelor's/Master's",
    "keySkills": [
@@ -5500,6 +5649,7 @@
     "Internal controls and SOX compliance testing",
     "For CA students eligible for ICAI industrial training; 9-12 months, Bangalore office"
    ],
+   "roleLabel": null,
    "degreeLevel": "Pursuing",
    "degreeText": "CA",
    "keySkills": [
@@ -5548,6 +5698,7 @@
     "SQL and Python daily; Power Platform, Git, plus Copilot and other GenAI tools",
     "Finance team, three days a week in office, cab and meals as per policy"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG",
    "degreeText": "Bachelor's",
    "keySkills": [
@@ -5589,6 +5740,7 @@
     "Write up fixes, FAQs and troubleshooting steps; exposure to APIs and SaaS workflows",
     "Sits in the Customer Engineering team, working across Engineering and Product"
    ],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [
@@ -5626,6 +5778,7 @@
     "Sit in on pitch prep with the Sales & Partnerships team",
     "Gurgaon office, full-time, 3-6 months, PPO for strong performers"
    ],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [
@@ -5665,6 +5818,7 @@
     "Keep candidates warm through screening, fitment and offer until they join",
     "Sits with the Talent Acquisition team, hiring for one specific business"
    ],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [
@@ -5705,6 +5859,7 @@
     "Ensure process controls, discuss results with stakeholders, and be involved in ad-hoc projects",
     "Requires a graduate degree in a numerate discipline (Maths/Statistics) and ability to work different shifts"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG/PG",
    "degreeText": null,
    "keySkills": [
@@ -5746,6 +5901,7 @@
     "Conduct in-depth analysis of card member issues to distinguish legitimate disputes from fraud",
     "Manage the end-to-end dispute lifecycle, liaising with various teams"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG",
    "degreeText": "Bachelor's",
    "keySkills": [],
@@ -5779,6 +5935,7 @@
     "Pre-operational checks on X-BIS, ETD and CT-EDS, plus audit documentation",
     "Work with CISF and airline staff on suspect bags, under BCAS and DGCA rules"
    ],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [
@@ -5826,6 +5983,7 @@
     "Build models that anticipate client needs and surface relevant research to them",
     "Quant Research's Data and AI Lab inside Global Markets, based in Mumbai"
    ],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [
@@ -5862,6 +6020,7 @@
     "SAP and Hyperion, with US GAAP and SOX compliance checks",
     "9-12 months in Pune, work from office, ₹28K a month"
    ],
+   "roleLabel": null,
    "degreeLevel": "Pursuing",
    "degreeText": "CA",
    "keySkills": [
@@ -5900,6 +6059,7 @@
     "Data analysis feeding decisions across Amazon India's business lines",
     "11-12 month industrial training stint; needs 12-18 months of articleship left"
    ],
+   "roleLabel": null,
    "degreeLevel": "Pursuing",
    "degreeText": "CA",
    "keySkills": [
@@ -5937,6 +6097,7 @@
     "SAP, Hyperion, US GAAP and SOX, with Capex coordination alongside global finance",
     "28K a month, 9-12 months, Pune, fully work from office"
    ],
+   "roleLabel": null,
    "degreeLevel": "Pursuing",
    "degreeText": "CA",
    "keySkills": [
@@ -5980,6 +6141,7 @@
     "Dig through user behaviour data to find what's moving product metrics",
     "Bangalore, on the product team; strong performers get a full-time seat"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG",
    "degreeText": null,
    "keySkills": [
@@ -6021,6 +6183,7 @@
     "Pull campaign numbers in Sheets to spot what's actually converting",
     "6 months at the Noida office, 5 days a week, bring your own laptop"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG",
    "degreeText": "Bachelor's",
    "keySkills": [
@@ -6062,6 +6225,7 @@
     "Market research, competitor analysis and launch reports in Excel and PowerPoint",
     "6 months, on-site in Gurugram"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG/PG",
    "degreeText": "MBA",
    "keySkills": [
@@ -6101,6 +6265,7 @@
     "Daily work in Google Docs, Sheets and Slides; Jira or similar task tools a plus",
     "6 months onsite in Noida, 5 days a week, Rs 15-20K a month, bring your own laptop"
    ],
+   "roleLabel": null,
    "degreeLevel": "Pursuing",
    "degreeText": null,
    "keySkills": [
@@ -6138,6 +6303,7 @@
    ],
    "summary": "InMobi Advertising is a global technology leader helping marketers win the moments that matter. Our advertising platform reaches over 2 billion people across 150+ countries and turns real-time context into business outcomes, delivering results grounded in privacy-first principles. Trusted by 30,000+ brands and leading publishers, InMobi is where intelligence, creativity, and accountability converge. You will gain hands-on experience with real revenue, cost, and margin levers in a fast-paced global tech environment.",
    "bullets": [],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -6173,6 +6339,7 @@
     "Assist in basic machine setup, measurement, and inspection, maintaining housekeeping standards",
     "Work in a shopfloor/production environment in Kancheepuram, potentially in shifts"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG",
    "degreeText": "Diploma",
    "keySkills": [],
@@ -6201,6 +6368,7 @@
    "skills": [],
    "summary": "Valeo est une entreprise mondiale de haute technologie qui conçoit des solutions révolutionnaires pour réinventer la mobilité. Nous sommes un équipementier partenaire des constructeurs automobiles et des acteurs de la nouvelle mobilité dans le monde entier. Inventer une mobilité plus verte et plus sûre, grâce à des solutions axées sur la conduite intuitive et la réduction des émissions de CO2. Being part of our team, you will join~",
    "bullets": [],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -6233,6 +6401,7 @@
     "Keep the P2P team's records and documentation filed and audit-ready",
     "One-year industrial traineeship on the P2P team in Chennai, 3 days a week in office"
    ],
+   "roleLabel": null,
    "degreeLevel": "Pursuing",
    "degreeText": null,
    "keySkills": [],
@@ -6265,6 +6434,7 @@
     "Run marketing pushes to move those products",
     "Handle pre- and post-sale support, plus relationships with partners"
    ],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -6298,6 +6468,7 @@
     "Present your outcomes and learnings at the end of the stint",
     "Applications open year-round; shortlisting happens in Sept/Oct"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG/PG",
    "degreeText": "Bachelor's/Master's",
    "keySkills": [],
@@ -6331,6 +6502,7 @@
     "Daily reconciliation of internal CASA accounts, GL balances and GST entries",
     "Compute drawing power from stock statements and cash flows for fund-based limits"
    ],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [
@@ -6369,6 +6541,7 @@
     "Pull LMS data into MIS reports on enrolment, scores, attendance and certification",
     "Proofread training decks and build quizzes, posters and learner communications"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG/PG",
    "degreeText": "Master's",
    "keySkills": [
@@ -6407,6 +6580,7 @@
     "Interview client stakeholders, run walkthroughs, document findings",
     "Risk consulting team in Gurgaon or Mumbai; CISA or CIA is a plus"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG/PG",
    "degreeText": "B.E/B.Tech",
    "keySkills": [
@@ -6448,6 +6622,7 @@
     "Collaborate with design and tech teams on feature development and testing, analyze user behavior and data",
     "Requires students or recent graduates, preferably from engineering or related fields"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG/PG",
    "degreeText": null,
    "keySkills": [
@@ -6482,6 +6657,7 @@
    "skills": [],
    "summary": null,
    "bullets": [],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -6514,6 +6690,7 @@
     "Reconcile internal CASA accounts, GL balances, and GST entries, investigating any discrepancies",
     "Analyze stock statements and cash flows for DP computation, and maintain MIS reports"
    ],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -6551,6 +6728,7 @@
     "Learn tools like TMS, ERP systems, Power BI, Power Automate, and Excel",
     "Work in the Logistics Competence Centre India (LCCI) team, a global support hub"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG",
    "degreeText": null,
    "keySkills": [
@@ -6590,6 +6768,7 @@
     "Participate in code reviews, stand-ups, and sprint planning sessions",
     "Assist with debugging, testing, and documentation, working onsite in Gurugram"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG",
    "degreeText": "B.Tech",
    "keySkills": [
@@ -6620,6 +6799,7 @@
    "skills": [],
    "summary": "Execution of jobs on allocated machine Privacy Notice - Active Candidates: https://www.aptiv.com/privacy-notice-active-candidates",
    "bullets": [],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -6657,6 +6837,7 @@
     "Develop basic skills in Python, Power Automate, and automation tools for process improvements",
     "Work with cross-functional teams in payroll, analytics, and technology"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG",
    "degreeText": "Bachelor's",
    "keySkills": [
@@ -6691,6 +6872,7 @@
    "skills": [],
    "summary": null,
    "bullets": [],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -6724,6 +6906,7 @@
     "Follow up with branches, claimants, and third-party agencies for necessary claim documents",
     "Provide inputs for developing and testing the claims system"
    ],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [
@@ -6759,6 +6942,7 @@
     "Maintain speaker and delegate databases, help draft partnership proposals",
     "3 months in office, Monday to Friday; you need your own laptop"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG/PG",
    "degreeText": null,
    "keySkills": [
@@ -6794,6 +6978,7 @@
     "Generate test cases from requirements, run system-level tests, write up the reports",
     "Tools are CoreALM and DOORS; sits with the Advanced Development R&D team"
    ],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [
@@ -6831,6 +7016,7 @@
     "Handle customer queries and chip in on monthly acquisition and cross-sell targets",
     "Retail banking branches, PAN India; AMFI, NCFM or IRDA certification is a plus"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG",
    "degreeText": null,
    "keySkills": [
@@ -6867,6 +7053,7 @@
     "Clear branch queries and hold turnaround times on sourced business",
     "Underwriting team at Aditya Birla Sun Life Insurance, Thane"
    ],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [
@@ -6902,6 +7089,7 @@
     "Clear branch queries and hold turnaround times on sourced business",
     "Underwriting team at Aditya Birla Sun Life Insurance, Thane"
    ],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [
@@ -6941,6 +7129,7 @@
     "Pick up Python and Power Automate to automate parts of the payroll process",
     "Mumbai office, structured Payroll University training, 0-6 months experience"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG",
    "degreeText": "Bachelor's",
    "keySkills": [
@@ -6980,6 +7169,7 @@
     "Pre-operational checks on X-BIS, ETD and CT-EDS; log findings for audits",
     "Work alongside CISF and airline staff when resolving suspicious items"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG",
    "degreeText": "Bachelor's",
    "keySkills": [
@@ -7022,6 +7212,7 @@
     "Write basic Python and Power Automate scripts to automate payroll steps",
     "Mumbai office, with a structured Payroll University learning track"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG",
    "degreeText": "Bachelor's",
    "keySkills": [
@@ -7065,6 +7256,7 @@
     "Test the product, file issues with engineers, and use LLMs to speed up the grunt work",
     "6-9 months in Gurugram, immediate joining, sitting with Product and Engineering leads"
    ],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [
@@ -7104,6 +7296,7 @@
     "Keep TIP scores high and log every finding to BCAS and DGCA audit standards",
     "Work with CISF and airline staff when a suspicious item needs resolving"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG",
    "degreeText": "Bachelor's",
    "keySkills": [
@@ -7142,6 +7335,7 @@
     "Source industry contacts on LinkedIn and hit daily and weekly confirmation targets",
     "3-6 months with the EconomicTimes.com sales and digital delivery teams"
    ],
+   "roleLabel": null,
    "degreeLevel": "Pursuing",
    "degreeText": null,
    "keySkills": [
@@ -7179,6 +7373,7 @@
     "Log findings for audits, follow BCAS and DGCA rules, keep TIP scores up",
     "Pre-shift checks on X-BIS, ETD and CT-EDS; work alongside CISF and airline staff"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG",
    "degreeText": "Bachelor's",
    "keySkills": [
@@ -7217,6 +7412,7 @@
     "Log findings for audits, follow BCAS and DGCA rules, keep TIP scores up",
     "Pre-shift checks on X-BIS, ETD and CT-EDS; work alongside CISF and airline staff"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG",
    "degreeText": "Bachelor's",
    "keySkills": [
@@ -7257,6 +7453,7 @@
     "Compile performance reports in Excel, with ERP systems for material tracking",
     "Coordinate with cross-functional teams so docs and materials land on schedule"
    ],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [
@@ -7295,6 +7492,7 @@
     "Coordinating with partners and stakeholders through the sales process",
     "Delhi-based, on the retail collections and recovery side"
    ],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -7330,6 +7528,7 @@
     "Periodic bank reconciliations and passing entries in Tally or ERP",
     "Based in Delhi or Gurgaon with Bharti's philanthropic arm"
    ],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [
@@ -7370,6 +7569,7 @@
     "Heavy Excel work: data analysis, MIS reports and financial summaries",
     "Periodic bank reconciliations and accounting entries in Tally/ERP"
    ],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [
@@ -7409,6 +7609,7 @@
     "Track attendance for third-party associates and send salary inputs to the vendor",
     "Keep associate master data updated across all SSC locations"
    ],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [
@@ -7449,6 +7650,7 @@
     "Track remediation of control deficiencies through audit cycles",
     "Runs 12 months, each trainee gets an assigned mentor"
    ],
+   "roleLabel": null,
    "degreeLevel": "Pursuing",
    "degreeText": "CA",
    "keySkills": [
@@ -7488,6 +7690,7 @@
     "Wants a year of programming in an object-oriented language, plus DSA fundamentals",
     "You need at least one semester left after the internship ends"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG/PG",
    "degreeText": "Bachelor's/Master's",
    "keySkills": [
@@ -7519,6 +7722,7 @@
    "skills": [],
    "summary": null,
    "bullets": [],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -7551,6 +7755,7 @@
     "Requires a Diploma in Mechanical Engineering or Electrical Engineering",
     "Need basic knowledge of diesel engines and fluent English speaking skills"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG",
    "degreeText": "Diploma",
    "keySkills": [
@@ -7585,6 +7790,7 @@
     "Assist with CMF exploration, prepare presentation decks, and support prototyping efforts",
     "Conduct competitive teardowns and trend research across consumer electronics and lifestyle categories"
    ],
+   "roleLabel": null,
    "degreeLevel": "Pursuing",
    "degreeText": null,
    "keySkills": [
@@ -7626,6 +7832,7 @@
     "Prepare routine reports and support project testing",
     "Use advanced Excel and Google Suites"
    ],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [
@@ -7662,6 +7869,7 @@
     "Establish and oversee site HSE operation procedures",
     "Conduct inspections and internal audits, making recommendations and tracking actions"
    ],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -7695,6 +7903,7 @@
     "Collaborate on monthly sales, cross-selling, and acquisition targets",
     "Adhere to policies, KYC norms, and regulatory guidelines for the bank"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG",
    "degreeText": null,
    "keySkills": [
@@ -7735,6 +7944,7 @@
     "Run vendor calibrations, training and policy updates for the moderation teams",
     "Remote, rotational shifts and week-offs; freshers considered"
    ],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [
@@ -7783,6 +7993,7 @@
     "Chase down defects with developers, file bugs, use AI tools to write cases faster",
     "6 months in Bangalore, 40k per month, immediate joining"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG/PG",
    "degreeText": "Bachelor's/Master's",
    "keySkills": [
@@ -7822,6 +8033,7 @@
     "Sort out invoice and delivery discrepancies alongside the buyers",
     "SAP or similar ERP exposure is a plus"
    ],
+   "roleLabel": null,
    "degreeLevel": "Pursuing",
    "degreeText": null,
    "keySkills": [
@@ -7859,6 +8071,7 @@
     "Pitch in on employer branding and recruitment drives",
     "Full-time, work from office in Bengaluru"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG/PG",
    "degreeText": "MBA",
    "keySkills": [
@@ -7897,6 +8110,7 @@
     "Keeping marketing calendars and pulling web and social performance numbers",
     "3 months in Gurugram, across several marketing channels"
    ],
+   "roleLabel": null,
    "degreeLevel": "Pursuing",
    "degreeText": null,
    "keySkills": [
@@ -7935,6 +8149,7 @@
     "Read data, charts and graphs and tie them back to what customers say",
     "Excel and PowerPoint work; 3-6 months in Gurugram"
    ],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [
@@ -7973,6 +8188,7 @@
     "Run enhanced due diligence and settle matches with market compliance teams",
     "12 months, hybrid, flexible hours to cover global FX locations"
    ],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [
@@ -8018,6 +8234,7 @@
     "Wants 2+ years scripting in Python, R, SAS or Matlab",
     "Sits with the IT org at the Mumbai general office, full time"
    ],
+   "roleLabel": null,
    "degreeLevel": "PG",
    "degreeText": "PhD",
    "keySkills": [
@@ -8057,6 +8274,7 @@
     "Proofread and edit copy before publication, alongside editorial and marketing",
     "Based in Gurgaon"
    ],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [
@@ -8100,6 +8318,7 @@
     "Advanced Excel plus Power BI or Tableau; SQL or Python is a bonus",
     "Sits in the FP&A team as part of a CA internship program"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG/PG",
    "degreeText": "Bachelor's/Master's",
    "keySkills": [
@@ -8143,6 +8362,7 @@
     "Prep investor decks, board materials and monthly performance summaries",
     "Excel and basic financial models; SQL, Python or analytics tools a plus"
    ],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [
@@ -8181,6 +8401,7 @@
     "Monitor production runs for efficiency and quality, flag deviations to the supervisor",
     "Structured training, workshops and on-the-job sessions, plus safety drills"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG",
    "degreeText": "Diploma",
    "keySkills": [
@@ -8218,6 +8439,7 @@
     "Track corporate actions and handle accounting for Alternate Investment Funds",
     "For CA freshers or semi-qualified CAs from life insurance or mutual fund accounting"
    ],
+   "roleLabel": null,
    "degreeLevel": "Pursuing",
    "degreeText": "CA",
    "keySkills": [
@@ -8259,6 +8481,7 @@
     "Keep candidates warm from offer to joining, running fitment against internal parity",
     "Sits inside Deloitte India's Talent Acquisition team"
    ],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [
@@ -8301,6 +8524,7 @@
     "Mostly Java, Ruby, JavaScript, Scala and Go; new languages learned on the job",
     "Code reviews and design discussions, with a dedicated intern manager"
    ],
+   "roleLabel": null,
    "degreeLevel": "UG/PG",
    "degreeText": null,
    "keySkills": [
@@ -8339,6 +8563,7 @@
     "Run the marketing push and handle pre- and post-sales support for customers",
     "Keep relationships going with partners and stakeholders"
    ],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
@@ -8374,6 +8599,7 @@
     "Partner with Commercial, Supply Chain, FP&A, and Regional teams on governance and business cases",
     "Learn business finance partnering, profitability optimization, and strategic business analytics"
    ],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [
@@ -8410,6 +8636,7 @@
     "Coordinate interviews and follow up with candidates and hiring managers",
     "Help with offer management and onboarding for new joiners"
    ],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [
@@ -8446,6 +8673,7 @@
     "40 vacancies at grade E0, pay scale Rs 30,000-1,20,000",
     "Online applications only via careers.ntpc.co.in, window 26.06.2026 to 10.07.2026"
    ],
+   "roleLabel": null,
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],

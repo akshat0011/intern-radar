@@ -25,6 +25,7 @@ CREATE TABLE IF NOT EXISTS jobs (
   description       TEXT,
   summary           TEXT,
   bullets           TEXT,
+  role_label        TEXT,
   degree_level      TEXT,
   degree_text       TEXT,
   key_skills        TEXT,
@@ -111,7 +112,7 @@ export class Store {
       ['logo_url', 'TEXT'], ['is_tech', 'INTEGER'], ['role_source', 'TEXT'],
       // Gemini enrichment. bullets and key_skills hold JSON arrays; they stay NULL
       // until a posting has been enriched, which is what the card falls back on.
-      ['bullets', 'TEXT'], ['degree_level', 'TEXT'], ['degree_text', 'TEXT'],
+      ['bullets', 'TEXT'], ['role_label', 'TEXT'], ['degree_level', 'TEXT'], ['degree_text', 'TEXT'],
       ['key_skills', 'TEXT'], ['stipend_status', 'TEXT'],
     ]) {
       if (!jobCols.includes(name)) {
@@ -142,12 +143,13 @@ export class Store {
   saveEnrichment(jobId, e, source = 'gemini-enrich') {
     this.db.prepare(`
       UPDATE jobs SET
-        bullets = ?, degree_level = ?, degree_text = ?, key_skills = ?, stipend_status = ?,
+        bullets = ?, role_label = ?, degree_level = ?, degree_text = ?, key_skills = ?, stipend_status = ?,
         is_tech = COALESCE(?, is_tech),
         role_source = CASE WHEN ? IS NULL THEN role_source ELSE ? END
       WHERE job_id = ?
     `).run(
       JSON.stringify(e.bullets ?? []),
+      e.roleLabel || null,
       e.degreeLevel || null,
       e.degreeText || null,
       JSON.stringify(e.keySkills ?? []),

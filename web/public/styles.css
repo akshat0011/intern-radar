@@ -279,6 +279,13 @@ button, input, select, textarea { font: inherit; color: inherit; }
   overflow-wrap: anywhere;
 }
 .role { margin-top: 5px; font-size: 14px; color: var(--ink-2); overflow-wrap: anywhere; }
+
+/* What the job actually is, shown only when the title does not say — a quarter of
+   postings are titled just "Apprentice". Carries the accent so the eye lands on the
+   distinguishing half of the line rather than the word every card shares. The
+   separator is a pseudo-element so it never appears without a qualifier. */
+.role .qual { color: var(--ink); }
+.role .qual::before { content: "·"; margin: 0 7px; color: var(--ink-3); }
 .meta { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-top: 10px; font-family: var(--mono); font-size: 10.5px; letter-spacing: .05em; color: var(--ink-3); text-transform: uppercase; }
 .meta .cash { color: var(--cash); font-weight: 700; }
 .meta .ea { color: var(--hot); }

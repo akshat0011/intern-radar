@@ -60,6 +60,7 @@ function toPublicJob(row, { includeFullDescription, matchedNow, logoIndex }) {
     // Gemini enrichment. bullets is the card's primary body; an empty array means
     // the posting has not been enriched yet and the card falls back to summary.
     bullets: parseJsonArray(row.bullets),
+    roleLabel: row.role_label || null,
     degreeLevel: row.degree_level || null,
     degreeText: row.degree_text || null,
     keySkills: parseJsonArray(row.key_skills),

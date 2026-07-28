@@ -325,6 +325,8 @@ bullets — 2 to 4 fragments, each at most 90 characters, no trailing period. Le
 
 Never write a bullet ABOUT the posting itself — no "the posting is vague", "no duties listed", "details not specified". The reader wants the job, not a review of the advert. If the posting is too thin to yield two real bullets, return an empty bullets array and the card will fall back to plain text.
 
+roleLabel — 2 to 4 words naming what this job ACTUALLY is, in plain terms: "Backend engineering", "Credit risk modelling", "Payroll operations", "Product marketing". Many postings are titled only "Intern", "Apprentice" or "Trainee", which tells a reader nothing and makes ten different jobs at the same company look identical. This is the field that tells them apart. Name the work, never the seniority or the company. Do not repeat the job title back. Empty string only if the posting genuinely does not say what the work is.
+
 degreeLevel — who is eligible, judged ONLY from the text:
   "UG" for bachelor's-level study (B.Tech, B.E., B.Sc, BCA)
   "PG" for master's-level and above (M.Tech, M.E., M.Sc, MCA, MBA, PhD)
@@ -352,6 +354,7 @@ const ENRICH_SCHEMA = {
         properties: {
           id: { type: 'INTEGER' },
           bullets: { type: 'ARRAY', items: { type: 'STRING' } },
+          roleLabel: { type: 'STRING' },
           // "none" rather than "": the API rejects an empty string inside an enum.
           degreeLevel: { type: 'STRING', enum: ['UG', 'PG', 'UG/PG', 'Pursuing', 'none'] },
           degreeText: { type: 'STRING' },
@@ -484,6 +487,11 @@ export async function enrichJobs(items, cfg = {}) {
 
         out.set(start + v.id, {
           bullets,
+          // Four words is the ceiling: this sits beside the title on one line, and a
+          // label that wraps is a label that has stopped being a label.
+          roleLabel: typeof v.roleLabel === 'string'
+            ? v.roleLabel.trim().replace(/\s+/g, ' ').replace(/[.]+$/, '').split(' ').slice(0, 4).join(' ')
+            : '',
           degreeLevel: level,
           degreeText,
           keySkills: tidyList(v.keySkills, { max: 5, maxLen: 24, lower: true }),
