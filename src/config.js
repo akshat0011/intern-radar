@@ -135,6 +135,11 @@ export function loadConfig() {
 
   cfg.titleTerms = (cfg.matching.titleMustMatch || []).map((t) => t.toLowerCase());
 
+  // Module-level so matchCompany can consult it without every caller threading it
+  // through — publish.js and the scrape filter both go through matchCompany, so
+  // setting it once here blocks an employer on both paths.
+  setCompanyBlocklist(cfg.matching.blocklist ?? []);
+
   validate(cfg);
   return cfg;
 }
@@ -195,9 +200,37 @@ function containsWord(haystack, needle) {
  * hits a card that just says "JPMorgan". Returns the canonical display name,
  * or null.
  */
+/**
+ * Employers never to publish, whatever the watchlist says.
+ *
+ * Set by loadConfig from matching.blocklist. This is the last word: a blocked
+ * employer is dropped before any watchlist term is considered, so a bad match
+ * cannot resurrect it. Matching is on the normalised name and is a containment
+ * test, so one entry covers "MedTourEasy", "MedTourEasy Navi Mumbai" and
+ * "MedTourEasy Pvt Ltd" without needing all three spelled out.
+ */
+let blocklist = [];
+
+export function setCompanyBlocklist(names) {
+  blocklist = (names ?? [])
+    .map((n) => normaliseCompany(n))
+    .filter(Boolean);
+}
+
+/** Is this employer on the blocklist? Exported so callers can report it. */
+export function isBlockedCompany(companyName) {
+  const norm = normaliseCompany(companyName);
+  if (!norm) return false;
+  return blocklist.some((b) => norm === b || norm.includes(b));
+}
+
 export function matchCompany(companyName, watchlist) {
   const norm = normaliseCompany(companyName);
   if (!norm) return null;
+
+  // Before anything else. A blocked employer must not be reachable through an
+  // exact hit, a fuzzy hit, or an alias.
+  if (isBlockedCompany(companyName)) return null;
 
   for (const { display, term } of watchlist) {
     if (norm === term) return display;

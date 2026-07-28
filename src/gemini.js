@@ -31,6 +31,101 @@ const MAX_TITLES_PER_CALL = 60;
  */
 const NO_THINKING = { thinkingBudget: 0 };
 
+/**
+ * A 429 from Gemini means one of two very different things, and treating them the
+ * same is why enrichment silently stopped working.
+ *
+ * Requests-per-MINUTE is a speed bump: wait a few seconds and the next call
+ * succeeds. Requests-per-DAY is a wall: nothing will work until midnight Pacific.
+ * A run fires several calls within a second or two — classify by title, classify
+ * the ambiguous ones, then enrich — which trips the per-minute limit easily. The
+ * old code reported every 429 as "daily free quota exhausted" and gave up for the
+ * whole run, so a two-second wait turned into a day of unenriched jobs.
+ *
+ * Google puts the answer in the error body: a QuotaFailure violation naming
+ * PerDay or PerMinute, and a RetryInfo with how long to wait.
+ */
+function read429(bodyText) {
+  try {
+    const err = JSON.parse(bodyText)?.error ?? {};
+    const details = err.details ?? [];
+    const quota = details.find((d) => String(d['@type'] ?? '').includes('QuotaFailure'));
+    const retry = details.find((d) => String(d['@type'] ?? '').includes('RetryInfo'));
+    const ids = (quota?.violations ?? []).map((v) => `${v.quotaId ?? ''} ${v.quotaMetric ?? ''}`);
+    const seconds = Number(String(retry?.retryDelay ?? '').replace(/[^0-9.]/g, ''));
+    return {
+      perDay: ids.some((id) => /per\s*day/i.test(id.replace(/([a-z])([A-Z])/g, '$1 $2'))),
+      retryAfterMs: Number.isFinite(seconds) && seconds > 0 ? Math.ceil(seconds * 1000) : null,
+      message: String(err.message ?? '').slice(0, 160),
+    };
+  } catch {
+    return { perDay: false, retryAfterMs: null, message: '' };
+  }
+}
+
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+/**
+ * POST to Gemini, retrying a per-minute rate limit rather than abandoning the run.
+ *
+ * @returns {Promise<{ok: true, payload: object} | {ok: false, reason: string, fatal: boolean}>}
+ *          fatal means no later call in this run will succeed either — a spent daily
+ *          quota or a rejected key — so the caller should stop rather than keep trying.
+ */
+async function geminiPost(model, body, { attempts = 3 } = {}) {
+  for (let attempt = 1; attempt <= attempts; attempt++) {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
+    try {
+      const res = await fetch(`${API_BASE}/${model}:generateContent`, {
+        method: 'POST',
+        headers: { 'content-type': 'application/json', 'x-goog-api-key': process.env.GEMINI_API_KEY },
+        body: JSON.stringify(body),
+        signal: controller.signal,
+      });
+
+      if (res.ok) return { ok: true, payload: await res.json() };
+
+      if (res.status === 429) {
+        const { perDay, retryAfterMs, message } = read429(await res.text());
+        if (perDay) return { ok: false, reason: 'daily free quota exhausted', fatal: true };
+        if (attempt === attempts) {
+          return { ok: false, reason: `rate limited after ${attempts} attempts${message ? ` — ${message}` : ''}`, fatal: false };
+        }
+        // Google's own retryDelay when it gives one, otherwise 5s, 10s, 20s.
+        const waitMs = retryAfterMs ?? 5_000 * 2 ** (attempt - 1);
+        log.info(`Gemini rate limit — waiting ${Math.round(waitMs / 1000)}s and retrying (${attempt}/${attempts - 1}).`);
+        clearTimeout(timer);
+        await sleep(waitMs);
+        continue;
+      }
+
+      if (res.status === 403) return { ok: false, reason: 'API key rejected', fatal: true };
+      if (res.status === 400) {
+        return { ok: false, reason: `HTTP 400: ${(await res.text()).replace(/\s+/g, ' ').slice(0, 200)}`, fatal: true };
+      }
+      // 500s are usually transient on Google's side; worth one more go.
+      if (res.status >= 500 && attempt < attempts) {
+        clearTimeout(timer);
+        await sleep(2_000 * attempt);
+        continue;
+      }
+      return { ok: false, reason: `HTTP ${res.status}`, fatal: false };
+    } catch (err) {
+      const why = err.name === 'AbortError' ? 'timed out' : err.message.split('\n')[0];
+      if (attempt < attempts) {
+        clearTimeout(timer);
+        await sleep(2_000 * attempt);
+        continue;
+      }
+      return { ok: false, reason: why, fatal: false };
+    } finally {
+      clearTimeout(timer);
+    }
+  }
+  return { ok: false, reason: 'exhausted attempts', fatal: false };
+}
+
 const DESC_SYSTEM = `You label internship postings for a software-internship board, using the description because the title alone is too generic to judge.
 
 Decide whether the ACTUAL WORK is software or technology — writing code, building systems, working with data, designing software products, or engineering hardware/silicon.
@@ -114,38 +209,28 @@ export function geminiAvailable() {
   return !!process.env.GEMINI_API_KEY;
 }
 
-async function classifyBatch(titles, model, apiKey) {
+async function classifyBatch(titles, model) {
   const numbered = titles.map((t, i) => `${i}. ${t.title}${t.company ? ` — ${t.company}` : ''}`).join('\n');
 
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
   try {
-    const res = await fetch(`${API_BASE}/${model}:generateContent`, {
-      method: 'POST',
-      headers: { 'content-type': 'application/json', 'x-goog-api-key': apiKey },
-      body: JSON.stringify({
-        systemInstruction: { parts: [{ text: SYSTEM }] },
-        contents: [{ role: 'user', parts: [{ text: `Label these ${titles.length} job titles:\n\n${numbered}` }] }],
-        generationConfig: {
-          temperature: 0,
-          maxOutputTokens: 4_000,
-          responseMimeType: 'application/json',
-          responseSchema: RESPONSE_SCHEMA,
-          thinkingConfig: NO_THINKING,
-        },
-      }),
-      signal: controller.signal,
+    const res = await geminiPost(model, {
+      systemInstruction: { parts: [{ text: SYSTEM }] },
+      contents: [{ role: 'user', parts: [{ text: `Label these ${titles.length} job titles:\n\n${numbered}` }] }],
+      generationConfig: {
+        temperature: 0,
+        maxOutputTokens: 4_000,
+        responseMimeType: 'application/json',
+        responseSchema: RESPONSE_SCHEMA,
+        thinkingConfig: NO_THINKING,
+      },
     });
 
     if (!res.ok) {
-      const why = res.status === 429 ? 'daily free quota exhausted'
-        : res.status === 400 || res.status === 403 ? 'API key rejected'
-        : `HTTP ${res.status}`;
-      log.warn(`Gemini unavailable (${why}) — using the offline classifier for this run.`);
+      log.warn(`Gemini unavailable (${res.reason}) — using the offline classifier for this run.`);
       return null;
     }
 
-    const payload = await res.json();
+    const payload = res.payload;
     if (payload.promptFeedback?.blockReason) {
       log.warn('Gemini refused the batch (content filter) — using the offline classifier.');
       return null;
@@ -164,11 +249,9 @@ async function classifyBatch(titles, model, apiKey) {
     }
     return byId;
   } catch (err) {
-    const why = err.name === 'AbortError' ? 'timed out' : err.message.split('\n')[0];
-    log.warn(`Gemini unavailable (${why}) — using the offline classifier for this run.`);
+    // geminiPost handles transport failures; anything here is a malformed reply.
+    log.warn(`Gemini reply unusable (${err.message.split('\n')[0]}) — using the offline classifier.`);
     return null;
-  } finally {
-    clearTimeout(timer);
   }
 }
 
@@ -208,7 +291,7 @@ export async function classifyRoles(items, cfg) {
 
   for (let start = 0; start < items.length; start += MAX_TITLES_PER_CALL) {
     const slice = items.slice(start, start + MAX_TITLES_PER_CALL);
-    const byId = await classifyBatch(slice, model, process.env.GEMINI_API_KEY);
+    const byId = await classifyBatch(slice, model);
     if (!byId) break; // offline verdicts stand for the rest of the run
 
     for (let i = 0; i < slice.length; i++) {
@@ -262,35 +345,25 @@ export async function classifyFromDescriptions(items, cfg) {
       `Description: ${String(it.description ?? '').slice(0, 3500) || '(none captured)'}`,
     ].join('\n')).join('\n\n');
 
-    const controller = new AbortController();
-    const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
     try {
-      const res = await fetch(`${API_BASE}/${model}:generateContent`, {
-        method: 'POST',
-        headers: { 'content-type': 'application/json', 'x-goog-api-key': process.env.GEMINI_API_KEY },
-        body: JSON.stringify({
-          systemInstruction: { parts: [{ text: DESC_SYSTEM }] },
-          contents: [{ role: 'user', parts: [{ text: `Label these ${slice.length} postings:\n\n${body}` }] }],
-          generationConfig: {
-            temperature: 0,
-            maxOutputTokens: 3_000,
-            responseMimeType: 'application/json',
-            responseSchema: DESC_SCHEMA,
-            thinkingConfig: NO_THINKING,
-          },
-        }),
-        signal: controller.signal,
+      const res = await geminiPost(model, {
+        systemInstruction: { parts: [{ text: DESC_SYSTEM }] },
+        contents: [{ role: 'user', parts: [{ text: `Label these ${slice.length} postings:\n\n${body}` }] }],
+        generationConfig: {
+          temperature: 0,
+          maxOutputTokens: 3_000,
+          responseMimeType: 'application/json',
+          responseSchema: DESC_SCHEMA,
+          thinkingConfig: NO_THINKING,
+        },
       });
 
       if (!res.ok) {
-        const why = res.status === 429 ? 'daily free quota exhausted'
-          : res.status === 400 || res.status === 403 ? 'API key rejected'
-          : `HTTP ${res.status}`;
-        log.warn(`Gemini unavailable (${why}) — remaining ambiguous roles keep their offline verdict.`);
+        log.warn(`Gemini unavailable (${res.reason}) — remaining ambiguous roles keep their offline verdict.`);
         return out.size ? out : null;
       }
 
-      const payload = await res.json();
+      const payload = res.payload;
       if (payload.promptFeedback?.blockReason) {
         log.warn('Gemini refused a batch (content filter) — offline verdicts stand for it.');
         continue;
@@ -305,11 +378,8 @@ export async function classifyFromDescriptions(items, cfg) {
         out.set(start + v.id, { isTech: v.isTech, keyTerm: v.keyTerm ?? '', reason: v.reason ?? '' });
       }
     } catch (err) {
-      const why = err.name === 'AbortError' ? 'timed out' : err.message.split('\n')[0];
-      log.warn(`Gemini call failed (${why}) — offline verdicts stand for the rest.`);
+      log.warn(`Gemini reply unusable (${err.message.split('\n')[0]}) — offline verdicts stand for the rest.`);
       return out.size ? out : null;
-    } finally {
-      clearTimeout(timer);
     }
   }
   return out;
@@ -409,9 +479,13 @@ export async function enrichJobs(items, cfg = {}) {
   }
 
   const model = process.env.GEMINI_MODEL || cfg.enrich?.model || 'gemini-2.5-flash';
-  // Descriptions run ~3k characters, and each reply carries bullets plus skills,
-  // so keep batches small enough that one truncated response costs little.
-  const PER_CALL = 6;
+  // The free tier allows 20 requests per day per model — measured, not guessed:
+  // the 429 body names GenerateRequestsPerDayPerProjectPerModel-FreeTier with
+  // value 20. Requests, not tokens, are therefore the scarce resource, so each one
+  // should carry as much work as it can. Eighteen postings at ~3k characters each
+  // is roughly 54k characters in, well inside the model's context, and turns the
+  // day's whole budget into ~360 postings instead of ~120.
+  const PER_CALL = 18;
 
   for (let start = 0; start < items.length; start += PER_CALL) {
     const slice = items.slice(start, start + PER_CALL);
@@ -423,39 +497,28 @@ export async function enrichJobs(items, cfg = {}) {
       `Description: ${String(it.description ?? '').slice(0, 3500) || '(none captured)'}`,
     ].join('\n')).join('\n\n');
 
-    const controller = new AbortController();
-    const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
     try {
-      const res = await fetch(`${API_BASE}/${model}:generateContent`, {
-        method: 'POST',
-        headers: { 'content-type': 'application/json', 'x-goog-api-key': process.env.GEMINI_API_KEY },
-        body: JSON.stringify({
-          systemInstruction: { parts: [{ text: ENRICH_SYSTEM }] },
-          contents: [{ role: 'user', parts: [{ text: `Summarise these ${slice.length} postings:\n\n${body}` }] }],
-          generationConfig: {
-            temperature: 0.2,
-            maxOutputTokens: 4_000,
-            responseMimeType: 'application/json',
-            responseSchema: ENRICH_SCHEMA,
-            thinkingConfig: NO_THINKING,
-          },
-        }),
-        signal: controller.signal,
+      const res = await geminiPost(model, {
+        systemInstruction: { parts: [{ text: ENRICH_SYSTEM }] },
+        contents: [{ role: 'user', parts: [{ text: `Summarise these ${slice.length} postings:\n\n${body}` }] }],
+        generationConfig: {
+          temperature: 0.2,
+          maxOutputTokens: 4_000,
+          responseMimeType: 'application/json',
+          responseSchema: ENRICH_SCHEMA,
+          thinkingConfig: NO_THINKING,
+        },
       });
 
       if (!res.ok) {
-        // A 400 is almost always a malformed request on our side, so surface what
-        // the API actually said rather than blaming the key and hiding the cause.
-        const detail = res.status === 400
-          ? `HTTP 400: ${(await res.text()).replace(/\s+/g, ' ').slice(0, 200)}`
-          : res.status === 429 ? 'daily free quota exhausted'
-          : res.status === 403 ? 'API key rejected'
-          : `HTTP ${res.status}`;
-        log.warn(`Gemini unavailable (${detail}) — ${items.length - out.size} posting(s) keep their plain-text summary.`);
-        return out;
+        log.warn(`Gemini unavailable (${res.reason}) — ${items.length - out.size} posting(s) keep their plain-text summary.`);
+        // A per-minute limit that survived the retries may still clear before the next
+        // batch; a spent daily quota or a bad key will not, so stop asking.
+        if (res.fatal) return out;
+        continue;
       }
 
-      const payload = await res.json();
+      const payload = res.payload;
       if (payload.promptFeedback?.blockReason) {
         log.warn('Gemini refused a batch (content filter) — those postings keep their plain-text summary.');
         continue;
@@ -500,11 +563,10 @@ export async function enrichJobs(items, cfg = {}) {
         });
       }
     } catch (err) {
-      const why = err.name === 'AbortError' ? 'timed out' : err.message.split('\n')[0];
-      log.warn(`Gemini enrichment failed (${why}) — remaining postings keep their plain-text summary.`);
-      return out;
-    } finally {
-      clearTimeout(timer);
+      // Transport is geminiPost's job; a throw here is a malformed reply, which is
+      // specific to this batch — the next one may parse fine.
+      log.warn(`Gemini reply unusable (${err.message.split('\n')[0]}) — that batch keeps its plain-text summary.`);
+      continue;
     }
   }
 

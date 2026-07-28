@@ -63,7 +63,11 @@
     "_roles_note": "Non-software roles at watchlist companies are no longer discarded - they are published under the site's Other roles tab. Only the company gate discards anything.",
     "extraTechTerms": [],
     "extraNonTechTerms": [],
-    "_extraTerms_note": "Your own additions to the classifier, checked ahead of the built-in lists."
+    "_extraTerms_note": "Your own additions to the classifier, checked ahead of the built-in lists.",
+    "blocklist": [
+      "MedTourEasy"
+    ],
+    "_blocklist_note": "Employers never published, whatever the watchlist says. Checked before any watchlist term, so a fuzzy match cannot resurrect one. Matching is containment on the normalised name, so \"MedTourEasy\" also covers \"MedTourEasy Navi Mumbai\". MedTourEasy is here because it was reported as a scam; it only ever reached the site because \"MedTourEasy Navi Mumbai\" contains the city Navi Mumbai, which the matcher read as the fintech Navi."
   },
   "pacing": {
     "_note": "All values in milliseconds, randomised per action. These were roughly halved for speed, which roughly doubles the request rate - a real increase in ban risk. If LinkedIn ever rate-limits, raise these first; the 24h cooldown will have already stopped the run.",
