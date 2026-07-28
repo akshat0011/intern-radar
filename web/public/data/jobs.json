@@ -1,7 +1,7 @@
 {
- "generatedAt": 1785212426387,
- "count": 228,
- "techCount": 51,
+ "generatedAt": 1785214367957,
+ "count": 229,
+ "techCount": 52,
  "otherCount": 177,
  "companies": [
   "A.P. Moller - Maersk",
@@ -151,6 +151,39 @@
   "West Bengal, India (On-site)"
  ],
  "jobs": [
+  {
+   "id": "4443207544",
+   "title": "Data Analyst Trainee",
+   "company": "MedTourEasy Navi Mumbai",
+   "matchedWatchlist": "Navi",
+   "isTech": true,
+   "roleSource": "gemini-enrich",
+   "logo": "/logos/medtoureasy-navi-mumbai.jpg",
+   "location": "India",
+   "workplaceType": "Remote",
+   "stipend": null,
+   "duration": null,
+   "applicants": "4 applicants",
+   "easyApply": true,
+   "skills": [],
+   "summary": "We are looking for enthusiastic and motivated current college students to join our upcoming Data Analytics Traineeship Program. This structured one-month program is designed to provide practical exposure to data analytics through guided learning, hands-on project experience, and professional report preparation. Data Analytics Trainee Responsibilities Week 1 & 2: Training Modules",
+   "bullets": [
+    "Complete assigned data analytics learning modules",
+    "Work on a live project and prepare a project report",
+    "One-month structured program for practical exposure"
+   ],
+   "roleLabel": "Data analytics",
+   "degreeLevel": "Pursuing",
+   "degreeText": null,
+   "keySkills": [],
+   "stipendStatus": "unknown",
+   "postedText": "23 minutes ago",
+   "postedAt": 1785212362563,
+   "firstSeenAt": 1785213742568,
+   "url": "https://www.linkedin.com/jobs/view/4443207544/",
+   "applyUrl": "https://www.linkedin.com/jobs/view/4443207544/",
+   "description": null
+  },
   {
    "id": "4445413454",
    "title": "Apprentice -Banking and Business Blueprint",
