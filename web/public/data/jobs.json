@@ -1,8 +1,8 @@
 {
- "generatedAt": 1785233198806,
- "count": 250,
+ "generatedAt": 1785234923140,
+ "count": 252,
  "techCount": 49,
- "otherCount": 201,
+ "otherCount": 203,
  "companies": [
   "A.P. Moller - Maersk",
   "Accenture in India",
@@ -112,6 +112,7 @@
  ],
  "locations": [
   "Ahmedabad, Gujarat, India",
+  "Andhra Pradesh, India",
   "Bangalore Urban, Karnataka, India",
   "Bengaluru East, Karnataka, India",
   "Bengaluru, Karnataka, India",
@@ -171,6 +172,37 @@
  ],
  "jobs": [
   {
+   "id": "4426545234",
+   "title": "Graduate Apprentice Trainee",
+   "company": "Volvo Group",
+   "matchedWatchlist": "Volvo Group",
+   "isTech": false,
+   "roleSource": "gemini-description",
+   "logo": "/logos/volvo-group.jpg",
+   "location": "Bengaluru, Karnataka, India",
+   "workplaceType": "On-site",
+   "stipend": null,
+   "duration": null,
+   "applicants": null,
+   "easyApply": false,
+   "skills": [
+    "excel"
+   ],
+   "summary": "Transport is at the core of modern society. Imagine using your expertise to shape sustainable transport and infrastructure solutions for the future. At (ENTITY) you will contribute to the transformation of our company, the transport industry and society at large. We offer a solid package of compensation and benefits, plus you will enjoy:",
+   "bullets": [],
+   "roleLabel": null,
+   "degreeLevel": null,
+   "degreeText": null,
+   "keySkills": [],
+   "stipendStatus": "unknown",
+   "postedText": "18 minutes ago",
+   "postedAt": 1785233668951,
+   "firstSeenAt": 1785234748961,
+   "url": "https://www.linkedin.com/jobs/view/4426545234/",
+   "applyUrl": "https://www.linkedin.com/jobs/view/4426545234/",
+   "description": null
+  },
+  {
    "id": "4443257448",
    "title": "Internal Communications & Employee Engagement Intern",
    "company": "One97 Communications Limited",
@@ -211,6 +243,47 @@
    "firstSeenAt": 1785233035190,
    "url": "https://www.linkedin.com/jobs/view/4443257448/",
    "applyUrl": "https://www.linkedin.com/jobs/view/4443257448/",
+   "description": null
+  },
+  {
+   "id": "4445479687",
+   "title": "Intern",
+   "company": "Crisil",
+   "matchedWatchlist": "Crisil",
+   "isTech": false,
+   "roleSource": "gemini-enrich",
+   "logo": "/logos/crisil.jpg",
+   "location": "Andhra Pradesh, India",
+   "workplaceType": "On-site",
+   "stipend": null,
+   "duration": null,
+   "applicants": null,
+   "easyApply": false,
+   "skills": [
+    "excel"
+   ],
+   "summary": "We are seeking a motivated intern to support primary market research in India's agricultural biologicals sector (Biologicals, Biofertilizers, Biopesticides & Plant Growth Regulators). The role involves conducting surveys with farmers, retailers, distributors, and agronomists to assess product adoption, market penetration, growth opportunities, and challenges across regions and crop segments. Key Responsibilities Market Research & Data Collection",
+   "bullets": [
+    "Conduct surveys and interviews with farmers and retailers in India's agricultural biologicals sector",
+    "Gather data on product awareness, adoption, usage patterns, and market penetration",
+    "Analyze adoption trends, assess farmer usage, and identify market opportunities",
+    "Prepare data summaries, insights, and actionable recommendations for reports and dashboards"
+   ],
+   "roleLabel": null,
+   "degreeLevel": "UG/PG",
+   "degreeText": "B.Sc/M.Sc",
+   "keySkills": [
+    "market research",
+    "data collection",
+    "market analysis",
+    "ms excel"
+   ],
+   "stipendStatus": "unknown",
+   "postedText": "1 hour ago",
+   "postedAt": 1785231278985,
+   "firstSeenAt": 1785234878988,
+   "url": "https://www.linkedin.com/jobs/view/4445479687/",
+   "applyUrl": "https://www.linkedin.com/jobs/view/4445479687/",
    "description": null
   },
   {
