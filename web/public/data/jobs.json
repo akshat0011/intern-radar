@@ -1,8 +1,8 @@
 {
- "generatedAt": 1785258194240,
- "count": 275,
+ "generatedAt": 1785261156722,
+ "count": 276,
  "techCount": 56,
- "otherCount": 219,
+ "otherCount": 220,
  "companies": [
   "A.P. Moller - Maersk",
   "Accenture in India",
@@ -185,6 +185,35 @@
   "West Bengal, India (On-site)"
  ],
  "jobs": [
+  {
+   "id": "4445747844",
+   "title": "Social Media Marketing Intern",
+   "company": "upGrad",
+   "matchedWatchlist": "upGrad",
+   "isTech": false,
+   "roleSource": "offline-card",
+   "logo": "/logos/upgrad.jpg",
+   "location": "Noida, Uttar Pradesh, India (On-site)",
+   "workplaceType": "On-site",
+   "stipend": null,
+   "duration": null,
+   "applicants": null,
+   "easyApply": false,
+   "skills": [],
+   "summary": null,
+   "bullets": [],
+   "roleLabel": null,
+   "degreeLevel": null,
+   "degreeText": null,
+   "keySkills": [],
+   "stipendStatus": "unknown",
+   "postedText": "37 minutes ago",
+   "postedAt": 1785258401428,
+   "firstSeenAt": 1785260621428,
+   "url": "https://www.linkedin.com/jobs/view/4445747844/",
+   "applyUrl": "https://www.linkedin.com/jobs/view/4445747844/",
+   "description": null
+  },
   {
    "id": "4445747694",
    "title": "Diploma Engineer Trainee ( 82790048 )",
