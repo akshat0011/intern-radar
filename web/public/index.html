@@ -40,6 +40,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
+
+<!-- Vercel Web Analytics. The dashboard hands you `import { Analytics } from
+     "@vercel/analytics/next"`, which is the React build and cannot work here: there is
+     no bundler and no build step, so nothing would ever resolve that specifier. Vercel
+     serves this script from the same origin whenever Web Analytics is enabled on the
+     project, so the whole integration is one tag and no dependency.
+     It 404s on the local dev server — that path only exists on Vercel's edge. -->
+<script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
 
