@@ -80,16 +80,25 @@ const server = createServer(async (req, res) => {
     return res.end('Forbidden');
   }
 
-  try {
-    const body = await readFile(path);
-    res.setHeader('content-type', TYPES[extname(path)] ?? 'application/octet-stream');
-    res.setHeader('cache-control', 'no-store');
-    res.end(body);
-  } catch {
-    res.statusCode = 404;
-    res.setHeader('content-type', 'text/html; charset=utf-8');
-    res.end('<h1>404</h1>');
+  // vercel.json sets cleanUrls, so production serves /jobs/foo from jobs/foo.html.
+  // Without the same fallback here, every generated page 404s locally and the only
+  // way to check them would be to deploy first.
+  const candidates = extname(path) ? [path] : [path, `${path}.html`, join(path, 'index.html')];
+
+  for (const candidate of candidates) {
+    try {
+      const body = await readFile(candidate);
+      res.setHeader('content-type', TYPES[extname(candidate)] ?? 'application/octet-stream');
+      res.setHeader('cache-control', 'no-store');
+      return res.end(body);
+    } catch {
+      // try the next shape
+    }
   }
+
+  res.statusCode = 404;
+  res.setHeader('content-type', 'text/html; charset=utf-8');
+  res.end('<h1>404</h1>');
 });
 
 server.listen(PORT, () => {

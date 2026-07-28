@@ -1,0 +1,71 @@
+/* ============================================================
+   Generated pages: one per job, one per company.
+   Loaded after styles.css, so it inherits every token and only
+   adds what a long-form page needs and the feed does not.
+   ============================================================ */
+
+.page { padding: 26px 0 70px; }
+.page .wrap { max-width: 760px; }
+
+.crumbs {
+  font-family: var(--mono); font-size: 11px; letter-spacing: .06em;
+  text-transform: uppercase; color: var(--ink-3); margin-bottom: 20px;
+}
+.crumbs a { color: var(--ink-2); text-decoration: none; }
+.crumbs a:hover { color: var(--live); }
+
+.page h1 {
+  font-size: clamp(28px, 5vw, 42px); line-height: 1.04;
+  letter-spacing: -.035em; text-transform: uppercase;
+}
+.page h2 {
+  font-size: 15px; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--ink-3); margin: 34px 0 12px; font-family: var(--mono); font-weight: 700;
+}
+.lede-sub { margin-top: 10px; font-size: 17px; color: var(--live); }
+
+.apply {
+  display: inline-block; margin: 22px 0 6px;
+  background: var(--live); color: var(--live-ink);
+  font-weight: 700; font-size: 14px; text-decoration: none;
+  padding: 12px 20px; border-radius: var(--r);
+}
+.apply:hover { filter: brightness(1.08); }
+
+/* Facts as a definition list: it is genuinely term-and-value data, which is
+   what <dl> is for, and it gives assistive tech the pairing for free. */
+.facts {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1px; margin: 26px 0 0; background: var(--rule);
+  border: 1px solid var(--rule); border-radius: var(--r-2); overflow: hidden;
+}
+.facts > div { background: var(--bg); padding: 13px 15px; }
+.facts dt {
+  font-family: var(--mono); font-size: 10px; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--ink-3);
+}
+.facts dd { margin: 5px 0 0; font-size: 14.5px; color: var(--ink); }
+
+.page .gist-list { margin-top: 4px; max-width: none; gap: 9px; }
+.page .gist-list li { font-size: 15px; line-height: 1.5; }
+
+.hub { display: grid; gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: var(--r-2); overflow: hidden; }
+.hub li { background: var(--bg); padding: 15px 17px; display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px; }
+.hub li a { font-size: 16px; font-weight: 600; color: var(--ink); text-decoration: none; }
+.hub li a:hover { color: var(--live); }
+.hub .qual { color: var(--live); font-size: 13px; }
+.hub .tiny { margin-left: auto; }
+
+.tiny {
+  font-family: var(--mono); font-size: 10.5px; letter-spacing: .05em;
+  text-transform: uppercase; color: var(--ink-3);
+}
+.page > .wrap > .tiny { margin-top: 30px; line-height: 1.7; }
+
+.page + .foot { border-top: 1px solid var(--rule); }
+.foot a { color: var(--live); }
+
+@media (max-width: 680px) {
+  .facts { grid-template-columns: 1fr 1fr; }
+  .hub .tiny { margin-left: 0; width: 100%; }
+}

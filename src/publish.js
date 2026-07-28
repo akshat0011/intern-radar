@@ -6,6 +6,7 @@ import { log } from './logger.js';
 import { formatStipend } from './extract.js';
 import { matchCompany } from './config.js';
 import { syncLogos, logoPathFor, logoDirSize } from './logos.js';
+import { writePages } from './pages.js';
 
 const WEB_DATA_DIR = join(ROOT, 'web', 'public', 'data');
 const JOBS_FILE = join(WEB_DATA_DIR, 'jobs.json');
@@ -127,8 +128,12 @@ export async function writeJobsFile(store, cfg) {
   const next = `${JSON.stringify(payload, null, 1)}\n`;
   writeFileSync(JOBS_FILE, next);
 
+  // Static pages for search engines. The JSON above serves the app; these serve
+  // crawlers, which cannot run the JavaScript that turns it into listings.
+  const pages = writePages(publicJobs, join(ROOT, 'web', 'public'));
+
   const withLogo = publicJobs.filter((j) => j.logo).length;
-  return { count: publicJobs.length, techCount, path: JOBS_FILE, withLogo, logoBytes: logoDirSize() };
+  return { count: publicJobs.length, techCount, path: JOBS_FILE, withLogo, logoBytes: logoDirSize(), pages };
 }
 
 function git(args, { allowFail = false } = {}) {
@@ -150,7 +155,12 @@ export function pushToSite(newJobCount) {
     return false;
   }
 
-  const status = git(['status', '--porcelain', 'web/public/data', 'web/public/logos'], { allowFail: true });
+  // Everything publish regenerates. Narrow on purpose — never `git add .`, or an
+  // unattended run would commit whatever source edit happened to be in progress.
+  const PUBLISHED = ['web/public/data', 'web/public/logos', 'web/public/jobs',
+    'web/public/companies', 'web/public/sitemap.xml', 'web/public/robots.txt'];
+
+  const status = git(['status', '--porcelain', ...PUBLISHED], { allowFail: true });
   if (!status) {
     log.info('Job list is unchanged — nothing to publish.');
     return false;
@@ -163,7 +173,7 @@ export function pushToSite(newJobCount) {
   }
 
   try {
-    git(['add', 'web/public/data', 'web/public/logos']);
+    git(['add', ...PUBLISHED]);
     const message = newJobCount > 0
       ? `Add ${newJobCount} new internship${newJobCount === 1 ? '' : 's'}`
       : 'Refresh job listings';
@@ -186,8 +196,9 @@ export async function publish(store, cfg, newJobCount) {
   if (cfg.publish?.enabled === false) return;
 
   try {
-    const { count, techCount, path, withLogo, logoBytes } = await writeJobsFile(store, cfg);
+    const { count, techCount, path, withLogo, logoBytes, pages } = await writeJobsFile(store, cfg);
     log.info(`Wrote ${count} jobs (${techCount} tech, ${count - techCount} other) to ${path.replace(ROOT, '.')} — ${withLogo} with a logo, ${Math.round(logoBytes / 1024)} KB stored`);
+    log.info(`Generated ${pages.jobPages} job pages and ${pages.companyPages} company pages (${pages.indexable} indexable${pages.removed ? `, ${pages.removed} stale removed` : ''}).`);
     if (cfg.publish?.autoPush !== false) pushToSite(newJobCount);
   } catch (err) {
     log.warn(`Publish step failed: ${err.message}`);
