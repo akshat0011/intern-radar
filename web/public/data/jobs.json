@@ -1,5 +1,5 @@
 {
- "generatedAt": 1785273554191,
+ "generatedAt": 1785276249388,
  "count": 285,
  "techCount": 57,
  "otherCount": 228,
@@ -341,7 +341,7 @@
    "company": "Newton School",
    "matchedWatchlist": "Newton School",
    "isTech": false,
-   "roleSource": "gemini-description",
+   "roleSource": "gemini-enrich",
    "logo": "/logos/newton-school.jpg",
    "location": "Bengaluru, Karnataka, India",
    "workplaceType": "On-site",
@@ -353,11 +353,18 @@
     "excel"
    ],
    "summary": "We are looking for a proactive and detail-oriented Admin Intern to support our day-to-day office operations. This role is ideal for fresh graduates or final-year students looking to gain hands-on experience in administration and office management. Key Responsibilities Assist in ensuring smooth day-to-day office functioning.",
-   "bullets": [],
-   "roleLabel": null,
-   "degreeLevel": null,
+   "bullets": [
+    "Support daily office operations, maintain documents and records",
+    "Coordinate with internal teams and perform data entry using MS Excel",
+    "Work from the Bangalore office for the full internship duration"
+   ],
+   "roleLabel": "Administration",
+   "degreeLevel": "Pursuing",
    "degreeText": null,
-   "keySkills": [],
+   "keySkills": [
+    "microsoft excel",
+    "ms office"
+   ],
    "stipendStatus": "unknown",
    "postedText": "2 hours ago",
    "postedAt": 1785265672206,
@@ -401,7 +408,7 @@
    "company": "Salesforce",
    "matchedWatchlist": "Salesforce",
    "isTech": true,
-   "roleSource": "offline",
+   "roleSource": "gemini-enrich",
    "logo": "/logos/salesforce.jpg",
    "location": "Hyderabad, Telangana, India",
    "workplaceType": "On-site",
@@ -421,10 +428,15 @@
     "data structures"
    ],
    "summary": "To get the best candidate experience, please consider applying for a maximum of 3 roles within 12 months to ensure you are not duplicating efforts. About Futureforce University Recruiting Our Futureforce University Recruiting program is dedicated to attracting, retaining and cultivating talent. Our interns and new graduates work on real projects that affect how our business runs, giving them the opportunity to make a tangible impact on the future of our company.",
-   "bullets": [],
-   "roleLabel": null,
-   "degreeLevel": null,
-   "degreeText": null,
+   "bullets": [
+    "Contribute to software engineering aspects for future releases as part of a Scrum team",
+    "Design, develop, test, and deploy software products, integrating solutions into distributed systems",
+    "Develop optimized code, contribute to automated tests and testing infrastructure",
+    "Help monitor cloud services with real-time tools and frameworks"
+   ],
+   "roleLabel": "Software engineering",
+   "degreeLevel": "UG",
+   "degreeText": "B.E/B.Tech",
    "keySkills": [],
    "stipendStatus": "unknown",
    "postedText": "2 hours ago",
