@@ -1,5 +1,5 @@
 {
- "generatedAt": 1785222218744,
+ "generatedAt": 1785222262139,
  "count": 237,
  "techCount": 49,
  "otherCount": 188,
@@ -195,7 +195,7 @@
    "company": "Crisil",
    "matchedWatchlist": "Crisil",
    "isTech": false,
-   "roleSource": "offline-fallback",
+   "roleSource": "gemini-enrich",
    "logo": "/logos/crisil.jpg",
    "location": "Uttar Pradesh, India",
    "workplaceType": "On-site",
@@ -207,11 +207,19 @@
     "excel"
    ],
    "summary": "We are seeking a motivated intern to support primary market research in India's agricultural biologicals sector (Biologicals, Biofertilizers, Biopesticides & Plant Growth Regulators). The role involves conducting surveys with farmers, retailers, distributors, and agronomists to assess product adoption, market penetration, growth opportunities, and challenges across regions and crop segments. Key Responsibilities Market Research & Data Collection",
-   "bullets": [],
-   "roleLabel": null,
-   "degreeLevel": null,
-   "degreeText": null,
-   "keySkills": [],
+   "bullets": [
+    "Conduct surveys with farmers, retailers, and agronomists on agricultural biologicals",
+    "Analyze product adoption trends, market penetration, and identify opportunities",
+    "Evaluate growth drivers and barriers, recommend strategies for adoption",
+    "Prepare data summaries, insights, and market research reports using MS Excel"
+   ],
+   "roleLabel": "Agricultural Market Research",
+   "degreeLevel": "UG/PG",
+   "degreeText": "B.Sc/M.Sc",
+   "keySkills": [
+    "market research",
+    "ms excel"
+   ],
    "stipendStatus": "unknown",
    "postedText": "33 minutes ago",
    "postedAt": 1785219265105,
@@ -226,7 +234,7 @@
    "company": "Crisil",
    "matchedWatchlist": "Crisil",
    "isTech": false,
-   "roleSource": "offline-fallback",
+   "roleSource": "gemini-enrich",
    "logo": "/logos/crisil.jpg",
    "location": "Haryana, India",
    "workplaceType": "On-site",
@@ -238,11 +246,19 @@
     "excel"
    ],
    "summary": "We are seeking a motivated intern to support primary market research in India's agricultural biologicals sector (Biologicals, Biofertilizers, Biopesticides & Plant Growth Regulators). The role involves conducting surveys with farmers, retailers, distributors, and agronomists to assess product adoption, market penetration, growth opportunities, and challenges across regions and crop segments. Key Responsibilities Market Research & Data Collection",
-   "bullets": [],
-   "roleLabel": null,
-   "degreeLevel": null,
-   "degreeText": null,
-   "keySkills": [],
+   "bullets": [
+    "Conduct surveys with farmers, retailers, and agronomists on agricultural biologicals",
+    "Analyze product adoption trends, market penetration, and identify opportunities",
+    "Evaluate growth drivers and barriers, recommend strategies for adoption",
+    "Prepare data summaries, insights, and market research reports using MS Excel"
+   ],
+   "roleLabel": "Agricultural Market Research",
+   "degreeLevel": "UG/PG",
+   "degreeText": "B.Sc/M.Sc",
+   "keySkills": [
+    "market research",
+    "ms excel"
+   ],
    "stipendStatus": "unknown",
    "postedText": "32 minutes ago",
    "postedAt": 1785219258889,
@@ -256,8 +272,8 @@
    "title": "Intern - Agri",
    "company": "Crisil",
    "matchedWatchlist": "Crisil",
-   "isTech": null,
-   "roleSource": null,
+   "isTech": false,
+   "roleSource": "gemini-enrich",
    "logo": "/logos/crisil.jpg",
    "location": "Madhya Pradesh, India",
    "workplaceType": "On-site",
@@ -269,11 +285,19 @@
     "excel"
    ],
    "summary": "We are seeking a motivated intern to support primary market research in India's agricultural biologicals sector (Biologicals, Biofertilizers, Biopesticides & Plant Growth Regulators). The role involves conducting surveys with farmers, retailers, distributors, and agronomists to assess product adoption, market penetration, growth opportunities, and challenges across regions and crop segments. Key Responsibilities Market Research & Data Collection",
-   "bullets": [],
-   "roleLabel": null,
-   "degreeLevel": null,
-   "degreeText": null,
-   "keySkills": [],
+   "bullets": [
+    "Conduct surveys with farmers, retailers, and agronomists on agricultural biologicals",
+    "Analyze product adoption trends, market penetration, and identify opportunities",
+    "Evaluate growth drivers and barriers, recommend strategies for adoption",
+    "Prepare data summaries, insights, and market research reports using MS Excel"
+   ],
+   "roleLabel": "Agricultural Market Research",
+   "degreeLevel": "UG/PG",
+   "degreeText": "B.Sc/M.Sc",
+   "keySkills": [
+    "market research",
+    "ms excel"
+   ],
    "stipendStatus": "unknown",
    "postedText": "49 minutes ago",
    "postedAt": 1785219256041,
@@ -288,7 +312,7 @@
    "company": "Crisil",
    "matchedWatchlist": "Crisil",
    "isTech": false,
-   "roleSource": "offline-fallback",
+   "roleSource": "gemini-enrich",
    "logo": "/logos/crisil.jpg",
    "location": "Punjab, India",
    "workplaceType": "On-site",
@@ -300,11 +324,19 @@
     "excel"
    ],
    "summary": "We are seeking a motivated intern to support primary market research in India's agricultural biologicals sector (Biologicals, Biofertilizers, Biopesticides & Plant Growth Regulators). The role involves conducting surveys with farmers, retailers, distributors, and agronomists to assess product adoption, market penetration, growth opportunities, and challenges across regions and crop segments. Key Responsibilities Market Research & Data Collection",
-   "bullets": [],
-   "roleLabel": null,
-   "degreeLevel": null,
-   "degreeText": null,
-   "keySkills": [],
+   "bullets": [
+    "Conduct surveys with farmers, retailers, and agronomists on agricultural biologicals",
+    "Analyze product adoption trends, market penetration, and identify opportunities",
+    "Evaluate growth drivers and barriers, recommend strategies for adoption",
+    "Prepare data summaries, insights, and market research reports using MS Excel"
+   ],
+   "roleLabel": "Agricultural Market Research",
+   "degreeLevel": "UG/PG",
+   "degreeText": "B.Sc/M.Sc",
+   "keySkills": [
+    "market research",
+    "ms excel"
+   ],
    "stipendStatus": "unknown",
    "postedText": "32 minutes ago",
    "postedAt": 1785219234752,
@@ -319,7 +351,7 @@
    "company": "Crisil",
    "matchedWatchlist": "Crisil",
    "isTech": false,
-   "roleSource": "offline-fallback",
+   "roleSource": "gemini-enrich",
    "logo": "/logos/crisil.jpg",
    "location": "Rajasthan, India",
    "workplaceType": "On-site",
@@ -331,11 +363,19 @@
     "excel"
    ],
    "summary": "We are seeking a motivated intern to support primary market research in India's agricultural biologicals sector (Biologicals, Biofertilizers, Biopesticides & Plant Growth Regulators). The role involves conducting surveys with farmers, retailers, distributors, and agronomists to assess product adoption, market penetration, growth opportunities, and challenges across regions and crop segments. Key Responsibilities Market Research & Data Collection",
-   "bullets": [],
-   "roleLabel": null,
-   "degreeLevel": null,
-   "degreeText": null,
-   "keySkills": [],
+   "bullets": [
+    "Conduct surveys with farmers, retailers, and agronomists on agricultural biologicals",
+    "Analyze product adoption trends, market penetration, and identify opportunities",
+    "Evaluate growth drivers and barriers, recommend strategies for adoption",
+    "Prepare data summaries, insights, and market research reports using MS Excel"
+   ],
+   "roleLabel": "Agricultural Market Research",
+   "degreeLevel": "UG/PG",
+   "degreeText": "B.Sc/M.Sc",
+   "keySkills": [
+    "market research",
+    "ms excel"
+   ],
    "stipendStatus": "unknown",
    "postedText": "34 minutes ago",
    "postedAt": 1785219228693,
@@ -350,7 +390,7 @@
    "company": "Crisil",
    "matchedWatchlist": "Crisil",
    "isTech": false,
-   "roleSource": "offline-fallback",
+   "roleSource": "gemini-enrich",
    "logo": "/logos/crisil.jpg",
    "location": "Uttarakhand, India",
    "workplaceType": "On-site",
@@ -362,11 +402,19 @@
     "excel"
    ],
    "summary": "We are seeking a motivated intern to support primary market research in India's agricultural biologicals sector (Biologicals, Biofertilizers, Biopesticides & Plant Growth Regulators). The role involves conducting surveys with farmers, retailers, distributors, and agronomists to assess product adoption, market penetration, growth opportunities, and challenges across regions and crop segments. Key Responsibilities Market Research & Data Collection",
-   "bullets": [],
-   "roleLabel": null,
-   "degreeLevel": null,
-   "degreeText": null,
-   "keySkills": [],
+   "bullets": [
+    "Conduct surveys with farmers, retailers, and agronomists on agricultural biologicals",
+    "Analyze product adoption trends, market penetration, and identify opportunities",
+    "Evaluate growth drivers and barriers, recommend strategies for adoption",
+    "Prepare data summaries, insights, and market research reports using MS Excel"
+   ],
+   "roleLabel": "Agricultural Market Research",
+   "degreeLevel": "UG/PG",
+   "degreeText": "B.Sc/M.Sc",
+   "keySkills": [
+    "market research",
+    "ms excel"
+   ],
    "stipendStatus": "unknown",
    "postedText": "33 minutes ago",
    "postedAt": 1785219223160,
@@ -439,7 +487,7 @@
    "company": "Times Internet",
    "matchedWatchlist": "Times Internet",
    "isTech": false,
-   "roleSource": "offline-fallback",
+   "roleSource": "gemini-enrich",
    "logo": "/logos/times-internet.jpg",
    "location": "Noida, Uttar Pradesh, India",
    "workplaceType": "On-site",
@@ -449,8 +497,13 @@
    "easyApply": true,
    "skills": [],
    "summary": "Location - Times Internet, Noida Office - Sector 16 Duration - 6 Months Stipend - 10,000/- per month Candidate must have a laptop for this internship",
-   "bullets": [],
-   "roleLabel": null,
+   "bullets": [
+    "Identify and engage senior business leaders, CXOs, founders, and investors for ET events",
+    "Build and maintain accurate databases using LinkedIn, company websites, and industry directories",
+    "Reach out to potential delegates via calls, emails, WhatsApp, and LinkedIn; track registrations",
+    "Work from office in Noida, Monday to Friday, 9:30 AM to 6 PM for 6 months"
+   ],
+   "roleLabel": "Delegate acquisition",
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
