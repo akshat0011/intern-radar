@@ -1,8 +1,8 @@
 {
- "generatedAt": 1785308694687,
- "count": 298,
+ "generatedAt": 1785310426530,
+ "count": 299,
  "techCount": 59,
- "otherCount": 239,
+ "otherCount": 240,
  "companies": [
   "A.P. Moller - Maersk",
   "Accenture in India",
@@ -197,6 +197,46 @@
   "West Bengal, India (On-site)"
  ],
  "jobs": [
+  {
+   "id": "4446565331",
+   "title": "Trainee – Punjab State Exam Reasoning",
+   "company": "PW (PhysicsWallah)",
+   "matchedWatchlist": "PhysicsWallah",
+   "isTech": false,
+   "roleSource": "gemini-enrich",
+   "logo": "/logos/pw-physicswallah.jpg",
+   "location": "Noida, Uttar Pradesh, India",
+   "workplaceType": "On-site",
+   "stipend": null,
+   "duration": null,
+   "applicants": null,
+   "easyApply": false,
+   "skills": [
+    "excel"
+   ],
+   "summary": "Job Title: Trainee – Trainee – Punjab State Exam Reasoning 📍 Location: Work From Home / Hybrid 💼 Employment Type: Traineeship We are looking for enthusiastic and detail-oriented Trainees to support content creation and translation for Punjab State Exam across multiple subjects.",
+   "bullets": [
+    "Create and translate academic content and question banks for Punjab State Exams",
+    "Develop and review questions with accurate solutions, proofread content for quality",
+    "Work from home or hybrid, supporting content for Punjab State Exam Reasoning",
+    "Requires strong understanding of Punjab State Board curriculum and good English/Punjabi"
+   ],
+   "roleLabel": "Content creation",
+   "degreeLevel": "UG/PG",
+   "degreeText": null,
+   "keySkills": [
+    "ms excel",
+    "google docs",
+    "google sheets"
+   ],
+   "stipendStatus": "unknown",
+   "postedText": "23 minutes ago",
+   "postedAt": 1785308932646,
+   "firstSeenAt": 1785310312652,
+   "url": "https://www.linkedin.com/jobs/view/4446565331/",
+   "applyUrl": "https://www.linkedin.com/jobs/view/4446565331/",
+   "description": null
+  },
   {
    "id": "4446020978",
    "title": "Marketing Intern",
