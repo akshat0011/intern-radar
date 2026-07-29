@@ -1,10 +1,11 @@
 {
- "generatedAt": 1785315922303,
- "count": 300,
- "techCount": 60,
- "otherCount": 240,
+ "generatedAt": 1785317704663,
+ "count": 302,
+ "techCount": 61,
+ "otherCount": 241,
  "companies": [
   "A.P. Moller - Maersk",
+  "ALLEN",
   "Accenture in India",
   "Adani Airport Holdings Ltd",
   "Adani Realty",
@@ -55,6 +56,7 @@
   "Innovaccer",
   "KPMG India",
   "Kairo Urban Group Pvt Ltd",
+  "Kuku",
   "Larsen & Toubro",
   "LeadSquared",
   "Lenskart.com",
@@ -198,6 +200,88 @@
   "West Bengal, India (On-site)"
  ],
  "jobs": [
+  {
+   "id": "4446050336",
+   "title": "Content Operations Intern",
+   "company": "Kuku",
+   "matchedWatchlist": "Kuku FM",
+   "isTech": false,
+   "roleSource": "gemini-enrich",
+   "logo": "/logos/kuku.jpg",
+   "location": "Bengaluru, Karnataka, India",
+   "workplaceType": "On-site",
+   "stipend": null,
+   "duration": null,
+   "applicants": "0 applicants",
+   "easyApply": true,
+   "skills": [],
+   "summary": "We are looking for a proactive and detail-oriented Content Operations Intern to support day-to-day content operations. The intern will work closely with creators, vendors, production partners, and Note: This is a paid internship.Skills: operations,content operations,communication",
+   "bullets": [
+    "Onboard writers, voice-over artists, and production houses onto the platform",
+    "Maintain accurate creator and partner data, ensuring all records are updated regularly",
+    "Coordinate with the Finance team to ensure creator and vendor payments are processed",
+    "Support process improvements by identifying gaps and suggesting ways to improve efficiency"
+   ],
+   "roleLabel": "Content Operations",
+   "degreeLevel": "Pursuing",
+   "degreeText": "Bachelor's",
+   "keySkills": [
+    "vendor coordination",
+    "creator coordination",
+    "data management",
+    "documentation",
+    "record keeping"
+   ],
+   "stipendStatus": "paid",
+   "postedText": "13 minutes ago",
+   "postedAt": 1785316761451,
+   "firstSeenAt": 1785317541460,
+   "url": "https://www.linkedin.com/jobs/view/4446050336/",
+   "applyUrl": "https://www.linkedin.com/jobs/view/4446050336/",
+   "description": null
+  },
+  {
+   "id": "4446049382",
+   "title": "GRC Intern",
+   "company": "ALLEN",
+   "matchedWatchlist": "Allen Career Institute",
+   "isTech": true,
+   "roleSource": "gemini-enrich",
+   "logo": "/logos/allen.jpg",
+   "location": "Bangalore Urban, Karnataka, India",
+   "workplaceType": "On-site",
+   "stipend": null,
+   "duration": "6–9 Months",
+   "applicants": null,
+   "easyApply": false,
+   "skills": [
+    "excel"
+   ],
+   "summary": "Department: Information Technology – Governance, Risk & Compliance (GRC) Manager – GRC / Information Security Duration: 6–9 Months (Extendable / PPO based on performance) We are looking for a GRC Intern to support the Information Security and Compliance team in maintaining security, privacy, and governance frameworks.",
+   "bullets": [
+    "Support the Information Security and Compliance team, maintaining security, privacy, and governance frameworks",
+    "Collect audit evidence, maintain ISMS/PIMS documentation, risk registers, and compliance records",
+    "Work with ISO 27001, ISO 27701, DPDPA, and coordinate vendor security assessments",
+    "6-9 month internship with potential for full-time offer based on performance"
+   ],
+   "roleLabel": "GRC Information Security",
+   "degreeLevel": "UG/PG",
+   "degreeText": "B.Tech/BCA",
+   "keySkills": [
+    "ms excel",
+    "ms word",
+    "ms powerpoint",
+    "information security",
+    "risk management"
+   ],
+   "stipendStatus": "unknown",
+   "postedText": "30 minutes ago",
+   "postedAt": 1785315772017,
+   "firstSeenAt": 1785317572018,
+   "url": "https://www.linkedin.com/jobs/view/4446049382/",
+   "applyUrl": "https://www.linkedin.com/jobs/view/4446049382/",
+   "description": null
+  },
   {
    "id": "4435094310",
    "title": "Information Technology apprentice",
