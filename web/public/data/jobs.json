@@ -1,8 +1,8 @@
 {
- "generatedAt": 1785330312018,
- "count": 318,
+ "generatedAt": 1785332086296,
+ "count": 319,
  "techCount": 64,
- "otherCount": 254,
+ "otherCount": 255,
  "companies": [
   "A.P. Moller - Maersk",
   "ALLEN",
@@ -206,6 +206,35 @@
   "West Bengal, India (On-site)"
  ],
  "jobs": [
+  {
+   "id": "4418941417",
+   "title": "intern",
+   "company": "eClerx",
+   "matchedWatchlist": "eClerx",
+   "isTech": false,
+   "roleSource": "offline-fallback",
+   "logo": "/logos/eclerx.jpg",
+   "location": "Mumbai, Maharashtra, India",
+   "workplaceType": "Hybrid",
+   "stipend": null,
+   "duration": null,
+   "applicants": null,
+   "easyApply": false,
+   "skills": [],
+   "summary": "Shared in email separately eClerx is a global leader in productized services, bringing together people, technology and domain expertise to amplify business results. Since our inception in 2000, we've partnered with top companies across various industries, including financial services, telecommunications, retail, and high-tech. Our innovative solutions and domain expertise help businesses optimize operations, improve efficiency, and drive growth.",
+   "bullets": [],
+   "roleLabel": null,
+   "degreeLevel": null,
+   "degreeText": null,
+   "keySkills": [],
+   "stipendStatus": "unknown",
+   "postedText": "23 minutes ago",
+   "postedAt": 1785330575205,
+   "firstSeenAt": 1785331955209,
+   "url": "https://www.linkedin.com/jobs/view/4418941417/",
+   "applyUrl": "https://www.linkedin.com/jobs/view/4418941417/",
+   "description": null
+  },
   {
    "id": "4431748884",
    "title": "Industrial Trainee - Financial Operations",
