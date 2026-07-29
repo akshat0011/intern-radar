@@ -1,8 +1,8 @@
 {
- "generatedAt": 1785326684397,
- "count": 317,
+ "generatedAt": 1785328466940,
+ "count": 318,
  "techCount": 64,
- "otherCount": 253,
+ "otherCount": 254,
  "companies": [
   "A.P. Moller - Maersk",
   "ALLEN",
@@ -33,6 +33,7 @@
   "Crisil",
   "Cummins India",
   "Cyient Semiconductors",
+  "D. E. Shaw India Private Limited",
   "DeHaat",
   "Deloitte",
   "Deutsche Bank",
@@ -205,6 +206,49 @@
   "West Bengal, India (On-site)"
  ],
  "jobs": [
+  {
+   "id": "4431748884",
+   "title": "Industrial Trainee - Financial Operations",
+   "company": "D. E. Shaw India Private Limited",
+   "matchedWatchlist": "D. E. Shaw",
+   "isTech": false,
+   "roleSource": "gemini-enrich",
+   "logo": "/logos/d-e-shaw-india-private-limited.jpg",
+   "location": "Hyderabad, Telangana, India",
+   "workplaceType": "Hybrid",
+   "stipend": null,
+   "duration": null,
+   "applicants": null,
+   "easyApply": false,
+   "skills": [
+    "agile",
+    "power bi"
+   ],
+   "summary": "We are looking for a resourceful candidate to join our Financial Operations group, based out of the firm’s Hyderabad office. WHAT YOU'LL DO DAY-TO-DAY: In this role, you will collaborate with a number of senior stakeholders at the time of new fund launches, assist in setting up complex fund structures and transactions, conduct historical as well as projected analyses of fund performance, technical accounting analysis for complex financial instruments, and handle bespoke requests from various internal and external stakeholders. You will work closely with the office of the Chief Operating Officer (COO), the Chief…",
+   "bullets": [
+    "Collaborate with senior stakeholders on new fund launches and complex fund structures",
+    "Conduct financial analysis, P&L analysis, budgeting, and regulatory reporting",
+    "Drive technology projects using Power BI, Power Query, and Alteryx to streamline workflows",
+    "Stay updated on US GAAP, UK GAAP, and HK GAAP for accounting guidance"
+   ],
+   "roleLabel": "Financial Operations",
+   "degreeLevel": null,
+   "degreeText": null,
+   "keySkills": [
+    "power bi",
+    "power query",
+    "alteryx",
+    "us gaap",
+    "uk gaap"
+   ],
+   "stipendStatus": "unknown",
+   "postedText": "28 minutes ago",
+   "postedAt": 1785326636968,
+   "firstSeenAt": 1785328316980,
+   "url": "https://www.linkedin.com/jobs/view/4431748884/",
+   "applyUrl": "https://www.linkedin.com/jobs/view/4431748884/",
+   "description": null
+  },
   {
    "id": "4444119558",
    "title": "Digital Marketing Intern",
