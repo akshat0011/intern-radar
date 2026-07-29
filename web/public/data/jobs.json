@@ -1,5 +1,5 @@
 {
- "generatedAt": 1785353874862,
+ "generatedAt": 1785357040637,
  "count": 329,
  "techCount": 68,
  "otherCount": 261,
@@ -273,7 +273,7 @@
    "company": "Aditya Birla Capital",
    "matchedWatchlist": "Aditya Birla Group",
    "isTech": false,
-   "roleSource": "offline-fallback",
+   "roleSource": "gemini-enrich",
    "logo": "/logos/aditya-birla-capital.jpg",
    "location": "Maharashtra, India",
    "workplaceType": "On-site",
@@ -285,11 +285,22 @@
     "excel"
    ],
    "summary": "We are looking for a Planning & Strategy professional to support business growth through strategic planning, market analysis, performance tracking, and cross-functional coordination. The role involves identifying business opportunities, improving operational efficiency, and driving data-backed decision-making. Key Responsibilities Develop short-term and long-term business strategies aligned with company goals",
-   "bullets": [],
-   "roleLabel": null,
-   "degreeLevel": null,
-   "degreeText": null,
-   "keySkills": [],
+   "bullets": [
+    "Support business growth through strategic planning, market analysis, and performance tracking",
+    "Develop short-term and long-term strategies, conduct market research, and support budgeting",
+    "Track KPIs, prepare management dashboards, identify growth opportunities, and analyze performance",
+    "Collaborate with Sales, Finance, Operations, and Product teams"
+   ],
+   "roleLabel": "Planning & strategy",
+   "degreeLevel": "UG",
+   "degreeText": "Bachelor's",
+   "keySkills": [
+    "excel",
+    "powerpoint",
+    "data analysis",
+    "business planning",
+    "mis reporting"
+   ],
    "stipendStatus": "unknown",
    "postedText": "1 hour ago",
    "postedAt": 1785348237855,
