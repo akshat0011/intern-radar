@@ -1,8 +1,8 @@
 {
- "generatedAt": 1785303264701,
- "count": 293,
+ "generatedAt": 1785305051854,
+ "count": 294,
  "techCount": 59,
- "otherCount": 234,
+ "otherCount": 235,
  "companies": [
   "A.P. Moller - Maersk",
   "Accenture in India",
@@ -195,6 +195,37 @@
   "West Bengal, India (On-site)"
  ],
  "jobs": [
+  {
+   "id": "4446544910",
+   "title": "HREP Intern",
+   "company": "Pine Labs",
+   "matchedWatchlist": "Pine Labs",
+   "isTech": false,
+   "roleSource": "offline-fallback",
+   "logo": "/logos/pine-labs.jpg",
+   "location": "Noida, Uttar Pradesh, India",
+   "workplaceType": "On-site",
+   "stipend": null,
+   "duration": "4-6 months",
+   "applicants": "4 applicants",
+   "easyApply": true,
+   "skills": [
+    "excel"
+   ],
+   "summary": "HR Employee Partner Intern: Tenure: 4-6 months Working closely with the Employee Partnering team, you will help conceptualize, coordinate, and execute employee engagement initiatives while supporting HR Business Partners in driving people programs, employee communications, and HR processes. An ideal candidate should be passionate about people, culture, and creating meaningful employee experiences while demonstrating strong coordination, communication, and organizational skills.",
+   "bullets": [],
+   "roleLabel": null,
+   "degreeLevel": null,
+   "degreeText": null,
+   "keySkills": [],
+   "stipendStatus": "unknown",
+   "postedText": "8 minutes ago",
+   "postedAt": 1785304498104,
+   "firstSeenAt": 1785304978108,
+   "url": "https://www.linkedin.com/jobs/view/4446544910/",
+   "applyUrl": "https://www.linkedin.com/jobs/view/4446544910/",
+   "description": null
+  },
   {
    "id": "4443662852",
    "title": "Marketing Communications Intern",
