@@ -1,8 +1,8 @@
 {
- "generatedAt": 1785284361012,
- "count": 289,
+ "generatedAt": 1785286048952,
+ "count": 290,
  "techCount": 60,
- "otherCount": 229,
+ "otherCount": 230,
  "companies": [
   "A.P. Moller - Maersk",
   "Accenture in India",
@@ -192,6 +192,35 @@
   "West Bengal, India (On-site)"
  ],
  "jobs": [
+  {
+   "id": "4446532027",
+   "title": "Functional Trainee",
+   "company": "Bajaj Finserv",
+   "matchedWatchlist": "Bajaj Finserv",
+   "isTech": false,
+   "roleSource": "offline-fallback",
+   "logo": "/logos/bajaj-finserv.jpg",
+   "location": "Pune Division, Maharashtra, India",
+   "workplaceType": "On-site",
+   "stipend": null,
+   "duration": null,
+   "applicants": null,
+   "easyApply": false,
+   "skills": [],
+   "summary": "Location Name: Pune Corporate Office - Weikfield “This position is open with Bajaj Finance Ltd.”",
+   "bullets": [],
+   "roleLabel": null,
+   "degreeLevel": null,
+   "degreeText": null,
+   "keySkills": [],
+   "stipendStatus": "unknown",
+   "postedText": "4 minutes ago",
+   "postedAt": 1785285442077,
+   "firstSeenAt": 1785285682082,
+   "url": "https://www.linkedin.com/jobs/view/4446532027/",
+   "applyUrl": "https://www.linkedin.com/jobs/view/4446532027/",
+   "description": null
+  },
   {
    "id": "4446396907",
    "title": "Intern (Master's)-Business Dev",
