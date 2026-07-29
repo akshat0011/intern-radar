@@ -1,8 +1,8 @@
 {
- "generatedAt": 1785322351774,
- "count": 307,
+ "generatedAt": 1785323003617,
+ "count": 308,
  "techCount": 62,
- "otherCount": 245,
+ "otherCount": 246,
  "companies": [
   "A.P. Moller - Maersk",
   "ALLEN",
@@ -204,6 +204,40 @@
   "West Bengal, India (On-site)"
  ],
  "jobs": [
+  {
+   "id": "4444102704",
+   "title": "Apprentice",
+   "company": "Adani Airport Holdings Ltd",
+   "matchedWatchlist": "Adani Group",
+   "isTech": false,
+   "roleSource": "gemini-enrich",
+   "logo": "/logos/adani-airport-holdings-ltd.jpg",
+   "location": "Mumbai, Maharashtra, India",
+   "workplaceType": "On-site",
+   "stipend": null,
+   "duration": null,
+   "applicants": null,
+   "easyApply": false,
+   "skills": [],
+   "summary": "Eligibility Criteria: - Trainee Screener (Apprentice) Education: Any Graduate As a Screener, you will be responsible for operating and monitoring this system to ensure compliance with security protocols and smooth baggage flow. The company will provide mandatory training to equip you with the necessary skills:",
+   "bullets": [
+    "Operate and monitor the In-Line Hold Baggage Handling System for security screening",
+    "Ensure compliance with security protocols and smooth baggage flow",
+    "Receive mandatory training in AVSEC, ILHBS, and Dangerous Goods Regulations",
+    "Opportunity for conversion to Supervisor on successful completion of certifications"
+   ],
+   "roleLabel": "Baggage Screener Operations",
+   "degreeLevel": "UG",
+   "degreeText": null,
+   "keySkills": [],
+   "stipendStatus": "unknown",
+   "postedText": "4 minutes ago",
+   "postedAt": 1785322702771,
+   "firstSeenAt": 1785322942777,
+   "url": "https://www.linkedin.com/jobs/view/4444102704/",
+   "applyUrl": "https://www.linkedin.com/jobs/view/4444102704/",
+   "description": null
+  },
   {
    "id": "4437784861",
    "title": "Trainee Specialist SCM",
