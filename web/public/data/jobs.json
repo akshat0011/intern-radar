@@ -1,7 +1,7 @@
 {
- "generatedAt": 1785414925297,
- "count": 355,
- "techCount": 70,
+ "generatedAt": 1785417633025,
+ "count": 356,
+ "techCount": 71,
  "otherCount": 285,
  "companies": [
   "A.P. Moller - Maersk",
@@ -133,6 +133,7 @@
   "Volvo Group",
   "Vymo",
   "WNS",
+  "Whatfix",
   "Wingify",
   "Wipro",
   "YES BANK",
@@ -225,6 +226,43 @@
   "West Bengal, India (On-site)"
  ],
  "jobs": [
+  {
+   "id": "4446765544",
+   "title": "AI Intern",
+   "company": "Whatfix",
+   "matchedWatchlist": "Whatfix",
+   "isTech": true,
+   "roleSource": "gemini-enrich",
+   "logo": "/logos/whatfix.jpg",
+   "location": "Bengaluru, Karnataka, India",
+   "workplaceType": "On-site",
+   "stipend": null,
+   "duration": null,
+   "applicants": null,
+   "easyApply": false,
+   "skills": [
+    "python",
+    "llm",
+    "rag"
+   ],
+   "summary": "Founded in 2014 by Khadim Batti and Vara Kumar, Whatfix is a leading global B2B SaaS provider and the largest pure-play enterprise digital adoption platform (DAP). Whatfix empowers companies to maximize the ROI of their digital investments across the application lifecycle, from ideation to training to the deployment of software. Driving user productivity, ensuring process compliance, and improving user experience of internal and customer-facing applications. Spearheading the category with serial innovation and unmatched customer-centricity, Whatfix is the only DAP innovating beyond the category, positioning…",
+   "bullets": [
+    "Work on AI agentification initiatives, replacing manual workflows with AI agents",
+    "Join a small, high-impact team working directly with senior leadership",
+    "Focus on intelligent process automation for internal functions like Sales, HR, Finance"
+   ],
+   "roleLabel": "AI agent development",
+   "degreeLevel": null,
+   "degreeText": null,
+   "keySkills": [],
+   "stipendStatus": "unknown",
+   "postedText": "19 minutes ago",
+   "postedAt": 1785415473351,
+   "firstSeenAt": 1785416613358,
+   "url": "https://www.linkedin.com/jobs/view/4446765544/",
+   "applyUrl": "https://www.linkedin.com/jobs/view/4446765544/",
+   "description": null
+  },
   {
    "id": "4446760254",
    "title": "Intern - Clinical Application Specialist",
