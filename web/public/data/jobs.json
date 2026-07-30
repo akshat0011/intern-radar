@@ -1,5 +1,5 @@
 {
- "generatedAt": 1785442134161,
+ "generatedAt": 1785446871700,
  "count": 368,
  "techCount": 72,
  "otherCount": 296,
@@ -241,7 +241,7 @@
    "company": "Urban Aakar",
    "matchedWatchlist": "Urban Company",
    "isTech": false,
-   "roleSource": "offline-fallback",
+   "roleSource": "gemini-enrich",
    "logo": "/logos/urban-aakar.jpg",
    "location": "Noida, Uttar Pradesh, India",
    "workplaceType": "Hybrid",
@@ -251,12 +251,23 @@
    "easyApply": true,
    "skills": [],
    "summary": "Company Description Urban Aakar is a multidisciplinary design and build studio focused on creating thoughtful, functional and aesthetically refined spaces while prioritizing environmental sustainability. Our work spans residential, hospitality and commercial environments with a strong emphasis on execution driven design, detail orientation and seamless project delivery. We are looking for a motivated and detail-oriented Architectural Intern to join our growing team.",
-   "bullets": [],
-   "roleLabel": null,
-   "degreeLevel": null,
+   "bullets": [
+    "Assist with architectural drawings, layouts, and technical documentation",
+    "Support 3D modeling, concept development, and create presentation graphics",
+    "Participate in site visits to understand execution workflows",
+    "Work with AutoCAD, Photoshop, SketchUp, V-Ray/Lumion, and Adobe Creative Suite"
+   ],
+   "roleLabel": "Architectural design",
+   "degreeLevel": "Pursuing",
    "degreeText": null,
-   "keySkills": [],
-   "stipendStatus": "unknown",
+   "keySkills": [
+    "autocad",
+    "photoshop",
+    "sketchup",
+    "v-ray",
+    "lumion"
+   ],
+   "stipendStatus": "paid",
    "postedText": "17 minutes ago",
    "postedAt": 1785438888982,
    "firstSeenAt": 1785439908991,
@@ -386,7 +397,7 @@
    "company": "EY",
    "matchedWatchlist": "EY",
    "isTech": false,
-   "roleSource": "offline-fallback",
+   "roleSource": "gemini-enrich",
    "logo": "/logos/ey.jpg",
    "location": "Mumbai, Maharashtra, India",
    "workplaceType": "On-site",
@@ -398,11 +409,20 @@
     "excel"
    ],
    "summary": "Requisition Id: 1731208 EY is looking for Consultant. As a Consultant you will help the team deliver and contribute to the profitable growth by ensuring client engagements are executed in an efficient manner. Your Key Responsibilities",
-   "bullets": [],
-   "roleLabel": null,
+   "bullets": [
+    "Prepare and file individual tax returns and e-TDS returns",
+    "Draft submissions and represent clients before tax authorities",
+    "Advise on outbound/inbound structuring for employee movement, immigration, and provident fund",
+    "Work with MS Word, Excel, and PowerPoint to deliver tax solutions"
+   ],
+   "roleLabel": "Tax compliance",
    "degreeLevel": null,
    "degreeText": null,
-   "keySkills": [],
+   "keySkills": [
+    "ms word",
+    "excel",
+    "powerpoint"
+   ],
    "stipendStatus": "unknown",
    "postedText": "10 minutes ago",
    "postedAt": 1785435907794,
