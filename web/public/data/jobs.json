@@ -1,5 +1,5 @@
 {
- "generatedAt": 1785427704468,
+ "generatedAt": 1785429417171,
  "count": 360,
  "techCount": 71,
  "otherCount": 289,
@@ -265,7 +265,7 @@
    "company": "S&P Global",
    "matchedWatchlist": "S&P Global",
    "isTech": false,
-   "roleSource": "offline-fallback",
+   "roleSource": "gemini-enrich",
    "logo": "/logos/s-and-p-global.jpg",
    "location": "Ahmedabad, Gujarat, India",
    "workplaceType": "On-site",
@@ -280,11 +280,19 @@
     "excel"
    ],
    "summary": "Grade Level (for internal use): The Team: The Reference Data team works as a backbone of the S&P Global databases which maintains & delivers all the Entity level data for S&P Global products involving research centric data collection for profile information, entity & security level symbol linking, people data, corporate structure. Reference data integrates, maintains, manages, and delivers Cross Reference Identifiers (CUSIP, ISIN, etc.) at Entity and Security level. The team offers data maintenance of over 70 million securities & 100 million entities.",
-   "bullets": [],
-   "roleLabel": null,
-   "degreeLevel": null,
-   "degreeText": null,
-   "keySkills": [],
+   "bullets": [
+    "Ingest and maintain third-party data feeds, ensuring accurate information flow to clients",
+    "Work with reference data, including entity and security level data, cross-reference identifiers",
+    "Understand dataset workings, workflows, and work tools; basic knowledge of SQL",
+    "Opportunity to learn about market driving factors like Equity, Credit Ratings, Fixed Income"
+   ],
+   "roleLabel": "Reference Data Operations",
+   "degreeLevel": "UG/PG",
+   "degreeText": "Master's",
+   "keySkills": [
+    "sql",
+    "microsoft office"
+   ],
    "stipendStatus": "unknown",
    "postedText": "14 minutes ago",
    "postedAt": 1785423100411,
