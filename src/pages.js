@@ -24,7 +24,7 @@
 import { writeFileSync, mkdirSync, readdirSync, rmSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 
-export const SITE = 'https://www.internradar.online';
+export const SITE = 'https://www.internradar.info';
 
 /** HTML-escape. Company names and titles come from LinkedIn and are not trusted. */
 function esc(s) {
