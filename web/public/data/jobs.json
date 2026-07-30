@@ -1,8 +1,8 @@
 {
- "generatedAt": 1785404259989,
- "count": 344,
+ "generatedAt": 1785405863141,
+ "count": 345,
  "techCount": 69,
- "otherCount": 275,
+ "otherCount": 276,
  "companies": [
   "A.P. Moller - Maersk",
   "ALLEN",
@@ -38,6 +38,7 @@
   "Cyient Semiconductors",
   "D. E. Shaw India Private Limited",
   "DeHaat",
+  "Delhivery",
   "Deloitte",
   "Deutsche Bank",
   "EY",
@@ -221,6 +222,48 @@
   "West Bengal, India (On-site)"
  ],
  "jobs": [
+  {
+   "id": "4444577184",
+   "title": "Design Internship",
+   "company": "Delhivery",
+   "matchedWatchlist": "Delhivery",
+   "isTech": false,
+   "roleSource": "gemini-enrich",
+   "logo": "/logos/delhivery.jpg",
+   "location": "Bengaluru, Karnataka, India",
+   "workplaceType": "On-site",
+   "stipend": null,
+   "duration": null,
+   "applicants": null,
+   "easyApply": false,
+   "skills": [
+    "figma"
+   ],
+   "summary": "We are looking for creative and enthusiastic Design Interns to support the Marketing team in developing high-quality visual assets for national and regional campaigns. The intern will work closely with the marketing and design teams to create engaging creatives that strengthen the brand and improve campaign performance across digital channels. Key Responsibilities ● Design campaign creatives for digital marketing initiatives across Meta, Google, LinkedIn, and other platforms.",
+   "bullets": [
+    "Design campaign creatives for digital marketing across Meta, Google, LinkedIn, and other platforms",
+    "Create social media posts, banners, display ads, email creatives, and promotional assets",
+    "Work with Adobe Photoshop, Illustrator, Figma, Canva, and basic video editing tools like Premiere Pro",
+    "Collaborate with marketing to translate campaign objectives into compelling visuals"
+   ],
+   "roleLabel": "Graphic design",
+   "degreeLevel": "Pursuing",
+   "degreeText": null,
+   "keySkills": [
+    "adobe photoshop",
+    "adobe illustrator",
+    "figma",
+    "canva",
+    "adobe premiere pro"
+   ],
+   "stipendStatus": "unknown",
+   "postedText": "9 minutes ago",
+   "postedAt": 1785405204546,
+   "firstSeenAt": 1785405744553,
+   "url": "https://www.linkedin.com/jobs/view/4444577184/",
+   "applyUrl": "https://www.linkedin.com/jobs/view/4444577184/",
+   "description": null
+  },
   {
    "id": "4444552300",
    "title": "Apprentice",
