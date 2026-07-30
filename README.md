@@ -1,409 +1,103 @@
-# LinkedIn internship watcher
+# Intern Radar
 
-Every hour, opens Brave and checks LinkedIn for internships just posted at the
-companies on your watchlist, pulls out the details, and hands
-you an HTML report — plus a public site students can browse.
+**Be early.**
 
-It does **not** apply for you. It finds and summarises; you click Apply.
+### 🔗 [www.internradar.info](https://www.internradar.info)
 
----
-
-## Read this first
-
-**Automated scraping is against LinkedIn's Terms of Service.** LinkedIn can
-restrict or ban accounts for it. The pacing is deliberately slow and the volume
-small: **one** search paginated to exhaustion, then all the filtering done
-locally. Checking 860 companies costs nothing extra, because the company match
-happens in memory against cards already on screen — no per-company request. That
-keeps it well below the thresholds that usually trigger enforcement, but it
-cannot make the risk zero. You are choosing to accept that.
-
-**Request volume is what gets accounts banned**, far more than total runtime.
-That is why the design pushes work into local filtering rather than more
-queries. Visiting one jobs page per company would be ~880 loads a run against
-the ~10–30 this does, for the same result.
-
-Three design choices follow from it:
-
-- **It stops rather than pushes through.** A CAPTCHA, a rate-limit banner, or an
-  expired session ends the run. Nothing retries in a loop. After a rate limit it
-  refuses to run again for 24 hours.
-- **It never solves CAPTCHAs.** It pings you — sound, notification, and a modal
-  dialog — brings the window forward, and waits up to 12 minutes for you to
-  solve it, then carries on where it left off.
-- **It never submits an application** and never types your password. You sign in
-  by hand, once.
-
-It also does not open recruiter or poster profiles. That matters: LinkedIn's
-"commercial use limit" is a *profile-view* limit, so staying inside `/jobs/`
-keeps this tool out of that budget entirely.
+A free job board for engineering internships in India, built for students who keep finding the
+good postings two days late.
 
 ---
 
-## Setup
+## The problem
 
-```bash
-cd ~/Desktop/projects/tbd && npm install
-```
+A popular internship collects hundreds of applicants within a day of going up. By the time a
+posting reaches you through a WhatsApp group or a weekly newsletter, you're applicant number four
+hundred — and at that point your resume matters less than your timing.
 
-Sign in once. This opens a Brave window using a profile belonging to the tool —
-not your everyday Brave profile, because Playwright cannot share a profile with
-a running browser, and Chromium refuses remote debugging on the default one:
+Checking LinkedIn ten times a day works. Nobody actually does it.
 
-```bash
-npm run login
-```
+## What Intern Radar does
 
-Type your own credentials in that window. The script waits for the session
-cookie to appear and never reads what you typed. The session persists, so this
-is a one-time step until LinkedIn expires it.
+It checks for you, every 30 minutes, and puts what it finds on one page — newest first, with the
+details you actually decide on already pulled out of the posting.
 
-While you are in that window, click the Brave lion and set **Shields down for
-linkedin.com**. Not strictly required, but it keeps your browser fingerprint
-stable between runs instead of being randomised each session.
+No account. No signup. No email. Open it and read it.
 
-Now set your location in **`config.json`** — one value covers every search:
+## What's on the site
 
-```json
-"defaultLocation": "India"
-```
-
-`searches` is a single broad entry — `internship`. That one query, paginated
-until LinkedIn runs out of Next, returns every internship in the window; the
-filtering then happens locally, which is free. Role-specific keywords were tried
-and removed: they cost a full pagination pass each and found nothing the broad
-sweep missed.
-
-The watchlist itself lives in **`companies.json`** — about 860 companies with an
-India presence, grouped by sector (global tech, semiconductor, Indian IT
-services, quant/trading, fintech, SaaS, deeptech, edtech, healthtech,
-logistics, media/gaming, cybersecurity, automotive/aerospace, FMCG).
-
-- **To narrow coverage**, delete whole groups from that file.
-- **To add your own**, put them in the `companies` list in `config.json`; the
-  two are merged.
-
-`aliases` exist because LinkedIn lists subsidiaries under their own names — a
-Google posting may appear as "YouTube". Matching is normalised and whole-word,
-so `"Razorpay"` already catches "Razorpay Software Private Limited" while
-`"Ola"` does *not* match "Solar Industries".
-
-Test before scheduling anything:
-
-```bash
-npm run dry-run
-```
-
-One search, one page, at most three job details, then it opens the report. Watch
-the Brave window — you should see it scroll the list and click through postings
-at a human pace.
-
-Then schedule it:
-
-```bash
-npm run install-schedule
-```
-
-### The Desktop problem
-
-The installer will **stop and refuse** if the project is in `~/Desktop`,
-`~/Documents` or `~/Downloads`. That is not fussiness. Those folders are
-TCC-protected, and a job started by launchd runs as a bare interpreter with no
-stable code signature — so it gets no permission grant. It works perfectly when
-you run it in Terminal (which already has a grant) and then fails silently at
-the next scheduled slot, which is the worst possible failure mode.
-
-The fix, which keeps `cd ~/Desktop/projects/tbd` working via a symlink:
-
-```bash
-bash bin/install-schedule.sh --relocate
-```
-
----
-
-## The public site
-
-`web/` is a separate, deployable site where students browse the listings and
-tailor a resume to any of them.
-
-```
-you run npm start  →  scraper finds jobs  →  writes web/public/data/jobs.json
-                   →  commits + pushes    →  Vercel redeploys  →  live in ~1 min
-```
-
-Preview it locally at <http://localhost:4321>:
-
-```bash
-npm run web
-```
-
-**Deploying.** Import the GitHub repo at [vercel.com/new](https://vercel.com/new),
-set **Root Directory** to `web`, and add the environment variables:
-
-| Variable | Value |
-| --- | --- |
-| `GEMINI_API_KEY` | from [aistudio.google.com/apikey](https://aistudio.google.com/apikey) — free, no card |
-| `GEMINI_MODEL` | optional, default `gemini-2.5-flash` |
-| `TAILOR_DISABLED` | set to `true` to switch tailoring off instantly |
-| `RATE_LIMIT_PER_IP_HOURLY` | default 5 |
-| `RATE_LIMIT_PER_IP_DAILY` | default 15 |
-| `RATE_LIMIT_GLOBAL_DAILY` | default 200 — keep at or under your Gemini daily quota |
-
-**About the resume tailoring.** It rewrites what the student already has — it
-reorders, rephrases, and re-emphasises to match the job. It is explicitly
-forbidden from adding a skill, employer, date or metric that is not in the
-source resume, and a server-side check strips any skill that appears in the
-output but not the input, telling the student exactly what was removed. It also
-lists what the job asks for that their resume does not evidence. A tool that
-quietly pads a resume is handing a student a fraudulent document.
-
-Resume text is held in memory for the length of one request and never written
-to disk or logged.
-
-**A note on cost and privacy.** The whole thing runs on free tiers — Vercel
-Hobby for hosting, Gemini's free tier for tailoring — so there is nothing to
-pay and no card on file. The tradeoff is that Google's free tier permits them
-to use submitted data to improve their models, and students are uploading
-resumes. The upload screen says so in plain language before anyone picks a
-file; **do not remove that notice.** If you ever move to a paid Gemini tier,
-that permission no longer applies and the notice can be softened.
-
-The rate limits exist because the free quota is shared by everyone using the
-site — without them one person could exhaust the day's allowance before lunch.
-Requests are validated before they count against the limit, so a student who
-mistypes six times has not burned their hourly allowance.
-
-**Company logos.** Each job card on LinkedIn carries the employer's logo, so the
-URL comes free with a page we are already loading. It is **downloaded once**
-into `web/public/logos/` and served from your own site rather than hotlinked:
-LinkedIn's CDN links are signed and carry an expiry, so a hotlinked logo would
-silently break after a few weeks and would point every visitor at LinkedIn.
-Anything that is not a real image, is over 400 KB, or fails to download is
-skipped, and the card falls back to a coloured badge with the company's
-initials. The browser falls back too — if a stored file ever goes missing the
-image removes itself and the initials show through, with no layout shift.
-
-**What is published.** Company, role, stipend, location, work mode, duration,
-the generated summary, and a link to the original posting. Full job descriptions
-are deliberately *not* republished — they are the posting company's copyrighted
-text. Set `publish.includeFullDescription` to `true` in `config.json` if you
-want them anyway, understanding what that means.
-
----
-
-## Commands
-
-| Command | What it does |
-| --- | --- |
-| `npm run login` | One-time interactive LinkedIn sign-in |
-| `npm run dry-run` | Small test scan (1 search, 1 page, 3 jobs) |
-| `npm start` | Full scan now, exactly as the schedule runs it |
-| `npm run report` | Open the most recent report |
-| `npm test` | Run the extraction unit tests |
-| `node bin/show-report.js --runs` | History of past runs and their counts |
-| `node bin/show-report.js --skipped` | Companies seen but skipped — use this to tune the watchlist |
-| `node bin/show-report.js --roles` | Role-classifier decisions — use this to tune the software filter |
-| `node bin/show-report.js --learned` | Terms learned from Gemini, now decided offline |
-| `npm run install-schedule` | Register the hourly LaunchAgent |
-| `npm run uninstall-schedule` | Remove the schedule (keeps your data) |
-
-Add `--force` to override an active cooldown: `node src/index.js --force`.
-
----
-
-## How a scan works
-
-1. **Warm up.** Loads your feed first and idles a few seconds, the way a session
-   normally starts, rather than deep-linking cold into a filtered search URL.
-2. **Confirm the session.** Checks the `li_at` cookie *and* the page chrome.
-   LinkedIn will serve a public job page to a signed-out visitor that looks
-   perfectly healthy — without this check the tool would scrape that and store
-   worse data thinking all was well.
-3. **Search.** One broad boolean query, sorted newest-first (`sortBy=DD`), and
-   paginated until LinkedIn's own Next control runs out — the only reliable
-   proof the result set is exhausted.
-
-   The lookback window is **sized from the gap since the last successful run**,
-   not fixed. After a normal hourly run it is ~3 hours; after an overnight
-   sleep it stretches to cover the whole gap, capped at 36. This matters at an
-   hourly cadence: a fixed 30-hour window would re-paginate a full day of
-   postings every hour to find the newest one, for roughly ten times the page
-   loads and no extra coverage.
-4. **Read the list without clicking.** The results column is virtualised, so it
-   gets scrolled in small steps to force every card to render; title, company,
-   location and posted-time are then read straight off the cards.
-   **It then keeps turning pages until LinkedIn's own "Next" button runs out**,
-   which is the only reliable proof that every job in the window has been seen.
-   A page count is never assumed.
-5. **Company first.** The employer is the first thing checked. A posting from a
-   company not on your watchlist is dropped immediately — no title parsing, no
-   role classification, no API call. That is what keeps the classifier budget
-   spent only on jobs that could actually be published.
-
-   What survives is then checked for being an internship at all (by title, since
-   LinkedIn's employment-type tag proved unreliable) and opened. Hundreds of
-   cards get read; a handful get opened, and all the filtering is free.
-
-6. **Classify the role.** Every captured job is labelled tech or non-tech.
-
-   Most titles are settled offline and free by the vocabulary in `src/roles.js`.
-   Only the ones it *cannot* settle reach Gemini — a bare "Trainee", an
-   "Apprentice", or a title resting on nothing but the word "Engineer". Those get
-   their **description** read instead, because "Graduate Engineer Trainee" is
-   automotive R&D at Valeo and software at Wipro, and only the description tells
-   them apart.
-
-   **It learns.** Gemini also names the phrase its decision turned on, and that
-   phrase joins the offline vocabulary — so the next title containing it is
-   answered instantly, with no API call. The classifier gets better and the API
-   gets called less the longer this runs. Review what it has picked up:
-
-   ```bash
-   node bin/show-report.js --learned
-   ```
-
-   Nothing is learned unvetted: the phrase must actually appear in the posting
-   (so the model cannot invent vocabulary), must not contradict a built-in rule
-   (a hand-written term with tests behind it wins), and must be a sane length. A
-   term Gemini later contradicts itself on is deleted rather than left to
-   flip-flop.
-
-6b. **Old behaviour, for reference.** Every captured job is labelled tech or non-tech.
-   Gemini does it in **one batched request per run** — not one per job, because
-   on a free tier the request count is the scarce resource. Before that call is
-   even made, the offline vocabulary in `src/roles.js` has already assigned a
-   verdict, so if the key is missing, the quota is spent, or the network is
-   down, the offline verdict simply stands. **No job is ever left unclassified
-   because an API was unavailable.**
-
-   Non-tech roles at watchlist companies are **not discarded** — they are
-   published under the site's *Other roles* tab. Only the company gate throws
-   anything away.
-
-   Put your key in a `.env` file at the project root (see `.env.example`). It
-   has to live there rather than in your shell profile: launchd gives a
-   scheduled run almost no environment, so an exported variable would never
-   reach it.
-
-7. **Extract.** Full description, applicant count, salary badge, apply target.
-8. **Summarise and store.** Stipend, duration, work mode and skills are parsed
-   out; the description is condensed. Everything lands in SQLite so the same job
-   is never reported twice.
-9. **Report.** A self-contained HTML page, plus a notification.
-
----
-
-## Tuning
-
-**`matching.requireCompanyMatch`** — the important one. `true` (default) opens
-only watchlist companies. `false` captures *every* internship in the last 24
-hours: much slower, much higher risk.
-
-**`pacing`** — `[min, max]` millisecond ranges, randomised per action. Defaults
-put 4–9s between job clicks and a 45–90s break every 12 jobs. **Raising these
-lowers your risk.** Anything under 1.5s between cards is rejected outright.
-`startupJitter` adds a random 0–15 min to scheduled runs so activity does not
-land at exactly the same second every slot.
-
-**`limits`** — backstops, not the normal stopping point: 90 minutes, 40 pages
-per search (≈1000 results, LinkedIn's own ceiling), 60 jobs opened. Paging
-normally ends when the Next button runs out, well before any of these. If a cap
-*does* bite, the report says so explicitly — it never truncates silently and
-calls it finished.
-
-**`filters.jobTypes`** — LinkedIn's own internship filter (`f_JT=I`). Recruiters
-routinely mislabel internships as full-time, so setting this to `[]` and relying
-on `matching.titleMustMatch` catches more, at the cost of extra pages.
-
-**`browser.headed`** — must stay `true`. The tool refuses to start otherwise.
-Headless Chromium announces itself in the user agent and reports an 800×600
-screen, and you could not solve a CAPTCHA in a window you cannot see.
-
-**`summarizer.mode`** — `"offline"` (default) is regex plus sentence scoring:
-free, no API key. Set `"claude"` and export `ANTHROPIC_API_KEY` for better
-summaries at a fraction of a cent per job.
-
----
-
-## Where things live
-
-Runtime state deliberately sits outside the project, for the TCC reason above:
-
-```
-~/Library/Application Support/linkedin-watcher/
-    jobs.db                 every job ever seen, for deduplication
-    brave-profile/          the tool's Brave profile, holding your session
-    reports/latest.html     the most recent report
-    screenshots/            captured automatically when something goes wrong
-~/Library/Logs/linkedin-watcher/run.log
-```
-
-`brave-profile/` contains a live LinkedIn session. Treat it like a password.
-
-Only `config.json` lives in the project, and it is the only file you need to
-edit.
-
----
-
-## Troubleshooting
-
-**"No LinkedIn session yet"** → `npm run login`.
-
-**"Not signed in — the li_at session cookie is missing or expired"** → LinkedIn
-logged you out. `npm run login` again.
-
-**Report is empty but you expected jobs** → `node bin/show-report.js --runs`. If
-`cards_seen` is healthy but `new_jobs` is 0, the filters worked and nothing new
-came from your watchlist. If `cards_seen` is 0, see below.
-
-**Zero results run after run** → this is the normal state, not a fault. A
-watchlist of large companies posts internships rarely; the tool is a tripwire
-for the moment one does, not a daily digest. To check that assumption rather
-than trust it:
-
-```bash
-node bin/show-report.js --skipped
-```
-
-That lists the companies that keep appearing and getting skipped. If they are
-all tiny agencies you have never heard of, the filter is doing its job. If you
-recognise names worth working for, add them to `config.json`.
-
-Also check `node bin/show-report.js --roles`. If genuine software roles are
-sitting in the "could not decide" list, the classifier is silently dropping
-matches and needs a term added.
-
-**"Job list rendered 0 cards … LinkedIn changed its markup"** → the expected
-failure mode over time. LinkedIn rotates its CSS class names. This error is
-deliberately loud so it cannot be mistaken for "no jobs today"; the selectors in
-`src/linkedin.js` need updating, and a screenshot in `screenshots/` shows what
-the page actually looked like.
-
-**No notifications** → notification banners from a launchd job are unreliable on
-macOS; delivery is attributed to a host app with no Notification Center
-registration. That is why anything urgent also plays a sound and opens a modal
-dialog. `brew install terminal-notifier` makes banners work properly — the tool
-uses it automatically if present.
-
-**Did the schedule run?**
-
-```bash
-tail -20 ~/Library/Logs/linkedin-watcher/run.log
-```
-
-**It never fires** → check `launchctl print-disabled gui/$(id -u) | grep watcher`
-(the disabled flag lives outside the plist and survives reboots), and check
-System Settings → General → Login Items & Extensions, where macOS lets you
-switch the agent off.
-
-**Asleep at a slot** → launchd fires once shortly after you open the lid, and
-coalesces several missed slots into a single run rather than replaying each one.
-**Powered off at a slot** → that slot is dropped and does not catch up; the next
-hour is the recovery. Either way nothing is lost, because the run widens its own
-lookback window to cover however long the gap was.
-
-**Two runs never overlap.** A run takes a lock on start and releases it at the
-end, so a slot that fires while the previous run is still going is skipped
-rather than launching a second browser against the same profile. The lock
-self-expires after `maxRuntimeMinutes`, so a crashed run cannot wedge the
-schedule. Keep `maxRuntimeMinutes` comfortably under 60.
+**Fresh listings, clearly labelled.** Every card shows how old the posting is. Under an hour is
+marked *just posted*; under a day is *new*. That label is the whole point — it tells you whether
+applying is still worth it.
+
+**Only the roles worth your time.** Around 900 companies are watched, from global tech and
+semiconductors through Indian fintech, SaaS, banking and deeptech. Listings are split into two
+tabs — **Engineering** and **Everything else** — so a software internship never gets buried under
+sales and telecalling roles.
+
+**The facts up front, not buried in a wall of text.** Each listing shows the stipend, how long the
+internship runs, the location and whether it's remote, hybrid or on-site, which degree it's open
+to, and the key skills asked for — read out of the description, so you don't have to open five
+tabs to compare two roles.
+
+**Filter it down.** Narrow by company, location or workplace type. Show only paid roles, or only
+Easy Apply ones. Sort by newest, by stipend, or by company.
+
+**Apply at the source.** Every listing links straight to the original posting. Intern Radar finds
+and summarises — you apply on the real thing.
+
+**A page per listing.** Every internship has its own shareable page, so you can send someone one
+job instead of "go look at the site".
+
+Works on a phone, has a dark mode, and remembers which one you picked.
+
+## Tailor your resume to a listing
+
+Pick any internship, upload your resume as a PDF, and get a version rewritten to target that
+specific role — then download it as a PDF or copy the text.
+
+Two rules it won't break:
+
+- **It never invents anything.** It reorders, rephrases and re-emphasises what's already in your
+  resume. Every skill in the output is checked against your original, and anything you didn't
+  claim is stripped out. A tool that quietly adds Kubernetes because the job mentions Kubernetes
+  is handing you a false document to send to a real employer.
+- **It never stores your resume.** Your PDF is read inside your own browser — the file itself
+  never leaves your device. The text is held for the length of one request, then discarded.
+  Nothing is written down, nothing is logged.
+
+The rewriting runs on Google's Gemini free tier, which permits Google to use submitted data to
+improve their models. You're told that on the upload screen before you choose a file, because you
+should get to decide it with the facts in front of you.
+
+## Right now
+
+| | |
+|---|---|
+| Live internships | ~340 |
+| Engineering roles | ~70 |
+| Companies represented | ~135 |
+| Locations | ~76 |
+| Refreshed | every 30 minutes |
+| Listings expire after | 14 days |
+
+Postings drop off after two weeks. An internship older than that is usually closed or already has
+hundreds of applicants, and showing it would work against the one thing this site is for.
+
+## Built with
+
+Node.js, SQLite, Playwright and the Gemini API, on a static site hosted by Vercel — with a single
+production dependency.
+
+## A note on the data
+
+Listings are collected from public LinkedIn job postings, which is against LinkedIn's terms of
+service. The collector runs on a fixed schedule at low volume and stops immediately if it's asked
+to, and Intern Radar shows only its own summary of each role and links back to the original — it
+deliberately does not republish the employer's job description, which is their copyrighted text.
+
+## Licence
+
+MIT — see [LICENSE](LICENSE).
+
+Built by [Akshat Saroha](https://github.com/akshat0011).
