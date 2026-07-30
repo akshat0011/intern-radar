@@ -1,8 +1,8 @@
 {
- "generatedAt": 1785402418276,
- "count": 343,
+ "generatedAt": 1785404259989,
+ "count": 344,
  "techCount": 69,
- "otherCount": 274,
+ "otherCount": 275,
  "companies": [
   "A.P. Moller - Maersk",
   "ALLEN",
@@ -128,6 +128,7 @@
   "Vizonis | Advance Excel | SQL | Microsoft Power BI | Tableau",
   "Volvo Group",
   "Vymo",
+  "WNS",
   "Wingify",
   "Wipro",
   "YES BANK",
@@ -208,6 +209,7 @@
   "Tamil Nadu, India",
   "Telangana, India",
   "Telangana, India (On-site)",
+  "Thane, Maharashtra, India",
   "Thiruvananthapuram, Kerala, India",
   "Uttar Pradesh, India",
   "Uttar Pradesh, India (On-site)",
@@ -219,6 +221,40 @@
   "West Bengal, India (On-site)"
  ],
  "jobs": [
+  {
+   "id": "4444552300",
+   "title": "Apprentice",
+   "company": "WNS",
+   "matchedWatchlist": "WNS Global Services",
+   "isTech": false,
+   "roleSource": "gemini-enrich",
+   "logo": "/logos/wns.jpg",
+   "location": "Thane, Maharashtra, India",
+   "workplaceType": "On-site",
+   "stipend": null,
+   "duration": null,
+   "applicants": "14 applicants",
+   "easyApply": true,
+   "skills": [],
+   "summary": "WNS is hiring for Travel Process !!! 🔹 Role: Apprentice (1 year - Travel Operations) 🔹 Shift: Rotational shifts 🔹 Location: WNS Hiranandani Estate, Thane West",
+   "bullets": [
+    "Deliver high-quality operational support in travel operations after training",
+    "Follow process updates, work instruction manuals, and standard operating procedures",
+    "Achieve productivity, quality, and accuracy targets monthly",
+    "Work rotational and night shifts from the Thane office"
+   ],
+   "roleLabel": "Travel operations",
+   "degreeLevel": null,
+   "degreeText": null,
+   "keySkills": [],
+   "stipendStatus": "unknown",
+   "postedText": "59 minutes ago",
+   "postedAt": 1785400604051,
+   "firstSeenAt": 1785404144057,
+   "url": "https://www.linkedin.com/jobs/view/4444552300/",
+   "applyUrl": "https://www.linkedin.com/jobs/view/4444552300/",
+   "description": null
+  },
   {
    "id": "4444537637",
    "title": "Business Development Intern",
