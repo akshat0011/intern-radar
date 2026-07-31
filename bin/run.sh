@@ -44,6 +44,23 @@ fi
 
 echo "$(date '+%Y-%m-%d %H:%M:%S') [START] node=$NODE args=$*" >> "$LOG"
 
+# ---------------------------------------------------------------------------
+# ATS boards first, and deliberately so.
+#
+# This half needs no browser, no login and no pacing — it is JSON over HTTPS
+# from endpoints built to be read — so it is both the cheapest and the most
+# likely to succeed. Running it BEFORE the scan means a Brave that will not
+# launch costs us the LinkedIn half of the slot and nothing else; run it after
+# and a launch failure would take the whole slot down with it.
+#
+# --no-publish because the scan publishes once at the end, and publishing twice
+# in a slot would mean two commits and two deploys for one round of collection.
+# If the scan then fails before publishing, the next slot picks these up: they
+# are already in the database.
+# ---------------------------------------------------------------------------
+"$NODE" --no-warnings=ExperimentalWarning "$HERE/bin/poll-ats.js" --no-publish >> "$LOG" 2>&1
+echo "$(date '+%Y-%m-%d %H:%M:%S') [ATS EXIT $?]" >> "$LOG"
+
 "$NODE" --no-warnings=ExperimentalWarning "$HERE/src/index.js" "$@" >> "$LOG" 2>&1
 STATUS=$?
 
