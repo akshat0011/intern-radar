@@ -6,7 +6,7 @@
   <atom:link href="https://www.internradar.info/feed.xml" rel="self" type="application/rss+xml"/>
   <description>New engineering internships, listed within minutes of going live.</description>
   <language>en-in</language>
-  <lastBuildDate>Fri, 31 Jul 2026 15:32:52 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 31 Jul 2026 15:48:24 GMT</lastBuildDate>
   <item>
     <title>Full Stack Developer Intern — Multiplier AI</title>
     <link>https://www.internradar.info/jobs/multiplier-ai-full-stack-developer-intern-4447525184</link>
@@ -27,16 +27,6 @@
 • Work on an AI platform that helps users adopt enterprise applications and AI tools
 • Contribute to products like Digital Adoption, Product Analytics, and Mirror
 • Help build AI-first products such as Seek and Mirror 2.0</description>
-  </item>
-  <item>
-    <title>Intern — Valeo</title>
-    <link>https://www.internradar.info/jobs/valeo-intern-4447293922</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/valeo-intern-4447293922</guid>
-    <pubDate>Fri, 31 Jul 2026 12:29:33 GMT</pubDate>
-    <description>Company: Valeo · Location: Chennai, Tamil Nadu, India
-• Work in R&amp;D within the Artificial Intelligence department
-• Focus on high-tech solutions for mobility, intuitive driving, and CO2 reduction
-• Join a global company with over 20,000 engineers in R&amp;D</description>
   </item>
   <item>
     <title>Intern — Valeo</title>
@@ -78,17 +68,6 @@
     <description>Company: Intel · Location: Bengaluru, Karnataka, India
 • Work on SoC validation as an M.Tech graduate in Electronics, Telecommunications, or Computer Science
 • This role is eligible for a hybrid work model, splitting time between on-site and off-site</description>
-  </item>
-  <item>
-    <title>Product Intern — Newton School</title>
-    <link>https://www.internradar.info/jobs/newton-school-product-intern-4447272576</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/newton-school-product-intern-4447272576</guid>
-    <pubDate>Fri, 31 Jul 2026 07:19:07 GMT</pubDate>
-    <description>Company: Newton School · Location: Bengaluru, Karnataka, India
-• Ideate and develop product requirements, leading the overall product development
-• Collaborate with Engineering and Design to build and launch products
-• Produce high-quality product specifications and manage scope for timely delivery
-• Track performance metrics and leverage data for product improvements</description>
   </item>
   <item>
     <title>Research Intern (Quantum Computing) — Fujitsu</title>
@@ -217,17 +196,6 @@
 • Collaborate with Engineering, Design, and Customer Success teams for product launches</description>
   </item>
   <item>
-    <title>Apprentice — American Express</title>
-    <link>https://www.internradar.info/jobs/american-express-apprentice-4446053874</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/american-express-apprentice-4446053874</guid>
-    <pubDate>Wed, 29 Jul 2026 11:16:58 GMT</pubDate>
-    <description>Company: American Express · Location: Gurugram, Haryana, India · Duration: 0–1 years
-• Support data quality enablement and monitoring for Unified Marketing Data Layer (UMDL) products
-• Run SQL and BigQuery checks to validate data completeness, accuracy, consistency, and timeliness
-• Prepare Excel-based trackers and dashboards to report data quality trends and open issues
-• Work with product, business, and technology partners to analyze exceptions and support remediation</description>
-  </item>
-  <item>
     <title>Product Management Intern — NewGen Innovation : AI &amp; Design Thinking</title>
     <link>https://www.internradar.info/jobs/newgen-innovation-ai-and-design-thinking-product-management-intern-4443670910</link>
     <guid isPermaLink="true">https://www.internradar.info/jobs/newgen-innovation-ai-and-design-thinking-product-management-intern-4443670910</guid>
@@ -281,17 +249,6 @@
 • Work with an AI Architect and engineering mentor for a year</description>
   </item>
   <item>
-    <title>Summer 2027 Intern - Software Engineer — Salesforce</title>
-    <link>https://www.internradar.info/jobs/salesforce-summer-2027-intern-software-engineer-4446350750</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/salesforce-summer-2027-intern-software-engineer-4446350750</guid>
-    <pubDate>Tue, 28 Jul 2026 18:57:27 GMT</pubDate>
-    <description>Company: Salesforce · Location: Hyderabad, Telangana, India · Duration: 12 months
-• Contribute to software engineering aspects for future releases as part of a Scrum team
-• Design, develop, test, and deploy software products, integrating solutions into distributed systems
-• Develop optimized code, contribute to automated tests and testing infrastructure
-• Help monitor cloud services with real-time tools and frameworks</description>
-  </item>
-  <item>
     <title>AI Software Intern / Trainee - Pune, India — Panasonic Avionics Corporation</title>
     <link>https://www.internradar.info/jobs/panasonic-avionics-corporation-ai-software-intern-trainee-pune-india-4443296738</link>
     <guid isPermaLink="true">https://www.internradar.info/jobs/panasonic-avionics-corporation-ai-software-intern-trainee-pune-india-4443296738</guid>
@@ -301,17 +258,6 @@
 • Support building, testing, and evaluating machine learning models and MLOps workflows
 • Participate in code reviews, debugging, and CI/CD processes
 • Work with Python, Java, C++, or JavaScript</description>
-  </item>
-  <item>
-    <title>Graduate Apprentice Trainee — Volvo Group</title>
-    <link>https://www.internradar.info/jobs/volvo-group-graduate-apprentice-trainee-4446333277</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/volvo-group-graduate-apprentice-trainee-4446333277</guid>
-    <pubDate>Tue, 28 Jul 2026 16:21:57 GMT</pubDate>
-    <description>Company: Volvo Group · Location: Bengaluru, Karnataka, India
-• Work on-the-job for one year, learning applications, processes, and methodologies
-• Learn soft skills, work culture, ethics, and organizational behavior
-• Use Python, AI &amp; ML, and UiPath
-• This is a paid apprenticeship for recent graduates</description>
   </item>
   <item>
     <title>Technology Apprentice Program — Fiserv</title>
@@ -334,17 +280,6 @@
 • Translate complex business requirements into actionable insights and technology outcomes
 • Contribute to system design and solution architecture, ensuring scalability and performance
 • Work with cloud technologies to build and optimize data-driven applications</description>
-  </item>
-  <item>
-    <title>Intern - Technical — Siemens Healthineers</title>
-    <link>https://www.internradar.info/jobs/siemens-healthineers-intern-technical-4443288648</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/siemens-healthineers-intern-technical-4443288648</guid>
-    <pubDate>Tue, 28 Jul 2026 13:24:01 GMT</pubDate>
-    <description>Company: Siemens Healthineers · Location: Bengaluru, Karnataka, India
-• Assist in the design, development, testing, and debugging of software components
-• Write clean, well-structured, and maintainable code under guidance
-• Support verification, validation, and documentation of features and fixes
-• Work from the office five days a week, using C#, C++, Java, or Python</description>
   </item>
   <item>
     <title>intern — eClerx</title>
@@ -434,28 +369,6 @@
 • Work with PyTorch, Python, NumPy, SciPy, OpenCV, and Git</description>
   </item>
   <item>
-    <title>Apprentice — American Express</title>
-    <link>https://www.internradar.info/jobs/american-express-apprentice-4445109913</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/american-express-apprentice-4445109913</guid>
-    <pubDate>Mon, 27 Jul 2026 11:33:20 GMT</pubDate>
-    <description>Company: American Express · Location: Gurugram, Haryana, India · Duration: 11 months
-• Support financial and accounting processes, preparing entries and routine month-close tasks
-• Prepare standard financial reports and perform basic data analysis using spreadsheets
-• Collaborate with other Finance teams and provide tactical support to ongoing projects
-• Work with MS-Office, Python, SQL, and Power Apps</description>
-  </item>
-  <item>
-    <title>Apprentice — American Express</title>
-    <link>https://www.internradar.info/jobs/american-express-apprentice-4445128037</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/american-express-apprentice-4445128037</guid>
-    <pubDate>Mon, 27 Jul 2026 11:32:55 GMT</pubDate>
-    <description>Company: American Express · Location: Gurugram, Haryana, India · Duration: 11 months
-• Execute merchant data validation for Global Amex Offers and manage investigations/complaints
-• Drive efficiency and risk reduction through automation/AI in campaign execution
-• Work with Power BI, Excel, PPT, VBA, Tableau, Python, and SAS
-• This is a marketing operations role within US Consumer Services Business</description>
-  </item>
-  <item>
     <title>Software Engineer (Technical Implementation) - Apprentice — State Street</title>
     <link>https://www.internradar.info/jobs/state-street-software-engineer-technical-implementation-apprentice-4445943048</link>
     <guid isPermaLink="true">https://www.internradar.info/jobs/state-street-software-engineer-technical-implementation-apprentice-4445943048</guid>
@@ -524,6 +437,89 @@
 • Explore, identify, and document new bugs, communicating their impact to developers and support
 • Collaborate with Engineering, QE, Product Management, Documentation, and product build teams
 • Work with Python, Golang, or similar programming languages</description>
+  </item>
+  <item>
+    <title>Site Reliability Engineering Intern — Red Hat</title>
+    <link>https://www.internradar.info/jobs/red-hat-site-reliability-engineering-intern-4444345488</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/red-hat-site-reliability-engineering-intern-4444345488</guid>
+    <pubDate>Sat, 25 Jul 2026 12:26:02 GMT</pubDate>
+    <description>Company: Red Hat · Location: Pune Division, Maharashtra, India
+• Write code to make the service more scalable and reliable, guided by a senior mentor
+• Add software tests and do peer review inside a small agile SRE team
+• Python or Golang on Linux, with public cloud basics expected
+• Pune-based, and Red Hat will not sponsor a visa for this role</description>
+  </item>
+  <item>
+    <title>Apprentice — American Express</title>
+    <link>https://www.internradar.info/jobs/american-express-apprentice-4444366894</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/american-express-apprentice-4444366894</guid>
+    <pubDate>Sat, 25 Jul 2026 12:25:26 GMT</pubDate>
+    <description>Company: American Express · Location: Gurugram, Haryana, India · Duration: 11 months
+• Help build and maintain credit-loss forecasting models for international portfolios
+• Automate reporting with Python, SQL and Excel; build dashboards for stakeholders
+• Dig through large datasets for trends, variances and emerging portfolio risk
+• Use Copilot and custom GPTs in the workflow; office 3 days a week</description>
+  </item>
+  <item>
+    <title>Engineering Intern - Class of 2026 — Eightfold AI</title>
+    <link>https://www.internradar.info/jobs/eightfold-ai-engineering-intern-class-of-2026-4445324844</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/eightfold-ai-engineering-intern-class-of-2026-4445324844</guid>
+    <pubDate>Sat, 25 Jul 2026 12:23:28 GMT</pubDate>
+    <description>Company: Eightfold AI · Location: Noida, Uttar Pradesh, India · Duration: 6 months
+• Build and debug services on distributed systems and AI platforms holding TBs of data
+• Fix issues in production alongside engineers, product managers and designers
+• Python, TensorFlow, SQL, React, Spark, Solr, Docker and a long list of AWS services
+• 6-month full-time in-person stint, needs 2026 graduation and CGPA 8.0+</description>
+  </item>
+  <item>
+    <title>Software Engineering Intern — Red Hat</title>
+    <link>https://www.internradar.info/jobs/red-hat-software-engineering-intern-4444351407</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/red-hat-software-engineering-intern-4444351407</guid>
+    <pubDate>Sat, 25 Jul 2026 12:23:00 GMT</pubDate>
+    <description>Company: Red Hat · Location: Bengaluru, Karnataka, India
+• Write and maintain Python or Go code with a senior mentor
+• Add features and chase bugs in Red Hat products like RHEL and OpenShift
+• Projects across Global Engineering touching Ansible, OpenShift and AI
+• Pune or Bangalore, in an intern cohort; no visa sponsorship</description>
+  </item>
+  <item>
+    <title>Software Engineering Intern — Red Hat</title>
+    <link>https://www.internradar.info/jobs/red-hat-software-engineering-intern-4444342572</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/red-hat-software-engineering-intern-4444342572</guid>
+    <pubDate>Sat, 25 Jul 2026 12:22:24 GMT</pubDate>
+    <description>Company: Red Hat · Location: Pune Division, Maharashtra, India
+• Write and maintain Python or Go code with a senior mentor
+• Add features and chase bugs in Red Hat products like RHEL and OpenShift
+• Projects across Global Engineering touching Ansible, OpenShift and AI
+• Pune or Bangalore, in an intern cohort; no visa sponsorship</description>
+  </item>
+  <item>
+    <title>Intern - Founder&#39;s office — boAt Lifestyle</title>
+    <link>https://www.internradar.info/jobs/boat-lifestyle-intern-founder-s-office-4444949837</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/boat-lifestyle-intern-founder-s-office-4444949837</guid>
+    <pubDate>Sat, 25 Jul 2026 12:01:59 GMT</pubDate>
+    <description>Company: boAt Lifestyle · Location: Mumbai, Maharashtra, India · Duration: 3 months
+• Crunch large datasets for trends, risks and growth opportunities
+• Build dashboards and business reviews that feed leadership decisions
+• Excel/Sheets plus SQL, Power BI or Tableau; AI tools for research and automation
+• 3 months full-time in Mumbai, sitting with the founder strategy team</description>
+  </item>
+  <item>
+    <title>Interim Engineering Intern (1 Year)- Hardware — Qualcomm</title>
+    <link>https://www.internradar.info/jobs/qualcomm-interim-engineering-intern-1-year-hardware-4376089162</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/qualcomm-interim-engineering-intern-1-year-hardware-4376089162</guid>
+    <pubDate>Sat, 25 Jul 2026 11:58:06 GMT</pubDate>
+    <description>Company: Qualcomm · Location: Bengaluru, Karnataka, India</description>
+  </item>
+  <item>
+    <title>Graduate Engineer Trainee — Wipro</title>
+    <link>https://www.internradar.info/jobs/wipro-graduate-engineer-trainee-4444632445</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/wipro-graduate-engineer-trainee-4444632445</guid>
+    <pubDate>Sat, 25 Jul 2026 11:49:41 GMT</pubDate>
+    <description>Company: Wipro · Location: Noida, Uttar Pradesh, India
+• Prepare test data and run basic database checks for assigned tasks
+• Assist unit testing, verify expected results and document them in set formats
+• Domain is Health and Welfare (HW) tech, listed as the mandatory skill</description>
   </item>
 </channel>
 </rss>

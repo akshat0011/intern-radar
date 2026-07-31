@@ -116,6 +116,79 @@ export async function writeJobsFile(store, cfg) {
     })
     .map(({ row, matchedNow }) => ({ row, matchedNow }));
 
+  // ---- one posting, two collectors -----------------------------------------
+  // The scraper and the ATS poller find the same role independently: a company
+  // posts to its ATS, and the LinkedIn copy appears later. Both are stored,
+  // because each is the truth about where it was seen — but the site must show
+  // it once.
+  //
+  // The ATS row wins on a tie. It carries the employer's real apply URL rather
+  // than a LinkedIn redirect, its posted date is the actual publish time rather
+  // than "3 days ago" parsed from a card, and it arrived first. Where neither is
+  // from an ATS, the row we saw first wins, so the freshness label stays honest.
+  // Company and title alone are not enough to call two rows the same job.
+  // Bajaj Finserv lists "Functional Trainee" in Ranchi, Sandila, Rasulpur,
+  // Lucknow, Pune, Bareilly, Bengaluru and Bhopal — eight real vacancies a
+  // student would choose between, and keying on company+title would silently
+  // publish one and throw seven away.
+  //
+  // But the city has to be compared loosely, because the two collectors write it
+  // differently: the ATS says "Bangalore" where LinkedIn says "Bengaluru,
+  // Karnataka, India". So the key uses a canonical city rather than the raw
+  // string, and falls back to the whole normalised location when the city is not
+  // one we recognise.
+  const CITY_ALIASES = new Map(Object.entries({
+    bangalore: 'bengaluru', bengaluru: 'bengaluru',
+    gurgaon: 'gurugram', gurugram: 'gurugram',
+    bombay: 'mumbai', mumbai: 'mumbai',
+    'new delhi': 'delhi', delhi: 'delhi', noida: 'noida',
+    calcutta: 'kolkata', kolkata: 'kolkata',
+    madras: 'chennai', chennai: 'chennai',
+    hyderabad: 'hyderabad', pune: 'pune', ahmedabad: 'ahmedabad',
+    jaipur: 'jaipur', indore: 'indore', kochi: 'kochi', chandigarh: 'chandigarh',
+    mysore: 'mysuru', mysuru: 'mysuru',
+    trivandrum: 'thiruvananthapuram', thiruvananthapuram: 'thiruvananthapuram',
+    vizag: 'visakhapatnam', visakhapatnam: 'visakhapatnam',
+    coimbatore: 'coimbatore', nagpur: 'nagpur', bhopal: 'bhopal',
+    lucknow: 'lucknow', ranchi: 'ranchi', bareilly: 'bareilly',
+    bhubaneswar: 'bhubaneswar', remote: 'remote',
+  }));
+
+  const cityOf = (location) => {
+    const flat = String(location ?? '').toLowerCase();
+    if (!flat.trim()) return '';
+    for (const [alias, canonical] of CITY_ALIASES) {
+      if (new RegExp(`\\b${alias}\\b`).test(flat)) return canonical;
+    }
+    return flat.replace(/[^a-z0-9]+/g, ' ').trim();
+  };
+
+  const dedupeKey = (row) => {
+    const norm = (s) => String(s ?? '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+    return `${norm(row.company_matched || row.company)}|${norm(row.title)}|${cityOf(row.location)}`;
+  };
+  const isAts = (row) => String(row.job_id ?? '').startsWith('ats:');
+
+  const bestByKey = new Map();
+  for (const entry of jobs) {
+    const key = dedupeKey(entry.row);
+    const existing = bestByKey.get(key);
+    if (!existing) { bestByKey.set(key, entry); continue; }
+
+    const challengerWins = isAts(entry.row) !== isAts(existing.row)
+      ? isAts(entry.row)
+      : (entry.row.first_seen_at ?? 0) < (existing.row.first_seen_at ?? 0);
+
+    if (challengerWins) bestByKey.set(key, entry);
+  }
+  const deduped = [...bestByKey.values()];
+  const collapsed = jobs.length - deduped.length;
+  if (collapsed) {
+    log.info(`Collapsed ${collapsed} duplicate posting${collapsed === 1 ? '' : 's'} found by both collectors.`);
+  }
+  jobs.length = 0;
+  jobs.push(...deduped);
+
   // Fetch any logo we do not already hold, then resolve every job to a local path.
   const logoIndex = await syncLogos(
     jobs.map(({ row, matchedNow }) => ({ company: row.company || matchedNow || '', logoUrl: row.logo_url })),

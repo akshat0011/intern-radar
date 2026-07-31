@@ -164,6 +164,11 @@
     "_mode_note": "'offline' = regex/extractive summary, no API key, free. 'claude' = better summaries via the Claude API; set ANTHROPIC_API_KEY in your environment and change this to 'claude'.",
     "model": "claude-haiku-4-5-20251001"
   },
+  "ats": {
+    "maxPostingAgeDays": 30,
+    "_maxPostingAgeDays_note": "How old an ATS posting may be and still be collected. The LinkedIn scan never needed this because it searches with a time window; an ATS board has none and lists whatever is still open, so the first real poll surfaced roles 159 and 214 days old. Being first to a seven-month-old listing is not being early.",
+    "_note": "Applicant-tracking-system job boards - the source LinkedIn copies from. Discovery is cached in the company_ats table by bin/discover-ats.js; bin/poll-ats.js reads it. No browser and no ToS problem: these are the public endpoints a company careers page calls to render itself."
+  },
   "enrich": {
     "perRunLimit": 24,
     "backfillPerRun": 6,

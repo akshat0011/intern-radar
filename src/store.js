@@ -122,6 +122,61 @@ export class Store {
   }
 
   /** Postings that still need a Gemini pass — enriched rows are never re-sent. */
+  /**
+   * Which ATS board each company uses, if any.
+   *
+   * Created on demand rather than in SCHEMA so that an existing database picks
+   * it up without a migration step — same additive-only rule as everywhere else.
+   * A row with provider NULL is a recorded miss, not missing data: it stops the
+   * next discovery run re-probing a company that has no public board.
+   */
+  ensureAtsTable() {
+    this.db.exec(`
+      CREATE TABLE IF NOT EXISTS company_ats (
+        company     TEXT PRIMARY KEY,
+        provider    TEXT,
+        token       TEXT,
+        job_count   INTEGER DEFAULT 0,
+        checked_at  INTEGER NOT NULL,
+        last_polled INTEGER
+      );
+      CREATE INDEX IF NOT EXISTS idx_ats_provider ON company_ats(provider);
+    `);
+  }
+
+  getAts(company) {
+    return this.db.prepare('SELECT * FROM company_ats WHERE lower(company) = lower(?)').get(company) ?? null;
+  }
+
+  saveAts(company, provider, token, jobCount) {
+    this.db.prepare(`
+      INSERT INTO company_ats (company, provider, token, job_count, checked_at)
+      VALUES (?, ?, ?, ?, ?)
+      ON CONFLICT(company) DO UPDATE SET
+        provider = excluded.provider,
+        token = excluded.token,
+        job_count = excluded.job_count,
+        checked_at = excluded.checked_at
+    `).run(company, provider, token, jobCount ?? 0, Date.now());
+  }
+
+  /** Every company with a board worth polling. */
+  atsBoards() {
+    return this.db.prepare(
+      'SELECT company, provider, token, job_count, last_polled FROM company_ats WHERE provider IS NOT NULL ORDER BY company',
+    ).all();
+  }
+
+  markAtsPolled(company) {
+    this.db.prepare('UPDATE company_ats SET last_polled = ? WHERE lower(company) = lower(?)').run(Date.now(), company);
+  }
+
+  atsStats() {
+    const total = this.db.prepare('SELECT COUNT(*) n FROM company_ats').get().n;
+    const resolved = this.db.prepare('SELECT COUNT(*) n FROM company_ats WHERE provider IS NOT NULL').get().n;
+    return { total, resolved };
+  }
+
   needingEnrichment(limit = 500) {
     return this.db.prepare(`
       SELECT job_id, title, company, description, salary_text AS stipend

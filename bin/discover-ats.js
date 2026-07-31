@@ -1,0 +1,110 @@
+#!/usr/bin/env node
+/**
+ * Work out which ATS job board each watchlist company uses, once, and remember it.
+ *
+ *   node bin/discover-ats.js                 probe every company not yet resolved
+ *   node bin/discover-ats.js --all           re-probe everything, including known
+ *   node bin/discover-ats.js --limit 50      stop after 50 companies
+ *   node bin/discover-ats.js --company "Meesho"
+ *
+ * This is the expensive half of the ATS integration and the reason it is a
+ * separate script rather than part of a scan: a company's ATS changes maybe once
+ * every few years, while the postings on it change hourly. Discovery is cached
+ * in the database; the poller just reads the cache.
+ *
+ * Companies that resolve to nothing are recorded too, with the time they were
+ * checked, so repeated runs do not re-probe the same misses every night.
+ */
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
+import { ROOT } from '../src/paths.js';
+import { Store } from '../src/store.js';
+import { discover, PROVIDER_NAMES } from '../src/ats.js';
+import { log } from '../src/logger.js';
+
+const ARGS = process.argv.slice(2);
+const has = (f) => ARGS.includes(f);
+const valueOf = (f) => { const i = ARGS.indexOf(f); return i >= 0 ? ARGS[i + 1] : null; };
+
+const REDISCOVER_ALL = has('--all');
+const LIMIT = Number(valueOf('--limit') ?? 0) || null;
+const ONLY = valueOf('--company');
+const CONCURRENCY = Number(valueOf('--concurrency') ?? 6);
+/** Re-check a company that previously resolved to nothing after this long. */
+const MISS_TTL_DAYS = 30;
+
+function watchlistNames() {
+  const file = JSON.parse(readFileSync(join(ROOT, 'companies.json'), 'utf8'));
+  const names = [];
+  for (const [group, entries] of Object.entries(file)) {
+    if (group === '_note' || !Array.isArray(entries)) continue;
+    for (const e of entries) names.push(typeof e === 'string' ? e : e?.name);
+  }
+  const cfg = JSON.parse(readFileSync(join(ROOT, 'config.json'), 'utf8'));
+  for (const e of cfg.companies ?? []) names.push(typeof e === 'string' ? e : e?.name);
+  return [...new Set(names.filter(Boolean))];
+}
+
+const store = new Store();
+store.ensureAtsTable();
+
+let names = ONLY ? [ONLY] : watchlistNames();
+
+if (!REDISCOVER_ALL && !ONLY) {
+  const cutoff = Date.now() - MISS_TTL_DAYS * 86_400_000;
+  names = names.filter((n) => {
+    const row = store.getAts(n);
+    if (!row) return true;
+    if (row.provider) return false;              // already resolved
+    return (row.checked_at ?? 0) < cutoff;       // a stale miss is worth re-checking
+  });
+}
+
+if (LIMIT) names = names.slice(0, LIMIT);
+
+if (!names.length) {
+  console.log('Nothing to discover — every company is already resolved or recently checked.');
+  store.close();
+  process.exit(0);
+}
+
+console.log(`Probing ${names.length} companies across ${PROVIDER_NAMES.length} providers (concurrency ${CONCURRENCY})…\n`);
+
+let done = 0;
+let found = 0;
+const byProvider = new Map();
+
+async function worker(queue) {
+  while (queue.length) {
+    const name = queue.shift();
+    if (!name) break;
+    let hit = null;
+    try {
+      hit = await discover(name);
+    } catch (err) {
+      log.debug(`${name}: discovery error ${err.message}`);
+    }
+    done++;
+
+    if (hit) {
+      found++;
+      byProvider.set(hit.provider, (byProvider.get(hit.provider) ?? 0) + 1);
+      store.saveAts(name, hit.provider, hit.token, hit.count);
+      console.log(`  ✓ ${name.padEnd(34)} ${hit.provider.padEnd(16)} ${String(hit.count).padStart(4)} roles`);
+    } else {
+      store.saveAts(name, null, null, 0);
+    }
+
+    if (done % 50 === 0) console.log(`  … ${done}/${names.length} checked, ${found} found`);
+  }
+}
+
+const queue = [...names];
+await Promise.all(Array.from({ length: CONCURRENCY }, () => worker(queue)));
+
+console.log(`\n=== ${found}/${names.length} resolved (${Math.round((found / names.length) * 100)}%) ===`);
+for (const [p, n] of [...byProvider.entries()].sort((a, b) => b[1] - a[1])) {
+  console.log(`  ${p.padEnd(18)} ${n}`);
+}
+console.log('\nStored in the company_ats table. Run bin/poll-ats.js to collect postings.');
+store.close();
