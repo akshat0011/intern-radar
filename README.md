@@ -19,7 +19,7 @@ Checking LinkedIn ten times a day works. Nobody actually does it.
 
 ## What Intern Radar does
 
-It checks for you, every 30 minutes, and puts what it finds on one page — newest first, with the
+It checks for you, every 15 minutes, and puts what it finds on one page — newest first, with the
 details you actually decide on already pulled out of the posting.
 
 No account. No signup. No email. Open it and read it.
@@ -30,10 +30,9 @@ No account. No signup. No email. Open it and read it.
 marked *just posted*; under a day is *new*. That label is the whole point — it tells you whether
 applying is still worth it.
 
-**Only the roles worth your time.** Around 900 companies are watched, from global tech and
-semiconductors through Indian fintech, SaaS, banking and deeptech. Listings are split into two
-tabs — **Engineering** and **Everything else** — so a software internship never gets buried under
-sales and telecalling roles.
+**Engineering roles only.** Around 900 companies are watched, from global tech and semiconductors
+through Indian fintech, SaaS, banking and deeptech — and everything non-technical is filtered out
+before it reaches the site. No sales, no telecalling, no content roles to scroll past.
 
 **The facts up front, not buried in a wall of text.** Each listing shows the stipend, how long the
 internship runs, the location and whether it's remote, hybrid or on-site, which degree it's open
@@ -48,6 +47,11 @@ and summarises — you apply on the real thing.
 
 **A page per listing.** Every internship has its own shareable page, so you can send someone one
 job instead of "go look at the site".
+
+**A feed, so you don't have to remember to check.** New roles are published to
+[RSS](https://www.internradar.info/feed.xml) and
+[JSON Feed](https://www.internradar.info/feed.json) — point a reader at it and being early stops
+depending on your habits.
 
 Works on a phone, has a dark mode, and remembers which one you picked.
 
@@ -74,11 +78,9 @@ should get to decide it with the facts in front of you.
 
 | | |
 |---|---|
-| Live internships | ~340 |
-| Engineering roles | ~70 |
-| Companies represented | ~135 |
-| Locations | ~76 |
-| Refreshed | every 30 minutes |
+| Live engineering internships | ~80 |
+| Companies represented | ~53 |
+| Refreshed | every 15 minutes |
 | Listings expire after | 14 days |
 
 Postings drop off after two weeks. An internship older than that is usually closed or already has

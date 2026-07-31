@@ -1,0 +1,609 @@
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "Intern Radar — engineering internships in India",
+  "home_page_url": "https://www.internradar.info/",
+  "feed_url": "https://www.internradar.info/feed.json",
+  "description": "New engineering internships, listed within minutes of going live.",
+  "items": [
+    {
+      "id": "https://www.internradar.info/jobs/newton-school-of-technology-product-intern-4446988446",
+      "url": "https://www.internradar.info/jobs/newton-school-of-technology-product-intern-4446988446",
+      "title": "Product Intern — Newton School of Technology",
+      "content_text": "Company: Newton School of Technology · Location: Bengaluru, Karnataka, India\n• Ideate and develop product requirements, leading the overall product development\n• Collaborate with Engineering and Design to build and launch products\n• Produce high-quality product specifications and manage scope for timely delivery\n• Track performance metrics and leverage data for product improvements",
+      "date_published": "2026-07-31T07:40:40.557Z",
+      "authors": [
+        {
+          "name": "Newton School of Technology"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/intel-soc-validation-engineer-intern-4446997136",
+      "url": "https://www.internradar.info/jobs/intel-soc-validation-engineer-intern-4446997136",
+      "title": "SoC Validation Engineer Intern — Intel",
+      "content_text": "Company: Intel · Location: Bengaluru, Karnataka, India\n• Work on SoC validation as an M.Tech graduate in Electronics, Telecommunications, or Computer Science\n• This role is eligible for a hybrid work model, splitting time between on-site and off-site",
+      "date_published": "2026-07-31T07:29:03.688Z",
+      "authors": [
+        {
+          "name": "Intel"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/newton-school-product-intern-4447272576",
+      "url": "https://www.internradar.info/jobs/newton-school-product-intern-4447272576",
+      "title": "Product Intern — Newton School",
+      "content_text": "Company: Newton School · Location: Bengaluru, Karnataka, India\n• Ideate and develop product requirements, leading the overall product development\n• Collaborate with Engineering and Design to build and launch products\n• Produce high-quality product specifications and manage scope for timely delivery\n• Track performance metrics and leverage data for product improvements",
+      "date_published": "2026-07-31T07:19:07.459Z",
+      "authors": [
+        {
+          "name": "Newton School"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/fujitsu-research-intern-quantum-computing-4447272252",
+      "url": "https://www.internradar.info/jobs/fujitsu-research-intern-quantum-computing-4447272252",
+      "title": "Research Intern (Quantum Computing) — Fujitsu",
+      "content_text": "Company: Fujitsu · Location: Bangalore Urban, Karnataka, India · Duration: 3 months\n• Conduct original research in open quantum systems, thermalisation, and quantum algorithms\n• Work with the Quantum R&D Division, contributing to the Quantum Computing Stack\n• Requires strong background in open quantum systems, statistical physics, and linear algebra\n• Programming experience in Python is preferred; 3-6 month physical internship in Bangalore",
+      "date_published": "2026-07-31T07:00:03.103Z",
+      "authors": [
+        {
+          "name": "Fujitsu"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/noise-intern-product-nfa-4446948754",
+      "url": "https://www.internradar.info/jobs/noise-intern-product-nfa-4446948754",
+      "title": "Intern - Product (NFA) — Noise",
+      "content_text": "Company: Noise · Location: Gurugram, Haryana, India\n• Work with Product Managers on the full product lifecycle, from research to launch\n• Write PRDs, user stories, and feature specs; analyze product data using SQL\n• Collaborate with design on wireframes in Figma and engineering on sprints in Jira\n• Conduct market research, synthesize user feedback, and support A/B testing",
+      "date_published": "2026-07-31T01:02:08.758Z",
+      "authors": [
+        {
+          "name": "Noise"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/volvo-group-graduate-apprentice-trainee-sw-verification-4447210792",
+      "url": "https://www.internradar.info/jobs/volvo-group-graduate-apprentice-trainee-sw-verification-4447210792",
+      "title": "Graduate apprentice trainee - SW Verification — Volvo Group",
+      "content_text": "Company: Volvo Group · Location: Bengaluru, Karnataka, India\n• Support test planning, execution, and analysis for vehicle systems\n• Assist in creating and executing test cases for electrical and software systems\n• Analyze test data, report anomalies, and document results for continuous improvement",
+      "date_published": "2026-07-30T23:03:57.190Z",
+      "authors": [
+        {
+          "name": "Volvo Group"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/barclays-2027-technology-developer-summer-internship-programme-india-4445050175",
+      "url": "https://www.internradar.info/jobs/barclays-2027-technology-developer-summer-internship-programme-india-4445050175",
+      "title": "2027 Technology Developer Summer Internship Programme India — Barclays",
+      "content_text": "Company: Barclays · Location: Pune Division, Maharashtra, India\n• Develop and deliver high-quality software solutions using industry-aligned languages and tools\n• Collaborate with product managers, designers, and engineers on requirements and strategies\n• Participate in code reviews, adhere to secure coding practices, and implement unit testing",
+      "date_published": "2026-07-30T22:04:03.067Z",
+      "authors": [
+        {
+          "name": "Barclays"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/quest-global-ai-ml-intern-4446793926",
+      "url": "https://www.internradar.info/jobs/quest-global-ai-ml-intern-4446793926",
+      "title": "AI/ML Intern — Quest Global",
+      "content_text": "Company: Quest Global · Location: Pune Division, Maharashtra, India",
+      "date_published": "2026-07-30T17:08:04.966Z",
+      "authors": [
+        {
+          "name": "Quest Global"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/whatfix-ai-intern-4446765544",
+      "url": "https://www.internradar.info/jobs/whatfix-ai-intern-4446765544",
+      "title": "AI Intern — Whatfix",
+      "content_text": "Company: Whatfix · Location: Bengaluru, Karnataka, India\n• Work on AI agentification initiatives, replacing manual workflows with AI agents\n• Join a small, high-impact team working directly with senior leadership\n• Focus on intelligent process automation for internal functions like Sales, HR, Finance",
+      "date_published": "2026-07-30T12:44:33.351Z",
+      "authors": [
+        {
+          "name": "Whatfix"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/philips-apprentice-trainee-software-developer-4446760255",
+      "url": "https://www.internradar.info/jobs/philips-apprentice-trainee-software-developer-4446760255",
+      "title": "Apprentice Trainee (Software Developer) — Philips",
+      "content_text": "Company: Philips · Location: Bengaluru, Karnataka, India\n• Work as a software developer apprentice trainee\n• Requires active student status/enrollment at a university, college, or vocational education",
+      "date_published": "2026-07-30T11:41:13.407Z",
+      "authors": [
+        {
+          "name": "Philips"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/icertis-intern-4446851335",
+      "url": "https://www.internradar.info/jobs/icertis-intern-4446851335",
+      "title": "Intern — Icertis",
+      "content_text": "Company: Icertis · Location: Pune City, Maharashtra, India · Duration: 6 months\n• Support Program Manager by tracking plans, milestones, and deliverables\n• Coordinate meetings, document minutes, and follow up on action items with stakeholders\n• Collect project data, prepare status reports, dashboards, and executive presentations\n• Maintain RAID logs, track escalations, and assist in identifying project risks",
+      "date_published": "2026-07-29T19:52:51.543Z",
+      "authors": [
+        {
+          "name": "Icertis"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/bajaj-finserv-trainee-technology-4446847089",
+      "url": "https://www.internradar.info/jobs/bajaj-finserv-trainee-technology-4446847089",
+      "title": "Trainee Technology — Bajaj Finserv",
+      "content_text": "Company: Bajaj Finserv · Location: Pune Division, Maharashtra, India",
+      "date_published": "2026-07-29T18:30:35.872Z",
+      "authors": [
+        {
+          "name": "Bajaj Finserv"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/pw-physicswallah-generative-ai-engineer-intern-4446804823",
+      "url": "https://www.internradar.info/jobs/pw-physicswallah-generative-ai-engineer-intern-4446804823",
+      "title": "Generative AI Engineer Intern — PW (PhysicsWallah)",
+      "content_text": "Company: PW (PhysicsWallah) · Location: Noida, Uttar Pradesh, India · Stipend: ₹20,000 / month · Duration: 6 months\n• Design, build, and deploy AI agents and automated workflows for internal operations\n• Integrate LLM APIs (Claude) with internal tools and data sources\n• Build no-code/low-code automations (n8n) and custom Python solutions\n• Test, debug, and iterate on agents based on business team feedback",
+      "date_published": "2026-07-29T15:04:37.691Z",
+      "authors": [
+        {
+          "name": "PW (PhysicsWallah)"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/s-and-p-global-apprentice-software-development-engineering-4446406022",
+      "url": "https://www.internradar.info/jobs/s-and-p-global-apprentice-software-development-engineering-4446406022",
+      "title": "Apprentice, Software Development/Engineering — S&P Global",
+      "content_text": "Company: S&P Global · Location: Hyderabad, Telangana, India",
+      "date_published": "2026-07-29T14:51:34.450Z",
+      "authors": [
+        {
+          "name": "S&P Global"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/nokia-agentic-ai-and-automation-trainee-egypt-4444132578",
+      "url": "https://www.internradar.info/jobs/nokia-agentic-ai-and-automation-trainee-egypt-4444132578",
+      "title": "Agentic AI & Automation Trainee - Egypt — Nokia",
+      "content_text": "Company: Nokia · Location: Bengaluru, Karnataka, India\n• Support engineering teams in adopting AI coding assistants like GitHub Copilot and Claude Code\n• Design and implement Agentic AI workflows using frameworks like LangGraph\n• Contribute to LLM-based applications and RAG pipelines for intelligent automation\n• Configure and optimize development environments, IDEs, and engineering tools",
+      "date_published": "2026-07-29T14:43:39.106Z",
+      "authors": [
+        {
+          "name": "Nokia"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/greyorange-product-management-intern-4444110838",
+      "url": "https://www.internradar.info/jobs/greyorange-product-management-intern-4444110838",
+      "title": "Product Management Intern — GreyOrange",
+      "content_text": "Company: GreyOrange · Location: Gurugram, Haryana, India · Duration: 6 months\n• Define product requirements, user stories, and feature specifications with Product Managers\n• Conduct market, customer, and competitor research to find product opportunities\n• Analyze product usage and feedback to generate actionable insights for roadmap planning\n• Collaborate with Engineering, Design, and Customer Success teams for product launches",
+      "date_published": "2026-07-29T11:46:26.595Z",
+      "authors": [
+        {
+          "name": "GreyOrange"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/american-express-apprentice-4446053874",
+      "url": "https://www.internradar.info/jobs/american-express-apprentice-4446053874",
+      "title": "Apprentice — American Express",
+      "content_text": "Company: American Express · Location: Gurugram, Haryana, India · Duration: 0–1 years\n• Support data quality enablement and monitoring for Unified Marketing Data Layer (UMDL) products\n• Run SQL and BigQuery checks to validate data completeness, accuracy, consistency, and timeliness\n• Prepare Excel-based trackers and dashboards to report data quality trends and open issues\n• Work with product, business, and technology partners to analyze exceptions and support remediation",
+      "date_published": "2026-07-29T11:16:58.193Z",
+      "authors": [
+        {
+          "name": "American Express"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/newgen-innovation-ai-and-design-thinking-product-management-intern-4443670910",
+      "url": "https://www.internradar.info/jobs/newgen-innovation-ai-and-design-thinking-product-management-intern-4443670910",
+      "title": "Product Management Intern — NewGen Innovation : AI & Design Thinking",
+      "content_text": "Company: NewGen Innovation : AI & Design Thinking · Location: Mumbai, Maharashtra, India · Stipend: ₹35,000 / total · Duration: 1 to 2 years\n• Work with founders, AI engineers, and designers to build AI-powered products\n• Conduct customer and market research, gather requirements, and plan product roadmaps\n• Create wireframes, user journeys, and monitor product performance using analytics\n• 6-month on-site internship in Powai, with potential for a full-time offer",
+      "date_published": "2026-07-29T09:37:44.191Z",
+      "authors": [
+        {
+          "name": "NewGen Innovation : AI & Design Thinking"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/allen-grc-intern-4446049382",
+      "url": "https://www.internradar.info/jobs/allen-grc-intern-4446049382",
+      "title": "GRC Intern — ALLEN",
+      "content_text": "Company: ALLEN · Location: Bangalore Urban, Karnataka, India · Duration: 6–9 months\n• Support the Information Security and Compliance team, maintaining security, privacy, and governance frameworks\n• Collect audit evidence, maintain ISMS/PIMS documentation, risk registers, and compliance records\n• Work with ISO 27001, ISO 27701, DPDPA, and coordinate vendor security assessments\n• 6-9 month internship with potential for full-time offer based on performance",
+      "date_published": "2026-07-29T09:02:52.017Z",
+      "authors": [
+        {
+          "name": "ALLEN"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/mizuho-information-technology-apprentice-4435094310",
+      "url": "https://www.internradar.info/jobs/mizuho-information-technology-apprentice-4435094310",
+      "title": "Information Technology apprentice — Mizuho",
+      "content_text": "Company: Mizuho · Location: Navi Mumbai, Maharashtra, India\n• Help with helpdesk, Active Directory management, and unlocking applications\n• Troubleshoot and resolve IT issues, create IT documentation\n• Work in rotational shifts and on-call schedule for 1 year\n• Looking for recent IT graduates or postgraduates in or near Navi Mumbai",
+      "date_published": "2026-07-29T07:41:42.252Z",
+      "authors": [
+        {
+          "name": "Mizuho"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/pixxel-image-processing-intern-qa-qc-4446528118",
+      "url": "https://www.internradar.info/jobs/pixxel-image-processing-intern-qa-qc-4446528118",
+      "title": "Image processing Intern (QA/QC) — Pixxel",
+      "content_text": "Company: Pixxel · Location: Bengaluru, Karnataka, India · Duration: 0–1 years\n• Identify and flag issues like missing data, corrupted files, or incorrect geotagging\n• Document findings and collaborate with imaging and data engineering teams to resolve quality issues",
+      "date_published": "2026-07-29T00:45:04.016Z",
+      "authors": [
+        {
+          "name": "Pixxel"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/adobe-ai-engineer-apprentice-4445799105",
+      "url": "https://www.internradar.info/jobs/adobe-ai-engineer-apprentice-4445799105",
+      "title": "AI Engineer Apprentice — Adobe",
+      "content_text": "Company: Adobe · Location: Bengaluru East, Karnataka, India · Duration: 6 months\n• Learn Python, LLM APIs, and prompt design, then contribute to client projects\n• Build RAG components, test harnesses, and integrate tools under senior guidance\n• Shadow client sessions, prepare demos, and contribute to reusable asset library\n• Work with an AI Architect and engineering mentor for a year",
+      "date_published": "2026-07-28T22:35:24.224Z",
+      "authors": [
+        {
+          "name": "Adobe"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/salesforce-summer-2027-intern-software-engineer-4446350750",
+      "url": "https://www.internradar.info/jobs/salesforce-summer-2027-intern-software-engineer-4446350750",
+      "title": "Summer 2027 Intern - Software Engineer — Salesforce",
+      "content_text": "Company: Salesforce · Location: Hyderabad, Telangana, India · Duration: 12 months\n• Contribute to software engineering aspects for future releases as part of a Scrum team\n• Design, develop, test, and deploy software products, integrating solutions into distributed systems\n• Develop optimized code, contribute to automated tests and testing infrastructure\n• Help monitor cloud services with real-time tools and frameworks",
+      "date_published": "2026-07-28T18:57:27.967Z",
+      "authors": [
+        {
+          "name": "Salesforce"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/panasonic-avionics-corporation-ai-software-intern-trainee-pune-india-4443296738",
+      "url": "https://www.internradar.info/jobs/panasonic-avionics-corporation-ai-software-intern-trainee-pune-india-4443296738",
+      "title": "AI Software Intern / Trainee - Pune, India — Panasonic Avionics Corporation",
+      "content_text": "Company: Panasonic Avionics Corporation · Location: Pune Division, Maharashtra, India\n• Help develop AI applications using RAG, conversational AI, and AI Agents on AWS\n• Support building, testing, and evaluating machine learning models and MLOps workflows\n• Participate in code reviews, debugging, and CI/CD processes\n• Work with Python, Java, C++, or JavaScript",
+      "date_published": "2026-07-28T16:33:48.251Z",
+      "authors": [
+        {
+          "name": "Panasonic Avionics Corporation"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/volvo-group-graduate-apprentice-trainee-4446333277",
+      "url": "https://www.internradar.info/jobs/volvo-group-graduate-apprentice-trainee-4446333277",
+      "title": "Graduate Apprentice Trainee — Volvo Group",
+      "content_text": "Company: Volvo Group · Location: Bengaluru, Karnataka, India\n• Work on-the-job for one year, learning applications, processes, and methodologies\n• Learn soft skills, work culture, ethics, and organizational behavior\n• Use Python, AI & ML, and UiPath\n• This is a paid apprenticeship for recent graduates",
+      "date_published": "2026-07-28T16:21:57.547Z",
+      "authors": [
+        {
+          "name": "Volvo Group"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/fiserv-technology-apprentice-program-4445745465",
+      "url": "https://www.internradar.info/jobs/fiserv-technology-apprentice-program-4445745465",
+      "title": "Technology Apprentice Program — Fiserv",
+      "content_text": "Company: Fiserv · Location: Chennai, Tamil Nadu, India\n• Accelerate your growth in fintech through two structured assignments over two years\n• Gain hands-on experience, build technical and professional skills, and collaborate across teams\n• Receive formal training, mentorship, and exposure to senior leadership\n• This is an early career development program",
+      "date_published": "2026-07-28T15:19:49.824Z",
+      "authors": [
+        {
+          "name": "Fiserv"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/mu-sigma-inc-apprentice-leader-4443290829",
+      "url": "https://www.internradar.info/jobs/mu-sigma-inc-apprentice-leader-4443290829",
+      "title": "Apprentice Leader — Mu Sigma Inc.",
+      "content_text": "Company: Mu Sigma Inc. · Location: Bengaluru, Karnataka, India · Duration: 5–7 years\n• Leverage data analysis, data science, and engineering to develop scalable solutions\n• Translate complex business requirements into actionable insights and technology outcomes\n• Contribute to system design and solution architecture, ensuring scalability and performance\n• Work with cloud technologies to build and optimize data-driven applications",
+      "date_published": "2026-07-28T14:04:58.344Z",
+      "authors": [
+        {
+          "name": "Mu Sigma Inc."
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/siemens-healthineers-intern-technical-4443288648",
+      "url": "https://www.internradar.info/jobs/siemens-healthineers-intern-technical-4443288648",
+      "title": "Intern - Technical — Siemens Healthineers",
+      "content_text": "Company: Siemens Healthineers · Location: Bengaluru, Karnataka, India\n• Assist in the design, development, testing, and debugging of software components\n• Write clean, well-structured, and maintainable code under guidance\n• Support verification, validation, and documentation of features and fixes\n• Work from the office five days a week, using C#, C++, Java, or Python",
+      "date_published": "2026-07-28T13:24:01.787Z",
+      "authors": [
+        {
+          "name": "Siemens Healthineers"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/eclerx-intern-4437435575",
+      "url": "https://www.internradar.info/jobs/eclerx-intern-4437435575",
+      "title": "intern — eClerx",
+      "content_text": "Company: eClerx · Location: Mumbai, Maharashtra, India\n• Create visually compelling and highly usable interfaces for web and mobile applications\n• Develop wireframes, prototypes, and high-fidelity mockups\n• Collaborate with UX designers, product managers, and developers\n• Ensure designs are consistent with brand guidelines and design standards",
+      "date_published": "2026-07-28T12:50:07.608Z",
+      "authors": [
+        {
+          "name": "eClerx"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/harman-india-internship-tools-and-development-python-4443257825",
+      "url": "https://www.internradar.info/jobs/harman-india-internship-tools-and-development-python-4443257825",
+      "title": "Internship - Tools & Development (Python) — HARMAN India",
+      "content_text": "Company: HARMAN India · Location: Bengaluru, Karnataka, India\n• Develop and maintain automated test scripts using Python for embedded software\n• Create and execute test plans, cases, and reports to ensure software quality\n• Troubleshoot issues with software and hardware engineers\n• Work with Linux-based systems and contribute to CI/automation frameworks",
+      "date_published": "2026-07-28T10:53:09.751Z",
+      "authors": [
+        {
+          "name": "HARMAN India"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/collins-aerospace-intern-phm-and-digital-twin-4445484720",
+      "url": "https://www.internradar.info/jobs/collins-aerospace-intern-phm-and-digital-twin-4445484720",
+      "title": "Intern: PHM and Digital Twin — Collins Aerospace",
+      "content_text": "Company: Collins Aerospace · Location: Bengaluru, Karnataka, India · Duration: 6–8 months\n• Develop and validate deep learning models for prognostics in aerospace applications\n• Explore and integrate reliability modeling techniques, analyze datasets, and perform predictive analytics\n• Work with AI, Machine Learning, and Deep Learning for 6-8 months in Bengaluru",
+      "date_published": "2026-07-28T09:31:53.614Z",
+      "authors": [
+        {
+          "name": "Collins Aerospace"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/ideaforge-intern-web-mobile-app-developer-4442884354",
+      "url": "https://www.internradar.info/jobs/ideaforge-intern-web-mobile-app-developer-4442884354",
+      "title": "Intern - Web/Mobile App Developer — ideaForge",
+      "content_text": "Company: ideaForge · Location: Navi Mumbai, Maharashtra, India · Duration: 3 months\n• Code, test and deploy specific modules of the FleetDesk platform\n• Build secure web and mobile apps using AI development tools\n• Needs front-end, back-end, database and mobile app fundamentals\n• Paid, minimum three-month commitment",
+      "date_published": "2026-07-27T20:41:50.425Z",
+      "authors": [
+        {
+          "name": "ideaForge"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/deutsche-bank-apprentice-hiring-for-2026-2027-4445996778",
+      "url": "https://www.internradar.info/jobs/deutsche-bank-apprentice-hiring-for-2026-2027-4445996778",
+      "title": "Apprentice Hiring for 2026- 2027 — Deutsche Bank",
+      "content_text": "Company: Deutsche Bank · Location: Mumbai, Maharashtra, India\n• Build use cases with AI platforms to enhance existing risk analysis\n• Perform daily Historical Simulation VaR analysis and review other market risk metrics\n• Participate in projects like IBOR migration and automation of BAU activities using AI\n• Work with large datasets using MS Excel, MS Access, VBA, SQL, Python, and SAS",
+      "date_published": "2026-07-27T18:13:18.258Z",
+      "authors": [
+        {
+          "name": "Deutsche Bank"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/volvo-group-graduate-apprentice-trainee-4445954934",
+      "url": "https://www.internradar.info/jobs/volvo-group-graduate-apprentice-trainee-4445954934",
+      "title": "Graduate Apprentice Trainee — Volvo Group",
+      "content_text": "Company: Volvo Group · Location: Bengaluru, Karnataka, India\n• Create concepts based on QDCF prerequisites, focusing on conceptual thinking and multi-material assemblies\n• Apply knowledge of plastic/sheet metal part manufacturing processes, including tooling and molding\n• Work with proto manufacturing methods and consider plastic/sheet metal design aspects\n• Use CAD tools like CATIA V5/Creo for part modeling, surfacing, assembly, and detailing",
+      "date_published": "2026-07-27T16:22:53.419Z",
+      "authors": [
+        {
+          "name": "Volvo Group"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/ebay-data-science-intern-4442852361",
+      "url": "https://www.internradar.info/jobs/ebay-data-science-intern-4442852361",
+      "title": "Data Science Intern — eBay",
+      "content_text": "Company: eBay · Location: Bengaluru, Karnataka, India · Duration: 0–3 years\n• Transform massive datasets into insights using analytics, machine learning, and experimentation\n• Build models to segment users on the platform and apply statistical, ML, and deep analytical techniques\n• Work with SQL, Python, and NoSQL tools like Hadoop, Hive, Spark, Pig, H2O\n• Currently pursuing a Bachelor’s or Master’s, graduating in 2028",
+      "date_published": "2026-07-27T14:47:42.710Z",
+      "authors": [
+        {
+          "name": "eBay"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/siemens-healthineers-intern-technical-4442834690",
+      "url": "https://www.internradar.info/jobs/siemens-healthineers-intern-technical-4442834690",
+      "title": "Intern - Technical — Siemens Healthineers",
+      "content_text": "Company: Siemens Healthineers · Location: Bengaluru, Karnataka, India\n• Prepare and curate imaging datasets, including preprocessing, augmentation, and quality checks\n• Explore advanced deep learning model architectures for 3D medical image analysis\n• Develop reproducible pipelines for model training, validation, and benchmarking\n• Work with PyTorch, Python, NumPy, SciPy, OpenCV, and Git",
+      "date_published": "2026-07-27T13:39:43.034Z",
+      "authors": [
+        {
+          "name": "Siemens Healthineers"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/american-express-apprentice-4445109913",
+      "url": "https://www.internradar.info/jobs/american-express-apprentice-4445109913",
+      "title": "Apprentice — American Express",
+      "content_text": "Company: American Express · Location: Gurugram, Haryana, India · Duration: 11 months\n• Support financial and accounting processes, preparing entries and routine month-close tasks\n• Prepare standard financial reports and perform basic data analysis using spreadsheets\n• Collaborate with other Finance teams and provide tactical support to ongoing projects\n• Work with MS-Office, Python, SQL, and Power Apps",
+      "date_published": "2026-07-27T11:33:20.308Z",
+      "authors": [
+        {
+          "name": "American Express"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/american-express-apprentice-4445128037",
+      "url": "https://www.internradar.info/jobs/american-express-apprentice-4445128037",
+      "title": "Apprentice — American Express",
+      "content_text": "Company: American Express · Location: Gurugram, Haryana, India · Duration: 11 months\n• Execute merchant data validation for Global Amex Offers and manage investigations/complaints\n• Drive efficiency and risk reduction through automation/AI in campaign execution\n• Work with Power BI, Excel, PPT, VBA, Tableau, Python, and SAS\n• This is a marketing operations role within US Consumer Services Business",
+      "date_published": "2026-07-27T11:32:55.618Z",
+      "authors": [
+        {
+          "name": "American Express"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/state-street-software-engineer-technical-implementation-apprentice-4445943048",
+      "url": "https://www.internradar.info/jobs/state-street-software-engineer-technical-implementation-apprentice-4445943048",
+      "title": "Software Engineer (Technical Implementation) - Apprentice — State Street",
+      "content_text": "Company: State Street · Location: Hyderabad, Telangana, India · Duration: 0–2 years\n• Participate in product implementation and support activities for Charles River Investment Management Solution\n• Learn and assist in configuring application components based on business requirements\n• Write and execute SQL queries to analyze and validate application data\n• Assist in developing simple programs, utilities, and automation scripts using Java or C#",
+      "date_published": "2026-07-27T11:31:47.795Z",
+      "authors": [
+        {
+          "name": "State Street"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/newton-school-subject-matter-expert-intern-4445109675",
+      "url": "https://www.internradar.info/jobs/newton-school-subject-matter-expert-intern-4445109675",
+      "title": "Subject Matter Expert Intern — Newton School",
+      "content_text": "Company: Newton School · Location: Bengaluru, Karnataka, India\n• Interact with prospective learners, assessing technical aptitude and problem-solving skills\n• Use SQL and Excel to track metrics, analyze data, and uncover actionable insights, building simple dashboards",
+      "date_published": "2026-07-27T11:24:56.890Z",
+      "authors": [
+        {
+          "name": "Newton School"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/state-street-it-pmo-analyst-apprentice-4445930061",
+      "url": "https://www.internradar.info/jobs/state-street-it-pmo-analyst-apprentice-4445930061",
+      "title": "IT PMO Analyst- Apprentice — State Street",
+      "content_text": "Company: State Street · Location: Hyderabad, Telangana, India\n• Implement solutions to automate BAU processes using SharePoint, Python, C++, or Java\n• Maintain project artifacts, document lessons learned, and provide status reporting on assigned tasks\n• Track and monitor timesheets and dashboards, consolidating technical artifacts to meet SDLC standards",
+      "date_published": "2026-07-27T11:18:02.517Z",
+      "authors": [
+        {
+          "name": "State Street"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/adobe-apprentice-technical-consultant-4444878968",
+      "url": "https://www.internradar.info/jobs/adobe-apprentice-technical-consultant-4444878968",
+      "title": "Apprentice: Technical Consultant — Adobe",
+      "content_text": "Company: Adobe · Location: Bengaluru East, Karnataka, India · Duration: 6 months\n• Shadow and assist senior consultants in translating customer business requirements into technical solutions\n• Learn to create and integrate content-driven applications on Adobe Marketing Cloud and Commerce Cloud\n• Support post-implementation activities including testing, documentation, and customer assistance\n• Work with HTML, CSS, JavaScript, databases, SQL, and potentially Java, Python, PHP, React, Angular",
+      "date_published": "2026-07-27T10:48:01.196Z",
+      "authors": [
+        {
+          "name": "Adobe"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/valeo-graduate-engineer-trainee-r-and-d-ptm-4205260262",
+      "url": "https://www.internradar.info/jobs/valeo-graduate-engineer-trainee-r-and-d-ptm-4205260262",
+      "title": "Graduate Engineer Trainee - R&D PTM — Valeo",
+      "content_text": "Company: Valeo · Location: Chennai, Tamil Nadu, India",
+      "date_published": "2026-07-25T17:22:14.007Z",
+      "authors": [
+        {
+          "name": "Valeo"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/salesforce-summer-2027-intern-software-engineer-4445325953",
+      "url": "https://www.internradar.info/jobs/salesforce-summer-2027-intern-software-engineer-4445325953",
+      "title": "Summer 2027 Intern - Software Engineer — Salesforce",
+      "content_text": "Company: Salesforce · Location: Hyderabad, Telangana, India · Duration: 12 months\n• Ship code on a Scrum team into Salesforce's three cloud releases a year\n• Write automated tests and tooling that monitors cloud services in production\n• Java, C++ or Python, with React, Angular or Vue on the web side plus SQL\n• Hyderabad or Bangalore, for students graduating in 2028",
+      "date_published": "2026-07-25T13:23:18.528Z",
+      "authors": [
+        {
+          "name": "Salesforce"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/red-hat-software-quality-engineering-intern-4444362237",
+      "url": "https://www.internradar.info/jobs/red-hat-software-quality-engineering-intern-4444362237",
+      "title": "Software Quality Engineering Intern — Red Hat",
+      "content_text": "Company: Red Hat · Location: Pune Division, Maharashtra, India\n• Conduct new feature research and design test cases, then execute manual and automated tests\n• Explore, identify, and document new bugs, communicating their impact to developers and support\n• Collaborate with Engineering, QE, Product Management, Documentation, and product build teams\n• Work with Python, Golang, or similar programming languages",
+      "date_published": "2026-07-25T12:40:45.574Z",
+      "authors": [
+        {
+          "name": "Red Hat"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/american-express-apprentice-4444380574",
+      "url": "https://www.internradar.info/jobs/american-express-apprentice-4444380574",
+      "title": "Apprentice — American Express",
+      "content_text": "Company: American Express · Location: Gurugram, Haryana, India\n• Build GenAI and rule-based automations for accounting, reconciliation and reporting\n• Write Python (pandas, numpy) for data processing and SQL for extraction and checks\n• Integrate LLMs into workflows: prompt design, testing and iteration\n• Low-code work on Microsoft Power Platform; in office at least 3 days a week",
+      "date_published": "2026-07-25T12:27:29.181Z",
+      "authors": [
+        {
+          "name": "American Express"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/red-hat-site-reliability-engineering-intern-4444345488",
+      "url": "https://www.internradar.info/jobs/red-hat-site-reliability-engineering-intern-4444345488",
+      "title": "Site Reliability Engineering Intern — Red Hat",
+      "content_text": "Company: Red Hat · Location: Pune Division, Maharashtra, India\n• Write code to make the service more scalable and reliable, guided by a senior mentor\n• Add software tests and do peer review inside a small agile SRE team\n• Python or Golang on Linux, with public cloud basics expected\n• Pune-based, and Red Hat will not sponsor a visa for this role",
+      "date_published": "2026-07-25T12:26:02.650Z",
+      "authors": [
+        {
+          "name": "Red Hat"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/american-express-apprentice-4444366894",
+      "url": "https://www.internradar.info/jobs/american-express-apprentice-4444366894",
+      "title": "Apprentice — American Express",
+      "content_text": "Company: American Express · Location: Gurugram, Haryana, India · Duration: 11 months\n• Help build and maintain credit-loss forecasting models for international portfolios\n• Automate reporting with Python, SQL and Excel; build dashboards for stakeholders\n• Dig through large datasets for trends, variances and emerging portfolio risk\n• Use Copilot and custom GPTs in the workflow; office 3 days a week",
+      "date_published": "2026-07-25T12:25:26.269Z",
+      "authors": [
+        {
+          "name": "American Express"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/eightfold-ai-engineering-intern-class-of-2026-4445324844",
+      "url": "https://www.internradar.info/jobs/eightfold-ai-engineering-intern-class-of-2026-4445324844",
+      "title": "Engineering Intern - Class of 2026 — Eightfold AI",
+      "content_text": "Company: Eightfold AI · Location: Noida, Uttar Pradesh, India · Duration: 6 months\n• Build and debug services on distributed systems and AI platforms holding TBs of data\n• Fix issues in production alongside engineers, product managers and designers\n• Python, TensorFlow, SQL, React, Spark, Solr, Docker and a long list of AWS services\n• 6-month full-time in-person stint, needs 2026 graduation and CGPA 8.0+",
+      "date_published": "2026-07-25T12:23:28.341Z",
+      "authors": [
+        {
+          "name": "Eightfold AI"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/red-hat-software-engineering-intern-4444351407",
+      "url": "https://www.internradar.info/jobs/red-hat-software-engineering-intern-4444351407",
+      "title": "Software Engineering Intern — Red Hat",
+      "content_text": "Company: Red Hat · Location: Bengaluru, Karnataka, India\n• Write and maintain Python or Go code with a senior mentor\n• Add features and chase bugs in Red Hat products like RHEL and OpenShift\n• Projects across Global Engineering touching Ansible, OpenShift and AI\n• Pune or Bangalore, in an intern cohort; no visa sponsorship",
+      "date_published": "2026-07-25T12:23:00.853Z",
+      "authors": [
+        {
+          "name": "Red Hat"
+        }
+      ]
+    }
+  ]
+}

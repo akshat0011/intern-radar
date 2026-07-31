@@ -7,6 +7,8 @@
 <meta name="description" content="Software internships listed minutes after they go live. Be one of the first applicants, not the five hundredth.">
 <meta name="color-scheme" content="dark light">
 <link rel="canonical" href="https://www.internradar.info/">
+<link rel="alternate" type="application/rss+xml" title="Intern Radar — new engineering internships" href="https://www.internradar.info/feed.xml">
+<link rel="alternate" type="application/feed+json" title="Intern Radar — new engineering internships" href="https://www.internradar.info/feed.json">
 
 <!-- Link previews. WhatsApp/iMessage will not render a card without og:image, and it
      must be an absolute https URL — a relative one is silently dropped. The explicit
@@ -106,9 +108,8 @@
 
   <div class="rail">
     <div class="wrap rail-in">
-      <div class="seg" role="tablist" aria-label="Role type">
-        <button class="seg-b" id="tab-tech" role="tab" aria-selected="true" data-tech="1">Engineering <b id="n-tech">0</b></button>
-        <button class="seg-b" id="tab-other" role="tab" aria-selected="false" data-tech="0">Everything else <b id="n-other">0</b></button>
+      <div class="seg" aria-live="polite">
+        <span class="seg-b seg-static">Engineering <b id="n-total">0</b></span>
       </div>
 
       <div class="find">

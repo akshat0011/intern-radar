@@ -366,8 +366,9 @@ export function writePages(jobs, publicDir) {
   const indexable = jobs.filter(isIndexable).length;
   writeSitemap(jobs, byCompany, publicDir);
   writeRobots(publicDir);
+  const feedItems = writeFeeds(jobs, publicDir);
 
-  return { jobPages: jobs.length, companyPages: byCompany.size, indexable, removed };
+  return { jobPages: jobs.length, companyPages: byCompany.size, indexable, removed, feedItems };
 }
 
 /** Only indexable URLs go in the sitemap — submitting pages you tell Google to ignore is noise. */
@@ -400,4 +401,80 @@ Allow: /
 
 Sitemap: ${SITE}/sitemap.xml
 `);
+}
+
+/**
+ * RSS and JSON Feed.
+ *
+ * The site's whole promise is being early, and that only pays off if someone
+ * looks. A visitor who checks twice a week gets nothing from a 15-minute
+ * refresh. A feed inverts that — new roles arrive wherever they already read
+ * things — and it costs nothing to run: two more static files written by the
+ * same publish step, with no accounts, no email service and no backend, so the
+ * two-process design is untouched.
+ *
+ * Newest 50 only. A feed reader wants what is new, not a catalogue, and every
+ * item here is also a page a crawler can reach through the sitemap.
+ */
+function writeFeeds(jobs, publicDir) {
+  const recent = [...jobs]
+    .sort((a, b) => (b.postedAt ?? b.firstSeenAt ?? 0) - (a.postedAt ?? a.firstSeenAt ?? 0))
+    .slice(0, 50);
+
+  const now = new Date().toUTCString();
+  const facts = (j) => [
+    j.company && `Company: ${j.company}`,
+    j.location && `Location: ${j.location}`,
+    j.stipend && `Stipend: ${j.stipend}`,
+    j.duration && `Duration: ${j.duration}`,
+  ].filter(Boolean).join(' · ');
+
+  // Our own summary only — never the employer's description. Same rule as the
+  // job pages: republishing their copyrighted text is the one thing that would
+  // turn a useful feed into a liability.
+  const body = (j) => [facts(j), ...(j.bullets ?? []).map((b) => `• ${b}`)].filter(Boolean).join('\n');
+
+  const items = recent.map((j) => {
+    const url = `${SITE}/jobs/${jobSlug(j)}`;
+    const date = new Date(j.postedAt ?? j.firstSeenAt ?? Date.now());
+    return `  <item>
+    <title>${esc(`${j.title} — ${j.company ?? ''}`.trim())}</title>
+    <link>${esc(url)}</link>
+    <guid isPermaLink="true">${esc(url)}</guid>
+    <pubDate>${date.toUTCString()}</pubDate>
+    <description>${esc(body(j))}</description>
+  </item>`;
+  }).join('\n');
+
+  writeFileSync(join(publicDir, 'feed.xml'), `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Intern Radar — engineering internships in India</title>
+  <link>${SITE}/</link>
+  <atom:link href="${SITE}/feed.xml" rel="self" type="application/rss+xml"/>
+  <description>New engineering internships, listed within minutes of going live.</description>
+  <language>en-in</language>
+  <lastBuildDate>${now}</lastBuildDate>
+${items}
+</channel>
+</rss>
+`);
+
+  writeFileSync(join(publicDir, 'feed.json'), `${JSON.stringify({
+    version: 'https://jsonfeed.org/version/1.1',
+    title: 'Intern Radar — engineering internships in India',
+    home_page_url: `${SITE}/`,
+    feed_url: `${SITE}/feed.json`,
+    description: 'New engineering internships, listed within minutes of going live.',
+    items: recent.map((j) => ({
+      id: `${SITE}/jobs/${jobSlug(j)}`,
+      url: `${SITE}/jobs/${jobSlug(j)}`,
+      title: `${j.title} — ${j.company ?? ''}`.trim(),
+      content_text: body(j),
+      date_published: new Date(j.postedAt ?? j.firstSeenAt ?? Date.now()).toISOString(),
+      ...(j.company ? { authors: [{ name: j.company }] } : {}),
+    })),
+  }, null, 2)}\n`);
+
+  return recent.length;
 }

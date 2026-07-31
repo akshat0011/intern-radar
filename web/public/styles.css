@@ -182,6 +182,13 @@ button, input, select, textarea { font: inherit; color: inherit; }
 .seg-b[aria-selected="true"] { background: var(--live); color: var(--live-ink); }
 .seg-b[aria-selected="true"] b { background: color-mix(in oklab, var(--live-ink) 16%, transparent); color: var(--live-ink); }
 
+/* The role split is gone — the site is engineering-only — so this is now a
+   label showing the count, not a control. Keep the segment's shape so the rail
+   still reads as one row, but drop the affordances that imply it is clickable. */
+.seg-static { cursor: default; background: var(--live); color: var(--live-ink); }
+.seg-static:hover { color: var(--live-ink); }
+.seg-static b { background: color-mix(in oklab, var(--live-ink) 16%, transparent); color: var(--live-ink); }
+
 .find {
   flex: 1 1 240px; min-width: 190px; display: flex; align-items: center; gap: 9px;
   border: 1px solid var(--rule); border-radius: var(--r); padding: 0 12px; height: 34px;

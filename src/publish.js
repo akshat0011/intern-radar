@@ -82,7 +82,10 @@ export async function writeJobsFile(store, cfg) {
   const maxAgeMs = (cfg.publish?.maxAgeDays ?? 14) * 86_400_000;
   const includeFullDescription = !!cfg.publish?.includeFullDescription;
 
+  const techOnly = cfg.publish?.techRolesOnly !== false;
+
   let dropped = 0;
+  let droppedNonTech = 0;
   const jobs = store
     .recentJobs(Date.now() - maxAgeMs)
     // Re-run the company match at publish time instead of trusting what was
@@ -97,6 +100,20 @@ export async function writeJobsFile(store, cfg) {
       log.debug(`Not publishing "${row.title}" — "${row.company}" no longer matches the watchlist.`);
       return false;
     })
+    // Engineering only. Applied here rather than in the SQL so that older rows
+    // stored back when the site carried every role simply stop appearing, with
+    // no migration and nothing deleted — flip techRolesOnly to false and they
+    // all come back.
+    //
+    // Note the test is `=== 1`, not truthiness: is_tech is NULL for a row whose
+    // verdict pass has not run yet, and an unclassified job must not be
+    // published on the assumption that it might be technical.
+    .filter(({ row }) => {
+      if (!techOnly) return true;
+      if (row.is_tech === 1) return true;
+      droppedNonTech++;
+      return false;
+    })
     .map(({ row, matchedNow }) => ({ row, matchedNow }));
 
   // Fetch any logo we do not already hold, then resolve every job to a local path.
@@ -107,6 +124,10 @@ export async function writeJobsFile(store, cfg) {
   const publicJobs = jobs
     .map(({ row, matchedNow }) => toPublicJob(row, { includeFullDescription, matchedNow, logoIndex }))
     .sort((a, b) => (b.postedAt ?? 0) - (a.postedAt ?? 0));
+
+  if (droppedNonTech) {
+    log.info(`Held back ${droppedNonTech} non-engineering posting${droppedNonTech === 1 ? '' : 's'} — the site is engineering-only.`);
+  }
 
   if (dropped) {
     log.warn(`Held back ${dropped} stored job${dropped === 1 ? '' : 's'} whose company no longer matches the watchlist.`);
@@ -158,7 +179,8 @@ export function pushToSite(newJobCount) {
   // Everything publish regenerates. Narrow on purpose — never `git add .`, or an
   // unattended run would commit whatever source edit happened to be in progress.
   const PUBLISHED = ['web/public/data', 'web/public/logos', 'web/public/jobs',
-    'web/public/companies', 'web/public/sitemap.xml', 'web/public/robots.txt'];
+    'web/public/companies', 'web/public/sitemap.xml', 'web/public/robots.txt',
+    'web/public/feed.xml', 'web/public/feed.json'];
 
   const status = git(['status', '--porcelain', ...PUBLISHED], { allowFail: true });
   if (!status) {

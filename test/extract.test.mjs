@@ -48,10 +48,13 @@ money('bare figure, no period', 'The office is a $30 million campus.', null);
 money('period without keyword', 'The selected intern receives Rs 20,000 per month.', 20000, 20000, 'INR', 'month');
 
 console.log('\n== duration ==');
-check('6 months', extractDuration('This is a 6 months internship'), '6 months internship');
+check('6 months', extractDuration('This is a 6 months internship'), '6 months');
 check('range', extractDuration('Duration: 3-6 months'), '3-6 months');
 check('summer', extractDuration('Summer 2026 internship program'), 'Summer 2026');
 check('none', extractDuration('Great opportunity to learn.'), null);
+check('label stripped', extractDuration('Duration: 3 Months'), '3 months');
+check('label + range', extractDuration('Duration: 5 - 6 months'), '5-6 months');
+check('singular', extractDuration('a 1 month engagement'), '1 month');
 
 console.log('\n== skills ==');
 check('typical', extractSkills('Requirements: Python, React, AWS, and knowledge of Docker. C++ a plus. Experience with PyTorch.'),

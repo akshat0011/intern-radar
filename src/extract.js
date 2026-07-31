@@ -218,7 +218,20 @@ export function extractDuration(...texts) {
   ];
   for (const re of patterns) {
     const m = haystack.match(re);
-    if (m) return m[0].replace(/\s+/g, ' ').trim();
+    if (!m) continue;
+
+    // Build from the capture groups, never from m[0]. The whole match drags in
+    // whatever the pattern needed as context — the label in
+    // "Duration: 3 Months", the trailing noun in "6 months internship" — and
+    // that is what ends up rendered on the card. Only the amount and the unit
+    // are the answer.
+    if (/^(?:summer|winter|spring|fall|autumn)$/i.test(m[1])) {
+      return `${m[1][0].toUpperCase()}${m[1].slice(1).toLowerCase()} ${m[2]}`;
+    }
+
+    const amount = m[1].replace(/\s+/g, '').replace(/(to)/i, ' to ').trim();
+    const unit = m[2].toLowerCase();
+    return `${amount} ${amount === '1' ? unit : `${unit}s`}`;
   }
   return null;
 }

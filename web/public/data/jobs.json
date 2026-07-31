@@ -1,5 +1,5 @@
 {
- "generatedAt": 1785492979272,
+ "generatedAt": 1785493374130,
  "count": 79,
  "techCount": 79,
  "otherCount": 0,
@@ -186,7 +186,7 @@
    "location": "Bangalore Urban, Karnataka, India",
    "workplaceType": "On-site",
    "stipend": null,
-   "duration": "Duration: 3 months",
+   "duration": "3 months",
    "applicants": null,
    "easyApply": false,
    "skills": [
@@ -440,7 +440,7 @@
    "location": "Pune City, Maharashtra, India",
    "workplaceType": "On-site",
    "stipend": null,
-   "duration": "6 months internship",
+   "duration": "6 months",
    "applicants": "17 applicants",
    "easyApply": true,
    "skills": [],
@@ -508,7 +508,7 @@
    "location": "Noida, Uttar Pradesh, India",
    "workplaceType": "On-site",
    "stipend": "₹20,000 / month",
-   "duration": "Duration: 6 months",
+   "duration": "6 months",
    "applicants": null,
    "easyApply": false,
    "skills": [
@@ -627,7 +627,7 @@
    "location": "Gurugram, Haryana, India",
    "workplaceType": "Hybrid",
    "stipend": null,
-   "duration": "Duration: 6 Months",
+   "duration": "6 months",
    "applicants": "19 applicants",
    "easyApply": true,
    "skills": [
@@ -670,7 +670,7 @@
    "location": "Gurugram, Haryana, India",
    "workplaceType": "Hybrid",
    "stipend": null,
-   "duration": "0–1 year",
+   "duration": "0–1 years",
    "applicants": null,
    "easyApply": false,
    "skills": [
@@ -762,7 +762,7 @@
    "location": "Bangalore Urban, Karnataka, India",
    "workplaceType": "On-site",
    "stipend": null,
-   "duration": "6–9 Months",
+   "duration": "6–9 months",
    "applicants": null,
    "easyApply": false,
    "skills": [
@@ -2063,7 +2063,7 @@
    "location": "Noida, Uttar Pradesh, India",
    "workplaceType": "On-site",
    "stipend": null,
-   "duration": "6 months internship",
+   "duration": "6 months",
    "applicants": null,
    "easyApply": false,
    "skills": [
@@ -2209,7 +2209,7 @@
    "location": "Mumbai, Maharashtra, India",
    "workplaceType": "On-site",
    "stipend": null,
-   "duration": "Duration: 3 Months",
+   "duration": "3 months",
    "applicants": "Over 100 applicants",
    "easyApply": true,
    "skills": [
@@ -2321,7 +2321,7 @@
    "location": "Bengaluru, Karnataka, India",
    "workplaceType": "On-site",
    "stipend": null,
-   "duration": "6 Months",
+   "duration": "6 months",
    "applicants": null,
    "easyApply": false,
    "skills": [
@@ -2893,7 +2893,7 @@
    "location": "Mumbai, Maharashtra, India",
    "workplaceType": "On-site",
    "stipend": null,
-   "duration": "6 Months",
+   "duration": "6 months",
    "applicants": null,
    "easyApply": false,
    "skills": [
@@ -3024,7 +3024,7 @@
    "location": "Gurugram, Haryana, India",
    "workplaceType": "On-site",
    "stipend": null,
-   "duration": "3-6 Months",
+   "duration": "3-6 months",
    "applicants": "Over 100 applicants",
    "easyApply": true,
    "skills": [],
@@ -3060,7 +3060,7 @@
    "location": "Mumbai Metropolitan Region",
    "workplaceType": "On-site",
    "stipend": null,
-   "duration": "0 – 6 Months",
+   "duration": "0–6 months",
    "applicants": null,
    "easyApply": false,
    "skills": [
@@ -3142,7 +3142,7 @@
    "location": "Gurugram, Haryana, India",
    "workplaceType": "On-site",
    "stipend": null,
-   "duration": "6–9 Months",
+   "duration": "6–9 months",
    "applicants": "Over 100 applicants",
    "easyApply": true,
    "skills": [
@@ -3265,7 +3265,7 @@
    "location": "Bengaluru, Karnataka, India",
    "workplaceType": "On-site",
    "stipend": "40,000 / month",
-   "duration": "Duration : 6 Months",
+   "duration": "6 months",
    "applicants": null,
    "easyApply": false,
    "skills": [

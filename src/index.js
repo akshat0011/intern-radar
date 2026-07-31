@@ -444,6 +444,16 @@ async function main() {
           // than 12, while keeping recall on the ones that matter.
           const confidentlyNonTech = titleVerdict.verdict === 'non-tech';
 
+          // The site is engineering-only, so a confidently non-technical title
+          // is dropped here rather than stored. It is still recorded in
+          // seen_cards, which is what stops the next run re-deciding the same
+          // card and gives an honest count of what the sweep discarded.
+          if (confidentlyNonTech && cfg.matching.storeNonTechRoles === false) {
+            counters.nonTechRoles++;
+            store.noteSkippedCard(card.jobId, 'non-engineering role', card.company, card.title);
+            continue;
+          }
+
           if (confidentlyNonTech && cfg.matching.openNonTechRoles === false) {
             const stipend = extractStipend(card.salaryText);
             const isNew = store.upsertJob({

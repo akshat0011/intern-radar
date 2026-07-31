@@ -151,6 +151,7 @@ export class Store {
       SELECT job_id, title, company
       FROM jobs
       WHERE description IS NULL
+        AND is_tech = 1
         AND first_seen_at > ?
       ORDER BY first_seen_at DESC
       LIMIT ?
