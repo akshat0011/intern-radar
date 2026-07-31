@@ -33,7 +33,6 @@
       ]
     },
     {
-      "comment": "A company logo is written once under a name derived from the company and never edited - a new logo would be a new file. That makes it the one thing here that is genuinely immutable, and it is also the bulk of the bytes, so it is where caching actually pays.",
       "source": "/logos/(.*)",
       "headers": [
         {
@@ -43,7 +42,6 @@
       ]
     },
     {
-      "comment": "app.js and styles.css are NOT content-hashed, so they cannot be cached immutably without risking a stale site after a deploy. stale-while-revalidate gets the repeat-visit speed anyway: the browser paints from cache immediately and refreshes in the background, so a visitor is at most one page load behind.",
       "source": "/(.*)\\.(css|js|svg|png|jpg|ico|woff2)",
       "headers": [
         {
