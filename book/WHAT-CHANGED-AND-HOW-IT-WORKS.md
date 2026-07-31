@@ -245,7 +245,9 @@ No browser. No fragile pattern-matching against HTML. No terms-of-service proble
 endpoints exist to be read — they are what the company's own careers page calls to draw itself.
 
 Eight are supported, all free and needing no key: **Greenhouse, Lever, Ashby, SmartRecruiters,
-Workable, Recruitee, Personio, BambooHR.**
+Workable, Recruitee, Personio, BambooHR** — plus Workday, which is a special case covered below.
+
+**202 of your 902 companies** now resolve to a board, 36 of them on Workday.
 
 ### The two-step design
 
@@ -314,6 +316,32 @@ Razorpay's Greenhouse board is `razorpaysoftwareprivatelimited`, which no amount
 It has a real limitation: careers pages built entirely in JavaScript reveal nothing to a simple
 fetch, so Infosys, Swiggy and Zomato all come back empty. It complements slug-guessing rather than
 replacing it.
+
+### Two faults this shipped with, and what they teach
+
+Both were visible on the live site, and both came from the same habit: taking what an API hands you
+in its *list* view and assuming that is all there is.
+
+**A job posted four days ago was labelled "8h".** Workday's list gives no real date — only the
+sentence *"Posted 2 Days Ago"* — so the date was stored as nothing. But when a job has no date, the
+site falls back to *when we first saw it*. So every Workday listing was stamped with the moment our
+own robot noticed it, which for a brand-new collector means everything looks freshly posted. The
+per-job endpoint does carry a real date (`2026-07-28` for that Sprinklr role), so it is now fetched
+and used — and staleness is re-checked against the true date, which is the first honest chance to
+judge it.
+
+**No ATS listing had a description.** This one is almost funny: the descriptions were being
+downloaded and thrown away. Greenhouse was already being asked for them, Lever and Ashby include
+them, Workday exposes them one endpoint deeper — but the internal shape every provider is converted
+into simply had no field for a description, so it fell on the floor at the conversion step.
+
+That had a knock-on effect. The step that writes the summary bullets only looks at jobs that *have* a
+description, so ATS jobs were skipped by it permanently — the exact same trap as the stuck LinkedIn
+postings in Part 5, arrived at from a completely different direction.
+
+All twelve now carry between 1,200 and 8,100 characters of description. The extra fetch happens
+*after* the filters, so a board with 2,000 roles costs one additional request per internship kept
+rather than 2,000.
 
 ### Staleness — a filter the LinkedIn side never needed
 
