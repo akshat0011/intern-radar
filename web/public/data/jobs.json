@@ -1,8 +1,8 @@
 {
- "generatedAt": 1785488905771,
- "count": 389,
- "techCount": 79,
- "otherCount": 310,
+ "generatedAt": 1785490760530,
+ "count": 391,
+ "techCount": 80,
+ "otherCount": 311,
  "companies": [
   "A.P. Moller - Maersk",
   "ALLEN",
@@ -106,6 +106,7 @@
   "Piramal Pharma Ltd",
   "Pixxel",
   "Policybazaar.com",
+  "Pratt & Whitney",
   "Procter & Gamble",
   "Purplle.com",
   "PwC India",
@@ -124,6 +125,7 @@
   "Siemens Healthineers",
   "Sigmoid AI Solutions",
   "Signzy",
+  "Silicon Global Consulting",
   "Societe Generale",
   "Springworks",
   "Sprinklr",
@@ -244,6 +246,90 @@
   "West Bengal, India (On-site)"
  ],
  "jobs": [
+  {
+   "id": "4447291284",
+   "title": "Industrial Trainee ( CA Intern",
+   "company": "Pratt & Whitney",
+   "matchedWatchlist": "Pratt & Whitney",
+   "isTech": false,
+   "roleSource": "gemini-enrich",
+   "logo": "/logos/pratt-and-whitney.jpg",
+   "location": "Bengaluru, Karnataka, India",
+   "workplaceType": "On-site",
+   "stipend": null,
+   "duration": null,
+   "applicants": null,
+   "easyApply": false,
+   "skills": [
+    "power bi",
+    "excel"
+   ],
+   "summary": "IN-KA-BENGALURU-NORTHGATE ~ Sy No 2/2 Venkatala Village ~ SY NO 2/2 VENKATALA VILLAGE, Yelahanka Hobli Position Role Type: At RTX, the world largest aerospace and defense company, 185,000 great minds are united by purpose and inspired to make a difference solving the world’s most complex problems. What You Will Do *",
+   "bullets": [
+    "Help the team write process notes, identify improvements, and enhance existing processes",
+    "Work with the FP&A team to analyze financial data, variances, and trends",
+    "Assist in standardizing reports and presentations for management, highlighting key insights",
+    "Use MS Excel, PowerPoint, Power BI, and gain exposure to ERP systems like SAP"
+   ],
+   "roleLabel": "Financial Planning & Analysis",
+   "degreeLevel": "Pursuing",
+   "degreeText": "CA",
+   "keySkills": [
+    "microsoft excel",
+    "powerpoint",
+    "power bi",
+    "sap"
+   ],
+   "stipendStatus": "unknown",
+   "postedText": "4 minutes ago",
+   "postedAt": 1785490317905,
+   "firstSeenAt": 1785490557911,
+   "url": "https://www.linkedin.com/jobs/view/4447291284/",
+   "applyUrl": "https://www.linkedin.com/jobs/view/4447291284/",
+   "description": null
+  },
+  {
+   "id": "4445088883",
+   "title": "Internship UI/UX Designer",
+   "company": "Silicon Global Consulting",
+   "matchedWatchlist": "Silicon Labs",
+   "isTech": true,
+   "roleSource": "gemini-enrich",
+   "logo": "/logos/silicon-global-consulting.jpg",
+   "location": "Maharashtra, India",
+   "workplaceType": "Remote",
+   "stipend": null,
+   "duration": "Duration: 6 Months",
+   "applicants": "3 applicants",
+   "easyApply": true,
+   "skills": [
+    "figma"
+   ],
+   "summary": "Location: Remote (Work From Anywhere) Internship Duration: 6 Months Stipend: Unpaid Internship (Certificate & Letter of Recommendation upon successful completion) We are looking for a creative and enthusiastic UI/UX Designer Intern to join our product development team.",
+   "bullets": [
+    "Design modern, responsive UIs for web and mobile apps, creating wireframes, mockups, and prototypes",
+    "Conduct UI/UX research, suggest improvements, and ensure consistency with design systems",
+    "Work with Figma, understanding UI/UX principles, wireframing, and prototyping",
+    "Six-month remote internship, certificate and letter of recommendation provided"
+   ],
+   "roleLabel": "UI/UX Design",
+   "degreeLevel": "UG",
+   "degreeText": null,
+   "keySkills": [
+    "figma",
+    "ui/ux design principles",
+    "wireframing",
+    "prototyping",
+    "responsive design"
+   ],
+   "stipendStatus": "unpaid",
+   "postedText": "19 minutes ago",
+   "postedAt": 1785489421923,
+   "firstSeenAt": 1785490561926,
+   "url": "https://www.linkedin.com/jobs/view/4445088883/",
+   "applyUrl": "https://www.linkedin.com/jobs/view/4445088883/",
+   "description": null
+  },
   {
    "id": "4446974886",
    "title": "Intern – Study Abroad Programs & Learner Success",
