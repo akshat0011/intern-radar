@@ -281,7 +281,118 @@ export const PROVIDERS = {
   },
 };
 
-export const PROVIDER_NAMES = Object.keys(PROVIDERS);
+/**
+ * Workday, kept apart from the rest on purpose.
+ *
+ * It publishes no job-board API. What works is the endpoint its own careers page
+ * calls, and it needs three things a company name cannot give you: a tenant, a
+ * datacentre number (wd1, wd3, wd5, wd12…) and a site name that is entirely
+ * bespoke — NVIDIAExternalCareerSite, external_experienced, External_Career_Site.
+ *
+ * Guessing those is not an option, and I measured why rather than assuming:
+ * `zzzznotarealcompany.wd5` answers 422 exactly like a real tenant does, so
+ * there is no signal to search against. The token here is therefore always
+ * discovered from a real careers-page link, never constructed, and is stored as
+ * "tenant:wd:site".
+ */
+PROVIDERS.workday = {
+  label: 'Workday',
+  async list(token) {
+    const [tenant, wd, site] = String(token).split(':');
+    if (!tenant || !wd || !site) return null;
+    const j = await getJson(
+      `https://${tenant}.${wd}.myworkdayjobs.com/wday/cxs/${tenant}/${site}/jobs`,
+      { method: 'POST', body: { appliedFacets: {}, limit: 20, offset: 0, searchText: '' } },
+    );
+    if (!Array.isArray(j?.jobPostings)) return null;
+    return j.jobPostings.map((p) => job({
+      id: p.bulletFields?.[0] ?? p.externalPath,
+      title: p.title,
+      location: p.locationsText,
+      url: `https://${tenant}.${wd}.myworkdayjobs.com/en-US/${site}${p.externalPath}`,
+      // "Posted 3 Days Ago" — a relative phrase, not a date. Left null rather
+      // than invented; the staleness filter treats null as "unknown, keep".
+      postedAt: null,
+    }));
+  },
+  // The token came from the company's own careers page, so the link is the proof.
+  async verify() { return true; },
+};
+
+export const PROVIDER_NAMES = Object.keys(PROVIDERS).filter((n) => n !== 'workday');
+
+/** Every ATS link shape we know how to read, for scraping off a careers page. */
+const ATS_LINK = new RegExp([
+  String.raw`([a-z0-9-]+)\.(wd\d+)\.myworkdayjobs\.com\/(?:[a-z]{2}-[A-Z]{2}\/)?([A-Za-z0-9_-]+)`,
+  String.raw`(?:boards|job-boards)\.greenhouse\.io\/([a-z0-9-]+)`,
+  String.raw`jobs\.lever\.co\/([a-z0-9-]+)`,
+  String.raw`jobs\.ashbyhq\.com\/([a-z0-9-]+)`,
+  String.raw`([a-z0-9-]+)\.recruitee\.com`,
+  String.raw`apply\.workable\.com\/([a-z0-9-]+)`,
+  String.raw`jobs\.smartrecruiters\.com\/([A-Za-z0-9-]+)`,
+].join('|'), 'i');
+
+/** Plausible homepages for a company name, best guess first. */
+function candidateDomains(name) {
+  const slug = String(name).toLowerCase()
+    .replace(/&/g, 'and')
+    .replace(/\b(pvt|private|ltd|limited|inc|llc|corp|corporation|plc)\b/gi, '')
+    .replace(/[^a-z0-9]+/g, '');
+  if (slug.length < 3) return [];
+  // Two domains, not four. Every extra guess multiplies by the path list and
+  // this pass already runs over hundreds of companies.
+  return [`${slug}.com`, `${slug}.in`];
+}
+
+/**
+ * Find the ATS by reading the company's own careers page.
+ *
+ * Strictly better than guessing a slug where it works, because the page links
+ * the real token: Razorpay's board is
+ * `job-boards.greenhouse.io/razorpaysoftwareprivatelimited`, which no amount of
+ * slugifying "Razorpay" would ever produce. It is also the only way to reach
+ * Workday at all.
+ *
+ * It misses careers pages rendered entirely in JavaScript — Infosys, Swiggy and
+ * Zomato all come back empty — so this complements slug discovery rather than
+ * replacing it.
+ */
+export async function discoverViaCareersPage(companyName) {
+  for (const domain of candidateDomains(companyName)) {
+    for (const path of ['/careers', '/jobs']) {
+      const url = `https://${domain}${path}`;
+      let res;
+      try {
+        const controller = new AbortController();
+        const timer = setTimeout(() => controller.abort(), 9000);
+        res = await fetch(url, {
+          redirect: 'follow',
+          signal: controller.signal,
+          headers: { 'user-agent': 'Mozilla/5.0 (compatible; internradar/1.0; +https://www.internradar.info)' },
+        });
+        clearTimeout(timer);
+      } catch { continue; }
+      if (!res.ok) continue;
+
+      let html = '';
+      try { html = await res.text(); } catch { continue; }
+
+      const m = res.url.match(ATS_LINK) || html.match(ATS_LINK);
+      if (!m) continue;
+
+      // Groups line up with the alternation order above.
+      const [, wdTenant, wdNum, wdSite, gh, lever, ashby, recruitee, workable, smart] = m;
+      if (wdTenant && wdNum && wdSite) return { provider: 'workday', token: `${wdTenant}:${wdNum}:${wdSite}`, via: url };
+      if (gh) return { provider: 'greenhouse', token: gh, via: url };
+      if (lever) return { provider: 'lever', token: lever, via: url };
+      if (ashby) return { provider: 'ashby', token: ashby, via: url };
+      if (recruitee) return { provider: 'recruitee', token: recruitee, via: url };
+      if (workable) return { provider: 'workable', token: workable, via: url };
+      if (smart) return { provider: 'smartrecruiters', token: smart, via: url };
+    }
+  }
+  return null;
+}
 
 /**
  * Find which board, if any, belongs to this company.

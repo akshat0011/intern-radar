@@ -19,7 +19,7 @@ import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { ROOT } from '../src/paths.js';
 import { Store } from '../src/store.js';
-import { discover, PROVIDER_NAMES } from '../src/ats.js';
+import { discover, discoverViaCareersPage, PROVIDER_NAMES } from '../src/ats.js';
 import { log } from '../src/logger.js';
 
 const ARGS = process.argv.slice(2);
@@ -27,6 +27,13 @@ const has = (f) => ARGS.includes(f);
 const valueOf = (f) => { const i = ARGS.indexOf(f); return i >= 0 ? ARGS[i + 1] : null; };
 
 const REDISCOVER_ALL = has('--all');
+/**
+ * Second discovery method: read the company's own careers page and take the ATS
+ * link off it, instead of guessing a slug. Slower, but it finds tokens guessing
+ * cannot — Razorpay's board is `razorpaysoftwareprivatelimited` — and it is the
+ * only route to Workday, whose site names are bespoke and unguessable.
+ */
+const VIA_CAREERS = has('--careers');
 const LIMIT = Number(valueOf('--limit') ?? 0) || null;
 const ONLY = valueOf('--company');
 const CONCURRENCY = Number(valueOf('--concurrency') ?? 6);
@@ -56,6 +63,10 @@ if (!REDISCOVER_ALL && !ONLY) {
     const row = store.getAts(n);
     if (!row) return true;
     if (row.provider) return false;              // already resolved
+    // The careers-page pass is a DIFFERENT method, not a retry of the same one,
+    // so the miss cooldown does not apply: a company slug discovery could not
+    // guess is exactly the company whose careers page is worth reading.
+    if (VIA_CAREERS) return true;
     return (row.checked_at ?? 0) < cutoff;       // a stale miss is worth re-checking
   });
 }
@@ -80,7 +91,7 @@ async function worker(queue) {
     if (!name) break;
     let hit = null;
     try {
-      hit = await discover(name);
+      hit = VIA_CAREERS ? await discoverViaCareersPage(name) : await discover(name);
     } catch (err) {
       log.debug(`${name}: discovery error ${err.message}`);
     }
@@ -89,8 +100,8 @@ async function worker(queue) {
     if (hit) {
       found++;
       byProvider.set(hit.provider, (byProvider.get(hit.provider) ?? 0) + 1);
-      store.saveAts(name, hit.provider, hit.token, hit.count);
-      console.log(`  ✓ ${name.padEnd(34)} ${hit.provider.padEnd(16)} ${String(hit.count).padStart(4)} roles`);
+      store.saveAts(name, hit.provider, hit.token, hit.count ?? 0);
+      console.log(`  ✓ ${name.padEnd(30)} ${hit.provider.padEnd(15)} ${String(hit.token).slice(0, 34)}`);
     } else {
       store.saveAts(name, null, null, 0);
     }
