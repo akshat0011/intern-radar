@@ -217,14 +217,37 @@ async function waitForHuman(page, evidence, { waitMinutes = 12, notifications })
  * Check the page and handle whatever we find.
  * Returns normally when it is safe to carry on; throws RunAborted otherwise.
  */
-export async function ensureHealthy(page, cfg, { context = 'page' } = {}) {
+export async function ensureHealthy(page, cfg, { context = 'page', remainingMs = null } = {}) {
   const { state, evidence } = await classify(page);
 
   if (state === State.OK) return;
 
   if (state === State.CHALLENGE) {
+    // The wait for a human has to fit inside the run's own budget.
+    //
+    // It used to be a flat 12 minutes, decided here with no knowledge of how
+    // long the run was allowed to take. On a 15-minute schedule that is fatal,
+    // and not only to the run holding it: the run sails past maxRuntimeMinutes,
+    // its lock in index.js ages out and is treated as stale, the next scheduled
+    // run starts while this Brave still owns the profile, and that run then dies
+    // on a launch timeout. One unattended CAPTCHA took out a whole hour of runs
+    // that way — a 59-minute run followed by launch failures.
+    //
+    // So: never wait longer than the run has left, minus a margin to publish
+    // whatever was already collected.
+    const configured = cfg.safety?.captchaWaitMinutes ?? 4;
+    const budgetMinutes = remainingMs == null
+      ? configured
+      : Math.max(0, remainingMs / 60_000 - 1);
+    const waitMinutes = Math.min(configured, budgetMinutes);
+
+    if (waitMinutes <= 0) {
+      log.warn('A security check appeared, but this run is out of time — stopping so the next slot is not blocked.');
+      throw new RunAborted(State.CHALLENGE, `Security check at ${context}, no budget left to wait`);
+    }
+
     const recovered = await waitForHuman(page, evidence, {
-      waitMinutes: 12,
+      waitMinutes,
       notifications: cfg.notifications,
     });
     if (recovered) return;

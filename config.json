@@ -154,6 +154,8 @@
     "_includeFullDescription_note": "Leave false. Full descriptions are the posting company's copyrighted text; the site shows your generated summary and links to the original instead."
   },
   "safety": {
+    "captchaWaitMinutes": 4,
+    "_captchaWaitMinutes_note": "How long to wait for a human to solve a security check. Was hardcoded at 12 minutes with no knowledge of the run budget, which is how a run reached 59 minutes on a 15-minute schedule - it blew past maxRuntimeMinutes, its lock aged out and was treated as stale, and the next run started while this Brave still owned the profile and died on a launch timeout. Also capped at the run's remaining budget, so this is a ceiling and not a promise.",
     "cooldownHoursAfterRateLimit": 24,
     "_cooldownHoursAfterRateLimit_note": "If LinkedIn ever rate-limits or restricts the session, the tool refuses to run again for this many hours instead of walking back into it. Set 0 to disable."
   },

@@ -8,7 +8,7 @@ import { join } from 'node:path';
 import { ensureDirs, PATHS, ROOT } from './paths.js';
 import { log } from './logger.js';
 import { Store } from './store.js';
-import { launchBrave, closeBrave } from './browser.js';
+import { launchBrave, closeBrave, releaseProfileLock } from './browser.js';
 import { ensureHealthy, assertSignedIn, assertListRendered, RunAborted, State } from './guard.js';
 import * as li from './linkedin.js';
 import { resolveSearches } from './searches.js';
@@ -79,6 +79,7 @@ function budget(maxMinutes) {
   const deadline = start + maxMinutes * 60_000;
   return {
     exceeded: () => Date.now() > deadline,
+    remainingMs: () => Math.max(0, deadline - Date.now()),
     remainingMinutes: () => Math.max(0, Math.round((deadline - Date.now()) / 60_000)),
     elapsedSeconds: () => Math.round((Date.now() - start) / 1000),
   };
@@ -136,11 +137,11 @@ async function backfillDescriptions(page, store, cfg, clock, counters) {
     } catch (err) {
       counters.failedDetails++;
       log.warn(`Could not backfill "${row.title}" — ${err.message.split('\n')[0]}`);
-      await ensureHealthy(page, cfg, { context: `backfill ${row.job_id}` });
+      await ensureHealthy(page, cfg, { context: `backfill ${row.job_id}`, remainingMs: clock.remainingMs() });
       continue;
     }
 
-    await ensureHealthy(page, cfg, { context: `backfill ${row.job_id}` });
+    await ensureHealthy(page, cfg, { context: `backfill ${row.job_id}`, remainingMs: clock.remainingMs() });
 
     const description = detail.description || '';
     if (description.length <= 200) {
@@ -254,15 +255,29 @@ async function main() {
   // Brave profile lock and double the request rate. The lock self-expires after
   // the runtime budget so a crashed run cannot wedge the schedule forever.
   const LOCK_KEY = 'run_started_at';
+  // The lock has to outlive the SCAN budget, not equal it.
+  //
+  // maxRuntimeMinutes bounds the scan loop only — classification, enrichment,
+  // the report and the publish all happen after the clock is spent, so an
+  // entirely healthy run finishes somewhat later than its budget. Expiring the
+  // lock at exactly the budget therefore declared live runs dead: the next slot
+  // cleared the lock, started while the previous Brave still owned the profile,
+  // and died on a launch timeout. That is the failure that filled the runs table
+  // with "launchPersistentContext: Timeout" errors.
+  const LOCK_GRACE_MIN = 8;
+  const lockExpiryMin = cfg.limits.maxRuntimeMinutes + LOCK_GRACE_MIN;
   const heldSince = Number(store.getSetting(LOCK_KEY) ?? 0);
   const lockAgeMin = heldSince ? (Date.now() - heldSince) / 60_000 : Infinity;
-  if (heldSince && lockAgeMin < cfg.limits.maxRuntimeMinutes && !ARGS.has('--force')) {
+  if (heldSince && lockAgeMin < lockExpiryMin && !ARGS.has('--force')) {
     log.warn(`Another run started ${lockAgeMin.toFixed(0)} min ago and is still going. Skipping this slot.`);
     store.close();
     return;
   }
-  if (heldSince && lockAgeMin >= cfg.limits.maxRuntimeMinutes) {
+  if (heldSince && lockAgeMin >= lockExpiryMin) {
     log.warn(`Clearing a stale run lock (${lockAgeMin.toFixed(0)} min old — the previous run probably crashed).`);
+    // A run that overran its lock may still have a Brave alive on the profile.
+    // Ending it here is what stops this run inheriting the same launch timeout.
+    releaseProfileLock();
   }
 
   // Refuse to run while a cooldown from a previous rate limit is in force.
@@ -315,7 +330,7 @@ async function main() {
     const { page, context } = session;
 
     await li.warmUp(page, cfg);
-    await ensureHealthy(page, cfg, { context: 'warm-up' });
+    await ensureHealthy(page, cfg, { context: 'warm-up', remainingMs: clock.remainingMs() });
     await assertSignedIn(page, context, cfg);
     log.ok('Signed in.');
 
@@ -358,7 +373,7 @@ async function main() {
         log.info(`Page ${pageIndex + 1} — ${url}`);
 
         const navigated = await li.gotoSearch(page, url, cfg);
-        await ensureHealthy(page, cfg, { context: `search "${label}" page ${pageIndex + 1}` });
+        await ensureHealthy(page, cfg, { context: `search "${label}" page ${pageIndex + 1}`, remainingMs: clock.remainingMs() });
         if (!navigated) {
           notes.push(`The job list never finished loading for "${label}" page ${pageIndex + 1}; skipped it.`);
           break;
@@ -504,11 +519,11 @@ async function main() {
           } catch (err) {
             counters.failedDetails++;
             log.warn(`Could not read "${card.title}" — ${err.message.split('\n')[0]}`);
-            await ensureHealthy(page, cfg, { context: `job ${card.jobId}` });
+            await ensureHealthy(page, cfg, { context: `job ${card.jobId}`, remainingMs: clock.remainingMs() });
             continue;
           }
 
-          await ensureHealthy(page, cfg, { context: `job ${card.jobId}` });
+          await ensureHealthy(page, cfg, { context: `job ${card.jobId}`, remainingMs: clock.remainingMs() });
           counters.detailsExtracted++;
           openedOnThisPage++;
 

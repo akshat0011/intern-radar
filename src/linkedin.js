@@ -98,13 +98,45 @@ export function jobPaneUrl(jobId) {
 }
 
 /**
+ * Navigate, retrying the failures that are about the network rather than the
+ * page.
+ *
+ * A laptop changes networks, sleeps, and reconnects constantly, and Chromium
+ * surfaces that as ERR_NETWORK_CHANGED / ERR_INTERNET_DISCONNECTED / a
+ * navigation timeout. These used to end the whole run: one recorded failure was
+ * ERR_NETWORK_CHANGED on the very first page, which threw away a 15-minute slot
+ * over a wifi handover that had already recovered by the time it was logged.
+ *
+ * Deliberately narrow. A 4xx/5xx from LinkedIn, a challenge, or a rate-limit
+ * banner is NOT retried here — those are answered by guard.js, and retrying
+ * into them is exactly the behaviour that turns a rate limit into a ban.
+ */
+const TRANSIENT_NAV = /ERR_NETWORK_CHANGED|ERR_INTERNET_DISCONNECTED|ERR_NAME_NOT_RESOLVED|ERR_CONNECTION_(RESET|CLOSED|TIMED_OUT|REFUSED)|ERR_ADDRESS_UNREACHABLE|Timeout .* exceeded/i;
+
+export async function gotoResilient(page, url, opts = {}, { attempts = 3, label = 'page' } = {}) {
+  let lastErr;
+  for (let attempt = 1; attempt <= attempts; attempt++) {
+    try {
+      return await page.goto(url, { waitUntil: 'domcontentloaded', ...opts });
+    } catch (err) {
+      lastErr = err;
+      const first = err.message.split('\n')[0];
+      if (!TRANSIENT_NAV.test(first) || attempt === attempts) throw err;
+      log.warn(`Network hiccup loading ${label} (attempt ${attempt}/${attempts}): ${first}`);
+      await sleep(2000 * attempt);
+    }
+  }
+  throw lastErr;
+}
+
+/**
  * Start the session the way a person would: land on the feed, sit for a
  * moment, then move to jobs — rather than deep-linking straight into a
  * filtered search URL from a cold session.
  */
 export async function warmUp(page, cfg) {
   log.info('Warming up on the feed…');
-  await page.goto('https://www.linkedin.com/feed/', { waitUntil: 'domcontentloaded' });
+  await gotoResilient(page, 'https://www.linkedin.com/feed/', {}, { label: 'the feed' });
   await pause(cfg.pacing.warmupOnFeed);
   await page.mouse.wheel(0, rand(300, 900));
   await pause(cfg.pacing.afterNavigation);
@@ -112,7 +144,7 @@ export async function warmUp(page, cfg) {
 
 /** Navigate to a search URL and wait for the results column to exist. */
 export async function gotoSearch(page, url, cfg) {
-  const response = await page.goto(url, { waitUntil: 'domcontentloaded' }).catch((err) => {
+  const response = await gotoResilient(page, url, {}, { label: 'the results page' }).catch((err) => {
     log.warn(`Navigation problem: ${err.message.split('\n')[0]}`);
     return null;
   });
@@ -390,7 +422,7 @@ export async function openAndExtract(page, card, cfg) {
     // taken both when a card scrolls out from under us mid-scan and for every
     // description backfill, so getting it wrong costs a silent empty read
     // rather than a visible error.
-    await page.goto(jobPaneUrl(card.jobId), { waitUntil: 'domcontentloaded' });
+    await gotoResilient(page, jobPaneUrl(card.jobId), {}, { label: `job ${card.jobId}` });
   }
 
   // Wait for the pane to actually change rather than a fixed sleep.

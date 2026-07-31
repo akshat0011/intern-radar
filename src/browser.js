@@ -39,8 +39,12 @@ function braveArgs(cfg) {
     // bubble steals the viewport, and accepting it reopens a window of stale
     // job pages that the scan then treats as the current one. We always start
     // from a known URL, so there is nothing worth restoring.
+    //
+    // Only the bubble flag belongs here. There is NO "--restore-last-session=false":
+    // that switch is read with HasSwitch(), so any value at all — including the
+    // string "false" — turns restore ON. Passing it did the opposite of what it
+    // looks like and cost a run.
     '--hide-crash-restore-bubble',
-    '--restore-last-session=false',
   ];
 
   // Brave's Shields extension. Not normally needed: Playwright passes
@@ -86,13 +90,17 @@ function restoreFocus(appName) {
 /**
  * Free the tool's Brave profile before launching.
  *
- * This is the fix for the failure mode that cost more runs than anything else:
- * `launchPersistentContext` hanging until its timeout with
- * "Timeout 180000ms exceeded ... <launching> /Applications/Brave". It looks like
- * a launch problem and reads like a CAPTCHA stall, but it is neither — a Brave
- * from an earlier run is still alive and holding the profile's singleton lock,
- * so the new launch waits forever for a profile it will never get. The symptom
- * you see is leftover windows full of about:blank tabs.
+ * Guards against a Brave from an earlier run still holding the profile's
+ * singleton lock, which makes the next `launchPersistentContext` wait for a
+ * profile it will never get. The visible symptom is leftover windows full of
+ * about:blank tabs.
+ *
+ * Worth knowing what this did NOT explain: the run of
+ * "launchPersistentContext: Timeout" failures in the runs table happened with no
+ * orphan present — this function never once logged a kill during them. Their
+ * real cause was the run lock expiring at exactly maxRuntimeMinutes while a run
+ * was legitimately still going (see index.js), plus launchd firing as the
+ * machine woke. Keep this as belt-and-braces, not as the explanation.
  *
  * Two rules keep this safe:
  *   1. Match on the profile path, never on the process name. Killing "Brave" by
@@ -103,15 +111,22 @@ function restoreFocus(appName) {
  *      unclean, which is what produces the "Brave didn't shut down correctly"
  *      restore-tabs bar on the next launch — another source of stray tabs.
  */
-function releaseProfileLock() {
+export function releaseProfileLock() {
   let ours = [];
   try {
-    const ps = execFileSync('/bin/ps', ['-axo', 'pid=,command='], { encoding: 'utf8', maxBuffer: 8 << 20 });
+    // -ww asks ps not to truncate. Measured on this machine it changes nothing
+    // (both forms return the full ~4.4k-character Chromium command line), but
+    // the default width limit is platform-dependent and `--user-data-dir` sits
+    // near the end of that line, so it is cheap insurance.
+    const ps = execFileSync('/bin/ps', ['-axww', '-o', 'pid=,command='], { encoding: 'utf8', maxBuffer: 32 << 20 });
     ours = ps
       .split('\n')
-      .filter((line) => line.includes(PATHS.profile))
+      // Both conditions are required. The profile path alone also matches this
+      // very process, any shell that mentions it, and a grep looking for it —
+      // killing those would be worse than the problem being solved.
+      .filter((line) => line.includes(`--user-data-dir=${PATHS.profile}`) && line.includes('Brave Browser'))
       .map((line) => Number(line.trim().split(/\s+/)[0]))
-      .filter((pid) => Number.isFinite(pid) && pid !== process.pid);
+      .filter((pid) => Number.isFinite(pid) && pid !== process.pid && pid !== process.ppid);
   } catch {
     return; // ps unavailable — fall through and let the launch try anyway.
   }
@@ -174,11 +189,24 @@ export async function launchBrave(cfg, { forLogin = false } = {}) {
 
   log.info('Launching Brave…');
 
+  /**
+   * Launching is retried rather than fatal.
+   *
+   * A launch timeout used to end the run outright, and it was the single
+   * largest source of failed runs. The causes are all transient — the machine
+   * waking from sleep while launchd fires, a previous Brave that has not
+   * finished releasing the profile, a moment of heavy load — and every one of
+   * them is gone a few seconds later. Killing a whole 15-minute slot over that
+   * is the wrong trade, especially when the retry costs seconds.
+   *
+   * Each attempt re-runs the profile cleanup first, because by far the most
+   * likely reason the first attempt hung is something still holding the profile.
+   */
   // Only these four options, plus args. Overriding locale, timezoneId or
   // userAgent can only create a mismatch between JS values, HTTP headers and
   // the real IP geolocation — on the user's own machine the natural values are
   // correct by definition.
-  const context = await chromium.launchPersistentContext(PATHS.profile, {
+  const attemptLaunch = () => chromium.launchPersistentContext(PATHS.profile, {
     executablePath: BRAVE_PATH,
     headless: false,
     viewport: null,
@@ -188,11 +216,32 @@ export async function launchBrave(cfg, { forLogin = false } = {}) {
     // Keeping the normal sandbox removes the banner and matches how the browser
     // ordinarily runs.
     chromiumSandbox: true,
-    // Default is 180s. With the profile lock released above, a launch either
-    // works in a few seconds or is never going to — and on a 15-minute schedule
-    // a 3-minute hang eats a fifth of the slot before the run even starts.
+    // Per attempt, not for the whole launch. A healthy launch takes about two
+    // seconds, so 45s is already generous; the retries below are what absorb a
+    // slow machine, rather than one long hopeful wait.
     timeout: 45_000,
   });
+
+  const LAUNCH_ATTEMPTS = 3;
+  let context;
+  for (let attempt = 1; attempt <= LAUNCH_ATTEMPTS; attempt++) {
+    try {
+      context = await attemptLaunch();
+      if (attempt > 1) log.ok(`Brave launched on attempt ${attempt}.`);
+      break;
+    } catch (err) {
+      const last = attempt === LAUNCH_ATTEMPTS;
+      const why = err.message.split('\n')[0];
+      if (last) {
+        throw new Error(`Brave would not launch after ${LAUNCH_ATTEMPTS} attempts — ${why}`);
+      }
+      log.warn(`Brave did not launch (attempt ${attempt}/${LAUNCH_ATTEMPTS}): ${why}`);
+      // Almost always something still holding the profile, so clear it again
+      // before trying rather than repeating the identical attempt.
+      releaseProfileLock();
+      await new Promise((r) => setTimeout(r, 3000 * attempt));
+    }
+  }
 
   if (cfg.browser.returnFocus !== false) restoreFocus(previousApp);
 
