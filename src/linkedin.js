@@ -81,6 +81,23 @@ export function jobUrl(jobId) {
 }
 
 /**
+ * The same posting, but rendered inside the search results' detail pane.
+ *
+ * `/jobs/view/<id>` is the right URL to *publish* — it is what a human should
+ * be sent to. It is the wrong URL to *read*, because the standalone page uses a
+ * different layout from the pane, and every selector in DESCRIPTION_SELECTORS
+ * is tuned for the pane. Navigating to the standalone page returns a
+ * description of zero characters: the extraction silently produces nothing, and
+ * the posting ends up on the site as a bare title.
+ *
+ * `?currentJobId=` asks the search page to open with that job already selected,
+ * which puts the description back in the markup the extractor knows how to read.
+ */
+export function jobPaneUrl(jobId) {
+  return `https://www.linkedin.com/jobs/search/?currentJobId=${jobId}`;
+}
+
+/**
  * Start the session the way a person would: land on the feed, sit for a
  * moment, then move to jobs — rather than deep-linking straight into a
  * filtered search URL from a cold session.
@@ -369,7 +386,11 @@ export async function openAndExtract(page, card, cfg) {
 
   if (!clicked) {
     log.debug(`Card ${card.jobId} was not clickable; navigating directly.`);
-    await page.goto(jobUrl(card.jobId), { waitUntil: 'domcontentloaded' });
+    // The pane URL, not the standalone view — see jobPaneUrl. This path is
+    // taken both when a card scrolls out from under us mid-scan and for every
+    // description backfill, so getting it wrong costs a silent empty read
+    // rather than a visible error.
+    await page.goto(jobPaneUrl(card.jobId), { waitUntil: 'domcontentloaded' });
   }
 
   // Wait for the pane to actually change rather than a fixed sleep.

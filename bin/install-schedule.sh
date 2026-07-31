@@ -134,19 +134,25 @@ cat > "$PLIST" <<PLIST_EOF
     <key>WorkingDirectory</key>
     <string>$HERE</string>
 
-    <!-- Every 30 minutes, on the hour and the half hour. An omitted Hour key is
-         a wildcard, so these two entries cover all 48 slots in a day.
+    <!-- Every 15 minutes. An omitted Hour key is a wildcard, so these four
+         entries cover all 96 slots in a day.
          Asleep at the time: launchd fires once shortly after the lid opens,
          and coalesces several missed slots into a single run rather than
          replaying each one. Powered off: that slot is dropped and the next
          slot is the recovery. Either way the scan widens its own lookback
          window to cover the gap - see filters.adaptiveWindow.
-         A run takes well under 30 minutes, and the lock in index.js refuses to
-         start a second one anyway, so overlapping slots are safe. -->
+         The run must finish inside its slot or the lock in index.js will skip
+         the next one, so limits.maxRuntimeMinutes is 12 and
+         pacing.startupJitter is capped at 60s. Successful runs average about
+         6 minutes, so there is headroom - but if you lengthen the pacing or
+         raise maxDetailsPerRun, re-check that budget before assuming it still
+         fits. -->
     <key>StartCalendarInterval</key>
     <array>
         <dict><key>Minute</key><integer>0</integer></dict>
+        <dict><key>Minute</key><integer>15</integer></dict>
         <dict><key>Minute</key><integer>30</integer></dict>
+        <dict><key>Minute</key><integer>45</integer></dict>
     </array>
 
     <key>RunAtLoad</key>
@@ -191,7 +197,7 @@ launchctl bootstrap "gui/$UID_NUM" "$PLIST"
 launchctl enable "gui/$UID_NUM/$LABEL"
 
 echo
-echo "Scheduled: every hour on the hour, plus a few minutes of random jitter."
+echo "Scheduled: every 15 minutes (:00, :15, :30, :45), plus up to 60s of random jitter."
 echo "If the Mac is asleep at a slot, the run fires shortly after you open the lid."
 echo
 echo "  Verify it registered:  launchctl print gui/$UID_NUM/$LABEL | head -20"

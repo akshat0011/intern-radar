@@ -133,6 +133,79 @@ export class Store {
   }
 
   /**
+   * Jobs that were stored from card data alone and never had their page opened.
+   *
+   * A confidently non-tech title skips the page open during a scan, which is the
+   * right call for the run's page budget — but it leaves the row with no
+   * description at all, and `needingEnrichment` requires one. Nothing in a later
+   * scan re-opens the job either, because `hasJob` short-circuits it as already
+   * known. So without this query those rows are stuck forever: no bullets, no
+   * stipend, no duration, published as a bare title. That is the "the posting
+   * clearly has a description but the site shows nothing" case.
+   *
+   * Restricted to rows still inside the publish window — backfilling a job that
+   * has already dropped off the site spends a page load on nobody's behalf.
+   */
+  needingDescription(limit = 8, maxAgeDays = 14) {
+    return this.db.prepare(`
+      SELECT job_id, title, company
+      FROM jobs
+      WHERE description IS NULL
+        AND first_seen_at > ?
+      ORDER BY first_seen_at DESC
+      LIMIT ?
+    `).all(Date.now() - maxAgeDays * 86_400_000, limit);
+  }
+
+  /**
+   * Fill in a row that was originally stored from card data alone.
+   *
+   * COALESCE on every optional column so a backfill can only ever add: if the
+   * detail pane does not mention a duration, the card's value stays. The one
+   * exception is `description` itself, which is what we came for.
+   *
+   * Deliberately does NOT touch first_seen_at. That column is the site's sort
+   * order and its freshness label, so moving it would push a week-old posting
+   * back to the top of the list purely because we got around to reading it.
+   */
+  saveDescription(jobId, job) {
+    this.db.prepare(`
+      UPDATE jobs SET
+        description      = ?,
+        summary          = COALESCE(?, summary),
+        duration         = COALESCE(?, duration),
+        skills           = COALESCE(?, skills),
+        salary_text      = COALESCE(?, salary_text),
+        stipend_min      = COALESCE(?, stipend_min),
+        stipend_max      = COALESCE(?, stipend_max),
+        stipend_currency = COALESCE(?, stipend_currency),
+        stipend_period   = COALESCE(?, stipend_period),
+        applicants       = COALESCE(?, applicants),
+        apply_url        = COALESCE(?, apply_url),
+        workplace_type   = COALESCE(?, workplace_type),
+        logo_url         = COALESCE(logo_url, ?),
+        last_seen_at     = ?
+      WHERE job_id = ?
+    `).run(
+      job.description ?? null,
+      job.summary ?? null,
+      job.duration ?? null,
+      job.skills?.length ? JSON.stringify(job.skills) : null,
+      job.salaryText ?? null,
+      job.stipend?.min ?? null,
+      job.stipend?.max ?? null,
+      job.stipend?.currency ?? null,
+      job.stipend?.period ?? null,
+      job.applicants ?? null,
+      job.applyUrl ?? null,
+      job.workplaceType ?? null,
+      job.logoUrl ?? null,
+      Date.now(),
+      jobId,
+    );
+  }
+
+  /**
    * Persist one enrichment result. isTech is only overwritten when the caller
    * actually produced one.
    *

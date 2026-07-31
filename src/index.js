@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * One scan of LinkedIn for new internships at the watchlist companies.
- * Invoked by launchd every 30 minutes, or by hand via `npm run`.
+ * Invoked by launchd every 15 minutes, or by hand via `npm run`.
  */
 import { loadConfig, matchCompany, matchTitle, resolveWindowHours } from './config.js';
 import { join } from 'node:path';
@@ -95,6 +95,79 @@ function loadEnv() {
     process.loadEnvFile(join(ROOT, '.env'));
   } catch {
     // No .env, or unreadable. Not an error: the classifier falls back offline.
+  }
+}
+
+/**
+ * Open jobs that were stored from card data alone and fetch what we skipped.
+ *
+ * A confidently non-tech title does not get its page opened during the scan —
+ * that is a deliberate trade to keep the run's page budget on roles that need a
+ * verdict. The side effect is a row with description NULL, and since
+ * `needingEnrichment` requires a description, and a later scan skips the job as
+ * already known, those rows never improve. They sit on the site as a bare title
+ * with no stipend and no duration even though the posting plainly states both.
+ *
+ * This is the pass that closes that loop. It is deliberately small and last:
+ * capped per run, and it stops the moment the run is out of time, so it can
+ * only ever use the slack left over after the actual scan.
+ */
+async function backfillDescriptions(page, store, cfg, clock, counters) {
+  const limit = cfg.enrich?.backfillPerRun ?? 6;
+  if (limit <= 0) return;
+
+  const pending = store.needingDescription(limit, cfg.publish?.maxAgeDays ?? 14);
+  if (!pending.length) return;
+
+  log.info(`Backfilling ${pending.length} posting${pending.length === 1 ? '' : 's'} that were listed without being opened…`);
+
+  for (const row of pending) {
+    if (clock.exceeded()) {
+      log.info('Out of time — the rest keep their card data and are picked up next run.');
+      break;
+    }
+    if (!(await pageAlive(page))) break;
+
+    await pause(cfg.pacing.betweenCards);
+
+    let detail;
+    try {
+      detail = await li.openAndExtract(page, { jobId: row.job_id }, cfg);
+    } catch (err) {
+      counters.failedDetails++;
+      log.warn(`Could not backfill "${row.title}" — ${err.message.split('\n')[0]}`);
+      await ensureHealthy(page, cfg, { context: `backfill ${row.job_id}` });
+      continue;
+    }
+
+    await ensureHealthy(page, cfg, { context: `backfill ${row.job_id}` });
+
+    const description = detail.description || '';
+    if (description.length <= 200) {
+      // Nothing worth storing. Leave description NULL so the row stays in the
+      // queue rather than being marked done with an empty string.
+      log.debug(`Backfill found no usable description for ${row.job_id}.`);
+      continue;
+    }
+
+    const job = {
+      description,
+      salaryText: detail.salaryText ?? null,
+      stipend: extractStipend(detail.salaryText, description),
+      duration: extractDuration(description, detail.title || row.title),
+      skills: extractSkills(description),
+      applicants: detail.applicants ?? null,
+      applyUrl: detail.applyUrl ?? null,
+      workplaceType: detail.workplaceType || extractWorkplaceType(detail.location, description),
+      logoUrl: detail.logoUrl ?? null,
+      title: detail.title || row.title,
+      company: detail.company || row.company,
+    };
+    job.summary = await summarize(job, description, cfg.summarizer);
+
+    store.saveDescription(row.job_id, job);
+    counters.descriptionsBackfilled++;
+    log.ok(`  → backfilled ${row.company ?? ''} ${row.title}`.replace(/\s+/g, ' '));
   }
 }
 
@@ -226,7 +299,7 @@ async function main() {
 
   const clock = budget(cfg.limits.maxRuntimeMinutes);
   const notes = [];
-  const counters = { pagesScanned: 0, cardsSeen: 0, detailsExtracted: 0, newJobs: 0, skippedStale: 0, skippedCompany: 0, skippedTitle: 0, techRoles: 0, nonTechRoles: 0, geminiJudged: 0, termsLearned: 0, nearMisses: 0, skippedViewed: 0, listedWithoutOpening: 0, logosBackfilled: 0, skippedKnown: 0, failedDetails: 0 };
+  const counters = { pagesScanned: 0, cardsSeen: 0, detailsExtracted: 0, newJobs: 0, skippedStale: 0, skippedCompany: 0, skippedTitle: 0, techRoles: 0, nonTechRoles: 0, geminiJudged: 0, termsLearned: 0, nearMisses: 0, skippedViewed: 0, listedWithoutOpening: 0, logosBackfilled: 0, skippedKnown: 0, failedDetails: 0, descriptionsBackfilled: 0 };
 
   log.section(`Run ${runId}`);
   log.info(`${cfg.watchlist.length} watchlist terms across ${cfg.uniqueCompanyCount} companies · mode "${cfg.searchMode ?? 'companies'}" · ${allSearches.length} searches · budget ${cfg.limits.maxRuntimeMinutes}m`);
@@ -499,6 +572,11 @@ async function main() {
     }
 
     searchStart = cursor;
+
+    // ---- backfill descriptions we never fetched ----------------------------
+    // Must happen here, inside the browser session: the `finally` below closes
+    // Brave, and enrichment further down has no page to work with.
+    await backfillDescriptions(page, store, cfg, clock, counters);
   } catch (err) {
     if (err instanceof RunAborted) {
       status = counters.newJobs > 0 ? 'partial' : 'aborted';
@@ -620,6 +698,7 @@ async function main() {
     `skipped ${counters.skippedCompany} off-watchlist, ${counters.skippedTitle} title not an internship, ` +
     `${counters.skippedStale} older than ${cfg.filters.postedWithinHours}h, ${counters.skippedKnown} already known, ` +
     `${counters.skippedViewed} already viewed · ${counters.listedWithoutOpening} listed without opening` +
+    (counters.descriptionsBackfilled ? ` · ${counters.descriptionsBackfilled} descriptions backfilled` : '') +
     (counters.failedDetails ? ` · ${counters.failedDetails} failed to read` : '');
 
   log.section('Summary');

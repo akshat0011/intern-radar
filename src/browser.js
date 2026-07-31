@@ -1,4 +1,4 @@
-import { existsSync, mkdirSync } from 'node:fs';
+import { existsSync, mkdirSync, rmSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { chromium } from 'playwright-core';
@@ -34,6 +34,13 @@ function braveArgs(cfg) {
     '--no-first-run',
     '--no-default-browser-check',
     '--disable-brave-update',
+
+    // If a previous run ended badly, Chromium offers to restore its tabs. The
+    // bubble steals the viewport, and accepting it reopens a window of stale
+    // job pages that the scan then treats as the current one. We always start
+    // from a known URL, so there is nothing worth restoring.
+    '--hide-crash-restore-bubble',
+    '--restore-last-session=false',
   ];
 
   // Brave's Shields extension. Not normally needed: Playwright passes
@@ -77,6 +84,67 @@ function restoreFocus(appName) {
 }
 
 /**
+ * Free the tool's Brave profile before launching.
+ *
+ * This is the fix for the failure mode that cost more runs than anything else:
+ * `launchPersistentContext` hanging until its timeout with
+ * "Timeout 180000ms exceeded ... <launching> /Applications/Brave". It looks like
+ * a launch problem and reads like a CAPTCHA stall, but it is neither — a Brave
+ * from an earlier run is still alive and holding the profile's singleton lock,
+ * so the new launch waits forever for a profile it will never get. The symptom
+ * you see is leftover windows full of about:blank tabs.
+ *
+ * Two rules keep this safe:
+ *   1. Match on the profile path, never on the process name. Killing "Brave" by
+ *      name would take the user's ordinary browser and every tab in it with it.
+ *      Only a process whose command line carries `--user-data-dir=<our profile>`
+ *      is ours to end.
+ *   2. Terminate politely first. SIGKILL on Chromium leaves the profile marked
+ *      unclean, which is what produces the "Brave didn't shut down correctly"
+ *      restore-tabs bar on the next launch — another source of stray tabs.
+ */
+function releaseProfileLock() {
+  let ours = [];
+  try {
+    const ps = execFileSync('/bin/ps', ['-axo', 'pid=,command='], { encoding: 'utf8', maxBuffer: 8 << 20 });
+    ours = ps
+      .split('\n')
+      .filter((line) => line.includes(PATHS.profile))
+      .map((line) => Number(line.trim().split(/\s+/)[0]))
+      .filter((pid) => Number.isFinite(pid) && pid !== process.pid);
+  } catch {
+    return; // ps unavailable — fall through and let the launch try anyway.
+  }
+
+  if (ours.length) {
+    log.warn(`Found ${ours.length} leftover Brave process${ours.length === 1 ? '' : 'es'} holding the tool profile — closing ${ours.length === 1 ? 'it' : 'them'} before launching.`);
+    for (const pid of ours) {
+      try { process.kill(pid, 'SIGTERM'); } catch { /* already gone */ }
+    }
+    // Give Chromium a moment to release the lock and write a clean profile.
+    const deadline = Date.now() + 5000;
+    while (Date.now() < deadline) {
+      const alive = ours.filter((pid) => { try { process.kill(pid, 0); return true; } catch { return false; } });
+      if (!alive.length) break;
+      try { execFileSync('/bin/sleep', ['0.25']); } catch { break; }
+    }
+    for (const pid of ours) {
+      try { process.kill(pid, 'SIGKILL'); } catch { /* exited cleanly */ }
+    }
+  }
+
+  // Stale singleton links survive a hard kill and block the next launch on
+  // their own, so clear them whether or not we just killed anything.
+  try {
+    for (const name of readdirSync(PATHS.profile)) {
+      if (name.startsWith('Singleton')) {
+        rmSync(join(PATHS.profile, name), { force: true, recursive: true });
+      }
+    }
+  } catch { /* profile not created yet */ }
+}
+
+/**
  * Launch Brave with the tool's persistent profile.
  * Returns { context, page }. Pass `{ forLogin: true }` for the sign-in flow,
  * which must not assume a session already exists.
@@ -99,6 +167,11 @@ export async function launchBrave(cfg, { forLogin = false } = {}) {
   }
 
   const previousApp = frontmostApp();
+
+  // Must happen before the launch, not after: the whole point is that the
+  // profile is free by the time Playwright asks for it.
+  releaseProfileLock();
+
   log.info('Launching Brave…');
 
   // Only these four options, plus args. Overriding locale, timezoneId or
@@ -115,6 +188,10 @@ export async function launchBrave(cfg, { forLogin = false } = {}) {
     // Keeping the normal sandbox removes the banner and matches how the browser
     // ordinarily runs.
     chromiumSandbox: true,
+    // Default is 180s. With the profile lock released above, a launch either
+    // works in a few seconds or is never going to — and on a 15-minute schedule
+    // a 3-minute hang eats a fifth of the slot before the run even starts.
+    timeout: 45_000,
   });
 
   if (cfg.browser.returnFocus !== false) restoreFocus(previousApp);
@@ -124,14 +201,28 @@ export async function launchBrave(cfg, { forLogin = false } = {}) {
   // different browser. If LinkedIn challenges the session, the tool stops and
   // asks you — see src/guard.js.
 
-  const page = context.pages()[0] ?? (await context.newPage());
+  // Pick the real tab, not a placeholder. Brave can come up with a restored
+  // session or its own new-tab page, and `pages()[0]` is then an about:blank
+  // that every later health check reads as a broken or challenged page — the
+  // run stops on a page that was never LinkedIn to begin with.
+  const realPage = context.pages().find((p) => {
+    const u = p.url();
+    return u && u !== 'about:blank' && !u.startsWith('chrome://') && !u.startsWith('brave://');
+  });
+  const page = realPage ?? context.pages()[0] ?? (await context.newPage());
   page.setDefaultTimeout(30_000);
   page.setDefaultNavigationTimeout(60_000);
 
-  // Close any extra tabs Brave opened for itself.
-  for (const p of context.pages()) {
-    if (p !== page) await p.close().catch(() => {});
-  }
+  // Close the tabs Brave opened for itself. A single sweep is not enough: the
+  // restore-session tab can arrive a moment after launch, so anything that
+  // shows up later gets closed too. Without this they accumulate across runs,
+  // which is where the window full of about:blank tabs comes from.
+  const closeStray = (p) => {
+    if (p === page) return;
+    p.close().catch(() => {});
+  };
+  for (const p of context.pages()) closeStray(p);
+  context.on('page', closeStray);
 
   return { context, page, previousApp };
 }
@@ -139,10 +230,19 @@ export async function launchBrave(cfg, { forLogin = false } = {}) {
 export async function closeBrave(session) {
   if (!session) return;
   try {
-    await session.context.close();
+    // A close that never resolves is how a Brave survives its own run and then
+    // blocks the next one. Bound the wait, then fall through to the same
+    // profile-lock cleanup the next launch would do — better to end it here,
+    // while we still know it is ours, than to leave it for a run 15 minutes
+    // from now to discover.
+    await Promise.race([
+      session.context.close(),
+      new Promise((_, reject) => setTimeout(() => reject(new Error('close timed out after 20s')), 20_000)),
+    ]);
     log.info('Closed Brave.');
   } catch (err) {
-    log.warn(`Brave did not close cleanly: ${err.message}`);
+    log.warn(`Brave did not close cleanly (${err.message}) — releasing the profile by hand.`);
+    releaseProfileLock();
   }
 }
 

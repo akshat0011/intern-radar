@@ -103,15 +103,15 @@
     "_longBreak_note": "Every N job cards, take a longer human-style break.",
     "startupJitter": [
       0,
-      240000
+      60000
     ],
-    "_startupJitter_note": "Scheduled runs wait a random extra 0-4 min, so activity does not land at exactly HH:00:00 every hour. Kept short because runs are hourly - a long jitter would push one slot into the next."
+    "_startupJitter_note": "Scheduled runs wait a random extra 0-60s, so activity does not land at exactly HH:00:00 every time. Was 0-4 min when runs were half-hourly; at 15-minute slots that much jitter could push a run most of the way into the next slot, where the lock would then skip it."
   },
   "limits": {
-    "maxRuntimeMinutes": 45,
+    "maxRuntimeMinutes": 12,
     "maxPagesPerSearch": 40,
     "maxDetailsPerRun": 100,
-    "_maxRuntimeMinutes_note": "Must stay comfortably under 60 with hourly runs, or two runs would overlap and fight over the Brave profile lock. A run already refuses to start while another is in progress, but the budget should not rely on that.",
+    "_maxRuntimeMinutes_note": "Must stay under the 15-minute schedule gap, or a long run overlaps the next slot and the lock skips it - so the effective interval silently becomes 30 minutes. Successful runs average about 6 min and the worst observed was 6.3, so 12 leaves headroom while still failing fast. This was 45 when runs were half-hourly.",
     "_note": "Safety backstops, not the normal stopping point. Paging normally ends when LinkedIn's 'Next' button runs out, which means every job in the window has been seen. These caps only bite if a search is unusually deep - and when one does bite, the report says so explicitly rather than pretending the search finished.",
     "_maxPagesPerSearch_note": "40 pages x 25 = 1000 results, which is roughly LinkedIn's own ceiling for a single search. With the 24-hour filter on, most searches end far sooner."
   },
@@ -159,6 +159,8 @@
   },
   "enrich": {
     "perRunLimit": 24,
+    "backfillPerRun": 6,
+    "_backfillPerRun_note": "How many jobs stored from card data alone get their page opened at the end of a run to fetch the description we skipped. Confidently non-tech titles are listed without being opened, which leaves description NULL - and needingEnrichment requires a description, so without this pass those rows never gain bullets, stipend or duration. Kept small and time-gated: it only uses slack left after the scan.",
     "_perRunLimit_note": "How many freshly scraped postings get sent to Gemini for bullets, eligibility and skills at the end of each run. The free tier has a daily request cap, and with runs every 30 minutes an uncapped run could spend the whole day's quota in one go. Anything skipped is picked up by the next run, because only postings with no bullets yet are ever selected.",
     "useGemini": true
   }
