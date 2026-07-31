@@ -6,7 +6,14 @@
   <atom:link href="https://www.internradar.info/feed.xml" rel="self" type="application/rss+xml"/>
   <description>New engineering internships, listed within minutes of going live.</description>
   <language>en-in</language>
-  <lastBuildDate>Fri, 31 Jul 2026 16:04:47 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 31 Jul 2026 16:18:41 GMT</lastBuildDate>
+  <item>
+    <title>UX Research Intern — Sprinklr</title>
+    <link>https://www.internradar.info/jobs/sprinklr-ux-research-intern-ats:workday:sprinklr:wd1:careers:113313-JOB</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/sprinklr-ux-research-intern-ats:workday:sprinklr:wd1:careers:113313-JOB</guid>
+    <pubDate>Fri, 31 Jul 2026 16:15:20 GMT</pubDate>
+    <description>Company: Sprinklr · Location: India - Haryana - Gurgaon</description>
+  </item>
   <item>
     <title>Full Stack Developer Intern — Multiplier AI</title>
     <link>https://www.internradar.info/jobs/multiplier-ai-full-stack-developer-intern-4447525184</link>
@@ -510,16 +517,6 @@
     <guid isPermaLink="true">https://www.internradar.info/jobs/qualcomm-interim-engineering-intern-1-year-hardware-4376089162</guid>
     <pubDate>Sat, 25 Jul 2026 11:58:06 GMT</pubDate>
     <description>Company: Qualcomm · Location: Bengaluru, Karnataka, India</description>
-  </item>
-  <item>
-    <title>Graduate Engineer Trainee — Wipro</title>
-    <link>https://www.internradar.info/jobs/wipro-graduate-engineer-trainee-4444632445</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/wipro-graduate-engineer-trainee-4444632445</guid>
-    <pubDate>Sat, 25 Jul 2026 11:49:41 GMT</pubDate>
-    <description>Company: Wipro · Location: Noida, Uttar Pradesh, India
-• Prepare test data and run basic database checks for assigned tasks
-• Assist unit testing, verify expected results and document them in set formats
-• Domain is Health and Welfare (HW) tech, listed as the mandatory skill</description>
   </item>
 </channel>
 </rss>

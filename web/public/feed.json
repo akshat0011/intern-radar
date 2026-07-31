@@ -6,6 +6,18 @@
   "description": "New engineering internships, listed within minutes of going live.",
   "items": [
     {
+      "id": "https://www.internradar.info/jobs/sprinklr-ux-research-intern-ats:workday:sprinklr:wd1:careers:113313-JOB",
+      "url": "https://www.internradar.info/jobs/sprinklr-ux-research-intern-ats:workday:sprinklr:wd1:careers:113313-JOB",
+      "title": "UX Research Intern — Sprinklr",
+      "content_text": "Company: Sprinklr · Location: India - Haryana - Gurgaon",
+      "date_published": "2026-07-31T16:15:20.231Z",
+      "authors": [
+        {
+          "name": "Sprinklr"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/multiplier-ai-full-stack-developer-intern-4447525184",
       "url": "https://www.internradar.info/jobs/multiplier-ai-full-stack-developer-intern-4447525184",
       "title": "Full Stack Developer Intern — Multiplier AI",
@@ -590,18 +602,6 @@
       "authors": [
         {
           "name": "Qualcomm"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/wipro-graduate-engineer-trainee-4444632445",
-      "url": "https://www.internradar.info/jobs/wipro-graduate-engineer-trainee-4444632445",
-      "title": "Graduate Engineer Trainee — Wipro",
-      "content_text": "Company: Wipro · Location: Noida, Uttar Pradesh, India\n• Prepare test data and run basic database checks for assigned tasks\n• Assist unit testing, verify expected results and document them in set formats\n• Domain is Health and Welfare (HW) tech, listed as the mandatory skill",
-      "date_published": "2026-07-25T11:49:41.622Z",
-      "authors": [
-        {
-          "name": "Wipro"
         }
       ]
     }
