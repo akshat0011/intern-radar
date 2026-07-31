@@ -1,5 +1,5 @@
 {
- "generatedAt": 1785501663554,
+ "generatedAt": 1785502031092,
  "count": 82,
  "techCount": 82,
  "otherCount": 0,
@@ -81,7 +81,7 @@
    "company": "Valeo",
    "matchedWatchlist": "Valeo",
    "isTech": true,
-   "roleSource": "gemini-description",
+   "roleSource": "gemini-enrich",
    "logo": "/logos/valeo.jpg",
    "location": "Chennai, Tamil Nadu, India",
    "workplaceType": "On-site",
@@ -91,11 +91,18 @@
    "easyApply": false,
    "skills": [],
    "summary": "Valeo est une entreprise mondiale de haute technologie qui conçoit des solutions révolutionnaires pour réinventer la mobilité. Nous sommes un équipementier partenaire des constructeurs automobiles et des acteurs de la nouvelle mobilité dans le monde entier. Bachelor / Masters - CS/AI/Data Science Being part of our team, you will join~",
-   "bullets": [],
-   "roleLabel": null,
-   "degreeLevel": null,
-   "degreeText": null,
-   "keySkills": [],
+   "bullets": [
+    "Work in R&D within the Artificial Intelligence department",
+    "Focus on high-tech solutions for mobility, intuitive driving, and CO2 reduction",
+    "Join a global company with over 20,000 engineers in R&D"
+   ],
+   "roleLabel": "AI R&D engineering",
+   "degreeLevel": "UG/PG",
+   "degreeText": "B.Sc/M.Sc",
+   "keySkills": [
+    "ai",
+    "data science"
+   ],
    "stipendStatus": "unknown",
    "postedText": "6 minutes ago",
    "postedAt": 1785500973871,
@@ -110,7 +117,7 @@
    "company": "Valeo",
    "matchedWatchlist": "Valeo",
    "isTech": true,
-   "roleSource": "gemini-description",
+   "roleSource": "gemini-enrich",
    "logo": "/logos/valeo.jpg",
    "location": "Chennai, Tamil Nadu, India",
    "workplaceType": "On-site",
@@ -120,11 +127,17 @@
    "easyApply": false,
    "skills": [],
    "summary": "Valeo est une entreprise mondiale de haute technologie qui conçoit des solutions révolutionnaires pour réinventer la mobilité. Nous sommes un équipementier partenaire des constructeurs automobiles et des acteurs de la nouvelle mobilité dans le monde entier. 2 Interns in AI M.Tech / B.Tech Being part of our team, you will join~",
-   "bullets": [],
-   "roleLabel": null,
-   "degreeLevel": null,
-   "degreeText": null,
-   "keySkills": [],
+   "bullets": [
+    "Work in R&D within the Artificial Intelligence department",
+    "Focus on high-tech solutions for mobility, intuitive driving, and CO2 reduction",
+    "Join a global company with over 20,000 engineers in R&D"
+   ],
+   "roleLabel": "AI R&D engineering",
+   "degreeLevel": "UG/PG",
+   "degreeText": "B.Tech/M.Tech",
+   "keySkills": [
+    "ai"
+   ],
    "stipendStatus": "unknown",
    "postedText": "5 minutes ago",
    "postedAt": 1785500942385,
