@@ -546,18 +546,6 @@
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/red-hat-software-engineering-intern-4444351407",
-      "url": "https://www.internradar.info/jobs/red-hat-software-engineering-intern-4444351407",
-      "title": "Software Engineering Intern — Red Hat",
-      "content_text": "Company: Red Hat · Location: Bengaluru, Karnataka, India\n• Write and maintain Python or Go code with a senior mentor\n• Add features and chase bugs in Red Hat products like RHEL and OpenShift\n• Projects across Global Engineering touching Ansible, OpenShift and AI\n• Pune or Bangalore, in an intern cohort; no visa sponsorship",
-      "date_published": "2026-07-25T12:23:00.853Z",
-      "authors": [
-        {
-          "name": "Red Hat"
-        }
-      ]
-    },
-    {
       "id": "https://www.internradar.info/jobs/red-hat-software-engineering-intern-4444342572",
       "url": "https://www.internradar.info/jobs/red-hat-software-engineering-intern-4444342572",
       "title": "Software Engineering Intern — Red Hat",
@@ -602,6 +590,18 @@
       "authors": [
         {
           "name": "Wipro"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/bnp-paribas-data-science-intern-4436910676",
+      "url": "https://www.internradar.info/jobs/bnp-paribas-data-science-intern-4436910676",
+      "title": "Data Science Intern — BNP Paribas",
+      "content_text": "Company: BNP Paribas · Location: Bengaluru, Karnataka, India · Duration: 6 months\n• Build predictive models on market and alternative data for traders and strategists\n• Clean and transform data, test hypotheses, build ETL workflows across many sources\n• Python with pytorch, scikit-learn, pandas, langchain and huggingface\n• 6 months in Bangalore, owning a topic like market commentary or swap risk",
+      "date_published": "2026-07-25T11:24:17.315Z",
+      "authors": [
+        {
+          "name": "BNP Paribas"
         }
       ]
     }
