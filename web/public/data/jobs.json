@@ -1,7 +1,7 @@
 {
- "generatedAt": 1785512972351,
- "count": 72,
- "techCount": 72,
+ "generatedAt": 1785513887830,
+ "count": 74,
+ "techCount": 74,
  "otherCount": 0,
  "companies": [
   "ALLEN",
@@ -1926,6 +1926,54 @@
    "description": null
   },
   {
+   "id": "4444351407",
+   "title": "Software Engineering Intern",
+   "company": "Red Hat",
+   "matchedWatchlist": "Red Hat",
+   "isTech": true,
+   "roleSource": "manual-enrich",
+   "logo": "/logos/red-hat.jpg",
+   "location": "Bengaluru, Karnataka, India",
+   "workplaceType": "On-site",
+   "stipend": null,
+   "duration": null,
+   "applicants": null,
+   "easyApply": false,
+   "skills": [
+    "python",
+    "java",
+    "javascript",
+    "golang",
+    "kubernetes",
+    "linux",
+    "agile"
+   ],
+   "summary": "They don’t get relegated to busywork or unimportant tasks, but participate in the day-to-day work and are active contributors to their team. We are currently looking for Software Engineering interns to join us in Pune or Bangalore. You will work closely with a senior mentor to gain technical knowledge and experience in your field, and cooperate with a broader international team both locally and globally. You will be part of a cohort of interns and have the opportunity to work on multiple projects within Global Engineering while also receiving learning and curriculum on different technologies.",
+   "bullets": [
+    "Write and maintain Python or Go code with a senior mentor",
+    "Add features and chase bugs in Red Hat products like RHEL and OpenShift",
+    "Projects across Global Engineering touching Ansible, OpenShift and AI",
+    "Pune or Bangalore, in an intern cohort; no visa sponsorship"
+   ],
+   "roleLabel": "Systems software development",
+   "degreeLevel": "UG",
+   "degreeText": "Bachelor's",
+   "keySkills": [
+    "python",
+    "golang",
+    "ansible",
+    "openshift",
+    "rhel"
+   ],
+   "stipendStatus": "unknown",
+   "postedText": "1 day ago",
+   "postedAt": 1784982180853,
+   "firstSeenAt": 1785068580857,
+   "url": "https://www.linkedin.com/jobs/view/4444351407/",
+   "applyUrl": "https://www.linkedin.com/jobs/view/4444351407/",
+   "description": null
+  },
+  {
    "id": "4444342572",
    "title": "Software Engineering Intern",
    "company": "Red Hat",
@@ -2530,6 +2578,51 @@
    "firstSeenAt": 1785069724344,
    "url": "https://www.linkedin.com/jobs/view/4440447638/",
    "applyUrl": "https://www.linkedin.com/jobs/view/4440447638/",
+   "description": null
+  },
+  {
+   "id": "4443081333",
+   "title": "Data Science Intern",
+   "company": "BNP Paribas",
+   "matchedWatchlist": "BNP Paribas",
+   "isTech": true,
+   "roleSource": "manual-enrich",
+   "logo": "/logos/bnp-paribas.jpg",
+   "location": "Mumbai, Maharashtra, India",
+   "workplaceType": "On-site",
+   "stipend": null,
+   "duration": "6 months",
+   "applicants": null,
+   "easyApply": false,
+   "skills": [
+    "python",
+    "machine learning",
+    "deep learning",
+    "pytorch",
+    "tensorflow",
+    "scikit-learn",
+    "pandas",
+    "numpy"
+   ],
+   "summary": "About BNP Paribas India Solutions Established in 2005, BNP Paribas India Solutions is a wholly owned subsidiary of BNP Paribas SA, European Union’s leading bank with an international reach. With delivery centers located in Bengaluru, Chennai and Mumbai, we are a 24x7 global delivery center. India Solutions services three business lines: Corporate and Institutional Banking, Investment Solutions and Retail Banking for BNP Paribas across the Group.",
+   "bullets": [
+    "Apply deep learning and NLP to structured and unstructured market data",
+    "Build models that anticipate client needs and surface relevant research to them",
+    "Quant Research's Data and AI Lab inside Global Markets, based in Mumbai"
+   ],
+   "roleLabel": "Financial NLP modelling",
+   "degreeLevel": null,
+   "degreeText": null,
+   "keySkills": [
+    "machine learning",
+    "deep learning"
+   ],
+   "stipendStatus": "unknown",
+   "postedText": "5 days ago",
+   "postedAt": 1784636691890,
+   "firstSeenAt": 1785068691892,
+   "url": "https://www.linkedin.com/jobs/view/4443081333/",
+   "applyUrl": "https://www.linkedin.com/jobs/view/4443081333/",
    "description": null
   },
   {

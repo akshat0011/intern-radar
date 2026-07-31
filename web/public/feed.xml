@@ -6,7 +6,7 @@
   <atom:link href="https://www.internradar.info/feed.xml" rel="self" type="application/rss+xml"/>
   <description>New engineering internships, listed within minutes of going live.</description>
   <language>en-in</language>
-  <lastBuildDate>Fri, 31 Jul 2026 15:49:32 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 31 Jul 2026 16:04:47 GMT</lastBuildDate>
   <item>
     <title>Full Stack Developer Intern — Multiplier AI</title>
     <link>https://www.internradar.info/jobs/multiplier-ai-full-stack-developer-intern-4447525184</link>
@@ -473,6 +473,17 @@
   </item>
   <item>
     <title>Software Engineering Intern — Red Hat</title>
+    <link>https://www.internradar.info/jobs/red-hat-software-engineering-intern-4444351407</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/red-hat-software-engineering-intern-4444351407</guid>
+    <pubDate>Sat, 25 Jul 2026 12:23:00 GMT</pubDate>
+    <description>Company: Red Hat · Location: Bengaluru, Karnataka, India
+• Write and maintain Python or Go code with a senior mentor
+• Add features and chase bugs in Red Hat products like RHEL and OpenShift
+• Projects across Global Engineering touching Ansible, OpenShift and AI
+• Pune or Bangalore, in an intern cohort; no visa sponsorship</description>
+  </item>
+  <item>
+    <title>Software Engineering Intern — Red Hat</title>
     <link>https://www.internradar.info/jobs/red-hat-software-engineering-intern-4444342572</link>
     <guid isPermaLink="true">https://www.internradar.info/jobs/red-hat-software-engineering-intern-4444342572</guid>
     <pubDate>Sat, 25 Jul 2026 12:22:24 GMT</pubDate>
@@ -509,17 +520,6 @@
 • Prepare test data and run basic database checks for assigned tasks
 • Assist unit testing, verify expected results and document them in set formats
 • Domain is Health and Welfare (HW) tech, listed as the mandatory skill</description>
-  </item>
-  <item>
-    <title>Data Science Intern — BNP Paribas</title>
-    <link>https://www.internradar.info/jobs/bnp-paribas-data-science-intern-4436910676</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/bnp-paribas-data-science-intern-4436910676</guid>
-    <pubDate>Sat, 25 Jul 2026 11:24:17 GMT</pubDate>
-    <description>Company: BNP Paribas · Location: Bengaluru, Karnataka, India · Duration: 6 months
-• Build predictive models on market and alternative data for traders and strategists
-• Clean and transform data, test hypotheses, build ETL workflows across many sources
-• Python with pytorch, scikit-learn, pandas, langchain and huggingface
-• 6 months in Bangalore, owning a topic like market commentary or swap risk</description>
   </item>
 </channel>
 </rss>
