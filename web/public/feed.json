@@ -6,6 +6,30 @@
   "description": "New engineering internships, listed within minutes of going live.",
   "items": [
     {
+      "id": "https://www.internradar.info/jobs/multiplier-ai-full-stack-developer-intern-4447525184",
+      "url": "https://www.internradar.info/jobs/multiplier-ai-full-stack-developer-intern-4447525184",
+      "title": "Full Stack Developer Intern — Multiplier AI",
+      "content_text": "Company: Multiplier AI · Location: Noida, Uttar Pradesh, India · Duration: 0–1 years\n• Develop responsive web apps using React.js, JavaScript, HTML5, CSS3, and Tailwind CSS\n• Build secure RESTful APIs with Node.js and Express.js, implementing authentication and RBAC\n• Design and optimize databases using MongoDB, PostgreSQL, and MySQL\n• Assist with AI/ML integrations using Python and collaborate in an Agile environment",
+      "date_published": "2026-07-31T12:47:32.689Z",
+      "authors": [
+        {
+          "name": "Multiplier AI"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/whatfix-product-designer-intern-4447512297",
+      "url": "https://www.internradar.info/jobs/whatfix-product-designer-intern-4447512297",
+      "title": "Product Designer Intern — Whatfix",
+      "content_text": "Company: Whatfix · Location: Bengaluru, Karnataka, India · Duration: 3 to 6 months",
+      "date_published": "2026-07-31T12:44:51.837Z",
+      "authors": [
+        {
+          "name": "Whatfix"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/valeo-intern-4447293922",
       "url": "https://www.internradar.info/jobs/valeo-intern-4447293922",
       "title": "Intern — Valeo",
@@ -575,30 +599,6 @@
       "title": "Software Quality Engineering Intern — Red Hat",
       "content_text": "Company: Red Hat · Location: Pune Division, Maharashtra, India\n• Conduct new feature research and design test cases, then execute manual and automated tests\n• Explore, identify, and document new bugs, communicating their impact to developers and support\n• Collaborate with Engineering, QE, Product Management, Documentation, and product build teams\n• Work with Python, Golang, or similar programming languages",
       "date_published": "2026-07-25T12:40:45.574Z",
-      "authors": [
-        {
-          "name": "Red Hat"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/american-express-apprentice-4444380574",
-      "url": "https://www.internradar.info/jobs/american-express-apprentice-4444380574",
-      "title": "Apprentice — American Express",
-      "content_text": "Company: American Express · Location: Gurugram, Haryana, India\n• Build GenAI and rule-based automations for accounting, reconciliation and reporting\n• Write Python (pandas, numpy) for data processing and SQL for extraction and checks\n• Integrate LLMs into workflows: prompt design, testing and iteration\n• Low-code work on Microsoft Power Platform; in office at least 3 days a week",
-      "date_published": "2026-07-25T12:27:29.181Z",
-      "authors": [
-        {
-          "name": "American Express"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/red-hat-site-reliability-engineering-intern-4444345488",
-      "url": "https://www.internradar.info/jobs/red-hat-site-reliability-engineering-intern-4444345488",
-      "title": "Site Reliability Engineering Intern — Red Hat",
-      "content_text": "Company: Red Hat · Location: Pune Division, Maharashtra, India\n• Write code to make the service more scalable and reliable, guided by a senior mentor\n• Add software tests and do peer review inside a small agile SRE team\n• Python or Golang on Linux, with public cloud basics expected\n• Pune-based, and Red Hat will not sponsor a visa for this role",
-      "date_published": "2026-07-25T12:26:02.650Z",
       "authors": [
         {
           "name": "Red Hat"
