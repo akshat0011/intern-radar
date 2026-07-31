@@ -45,7 +45,7 @@ async function getJson(url, { method = 'GET', body = null } = {}) {
 }
 
 /** Normalised shape every adapter returns, so the rest of the app sees one thing. */
-function job({ id, title, location, url, postedAt, department, remote }) {
+function job({ id, title, location, url, postedAt, department, remote, description, externalPath }) {
   return {
     id: String(id),
     title: String(title ?? '').trim(),
@@ -54,7 +54,27 @@ function job({ id, title, location, url, postedAt, department, remote }) {
     postedAt: postedAt ? new Date(postedAt).getTime() : null,
     department: department ?? null,
     remote: remote ?? null,
+    description: description ? stripHtml(description) : null,
+    externalPath: externalPath ?? null,
   };
+}
+
+/**
+ * These descriptions arrive as HTML. Everything downstream — the stipend and
+ * duration parsers, the summariser, the enrichment prompt — expects readable
+ * text, and feeding it markup makes all of them worse. Block-level tags become
+ * newlines so bullet lists survive as lines rather than collapsing into one
+ * run-on paragraph.
+ */
+function stripHtml(html) {
+  return String(html)
+    .replace(/<\s*(br|\/p|\/div|\/li|\/h[1-6])\s*\/?>/gi, '\n')
+    .replace(/<[^>]+>/g, '')
+    .replace(/&nbsp;/gi, ' ').replace(/&amp;/gi, '&')
+    .replace(/&lt;/gi, '<').replace(/&gt;/gi, '>')
+    .replace(/&#39;|&rsquo;/gi, "'").replace(/&quot;|&ldquo;|&rdquo;/gi, '"')
+    .replace(/[ \t]+/g, ' ').replace(/\n{3,}/g, '\n\n')
+    .trim();
 }
 
 /**
@@ -148,6 +168,7 @@ export const PROVIDERS = {
         url: p.absolute_url,
         postedAt: p.updated_at ?? p.first_published,
         department: p.departments?.[0]?.name,
+        description: p.content,
       }));
     },
     async verify(token, companyName) {
@@ -169,6 +190,7 @@ export const PROVIDERS = {
         postedAt: p.createdAt,
         department: p.categories?.team,
         remote: p.workplaceType,
+        description: p.descriptionPlain ?? p.description,
       }));
     },
     // Lever has no board-metadata endpoint, so the token itself is the evidence.
@@ -190,6 +212,7 @@ export const PROVIDERS = {
         postedAt: p.publishedAt,
         department: p.department,
         remote: p.isRemote ? 'Remote' : null,
+        description: p.descriptionPlain ?? p.descriptionHtml,
       }));
     },
     async verify(token, companyName) {
@@ -231,6 +254,7 @@ export const PROVIDERS = {
         postedAt: p.published_on,
         department: p.department,
         remote: p.telecommuting ? 'Remote' : null,
+        description: p.description,
       }));
     },
     async verify(token, companyName) {
@@ -252,6 +276,7 @@ export const PROVIDERS = {
         postedAt: p.published_at,
         department: p.department,
         remote: p.remote ? 'Remote' : null,
+        description: p.description,
       }));
     },
     async verify(token, companyName) {
@@ -310,21 +335,53 @@ PROVIDERS.workday = {
       title: p.title,
       location: p.locationsText,
       url: `https://${tenant}.${wd}.myworkdayjobs.com/en-US/${site}${p.externalPath}`,
-      // "Posted 3 Days Ago" — a relative phrase, not a date. Left null rather
-      // than invented; the staleness filter treats null as "unknown, keep".
+      // Left null here on purpose: the list only offers "Posted 3 Days Ago".
+      // detail() replaces it with the real startDate for the few postings kept.
       postedAt: null,
+      externalPath: p.externalPath,
     }));
   },
   // The token came from the company's own careers page, so the link is the proof.
   async verify() { return true; },
+
+  /**
+   * Workday's list gives neither a description nor a usable date — `postedOn`
+   * is the phrase "Posted 2 Days Ago". The per-job endpoint gives both, and its
+   * `startDate` is an actual calendar date, which beats parsing English.
+   *
+   * Called only for postings that already passed every filter, so a board of
+   * 2,000 roles costs one extra request per internship rather than 2,000.
+   */
+  async detail(token, externalPath) {
+    const [tenant, wd, site] = String(token).split(':');
+    if (!externalPath) return null;
+    const j = await getJson(`https://${tenant}.${wd}.myworkdayjobs.com/wday/cxs/${tenant}/${site}${externalPath}`);
+    const info = j?.jobPostingInfo;
+    if (!info) return null;
+    return {
+      description: info.jobDescription ? stripHtml(info.jobDescription) : null,
+      postedAt: info.startDate ? new Date(info.startDate).getTime() : null,
+    };
+  },
 };
+
+/** Fetch the extra per-job data a provider only exposes on a detail endpoint. */
+export async function fetchDetail(providerName, token, atsJob) {
+  const provider = PROVIDERS[providerName];
+  if (!provider?.detail) return null;
+  return provider.detail(token, atsJob.externalPath);
+}
 
 export const PROVIDER_NAMES = Object.keys(PROVIDERS).filter((n) => n !== 'workday');
 
 /** Every ATS link shape we know how to read, for scraping off a careers page. */
 const ATS_LINK = new RegExp([
   String.raw`([a-z0-9-]+)\.(wd\d+)\.myworkdayjobs\.com\/(?:[a-z]{2}-[A-Z]{2}\/)?([A-Za-z0-9_-]+)`,
-  String.raw`(?:boards|job-boards)\.greenhouse\.io\/([a-z0-9-]+)`,
+  // The embed form puts the real token in a query parameter, not the path:
+  // boards.greenhouse.io/embed/job_board?for=cloudsek. Matching the path first
+  // would capture the literal word "embed" as the board name.
+  String.raw`greenhouse\.io\/embed\/job_board\?for=([a-z0-9-]+)`,
+  String.raw`(?:boards|job-boards)\.greenhouse\.io\/(?!embed\b)([a-z0-9-]+)`,
   String.raw`jobs\.lever\.co\/([a-z0-9-]+)`,
   String.raw`jobs\.ashbyhq\.com\/([a-z0-9-]+)`,
   String.raw`([a-z0-9-]+)\.recruitee\.com`,
@@ -381,8 +438,9 @@ export async function discoverViaCareersPage(companyName) {
       if (!m) continue;
 
       // Groups line up with the alternation order above.
-      const [, wdTenant, wdNum, wdSite, gh, lever, ashby, recruitee, workable, smart] = m;
+      const [, wdTenant, wdNum, wdSite, ghEmbed, gh, lever, ashby, recruitee, workable, smart] = m;
       if (wdTenant && wdNum && wdSite) return { provider: 'workday', token: `${wdTenant}:${wdNum}:${wdSite}`, via: url };
+      if (ghEmbed) return { provider: 'greenhouse', token: ghEmbed, via: url };
       if (gh) return { provider: 'greenhouse', token: gh, via: url };
       if (lever) return { provider: 'lever', token: lever, via: url };
       if (ashby) return { provider: 'ashby', token: ashby, via: url };

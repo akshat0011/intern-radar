@@ -18,9 +18,10 @@
  */
 import { loadConfig, matchCompany, matchTitle } from '../src/config.js';
 import { Store } from '../src/store.js';
-import { fetchBoard } from '../src/ats.js';
+import { fetchBoard, fetchDetail } from '../src/ats.js';
 import { classifyRole } from '../src/roles.js';
-import { extractStipend, extractDuration, extractWorkplaceType } from '../src/extract.js';
+import { extractStipend, extractDuration, extractSkills, extractWorkplaceType } from '../src/extract.js';
+import { summarize } from '../src/summarize.js';
 import { publish } from '../src/publish.js';
 import { log } from '../src/logger.js';
 
@@ -114,6 +115,18 @@ async function pollOne(board) {
     if (verdict.verdict === 'non-tech') { skippedNonTech++; continue; }
     const isTech = verdict.verdict === 'tech' ? true : null;
 
+    // Some providers only expose the description and the real posting date on a
+    // per-job endpoint. Fetch it now, after the filters, so the cost is one
+    // request per internship kept rather than one per posting seen.
+    const extra = await fetchDetail(board.provider, board.token, j);
+    if (extra?.description) j.description = extra.description;
+    if (extra?.postedAt) j.postedAt = extra.postedAt;
+
+    // Re-apply staleness with the real date, which we may only now have. A
+    // Workday listing shows "Posted 2 Days Ago" in the list and its true
+    // startDate only here, so this is the first honest chance to judge it.
+    if (j.postedAt && j.postedAt < OLDEST_ACCEPTABLE) { skippedStale++; continue; }
+
     // Prefixed so an ATS id can never collide with a LinkedIn numeric job id.
     const jobId = `ats:${board.provider}:${board.token}:${j.id}`;
 
@@ -133,8 +146,11 @@ async function pollOne(board) {
       postedAt: j.postedAt,
       postedText: null,
       salaryText: null,
-      stipend: extractStipend(j.title),
-      duration: extractDuration(j.title),
+      stipend: extractStipend(j.description ?? '', j.title),
+      duration: extractDuration(j.description ?? '', j.title),
+      skills: extractSkills(j.description ?? ''),
+      description: j.description ?? null,
+      summary: j.description ? await summarize({ title: j.title, company: board.company }, j.description, cfg.summarizer) : null,
       jobUrl: j.url,
       applyUrl: j.url,
       searchKeywords: `ats:${board.provider}`,
