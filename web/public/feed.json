@@ -6,6 +6,18 @@
   "description": "New engineering internships, listed within minutes of going live.",
   "items": [
     {
+      "id": "https://www.internradar.info/jobs/american-express-intern-software-development-engineering-ai-ml-nlp-and-cybersecurity-gr-4447414103",
+      "url": "https://www.internradar.info/jobs/american-express-intern-software-development-engineering-ai-ml-nlp-and-cybersecurity-gr-4447414103",
+      "title": "Intern Software development engineering (AI/ML/NLP & Cybersecurity), Graduation Year (2026) — American Express",
+      "content_text": "Company: American Express · Location: Gurugram, Haryana, India (Hybrid)",
+      "date_published": "2026-07-31T23:46:43.591Z",
+      "authors": [
+        {
+          "name": "American Express"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/sprinklr-ux-research-intern-ats:workday:sprinklr:wd1:careers:113313-JOB",
       "url": "https://www.internradar.info/jobs/sprinklr-ux-research-intern-ats:workday:sprinklr:wd1:careers:113313-JOB",
       "title": "UX Research Intern — Sprinklr",
@@ -590,18 +602,6 @@
       "authors": [
         {
           "name": "boAt Lifestyle"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/qualcomm-interim-engineering-intern-1-year-hardware-4376089162",
-      "url": "https://www.internradar.info/jobs/qualcomm-interim-engineering-intern-1-year-hardware-4376089162",
-      "title": "Interim Engineering Intern (1 Year)- Hardware — Qualcomm",
-      "content_text": "Company: Qualcomm · Location: Bengaluru, Karnataka, India",
-      "date_published": "2026-07-25T11:58:06.079Z",
-      "authors": [
-        {
-          "name": "Qualcomm"
         }
       ]
     }
