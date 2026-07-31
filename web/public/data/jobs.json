@@ -1,5 +1,5 @@
 {
- "generatedAt": 1785506616342,
+ "generatedAt": 1785507455446,
  "count": 84,
  "techCount": 84,
  "otherCount": 0,
@@ -137,7 +137,7 @@
    "company": "Whatfix",
    "matchedWatchlist": "Whatfix",
    "isTech": true,
-   "roleSource": "gemini-description",
+   "roleSource": "gemini-enrich",
    "logo": "/logos/whatfix.jpg",
    "location": "Bengaluru, Karnataka, India",
    "workplaceType": "On-site",
@@ -149,8 +149,12 @@
     "figma"
    ],
    "summary": "Whatfix is an AI platform advancing the “userization” of enterprise applications, empowering companies to maximize the ROI of their digital investments. Technology needs adoption. It’s no different for AI. Product Analytics uncovers friction and closes adoption gaps.",
-   "bullets": [],
-   "roleLabel": null,
+   "bullets": [
+    "Work on an AI platform that helps users adopt enterprise applications and AI tools",
+    "Contribute to products like Digital Adoption, Product Analytics, and Mirror",
+    "Help build AI-first products such as Seek and Mirror 2.0"
+   ],
+   "roleLabel": "Product design",
    "degreeLevel": null,
    "degreeText": null,
    "keySkills": [],
