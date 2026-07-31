@@ -1,8 +1,8 @@
 {
- "generatedAt": 1785484998983,
- "count": 387,
+ "generatedAt": 1785486986789,
+ "count": 388,
  "techCount": 79,
- "otherCount": 308,
+ "otherCount": 309,
  "companies": [
   "A.P. Moller - Maersk",
   "ALLEN",
@@ -244,6 +244,40 @@
   "West Bengal, India (On-site)"
  ],
  "jobs": [
+  {
+   "id": "4446991438",
+   "title": "Placement Operation Intern",
+   "company": "Newton School",
+   "matchedWatchlist": "Newton School",
+   "isTech": false,
+   "roleSource": "gemini-enrich",
+   "logo": "/logos/newton-school.jpg",
+   "location": "Bengaluru, Karnataka, India",
+   "workplaceType": "On-site",
+   "stipend": null,
+   "duration": null,
+   "applicants": null,
+   "easyApply": false,
+   "skills": [],
+   "summary": "About Newton School Newton School is on a mission to transform education by empowering individuals with in-demand tech skills and helping them launch successful careers. We bridge the gap between education and employment through hands-on training, real-world projects, and strong industry connections. We are looking for a Placement Coordinator Intern to join our team in Bangalore.",
+   "bullets": [
+    "Reach out to candidates to confirm interest in job opportunities",
+    "Coordinate and schedule interviews between candidates and recruiters",
+    "Maintain accurate records of candidate interactions and interview schedules",
+    "Support the placement team in daily coordination and operational tasks"
+   ],
+   "roleLabel": "Placement Operations",
+   "degreeLevel": null,
+   "degreeText": null,
+   "keySkills": [],
+   "stipendStatus": "unknown",
+   "postedText": "25 minutes ago",
+   "postedAt": 1785485297527,
+   "firstSeenAt": 1785486797533,
+   "url": "https://www.linkedin.com/jobs/view/4446991438/",
+   "applyUrl": "https://www.linkedin.com/jobs/view/4446991438/",
+   "description": null
+  },
   {
    "id": "4446988446",
    "title": "Product Intern",
