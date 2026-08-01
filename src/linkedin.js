@@ -111,7 +111,7 @@ export function jobPaneUrl(jobId) {
  * banner is NOT retried here — those are answered by guard.js, and retrying
  * into them is exactly the behaviour that turns a rate limit into a ban.
  */
-const TRANSIENT_NAV = /ERR_NETWORK_CHANGED|ERR_INTERNET_DISCONNECTED|ERR_NAME_NOT_RESOLVED|ERR_CONNECTION_(RESET|CLOSED|TIMED_OUT|REFUSED)|ERR_ADDRESS_UNREACHABLE|Timeout .* exceeded/i;
+const TRANSIENT_NAV = /ERR_NETWORK_CHANGED|ERR_INTERNET_DISCONNECTED|ERR_NAME_NOT_RESOLVED|ERR_CONNECTION_(RESET|CLOSED|TIMED_OUT|REFUSED|ABORTED)|ERR_ADDRESS_UNREACHABLE|ERR_QUIC_PROTOCOL_ERROR|ERR_HTTP2_PROTOCOL_ERROR|ERR_SOCKET_NOT_CONNECTED|ERR_EMPTY_RESPONSE|Timeout .* exceeded/i;
 
 export async function gotoResilient(page, url, opts = {}, { attempts = 3, label = 'page' } = {}) {
   let lastErr;

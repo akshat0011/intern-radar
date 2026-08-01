@@ -358,6 +358,17 @@ async function main() {
       const lastPage = firstPage + cfg.limits.maxPagesPerSearch;
 
       for (let pageIndex = firstPage; pageIndex < lastPage; pageIndex++) {
+        // Checked here, before navigating, not only inside the card loop below.
+        // A run overran its 12-minute budget by five minutes because both the
+        // slow goto and the stall that followed happened before execution ever
+        // reached a card, so nothing ever asked whether there was time left.
+        if (clock.exceeded()) {
+          notes.push('Ran out of time partway through, so this scan stopped early. The next run resumes from here.');
+          log.warn(`Out of time after ${clock.elapsedSeconds()}s — stopping the scan.`);
+          status = 'partial';
+          break searchLoop;
+        }
+
         if (clock.exceeded()) {
           notes.push(`Stopped at the ${cfg.limits.maxRuntimeMinutes}-minute time limit, partway through "${label}" (page ${pageIndex + 1}). Remaining searches were not scanned.`);
           status = 'partial';
@@ -762,6 +773,15 @@ async function main() {
       for (const { company, n } of top) log.info(`    ${String(n).padStart(3)}×  ${company}`);
       log.info('Add any of these to config.json, or see the full list with `node bin/show-report.js --skipped`.');
     }
+  }
+
+  // A run that navigated nowhere and saw nothing did not succeed, whatever the
+  // absence of an exception suggests. Reporting it as ok made the runs table
+  // useless for spotting trouble: three of the worst runs today were logged
+  // green while scanning zero pages.
+  if (status === 'ok' && counters.pagesScanned === 0 && !DRY_RUN) {
+    status = 'partial';
+    notes.push('This run reached LinkedIn but never scanned a results page.');
   }
 
   store.finishRun(runId, {

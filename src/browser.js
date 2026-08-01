@@ -233,6 +233,12 @@ export async function launchBrave(cfg, { forLogin = false } = {}) {
       const last = attempt === LAUNCH_ATTEMPTS;
       const why = err.message.split('\n')[0];
       if (last) {
+        // Playwright does not kill the browser it spawned when the launch times
+        // out, so giving up here would leave it holding the profile and make the
+        // NEXT run fail for a reason that has nothing to do with that run. The
+        // logs show exactly this: "Found 4 leftover Brave processes" on every
+        // retry, each set left by the attempt before it.
+        releaseProfileLock();
         throw new Error(`Brave would not launch after ${LAUNCH_ATTEMPTS} attempts — ${why}`);
       }
       log.warn(`Brave did not launch (attempt ${attempt}/${LAUNCH_ATTEMPTS}): ${why}`);
