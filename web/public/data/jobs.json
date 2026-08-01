@@ -1,5 +1,5 @@
 {
- "generatedAt": 1785617053887,
+ "generatedAt": 1785622783727,
  "count": 78,
  "techCount": 78,
  "otherCount": 0,
@@ -88,7 +88,7 @@
    "company": "IMC Trading",
    "matchedWatchlist": "IMC Trading",
    "isTech": true,
-   "roleSource": "offline",
+   "roleSource": "gemini-enrich",
    "logo": "/logos/imc-trading.jpg",
    "location": "Mumbai Metropolitan Region",
    "workplaceType": "On-site",
@@ -104,12 +104,23 @@
     "machine learning"
    ],
    "summary": "Quant Research Intern We’re a high-performance trading firm powered by technology, for those who want to be the best among the best. IMC is a leading global trading firm that combines technology, advanced quantitative research, and cutting-edge machine learning techniques to make markets more efficient. With a strong focus on innovation, we leverage mathematical models and high-performance computing to drive our trading decisions.",
-   "bullets": [],
-   "roleLabel": null,
-   "degreeLevel": null,
-   "degreeText": null,
-   "keySkills": [],
-   "stipendStatus": "unknown",
+   "bullets": [
+    "Design new predictive models, optimize strategies, or leverage alternative data",
+    "Explore large financial and market datasets to develop quantitative models",
+    "Work with Python, C++, Java, Matlab, or R",
+    "Present findings through reports and presentations"
+   ],
+   "roleLabel": "Quant research",
+   "degreeLevel": "Pursuing",
+   "degreeText": "Bachelor's/Master's",
+   "keySkills": [
+    "python",
+    "c++",
+    "java",
+    "matlab",
+    "r"
+   ],
+   "stipendStatus": "paid",
    "postedText": "54 minutes ago",
    "postedAt": 1785611786956,
    "firstSeenAt": 1785615026966,
