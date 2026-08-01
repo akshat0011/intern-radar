@@ -1,7 +1,13 @@
 /* Intern Radar — listings browser + resume tailoring */
 
-const PDFJS_VERSION = '4.6.82';
-const PDFJS_BASE = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${PDFJS_VERSION}`;
+// pdf.js is served from this origin, not a CDN.
+//
+// It runs on the one page where students hand over a resume, and the site
+// promises that file never leaves their device. A script fetched from someone
+// else's server at page load is the one thing that could quietly break that
+// promise: whoever controls that host controls code running next to the file.
+// Vendored at 4.6.82, verified byte-identical to the CDN copy at the time.
+const PDFJS_BASE = '/vendor/pdfjs';
 const MAX_FILE_BYTES = 5 * 1024 * 1024;
 const HOT_MS = 60 * 60 * 1000;      // "just posted"
 const FRESH_MS = 24 * 60 * 60 * 1000; // "new"
