@@ -6,6 +6,18 @@
   "description": "New engineering internships, listed within minutes of going live.",
   "items": [
     {
+      "id": "https://www.internradar.info/jobs/american-express-apprentice-4438342357",
+      "url": "https://www.internradar.info/jobs/american-express-apprentice-4438342357",
+      "title": "Apprentice — American Express",
+      "content_text": "Company: American Express · Location: Bengaluru, Karnataka, India · Duration: 12 months\n• Support analytical and reporting activities to identify trends and business insights\n• Work with data and visualization tools like SQL, Python, Excel, Power BI, or Tableau\n• Gain exposure to data governance, data quality, and process improvement practices\n• 12-month paid apprenticeship with development and networking opportunities",
+      "date_published": "2026-08-01T13:18:00.217Z",
+      "authors": [
+        {
+          "name": "American Express"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/american-express-intern-software-development-engineering-ai-ml-nlp-and-cybersecurity-gr-4447414103",
       "url": "https://www.internradar.info/jobs/american-express-intern-software-development-engineering-ai-ml-nlp-and-cybersecurity-gr-4447414103",
       "title": "Intern Software development engineering (AI/ML/NLP & Cybersecurity), Graduation Year (2026) — American Express",
@@ -590,18 +602,6 @@
       "authors": [
         {
           "name": "Red Hat"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/boat-lifestyle-intern-founder-s-office-4444949837",
-      "url": "https://www.internradar.info/jobs/boat-lifestyle-intern-founder-s-office-4444949837",
-      "title": "Intern - Founder's office — boAt Lifestyle",
-      "content_text": "Company: boAt Lifestyle · Location: Mumbai, Maharashtra, India · Duration: 3 months\n• Crunch large datasets for trends, risks and growth opportunities\n• Build dashboards and business reviews that feed leadership decisions\n• Excel/Sheets plus SQL, Power BI or Tableau; AI tools for research and automation\n• 3 months full-time in Mumbai, sitting with the founder strategy team",
-      "date_published": "2026-07-25T12:01:59.046Z",
-      "authors": [
-        {
-          "name": "boAt Lifestyle"
         }
       ]
     }

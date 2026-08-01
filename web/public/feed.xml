@@ -6,7 +6,18 @@
   <atom:link href="https://www.internradar.info/feed.xml" rel="self" type="application/rss+xml"/>
   <description>New engineering internships, listed within minutes of going live.</description>
   <language>en-in</language>
-  <lastBuildDate>Sat, 01 Aug 2026 14:52:29 GMT</lastBuildDate>
+  <lastBuildDate>Sat, 01 Aug 2026 15:20:11 GMT</lastBuildDate>
+  <item>
+    <title>Apprentice — American Express</title>
+    <link>https://www.internradar.info/jobs/american-express-apprentice-4438342357</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/american-express-apprentice-4438342357</guid>
+    <pubDate>Sat, 01 Aug 2026 13:18:00 GMT</pubDate>
+    <description>Company: American Express · Location: Bengaluru, Karnataka, India · Duration: 12 months
+• Support analytical and reporting activities to identify trends and business insights
+• Work with data and visualization tools like SQL, Python, Excel, Power BI, or Tableau
+• Gain exposure to data governance, data quality, and process improvement practices
+• 12-month paid apprenticeship with development and networking opportunities</description>
+  </item>
   <item>
     <title>Intern Software development engineering (AI/ML/NLP &amp; Cybersecurity), Graduation Year (2026) — American Express</title>
     <link>https://www.internradar.info/jobs/american-express-intern-software-development-engineering-ai-ml-nlp-and-cybersecurity-gr-4447414103</link>
@@ -510,17 +521,6 @@
 • Add features and chase bugs in Red Hat products like RHEL and OpenShift
 • Projects across Global Engineering touching Ansible, OpenShift and AI
 • Pune or Bangalore, in an intern cohort; no visa sponsorship</description>
-  </item>
-  <item>
-    <title>Intern - Founder&#39;s office — boAt Lifestyle</title>
-    <link>https://www.internradar.info/jobs/boat-lifestyle-intern-founder-s-office-4444949837</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/boat-lifestyle-intern-founder-s-office-4444949837</guid>
-    <pubDate>Sat, 25 Jul 2026 12:01:59 GMT</pubDate>
-    <description>Company: boAt Lifestyle · Location: Mumbai, Maharashtra, India · Duration: 3 months
-• Crunch large datasets for trends, risks and growth opportunities
-• Build dashboards and business reviews that feed leadership decisions
-• Excel/Sheets plus SQL, Power BI or Tableau; AI tools for research and automation
-• 3 months full-time in Mumbai, sitting with the founder strategy team</description>
   </item>
 </channel>
 </rss>
