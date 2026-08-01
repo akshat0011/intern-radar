@@ -9,6 +9,20 @@
       "aliases": [
         "Dream Sports"
       ]
+    },
+    {
+      "name": "EXL",
+      "aliases": [
+        "EXL Service",
+        "ExlService",
+        "EXL Analytics"
+      ]
+    },
+    {
+      "name": "GE HealthCare",
+      "aliases": [
+        "GE Healthcare"
+      ]
     }
   ],
   "searchMode": "keywords",
