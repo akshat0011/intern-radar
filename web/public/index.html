@@ -36,7 +36,13 @@
 
 <meta name="theme-color" content="#0a0a0b" media="(prefers-color-scheme: dark)">
 <meta name="theme-color" content="#f4f3ee" media="(prefers-color-scheme: light)">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230b0b0c'/><circle cx='50' cy='50' r='30' fill='none' stroke='%23c8ff00' stroke-width='7'/><circle cx='50' cy='50' r='9' fill='%23c8ff00'/></svg>">
+<!-- Real files, not a data: URI. Google will not use a data-URI favicon at all —
+     it needs something it can crawl — which is why the search result showed a
+     blank globe. .ico first because that is the historical default Google looks
+     for, then SVG for sharpness, then PNG for anything that cannot read SVG. -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

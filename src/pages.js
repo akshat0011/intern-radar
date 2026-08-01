@@ -15,11 +15,11 @@
  *    scraped-content policy is written to demote. Every page is built from our
  *    own material: the bullets, the eligibility read, the skills, the freshness.
  *
- * 2. A page with nothing to say is not published as indexable. 55 of the current
- *    237 postings have no bullets because the employer posted a template or the
- *    description was never captured. Those get noindex — a site carrying dozens
- *    of near-empty pages looks like a content farm, and that judgement is applied
- *    site-wide, not page by page.
+ * 2. A page with nothing to say is not published as indexable. A posting whose
+ *    employer used a template, or whose description was never captured, has no
+ *    bullets and gets noindex — a site carrying dozens of near-empty pages looks
+ *    like a content farm, and that judgement is applied site-wide, not page by
+ *    page.
  */
 import { writeFileSync, mkdirSync, readdirSync, rmSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
@@ -129,7 +129,8 @@ ${indexable ? '' : '<meta name="robots" content="noindex,follow">\n'}<meta name=
 <meta property="og:image" content="${SITE}/og.jpg?v=2">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="${SITE}/og.jpg?v=2">
-<link rel="icon" href="/favicon.svg">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -157,7 +158,7 @@ ${extraLd}<script defer src="/_vercel/insights/script.js"></script>
 const FOOT = `
 <footer class="foot">
   <div class="wrap">
-    <p>Listings are collected from LinkedIn and link back to the original posting — always apply on the company's own page. Summaries are written by Intern Radar; the linked posting is the source of truth.</p>
+    <p>Listings are collected from LinkedIn and from companies' own hiring systems, and link back to the original posting — always apply there. Summaries are written by Intern Radar; the linked posting is the source of truth.</p>
     <p><a href="/">See every live internship →</a></p>
   </div>
 </footer>
