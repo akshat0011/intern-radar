@@ -21,7 +21,7 @@ import { log } from './logger.js';
 const TIMEOUT_MS = 8000;
 const UA = 'internradar (+https://www.internradar.info)';
 
-async function getJson(url, { method = 'GET', body = null } = {}) {
+async function getJson(url, { method = 'GET', body = null, retriesLeft = 2 } = {}) {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
   try {
@@ -35,8 +35,19 @@ async function getJson(url, { method = 'GET', body = null } = {}) {
       },
       ...(body ? { body: JSON.stringify(body) } : {}),
     });
+    // 429 means slow down, not "this board does not exist". Collapsing the two
+    // silently dropped three Workable boards from every poll.
+    if (res.status === 429 && retriesLeft > 0) {
+      clearTimeout(timer);
+      const wait = Number(res.headers.get('retry-after')) * 1000 || 2000 * (3 - retriesLeft + 1);
+      await new Promise((r) => setTimeout(r, Math.min(wait, 10_000)));
+      return getJson(url, { method, body, retriesLeft: retriesLeft - 1 });
+    }
     if (!res.ok) return null;
-    return await res.json();
+    // A Workday site name that does not exist answers 200 with the careers-page
+    // HTML rather than an error, so a non-JSON body is a failure too.
+    const text = await res.text();
+    try { return JSON.parse(text); } catch { return null; }
   } catch {
     return null;
   } finally {
@@ -377,6 +388,14 @@ PROVIDERS.workday = {
     if (!tenant || !site) return false;
     if (/internal/i.test(site)) return false;
     return looksLikeSameCompany(tenant, companyName);
+    // Deliberately NOT calling list() to confirm the board reads.
+    //
+    // That was the obvious next check and it would have been a disaster: when
+    // Workday rate-limits us it answers 200 with the careers-page HTML for every
+    // tenant, including ones that worked minutes earlier. A verifier that
+    // required a readable board would then delete all 38 Workday boards during a
+    // block that clears on its own. Unreadable-right-now and does-not-exist are
+    // different, and this file has been bitten by conflating them before.
   },
 
   /**
