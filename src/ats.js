@@ -396,9 +396,11 @@ function candidateDomains(name) {
     .replace(/\b(pvt|private|ltd|limited|inc|llc|corp|corporation|plc)\b/gi, '')
     .replace(/[^a-z0-9]+/g, '');
   if (slug.length < 3) return [];
-  // Two domains, not four. Every extra guess multiplies by the path list and
-  // this pass already runs over hundreds of companies.
-  return [`${slug}.com`, `${slug}.in`];
+  // Indian startups sit on a wide spread of TLDs — CRED is cred.club, and
+  // guessing only .com/.in was why its Lever board went undiscovered even though
+  // its careers page links jobs.lever.co/cred in plain sight. Ordered by how
+  // often each actually resolves, and the search stops at the first that does.
+  return [`${slug}.com`, `${slug}.in`, `${slug}.co.in`, `${slug}.io`, `${slug}.club`, `${slug}.ai`, `${slug}.co`];
 }
 
 /**
@@ -414,6 +416,83 @@ function candidateDomains(name) {
  * Zomato all come back empty — so this complements slug discovery rather than
  * replacing it.
  */
+/**
+ * Follow the company's homepage to whatever it calls its careers page, then read
+ * the ATS link off that.
+ *
+ * The guess-based version only tried `{slug}.com/careers`, which is why it
+ * resolved 46 of 744: real careers pages live at /company/careers, /join-us,
+ * careers.acme.com, and a dozen other shapes. Asking the homepage where its own
+ * careers page is costs one extra request and removes the guessing entirely.
+ */
+async function fetchText(url, timeoutMs = 9000) {
+  try {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), timeoutMs);
+    const res = await fetch(url, {
+      redirect: 'follow',
+      signal: controller.signal,
+      headers: { 'user-agent': 'Mozilla/5.0 (compatible; internradar/1.0; +https://www.internradar.info)' },
+    });
+    clearTimeout(timer);
+    if (!res.ok) return null;
+    return { url: res.url, html: await res.text() };
+  } catch { return null; }
+}
+
+function matchAts(page) {
+  const m = page.url.match(ATS_LINK) || page.html.match(ATS_LINK);
+  if (!m) return null;
+  const [, wdTenant, wdNum, wdSite, ghEmbed, gh, lever, ashby, recruitee, workable, smart] = m;
+  if (wdTenant && wdNum && wdSite) return { provider: 'workday', token: `${wdTenant}:${wdNum}:${wdSite}` };
+  if (ghEmbed) return { provider: 'greenhouse', token: ghEmbed };
+  if (gh) return { provider: 'greenhouse', token: gh };
+  if (lever) return { provider: 'lever', token: lever };
+  if (ashby) return { provider: 'ashby', token: ashby };
+  if (recruitee) return { provider: 'recruitee', token: recruitee };
+  if (workable) return { provider: 'workable', token: workable };
+  if (smart) return { provider: 'smartrecruiters', token: smart };
+  return null;
+}
+
+/** Links on a homepage that look like they lead to jobs. */
+function careersLinks(page) {
+  const out = new Set();
+  const re = /href\s*=\s*["']([^"']+)["']/gi;
+  let m;
+  while ((m = re.exec(page.html))) {
+    const href = m[1];
+    if (!/career|jobs?\b|join.?us|work.?with.?us|opportunit|hiring|vacanc/i.test(href)) continue;
+    if (/^(mailto:|tel:|#|javascript:)/i.test(href)) continue;
+    try { out.add(new URL(href, page.url).href); } catch { /* malformed href */ }
+    if (out.size >= 6) break;
+  }
+  return [...out];
+}
+
+export async function discoverViaHomepage(companyName) {
+  for (const domain of candidateDomains(companyName)) {
+    const home = await fetchText(`https://${domain}/`);
+    if (!home) continue;
+
+    // The homepage itself sometimes carries the link, e.g. a footer "Careers".
+    const direct = matchAts(home);
+    if (direct) return { ...direct, via: home.url };
+
+    for (const link of careersLinks(home)) {
+      const page = await fetchText(link);
+      if (!page) continue;
+      const hit = matchAts(page);
+      if (hit) return { ...hit, via: page.url };
+    }
+    // Deliberately NOT returning here. The first domain that merely *responds*
+    // is not the right one: cred.com answers, but CRED is cred.club, and
+    // stopping at the first reply meant its Lever board stayed invisible. Only a
+    // found board ends the search.
+  }
+  return null;
+}
+
 export async function discoverViaCareersPage(companyName) {
   for (const domain of candidateDomains(companyName)) {
     for (const path of ['/careers', '/jobs']) {
