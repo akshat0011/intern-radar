@@ -138,6 +138,27 @@ function looksLikeDemoBoard(jobs) {
  * and so proves nothing. Used where the provider has no board-metadata endpoint
  * but does stamp each posting with the employer.
  */
+/**
+ * Does this board token plausibly belong to this company?
+ *
+ * Exact-match against the generated tokens was too strict in two ways that cost
+ * real boards: it compared case-sensitively, so Ashby's "Clerk" failed against
+ * "clerk"; and it demanded equality, so "sarvam" failed against "Sarvam AI".
+ *
+ * The prefix rule is length-bounded on purpose. Allowing any prefix would let
+ * "navi" match "navitas" — a different company — which is the false positive
+ * this whole verification layer exists to prevent. Five characters is short
+ * enough to admit "sarvam" and long enough to exclude the short brand names
+ * where collisions actually happen.
+ */
+function tokenMatchesCompany(token, companyName) {
+  const t = String(token).toLowerCase().replace(/[^a-z0-9]/g, '');
+  if (!t) return false;
+  if (candidateTokens(companyName).some((c) => c.replace(/[^a-z0-9]/g, '') === t)) return true;
+  const name = String(companyName).toLowerCase().replace(/[^a-z0-9]/g, '');
+  return t.length >= 5 && name.startsWith(t);
+}
+
 function verifyFromPostings(rawJobs, companyName, pick) {
   const names = (rawJobs ?? []).map(pick).filter(Boolean);
   if (!names.length) return false;
@@ -195,7 +216,7 @@ export const PROVIDERS = {
     },
     // Lever has no board-metadata endpoint, so the token itself is the evidence.
     async verify(token, companyName) {
-      return candidateTokens(companyName).includes(token);
+      return tokenMatchesCompany(token, companyName);
     },
   },
 
@@ -216,7 +237,7 @@ export const PROVIDERS = {
       }));
     },
     async verify(token, companyName) {
-      return candidateTokens(companyName).includes(token);
+      return tokenMatchesCompany(token, companyName);
     },
   },
 
@@ -301,7 +322,7 @@ export const PROVIDERS = {
       }));
     },
     async verify(token, companyName) {
-      return candidateTokens(companyName).includes(token);
+      return tokenMatchesCompany(token, companyName);
     },
   },
 };
@@ -341,8 +362,22 @@ PROVIDERS.workday = {
       externalPath: p.externalPath,
     }));
   },
-  // The token came from the company's own careers page, so the link is the proof.
-  async verify() { return true; },
+  /**
+   * "It came off their careers page, so it is theirs" is not sound, and a real
+   * crawl proved it: Discover resolved to capitalone:wd12:Capital_One, and Plum
+   * to an unrelated `pacs` tenant. Following links lands on the wrong page often
+   * enough that the tenant has to be checked against the company name.
+   *
+   * Internal boards are rejected outright. A site called Internal_Careers is for
+   * existing employees; publishing it would send students to a page they cannot
+   * apply through.
+   */
+  async verify(token, companyName) {
+    const [tenant, , site] = String(token).split(':');
+    if (!tenant || !site) return false;
+    if (/internal/i.test(site)) return false;
+    return looksLikeSameCompany(tenant, companyName);
+  },
 
   /**
    * Workday's list gives neither a description nor a usable date — `postedOn`
@@ -440,6 +475,27 @@ async function fetchText(url, timeoutMs = 9000) {
   } catch { return null; }
 }
 
+/**
+ * A link found on a page is a candidate, not an answer.
+ *
+ * Both link-scraping discoverers used to return the first ATS URL they saw,
+ * skipping the verification that slug discovery has always done — and following
+ * links lands on the wrong company often enough to matter. Real results from one
+ * crawl: Discover resolved to Capital One's Workday, Plum to an unrelated `pacs`
+ * tenant, CyberArk to Palo Alto Networks. Every path now goes through the same
+ * check before a board is accepted.
+ */
+async function verified(hit, companyName) {
+  if (!hit) return null;
+  const provider = PROVIDERS[hit.provider];
+  if (!provider) return null;
+  try {
+    return (await provider.verify(hit.token, companyName)) ? hit : null;
+  } catch {
+    return null;
+  }
+}
+
 function matchAts(page) {
   const m = page.url.match(ATS_LINK) || page.html.match(ATS_LINK);
   if (!m) return null;
@@ -476,13 +532,13 @@ export async function discoverViaHomepage(companyName) {
     if (!home) continue;
 
     // The homepage itself sometimes carries the link, e.g. a footer "Careers".
-    const direct = matchAts(home);
+    const direct = await verified(matchAts(home), companyName);
     if (direct) return { ...direct, via: home.url };
 
     for (const link of careersLinks(home)) {
       const page = await fetchText(link);
       if (!page) continue;
-      const hit = matchAts(page);
+      const hit = await verified(matchAts(page), companyName);
       if (hit) return { ...hit, via: page.url };
     }
     // Deliberately NOT returning here. The first domain that merely *responds*
@@ -518,14 +574,14 @@ export async function discoverViaCareersPage(companyName) {
 
       // Groups line up with the alternation order above.
       const [, wdTenant, wdNum, wdSite, ghEmbed, gh, lever, ashby, recruitee, workable, smart] = m;
-      if (wdTenant && wdNum && wdSite) return { provider: 'workday', token: `${wdTenant}:${wdNum}:${wdSite}`, via: url };
-      if (ghEmbed) return { provider: 'greenhouse', token: ghEmbed, via: url };
-      if (gh) return { provider: 'greenhouse', token: gh, via: url };
-      if (lever) return { provider: 'lever', token: lever, via: url };
-      if (ashby) return { provider: 'ashby', token: ashby, via: url };
-      if (recruitee) return { provider: 'recruitee', token: recruitee, via: url };
-      if (workable) return { provider: 'workable', token: workable, via: url };
-      if (smart) return { provider: 'smartrecruiters', token: smart, via: url };
+      if (wdTenant && wdNum && wdSite) return (await verified({ provider: 'workday', token: `${wdTenant}:${wdNum}:${wdSite}` }, companyName)) && { provider: 'workday', token: `${wdTenant}:${wdNum}:${wdSite}`, via: url };
+      if (ghEmbed) return (await verified({ provider: 'greenhouse', token: ghEmbed }, companyName)) && { provider: 'greenhouse', token: ghEmbed, via: url };
+      if (gh) return (await verified({ provider: 'greenhouse', token: gh }, companyName)) && { provider: 'greenhouse', token: gh, via: url };
+      if (lever) return (await verified({ provider: 'lever', token: lever }, companyName)) && { provider: 'lever', token: lever, via: url };
+      if (ashby) return (await verified({ provider: 'ashby', token: ashby }, companyName)) && { provider: 'ashby', token: ashby, via: url };
+      if (recruitee) return (await verified({ provider: 'recruitee', token: recruitee }, companyName)) && { provider: 'recruitee', token: recruitee, via: url };
+      if (workable) return (await verified({ provider: 'workable', token: workable }, companyName)) && { provider: 'workable', token: workable, via: url };
+      if (smart) return (await verified({ provider: 'smartrecruiters', token: smart }, companyName)) && { provider: 'smartrecruiters', token: smart, via: url };
     }
   }
   return null;
