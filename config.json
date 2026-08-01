@@ -23,6 +23,25 @@
       "aliases": [
         "GE Healthcare"
       ]
+    },
+    {
+      "name": "Bybit"
+    },
+    {
+      "name": "CertifyOS"
+    },
+    {
+      "name": "Tractebel",
+      "aliases": [
+        "Tractebel Engineering",
+        "Tractebel India"
+      ]
+    },
+    {
+      "name": "Faveo",
+      "aliases": [
+        "Faveo Helpdesk"
+      ]
     }
   ],
   "searchMode": "keywords",
