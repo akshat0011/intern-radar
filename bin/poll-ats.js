@@ -41,6 +41,29 @@ store.ensureAtsTable();
 let boards = store.atsBoards();
 if (ONLY) boards = boards.filter((b) => b.company.toLowerCase() === ONLY.toLowerCase());
 
+/**
+ * Workday is polled on rotation, not all at once.
+ *
+ * Every other provider here publishes its job-board API and is happy to be read.
+ * Workday publishes nothing — the endpoint is the one its own careers pages
+ * call — and reading 38 tenants every 15 minutes came to roughly 3,650 requests
+ * a day, at which point it started answering every tenant with the careers-page
+ * HTML instead of data. That is the same volume mistake the LinkedIn scraper is
+ * built to avoid, arrived at from the other direction.
+ *
+ * So: a handful of the least-recently-read boards per run, in sequence rather
+ * than in parallel. Each board still gets read several times a day, which is
+ * ample for enterprise postings that stay open for weeks, at about a tenth of
+ * the traffic.
+ */
+const WORKDAY_PER_RUN = 4;
+const workdayAll = boards.filter((b) => b.provider === 'workday');
+const others = boards.filter((b) => b.provider !== 'workday');
+const workdayNow = ONLY ? workdayAll : [...workdayAll]
+  .sort((a, b) => (a.last_polled ?? 0) - (b.last_polled ?? 0))
+  .slice(0, WORKDAY_PER_RUN);
+boards = others;
+
 if (!boards.length) {
   console.log('No ATS boards known yet. Run `node bin/discover-ats.js` first.');
   store.close();
@@ -177,7 +200,16 @@ await Promise.all(Array.from({ length: CONCURRENCY }, async () => {
   }
 }));
 
-console.log(`\n=== ${checked}/${boards.length} boards read${failed ? `, ${failed} failed` : ''} ===`);
+// Sequential, with a gap. Concurrent bursts are what drew the block.
+if (workdayNow.length) {
+  console.log(`\nWorkday: ${workdayNow.length} of ${workdayAll.length} boards this run (least recently read)…`);
+  for (const b of workdayNow) {
+    await pollOne(b);
+    await new Promise((r) => setTimeout(r, 2000));
+  }
+}
+
+console.log(`\n=== ${checked}/${boards.length + workdayNow.length} boards read${failed ? `, ${failed} failed` : ''} ===`);
 console.log(`  ${stored} new internship${stored === 1 ? '' : 's'} stored`);
 console.log(`  skipped: ${skippedNonIntern} not an internship · ${skippedNonIndia} outside India · ${skippedStale} older than ${MAX_POSTING_AGE_DAYS}d · ${skippedNonTech} non-engineering`);
 
