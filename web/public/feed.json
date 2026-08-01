@@ -6,6 +6,18 @@
   "description": "New engineering internships, listed within minutes of going live.",
   "items": [
     {
+      "id": "https://www.internradar.info/jobs/imc-trading-2027-quant-research-intern-bits-pilani-4447600419",
+      "url": "https://www.internradar.info/jobs/imc-trading-2027-quant-research-intern-bits-pilani-4447600419",
+      "title": "2027 - Quant Research Intern - BITS Pilani — IMC Trading",
+      "content_text": "Company: IMC Trading · Location: Mumbai Metropolitan Region",
+      "date_published": "2026-08-01T19:16:26.956Z",
+      "authors": [
+        {
+          "name": "IMC Trading"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/american-express-apprentice-4438342357",
       "url": "https://www.internradar.info/jobs/american-express-apprentice-4438342357",
       "title": "Apprentice — American Express",
@@ -587,18 +599,6 @@
       "title": "Software Engineering Intern — Red Hat",
       "content_text": "Company: Red Hat · Location: Bengaluru, Karnataka, India\n• Write and maintain Python or Go code with a senior mentor\n• Add features and chase bugs in Red Hat products like RHEL and OpenShift\n• Projects across Global Engineering touching Ansible, OpenShift and AI\n• Pune or Bangalore, in an intern cohort; no visa sponsorship",
       "date_published": "2026-07-25T12:23:00.853Z",
-      "authors": [
-        {
-          "name": "Red Hat"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/red-hat-software-engineering-intern-4444342572",
-      "url": "https://www.internradar.info/jobs/red-hat-software-engineering-intern-4444342572",
-      "title": "Software Engineering Intern — Red Hat",
-      "content_text": "Company: Red Hat · Location: Pune Division, Maharashtra, India\n• Write and maintain Python or Go code with a senior mentor\n• Add features and chase bugs in Red Hat products like RHEL and OpenShift\n• Projects across Global Engineering touching Ansible, OpenShift and AI\n• Pune or Bangalore, in an intern cohort; no visa sponsorship",
-      "date_published": "2026-07-25T12:22:24.037Z",
       "authors": [
         {
           "name": "Red Hat"

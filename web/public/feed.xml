@@ -6,7 +6,14 @@
   <atom:link href="https://www.internradar.info/feed.xml" rel="self" type="application/rss+xml"/>
   <description>New engineering internships, listed within minutes of going live.</description>
   <language>en-in</language>
-  <lastBuildDate>Sat, 01 Aug 2026 18:50:12 GMT</lastBuildDate>
+  <lastBuildDate>Sat, 01 Aug 2026 20:44:13 GMT</lastBuildDate>
+  <item>
+    <title>2027 - Quant Research Intern - BITS Pilani — IMC Trading</title>
+    <link>https://www.internradar.info/jobs/imc-trading-2027-quant-research-intern-bits-pilani-4447600419</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/imc-trading-2027-quant-research-intern-bits-pilani-4447600419</guid>
+    <pubDate>Sat, 01 Aug 2026 19:16:26 GMT</pubDate>
+    <description>Company: IMC Trading · Location: Mumbai Metropolitan Region</description>
+  </item>
   <item>
     <title>Apprentice — American Express</title>
     <link>https://www.internradar.info/jobs/american-express-apprentice-4438342357</link>
@@ -506,17 +513,6 @@
     <guid isPermaLink="true">https://www.internradar.info/jobs/red-hat-software-engineering-intern-4444351407</guid>
     <pubDate>Sat, 25 Jul 2026 12:23:00 GMT</pubDate>
     <description>Company: Red Hat · Location: Bengaluru, Karnataka, India
-• Write and maintain Python or Go code with a senior mentor
-• Add features and chase bugs in Red Hat products like RHEL and OpenShift
-• Projects across Global Engineering touching Ansible, OpenShift and AI
-• Pune or Bangalore, in an intern cohort; no visa sponsorship</description>
-  </item>
-  <item>
-    <title>Software Engineering Intern — Red Hat</title>
-    <link>https://www.internradar.info/jobs/red-hat-software-engineering-intern-4444342572</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/red-hat-software-engineering-intern-4444342572</guid>
-    <pubDate>Sat, 25 Jul 2026 12:22:24 GMT</pubDate>
-    <description>Company: Red Hat · Location: Pune Division, Maharashtra, India
 • Write and maintain Python or Go code with a senior mentor
 • Add features and chase bugs in Red Hat products like RHEL and OpenShift
 • Projects across Global Engineering touching Ansible, OpenShift and AI
