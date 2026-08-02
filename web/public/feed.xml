@@ -6,7 +6,18 @@
   <atom:link href="https://www.internradar.info/feed.xml" rel="self" type="application/rss+xml"/>
   <description>New engineering internships, listed within minutes of going live.</description>
   <language>en-in</language>
-  <lastBuildDate>Sun, 02 Aug 2026 11:40:44 GMT</lastBuildDate>
+  <lastBuildDate>Sun, 02 Aug 2026 11:47:14 GMT</lastBuildDate>
+  <item>
+    <title>Intern — HARMAN India</title>
+    <link>https://www.internradar.info/jobs/harman-india-intern-4445841376</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/harman-india-intern-4445841376</guid>
+    <pubDate>Sun, 02 Aug 2026 10:52:27 GMT</pubDate>
+    <description>Company: HARMAN India · Location: Bengaluru, Karnataka, India
+• Work on software programs and develop software systems for automotive applications
+• Use embedded RTOS, Android, C/C++, and Linux in your daily tasks
+• Learn to test software using debuggers, emulators, and simulators
+• Perform software releases and quality assurance activities</description>
+  </item>
   <item>
     <title>2027 - Quant Research Intern - BITS Pilani — IMC Trading</title>
     <link>https://www.internradar.info/jobs/imc-trading-2027-quant-research-intern-bits-pilani-4447600419</link>
@@ -510,17 +521,6 @@
 • Fix issues in production alongside engineers, product managers and designers
 • Python, TensorFlow, SQL, React, Spark, Solr, Docker and a long list of AWS services
 • 6-month full-time in-person stint, needs 2026 graduation and CGPA 8.0+</description>
-  </item>
-  <item>
-    <title>Software Engineering Intern — Red Hat</title>
-    <link>https://www.internradar.info/jobs/red-hat-software-engineering-intern-4444351407</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/red-hat-software-engineering-intern-4444351407</guid>
-    <pubDate>Sat, 25 Jul 2026 12:23:00 GMT</pubDate>
-    <description>Company: Red Hat · Location: Bengaluru, Karnataka, India
-• Write and maintain Python or Go code with a senior mentor
-• Add features and chase bugs in Red Hat products like RHEL and OpenShift
-• Projects across Global Engineering touching Ansible, OpenShift and AI
-• Pune or Bangalore, in an intern cohort; no visa sponsorship</description>
   </item>
 </channel>
 </rss>

@@ -6,6 +6,18 @@
   "description": "New engineering internships, listed within minutes of going live.",
   "items": [
     {
+      "id": "https://www.internradar.info/jobs/harman-india-intern-4445841376",
+      "url": "https://www.internradar.info/jobs/harman-india-intern-4445841376",
+      "title": "Intern — HARMAN India",
+      "content_text": "Company: HARMAN India · Location: Bengaluru, Karnataka, India\n• Work on software programs and develop software systems for automotive applications\n• Use embedded RTOS, Android, C/C++, and Linux in your daily tasks\n• Learn to test software using debuggers, emulators, and simulators\n• Perform software releases and quality assurance activities",
+      "date_published": "2026-08-02T10:52:27.718Z",
+      "authors": [
+        {
+          "name": "HARMAN India"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/imc-trading-2027-quant-research-intern-bits-pilani-4447600419",
       "url": "https://www.internradar.info/jobs/imc-trading-2027-quant-research-intern-bits-pilani-4447600419",
       "title": "2027 - Quant Research Intern - BITS Pilani — IMC Trading",
@@ -590,18 +602,6 @@
       "authors": [
         {
           "name": "Eightfold AI"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/red-hat-software-engineering-intern-4444351407",
-      "url": "https://www.internradar.info/jobs/red-hat-software-engineering-intern-4444351407",
-      "title": "Software Engineering Intern — Red Hat",
-      "content_text": "Company: Red Hat · Location: Bengaluru, Karnataka, India\n• Write and maintain Python or Go code with a senior mentor\n• Add features and chase bugs in Red Hat products like RHEL and OpenShift\n• Projects across Global Engineering touching Ansible, OpenShift and AI\n• Pune or Bangalore, in an intern cohort; no visa sponsorship",
-      "date_published": "2026-07-25T12:23:00.853Z",
-      "authors": [
-        {
-          "name": "Red Hat"
         }
       ]
     }
