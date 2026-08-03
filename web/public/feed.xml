@@ -6,13 +6,35 @@
   <atom:link href="https://www.internradar.info/feed.xml" rel="self" type="application/rss+xml"/>
   <description>New engineering internships, listed within minutes of going live.</description>
   <language>en-in</language>
-  <lastBuildDate>Mon, 03 Aug 2026 07:04:53 GMT</lastBuildDate>
+  <lastBuildDate>Mon, 03 Aug 2026 07:18:20 GMT</lastBuildDate>
+  <item>
+    <title>AI Film Making(Internship) — Great Learning</title>
+    <link>https://www.internradar.info/jobs/great-learning-ai-film-making-internship-4447689632</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/great-learning-ai-film-making-internship-4447689632</guid>
+    <pubDate>Mon, 03 Aug 2026 05:58:59 GMT</pubDate>
+    <description>Company: Great Learning · Location: Bengaluru, Karnataka, India
+• Use AI tools like Veo, Runway, Kling, Pika, Luma, Midjourney, Flux to create marketing videos
+• Develop concepts, storyboards, and write prompts for AI image and video generation
+• Edit videos with Adobe Premiere Pro, After Effects, DaVinci Resolve, CapCut
+• Collaborate with scriptwriters, animators, and designers</description>
+  </item>
   <item>
     <title>Graduate Engineer Trainee-SAP — Piramal Pharma Ltd</title>
     <link>https://www.internradar.info/jobs/piramal-pharma-ltd-graduate-engineer-trainee-sap-4445882405</link>
     <guid isPermaLink="true">https://www.internradar.info/jobs/piramal-pharma-ltd-graduate-engineer-trainee-sap-4445882405</guid>
     <pubDate>Mon, 03 Aug 2026 05:58:37 GMT</pubDate>
     <description>Company: Piramal Pharma Ltd · Location: Mumbai, Maharashtra, India</description>
+  </item>
+  <item>
+    <title>Calibration Intern — Pixxel</title>
+    <link>https://www.internradar.info/jobs/pixxel-calibration-intern-4448136135</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/pixxel-calibration-intern-4448136135</guid>
+    <pubDate>Mon, 03 Aug 2026 01:59:19 GMT</pubDate>
+    <description>Company: Pixxel · Location: Bengaluru, Karnataka, India · Duration: 6 months
+• Develop and implement algorithms to calibrate camera systems for optimal image quality
+• Participate in pre-flight calibration including geometrical, spatial, and radiometric calibration
+• Develop and deploy software for imaging system calibration and testing
+• Analyze volume data to guide engineering decisions</description>
   </item>
   <item>
     <title>Software Engineer Intern — eBay</title>
@@ -479,44 +501,22 @@
 • Work with HTML, CSS, JavaScript, databases, SQL, and potentially Java, Python, PHP, React, Angular</description>
   </item>
   <item>
+    <title>Design Intern — Sprinklr</title>
+    <link>https://www.internradar.info/jobs/sprinklr-design-intern-ats:workday:sprinklr:wd1:careers:113310-JOB</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/sprinklr-design-intern-ats:workday:sprinklr:wd1:careers:113310-JOB</guid>
+    <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
+    <description>Company: Sprinklr · Location: India - Haryana - Gurgaon · Duration: 6 months
+• Support the Product Design team in creating intuitive experiences for enterprise users
+• Work on real product features, learn design systems, contribute to user research
+• Proficiency in Figma (components, auto-layout, prototyping) is required
+• Exposure to AI design tools like Lovable, Cursor, and agentic design practices</description>
+  </item>
+  <item>
     <title>Graduate Engineer Trainee - R&amp;D PTM — Valeo</title>
     <link>https://www.internradar.info/jobs/valeo-graduate-engineer-trainee-r-and-d-ptm-4205260262</link>
     <guid isPermaLink="true">https://www.internradar.info/jobs/valeo-graduate-engineer-trainee-r-and-d-ptm-4205260262</guid>
     <pubDate>Sat, 25 Jul 2026 17:22:14 GMT</pubDate>
     <description>Company: Valeo · Location: Chennai, Tamil Nadu, India</description>
-  </item>
-  <item>
-    <title>Summer 2027 Intern - Software Engineer — Salesforce</title>
-    <link>https://www.internradar.info/jobs/salesforce-summer-2027-intern-software-engineer-4445325953</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/salesforce-summer-2027-intern-software-engineer-4445325953</guid>
-    <pubDate>Sat, 25 Jul 2026 13:23:18 GMT</pubDate>
-    <description>Company: Salesforce · Location: Hyderabad, Telangana, India · Duration: 12 months
-• Ship code on a Scrum team into Salesforce&#39;s three cloud releases a year
-• Write automated tests and tooling that monitors cloud services in production
-• Java, C++ or Python, with React, Angular or Vue on the web side plus SQL
-• Hyderabad or Bangalore, for students graduating in 2028</description>
-  </item>
-  <item>
-    <title>Software Quality Engineering Intern — Red Hat</title>
-    <link>https://www.internradar.info/jobs/red-hat-software-quality-engineering-intern-4444362237</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/red-hat-software-quality-engineering-intern-4444362237</guid>
-    <pubDate>Sat, 25 Jul 2026 12:40:45 GMT</pubDate>
-    <description>Company: Red Hat · Location: Pune Division, Maharashtra, India
-• Conduct new feature research and design test cases, then execute manual and automated tests
-• Explore, identify, and document new bugs, communicating their impact to developers and support
-• Collaborate with Engineering, QE, Product Management, Documentation, and product build teams
-• Work with Python, Golang, or similar programming languages</description>
-  </item>
-  <item>
-    <title>Site Reliability Engineering Intern — Red Hat</title>
-    <link>https://www.internradar.info/jobs/red-hat-site-reliability-engineering-intern-4444345488</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/red-hat-site-reliability-engineering-intern-4444345488</guid>
-    <pubDate>Sat, 25 Jul 2026 12:26:02 GMT</pubDate>
-    <description>Company: Red Hat · Location: Pune Division, Maharashtra, India
-• Write code to make the service more scalable and reliable, guided by a senior mentor
-• Add software tests and do peer review inside a small agile SRE team
-• Python or Golang on Linux, with public cloud basics expected
-• Pune-based, and Red Hat will not sponsor a visa for this role</description>
   </item>
 </channel>
 </rss>

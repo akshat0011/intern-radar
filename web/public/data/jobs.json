@@ -1,7 +1,7 @@
 {
- "generatedAt": 1785740693865,
- "count": 80,
- "techCount": 80,
+ "generatedAt": 1785741500165,
+ "count": 82,
+ "techCount": 82,
  "otherCount": 0,
  "companies": [
   "ALLEN",
@@ -19,6 +19,7 @@
   "Eightfold AI",
   "Fiserv",
   "Fujitsu",
+  "Great Learning",
   "GreyOrange",
   "HARMAN India",
   "IMC Trading",
@@ -83,6 +84,46 @@
  ],
  "jobs": [
   {
+   "id": "4447689632",
+   "title": "AI Film Making(Internship)",
+   "company": "Great Learning",
+   "matchedWatchlist": "Great Learning",
+   "isTech": true,
+   "roleSource": "gemini-enrich",
+   "logo": "/logos/great-learning.jpg",
+   "location": "Bengaluru, Karnataka, India",
+   "workplaceType": "On-site",
+   "stipend": null,
+   "duration": null,
+   "applicants": null,
+   "easyApply": false,
+   "skills": [],
+   "summary": "We're looking for an AI Filmmaking Intern who is passionate about the future of video creation. You'll use cutting-edge AI tools to transform ideas into engaging marketing videos, from concept and storyboarding to AI video generation, editing, and final production. If you're excited about blending creativity with AI, this role is for you. Key Responsibilities",
+   "bullets": [
+    "Use AI tools like Veo, Runway, Kling, Pika, Luma, Midjourney, Flux to create marketing videos",
+    "Develop concepts, storyboards, and write prompts for AI image and video generation",
+    "Edit videos with Adobe Premiere Pro, After Effects, DaVinci Resolve, CapCut",
+    "Collaborate with scriptwriters, animators, and designers"
+   ],
+   "roleLabel": "AI Filmmaking",
+   "degreeLevel": null,
+   "degreeText": null,
+   "keySkills": [
+    "veo",
+    "runway",
+    "kling",
+    "pika",
+    "luma"
+   ],
+   "stipendStatus": "unknown",
+   "postedText": "1 hour ago",
+   "postedAt": 1785736739789,
+   "firstSeenAt": 1785740339792,
+   "url": "https://www.linkedin.com/jobs/view/4447689632/",
+   "applyUrl": "https://www.linkedin.com/jobs/view/4447689632/",
+   "description": null
+  },
+  {
    "id": "4445882405",
    "title": "Graduate Engineer Trainee-SAP",
    "company": "Piramal Pharma Ltd",
@@ -109,6 +150,51 @@
    "firstSeenAt": 1785740317778,
    "url": "https://www.linkedin.com/jobs/view/4445882405/",
    "applyUrl": "https://www.linkedin.com/jobs/view/4445882405/",
+   "description": null
+  },
+  {
+   "id": "4448136135",
+   "title": "Calibration Intern",
+   "company": "Pixxel",
+   "matchedWatchlist": "Pixxel",
+   "isTech": true,
+   "roleSource": "gemini-enrich",
+   "logo": "/logos/pixxel.jpg",
+   "location": "Bengaluru, Karnataka, India",
+   "workplaceType": "On-site",
+   "stipend": null,
+   "duration": "6 months",
+   "applicants": null,
+   "easyApply": false,
+   "skills": [
+    "python",
+    "c++",
+    "matlab",
+    "algorithms"
+   ],
+   "summary": "This job is sourced from a job board. Role: Calibration Engineer Intern Employment Type: Intern (6months) Educational Qualification: BS/MS in Mechanical or Optical Engineering or Quality Engineering; plus strong industry experience Work Experience: Fresher with background with optical or optomechanical assemblies Camera Calibration Engineer responsible for developing and implementing algorithms to accurately calibrate camera systems for optimal image quality and geometric precision.",
+   "bullets": [
+    "Develop and implement algorithms to calibrate camera systems for optimal image quality",
+    "Participate in pre-flight calibration including geometrical, spatial, and radiometric calibration",
+    "Develop and deploy software for imaging system calibration and testing",
+    "Analyze volume data to guide engineering decisions"
+   ],
+   "roleLabel": "Camera Calibration Engineering",
+   "degreeLevel": "UG/PG",
+   "degreeText": null,
+   "keySkills": [
+    "c++",
+    "matlab",
+    "python",
+    "image processing",
+    "optical metrology tools"
+   ],
+   "stipendStatus": "unknown",
+   "postedText": "33 minutes ago",
+   "postedAt": 1785722359699,
+   "firstSeenAt": 1785724339706,
+   "url": "https://www.linkedin.com/jobs/view/4448136135/",
+   "applyUrl": "https://www.linkedin.com/jobs/view/4448136135/",
    "description": null
   },
   {
@@ -1954,6 +2040,48 @@
    "description": null
   },
   {
+   "id": "ats:workday:sprinklr:wd1:careers:113310-JOB",
+   "title": "Design Intern",
+   "company": "Sprinklr",
+   "matchedWatchlist": "Sprinklr",
+   "isTech": true,
+   "roleSource": "gemini-enrich",
+   "logo": "/logos/sprinklr.jpg",
+   "location": "India - Haryana - Gurgaon",
+   "workplaceType": null,
+   "stipend": null,
+   "duration": "6 months",
+   "applicants": null,
+   "easyApply": false,
+   "skills": [
+    "figma"
+   ],
+   "summary": "Sprinklr is the definitive, AI-native platform for Unified Customer Experience Management (Unified-CXM), empowering brands to deliver extraordinary experiences at scale — across every customer touchpoint. By combining human instinct with the speed and efficiency of AI, Sprinklr helps brands earn trust and loyalty through personalized, seamless, and efficient customer interactions. Sprinklr’s unified platform provides powerful solutions for every customer-facing team — spanning social media management, marketing, advertising, customer feedback, and omnichannel contact center management — enabling enterprises to…",
+   "bullets": [
+    "Support the Product Design team in creating intuitive experiences for enterprise users",
+    "Work on real product features, learn design systems, contribute to user research",
+    "Proficiency in Figma (components, auto-layout, prototyping) is required",
+    "Exposure to AI design tools like Lovable, Cursor, and agentic design practices"
+   ],
+   "roleLabel": "Product Design",
+   "degreeLevel": null,
+   "degreeText": null,
+   "keySkills": [
+    "figma",
+    "lovable",
+    "cursor",
+    "interaction design",
+    "user research"
+   ],
+   "stipendStatus": "unknown",
+   "postedText": null,
+   "postedAt": 1785110400000,
+   "firstSeenAt": 1785725133920,
+   "url": "https://sprinklr.wd1.myworkdayjobs.com/en-US/careers/job/India---Haryana---Gurgaon/Design-Intern_113310-JOB",
+   "applyUrl": "https://sprinklr.wd1.myworkdayjobs.com/en-US/careers/job/India---Haryana---Gurgaon/Design-Intern_113310-JOB",
+   "description": null
+  },
+  {
    "id": "4205260262",
    "title": "Graduate Engineer Trainee - R&D PTM",
    "company": "Valeo",
@@ -2425,48 +2553,6 @@
    "firstSeenAt": 1785061457316,
    "url": "https://www.linkedin.com/jobs/view/4436910676/",
    "applyUrl": "https://www.linkedin.com/jobs/view/4436910676/",
-   "description": null
-  },
-  {
-   "id": "4444951126",
-   "title": "Design Intern",
-   "company": "Sprinklr",
-   "matchedWatchlist": "Sprinklr",
-   "isTech": true,
-   "roleSource": "manual-enrich",
-   "logo": "/logos/sprinklr.jpg",
-   "location": "Gurgaon, Haryana, India",
-   "workplaceType": "On-site",
-   "stipend": null,
-   "duration": null,
-   "applicants": null,
-   "easyApply": false,
-   "skills": [
-    "figma"
-   ],
-   "summary": "Sprinklr is the definitive, AI-native platform for Unified Customer Experience Management (Unified-CXM), empowering brands to deliver extraordinary experiences at scale — across every customer touchpoint. By combining human instinct with the speed and efficiency of AI, Sprinklr helps brands earn trust and loyalty through personalized, seamless, and efficient customer interactions. Sprinklr’s unified platform provides powerful solutions for every customer-facing team — spanning social media management, marketing, advertising, customer feedback, and omnichannel contact center management — enabling enterprises to…",
-   "bullets": [
-    "Work on live product features with the Product Design team and their design system",
-    "Figma every day: components, auto-layout, prototyping",
-    "Turn user and competitive research into design decisions and recommendations",
-    "Agentic AI flows where the system plans, explains itself and asks for confirmation"
-   ],
-   "roleLabel": "Product UX design",
-   "degreeLevel": null,
-   "degreeText": null,
-   "keySkills": [
-    "figma",
-    "lovable",
-    "cursor",
-    "prototyping",
-    "user research"
-   ],
-   "stipendStatus": "unknown",
-   "postedText": "2 days ago",
-   "postedAt": 1784896044430,
-   "firstSeenAt": 1785068844433,
-   "url": "https://www.linkedin.com/jobs/view/4444951126/",
-   "applyUrl": "https://www.linkedin.com/jobs/view/4444951126/",
    "description": null
   },
   {

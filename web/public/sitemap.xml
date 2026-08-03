@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://www.internradar.info/</loc><lastmod>2026-08-03T07:04:53.892Z</lastmod><priority>1.0</priority></url>
-  <url><loc>https://www.internradar.info/companies/</loc><lastmod>2026-08-03T07:04:53.892Z</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.internradar.info/</loc><lastmod>2026-08-03T07:18:20.197Z</lastmod><priority>1.0</priority></url>
+  <url><loc>https://www.internradar.info/companies/</loc><lastmod>2026-08-03T07:18:20.197Z</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.internradar.info/jobs/great-learning-ai-film-making-internship-4447689632</loc><lastmod>2026-08-03T05:58:59.789Z</lastmod><priority>0.8</priority></url>
+  <url><loc>https://www.internradar.info/jobs/pixxel-calibration-intern-4448136135</loc><lastmod>2026-08-03T01:59:19.699Z</lastmod><priority>0.8</priority></url>
   <url><loc>https://www.internradar.info/jobs/ebay-software-engineer-intern-4445854769</loc><lastmod>2026-08-02T21:06:14.357Z</lastmod><priority>0.8</priority></url>
   <url><loc>https://www.internradar.info/jobs/harman-india-intern-4445841376</loc><lastmod>2026-08-02T10:52:27.718Z</lastmod><priority>0.8</priority></url>
   <url><loc>https://www.internradar.info/jobs/imc-trading-2027-quant-research-intern-bits-pilani-4447600419</loc><lastmod>2026-08-01T19:16:26.956Z</lastmod><priority>0.8</priority></url>
@@ -43,6 +45,7 @@
   <url><loc>https://www.internradar.info/jobs/newton-school-subject-matter-expert-intern-4445109675</loc><lastmod>2026-07-27T11:24:56.890Z</lastmod><priority>0.8</priority></url>
   <url><loc>https://www.internradar.info/jobs/state-street-it-pmo-analyst-apprentice-4445930061</loc><lastmod>2026-07-27T11:18:02.517Z</lastmod><priority>0.8</priority></url>
   <url><loc>https://www.internradar.info/jobs/adobe-apprentice-technical-consultant-4444878968</loc><lastmod>2026-07-27T10:48:01.196Z</lastmod><priority>0.8</priority></url>
+  <url><loc>https://www.internradar.info/jobs/sprinklr-design-intern-ats:workday:sprinklr:wd1:careers:113310-JOB</loc><lastmod>2026-07-27T00:00:00.000Z</lastmod><priority>0.8</priority></url>
   <url><loc>https://www.internradar.info/jobs/salesforce-summer-2027-intern-software-engineer-4445325953</loc><lastmod>2026-07-25T13:23:18.528Z</lastmod><priority>0.8</priority></url>
   <url><loc>https://www.internradar.info/jobs/red-hat-software-quality-engineering-intern-4444362237</loc><lastmod>2026-07-25T12:40:45.574Z</lastmod><priority>0.8</priority></url>
   <url><loc>https://www.internradar.info/jobs/red-hat-site-reliability-engineering-intern-4444345488</loc><lastmod>2026-07-25T12:26:02.650Z</lastmod><priority>0.8</priority></url>
@@ -52,7 +55,6 @@
   <url><loc>https://www.internradar.info/jobs/red-hat-software-engineering-intern-4444342572</loc><lastmod>2026-07-25T12:22:24.037Z</lastmod><priority>0.8</priority></url>
   <url><loc>https://www.internradar.info/jobs/wipro-graduate-engineer-trainee-4444632445</loc><lastmod>2026-07-25T11:49:41.622Z</lastmod><priority>0.8</priority></url>
   <url><loc>https://www.internradar.info/jobs/bnp-paribas-data-science-intern-4436910676</loc><lastmod>2026-07-25T11:24:17.315Z</lastmod><priority>0.8</priority></url>
-  <url><loc>https://www.internradar.info/jobs/sprinklr-design-intern-4444951126</loc><lastmod>2026-07-24T12:27:24.430Z</lastmod><priority>0.8</priority></url>
   <url><loc>https://www.internradar.info/jobs/sprinklr-research-intern-4444951132</loc><lastmod>2026-07-24T11:54:56.063Z</lastmod><priority>0.8</priority></url>
   <url><loc>https://www.internradar.info/jobs/ubs-treasury-and-regulatory-reporting-intern-4443826370</loc><lastmod>2026-07-23T12:39:00.848Z</lastmod><priority>0.8</priority></url>
   <url><loc>https://www.internradar.info/jobs/ubs-intern-4443818443</loc><lastmod>2026-07-23T12:38:32.172Z</lastmod><priority>0.8</priority></url>
@@ -75,55 +77,56 @@
   <url><loc>https://www.internradar.info/jobs/procter-and-gamble-it-internship-4434523389</loc><lastmod>2026-07-12T11:55:22.738Z</lastmod><priority>0.8</priority></url>
   <url><loc>https://www.internradar.info/jobs/alphagrep-securities-software-development-intern-ats:greenhouse:alphagrepsecurities:8622142002</loc><lastmod>2026-07-07T09:39:20.000Z</lastmod><priority>0.8</priority></url>
   <url><loc>https://www.internradar.info/jobs/alphagrep-securities-quantitative-trading-intern-ats:greenhouse:alphagrepsecurities:8622004002</loc><lastmod>2026-07-07T09:36:18.000Z</lastmod><priority>0.8</priority></url>
-  <url><loc>https://www.internradar.info/companies/ebay</loc><lastmod>2026-08-03T07:04:53.892Z</lastmod><priority>0.6</priority></url>
-  <url><loc>https://www.internradar.info/companies/harman-india</loc><lastmod>2026-08-03T07:04:53.892Z</lastmod><priority>0.6</priority></url>
-  <url><loc>https://www.internradar.info/companies/imc-trading</loc><lastmod>2026-08-03T07:04:53.892Z</lastmod><priority>0.6</priority></url>
-  <url><loc>https://www.internradar.info/companies/american-express</loc><lastmod>2026-08-03T07:04:53.892Z</lastmod><priority>0.6</priority></url>
-  <url><loc>https://www.internradar.info/companies/multiplier-ai</loc><lastmod>2026-08-03T07:04:53.892Z</lastmod><priority>0.6</priority></url>
-  <url><loc>https://www.internradar.info/companies/whatfix</loc><lastmod>2026-08-03T07:04:53.892Z</lastmod><priority>0.6</priority></url>
-  <url><loc>https://www.internradar.info/companies/valeo</loc><lastmod>2026-08-03T07:04:53.892Z</lastmod><priority>0.6</priority></url>
-  <url><loc>https://www.internradar.info/companies/magna-international</loc><lastmod>2026-08-03T07:04:53.892Z</lastmod><priority>0.6</priority></url>
-  <url><loc>https://www.internradar.info/companies/newton-school-of-technology</loc><lastmod>2026-08-03T07:04:53.892Z</lastmod><priority>0.6</priority></url>
-  <url><loc>https://www.internradar.info/companies/intel</loc><lastmod>2026-08-03T07:04:53.892Z</lastmod><priority>0.6</priority></url>
-  <url><loc>https://www.internradar.info/companies/fujitsu</loc><lastmod>2026-08-03T07:04:53.892Z</lastmod><priority>0.6</priority></url>
-  <url><loc>https://www.internradar.info/companies/noise</loc><lastmod>2026-08-03T07:04:53.892Z</lastmod><priority>0.6</priority></url>
-  <url><loc>https://www.internradar.info/companies/volvo-group</loc><lastmod>2026-08-03T07:04:53.892Z</lastmod><priority>0.6</priority></url>
-  <url><loc>https://www.internradar.info/companies/barclays</loc><lastmod>2026-08-03T07:04:53.892Z</lastmod><priority>0.6</priority></url>
-  <url><loc>https://www.internradar.info/companies/philips</loc><lastmod>2026-08-03T07:04:53.892Z</lastmod><priority>0.6</priority></url>
-  <url><loc>https://www.internradar.info/companies/icertis</loc><lastmod>2026-08-03T07:04:53.892Z</lastmod><priority>0.6</priority></url>
-  <url><loc>https://www.internradar.info/companies/pw-physicswallah</loc><lastmod>2026-08-03T07:04:53.892Z</lastmod><priority>0.6</priority></url>
-  <url><loc>https://www.internradar.info/companies/nokia</loc><lastmod>2026-08-03T07:04:53.892Z</lastmod><priority>0.6</priority></url>
-  <url><loc>https://www.internradar.info/companies/greyorange</loc><lastmod>2026-08-03T07:04:53.892Z</lastmod><priority>0.6</priority></url>
-  <url><loc>https://www.internradar.info/companies/newgen-innovation-ai-and-design-thinking</loc><lastmod>2026-08-03T07:04:53.892Z</lastmod><priority>0.6</priority></url>
-  <url><loc>https://www.internradar.info/companies/allen</loc><lastmod>2026-08-03T07:04:53.892Z</lastmod><priority>0.6</priority></url>
-  <url><loc>https://www.internradar.info/companies/mizuho</loc><lastmod>2026-08-03T07:04:53.892Z</lastmod><priority>0.6</priority></url>
-  <url><loc>https://www.internradar.info/companies/pixxel</loc><lastmod>2026-08-03T07:04:53.892Z</lastmod><priority>0.6</priority></url>
-  <url><loc>https://www.internradar.info/companies/adobe</loc><lastmod>2026-08-03T07:04:53.892Z</lastmod><priority>0.6</priority></url>
-  <url><loc>https://www.internradar.info/companies/panasonic-avionics-corporation</loc><lastmod>2026-08-03T07:04:53.892Z</lastmod><priority>0.6</priority></url>
-  <url><loc>https://www.internradar.info/companies/fiserv</loc><lastmod>2026-08-03T07:04:53.892Z</lastmod><priority>0.6</priority></url>
-  <url><loc>https://www.internradar.info/companies/mu-sigma-inc</loc><lastmod>2026-08-03T07:04:53.892Z</lastmod><priority>0.6</priority></url>
-  <url><loc>https://www.internradar.info/companies/eclerx</loc><lastmod>2026-08-03T07:04:53.892Z</lastmod><priority>0.6</priority></url>
-  <url><loc>https://www.internradar.info/companies/collins-aerospace</loc><lastmod>2026-08-03T07:04:53.892Z</lastmod><priority>0.6</priority></url>
-  <url><loc>https://www.internradar.info/companies/sprinklr</loc><lastmod>2026-08-03T07:04:53.892Z</lastmod><priority>0.6</priority></url>
-  <url><loc>https://www.internradar.info/companies/ideaforge</loc><lastmod>2026-08-03T07:04:53.892Z</lastmod><priority>0.6</priority></url>
-  <url><loc>https://www.internradar.info/companies/deutsche-bank</loc><lastmod>2026-08-03T07:04:53.892Z</lastmod><priority>0.6</priority></url>
-  <url><loc>https://www.internradar.info/companies/siemens-healthineers</loc><lastmod>2026-08-03T07:04:53.892Z</lastmod><priority>0.6</priority></url>
-  <url><loc>https://www.internradar.info/companies/state-street</loc><lastmod>2026-08-03T07:04:53.892Z</lastmod><priority>0.6</priority></url>
-  <url><loc>https://www.internradar.info/companies/newton-school</loc><lastmod>2026-08-03T07:04:53.892Z</lastmod><priority>0.6</priority></url>
-  <url><loc>https://www.internradar.info/companies/salesforce</loc><lastmod>2026-08-03T07:04:53.892Z</lastmod><priority>0.6</priority></url>
-  <url><loc>https://www.internradar.info/companies/red-hat</loc><lastmod>2026-08-03T07:04:53.892Z</lastmod><priority>0.6</priority></url>
-  <url><loc>https://www.internradar.info/companies/eightfold-ai</loc><lastmod>2026-08-03T07:04:53.892Z</lastmod><priority>0.6</priority></url>
-  <url><loc>https://www.internradar.info/companies/wipro</loc><lastmod>2026-08-03T07:04:53.892Z</lastmod><priority>0.6</priority></url>
-  <url><loc>https://www.internradar.info/companies/bnp-paribas</loc><lastmod>2026-08-03T07:04:53.892Z</lastmod><priority>0.6</priority></url>
-  <url><loc>https://www.internradar.info/companies/ubs</loc><lastmod>2026-08-03T07:04:53.892Z</lastmod><priority>0.6</priority></url>
-  <url><loc>https://www.internradar.info/companies/stripe</loc><lastmod>2026-08-03T07:04:53.892Z</lastmod><priority>0.6</priority></url>
-  <url><loc>https://www.internradar.info/companies/leadsquared</loc><lastmod>2026-08-03T07:04:53.892Z</lastmod><priority>0.6</priority></url>
-  <url><loc>https://www.internradar.info/companies/paytm</loc><lastmod>2026-08-03T07:04:53.892Z</lastmod><priority>0.6</priority></url>
-  <url><loc>https://www.internradar.info/companies/sharechat</loc><lastmod>2026-08-03T07:04:53.892Z</lastmod><priority>0.6</priority></url>
-  <url><loc>https://www.internradar.info/companies/dehaat</loc><lastmod>2026-08-03T07:04:53.892Z</lastmod><priority>0.6</priority></url>
-  <url><loc>https://www.internradar.info/companies/accenture-in-india</loc><lastmod>2026-08-03T07:04:53.892Z</lastmod><priority>0.6</priority></url>
-  <url><loc>https://www.internradar.info/companies/microsoft</loc><lastmod>2026-08-03T07:04:53.892Z</lastmod><priority>0.6</priority></url>
-  <url><loc>https://www.internradar.info/companies/automation-anywhere</loc><lastmod>2026-08-03T07:04:53.892Z</lastmod><priority>0.6</priority></url>
-  <url><loc>https://www.internradar.info/companies/procter-and-gamble</loc><lastmod>2026-08-03T07:04:53.892Z</lastmod><priority>0.6</priority></url>
-  <url><loc>https://www.internradar.info/companies/alphagrep-securities</loc><lastmod>2026-08-03T07:04:53.892Z</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.internradar.info/companies/great-learning</loc><lastmod>2026-08-03T07:18:20.197Z</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.internradar.info/companies/pixxel</loc><lastmod>2026-08-03T07:18:20.197Z</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.internradar.info/companies/ebay</loc><lastmod>2026-08-03T07:18:20.197Z</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.internradar.info/companies/harman-india</loc><lastmod>2026-08-03T07:18:20.197Z</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.internradar.info/companies/imc-trading</loc><lastmod>2026-08-03T07:18:20.197Z</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.internradar.info/companies/american-express</loc><lastmod>2026-08-03T07:18:20.197Z</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.internradar.info/companies/multiplier-ai</loc><lastmod>2026-08-03T07:18:20.197Z</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.internradar.info/companies/whatfix</loc><lastmod>2026-08-03T07:18:20.197Z</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.internradar.info/companies/valeo</loc><lastmod>2026-08-03T07:18:20.197Z</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.internradar.info/companies/magna-international</loc><lastmod>2026-08-03T07:18:20.197Z</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.internradar.info/companies/newton-school-of-technology</loc><lastmod>2026-08-03T07:18:20.197Z</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.internradar.info/companies/intel</loc><lastmod>2026-08-03T07:18:20.197Z</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.internradar.info/companies/fujitsu</loc><lastmod>2026-08-03T07:18:20.197Z</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.internradar.info/companies/noise</loc><lastmod>2026-08-03T07:18:20.197Z</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.internradar.info/companies/volvo-group</loc><lastmod>2026-08-03T07:18:20.197Z</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.internradar.info/companies/barclays</loc><lastmod>2026-08-03T07:18:20.197Z</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.internradar.info/companies/philips</loc><lastmod>2026-08-03T07:18:20.197Z</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.internradar.info/companies/icertis</loc><lastmod>2026-08-03T07:18:20.197Z</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.internradar.info/companies/pw-physicswallah</loc><lastmod>2026-08-03T07:18:20.197Z</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.internradar.info/companies/nokia</loc><lastmod>2026-08-03T07:18:20.197Z</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.internradar.info/companies/greyorange</loc><lastmod>2026-08-03T07:18:20.197Z</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.internradar.info/companies/newgen-innovation-ai-and-design-thinking</loc><lastmod>2026-08-03T07:18:20.197Z</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.internradar.info/companies/allen</loc><lastmod>2026-08-03T07:18:20.197Z</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.internradar.info/companies/mizuho</loc><lastmod>2026-08-03T07:18:20.197Z</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.internradar.info/companies/adobe</loc><lastmod>2026-08-03T07:18:20.197Z</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.internradar.info/companies/panasonic-avionics-corporation</loc><lastmod>2026-08-03T07:18:20.197Z</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.internradar.info/companies/fiserv</loc><lastmod>2026-08-03T07:18:20.197Z</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.internradar.info/companies/mu-sigma-inc</loc><lastmod>2026-08-03T07:18:20.197Z</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.internradar.info/companies/eclerx</loc><lastmod>2026-08-03T07:18:20.197Z</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.internradar.info/companies/collins-aerospace</loc><lastmod>2026-08-03T07:18:20.197Z</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.internradar.info/companies/sprinklr</loc><lastmod>2026-08-03T07:18:20.197Z</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.internradar.info/companies/ideaforge</loc><lastmod>2026-08-03T07:18:20.197Z</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.internradar.info/companies/deutsche-bank</loc><lastmod>2026-08-03T07:18:20.197Z</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.internradar.info/companies/siemens-healthineers</loc><lastmod>2026-08-03T07:18:20.197Z</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.internradar.info/companies/state-street</loc><lastmod>2026-08-03T07:18:20.197Z</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.internradar.info/companies/newton-school</loc><lastmod>2026-08-03T07:18:20.197Z</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.internradar.info/companies/salesforce</loc><lastmod>2026-08-03T07:18:20.197Z</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.internradar.info/companies/red-hat</loc><lastmod>2026-08-03T07:18:20.197Z</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.internradar.info/companies/eightfold-ai</loc><lastmod>2026-08-03T07:18:20.197Z</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.internradar.info/companies/wipro</loc><lastmod>2026-08-03T07:18:20.197Z</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.internradar.info/companies/bnp-paribas</loc><lastmod>2026-08-03T07:18:20.197Z</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.internradar.info/companies/ubs</loc><lastmod>2026-08-03T07:18:20.197Z</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.internradar.info/companies/stripe</loc><lastmod>2026-08-03T07:18:20.197Z</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.internradar.info/companies/leadsquared</loc><lastmod>2026-08-03T07:18:20.197Z</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.internradar.info/companies/paytm</loc><lastmod>2026-08-03T07:18:20.197Z</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.internradar.info/companies/sharechat</loc><lastmod>2026-08-03T07:18:20.197Z</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.internradar.info/companies/dehaat</loc><lastmod>2026-08-03T07:18:20.197Z</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.internradar.info/companies/accenture-in-india</loc><lastmod>2026-08-03T07:18:20.197Z</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.internradar.info/companies/microsoft</loc><lastmod>2026-08-03T07:18:20.197Z</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.internradar.info/companies/automation-anywhere</loc><lastmod>2026-08-03T07:18:20.197Z</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.internradar.info/companies/procter-and-gamble</loc><lastmod>2026-08-03T07:18:20.197Z</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.internradar.info/companies/alphagrep-securities</loc><lastmod>2026-08-03T07:18:20.197Z</lastmod><priority>0.6</priority></url>
 </urlset>

@@ -6,6 +6,18 @@
   "description": "New engineering internships, listed within minutes of going live.",
   "items": [
     {
+      "id": "https://www.internradar.info/jobs/great-learning-ai-film-making-internship-4447689632",
+      "url": "https://www.internradar.info/jobs/great-learning-ai-film-making-internship-4447689632",
+      "title": "AI Film Making(Internship) — Great Learning",
+      "content_text": "Company: Great Learning · Location: Bengaluru, Karnataka, India\n• Use AI tools like Veo, Runway, Kling, Pika, Luma, Midjourney, Flux to create marketing videos\n• Develop concepts, storyboards, and write prompts for AI image and video generation\n• Edit videos with Adobe Premiere Pro, After Effects, DaVinci Resolve, CapCut\n• Collaborate with scriptwriters, animators, and designers",
+      "date_published": "2026-08-03T05:58:59.789Z",
+      "authors": [
+        {
+          "name": "Great Learning"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/piramal-pharma-ltd-graduate-engineer-trainee-sap-4445882405",
       "url": "https://www.internradar.info/jobs/piramal-pharma-ltd-graduate-engineer-trainee-sap-4445882405",
       "title": "Graduate Engineer Trainee-SAP — Piramal Pharma Ltd",
@@ -14,6 +26,18 @@
       "authors": [
         {
           "name": "Piramal Pharma Ltd"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/pixxel-calibration-intern-4448136135",
+      "url": "https://www.internradar.info/jobs/pixxel-calibration-intern-4448136135",
+      "title": "Calibration Intern — Pixxel",
+      "content_text": "Company: Pixxel · Location: Bengaluru, Karnataka, India · Duration: 6 months\n• Develop and implement algorithms to calibrate camera systems for optimal image quality\n• Participate in pre-flight calibration including geometrical, spatial, and radiometric calibration\n• Develop and deploy software for imaging system calibration and testing\n• Analyze volume data to guide engineering decisions",
+      "date_published": "2026-08-03T01:59:19.699Z",
+      "authors": [
+        {
+          "name": "Pixxel"
         }
       ]
     },
@@ -558,6 +582,18 @@
       ]
     },
     {
+      "id": "https://www.internradar.info/jobs/sprinklr-design-intern-ats:workday:sprinklr:wd1:careers:113310-JOB",
+      "url": "https://www.internradar.info/jobs/sprinklr-design-intern-ats:workday:sprinklr:wd1:careers:113310-JOB",
+      "title": "Design Intern — Sprinklr",
+      "content_text": "Company: Sprinklr · Location: India - Haryana - Gurgaon · Duration: 6 months\n• Support the Product Design team in creating intuitive experiences for enterprise users\n• Work on real product features, learn design systems, contribute to user research\n• Proficiency in Figma (components, auto-layout, prototyping) is required\n• Exposure to AI design tools like Lovable, Cursor, and agentic design practices",
+      "date_published": "2026-07-27T00:00:00.000Z",
+      "authors": [
+        {
+          "name": "Sprinklr"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/valeo-graduate-engineer-trainee-r-and-d-ptm-4205260262",
       "url": "https://www.internradar.info/jobs/valeo-graduate-engineer-trainee-r-and-d-ptm-4205260262",
       "title": "Graduate Engineer Trainee - R&D PTM — Valeo",
@@ -566,42 +602,6 @@
       "authors": [
         {
           "name": "Valeo"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/salesforce-summer-2027-intern-software-engineer-4445325953",
-      "url": "https://www.internradar.info/jobs/salesforce-summer-2027-intern-software-engineer-4445325953",
-      "title": "Summer 2027 Intern - Software Engineer — Salesforce",
-      "content_text": "Company: Salesforce · Location: Hyderabad, Telangana, India · Duration: 12 months\n• Ship code on a Scrum team into Salesforce's three cloud releases a year\n• Write automated tests and tooling that monitors cloud services in production\n• Java, C++ or Python, with React, Angular or Vue on the web side plus SQL\n• Hyderabad or Bangalore, for students graduating in 2028",
-      "date_published": "2026-07-25T13:23:18.528Z",
-      "authors": [
-        {
-          "name": "Salesforce"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/red-hat-software-quality-engineering-intern-4444362237",
-      "url": "https://www.internradar.info/jobs/red-hat-software-quality-engineering-intern-4444362237",
-      "title": "Software Quality Engineering Intern — Red Hat",
-      "content_text": "Company: Red Hat · Location: Pune Division, Maharashtra, India\n• Conduct new feature research and design test cases, then execute manual and automated tests\n• Explore, identify, and document new bugs, communicating their impact to developers and support\n• Collaborate with Engineering, QE, Product Management, Documentation, and product build teams\n• Work with Python, Golang, or similar programming languages",
-      "date_published": "2026-07-25T12:40:45.574Z",
-      "authors": [
-        {
-          "name": "Red Hat"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/red-hat-site-reliability-engineering-intern-4444345488",
-      "url": "https://www.internradar.info/jobs/red-hat-site-reliability-engineering-intern-4444345488",
-      "title": "Site Reliability Engineering Intern — Red Hat",
-      "content_text": "Company: Red Hat · Location: Pune Division, Maharashtra, India\n• Write code to make the service more scalable and reliable, guided by a senior mentor\n• Add software tests and do peer review inside a small agile SRE team\n• Python or Golang on Linux, with public cloud basics expected\n• Pune-based, and Red Hat will not sponsor a visa for this role",
-      "date_published": "2026-07-25T12:26:02.650Z",
-      "authors": [
-        {
-          "name": "Red Hat"
         }
       ]
     }
