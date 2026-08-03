@@ -33,6 +33,17 @@ function esc(s) {
     .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 }
 
+/**
+ * An href we are willing to put in front of a reader.
+ *
+ * Escaping alone is not enough here: `javascript:` survives HTML-escaping intact,
+ * and the apply URL is whatever the posting carried. Only http(s) links out.
+ */
+function safeUrl(url) {
+  const raw = String(url ?? '').trim();
+  return /^https?:\/\//i.test(raw) ? esc(raw) : '';
+}
+
 /** Escape for embedding inside a <script type="application/ld+json"> block. */
 function jsonLd(obj) {
   // </script> inside a JSON string would close the tag early; U+2028/9 break older parsers.
@@ -42,18 +53,31 @@ function jsonLd(obj) {
     .replace(/\u2029/g, '\\u2029');
 }
 
-export function slugify(s) {
+export function slugify(s, max = 70) {
   return String(s ?? '')
     .toLowerCase()
     .replace(/&/g, ' and ')
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-+|-+$/g, '')
-    .slice(0, 70) || 'role';
+    .slice(0, max) || 'role';
 }
 
-/** A URL a human can read and a search engine can parse: company, role, then id. */
+/**
+ * A URL a human can read and a search engine can parse: company, role, then id.
+ *
+ * The id is slugified too. An ATS id is `ats:greenhouse:token:12345`, and the
+ * colons went straight into the filename — which git cannot check out on
+ * Windows at all, so cloning this public repo failed there. A LinkedIn id is
+ * digits only, so its URLs are unchanged by this.
+ *
+ * The id is NOT length-capped, though the company and title are. The longest id
+ * in the database is a 66-character Workday one — four short of the cap — and
+ * two requisitions from a single tenant differ only in their last few
+ * characters, so capping the id would eventually collide two live postings onto
+ * one page and silently drop one of them.
+ */
 export function jobSlug(job) {
-  return `${slugify(job.company)}-${slugify(job.title)}-${job.id}`;
+  return `${slugify(job.company)}-${slugify(job.title)}-${slugify(job.id, Infinity)}`;
 }
 
 export function companySlug(company) {
@@ -169,6 +193,7 @@ const FOOT = `
 /** A single job page. */
 export function renderJobPage(job) {
   const url = `${SITE}/jobs/${jobSlug(job)}`;
+  const apply = safeUrl(job.applyUrl);
   const indexable = isIndexable(job);
   const year = new Date(job.postedAt ?? Date.now()).getFullYear();
 
@@ -188,7 +213,10 @@ export function renderJobPage(job) {
     job.degreeLevel ? ['Eligibility', esc([job.degreeLevel, job.degreeText].filter(Boolean).join(' · '))] : null,
     job.duration ? ['Duration', esc(job.duration)] : null,
     ['Stipend', job.stipend ? esc(job.stipend) : job.stipendStatus === 'unpaid' ? 'Unpaid' : job.stipendStatus === 'paid' ? 'Paid' : 'Not stated'],
-    ['Posted', new Date(job.postedAt ?? job.firstSeenAt).toISOString().slice(0, 10)],
+    // Same fallback as validThrough and the JSON-LD above. It was the one date
+    // here without it, and toISOString on an Invalid Date throws — which would
+    // not lose one page, it would abort writePages and with it the whole publish.
+    ['Posted', new Date(job.postedAt ?? job.firstSeenAt ?? Date.now()).toISOString().slice(0, 10)],
   ].filter(Boolean);
 
   return `${head({
@@ -205,7 +233,7 @@ export function renderJobPage(job) {
     <h1>${esc(job.company)} — ${esc(job.title)}</h1>
     ${job.roleLabel ? `<p class="lede-sub">${esc(job.roleLabel)}</p>` : ''}
 
-    <a class="apply" href="${esc(job.applyUrl)}" target="_blank" rel="nofollow noopener">Apply on LinkedIn →</a>
+    ${apply ? `<a class="apply" href="${apply}" target="_blank" rel="nofollow noopener">Apply on LinkedIn →</a>` : ''}
 
     <dl class="facts">
       ${facts.map(([k, v]) => `<div><dt>${k}</dt><dd>${v}</dd></div>`).join('\n      ')}
@@ -219,7 +247,7 @@ export function renderJobPage(job) {
 
     <h2>How to apply</h2>
     <p>Applications go through LinkedIn. Internships in India often collect hundreds of applicants within a day, so applying early matters more than applying perfectly.</p>
-    <a class="apply" href="${esc(job.applyUrl)}" target="_blank" rel="nofollow noopener">Open the original posting →</a>
+    ${apply ? `<a class="apply" href="${apply}" target="_blank" rel="nofollow noopener">Open the original posting →</a>` : ''}
 
     <p class="tiny">This summary was written by Intern Radar from the public posting. The linked posting is the source of truth — check it before you apply.</p>
   </div>

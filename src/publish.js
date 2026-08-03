@@ -272,7 +272,12 @@ export function pushToSite(newJobCount) {
     const message = newJobCount > 0
       ? `Add ${newJobCount} new internship${newJobCount === 1 ? '' : 's'}`
       : 'Refresh job listings';
-    git(['commit', '-m', message]);
+    // The pathspec is the point. `git add` is narrow, but a bare `git commit`
+    // takes the whole index with it — so anything already staged when the timer
+    // fired (a half-finished source edit, staged and left) rode along into an
+    // unattended commit and got pushed. With the pathspec, only these paths are
+    // committed and the rest of the index is left exactly as it was.
+    git(['commit', '-m', message, '--', ...PUBLISHED]);
 
     const branch = git(['rev-parse', '--abbrev-ref', 'HEAD']);
     git(['push', 'origin', branch]);

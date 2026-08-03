@@ -121,7 +121,6 @@ export class Store {
     }
   }
 
-  /** Postings that still need a Gemini pass — enriched rows are never re-sent. */
   /**
    * Which ATS board each company uses, if any.
    *
@@ -177,6 +176,7 @@ export class Store {
     return { total, resolved };
   }
 
+  /** Postings that still need a Gemini pass — enriched rows are never re-sent. */
   needingEnrichment(limit = 500) {
     return this.db.prepare(`
       SELECT job_id, title, company, description, salary_text AS stipend
@@ -188,25 +188,38 @@ export class Store {
   }
 
   /**
-   * Jobs that were stored from card data alone and never had their page opened.
+   * Jobs that were stored without their page ever being opened, and so have no
+   * description — nothing for `needingEnrichment` to work from, and nothing a
+   * later scan will fix, because `hasJob` short-circuits a known job before it
+   * is ever re-opened. Without this query such a row is stuck forever: no
+   * bullets, no stipend, no duration, published as a bare title.
    *
-   * A confidently non-tech title skips the page open during a scan, which is the
-   * right call for the run's page budget — but it leaves the row with no
-   * description at all, and `needingEnrichment` requires one. Nothing in a later
-   * scan re-opens the job either, because `hasJob` short-circuits it as already
-   * known. So without this query those rows are stuck forever: no bullets, no
-   * stipend, no duration, published as a bare title. That is the "the posting
-   * clearly has a description but the site shows nothing" case.
+   * Two conditions matter, and both were wrong before:
+   *
+   * - `is_tech = 1` alone never matched anything. Every card-only row is written
+   *   with is_tech = 0 (see the openNonTechRoles branch in src/index.js), and
+   *   with storeNonTechRoles = false those rows are not stored at all — so the
+   *   whole pass was a no-op against a live database of 444 jobs. A NULL verdict
+   *   is included instead: that row has no description AND no verdict, and the
+   *   classification pass later in the same run reads exactly this description
+   *   to settle it. Non-tech stays excluded — it can never be published, so
+   *   opening it spends a page load on nobody's behalf.
+   *
+   * - ATS rows must be excluded outright. Their job_id is `ats:provider:token:n`,
+   *   which is not a LinkedIn job id; handing one to li.openAndExtract navigates
+   *   to a nonexistent posting, burns a page open and logs a failure. An ATS row
+   *   missing its description has to be re-polled, not scraped.
    *
    * Restricted to rows still inside the publish window — backfilling a job that
-   * has already dropped off the site spends a page load on nobody's behalf.
+   * has already dropped off the site helps nobody.
    */
   needingDescription(limit = 8, maxAgeDays = 14) {
     return this.db.prepare(`
       SELECT job_id, title, company
       FROM jobs
       WHERE description IS NULL
-        AND is_tech = 1
+        AND (is_tech = 1 OR is_tech IS NULL)
+        AND job_id NOT LIKE 'ats:%'
         AND first_seen_at > ?
       ORDER BY first_seen_at DESC
       LIMIT ?

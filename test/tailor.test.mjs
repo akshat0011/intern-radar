@@ -1,4 +1,4 @@
-import { findInventedSkills } from '../web/api/tailor.js';
+import { findInventedSkills, clampJob } from '../web/api/tailor.js';
 
 let pass = 0, fail = 0;
 function check(label, actual, expected) {
@@ -34,6 +34,19 @@ check('multiword partial is caught', findInventedSkills(resume, ['python kuberne
 check('empty list', findInventedSkills(resume, []), []);
 check('undefined list', findInventedSkills(resume, undefined), []);
 check('empty resume flags everything', findInventedSkills('', ['Python']), ['Python']);
+
+// The job object is posted by the client, so every field in it is untrusted and
+// must be bounded before it reaches the prompt.
+console.log('\n== job clamping ==');
+check('caps a huge description', clampJob({ title: 'X', description: 'a'.repeat(50_000) }).description.length, 12_000);
+check('caps a huge summary', clampJob({ title: 'X', summary: 'a'.repeat(50_000) }).summary.length, 12_000);
+check('caps a long title', clampJob({ title: 'a'.repeat(5_000) }).title.length, 200);
+check('caps the skills list', clampJob({ title: 'X', skills: Array(500).fill('js') }).skills.length, 40);
+check('drops non-string skills', clampJob({ title: 'X', skills: ['js', 42, null, '  '] }).skills, ['js']);
+check('skills must be an array', clampJob({ title: 'X', skills: 'python' }).skills, []);
+check('blank fields become null', clampJob({ title: 'X', location: '   ' }).location, null);
+check('trims whitespace', clampJob({ title: '  Intern  ' }).title, 'Intern');
+check('missing fields are null', clampJob({ title: 'X' }).stipend, null);
 
 console.log(`\n${pass} passed, ${fail} failed\n`);
 process.exit(fail ? 1 : 0);

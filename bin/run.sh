@@ -59,7 +59,11 @@ echo "$(date '+%Y-%m-%d %H:%M:%S') [START] node=$NODE args=$*" >> "$LOG"
 # are already in the database.
 # ---------------------------------------------------------------------------
 "$NODE" --no-warnings=ExperimentalWarning "$HERE/bin/poll-ats.js" --no-publish >> "$LOG" 2>&1
-echo "$(date '+%Y-%m-%d %H:%M:%S') [ATS EXIT $?]" >> "$LOG"
+# Capture before anything else runs. A command substitution in the echo below
+# would overwrite $? with the exit status of `date`, which is always 0 — so
+# every ATS failure was logged as a success.
+ATS_STATUS=$?
+echo "$(date '+%Y-%m-%d %H:%M:%S') [ATS EXIT $ATS_STATUS]" >> "$LOG"
 
 "$NODE" --no-warnings=ExperimentalWarning "$HERE/src/index.js" "$@" >> "$LOG" 2>&1
 STATUS=$?

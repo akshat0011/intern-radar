@@ -1,7 +1,7 @@
 {
   "_comment": "Edit this file to control what gets watched. Everything else has sane defaults.",
   "companiesFile": "companies.json",
-  "_companiesFile_note": "The main watchlist, ~600 companies grouped by sector. Delete whole groups from that file to narrow coverage. Anything added to the inline 'companies' list below is merged on top of it.",
+  "_companiesFile_note": "The main watchlist, ~900 companies grouped by sector. Delete whole groups from that file to narrow coverage. Anything added to the inline 'companies' list below is merged on top of it.",
   "_companies_note": "Your own additions go here - they are merged with companiesFile.",
   "companies": [
     {

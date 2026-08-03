@@ -23,6 +23,15 @@ const MODEL = process.env.GEMINI_MODEL || 'gemini-2.5-flash';
 const API_BASE = 'https://generativelanguage.googleapis.com/v1beta/models';
 const MAX_RESUME_CHARS = 18_000;
 const MAX_OUTPUT_TOKENS = 4_000;
+/**
+ * The job is posted by the client, not read from our own data, so every field
+ * in it is attacker-controlled. Capping the resume alone left the description
+ * unbounded: one request could carry megabytes into the prompt and spend the
+ * whole day's free-tier tokens while costing the sender a single rate-limit hit.
+ */
+const MAX_DESCRIPTION_CHARS = 12_000;
+const MAX_FIELD_CHARS = 200;
+const MAX_SKILLS = 40;
 
 // ---- spend / quota protection ----------------------------------------------
 // The free tier has a finite daily quota shared by everyone using the site.
@@ -123,6 +132,27 @@ const RESPONSE_SCHEMA = {
   required: ['name', 'summary', 'sections', 'skills', 'changeNotes', 'gaps'],
 };
 
+/** Trim every client-supplied job field to a size a real posting could have. */
+export function clampJob(job) {
+  const text = (v, max = MAX_FIELD_CHARS) =>
+    typeof v === 'string' && v.trim() ? v.trim().slice(0, max) : null;
+
+  return {
+    title: text(job.title),
+    company: text(job.company),
+    location: text(job.location),
+    workplaceType: text(job.workplaceType),
+    stipend: text(job.stipend),
+    duration: text(job.duration),
+    skills: (Array.isArray(job.skills) ? job.skills : [])
+      .filter((s) => typeof s === 'string' && s.trim())
+      .slice(0, MAX_SKILLS)
+      .map((s) => s.trim().slice(0, MAX_FIELD_CHARS)),
+    description: text(job.description, MAX_DESCRIPTION_CHARS),
+    summary: text(job.summary, MAX_DESCRIPTION_CHARS),
+  };
+}
+
 function buildUserPrompt(resumeText, job) {
   const facts = [
     `Role: ${job.title ?? 'Unknown'}`,
@@ -188,14 +218,16 @@ export default async function handler(req, res) {
     return res.status(500).json({ error: 'The site is missing its API key. Contact the site owner.' });
   }
 
-  const { resumeText, job } = req.body ?? {};
+  const { resumeText, job: rawJob } = req.body ?? {};
 
   if (typeof resumeText !== 'string' || resumeText.trim().length < 200) {
     return res.status(400).json({ error: 'That resume looks too short to work with. If it is a scanned image, the text could not be read — try a PDF exported from a document editor.' });
   }
-  if (!job?.title) {
+  if (!rawJob || typeof rawJob !== 'object' || Array.isArray(rawJob) || typeof rawJob.title !== 'string' || !rawJob.title.trim()) {
     return res.status(400).json({ error: 'No job was selected.' });
   }
+
+  const job = clampJob(rawJob);
 
   const limit = rateLimit(clientIp(req), Date.now());
   if (!limit.ok) return res.status(limit.status).json({ error: limit.message });

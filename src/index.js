@@ -339,6 +339,11 @@ async function main() {
     // the tail never runs at all. Picking up where the last run stopped gives
     // every keyword its turn across consecutive runs.
     const cursor = DRY_RUN ? 0 : Number(store.getSetting('search_cursor') ?? 0) % allSearches.length;
+    // Recorded here rather than after the loop. A run that aborts mid-walk
+    // never reaches the far side of the loop, and leaving this at 0 made the
+    // next cursor `0 + searchesDone` — rewinding the rotation to searches that
+    // had just been covered and skipping the ones still waiting for their turn.
+    searchStart = cursor;
     const ordered = [...allSearches.slice(cursor), ...allSearches.slice(0, cursor)];
     if (cursor > 0) {
       log.info(`Resuming the rotation at position ${cursor + 1} of ${allSearches.length}.`);
@@ -369,11 +374,6 @@ async function main() {
           break searchLoop;
         }
 
-        if (clock.exceeded()) {
-          notes.push(`Stopped at the ${cfg.limits.maxRuntimeMinutes}-minute time limit, partway through "${label}" (page ${pageIndex + 1}). Remaining searches were not scanned.`);
-          status = 'partial';
-          break searchLoop;
-        }
         if (counters.detailsExtracted >= cfg.limits.maxDetailsPerRun) {
           notes.push(`Hit the ${cfg.limits.maxDetailsPerRun}-job limit for one run. Any further matches were left for the next run.`);
           status = 'partial';
@@ -607,8 +607,6 @@ async function main() {
       }
     }
 
-    searchStart = cursor;
-
     // ---- backfill descriptions we never fetched ----------------------------
     // Must happen here, inside the browser session: the `finally` below closes
     // Brave, and enrichment further down has no page to work with.
@@ -714,8 +712,26 @@ async function main() {
             }
           }
         } else {
-          // Gemini unavailable: keep the offline reading rather than nothing.
+          // Gemini unavailable. Record the offline reading ONLY when the
+          // vocabulary actually has an opinion.
+          //
+          // These titles are here precisely because the vocabulary could not
+          // settle them, so the usual answer is "uncertain" — and writing that
+          // as non-tech buries the posting permanently, because
+          // jobsNeedingRoleVerdict only ever returns rows whose verdict is
+          // still NULL. Nothing revisits it. That is not hypothetical: on a
+          // free tier the daily quota runs out, and Microsoft's "Research
+          // Sciences INTERN" — an ML research internship — was filed as
+          // non-engineering this way and would never have reached the site.
+          //
+          // Leaving it NULL costs one retry next run. Guessing costs the
+          // listing. publish.js already refuses to publish a NULL verdict, so
+          // nothing unclassified leaks onto the site in the meantime.
           const r = classifyRole(job.title, roleOpts);
+          if (r.verdict === 'uncertain') {
+            log.debug(`Leaving "${job.title}" unclassified — Gemini unavailable, title ambiguous. Next run retries.`);
+            return;
+          }
           const isTech = r.verdict === 'tech';
           store.setRoleVerdict(job.job_id, isTech, 'offline-fallback');
           if (isTech) counters.techRoles++; else counters.nonTechRoles++;

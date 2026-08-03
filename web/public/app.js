@@ -202,13 +202,24 @@ function anyFilterActive() {
  * to a 404 — so any change to one has to be made in both.
  */
 function jobPageSlug(job) {
-  const slug = (s) => String(s ?? '')
+  const slug = (s, max = 70) => String(s ?? '')
     .toLowerCase()
     .replace(/&/g, ' and ')
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-+|-+$/g, '')
-    .slice(0, 70) || 'role';
-  return `${slug(job.company)}-${slug(job.title)}-${job.id}`;
+    .slice(0, max) || 'role';
+  // The id is never truncated — see the note on jobSlug in src/pages.js.
+  return `${slug(job.company)}-${slug(job.title)}-${slug(job.id, Infinity)}`;
+}
+
+/**
+ * An href we are willing to put in front of a reader. The apply URL comes from
+ * the posting, and `javascript:` is a perfectly valid href — so only http(s)
+ * links are ever assigned. Mirrors safeUrl() in src/pages.js.
+ */
+function safeUrl(url) {
+  const raw = String(url ?? '').trim();
+  return /^https?:\/\//i.test(raw) ? raw : '';
 }
 
 /** Has this posting been through the Gemini pass yet? */
@@ -473,11 +484,14 @@ function renderDetail(job) {
   if (job.location) d.append(el('div', 'p-loc', job.location));
 
   const actions = el('div', 'p-acts');
-  const apply = el('a', 'go', 'Apply on LinkedIn \u2192');
-  apply.href = job.applyUrl || job.url;
-  apply.target = '_blank';
-  apply.rel = 'noopener noreferrer';
-  actions.append(apply);
+  const applyHref = safeUrl(job.applyUrl) || safeUrl(job.url);
+  if (applyHref) {
+    const apply = el('a', 'go', 'Apply on LinkedIn \u2192');
+    apply.href = applyHref;
+    apply.target = '_blank';
+    apply.rel = 'noopener noreferrer';
+    actions.append(apply);
+  }
 
   const tailorBtn = el('button', 'alt');
   tailorBtn.type = 'button';
@@ -528,11 +542,16 @@ function renderDetail(job) {
 
   const note = el('p', 'src');
   note.append(document.createTextNode('This is an automatic summary. '));
-  const link = el('a', null, 'Read the full posting on LinkedIn');
-  link.href = job.url;
-  link.target = '_blank';
-  link.rel = 'noopener noreferrer';
-  note.append(link, document.createTextNode(' before you apply — it is the source of truth.'));
+  const sourceHref = safeUrl(job.url);
+  if (sourceHref) {
+    const link = el('a', null, 'Read the full posting on LinkedIn');
+    link.href = sourceHref;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    note.append(link, document.createTextNode(' before you apply — it is the source of truth.'));
+  } else {
+    note.append(document.createTextNode('Check the original posting before you apply — it is the source of truth.'));
+  }
   d.append(note);
 }
 
