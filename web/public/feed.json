@@ -6,6 +6,18 @@
   "description": "New engineering internships, listed within minutes of going live.",
   "items": [
     {
+      "id": "https://www.internradar.info/jobs/ibm-technical-support-representative-intern-4435948881",
+      "url": "https://www.internradar.info/jobs/ibm-technical-support-representative-intern-4435948881",
+      "title": "Technical Support Representative Intern — IBM",
+      "content_text": "Company: IBM · Location: Greater Kolkata Area",
+      "date_published": "2026-08-03T14:19:30.349Z",
+      "authors": [
+        {
+          "name": "IBM"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/intel-attraction-req-intern-4447993213",
       "url": "https://www.internradar.info/jobs/intel-attraction-req-intern-4447993213",
       "title": "Attraction Req : Intern — Intel",
@@ -218,6 +230,18 @@
       "authors": [
         {
           "name": "Pixxel"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/barclays-2027-technology-developer-summer-internship-programme-india-ats-workday-barclays-wd3-external-career-site-barclays-jr-0000124913",
+      "url": "https://www.internradar.info/jobs/barclays-2027-technology-developer-summer-internship-programme-india-ats-workday-barclays-wd3-external-career-site-barclays-jr-0000124913",
+      "title": "2027 Technology Developer Summer Internship Programme India — Barclays",
+      "content_text": "Company: Barclays",
+      "date_published": "2026-08-03T00:00:00.000Z",
+      "authors": [
+        {
+          "name": "Barclays"
         }
       ]
     },
@@ -573,30 +597,6 @@
       "id": "https://www.internradar.info/jobs/zscaler-insider-risk-analyst-skillbridge-intern-ats-greenhouse-zscaler-5100618007",
       "url": "https://www.internradar.info/jobs/zscaler-insider-risk-analyst-skillbridge-intern-ats-greenhouse-zscaler-5100618007",
       "title": "Insider Risk Analyst - SkillBridge Intern — Zscaler",
-      "content_text": "Company: Zscaler · Location: Remote - USA",
-      "date_published": "2026-07-30T17:35:34.000Z",
-      "authors": [
-        {
-          "name": "Zscaler"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/zscaler-federal-security-operations-skillbridge-intern-ats-greenhouse-zscaler-5069684007",
-      "url": "https://www.internradar.info/jobs/zscaler-federal-security-operations-skillbridge-intern-ats-greenhouse-zscaler-5069684007",
-      "title": "Federal Security Operations - SkillBridge Intern — Zscaler",
-      "content_text": "Company: Zscaler · Location: Remote - USA",
-      "date_published": "2026-07-30T17:35:34.000Z",
-      "authors": [
-        {
-          "name": "Zscaler"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/zscaler-detection-engineer-skillbridge-intern-ats-greenhouse-zscaler-5114254007",
-      "url": "https://www.internradar.info/jobs/zscaler-detection-engineer-skillbridge-intern-ats-greenhouse-zscaler-5114254007",
-      "title": "Detection Engineer- SkillBridge Intern — Zscaler",
       "content_text": "Company: Zscaler · Location: Remote - USA",
       "date_published": "2026-07-30T17:35:34.000Z",
       "authors": [
