@@ -83,6 +83,15 @@ const POSITIVE = [
 ];
 
 const NEGATIVE = [
+  // Creative and lab roles that a single positive token drags in. Negatives are
+  // checked first, which is what makes this work: "AI Film Making(Internship)"
+  // reached the live site because 'ai' matched on its own, and "QA Food Testing
+  // Intern" because 'qa' did. Both are real postings that were published.
+  'film', 'filmmaking', 'film making', 'videography', 'video editing', 'video editor',
+  'graphic design', 'graphic designer', 'animation', 'animator', 'motion graphics',
+  'photography', 'photographer', 'illustrator', 'copywriter', 'copywriting',
+  'food testing', 'food technology', 'food safety',
+
   // commercial
   'sales', 'business development', 'telecalling', 'telesales', 'telemarketing',
   'inside sales', 'field sales', 'pre sales', 'presales', 'lead generation',

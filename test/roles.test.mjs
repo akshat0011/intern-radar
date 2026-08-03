@@ -140,6 +140,29 @@ for (const t of [
   'Quick Commerce – Cataloging Intern',
 ]) check(t, 'non-tech');
 
+console.log('\n== creative and lab roles a single positive token dragged in ==');
+// Both of these reached the live site. "AI Film Making(Internship)" matched on
+// 'ai' alone and "QA Food Testing Intern" on 'qa', so the negative list now
+// carries the creative and food-lab vocabulary that outranks them.
+for (const t of [
+  'AI Film Making(Internship)',
+  'QA Food Testing Intern',
+  'Video Editor Intern',
+  'Graphic Design Intern',
+  'Motion Graphics Intern',
+  'Copywriting Intern',
+]) check(t, 'non-tech');
+
+console.log('\n== but the genuine AI/QA roles must survive that ==');
+for (const t of [
+  'AI Intern',
+  'AI Research Intern',
+  'Machine Learning Intern',
+  'Computer Vision Intern',
+  'QA Automation Intern',
+  'Software Testing Intern',
+]) check(t, 'tech');
+
 console.log('\n== degenerate input ==');
 let d = 0;
 for (const [label, v] of [['empty', ''], ['null', null], ['undefined', undefined], ['spaces', '   ']]) {
