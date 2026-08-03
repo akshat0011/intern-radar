@@ -6,14 +6,7 @@
   <atom:link href="https://www.internradar.info/feed.xml" rel="self" type="application/rss+xml"/>
   <description>New engineering internships, listed within minutes of going live.</description>
   <language>en-in</language>
-  <lastBuildDate>Mon, 03 Aug 2026 06:59:58 GMT</lastBuildDate>
-  <item>
-    <title>AI Film Making(Internship) — Great Learning</title>
-    <link>https://www.internradar.info/jobs/great-learning-ai-film-making-internship-4447689632</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/great-learning-ai-film-making-internship-4447689632</guid>
-    <pubDate>Mon, 03 Aug 2026 05:58:59 GMT</pubDate>
-    <description>Company: Great Learning · Location: Bengaluru, Karnataka, India</description>
-  </item>
+  <lastBuildDate>Mon, 03 Aug 2026 07:04:53 GMT</lastBuildDate>
   <item>
     <title>Graduate Engineer Trainee-SAP — Piramal Pharma Ltd</title>
     <link>https://www.internradar.info/jobs/piramal-pharma-ltd-graduate-engineer-trainee-sap-4445882405</link>
@@ -513,6 +506,17 @@
 • Explore, identify, and document new bugs, communicating their impact to developers and support
 • Collaborate with Engineering, QE, Product Management, Documentation, and product build teams
 • Work with Python, Golang, or similar programming languages</description>
+  </item>
+  <item>
+    <title>Site Reliability Engineering Intern — Red Hat</title>
+    <link>https://www.internradar.info/jobs/red-hat-site-reliability-engineering-intern-4444345488</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/red-hat-site-reliability-engineering-intern-4444345488</guid>
+    <pubDate>Sat, 25 Jul 2026 12:26:02 GMT</pubDate>
+    <description>Company: Red Hat · Location: Pune Division, Maharashtra, India
+• Write code to make the service more scalable and reliable, guided by a senior mentor
+• Add software tests and do peer review inside a small agile SRE team
+• Python or Golang on Linux, with public cloud basics expected
+• Pune-based, and Red Hat will not sponsor a visa for this role</description>
   </item>
 </channel>
 </rss>

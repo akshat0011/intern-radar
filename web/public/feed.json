@@ -6,18 +6,6 @@
   "description": "New engineering internships, listed within minutes of going live.",
   "items": [
     {
-      "id": "https://www.internradar.info/jobs/great-learning-ai-film-making-internship-4447689632",
-      "url": "https://www.internradar.info/jobs/great-learning-ai-film-making-internship-4447689632",
-      "title": "AI Film Making(Internship) — Great Learning",
-      "content_text": "Company: Great Learning · Location: Bengaluru, Karnataka, India",
-      "date_published": "2026-08-03T05:58:59.789Z",
-      "authors": [
-        {
-          "name": "Great Learning"
-        }
-      ]
-    },
-    {
       "id": "https://www.internradar.info/jobs/piramal-pharma-ltd-graduate-engineer-trainee-sap-4445882405",
       "url": "https://www.internradar.info/jobs/piramal-pharma-ltd-graduate-engineer-trainee-sap-4445882405",
       "title": "Graduate Engineer Trainee-SAP — Piramal Pharma Ltd",
@@ -599,6 +587,18 @@
       "title": "Software Quality Engineering Intern — Red Hat",
       "content_text": "Company: Red Hat · Location: Pune Division, Maharashtra, India\n• Conduct new feature research and design test cases, then execute manual and automated tests\n• Explore, identify, and document new bugs, communicating their impact to developers and support\n• Collaborate with Engineering, QE, Product Management, Documentation, and product build teams\n• Work with Python, Golang, or similar programming languages",
       "date_published": "2026-07-25T12:40:45.574Z",
+      "authors": [
+        {
+          "name": "Red Hat"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/red-hat-site-reliability-engineering-intern-4444345488",
+      "url": "https://www.internradar.info/jobs/red-hat-site-reliability-engineering-intern-4444345488",
+      "title": "Site Reliability Engineering Intern — Red Hat",
+      "content_text": "Company: Red Hat · Location: Pune Division, Maharashtra, India\n• Write code to make the service more scalable and reliable, guided by a senior mentor\n• Add software tests and do peer review inside a small agile SRE team\n• Python or Golang on Linux, with public cloud basics expected\n• Pune-based, and Red Hat will not sponsor a visa for this role",
+      "date_published": "2026-07-25T12:26:02.650Z",
       "authors": [
         {
           "name": "Red Hat"

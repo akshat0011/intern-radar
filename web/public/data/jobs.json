@@ -1,7 +1,7 @@
 {
- "generatedAt": 1785740398628,
- "count": 82,
- "techCount": 82,
+ "generatedAt": 1785740693865,
+ "count": 80,
+ "techCount": 80,
  "otherCount": 0,
  "companies": [
   "ALLEN",
@@ -19,7 +19,6 @@
   "Eightfold AI",
   "Fiserv",
   "Fujitsu",
-  "Great Learning",
   "GreyOrange",
   "HARMAN India",
   "IMC Trading",
@@ -58,7 +57,6 @@
   "Volvo Group",
   "Whatfix",
   "Wipro",
-  "boAt Lifestyle",
   "eBay",
   "eClerx",
   "ideaForge"
@@ -84,35 +82,6 @@
   "Pune Division, Maharashtra, India"
  ],
  "jobs": [
-  {
-   "id": "4447689632",
-   "title": "AI Film Making(Internship)",
-   "company": "Great Learning",
-   "matchedWatchlist": "Great Learning",
-   "isTech": true,
-   "roleSource": "offline",
-   "logo": "/logos/great-learning.jpg",
-   "location": "Bengaluru, Karnataka, India",
-   "workplaceType": "On-site",
-   "stipend": null,
-   "duration": null,
-   "applicants": null,
-   "easyApply": false,
-   "skills": [],
-   "summary": "We're looking for an AI Filmmaking Intern who is passionate about the future of video creation. You'll use cutting-edge AI tools to transform ideas into engaging marketing videos, from concept and storyboarding to AI video generation, editing, and final production. If you're excited about blending creativity with AI, this role is for you. Key Responsibilities",
-   "bullets": [],
-   "roleLabel": null,
-   "degreeLevel": null,
-   "degreeText": null,
-   "keySkills": [],
-   "stipendStatus": "unknown",
-   "postedText": "1 hour ago",
-   "postedAt": 1785736739789,
-   "firstSeenAt": 1785740339792,
-   "url": "https://www.linkedin.com/jobs/view/4447689632/",
-   "applyUrl": "https://www.linkedin.com/jobs/view/4447689632/",
-   "description": null
-  },
   {
    "id": "4445882405",
    "title": "Graduate Engineer Trainee-SAP",
@@ -2340,51 +2309,6 @@
    "firstSeenAt": 1785068544045,
    "url": "https://www.linkedin.com/jobs/view/4444342572/",
    "applyUrl": "https://www.linkedin.com/jobs/view/4444342572/",
-   "description": null
-  },
-  {
-   "id": "4444949837",
-   "title": "Intern - Founder's office",
-   "company": "boAt Lifestyle",
-   "matchedWatchlist": "boAt",
-   "isTech": true,
-   "roleSource": "manual-enrich",
-   "logo": "/logos/boat-lifestyle.jpg",
-   "location": "Mumbai, Maharashtra, India",
-   "workplaceType": "On-site",
-   "stipend": null,
-   "duration": "3 months",
-   "applicants": "Over 100 applicants",
-   "easyApply": true,
-   "skills": [
-    "sql",
-    "tableau",
-    "power bi",
-    "excel"
-   ],
-   "summary": "We are looking for a highly analytical, data-driven, and tech-savvy Intern to work closely with the Founder’s Office at boAt Lifestyle. Location: Mumbai (Work from Office) Duration: 3 Months (Full-time) Category: Paid Internship",
-   "bullets": [
-    "Crunch large datasets for trends, risks and growth opportunities",
-    "Build dashboards and business reviews that feed leadership decisions",
-    "Excel/Sheets plus SQL, Power BI or Tableau; AI tools for research and automation",
-    "3 months full-time in Mumbai, sitting with the founder strategy team"
-   ],
-   "roleLabel": "Business strategy analytics",
-   "degreeLevel": null,
-   "degreeText": null,
-   "keySkills": [
-    "excel",
-    "sql",
-    "power bi",
-    "tableau",
-    "google sheets"
-   ],
-   "stipendStatus": "paid",
-   "postedText": "1 day ago",
-   "postedAt": 1784980919046,
-   "firstSeenAt": 1785067319048,
-   "url": "https://www.linkedin.com/jobs/view/4444949837/",
-   "applyUrl": "https://www.linkedin.com/jobs/view/4444949837/",
    "description": null
   },
   {
