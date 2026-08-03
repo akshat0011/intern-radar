@@ -6,7 +6,7 @@
   <atom:link href="https://www.internradar.info/feed.xml" rel="self" type="application/rss+xml"/>
   <description>New engineering internships, listed within minutes of going live.</description>
   <language>en-in</language>
-  <lastBuildDate>Mon, 03 Aug 2026 16:02:39 GMT</lastBuildDate>
+  <lastBuildDate>Mon, 03 Aug 2026 16:18:05 GMT</lastBuildDate>
   <item>
     <title>Intern Software Developer - Singapore - 2027 — Squarepoint Capital</title>
     <link>https://www.internradar.info/jobs/squarepoint-capital-intern-software-developer-singapore-2027-ats-greenhouse-squarepointcapital-6201998</link>
@@ -253,6 +253,13 @@
 • 12-month paid apprenticeship with development and networking opportunities</description>
   </item>
   <item>
+    <title>Intern - Design Verification Infrastructure Engineer - Platform — SiFive</title>
+    <link>https://www.internradar.info/jobs/sifive-intern-design-verification-infrastructure-engineer-platform-ats-workday-sifive-wd1-sifivecareers-posted-2-days-ago</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/sifive-intern-design-verification-infrastructure-engineer-platform-ats-workday-sifive-wd1-sifivecareers-posted-2-days-ago</guid>
+    <pubDate>Sat, 01 Aug 2026 00:00:00 GMT</pubDate>
+    <description>Company: SiFive · Location: 4 Locations</description>
+  </item>
+  <item>
     <title>Intern Software development engineering (AI/ML/NLP &amp; Cybersecurity), Graduation Year (2026) — American Express</title>
     <link>https://www.internradar.info/jobs/american-express-intern-software-development-engineering-ai-ml-nlp-and-cybersecurity-gr-4447414103</link>
     <guid isPermaLink="true">https://www.internradar.info/jobs/american-express-intern-software-development-engineering-ai-ml-nlp-and-cybersecurity-gr-4447414103</guid>
@@ -408,16 +415,6 @@
 • Support test planning, execution, and analysis for vehicle systems
 • Assist in creating and executing test cases for electrical and software systems
 • Analyze test data, report anomalies, and document results for continuous improvement</description>
-  </item>
-  <item>
-    <title>2027 Technology Developer Summer Internship Programme India — Barclays</title>
-    <link>https://www.internradar.info/jobs/barclays-2027-technology-developer-summer-internship-programme-india-4445050175</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/barclays-2027-technology-developer-summer-internship-programme-india-4445050175</guid>
-    <pubDate>Thu, 30 Jul 2026 22:04:03 GMT</pubDate>
-    <description>Company: Barclays · Location: Pune Division, Maharashtra, India
-• Develop and deliver high-quality software solutions using industry-aligned languages and tools
-• Collaborate with product managers, designers, and engineers on requirements and strategies
-• Participate in code reviews, adhere to secure coding practices, and implement unit testing</description>
   </item>
 </channel>
 </rss>

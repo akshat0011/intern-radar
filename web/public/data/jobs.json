@@ -1,7 +1,7 @@
 {
- "generatedAt": 1785772959271,
- "count": 196,
- "techCount": 196,
+ "generatedAt": 1785773885860,
+ "count": 198,
+ "techCount": 198,
  "otherCount": 0,
  "companies": [
   "ALLEN",
@@ -69,6 +69,7 @@
   "S&P Global",
   "Salesforce",
   "ShareChat",
+  "SiFive",
   "Siemens Healthineers",
   "Snowflake",
   "Sprinklr",
@@ -90,6 +91,8 @@
   "ideaForge"
  ],
  "locations": [
+  "2 Locations",
+  "4 Locations",
   "APAC - Remote",
   "APAC - Remote; Europe - Remote",
   "Abu Dhabi, UAE; APAC - Remote",
@@ -1235,6 +1238,39 @@
    "firstSeenAt": 1785597480224,
    "url": "https://www.linkedin.com/jobs/view/4438342357/",
    "applyUrl": "https://www.linkedin.com/jobs/view/4438342357/",
+   "description": null
+  },
+  {
+   "id": "ats:workday:sifive:wd1:sifivecareers:Posted 2 Days Ago",
+   "title": "Intern - Design Verification Infrastructure Engineer - Platform",
+   "company": "SiFive",
+   "matchedWatchlist": "SiFive",
+   "isTech": true,
+   "roleSource": "ats-workday",
+   "logo": null,
+   "location": "4 Locations",
+   "workplaceType": null,
+   "stipend": null,
+   "duration": null,
+   "applicants": null,
+   "easyApply": false,
+   "skills": [
+    "python",
+    "scala",
+    "machine learning"
+   ],
+   "summary": "We have a market-based pay structure which varies by location. Please note that the base pay range is a guideline, and our compensation range reflects the cost of labor in the U.S. geographic market based on the location of the role. Pay within these ranges varies and depends on job-related knowledge, skills, and relevant work experience. For candidates who receive and offer, the starting salary will vary based on various factors including, but not limited to, such qualifications as, skill level, competencies, and work location.",
+   "bullets": [],
+   "roleLabel": null,
+   "degreeLevel": null,
+   "degreeText": null,
+   "keySkills": [],
+   "stipendStatus": "unknown",
+   "postedText": null,
+   "postedAt": 1785542400000,
+   "firstSeenAt": 1785773736998,
+   "url": "https://sifive.wd1.myworkdayjobs.com/en-US/sifivecareers/job/Santa-Clara-California-United-States/Intern---Design-Verification-Infrastructure-Engineer---Platform_R-101291-1",
+   "applyUrl": "https://sifive.wd1.myworkdayjobs.com/en-US/sifivecareers/job/Santa-Clara-California-United-States/Intern---Design-Verification-Infrastructure-Engineer---Platform_R-101291-1",
    "description": null
   },
   {
@@ -2886,6 +2922,38 @@
    "firstSeenAt": 1785285682082,
    "url": "https://www.linkedin.com/jobs/view/4446532027/",
    "applyUrl": "https://www.linkedin.com/jobs/view/4446532027/",
+   "description": null
+  },
+  {
+   "id": "ats:workday:sifive:wd1:sifivecareers:Posted 5 Days Ago",
+   "title": "Platform Technologies Language Design Intern",
+   "company": "SiFive",
+   "matchedWatchlist": "SiFive",
+   "isTech": true,
+   "roleSource": "offline-uncertain",
+   "logo": null,
+   "location": "2 Locations",
+   "workplaceType": null,
+   "stipend": "$32 – $39",
+   "duration": null,
+   "applicants": null,
+   "easyApply": false,
+   "skills": [
+    "scala",
+    "machine learning"
+   ],
+   "summary": "You will apply your object-oriented or functional programming skills to enhance domain-specific languages for hardware design. You will deepen your functional programming skills in Scala We have a market-based pay structure which varies by location. For candidates who receive and offer, the starting salary will vary based on various factors including, but not limited to, such qualifications as, skill level, competencies, and work location.",
+   "bullets": [],
+   "roleLabel": null,
+   "degreeLevel": null,
+   "degreeText": null,
+   "keySkills": [],
+   "stipendStatus": "paid",
+   "postedText": null,
+   "postedAt": 1785283200000,
+   "firstSeenAt": 1785773737663,
+   "url": "https://sifive.wd1.myworkdayjobs.com/en-US/sifivecareers/job/Santa-Clara-California-United-States/Platform-Technologies-Language-Design-Intern_R-101183",
+   "applyUrl": "https://sifive.wd1.myworkdayjobs.com/en-US/sifivecareers/job/Santa-Clara-California-United-States/Platform-Technologies-Language-Design-Intern_R-101183",
    "description": null
   },
   {
