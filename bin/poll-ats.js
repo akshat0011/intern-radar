@@ -18,7 +18,7 @@
  */
 import { loadConfig, matchCompany, matchTitle } from '../src/config.js';
 import { Store } from '../src/store.js';
-import { fetchBoard, fetchDetail } from '../src/ats.js';
+import { fetchBoard, fetchDetail, FIRST_PARTY_BOARDS } from '../src/ats.js';
 import { classifyRole } from '../src/roles.js';
 import { extractStipend, extractDuration, extractSkills, extractWorkplaceType } from '../src/extract.js';
 import { summarize } from '../src/summarize.js';
@@ -37,6 +37,26 @@ const CONCURRENCY = Number(valueOf('--concurrency') ?? 8);
 const cfg = loadConfig();
 const store = new Store();
 store.ensureAtsTable();
+
+/**
+ * Assert the boards that cannot be discovered.
+ *
+ * Amazon and Microsoft run their own careers systems, so there is no token for
+ * discovery to guess — probing Greenhouse and Lever slugs will never find a
+ * board that was never there. Without this they exist only as a row somebody
+ * inserted by hand once, and a fresh database loses them silently.
+ *
+ * Idempotent, and deliberately a repair rather than an insert: it also corrects
+ * a company whose board was mis-identified by an earlier discovery run. Amazon
+ * was filed under an unrelated Personio tenant that way, which would have
+ * published a stranger's jobs under Amazon's name.
+ */
+for (const [company, [provider, token]] of Object.entries(FIRST_PARTY_BOARDS)) {
+  const row = store.getAts(company);
+  if (row?.provider === provider && row?.token === token) continue;
+  store.saveAts(company, provider, token, row?.job_count ?? 0);
+  log.info(`Seeded first-party board: ${company} → ${provider}:${token}${row?.provider ? ` (was ${row.provider}:${row.token})` : ''}`);
+}
 
 let boards = store.atsBoards();
 if (ONLY) boards = boards.filter((b) => b.company.toLowerCase() === ONLY.toLowerCase());
@@ -64,7 +84,10 @@ const workdayNow = ONLY ? workdayAll : [...workdayAll]
   .slice(0, WORKDAY_PER_RUN);
 boards = others;
 
-if (!boards.length) {
+// Both lists, not just `boards`. Checking only the non-Workday half meant a
+// database holding nothing but Workday tenants reported "no boards known" and
+// exited without polling any of them.
+if (!boards.length && !workdayNow.length) {
   console.log('No ATS boards known yet. Run `node bin/discover-ats.js` first.');
   store.close();
   process.exit(0);

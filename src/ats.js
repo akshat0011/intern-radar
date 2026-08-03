@@ -419,6 +419,159 @@ PROVIDERS.workday = {
   },
 };
 
+/**
+ * Amazon — the first of the first-party boards.
+ *
+ * The giants do not use a third-party ATS, which is why discovery kept coming
+ * back empty for them: probing Greenhouse and Lever tokens cannot turn up a
+ * board that was never there. Eighteen of the thirty biggest names on the
+ * watchlist are in this position. They are marked `firstParty` and seeded into
+ * company_ats directly instead of being discovered, because there is no token to
+ * guess — the endpoint is fixed and known.
+ *
+ * The token is the ISO country code to restrict the search to, and that is the
+ * other difference from a real ATS board. There is no "whole board" to fetch
+ * here: Amazon lists 2,621 roles in India alone, and pulling all of them every
+ * quarter hour to find a handful of internships would be both slow and rude. So
+ * this narrows at the source and lets poll-ats.js filter afterwards exactly as
+ * it does for every other provider.
+ *
+ * Three queries, not one. Amazon's search does not stem — `intern` returns 13
+ * results and `internship` returns 423 — so a single term silently misses most
+ * of the board. `apprentice` and `co-op` return nothing in India and are left
+ * out rather than spent on a request per poll. Each query is sorted newest-first
+ * and capped at one page: anything posted since the last poll is at the top, and
+ * the staleness filter drops the rest. Results are merged by id because a role
+ * matching two terms is one job.
+ */
+PROVIDERS.amazon = {
+  label: 'Amazon',
+  firstParty: true,
+  async list(token) {
+    const country = String(token || 'IND').toUpperCase();
+    const found = new Map();
+
+    for (const term of ['intern', 'internship', 'trainee']) {
+      const j = await getJson(
+        `https://www.amazon.jobs/en/search.json?base_query=${encodeURIComponent(term)}`
+        + `&country=${encodeURIComponent(country)}&result_limit=50&sort=recent`,
+      );
+      if (!Array.isArray(j?.jobs)) continue;
+
+      for (const p of j.jobs) {
+        const id = p.id_icims ?? p.id;
+        if (!id || found.has(String(id))) continue;
+        found.set(String(id), job({
+          id,
+          title: p.title,
+          // normalized_location is "Bengaluru, KA, IND"; city/state is the fallback.
+          location: p.normalized_location || [p.city, p.state].filter(Boolean).join(', '),
+          url: p.job_path ? `https://www.amazon.jobs${p.job_path}` : null,
+          // "July 31, 2026" — a real calendar date, unlike Workday's "Posted 3 Days Ago".
+          postedAt: p.posted_date,
+          department: p.job_category,
+          // The qualifications carry the degree and the skills; the description
+          // alone often does not, and both parsers downstream read this field.
+          description: [p.description, p.basic_qualifications, p.preferred_qualifications]
+            .filter(Boolean).join('<br/><br/>'),
+        }));
+      }
+    }
+
+    return found.size ? [...found.values()] : null;
+  },
+
+  /**
+   * Nothing to verify. A third-party token is a guess that has to be checked
+   * against the company name — that is what filed an unrelated Personio tenant
+   * under "Amazon" in the first place. Here the host IS the company, so the only
+   * question is whether the board reads at all.
+   */
+  async verify(token) {
+    const j = await getJson(
+      `https://www.amazon.jobs/en/search.json?base_query=intern&country=${encodeURIComponent(String(token || 'IND').toUpperCase())}&result_limit=1`,
+    );
+    return Array.isArray(j?.jobs);
+  },
+};
+
+/**
+ * Microsoft — second first-party board, and the reason the browser earns its
+ * keep exactly once per site.
+ *
+ * The endpoint could not be guessed from outside. The obvious one,
+ * gcsservices.careers.microsoft.com, is the OLD careers system and answers an
+ * empty body — it looks broken rather than moved, which is the worst kind of
+ * wrong. Watching what the real page requests found this in about a minute.
+ * That is the whole role of a browser here: discover the call once, by hand,
+ * then never open a browser for this site again.
+ *
+ * postedTs is in SECONDS. Feeding it straight to new Date() dates every posting
+ * to 1970-01-21, and the staleness filter then drops the entire board without a
+ * single error — zero jobs, no failure, nothing to notice. Hence the × 1000.
+ */
+PROVIDERS.microsoft = {
+  label: 'Microsoft',
+  firstParty: true,
+  async list(token) {
+    const location = String(token || 'India');
+    const found = new Map();
+
+    for (const term of ['intern', 'internship', 'trainee']) {
+      const j = await getJson(
+        'https://apply.careers.microsoft.com/api/pcsx/search?domain=microsoft.com'
+        + `&query=${encodeURIComponent(term)}&location=${encodeURIComponent(location)}&start=0`,
+      );
+      const positions = j?.data?.positions;
+      if (!Array.isArray(positions)) continue;
+
+      for (const p of positions) {
+        const id = p.id ?? p.displayJobId;
+        if (!id || found.has(String(id))) continue;
+        found.set(String(id), job({
+          id,
+          title: p.name,
+          // "India, Karnataka, Bangalore" — city last, which the India filter reads fine.
+          location: p.locations?.[0] ?? p.location ?? null,
+          url: p.positionUrl?.startsWith('http')
+            ? p.positionUrl
+            : `https://jobs.careers.microsoft.com/global/en/job/${id}`,
+          postedAt: p.postedTs ? p.postedTs * 1000 : null,
+          department: p.department,
+          remote: p.workLocationOption ?? p.locationFlexibility,
+          // The search response carries no description at all; detail() fetches it
+          // for the few postings that survive the filters.
+          description: null,
+          externalPath: String(id),
+        }));
+      }
+    }
+
+    return found.size ? [...found.values()] : null;
+  },
+
+  async verify(token) {
+    const j = await getJson(
+      `https://apply.careers.microsoft.com/api/pcsx/search?domain=microsoft.com&query=intern&location=${encodeURIComponent(String(token || 'India'))}&start=0`,
+    );
+    return Array.isArray(j?.data?.positions);
+  },
+
+  /** One request per internship kept, not one per posting seen. */
+  async detail(token, positionId) {
+    if (!positionId) return null;
+    const j = await getJson(
+      `https://apply.careers.microsoft.com/api/pcsx/position_details?position_id=${encodeURIComponent(positionId)}&domain=microsoft.com&hl=en`,
+    );
+    const d = j?.data ?? j;
+    if (!d?.jobDescription) return null;
+    return {
+      description: stripHtml(d.jobDescription),
+      postedAt: d.postedTs ? d.postedTs * 1000 : null,
+    };
+  },
+};
+
 /** Fetch the extra per-job data a provider only exposes on a detail endpoint. */
 export async function fetchDetail(providerName, token, atsJob) {
   const provider = PROVIDERS[providerName];
@@ -426,7 +579,21 @@ export async function fetchDetail(providerName, token, atsJob) {
   return provider.detail(token, atsJob.externalPath);
 }
 
-export const PROVIDER_NAMES = Object.keys(PROVIDERS).filter((n) => n !== 'workday');
+/**
+ * Providers discovery is allowed to guess at.
+ *
+ * Workday is excluded because its tokens come from careers-page links rather
+ * than name guesses. First-party boards are excluded because there is no token
+ * to guess at all — they are seeded, not found.
+ */
+export const PROVIDER_NAMES = Object.keys(PROVIDERS)
+  .filter((n) => n !== 'workday' && !PROVIDERS[n].firstParty);
+
+/** Company → [provider, token] for boards that must be seeded rather than discovered. */
+export const FIRST_PARTY_BOARDS = {
+  Amazon: ['amazon', 'IND'],
+  Microsoft: ['microsoft', 'India'],
+};
 
 /** Every ATS link shape we know how to read, for scraping off a careers page. */
 const ATS_LINK = new RegExp([
