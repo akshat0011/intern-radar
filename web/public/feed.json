@@ -6,6 +6,18 @@
   "description": "New engineering internships, listed within minutes of going live.",
   "items": [
     {
+      "id": "https://www.internradar.info/jobs/delhivery-product-management-intern-4445893504",
+      "url": "https://www.internradar.info/jobs/delhivery-product-management-intern-4445893504",
+      "title": "Product Management Intern — Delhivery",
+      "content_text": "Company: Delhivery · Location: Gurugram, Haryana, India · Duration: 3 to 6 months",
+      "date_published": "2026-08-03T10:56:13.774Z",
+      "authors": [
+        {
+          "name": "Delhivery"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/eli-lilly-and-company-intern-full-stack-engineer-4448149499",
       "url": "https://www.internradar.info/jobs/eli-lilly-and-company-intern-full-stack-engineer-4448149499",
       "title": "Intern - Full Stack Engineer — Eli Lilly and Company",
@@ -590,18 +602,6 @@
       "authors": [
         {
           "name": "Adobe"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/sprinklr-design-intern-ats-workday-sprinklr-wd1-careers-113310-job",
-      "url": "https://www.internradar.info/jobs/sprinklr-design-intern-ats-workday-sprinklr-wd1-careers-113310-job",
-      "title": "Design Intern — Sprinklr",
-      "content_text": "Company: Sprinklr · Location: India - Haryana - Gurgaon · Duration: 6 months\n• Support the Product Design team in creating intuitive experiences for enterprise users\n• Work on real product features, learn design systems, contribute to user research\n• Proficiency in Figma (components, auto-layout, prototyping) is required\n• Exposure to AI design tools like Lovable, Cursor, and agentic design practices",
-      "date_published": "2026-07-27T00:00:00.000Z",
-      "authors": [
-        {
-          "name": "Sprinklr"
         }
       ]
     }
