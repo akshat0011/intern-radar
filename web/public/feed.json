@@ -6,6 +6,54 @@
   "description": "New engineering internships, listed within minutes of going live.",
   "items": [
     {
+      "id": "https://www.internradar.info/jobs/ibm-technical-support-representative-intern-4435946951",
+      "url": "https://www.internradar.info/jobs/ibm-technical-support-representative-intern-4435946951",
+      "title": "Technical Support Representative Intern — IBM",
+      "content_text": "Company: IBM · Location: Pune Division, Maharashtra, India",
+      "date_published": "2026-08-03T17:11:27.109Z",
+      "authors": [
+        {
+          "name": "IBM"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/ibm-technical-support-representative-intern-4435948880",
+      "url": "https://www.internradar.info/jobs/ibm-technical-support-representative-intern-4435948880",
+      "title": "Technical Support Representative Intern — IBM",
+      "content_text": "Company: IBM · Location: Hyderabad, Telangana, India",
+      "date_published": "2026-08-03T17:04:49.543Z",
+      "authors": [
+        {
+          "name": "IBM"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/ibm-technical-support-representative-intern-4435952817",
+      "url": "https://www.internradar.info/jobs/ibm-technical-support-representative-intern-4435952817",
+      "title": "Technical Support Representative Intern — IBM",
+      "content_text": "Company: IBM · Location: Mumbai Metropolitan Region",
+      "date_published": "2026-08-03T17:02:54.666Z",
+      "authors": [
+        {
+          "name": "IBM"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/hewlett-packard-enterprise-hpefs-intern-4448328051",
+      "url": "https://www.internradar.info/jobs/hewlett-packard-enterprise-hpefs-intern-4448328051",
+      "title": "HPEFS Intern — Hewlett Packard Enterprise",
+      "content_text": "Company: Hewlett Packard Enterprise · Location: Bengaluru, Karnataka, India · Duration: 12 months",
+      "date_published": "2026-08-03T16:59:33.140Z",
+      "authors": [
+        {
+          "name": "Hewlett Packard Enterprise"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/ibm-technical-support-representative-intern-4435960679",
       "url": "https://www.internradar.info/jobs/ibm-technical-support-representative-intern-4435960679",
       "title": "Technical Support Representative Intern — IBM",
@@ -282,6 +330,18 @@
       ]
     },
     {
+      "id": "https://www.internradar.info/jobs/boeing-india-boeing-summer-2027-internship-program-paid-program-management-ats-workday-boeing-wd1-external-careers-jr2026521026",
+      "url": "https://www.internradar.info/jobs/boeing-india-boeing-summer-2027-internship-program-paid-program-management-ats-workday-boeing-wd1-external-careers-jr2026521026",
+      "title": "Boeing Summer 2027 Internship Program (Paid) - Program Management — Boeing India",
+      "content_text": "Company: Boeing India · Location: USA - Arlington, VA · Stipend: $40,000 · Duration: 10-12 weeks",
+      "date_published": "2026-08-03T00:00:00.000Z",
+      "authors": [
+        {
+          "name": "Boeing India"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/state-street-apprentice-ats-workday-statestreet-wd1-global-r-792995",
       "url": "https://www.internradar.info/jobs/state-street-apprentice-ats-workday-statestreet-wd1-global-r-792995",
       "title": "Apprentice — State Street",
@@ -542,66 +602,6 @@
       "authors": [
         {
           "name": "Point72"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/western-digital-process-engineer-intern-ats-smartrecruiters-westerndigital-744000140863524",
-      "url": "https://www.internradar.info/jobs/western-digital-process-engineer-intern-ats-smartrecruiters-westerndigital-744000140863524",
-      "title": "Process Engineer (Intern) — Western Digital",
-      "content_text": "Company: Western Digital · Location: Bayan Lepas, my",
-      "date_published": "2026-07-31T09:28:53.386Z",
-      "authors": [
-        {
-          "name": "Western Digital"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/newton-school-of-technology-product-intern-4446988446",
-      "url": "https://www.internradar.info/jobs/newton-school-of-technology-product-intern-4446988446",
-      "title": "Product Intern — Newton School of Technology",
-      "content_text": "Company: Newton School of Technology · Location: Bengaluru, Karnataka, India\n• Ideate and develop product requirements, leading the overall product development\n• Collaborate with Engineering and Design to build and launch products\n• Produce high-quality product specifications and manage scope for timely delivery\n• Track performance metrics and leverage data for product improvements",
-      "date_published": "2026-07-31T07:40:40.557Z",
-      "authors": [
-        {
-          "name": "Newton School of Technology"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/intel-soc-validation-engineer-intern-4446997136",
-      "url": "https://www.internradar.info/jobs/intel-soc-validation-engineer-intern-4446997136",
-      "title": "SoC Validation Engineer Intern — Intel",
-      "content_text": "Company: Intel · Location: Bengaluru, Karnataka, India\n• Work on SoC validation as an M.Tech graduate in Electronics, Telecommunications, or Computer Science\n• This role is eligible for a hybrid work model, splitting time between on-site and off-site",
-      "date_published": "2026-07-31T07:29:03.688Z",
-      "authors": [
-        {
-          "name": "Intel"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/fujitsu-research-intern-quantum-computing-4447272252",
-      "url": "https://www.internradar.info/jobs/fujitsu-research-intern-quantum-computing-4447272252",
-      "title": "Research Intern (Quantum Computing) — Fujitsu",
-      "content_text": "Company: Fujitsu · Location: Bangalore Urban, Karnataka, India · Duration: 3 months\n• Conduct original research in open quantum systems, thermalisation, and quantum algorithms\n• Work with the Quantum R&D Division, contributing to the Quantum Computing Stack\n• Requires strong background in open quantum systems, statistical physics, and linear algebra\n• Programming experience in Python is preferred; 3-6 month physical internship in Bangalore",
-      "date_published": "2026-07-31T07:00:03.103Z",
-      "authors": [
-        {
-          "name": "Fujitsu"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/bybit-nlp-algorithm-engineer-intern-ats-greenhouse-bybit-4868977101",
-      "url": "https://www.internradar.info/jobs/bybit-nlp-algorithm-engineer-intern-ats-greenhouse-bybit-4868977101",
-      "title": "NLP Algorithm Engineer Intern — Bybit",
-      "content_text": "Company: Bybit · Location: APAC - Remote",
-      "date_published": "2026-07-31T04:01:41.000Z",
-      "authors": [
-        {
-          "name": "Bybit"
         }
       ]
     }
