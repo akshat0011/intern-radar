@@ -6,7 +6,7 @@
   <atom:link href="https://www.internradar.info/feed.xml" rel="self" type="application/rss+xml"/>
   <description>New engineering internships, listed within minutes of going live.</description>
   <language>en-in</language>
-  <lastBuildDate>Mon, 03 Aug 2026 22:24:59 GMT</lastBuildDate>
+  <lastBuildDate>Mon, 03 Aug 2026 23:27:29 GMT</lastBuildDate>
   <item>
     <title>Technical Support Representative Intern — IBM</title>
     <link>https://www.internradar.info/jobs/ibm-technical-support-representative-intern-4435963237</link>
@@ -316,13 +316,6 @@
     <description>Company: Palantir · Location: Palo Alto, CA</description>
   </item>
   <item>
-    <title>Customer Advocacy Intern (Fall 2026) — Cloudflare</title>
-    <link>https://www.internradar.info/jobs/cloudflare-customer-advocacy-intern-fall-2026-ats-greenhouse-cloudflare-8093127</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/cloudflare-customer-advocacy-intern-fall-2026-ats-greenhouse-cloudflare-8093127</guid>
-    <pubDate>Fri, 31 Jul 2026 16:36:12 GMT</pubDate>
-    <description>Company: Cloudflare · Location: In-Office · Duration: Fall 2026</description>
-  </item>
-  <item>
     <title>Summer 2027 Intern - Hardware Engineering — Western Digital</title>
     <link>https://www.internradar.info/jobs/western-digital-summer-2027-intern-hardware-engineering-ats-smartrecruiters-westerndigital-744000140949875</link>
     <guid isPermaLink="true">https://www.internradar.info/jobs/western-digital-summer-2027-intern-hardware-engineering-ats-smartrecruiters-westerndigital-744000140949875</guid>
@@ -408,6 +401,13 @@
 • Work with the Quantum R&amp;D Division, contributing to the Quantum Computing Stack
 • Requires strong background in open quantum systems, statistical physics, and linear algebra
 • Programming experience in Python is preferred; 3-6 month physical internship in Bangalore</description>
+  </item>
+  <item>
+    <title>NLP Algorithm Engineer Intern — Bybit</title>
+    <link>https://www.internradar.info/jobs/bybit-nlp-algorithm-engineer-intern-ats-greenhouse-bybit-4868977101</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/bybit-nlp-algorithm-engineer-intern-ats-greenhouse-bybit-4868977101</guid>
+    <pubDate>Fri, 31 Jul 2026 04:01:41 GMT</pubDate>
+    <description>Company: Bybit · Location: APAC - Remote</description>
   </item>
 </channel>
 </rss>

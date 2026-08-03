@@ -486,18 +486,6 @@
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/cloudflare-customer-advocacy-intern-fall-2026-ats-greenhouse-cloudflare-8093127",
-      "url": "https://www.internradar.info/jobs/cloudflare-customer-advocacy-intern-fall-2026-ats-greenhouse-cloudflare-8093127",
-      "title": "Customer Advocacy Intern (Fall 2026) — Cloudflare",
-      "content_text": "Company: Cloudflare · Location: In-Office · Duration: Fall 2026",
-      "date_published": "2026-07-31T16:36:12.000Z",
-      "authors": [
-        {
-          "name": "Cloudflare"
-        }
-      ]
-    },
-    {
       "id": "https://www.internradar.info/jobs/western-digital-summer-2027-intern-hardware-engineering-ats-smartrecruiters-westerndigital-744000140949875",
       "url": "https://www.internradar.info/jobs/western-digital-summer-2027-intern-hardware-engineering-ats-smartrecruiters-westerndigital-744000140949875",
       "title": "Summer 2027 Intern - Hardware Engineering — Western Digital",
@@ -602,6 +590,18 @@
       "authors": [
         {
           "name": "Fujitsu"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/bybit-nlp-algorithm-engineer-intern-ats-greenhouse-bybit-4868977101",
+      "url": "https://www.internradar.info/jobs/bybit-nlp-algorithm-engineer-intern-ats-greenhouse-bybit-4868977101",
+      "title": "NLP Algorithm Engineer Intern — Bybit",
+      "content_text": "Company: Bybit · Location: APAC - Remote",
+      "date_published": "2026-07-31T04:01:41.000Z",
+      "authors": [
+        {
+          "name": "Bybit"
         }
       ]
     }
