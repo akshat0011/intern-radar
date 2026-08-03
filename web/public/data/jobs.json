@@ -1,5 +1,5 @@
 {
- "generatedAt": 1785718818179,
+ "generatedAt": 1785723652466,
  "count": 80,
  "techCount": 80,
  "otherCount": 0,
@@ -88,7 +88,7 @@
    "company": "eBay",
    "matchedWatchlist": "eBay",
    "isTech": true,
-   "roleSource": "offline",
+   "roleSource": "gemini-enrich",
    "logo": "/logos/ebay.jpg",
    "location": "Bengaluru, Karnataka, India",
    "workplaceType": "Hybrid",
@@ -107,11 +107,22 @@
     "oop"
    ],
    "summary": "At eBay, we're more than a global ecommerce leader — we’re changing the way the world shops and sells. Our platform empowers millions of buyers and sellers in more than 190 markets around the world. We’re committed to pushing boundaries and leaving our mark as we reinvent the future of ecommerce for enthusiasts. Our customers are our compass, authenticity thrives, bold ideas are welcome, and everyone can bring their unique selves to work — every day.",
-   "bullets": [],
-   "roleLabel": null,
-   "degreeLevel": null,
-   "degreeText": null,
-   "keySkills": [],
+   "bullets": [
+    "Build robust, scalable software and improve code services and system architecture",
+    "Participate in brainstorming sessions and contribute ideas for technology, algorithms, and products",
+    "Work with product and design teams to understand user requirements and deliver results",
+    "Use Java, Python, Scala, JavaScript; focus on OOP/OOD, distributed systems, cloud, and full stack"
+   ],
+   "roleLabel": "Software engineering",
+   "degreeLevel": "Pursuing",
+   "degreeText": "Bachelor's/Master's",
+   "keySkills": [
+    "java",
+    "python",
+    "scala",
+    "javascript",
+    "oop/ood"
+   ],
    "stipendStatus": "unknown",
    "postedText": "3 hours ago",
    "postedAt": 1785704774357,
