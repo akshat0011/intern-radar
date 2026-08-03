@@ -1,7 +1,7 @@
 {
- "generatedAt": 1785767649241,
- "count": 190,
- "techCount": 190,
+ "generatedAt": 1785768574293,
+ "count": 191,
+ "techCount": 191,
  "otherCount": 0,
  "companies": [
   "ALLEN",
@@ -157,6 +157,40 @@
   "Warsaw, Poland"
  ],
  "jobs": [
+  {
+   "id": "ats:greenhouse:squarepointcapital:6201998",
+   "title": "Intern Software Developer - Singapore - 2027",
+   "company": "Squarepoint Capital",
+   "matchedWatchlist": "Squarepoint Capital",
+   "isTech": true,
+   "roleSource": "ats-greenhouse",
+   "logo": null,
+   "location": "Singapore",
+   "workplaceType": null,
+   "stipend": null,
+   "duration": "12 weeks",
+   "applicants": null,
+   "easyApply": false,
+   "skills": [
+    "python",
+    "java",
+    "c++",
+    "rust"
+   ],
+   "summary": "<p><strong><span data-contrast=\"auto\">This internship is based in Singapore and is available in any season. Please indicate your preferred season in the application questions.</span></strong><span data-ccp-props=\"{\"134233117\":false,\"134233118\":false,\"201341983\":0,\"335551550\":1,\"335551620\":1,\"335559685\":0,\"335559737\":0,\"335559738\":0,\"335559739\":160,\"335559740\":278}\">&nbsp;</span></p> <p><strong><span data-contrast=\"auto\">The minimum length of the Internship must be&nbsp;12 weeks. </span></strong><span data-ccp-props=\"{}\">&nbsp;</span></p> <p><span data-contrast=\"auto\">We are looking for highly motivated students…",
+   "bullets": [],
+   "roleLabel": null,
+   "degreeLevel": null,
+   "degreeText": null,
+   "keySkills": [],
+   "stipendStatus": "unknown",
+   "postedText": null,
+   "postedAt": 1785768244000,
+   "firstSeenAt": 1785768313209,
+   "url": "https://www.squarepoint-capital.com/open-opportunities?id=6201998&gh_jid=6201998",
+   "applyUrl": "https://www.squarepoint-capital.com/open-opportunities?id=6201998&gh_jid=6201998",
+   "description": null
+  },
   {
    "id": "4435948881",
    "title": "Technical Support Representative Intern",
