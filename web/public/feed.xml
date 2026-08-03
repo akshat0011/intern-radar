@@ -6,7 +6,7 @@
   <atom:link href="https://www.internradar.info/feed.xml" rel="self" type="application/rss+xml"/>
   <description>New engineering internships, listed within minutes of going live.</description>
   <language>en-in</language>
-  <lastBuildDate>Mon, 03 Aug 2026 08:04:32 GMT</lastBuildDate>
+  <lastBuildDate>Mon, 03 Aug 2026 08:18:57 GMT</lastBuildDate>
   <item>
     <title>AI Film Making(Internship) — Great Learning</title>
     <link>https://www.internradar.info/jobs/great-learning-ai-film-making-internship-4447689632</link>
@@ -19,13 +19,6 @@
 • Collaborate with scriptwriters, animators, and designers</description>
   </item>
   <item>
-    <title>Graduate Engineer Trainee-SAP — Piramal Pharma Ltd</title>
-    <link>https://www.internradar.info/jobs/piramal-pharma-ltd-graduate-engineer-trainee-sap-4445882405</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/piramal-pharma-ltd-graduate-engineer-trainee-sap-4445882405</guid>
-    <pubDate>Mon, 03 Aug 2026 05:58:37 GMT</pubDate>
-    <description>Company: Piramal Pharma Ltd · Location: Mumbai, Maharashtra, India</description>
-  </item>
-  <item>
     <title>Calibration Intern — Pixxel</title>
     <link>https://www.internradar.info/jobs/pixxel-calibration-intern-4448136135</link>
     <guid isPermaLink="true">https://www.internradar.info/jobs/pixxel-calibration-intern-4448136135</guid>
@@ -35,6 +28,13 @@
 • Participate in pre-flight calibration including geometrical, spatial, and radiometric calibration
 • Develop and deploy software for imaging system calibration and testing
 • Analyze volume data to guide engineering decisions</description>
+  </item>
+  <item>
+    <title>Graduate Engineer Trainee-SAP — Piramal</title>
+    <link>https://www.internradar.info/jobs/piramal-graduate-engineer-trainee-sap-ats:workday:piramalpharma:wd102:PIRAMAL_EXTERNAL_CAREERS:R00003522</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/piramal-graduate-engineer-trainee-sap-ats:workday:piramalpharma:wd102:PIRAMAL_EXTERNAL_CAREERS:R00003522</guid>
+    <pubDate>Mon, 03 Aug 2026 00:00:00 GMT</pubDate>
+    <description>Company: Piramal · Location: Mumbai, MH</description>
   </item>
   <item>
     <title>Software Engineer Intern — eBay</title>
