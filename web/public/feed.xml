@@ -6,7 +6,7 @@
   <atom:link href="https://www.internradar.info/feed.xml" rel="self" type="application/rss+xml"/>
   <description>New engineering internships, listed within minutes of going live.</description>
   <language>en-in</language>
-  <lastBuildDate>Mon, 03 Aug 2026 16:18:05 GMT</lastBuildDate>
+  <lastBuildDate>Mon, 03 Aug 2026 16:33:30 GMT</lastBuildDate>
   <item>
     <title>Intern Software Developer - Singapore - 2027 — Squarepoint Capital</title>
     <link>https://www.internradar.info/jobs/squarepoint-capital-intern-software-developer-singapore-2027-ats-greenhouse-squarepointcapital-6201998</link>
@@ -158,6 +158,13 @@
 • Participate in pre-flight calibration including geometrical, spatial, and radiometric calibration
 • Develop and deploy software for imaging system calibration and testing
 • Analyze volume data to guide engineering decisions</description>
+  </item>
+  <item>
+    <title>Apprentice — State Street</title>
+    <link>https://www.internradar.info/jobs/state-street-apprentice-ats-workday-statestreet-wd1-global-r-792995</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/state-street-apprentice-ats-workday-statestreet-wd1-global-r-792995</guid>
+    <pubDate>Mon, 03 Aug 2026 00:00:00 GMT</pubDate>
+    <description>Company: State Street · Location: Bangalore, India · Duration: 0–12 months</description>
   </item>
   <item>
     <title>Intern - Digital Automation and Solutions Team — Micron Technology</title>
@@ -405,16 +412,6 @@
     <guid isPermaLink="true">https://www.internradar.info/jobs/piramal-apprentice-ats-workday-piramalpharma-wd102-piramal-external-careers-r00003234</guid>
     <pubDate>Fri, 31 Jul 2026 00:00:00 GMT</pubDate>
     <description>Company: Piramal · Location: Dahej,GJ</description>
-  </item>
-  <item>
-    <title>Graduate apprentice trainee - SW Verification — Volvo Group</title>
-    <link>https://www.internradar.info/jobs/volvo-group-graduate-apprentice-trainee-sw-verification-4447210792</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/volvo-group-graduate-apprentice-trainee-sw-verification-4447210792</guid>
-    <pubDate>Thu, 30 Jul 2026 23:03:57 GMT</pubDate>
-    <description>Company: Volvo Group · Location: Bengaluru, Karnataka, India
-• Support test planning, execution, and analysis for vehicle systems
-• Assist in creating and executing test cases for electrical and software systems
-• Analyze test data, report anomalies, and document results for continuous improvement</description>
   </item>
 </channel>
 </rss>

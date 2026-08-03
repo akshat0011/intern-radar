@@ -246,6 +246,18 @@
       ]
     },
     {
+      "id": "https://www.internradar.info/jobs/state-street-apprentice-ats-workday-statestreet-wd1-global-r-792995",
+      "url": "https://www.internradar.info/jobs/state-street-apprentice-ats-workday-statestreet-wd1-global-r-792995",
+      "title": "Apprentice — State Street",
+      "content_text": "Company: State Street · Location: Bangalore, India · Duration: 0–12 months",
+      "date_published": "2026-08-03T00:00:00.000Z",
+      "authors": [
+        {
+          "name": "State Street"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/micron-technology-intern-digital-automation-and-solutions-team-ats-workday-micron-wd1-external-jr102272",
       "url": "https://www.internradar.info/jobs/micron-technology-intern-digital-automation-and-solutions-team-ats-workday-micron-wd1-external-jr102272",
       "title": "Intern - Digital Automation and Solutions Team — Micron Technology",
@@ -590,18 +602,6 @@
       "authors": [
         {
           "name": "Piramal"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/volvo-group-graduate-apprentice-trainee-sw-verification-4447210792",
-      "url": "https://www.internradar.info/jobs/volvo-group-graduate-apprentice-trainee-sw-verification-4447210792",
-      "title": "Graduate apprentice trainee - SW Verification — Volvo Group",
-      "content_text": "Company: Volvo Group · Location: Bengaluru, Karnataka, India\n• Support test planning, execution, and analysis for vehicle systems\n• Assist in creating and executing test cases for electrical and software systems\n• Analyze test data, report anomalies, and document results for continuous improvement",
-      "date_published": "2026-07-30T23:03:57.190Z",
-      "authors": [
-        {
-          "name": "Volvo Group"
         }
       ]
     }

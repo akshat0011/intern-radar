@@ -1,7 +1,7 @@
 {
- "generatedAt": 1785773885860,
- "count": 198,
- "techCount": 198,
+ "generatedAt": 1785774810365,
+ "count": 199,
+ "techCount": 199,
  "otherCount": 0,
  "companies": [
   "ALLEN",
@@ -102,6 +102,7 @@
   "Amsterdam, Amsteldijk",
   "Amsterdam, North Holland, Netherlands",
   "Bangalore Urban, Karnataka, India",
+  "Bangalore, India",
   "Bayan Lepas, my",
   "Bellevue, Washington; Mountain View, California; San Francisco, California",
   "Bengaluru",
@@ -827,6 +828,37 @@
    "firstSeenAt": 1785724339706,
    "url": "https://www.linkedin.com/jobs/view/4448136135/",
    "applyUrl": "https://www.linkedin.com/jobs/view/4448136135/",
+   "description": null
+  },
+  {
+   "id": "ats:workday:statestreet:wd1:Global:R-792995",
+   "title": "Apprentice",
+   "company": "State Street",
+   "matchedWatchlist": "State Street",
+   "isTech": true,
+   "roleSource": "offline-uncertain",
+   "logo": "/logos/state-street.jpg",
+   "location": "Bangalore, India",
+   "workplaceType": null,
+   "stipend": null,
+   "duration": "0–12 months",
+   "applicants": null,
+   "easyApply": false,
+   "skills": [
+    "excel"
+   ],
+   "summary": "As a Social Media Apprentice within State Street Investment Management, you will support the global social media team in executing organic and paid social campaigns across platforms. You will be part of a global team, and your tasks will include: Support execution of organic and paid social campaigns across platforms (LinkedIn, X, Instagram, etc.) As a Social Media Apprentice within State Street Investment Management, you will support the global social media team in executing organic and paid social campaigns across platforms.",
+   "bullets": [],
+   "roleLabel": null,
+   "degreeLevel": null,
+   "degreeText": null,
+   "keySkills": [],
+   "stipendStatus": "unknown",
+   "postedText": null,
+   "postedAt": 1785715200000,
+   "firstSeenAt": 1785774632652,
+   "url": "https://statestreet.wd1.myworkdayjobs.com/en-US/Global/job/Bangalore-India/Apprentice_R-792995",
+   "applyUrl": "https://statestreet.wd1.myworkdayjobs.com/en-US/Global/job/Bangalore-India/Apprentice_R-792995",
    "description": null
   },
   {
