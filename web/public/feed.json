@@ -6,6 +6,30 @@
   "description": "New engineering internships, listed within minutes of going live.",
   "items": [
     {
+      "id": "https://www.internradar.info/jobs/great-learning-ai-film-making-internship-4447689632",
+      "url": "https://www.internradar.info/jobs/great-learning-ai-film-making-internship-4447689632",
+      "title": "AI Film Making(Internship) — Great Learning",
+      "content_text": "Company: Great Learning · Location: Bengaluru, Karnataka, India",
+      "date_published": "2026-08-03T05:58:59.789Z",
+      "authors": [
+        {
+          "name": "Great Learning"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/piramal-pharma-ltd-graduate-engineer-trainee-sap-4445882405",
+      "url": "https://www.internradar.info/jobs/piramal-pharma-ltd-graduate-engineer-trainee-sap-4445882405",
+      "title": "Graduate Engineer Trainee-SAP — Piramal Pharma Ltd",
+      "content_text": "Company: Piramal Pharma Ltd · Location: Mumbai, Maharashtra, India",
+      "date_published": "2026-08-03T05:58:37.777Z",
+      "authors": [
+        {
+          "name": "Piramal Pharma Ltd"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/ebay-software-engineer-intern-4445854769",
       "url": "https://www.internradar.info/jobs/ebay-software-engineer-intern-4445854769",
       "title": "Software Engineer Intern — eBay",
@@ -578,30 +602,6 @@
       "authors": [
         {
           "name": "Red Hat"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/red-hat-site-reliability-engineering-intern-4444345488",
-      "url": "https://www.internradar.info/jobs/red-hat-site-reliability-engineering-intern-4444345488",
-      "title": "Site Reliability Engineering Intern — Red Hat",
-      "content_text": "Company: Red Hat · Location: Pune Division, Maharashtra, India\n• Write code to make the service more scalable and reliable, guided by a senior mentor\n• Add software tests and do peer review inside a small agile SRE team\n• Python or Golang on Linux, with public cloud basics expected\n• Pune-based, and Red Hat will not sponsor a visa for this role",
-      "date_published": "2026-07-25T12:26:02.650Z",
-      "authors": [
-        {
-          "name": "Red Hat"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/american-express-apprentice-4444366894",
-      "url": "https://www.internradar.info/jobs/american-express-apprentice-4444366894",
-      "title": "Apprentice — American Express",
-      "content_text": "Company: American Express · Location: Gurugram, Haryana, India · Duration: 11 months\n• Help build and maintain credit-loss forecasting models for international portfolios\n• Automate reporting with Python, SQL and Excel; build dashboards for stakeholders\n• Dig through large datasets for trends, variances and emerging portfolio risk\n• Use Copilot and custom GPTs in the workflow; office 3 days a week",
-      "date_published": "2026-07-25T12:25:26.269Z",
-      "authors": [
-        {
-          "name": "American Express"
         }
       ]
     }
