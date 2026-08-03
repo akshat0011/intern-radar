@@ -3,7 +3,7 @@
  * One scan of LinkedIn for new internships at the watchlist companies.
  * Invoked by launchd every 15 minutes, or by hand via `npm run`.
  */
-import { loadConfig, matchCompany, matchTitle, resolveWindowHours } from './config.js';
+import { loadConfig, matchCompany, matchTitle, resolveWindowHours, isBlockedCompany } from './config.js';
 import { join } from 'node:path';
 import { ensureDirs, PATHS, ROOT } from './paths.js';
 import { log } from './logger.js';
@@ -314,7 +314,7 @@ async function main() {
 
   const clock = budget(cfg.limits.maxRuntimeMinutes);
   const notes = [];
-  const counters = { pagesScanned: 0, cardsSeen: 0, detailsExtracted: 0, newJobs: 0, skippedStale: 0, skippedCompany: 0, skippedTitle: 0, techRoles: 0, nonTechRoles: 0, geminiJudged: 0, termsLearned: 0, nearMisses: 0, skippedViewed: 0, listedWithoutOpening: 0, logosBackfilled: 0, skippedKnown: 0, failedDetails: 0, descriptionsBackfilled: 0 };
+  const counters = { pagesScanned: 0, cardsSeen: 0, detailsExtracted: 0, newJobs: 0, skippedStale: 0, skippedCompany: 0, skippedTitle: 0, techRoles: 0, nonTechRoles: 0, geminiJudged: 0, termsLearned: 0, nearMisses: 0, skippedViewed: 0, listedWithoutOpening: 0, logosBackfilled: 0, skippedKnown: 0, failedDetails: 0, descriptionsBackfilled: 0, unknownCompanyAdmitted: 0 };
 
   log.section(`Run ${runId}`);
   log.info(`${cfg.watchlist.length} watchlist terms across ${cfg.uniqueCompanyCount} companies · mode "${cfg.searchMode ?? 'companies'}" · ${allSearches.length} searches · budget ${cfg.limits.maxRuntimeMinutes}m`);
@@ -413,17 +413,19 @@ async function main() {
             continue;
           }
 
-          // COMPANY IS THE FIRST GATE. If the employer is not one we care
-          // about, nothing else about the posting matters — no title parsing,
-          // no role classification, and above all no Gemini call. This is what
-          // keeps the classifier budget spent only on jobs that could actually
-          // be published.
-          const matched = matchCompany(card.company, cfg.watchlist);
-          if (cfg.matching.requireCompanyMatch && !matched) {
+          // A blocked employer is unreachable by any route. This is checked on
+          // its own rather than relying on matchCompany returning null, because
+          // that returns null for "unknown" and "banned" alike — and once the
+          // watchlist stopped being a hard gate, unknown became publishable.
+          // MedTourEasy, on the blocklist for being a reported scam, turned up
+          // 304 times in one week as a card the old gate happened to drop.
+          if (isBlockedCompany(card.company)) {
             counters.skippedCompany++;
-            store.noteSkippedCard(card.jobId, 'company not on watchlist', card.company, card.title);
+            store.noteSkippedCard(card.jobId, 'blocked employer', card.company, card.title);
             continue;
           }
+
+          const matched = matchCompany(card.company, cfg.watchlist);
 
           const postedAt = parseRelativeTime(card.postedText);
           // Only reject on a *confidently* old timestamp; unparseable text is
@@ -459,10 +461,36 @@ async function main() {
           // open the job. A real backfill came back 11 tech / 46 non-tech, so
           // opening everything spent ~80% of the run's page loads on roles that
           // only need to appear in a list. Non-tech gets stored from card data.
-          const titleVerdict = classifyRole(card.title, {
+          const cardRoleOpts = {
             extraPositive: cfg.matching.extraTechTerms ?? [],
             extraNegative: cfg.matching.extraNonTechTerms ?? [],
-          });
+          };
+          const titleVerdict = classifyRole(card.title, cardRoleOpts);
+
+          // The watchlist is a trust signal, not a gate.
+          //
+          // A company we chose to track has earned the benefit of the doubt: we
+          // know Stripe and Amazon post engineering internships, so an ambiguous
+          // title from them is worth opening. An employer we know nothing about
+          // has to prove it from the title alone — a confident technical verdict
+          // resting on a SPECIFIC term, not a generic "engineer" or "trainee".
+          //
+          // Measured against a week of real cards: 5,610 off-watchlist internship
+          // titles, of which 1,065 clear this bar — about 1.6 per run, which the
+          // page budget absorbs. It admits 1Fi's "SDE intern", Babaclick's
+          // "Graduate Intern - Software Engineer" and Joveo's "Software
+          // Engineering Intern (Full Stack)", and still refuses "Engineering
+          // Intern - Civil", "Trainee Operator" and "Intern - copy writing".
+          if (!matched && cfg.matching.requireCompanyMatch) {
+            const confidentTech = titleVerdict.verdict === 'tech'
+              && !needsDescription(card.title, cardRoleOpts);
+            if (!confidentTech) {
+              counters.skippedCompany++;
+              store.noteSkippedCard(card.jobId, 'company not on watchlist', card.company, card.title);
+              continue;
+            }
+            counters.unknownCompanyAdmitted++;
+          }
           // Only a CONFIDENT non-tech verdict skips the page open. An
           // ambiguous title ("Intern (Bachelor's)", "Intern-Product Analyst")
           // is exactly the case where the description decides, so it is still
@@ -712,28 +740,35 @@ async function main() {
             }
           }
         } else {
-          // Gemini unavailable. Record the offline reading ONLY when the
-          // vocabulary actually has an opinion.
+          // Gemini unavailable — decide offline and publish anyway.
           //
-          // These titles are here precisely because the vocabulary could not
-          // settle them, so the usual answer is "uncertain" — and writing that
-          // as non-tech buries the posting permanently, because
-          // jobsNeedingRoleVerdict only ever returns rows whose verdict is
-          // still NULL. Nothing revisits it. That is not hypothetical: on a
-          // free tier the daily quota runs out, and Microsoft's "Research
-          // Sciences INTERN" — an ML research internship — was filed as
-          // non-engineering this way and would never have reached the site.
+          // A posting must never sit unpublished waiting for a quota to reset.
+          // Being early is the entire product, and an internship held back for
+          // six hours pending a classifier is as good as missed.
           //
-          // Leaving it NULL costs one retry next run. Guessing costs the
-          // listing. publish.js already refuses to publish a NULL verdict, so
-          // nothing unclassified leaks onto the site in the meantime.
+          // So an UNCERTAIN title counts as technical rather than being held or
+          // buried. That is deliberately the generous direction: showing one
+          // borderline role costs a student a moment's reading, while hiding a
+          // real engineering internship costs them the application. The company
+          // watchlist and the title filter have already run, so what reaches
+          // here is an internship at a company we track.
+          //
+          // The verdict is marked 'offline-uncertain' rather than 'offline', and
+          // store.jobsNeedingRoleVerdict re-queries exactly that source, so once
+          // quota returns Gemini reads the description and upgrades the guess.
+          // It publishes now and gets more accurate later.
+          //
+          // The generous reading is extended only to watchlist companies. They
+          // are employers we chose to track, so an ambiguous title from one of
+          // them is probably a role worth seeing. An unknown employer gets no
+          // such credit — publishing every uncertain title from anyone would put
+          // civil engineering, copywriting and admin roles on an engineering
+          // site, which is precisely what the watchlist had been quietly
+          // preventing.
           const r = classifyRole(job.title, roleOpts);
-          if (r.verdict === 'uncertain') {
-            log.debug(`Leaving "${job.title}" unclassified — Gemini unavailable, title ambiguous. Next run retries.`);
-            return;
-          }
-          const isTech = r.verdict === 'tech';
-          store.setRoleVerdict(job.job_id, isTech, 'offline-fallback');
+          const trusted = !!matchCompany(job.company, cfg.watchlist);
+          const isTech = trusted ? r.verdict !== 'non-tech' : r.verdict === 'tech';
+          store.setRoleVerdict(job.job_id, isTech, r.verdict === 'uncertain' ? 'offline-uncertain' : 'offline-fallback');
           if (isTech) counters.techRoles++; else counters.nonTechRoles++;
         }
       });
@@ -747,7 +782,9 @@ async function main() {
 
   const summaryLine =
     `${counters.cardsSeen} cards scanned · ${counters.detailsExtracted} opened · ${counters.newJobs} new · ` +
-    `skipped ${counters.skippedCompany} off-watchlist, ${counters.skippedTitle} title not an internship, ` +
+    `skipped ${counters.skippedCompany} off-watchlist` +
+    (counters.unknownCompanyAdmitted ? ` (${counters.unknownCompanyAdmitted} unknown employers admitted on a confident tech title)` : '') +
+    `, ${counters.skippedTitle} title not an internship, ` +
     `${counters.skippedStale} older than ${cfg.filters.postedWithinHours}h, ${counters.skippedKnown} already known, ` +
     `${counters.skippedViewed} already viewed · ${counters.listedWithoutOpening} listed without opening` +
     (counters.descriptionsBackfilled ? ` · ${counters.descriptionsBackfilled} descriptions backfilled` : '') +

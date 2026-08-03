@@ -436,11 +436,21 @@ export class Store {
    * whose classification pass was skipped, must still be labelled or it lands
    * in the wrong tab forever. Classifying by "needs a verdict" rather than "was
    * captured this run" is what keeps the site correct.
+   *
+   * 'offline-uncertain' rows are re-queried too. Those were published on a
+   * guess because the classifier API was unavailable and a posting must not
+   * wait on a quota reset. They already have a verdict, so NULL alone would
+   * never return them, and the guess would stand forever. Including them here
+   * means Gemini reads the description and corrects the record as soon as it
+   * can — publish first, get accurate second.
    */
   jobsNeedingRoleVerdict(sinceMs) {
-    return this.db.prepare(
-      'SELECT job_id, title, company FROM jobs WHERE is_tech IS NULL AND first_seen_at >= ? ORDER BY first_seen_at DESC',
-    ).all(sinceMs);
+    return this.db.prepare(`
+      SELECT job_id, title, company FROM jobs
+      WHERE (is_tech IS NULL OR role_source = 'offline-uncertain')
+        AND first_seen_at >= ?
+      ORDER BY first_seen_at DESC
+    `).all(sinceMs);
   }
 
   /** The stored description, for classifying an ambiguous title. */

@@ -104,11 +104,25 @@ if (!boards.length && !workdayNow.length) {
 const INDIA = /\b(india|bengaluru|bangalore|mumbai|delhi|gurugram|gurgaon|noida|hyderabad|chennai|pune|kolkata|ahmedabad|jaipur|indore|kochi|coimbatore|chandigarh|trivandrum|thiruvananthapuram|mysore|mysuru|nagpur|bhubaneswar|vizag|visakhapatnam)\b/i;
 const NON_INDIA = /\b(united states|usa|u\.s\.|canada|london|uk|united kingdom|germany|berlin|france|paris|singapore|australia|sydney|japan|tokyo|dublin|amsterdam|poland|warsaw|brazil|mexico|israel|tel aviv|dubai|uae|new york|san francisco|seattle|austin|boston|chicago|toronto|vancouver)\b/i;
 
+/**
+ * Off by default. An internship at a watchlist company is worth showing
+ * wherever it is: plenty are remote, plenty of students will take a role
+ * abroad, and the company gate has already run — what reaches here is an
+ * employer we chose to track. Set ats.indiaOnly true in config.json to go back
+ * to India-only collection.
+ */
+const INDIA_ONLY = cfg.ats?.indiaOnly === true;
+
 function isIndia(location) {
   if (!location) return true;               // unknown — let the title filter decide
   if (INDIA.test(location)) return true;
   if (NON_INDIA.test(location)) return false;
-  return false;
+  // Neither list matched. Kept, not dropped — the old `return false` here threw
+  // away any Indian city the list happens not to name (Kanpur, Vadodara,
+  // Nashik) and every vague-but-plausible location. Across the 93 Greenhouse
+  // boards that was 28 internships discarded on a location string alone,
+  // including "APAC - Remote".
+  return true;
 }
 
 /**
@@ -147,7 +161,7 @@ async function pollOne(board) {
 
   for (const j of jobs) {
     if (!matchTitle(j.title, cfg.titleTerms)) { skippedNonIntern++; continue; }
-    if (!isIndia(j.location)) { skippedNonIndia++; continue; }
+    if (INDIA_ONLY && !isIndia(j.location)) { skippedNonIndia++; continue; }
     // A posting with no date is kept — some providers omit it — but a known-old
     // one is not, however open it still is.
     if (j.postedAt && j.postedAt < OLDEST_ACCEPTABLE) { skippedStale++; continue; }

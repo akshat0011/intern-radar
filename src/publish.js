@@ -4,7 +4,7 @@ import { execFileSync } from 'node:child_process';
 import { ROOT } from './paths.js';
 import { log } from './logger.js';
 import { formatStipend } from './extract.js';
-import { matchCompany } from './config.js';
+import { matchCompany, isBlockedCompany } from './config.js';
 import { syncLogos, logoPathFor, logoDirSize } from './logos.js';
 import { writePages } from './pages.js';
 
@@ -93,11 +93,26 @@ export async function writeJobsFile(store, cfg) {
     // label — an early bug filed "SolarSquare" under "Ola" — and publishing
     // that to students would be worse than dropping it.
     .map((row) => ({ row, matchedNow: matchCompany(row.company, cfg.watchlist) }))
-    .filter(({ row, matchedNow }) => {
-      if (!cfg.matching?.requireCompanyMatch) return true;
-      if (matchedNow) return true;
+    // A blocked employer never reaches the site, however it got into the table.
+    // This is the last line rather than the only one — the scan refuses them too
+    // — but it is the line that matters, because it also catches rows captured
+    // before a name was blocked. Checked explicitly and not via matchCompany,
+    // which returns null for "unknown" and "banned" alike.
+    .filter(({ row }) => {
+      if (!isBlockedCompany(row.company)) return true;
       dropped++;
-      log.debug(`Not publishing "${row.title}" — "${row.company}" no longer matches the watchlist.`);
+      log.warn(`Not publishing "${row.title}" — "${row.company}" is on the blocklist.`);
+      return false;
+    })
+    // The watchlist is no longer a publish gate. A role from an employer we do
+    // not track was admitted during the scan only by proving it was technical
+    // from its title, so dropping it here would discard a job we deliberately
+    // went and collected. The company shown is always the posting's own name,
+    // so nothing is mislabelled by letting it through.
+    .filter(({ row, matchedNow }) => {
+      if (matchedNow || row.is_tech === 1) return true;
+      dropped++;
+      log.debug(`Not publishing "${row.title}" — "${row.company}" is off-watchlist and unclassified.`);
       return false;
     })
     // Engineering only. Applied here rather than in the SQL so that older rows

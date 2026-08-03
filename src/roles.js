@@ -223,7 +223,18 @@ const GENERIC = new Set([
 export function needsDescription(title, options = {}) {
   const { verdict, matched } = classifyRole(title, options);
   if (verdict === 'uncertain') return true;
-  if (verdict === 'tech' && matched && GENERIC.has(matched.toLowerCase())) return true;
+  if (verdict === 'tech' && matched && GENERIC.has(matched.toLowerCase())) {
+    // A generic match only makes the title ambiguous if nothing SPECIFIC also
+    // matched. "Software Engineering Intern (Full Stack)" came back generic
+    // purely because classifyRole prefers the longest phrase, and
+    // "engineering intern" is longer than "full stack" — even though the
+    // specific term is right there and settles it. Left alone, that sent a
+    // plainly technical title off for a description read, and once the
+    // watchlist became a trust signal it dropped the role entirely.
+    const specific = [...(options.extraPositive ?? []), ...POSITIVE_SORTED]
+      .some((t) => !GENERIC.has(t.toLowerCase()) && hasTerm(title, t));
+    return !specific;
+  }
   return false;
 }
 

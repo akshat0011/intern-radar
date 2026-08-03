@@ -97,7 +97,11 @@
     "_titleMustMatch_note": "A job must contain one of these in its title. Use [] to disable.",
     "_roles_note": "Engineering roles only. A confidently non-technical title is discarded during the sweep (storeNonTechRoles) and never published (publish.techRolesOnly). An AMBIGUOUS title is still opened and judged on its description - that is exactly the case the title cannot settle, and dropping those on the title alone would lose real engineering roles posted as a bare 'Trainee'.",
     "extraTechTerms": [],
-    "extraNonTechTerms": [],
+    "extraNonTechTerms": [
+      "financial",
+      "indirect tax"
+    ],
+    "_extraNonTechTerms_note": "Matching is whole-word, so the built-in 'finance' never matched 'Financial Analyst' and 'taxation' never matched 'Indirect Tax'. Those fell through as uncertain, and since an uncertain title is now published rather than held, six Amazon finance roles would have gone onto an engineering-only site. Remove 'financial' if a title like 'Financial Systems Software Engineer' ever gets wrongly dropped.",
     "_extraTerms_note": "Your own additions to the classifier, checked ahead of the built-in lists.",
     "blocklist": [
       "MedTourEasy",
@@ -198,6 +202,8 @@
     "model": "claude-haiku-4-5-20251001"
   },
   "ats": {
+    "indiaOnly": false,
+    "_indiaOnly_note": "false = collect an internship at a watchlist company wherever it is posted. The company gate has already run, so these are employers you chose to track, and many roles are remote or worth relocating for. true = only postings whose location reads as Indian, which is how this ran originally. Note the site copy still says 'internships in India'; change that too if you leave this false.",
     "maxPostingAgeDays": 30,
     "_maxPostingAgeDays_note": "How old an ATS posting may be and still be collected. The LinkedIn scan never needed this because it searches with a time window; an ATS board has none and lists whatever is still open, so the first real poll surfaced roles 159 and 214 days old. Being first to a seven-month-old listing is not being early.",
     "_note": "Applicant-tracking-system job boards - the source LinkedIn copies from. Discovery is cached in the company_ats table by bin/discover-ats.js; bin/poll-ats.js reads it. No browser and no ToS problem: these are the public endpoints a company careers page calls to render itself."

@@ -18,7 +18,22 @@
  */
 import { log } from './logger.js';
 
-const TIMEOUT_MS = 8000;
+/**
+ * Generous on purpose. Eight seconds looked reasonable and silently cost us an
+ * entire employer: Lever returns Paytm's whole board — 236 postings with full
+ * descriptions — as a single 3.7 MB response that takes about 18 seconds. Every
+ * poll aborted mid-download, getJson returned null, and the board was counted as
+ * unreadable rather than slow. Nothing distinguished the two, so it never looked
+ * like a bug.
+ *
+ * A timeout is not retried (only 429 is), so the cost of the higher ceiling is
+ * bounded: one slow board holds one of the eight concurrent slots and nothing
+ * more. Boards that are genuinely dead answer 404 immediately and are unaffected.
+ *
+ * 45s rather than the 26s Paytm actually needs, because that measurement is of a
+ * good day on a good connection and the failure it guards against is silent.
+ */
+const TIMEOUT_MS = 45_000;
 const UA = 'internradar (+https://www.internradar.info)';
 
 async function getJson(url, { method = 'GET', body = null, retriesLeft = 2 } = {}) {
@@ -48,7 +63,14 @@ async function getJson(url, { method = 'GET', body = null, retriesLeft = 2 } = {
     // HTML rather than an error, so a non-JSON body is a failure too.
     const text = await res.text();
     try { return JSON.parse(text); } catch { return null; }
-  } catch {
+  } catch (err) {
+    // Say so when a board was abandoned rather than absent. Collapsing "timed
+    // out" into the same silent null as "does not exist" is exactly what hid
+    // Paytm — 236 postings, aborted on every poll for as long as the board has
+    // existed, and indistinguishable from a company that simply has no board.
+    if (err?.name === 'AbortError' || err?.name === 'TimeoutError') {
+      console.warn(`  ats: timed out after ${TIMEOUT_MS / 1000}s — ${url.slice(0, 90)}`);
+    }
     return null;
   } finally {
     clearTimeout(timer);
