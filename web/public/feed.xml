@@ -6,7 +6,14 @@
   <atom:link href="https://www.internradar.info/feed.xml" rel="self" type="application/rss+xml"/>
   <description>New engineering internships, listed within minutes of going live.</description>
   <language>en-in</language>
-  <lastBuildDate>Sun, 02 Aug 2026 22:31:17 GMT</lastBuildDate>
+  <lastBuildDate>Mon, 03 Aug 2026 01:00:18 GMT</lastBuildDate>
+  <item>
+    <title>Software Engineer Intern — eBay</title>
+    <link>https://www.internradar.info/jobs/ebay-software-engineer-intern-4445854769</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/ebay-software-engineer-intern-4445854769</guid>
+    <pubDate>Sun, 02 Aug 2026 21:06:14 GMT</pubDate>
+    <description>Company: eBay · Location: Bengaluru, Karnataka, India · Duration: 0-3 years</description>
+  </item>
   <item>
     <title>Intern — HARMAN India</title>
     <link>https://www.internradar.info/jobs/harman-india-intern-4445841376</link>
@@ -510,17 +517,6 @@
 • Automate reporting with Python, SQL and Excel; build dashboards for stakeholders
 • Dig through large datasets for trends, variances and emerging portfolio risk
 • Use Copilot and custom GPTs in the workflow; office 3 days a week</description>
-  </item>
-  <item>
-    <title>Engineering Intern - Class of 2026 — Eightfold AI</title>
-    <link>https://www.internradar.info/jobs/eightfold-ai-engineering-intern-class-of-2026-4445324844</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/eightfold-ai-engineering-intern-class-of-2026-4445324844</guid>
-    <pubDate>Sat, 25 Jul 2026 12:23:28 GMT</pubDate>
-    <description>Company: Eightfold AI · Location: Noida, Uttar Pradesh, India · Duration: 6 months
-• Build and debug services on distributed systems and AI platforms holding TBs of data
-• Fix issues in production alongside engineers, product managers and designers
-• Python, TensorFlow, SQL, React, Spark, Solr, Docker and a long list of AWS services
-• 6-month full-time in-person stint, needs 2026 graduation and CGPA 8.0+</description>
   </item>
 </channel>
 </rss>
