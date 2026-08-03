@@ -6,7 +6,21 @@
   <atom:link href="https://www.internradar.info/feed.xml" rel="self" type="application/rss+xml"/>
   <description>New engineering internships, listed within minutes of going live.</description>
   <language>en-in</language>
-  <lastBuildDate>Mon, 03 Aug 2026 16:48:41 GMT</lastBuildDate>
+  <lastBuildDate>Mon, 03 Aug 2026 17:03:15 GMT</lastBuildDate>
+  <item>
+    <title>Technical Support Representative Intern — IBM</title>
+    <link>https://www.internradar.info/jobs/ibm-technical-support-representative-intern-4435960679</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/ibm-technical-support-representative-intern-4435960679</guid>
+    <pubDate>Mon, 03 Aug 2026 16:48:29 GMT</pubDate>
+    <description>Company: IBM · Location: Coimbatore, Tamil Nadu, India</description>
+  </item>
+  <item>
+    <title>Technical Support Representative Intern — IBM</title>
+    <link>https://www.internradar.info/jobs/ibm-technical-support-representative-intern-4435955892</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/ibm-technical-support-representative-intern-4435955892</guid>
+    <pubDate>Mon, 03 Aug 2026 16:47:54 GMT</pubDate>
+    <description>Company: IBM · Location: Mysore, Karnataka, India</description>
+  </item>
   <item>
     <title>Graduate Engineer Trainee — Emerson</title>
     <link>https://www.internradar.info/jobs/emerson-graduate-engineer-trainee-4448323159</link>
@@ -394,24 +408,6 @@
     <guid isPermaLink="true">https://www.internradar.info/jobs/bybit-nlp-algorithm-engineer-intern-ats-greenhouse-bybit-4868977101</guid>
     <pubDate>Fri, 31 Jul 2026 04:01:41 GMT</pubDate>
     <description>Company: Bybit · Location: APAC - Remote</description>
-  </item>
-  <item>
-    <title>Intern - Web Developer — Western Digital</title>
-    <link>https://www.internradar.info/jobs/western-digital-intern-web-developer-ats-smartrecruiters-westerndigital-744000140814058</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/western-digital-intern-web-developer-ats-smartrecruiters-westerndigital-744000140814058</guid>
-    <pubDate>Fri, 31 Jul 2026 02:08:28 GMT</pubDate>
-    <description>Company: Western Digital · Location: Amphoe Si Maha Phot, th</description>
-  </item>
-  <item>
-    <title>Intern - Product (NFA) — Noise</title>
-    <link>https://www.internradar.info/jobs/noise-intern-product-nfa-4446948754</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/noise-intern-product-nfa-4446948754</guid>
-    <pubDate>Fri, 31 Jul 2026 01:02:08 GMT</pubDate>
-    <description>Company: Noise · Location: Gurugram, Haryana, India
-• Work with Product Managers on the full product lifecycle, from research to launch
-• Write PRDs, user stories, and feature specs; analyze product data using SQL
-• Collaborate with design on wireframes in Figma and engineering on sprints in Jira
-• Conduct market research, synthesize user feedback, and support A/B testing</description>
   </item>
 </channel>
 </rss>

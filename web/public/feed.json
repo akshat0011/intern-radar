@@ -6,6 +6,30 @@
   "description": "New engineering internships, listed within minutes of going live.",
   "items": [
     {
+      "id": "https://www.internradar.info/jobs/ibm-technical-support-representative-intern-4435960679",
+      "url": "https://www.internradar.info/jobs/ibm-technical-support-representative-intern-4435960679",
+      "title": "Technical Support Representative Intern — IBM",
+      "content_text": "Company: IBM · Location: Coimbatore, Tamil Nadu, India",
+      "date_published": "2026-08-03T16:48:29.587Z",
+      "authors": [
+        {
+          "name": "IBM"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/ibm-technical-support-representative-intern-4435955892",
+      "url": "https://www.internradar.info/jobs/ibm-technical-support-representative-intern-4435955892",
+      "title": "Technical Support Representative Intern — IBM",
+      "content_text": "Company: IBM · Location: Mysore, Karnataka, India",
+      "date_published": "2026-08-03T16:47:54.983Z",
+      "authors": [
+        {
+          "name": "IBM"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/emerson-graduate-engineer-trainee-4448323159",
       "url": "https://www.internradar.info/jobs/emerson-graduate-engineer-trainee-4448323159",
       "title": "Graduate Engineer Trainee — Emerson",
@@ -578,30 +602,6 @@
       "authors": [
         {
           "name": "Bybit"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/western-digital-intern-web-developer-ats-smartrecruiters-westerndigital-744000140814058",
-      "url": "https://www.internradar.info/jobs/western-digital-intern-web-developer-ats-smartrecruiters-westerndigital-744000140814058",
-      "title": "Intern - Web Developer — Western Digital",
-      "content_text": "Company: Western Digital · Location: Amphoe Si Maha Phot, th",
-      "date_published": "2026-07-31T02:08:28.538Z",
-      "authors": [
-        {
-          "name": "Western Digital"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/noise-intern-product-nfa-4446948754",
-      "url": "https://www.internradar.info/jobs/noise-intern-product-nfa-4446948754",
-      "title": "Intern - Product (NFA) — Noise",
-      "content_text": "Company: Noise · Location: Gurugram, Haryana, India\n• Work with Product Managers on the full product lifecycle, from research to launch\n• Write PRDs, user stories, and feature specs; analyze product data using SQL\n• Collaborate with design on wireframes in Figma and engineering on sprints in Jira\n• Conduct market research, synthesize user feedback, and support A/B testing",
-      "date_published": "2026-07-31T01:02:08.758Z",
-      "authors": [
-        {
-          "name": "Noise"
         }
       ]
     }
