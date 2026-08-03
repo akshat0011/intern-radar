@@ -6,6 +6,18 @@
   "description": "New engineering internships, listed within minutes of going live.",
   "items": [
     {
+      "id": "https://www.internradar.info/jobs/ibm-technical-support-representative-intern-4435963237",
+      "url": "https://www.internradar.info/jobs/ibm-technical-support-representative-intern-4435963237",
+      "title": "Technical Support Representative Intern — IBM",
+      "content_text": "Company: IBM · Location: Greater Lucknow Area",
+      "date_published": "2026-08-03T17:39:09.877Z",
+      "authors": [
+        {
+          "name": "IBM"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/ibm-technical-support-representative-intern-4435946951",
       "url": "https://www.internradar.info/jobs/ibm-technical-support-representative-intern-4435946951",
       "title": "Technical Support Representative Intern — IBM",
@@ -590,18 +602,6 @@
       "authors": [
         {
           "name": "Magna International"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/point72-corporate-access-off-cycle-internship-6-months-japanese-speaking-ats-greenhouse-point72-8603979002",
-      "url": "https://www.internradar.info/jobs/point72-corporate-access-off-cycle-internship-6-months-japanese-speaking-ats-greenhouse-point72-8603979002",
-      "title": "Corporate Access, off-cycle internship (6-months) – Japanese speaking — Point72",
-      "content_text": "Company: Point72 · Location: Hong Kong",
-      "date_published": "2026-07-31T11:40:14.000Z",
-      "authors": [
-        {
-          "name": "Point72"
         }
       ]
     }

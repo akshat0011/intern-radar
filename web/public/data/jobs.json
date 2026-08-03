@@ -1,7 +1,7 @@
 {
- "generatedAt": 1785778804953,
- "count": 207,
- "techCount": 207,
+ "generatedAt": 1785781789245,
+ "count": 208,
+ "techCount": 208,
  "otherCount": 0,
  "companies": [
   "ALLEN",
@@ -171,6 +171,35 @@
   "Warsaw, Poland"
  ],
  "jobs": [
+  {
+   "id": "4435963237",
+   "title": "Technical Support Representative Intern",
+   "company": "IBM",
+   "matchedWatchlist": "IBM",
+   "isTech": true,
+   "roleSource": "offline-fallback",
+   "logo": "/logos/ibm.jpg",
+   "location": "Greater Lucknow Area",
+   "workplaceType": "Hybrid",
+   "stipend": null,
+   "duration": null,
+   "applicants": null,
+   "easyApply": false,
+   "skills": [],
+   "summary": "A career in IBM Consulting is built on long-term client relationships and close collaboration worldwide. You’ll work with leading companies across industries, helping them shape their hybrid cloud and AI journeys. Your Role And Responsibilities As part of your internship, you will get to understand the scheduling and production monitoring activities, our consultants in these roles administers the application and does monitoring operations and you will get to observe and gain industry experience.",
+   "bullets": [],
+   "roleLabel": null,
+   "degreeLevel": null,
+   "degreeText": null,
+   "keySkills": [],
+   "stipendStatus": "unknown",
+   "postedText": "30 minutes ago",
+   "postedAt": 1785778749877,
+   "firstSeenAt": 1785780549884,
+   "url": "https://www.linkedin.com/jobs/view/4435963237/",
+   "applyUrl": "https://www.linkedin.com/jobs/view/4435963237/",
+   "description": null
+  },
   {
    "id": "4435946951",
    "title": "Technical Support Representative Intern",
