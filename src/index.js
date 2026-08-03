@@ -314,7 +314,7 @@ async function main() {
 
   const clock = budget(cfg.limits.maxRuntimeMinutes);
   const notes = [];
-  const counters = { pagesScanned: 0, cardsSeen: 0, detailsExtracted: 0, newJobs: 0, skippedStale: 0, skippedCompany: 0, skippedTitle: 0, techRoles: 0, nonTechRoles: 0, geminiJudged: 0, termsLearned: 0, nearMisses: 0, skippedViewed: 0, listedWithoutOpening: 0, logosBackfilled: 0, skippedKnown: 0, failedDetails: 0, descriptionsBackfilled: 0, unknownCompanyAdmitted: 0 };
+  const counters = { pagesScanned: 0, cardsSeen: 0, detailsExtracted: 0, newJobs: 0, skippedStale: 0, skippedCompany: 0, skippedTitle: 0, techRoles: 0, nonTechRoles: 0, geminiJudged: 0, termsLearned: 0, nearMisses: 0, skippedViewed: 0, listedWithoutOpening: 0, logosBackfilled: 0, skippedKnown: 0, failedDetails: 0, descriptionsBackfilled: 0 };
 
   log.section(`Run ${runId}`);
   log.info(`${cfg.watchlist.length} watchlist terms across ${cfg.uniqueCompanyCount} companies · mode "${cfg.searchMode ?? 'companies'}" · ${allSearches.length} searches · budget ${cfg.limits.maxRuntimeMinutes}m`);
@@ -425,7 +425,20 @@ async function main() {
             continue;
           }
 
+          // COMPANY IS THE FIRST GATE. If the employer is not one we care
+          // about, nothing else about the posting matters — no title parsing,
+          // no role classification, and above all no Gemini call. This is what
+          // keeps the classifier budget spent only on jobs that could actually
+          // be published, and it is the only thing standing between the site
+          // and the unpaid "training & internship" listings that fill a broad
+          // search. New employers are added to companies.json by hand, on
+          // purpose: a name on the list is a name somebody vouched for.
           const matched = matchCompany(card.company, cfg.watchlist);
+          if (cfg.matching.requireCompanyMatch && !matched) {
+            counters.skippedCompany++;
+            store.noteSkippedCard(card.jobId, 'company not on watchlist', card.company, card.title);
+            continue;
+          }
 
           const postedAt = parseRelativeTime(card.postedText);
           // Only reject on a *confidently* old timestamp; unparseable text is
@@ -461,36 +474,10 @@ async function main() {
           // open the job. A real backfill came back 11 tech / 46 non-tech, so
           // opening everything spent ~80% of the run's page loads on roles that
           // only need to appear in a list. Non-tech gets stored from card data.
-          const cardRoleOpts = {
+          const titleVerdict = classifyRole(card.title, {
             extraPositive: cfg.matching.extraTechTerms ?? [],
             extraNegative: cfg.matching.extraNonTechTerms ?? [],
-          };
-          const titleVerdict = classifyRole(card.title, cardRoleOpts);
-
-          // The watchlist is a trust signal, not a gate.
-          //
-          // A company we chose to track has earned the benefit of the doubt: we
-          // know Stripe and Amazon post engineering internships, so an ambiguous
-          // title from them is worth opening. An employer we know nothing about
-          // has to prove it from the title alone — a confident technical verdict
-          // resting on a SPECIFIC term, not a generic "engineer" or "trainee".
-          //
-          // Measured against a week of real cards: 5,610 off-watchlist internship
-          // titles, of which 1,065 clear this bar — about 1.6 per run, which the
-          // page budget absorbs. It admits 1Fi's "SDE intern", Babaclick's
-          // "Graduate Intern - Software Engineer" and Joveo's "Software
-          // Engineering Intern (Full Stack)", and still refuses "Engineering
-          // Intern - Civil", "Trainee Operator" and "Intern - copy writing".
-          if (!matched && cfg.matching.requireCompanyMatch) {
-            const confidentTech = titleVerdict.verdict === 'tech'
-              && !needsDescription(card.title, cardRoleOpts);
-            if (!confidentTech) {
-              counters.skippedCompany++;
-              store.noteSkippedCard(card.jobId, 'company not on watchlist', card.company, card.title);
-              continue;
-            }
-            counters.unknownCompanyAdmitted++;
-          }
+          });
           // Only a CONFIDENT non-tech verdict skips the page open. An
           // ambiguous title ("Intern (Bachelor's)", "Intern-Product Analyst")
           // is exactly the case where the description decides, so it is still
@@ -758,16 +745,10 @@ async function main() {
           // quota returns Gemini reads the description and upgrades the guess.
           // It publishes now and gets more accurate later.
           //
-          // The generous reading is extended only to watchlist companies. They
-          // are employers we chose to track, so an ambiguous title from one of
-          // them is probably a role worth seeing. An unknown employer gets no
-          // such credit — publishing every uncertain title from anyone would put
-          // civil engineering, copywriting and admin roles on an engineering
-          // site, which is precisely what the watchlist had been quietly
-          // preventing.
+          // Safe to be generous because the company gate has already run: every
+          // row reaching here is an internship at an employer on the watchlist.
           const r = classifyRole(job.title, roleOpts);
-          const trusted = !!matchCompany(job.company, cfg.watchlist);
-          const isTech = trusted ? r.verdict !== 'non-tech' : r.verdict === 'tech';
+          const isTech = r.verdict !== 'non-tech';
           store.setRoleVerdict(job.job_id, isTech, r.verdict === 'uncertain' ? 'offline-uncertain' : 'offline-fallback');
           if (isTech) counters.techRoles++; else counters.nonTechRoles++;
         }
@@ -782,9 +763,7 @@ async function main() {
 
   const summaryLine =
     `${counters.cardsSeen} cards scanned · ${counters.detailsExtracted} opened · ${counters.newJobs} new · ` +
-    `skipped ${counters.skippedCompany} off-watchlist` +
-    (counters.unknownCompanyAdmitted ? ` (${counters.unknownCompanyAdmitted} unknown employers admitted on a confident tech title)` : '') +
-    `, ${counters.skippedTitle} title not an internship, ` +
+    `skipped ${counters.skippedCompany} off-watchlist, ${counters.skippedTitle} title not an internship, ` +
     `${counters.skippedStale} older than ${cfg.filters.postedWithinHours}h, ${counters.skippedKnown} already known, ` +
     `${counters.skippedViewed} already viewed · ${counters.listedWithoutOpening} listed without opening` +
     (counters.descriptionsBackfilled ? ` · ${counters.descriptionsBackfilled} descriptions backfilled` : '') +

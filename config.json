@@ -42,8 +42,28 @@
       "aliases": [
         "Faveo Helpdesk"
       ]
+    },
+    {
+      "name": "1Fi",
+      "aliases": [
+        "1Finance",
+        "OneFi"
+      ]
+    },
+    {
+      "name": "Joveo"
+    },
+    {
+      "name": "Quicket Solutions"
+    },
+    {
+      "name": "BSI Financial Services",
+      "aliases": [
+        "BSI Financial"
+      ]
     }
   ],
+  "_added_from_linkedin_note": "Employers first noticed in LinkedIn's own recommendations, each posting a real engineering internship the watchlist was turning away. Added by hand on purpose. A broad sweep is not a shortcut here: the off-watchlist employers posting the MOST engineering internships are almost entirely training schemes and staffing spam - MediNex Workforce alone posted 34, and 'Future Interns', 'kaushalsaathi' and 'EazyByts' follow it. Genuine companies post once or twice, so frequency ranks the junk to the top. Remove one with `npm run remove -- \"<name>\"`.",
   "searchMode": "keywords",
   "_searchMode_note": "'keywords' (default) = run the searches list below; with a single broad entry that means one sweep paginated to exhaustion, filtered locally. 'companies' = boolean OR batches of the watchlist - NOT recommended: LinkedIn treats those names as loose text and returns mostly unrelated employers. 'both' = company batches then the searches list.",
   "companySearch": {

@@ -104,15 +104,11 @@ export async function writeJobsFile(store, cfg) {
       log.warn(`Not publishing "${row.title}" — "${row.company}" is on the blocklist.`);
       return false;
     })
-    // The watchlist is no longer a publish gate. A role from an employer we do
-    // not track was admitted during the scan only by proving it was technical
-    // from its title, so dropping it here would discard a job we deliberately
-    // went and collected. The company shown is always the posting's own name,
-    // so nothing is mislabelled by letting it through.
     .filter(({ row, matchedNow }) => {
-      if (matchedNow || row.is_tech === 1) return true;
+      if (!cfg.matching?.requireCompanyMatch) return true;
+      if (matchedNow) return true;
       dropped++;
-      log.debug(`Not publishing "${row.title}" — "${row.company}" is off-watchlist and unclassified.`);
+      log.debug(`Not publishing "${row.title}" — "${row.company}" no longer matches the watchlist.`);
       return false;
     })
     // Engineering only. Applied here rather than in the SQL so that older rows
