@@ -6,6 +6,18 @@
   "description": "New engineering internships, listed within minutes of going live.",
   "items": [
     {
+      "id": "https://www.internradar.info/jobs/eli-lilly-and-company-intern-full-stack-engineer-4448149499",
+      "url": "https://www.internradar.info/jobs/eli-lilly-and-company-intern-full-stack-engineer-4448149499",
+      "title": "Intern - Full Stack Engineer — Eli Lilly and Company",
+      "content_text": "Company: Eli Lilly and Company · Location: Bengaluru East, Karnataka, India\n• Deliver development tasks for backend services and frontend UI features\n• Write clean, readable code following team standards and review feedback\n• Use foundational engineering tools like Git, pull requests, and issue trackers\n• Participate in agile ceremonies and perform unit/integration testing",
+      "date_published": "2026-08-03T08:42:32.871Z",
+      "authors": [
+        {
+          "name": "Eli Lilly and Company"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/great-learning-ai-film-making-internship-4447689632",
       "url": "https://www.internradar.info/jobs/great-learning-ai-film-making-internship-4447689632",
       "title": "AI Film Making(Internship) — Great Learning",
@@ -590,18 +602,6 @@
       "authors": [
         {
           "name": "Sprinklr"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/valeo-graduate-engineer-trainee-r-and-d-ptm-4205260262",
-      "url": "https://www.internradar.info/jobs/valeo-graduate-engineer-trainee-r-and-d-ptm-4205260262",
-      "title": "Graduate Engineer Trainee - R&D PTM — Valeo",
-      "content_text": "Company: Valeo · Location: Chennai, Tamil Nadu, India",
-      "date_published": "2026-07-25T17:22:14.007Z",
-      "authors": [
-        {
-          "name": "Valeo"
         }
       ]
     }

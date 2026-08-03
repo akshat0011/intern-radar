@@ -6,7 +6,18 @@
   <atom:link href="https://www.internradar.info/feed.xml" rel="self" type="application/rss+xml"/>
   <description>New engineering internships, listed within minutes of going live.</description>
   <language>en-in</language>
-  <lastBuildDate>Mon, 03 Aug 2026 08:49:43 GMT</lastBuildDate>
+  <lastBuildDate>Mon, 03 Aug 2026 09:04:01 GMT</lastBuildDate>
+  <item>
+    <title>Intern - Full Stack Engineer — Eli Lilly and Company</title>
+    <link>https://www.internradar.info/jobs/eli-lilly-and-company-intern-full-stack-engineer-4448149499</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/eli-lilly-and-company-intern-full-stack-engineer-4448149499</guid>
+    <pubDate>Mon, 03 Aug 2026 08:42:32 GMT</pubDate>
+    <description>Company: Eli Lilly and Company · Location: Bengaluru East, Karnataka, India
+• Deliver development tasks for backend services and frontend UI features
+• Write clean, readable code following team standards and review feedback
+• Use foundational engineering tools like Git, pull requests, and issue trackers
+• Participate in agile ceremonies and perform unit/integration testing</description>
+  </item>
   <item>
     <title>AI Film Making(Internship) — Great Learning</title>
     <link>https://www.internradar.info/jobs/great-learning-ai-film-making-internship-4447689632</link>
@@ -510,13 +521,6 @@
 • Work on real product features, learn design systems, contribute to user research
 • Proficiency in Figma (components, auto-layout, prototyping) is required
 • Exposure to AI design tools like Lovable, Cursor, and agentic design practices</description>
-  </item>
-  <item>
-    <title>Graduate Engineer Trainee - R&amp;D PTM — Valeo</title>
-    <link>https://www.internradar.info/jobs/valeo-graduate-engineer-trainee-r-and-d-ptm-4205260262</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/valeo-graduate-engineer-trainee-r-and-d-ptm-4205260262</guid>
-    <pubDate>Sat, 25 Jul 2026 17:22:14 GMT</pubDate>
-    <description>Company: Valeo · Location: Chennai, Tamil Nadu, India</description>
   </item>
 </channel>
 </rss>

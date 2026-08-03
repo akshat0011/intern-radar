@@ -1,7 +1,7 @@
 {
- "generatedAt": 1785746983501,
- "count": 82,
- "techCount": 82,
+ "generatedAt": 1785747841398,
+ "count": 83,
+ "techCount": 83,
  "otherCount": 0,
  "companies": [
   "ALLEN",
@@ -17,6 +17,7 @@
   "DeHaat",
   "Deutsche Bank",
   "Eightfold AI",
+  "Eli Lilly and Company",
   "Fiserv",
   "Fujitsu",
   "Great Learning",
@@ -84,6 +85,58 @@
   "Pune Division, Maharashtra, India"
  ],
  "jobs": [
+  {
+   "id": "4448149499",
+   "title": "Intern - Full Stack Engineer",
+   "company": "Eli Lilly and Company",
+   "matchedWatchlist": "Eli Lilly",
+   "isTech": true,
+   "roleSource": "gemini-enrich",
+   "logo": "/logos/eli-lilly-and-company.jpg",
+   "location": "Bengaluru East, Karnataka, India",
+   "workplaceType": "On-site",
+   "stipend": null,
+   "duration": null,
+   "applicants": null,
+   "easyApply": false,
+   "skills": [
+    "python",
+    "java",
+    "javascript",
+    "typescript",
+    "sql",
+    "react",
+    "angular",
+    "node.js",
+    "aws",
+    "git",
+    "rest api",
+    "data structures",
+    "agile"
+   ],
+   "summary": "At Lilly, the work is demanding because patients are waiting. We unite caring with discovery to help make life better for people around the world, knowing that every decision, every detail, and every day matters. Headquartered in Indianapolis, Indiana, our over 50,000 employees around the globe take on complex challenges to discover and deliver life-changing medicines, strengthen how health is understood and managed, and support the communities we serve. This is hard, urgent, selfless work—but it’s work worth doing.",
+   "bullets": [
+    "Deliver development tasks for backend services and frontend UI features",
+    "Write clean, readable code following team standards and review feedback",
+    "Use foundational engineering tools like Git, pull requests, and issue trackers",
+    "Participate in agile ceremonies and perform unit/integration testing"
+   ],
+   "roleLabel": "Full Stack Engineering",
+   "degreeLevel": null,
+   "degreeText": null,
+   "keySkills": [
+    "python",
+    "node.js",
+    "git"
+   ],
+   "stipendStatus": "unknown",
+   "postedText": "19 minutes ago",
+   "postedAt": 1785746552871,
+   "firstSeenAt": 1785747692880,
+   "url": "https://www.linkedin.com/jobs/view/4448149499/",
+   "applyUrl": "https://www.linkedin.com/jobs/view/4448149499/",
+   "description": null
+  },
   {
    "id": "4447689632",
    "title": "AI Film Making(Internship)",
