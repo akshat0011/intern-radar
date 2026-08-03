@@ -262,9 +262,11 @@ export function pushToSite(newJobCount) {
 
   // Everything publish regenerates. Narrow on purpose — never `git add .`, or an
   // unattended run would commit whatever source edit happened to be in progress.
+  // index.html is here because publish now writes the listings into it — only
+  // the region between the LISTINGS markers, everything else is hand-authored.
   const PUBLISHED = ['web/public/data', 'web/public/logos', 'web/public/jobs',
     'web/public/companies', 'web/public/sitemap.xml', 'web/public/robots.txt',
-    'web/public/feed.xml', 'web/public/feed.json'];
+    'web/public/feed.xml', 'web/public/feed.json', 'web/public/index.html'];
 
   const status = git(['status', '--porcelain', ...PUBLISHED], { allowFail: true });
   if (!status) {
@@ -310,6 +312,7 @@ export async function publish(store, cfg, newJobCount) {
     const { count, techCount, path, withLogo, logoBytes, pages } = await writeJobsFile(store, cfg);
     log.info(`Wrote ${count} jobs (${techCount} tech, ${count - techCount} other) to ${path.replace(ROOT, '.')} — ${withLogo} with a logo, ${Math.round(logoBytes / 1024)} KB stored`);
     log.info(`Generated ${pages.jobPages} job pages and ${pages.companyPages} company pages (${pages.indexable} indexable${pages.removed ? `, ${pages.removed} stale removed` : ''}).`);
+    log.info(`Homepage carries ${pages.homeLinks} crawlable listing link${pages.homeLinks === 1 ? '' : 's'}.`);
     if (cfg.publish?.autoPush !== false) pushToSite(newJobCount);
   } catch (err) {
     log.warn(`Publish step failed: ${err.message}`);

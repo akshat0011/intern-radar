@@ -21,7 +21,7 @@
  *    like a content farm, and that judgement is applied site-wide, not page by
  *    page.
  */
-import { writeFileSync, mkdirSync, readdirSync, rmSync, existsSync } from 'node:fs';
+import { writeFileSync, readFileSync, mkdirSync, readdirSync, rmSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 
 export const SITE = 'https://www.internradar.info';
@@ -348,6 +348,54 @@ function writeIfChanged(path, contents) {
 }
 
 /**
+ * Put the listings into the homepage's HTML.
+ *
+ * This is the fix for the thing Search Console actually reported. Every job
+ * page came back "URL is unknown to Google", with both discovery routes empty:
+ * "No referring sitemaps detected" and "Referring page: None detected". The
+ * homepage is the one URL Google had crawled, and it shipped an empty <ol> that
+ * JavaScript filled afterwards — so a crawler arriving there found marketing
+ * copy, one link to /companies/, and no way to reach a single listing. Crawl
+ * depth to a job page was three on a domain with no authority; now it is one.
+ *
+ * Every live job is listed rather than a sample, because the point is that each
+ * job page gains a referring link. app.js calls replaceChildren() on this list,
+ * so the moment the script runs these rows are gone and the interactive board
+ * takes over — no duplication, and nothing here is hidden from users to feed a
+ * crawler something different.
+ *
+ * Only the region between the two markers is touched. If they are missing the
+ * file is left completely alone: silently rewriting a hand-maintained page is a
+ * far worse failure than not adding links to it.
+ */
+function writeHomeListings(jobs, publicDir) {
+  const path = join(publicDir, 'index.html');
+  if (!existsSync(path)) return 0;
+
+  const html = readFileSync(path, 'utf8');
+  const open = '<!--LISTINGS-->';
+  const close = '<!--/LISTINGS-->';
+  const from = html.indexOf(open);
+  const to = html.indexOf(close);
+  if (from === -1 || to === -1 || to < from) {
+    console.warn('  index.html has no <!--LISTINGS--> markers — homepage links not written.');
+    return 0;
+  }
+
+  const rows = jobs.map((j) => {
+    const facts = [j.location, j.workplaceType, j.stipend]
+      .filter(Boolean).map((s) => esc(s)).join(' · ');
+    return `<li><a href="/jobs/${jobSlug(j)}">${esc(j.company)} — ${esc(j.title)}</a>`
+      + (facts ? `<span class="tiny"> ${facts}</span>` : '')
+      + '</li>';
+  }).join('\n');
+
+  const next = `${html.slice(0, from + open.length)}\n${rows}\n${html.slice(to)}`;
+  if (next !== html) writeFileSync(path, next);
+  return jobs.length;
+}
+
+/**
  * Regenerate every page. Stale files are removed rather than left to rot: a
  * posting that aged out of jobs.json must not keep a live URL, or the site
  * accumulates pages for jobs nobody can apply to any more.
@@ -396,8 +444,9 @@ export function writePages(jobs, publicDir) {
   writeSitemap(jobs, byCompany, publicDir);
   writeRobots(publicDir);
   const feedItems = writeFeeds(jobs, publicDir);
+  const homeLinks = writeHomeListings(jobs, publicDir);
 
-  return { jobPages: jobs.length, companyPages: byCompany.size, indexable, removed, feedItems };
+  return { jobPages: jobs.length, companyPages: byCompany.size, indexable, removed, feedItems, homeLinks };
 }
 
 /** Only indexable URLs go in the sitemap — submitting pages you tell Google to ignore is noise. */
