@@ -6,7 +6,7 @@
   <atom:link href="https://www.internradar.info/feed.xml" rel="self" type="application/rss+xml"/>
   <description>New engineering internships, listed within minutes of going live.</description>
   <language>en-in</language>
-  <lastBuildDate>Mon, 03 Aug 2026 15:03:53 GMT</lastBuildDate>
+  <lastBuildDate>Mon, 03 Aug 2026 15:18:52 GMT</lastBuildDate>
   <item>
     <title>Intern Software Developer - Singapore - 2027 — Squarepoint Capital</title>
     <link>https://www.internradar.info/jobs/squarepoint-capital-intern-software-developer-singapore-2027-ats-greenhouse-squarepointcapital-6201998</link>
@@ -158,6 +158,13 @@
 • Participate in pre-flight calibration including geometrical, spatial, and radiometric calibration
 • Develop and deploy software for imaging system calibration and testing
 • Analyze volume data to guide engineering decisions</description>
+  </item>
+  <item>
+    <title>Research &amp; Engagement Intern — Kantar</title>
+    <link>https://www.internradar.info/jobs/kantar-research-and-engagement-intern-ats-workday-kantar-wd3-kantar-r102157</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/kantar-research-and-engagement-intern-ats-workday-kantar-wd3-kantar-r102157</guid>
+    <pubDate>Mon, 03 Aug 2026 00:00:00 GMT</pubDate>
+    <description>Company: Kantar · Location: Amsterdam, Amsteldijk · Duration: 5-6 months</description>
   </item>
   <item>
     <title>2027 Technology Developer Summer Internship Programme India — Barclays</title>
@@ -411,13 +418,6 @@
     <guid isPermaLink="true">https://www.internradar.info/jobs/zscaler-site-reliability-engineer-federal-skillbridge-intern-ats-greenhouse-zscaler-5046050007</guid>
     <pubDate>Thu, 30 Jul 2026 17:35:34 GMT</pubDate>
     <description>Company: Zscaler · Location: Remote - Virginia, USA</description>
-  </item>
-  <item>
-    <title>Phishing Analyst-SkillBridge Intern — Zscaler</title>
-    <link>https://www.internradar.info/jobs/zscaler-phishing-analyst-skillbridge-intern-ats-greenhouse-zscaler-5065302007</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/zscaler-phishing-analyst-skillbridge-intern-ats-greenhouse-zscaler-5065302007</guid>
-    <pubDate>Thu, 30 Jul 2026 17:35:34 GMT</pubDate>
-    <description>Company: Zscaler · Location: Remote - USA</description>
   </item>
 </channel>
 </rss>
