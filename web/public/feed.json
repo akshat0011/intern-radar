@@ -246,6 +246,42 @@
       ]
     },
     {
+      "id": "https://www.internradar.info/jobs/micron-technology-intern-digital-automation-and-solutions-team-ats-workday-micron-wd1-external-jr102272",
+      "url": "https://www.internradar.info/jobs/micron-technology-intern-digital-automation-and-solutions-team-ats-workday-micron-wd1-external-jr102272",
+      "title": "Intern - Digital Automation and Solutions Team — Micron Technology",
+      "content_text": "Company: Micron Technology · Location: Fab 10N/X, Singapore",
+      "date_published": "2026-08-03T00:00:00.000Z",
+      "authors": [
+        {
+          "name": "Micron Technology"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/micron-technology-intern-ml-ai-engineer-product-engineering-stpg-ats-workday-micron-wd1-external-jr93102",
+      "url": "https://www.internradar.info/jobs/micron-technology-intern-ml-ai-engineer-product-engineering-stpg-ats-workday-micron-wd1-external-jr93102",
+      "title": "Intern – ML/AI Engineer (Product Engineering, STPG) — Micron Technology",
+      "content_text": "Company: Micron Technology · Location: Fab 10N/X, Singapore",
+      "date_published": "2026-08-03T00:00:00.000Z",
+      "authors": [
+        {
+          "name": "Micron Technology"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/micron-technology-intern-pie-pi-product-integration-engineering-process-integration-ats-workday-micron-wd1-external-jr96407",
+      "url": "https://www.internradar.info/jobs/micron-technology-intern-pie-pi-product-integration-engineering-process-integration-ats-workday-micron-wd1-external-jr96407",
+      "title": "Intern- PIE PI (Product Integration Engineering, Process Integration) — Micron Technology",
+      "content_text": "Company: Micron Technology · Location: Fab 10N/X, Singapore · Duration: 5 months",
+      "date_published": "2026-08-03T00:00:00.000Z",
+      "authors": [
+        {
+          "name": "Micron Technology"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/kantar-research-and-engagement-intern-ats-workday-kantar-wd3-kantar-r102157",
       "url": "https://www.internradar.info/jobs/kantar-research-and-engagement-intern-ats-workday-kantar-wd3-kantar-r102157",
       "title": "Research & Engagement Intern — Kantar",
@@ -534,6 +570,18 @@
       ]
     },
     {
+      "id": "https://www.internradar.info/jobs/piramal-apprentice-ats-workday-piramalpharma-wd102-piramal-external-careers-r00003234",
+      "url": "https://www.internradar.info/jobs/piramal-apprentice-ats-workday-piramalpharma-wd102-piramal-external-careers-r00003234",
+      "title": "Apprentice — Piramal",
+      "content_text": "Company: Piramal · Location: Dahej,GJ",
+      "date_published": "2026-07-31T00:00:00.000Z",
+      "authors": [
+        {
+          "name": "Piramal"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/volvo-group-graduate-apprentice-trainee-sw-verification-4447210792",
       "url": "https://www.internradar.info/jobs/volvo-group-graduate-apprentice-trainee-sw-verification-4447210792",
       "title": "Graduate apprentice trainee - SW Verification — Volvo Group",
@@ -554,54 +602,6 @@
       "authors": [
         {
           "name": "Barclays"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/bajaj-finserv-functional-trainee-4447067288",
-      "url": "https://www.internradar.info/jobs/bajaj-finserv-functional-trainee-4447067288",
-      "title": "Functional Trainee — Bajaj Finserv",
-      "content_text": "Company: Bajaj Finserv · Location: Ranchi, Jharkhand, India",
-      "date_published": "2026-07-30T18:31:13.162Z",
-      "authors": [
-        {
-          "name": "Bajaj Finserv"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/bajaj-finserv-functional-trainee-4447085142",
-      "url": "https://www.internradar.info/jobs/bajaj-finserv-functional-trainee-4447085142",
-      "title": "Functional Trainee — Bajaj Finserv",
-      "content_text": "Company: Bajaj Finserv · Location: Sandila, Uttar Pradesh, India",
-      "date_published": "2026-07-30T18:31:01.765Z",
-      "authors": [
-        {
-          "name": "Bajaj Finserv"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/zscaler-site-reliability-engineer-skillbridge-intern-ats-greenhouse-zscaler-5045817007",
-      "url": "https://www.internradar.info/jobs/zscaler-site-reliability-engineer-skillbridge-intern-ats-greenhouse-zscaler-5045817007",
-      "title": "Site Reliability Engineer-SkillBridge Intern — Zscaler",
-      "content_text": "Company: Zscaler · Location: Remote - USA",
-      "date_published": "2026-07-30T17:35:34.000Z",
-      "authors": [
-        {
-          "name": "Zscaler"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/zscaler-site-reliability-engineer-federal-skillbridge-intern-ats-greenhouse-zscaler-5046050007",
-      "url": "https://www.internradar.info/jobs/zscaler-site-reliability-engineer-federal-skillbridge-intern-ats-greenhouse-zscaler-5046050007",
-      "title": "Site Reliability Engineer Federal- SkillBridge Intern — Zscaler",
-      "content_text": "Company: Zscaler · Location: Remote - Virginia, USA",
-      "date_published": "2026-07-30T17:35:34.000Z",
-      "authors": [
-        {
-          "name": "Zscaler"
         }
       ]
     }
