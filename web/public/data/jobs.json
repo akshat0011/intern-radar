@@ -1,7 +1,7 @@
 {
- "generatedAt": 1785774810365,
- "count": 199,
- "techCount": 199,
+ "generatedAt": 1785775721045,
+ "count": 200,
+ "techCount": 200,
  "otherCount": 0,
  "companies": [
   "ALLEN",
@@ -166,6 +166,38 @@
   "Warsaw, Poland"
  ],
  "jobs": [
+  {
+   "id": "4448323159",
+   "title": "Graduate Engineer Trainee",
+   "company": "Emerson",
+   "matchedWatchlist": "Emerson",
+   "isTech": true,
+   "roleSource": "gemini-description",
+   "logo": "/logos/emerson.jpg",
+   "location": "Pune Division, Maharashtra, India",
+   "workplaceType": "Hybrid",
+   "stipend": null,
+   "duration": null,
+   "applicants": null,
+   "easyApply": false,
+   "skills": [
+    "sql",
+    "excel"
+   ],
+   "summary": "In This Role, Your Responsibilities Will Be: Hands-on experience in HMI/SCADA configuration based on Movicon , CIMPLICITY, and iFIX. Minimum Qualification – Bachelor’s / Master’s degree or equivalent experience Instrumentation/ Electronics Engineering preferably with Scada, PLC, HMI and metering flow computer background. Minimum Qualification – Bachelor’s / Master’s degree or equivalent experience in Instrumentation / Electronics Engineering",
+   "bullets": [],
+   "roleLabel": null,
+   "degreeLevel": null,
+   "degreeText": null,
+   "keySkills": [],
+   "stipendStatus": "unknown",
+   "postedText": "9 minutes ago",
+   "postedAt": 1785775041804,
+   "firstSeenAt": 1785775581806,
+   "url": "https://www.linkedin.com/jobs/view/4448323159/",
+   "applyUrl": "https://www.linkedin.com/jobs/view/4448323159/",
+   "description": null
+  },
   {
    "id": "ats:greenhouse:squarepointcapital:6201998",
    "title": "Intern Software Developer - Singapore - 2027",

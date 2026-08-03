@@ -6,6 +6,18 @@
   "description": "New engineering internships, listed within minutes of going live.",
   "items": [
     {
+      "id": "https://www.internradar.info/jobs/emerson-graduate-engineer-trainee-4448323159",
+      "url": "https://www.internradar.info/jobs/emerson-graduate-engineer-trainee-4448323159",
+      "title": "Graduate Engineer Trainee — Emerson",
+      "content_text": "Company: Emerson · Location: Pune Division, Maharashtra, India",
+      "date_published": "2026-08-03T16:37:21.804Z",
+      "authors": [
+        {
+          "name": "Emerson"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/squarepoint-capital-intern-software-developer-singapore-2027-ats-greenhouse-squarepointcapital-6201998",
       "url": "https://www.internradar.info/jobs/squarepoint-capital-intern-software-developer-singapore-2027-ats-greenhouse-squarepointcapital-6201998",
       "title": "Intern Software Developer - Singapore - 2027 — Squarepoint Capital",
@@ -590,18 +602,6 @@
       "authors": [
         {
           "name": "Noise"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/piramal-apprentice-ats-workday-piramalpharma-wd102-piramal-external-careers-r00003234",
-      "url": "https://www.internradar.info/jobs/piramal-apprentice-ats-workday-piramalpharma-wd102-piramal-external-careers-r00003234",
-      "title": "Apprentice — Piramal",
-      "content_text": "Company: Piramal · Location: Dahej,GJ",
-      "date_published": "2026-07-31T00:00:00.000Z",
-      "authors": [
-        {
-          "name": "Piramal"
         }
       ]
     }
