@@ -6,6 +6,42 @@
   "description": "New engineering internships, listed within minutes of going live.",
   "items": [
     {
+      "id": "https://www.internradar.info/jobs/intel-attraction-req-intern-4447993213",
+      "url": "https://www.internradar.info/jobs/intel-attraction-req-intern-4447993213",
+      "title": "Attraction Req : Intern — Intel",
+      "content_text": "Company: Intel · Location: Bengaluru, Karnataka, India",
+      "date_published": "2026-08-03T13:29:54.890Z",
+      "authors": [
+        {
+          "name": "Intel"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/piramal-pharma-ltd-apprentice-adl-4445892819",
+      "url": "https://www.internradar.info/jobs/piramal-pharma-ltd-apprentice-adl-4445892819",
+      "title": "Apprentice - ADL — Piramal Pharma Ltd",
+      "content_text": "Company: Piramal Pharma Ltd · Location: Ahmedabad, Gujarat, India",
+      "date_published": "2026-08-03T11:53:08.950Z",
+      "authors": [
+        {
+          "name": "Piramal Pharma Ltd"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/microsoft-research-sciences-intern-ats-microsoft-india-1970393556638637",
+      "url": "https://www.internradar.info/jobs/microsoft-research-sciences-intern-ats-microsoft-india-1970393556638637",
+      "title": "Research Sciences INTERN — Microsoft",
+      "content_text": "Company: Microsoft · Location: India, Karnataka, Bangalore",
+      "date_published": "2026-08-03T11:15:20.000Z",
+      "authors": [
+        {
+          "name": "Microsoft"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/delhivery-product-management-intern-4445893504",
       "url": "https://www.internradar.info/jobs/delhivery-product-management-intern-4445893504",
       "title": "Product Management Intern — Delhivery",
@@ -14,6 +50,66 @@
       "authors": [
         {
           "name": "Delhivery"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/emerson-intern-power-greenfield-4448170119",
+      "url": "https://www.internradar.info/jobs/emerson-intern-power-greenfield-4448170119",
+      "title": "Intern-Power Greenfield — Emerson",
+      "content_text": "Company: Emerson · Location: Noida, Uttar Pradesh, India",
+      "date_published": "2026-08-03T10:37:35.094Z",
+      "authors": [
+        {
+          "name": "Emerson"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/western-digital-intern-data-science-ats-smartrecruiters-westerndigital-744000141229015",
+      "url": "https://www.internradar.info/jobs/western-digital-intern-data-science-ats-smartrecruiters-westerndigital-744000141229015",
+      "title": "Intern - Data Science — Western Digital",
+      "content_text": "Company: Western Digital · Location: Bayan Lepas, my",
+      "date_published": "2026-08-03T10:34:13.038Z",
+      "authors": [
+        {
+          "name": "Western Digital"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/hdfc-bank-limited-trainee-analyst-4445890480",
+      "url": "https://www.internradar.info/jobs/hdfc-bank-limited-trainee-analyst-4445890480",
+      "title": "Trainee Analyst — HDFC Bank Limited",
+      "content_text": "Company: HDFC Bank Limited · Location: Mumbai, Maharashtra, India",
+      "date_published": "2026-08-03T10:33:39.742Z",
+      "authors": [
+        {
+          "name": "HDFC Bank Limited"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/western-digital-intern-firmware-engineering-ats-smartrecruiters-westerndigital-744000141229499",
+      "url": "https://www.internradar.info/jobs/western-digital-intern-firmware-engineering-ats-smartrecruiters-westerndigital-744000141229499",
+      "title": "Intern- Firmware Engineering — Western Digital",
+      "content_text": "Company: Western Digital · Location: Petaling Jaya, my",
+      "date_published": "2026-08-03T10:30:19.190Z",
+      "authors": [
+        {
+          "name": "Western Digital"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/western-digital-internship-software-engineering-ats-smartrecruiters-westerndigital-744000141229099",
+      "url": "https://www.internradar.info/jobs/western-digital-internship-software-engineering-ats-smartrecruiters-westerndigital-744000141229099",
+      "title": "Internship - Software Engineering — Western Digital",
+      "content_text": "Company: Western Digital · Location: Petaling Jaya, my",
+      "date_published": "2026-08-03T10:28:36.169Z",
+      "authors": [
+        {
+          "name": "Western Digital"
         }
       ]
     },
@@ -30,6 +126,66 @@
       ]
     },
     {
+      "id": "https://www.internradar.info/jobs/jump-trading-campus-quantitative-trader-intern-ats-greenhouse-jumptrading-8027941",
+      "url": "https://www.internradar.info/jobs/jump-trading-campus-quantitative-trader-intern-ats-greenhouse-jumptrading-8027941",
+      "title": "Campus Quantitative Trader (Intern) — Jump Trading",
+      "content_text": "Company: Jump Trading · Location: Singapore",
+      "date_published": "2026-08-03T07:00:24.000Z",
+      "authors": [
+        {
+          "name": "Jump Trading"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/jump-trading-campus-quantitative-researcher-intern-ats-greenhouse-jumptrading-8027939",
+      "url": "https://www.internradar.info/jobs/jump-trading-campus-quantitative-researcher-intern-ats-greenhouse-jumptrading-8027939",
+      "title": "Campus Quantitative Researcher (Intern) — Jump Trading",
+      "content_text": "Company: Jump Trading · Location: Singapore",
+      "date_published": "2026-08-03T07:00:20.000Z",
+      "authors": [
+        {
+          "name": "Jump Trading"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/jump-trading-campus-systems-engineer-intern-ats-greenhouse-jumptrading-8027952",
+      "url": "https://www.internradar.info/jobs/jump-trading-campus-systems-engineer-intern-ats-greenhouse-jumptrading-8027952",
+      "title": "Campus Systems Engineer (Intern) — Jump Trading",
+      "content_text": "Company: Jump Trading · Location: Singapore",
+      "date_published": "2026-08-03T07:00:11.000Z",
+      "authors": [
+        {
+          "name": "Jump Trading"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/jump-trading-campus-python-software-engineer-intern-ats-greenhouse-jumptrading-8027955",
+      "url": "https://www.internradar.info/jobs/jump-trading-campus-python-software-engineer-intern-ats-greenhouse-jumptrading-8027955",
+      "title": "Campus Python Software Engineer (Intern) — Jump Trading",
+      "content_text": "Company: Jump Trading · Location: Singapore",
+      "date_published": "2026-08-03T07:00:07.000Z",
+      "authors": [
+        {
+          "name": "Jump Trading"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/jump-trading-campus-c-software-engineer-intern-ats-greenhouse-jumptrading-8027946",
+      "url": "https://www.internradar.info/jobs/jump-trading-campus-c-software-engineer-intern-ats-greenhouse-jumptrading-8027946",
+      "title": "Campus C++ Software Engineer (Intern) — Jump Trading",
+      "content_text": "Company: Jump Trading · Location: Singapore",
+      "date_published": "2026-08-03T07:00:02.000Z",
+      "authors": [
+        {
+          "name": "Jump Trading"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/great-learning-ai-film-making-internship-4447689632",
       "url": "https://www.internradar.info/jobs/great-learning-ai-film-making-internship-4447689632",
       "title": "AI Film Making(Internship) — Great Learning",
@@ -38,6 +194,18 @@
       "authors": [
         {
           "name": "Great Learning"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/western-digital-intern-manufacturing-engineer-ats-smartrecruiters-westerndigital-744000141175090",
+      "url": "https://www.internradar.info/jobs/western-digital-intern-manufacturing-engineer-ats-smartrecruiters-westerndigital-744000141175090",
+      "title": "Intern - Manufacturing Engineer — Western Digital",
+      "content_text": "Company: Western Digital · Location: Kuching, my",
+      "date_published": "2026-08-03T05:07:14.322Z",
+      "authors": [
+        {
+          "name": "Western Digital"
         }
       ]
     },
@@ -102,6 +270,18 @@
       ]
     },
     {
+      "id": "https://www.internradar.info/jobs/postman-labs-ai-engineer-intern-ats-greenhouse-postman-7823417003",
+      "url": "https://www.internradar.info/jobs/postman-labs-ai-engineer-intern-ats-greenhouse-postman-7823417003",
+      "title": "AI Engineer, Intern — Postman Labs",
+      "content_text": "Company: Postman Labs · Location: Berkeley, California, United States · Stipend: 4,048",
+      "date_published": "2026-08-01T14:52:20.000Z",
+      "authors": [
+        {
+          "name": "Postman Labs"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/american-express-apprentice-4438342357",
       "url": "https://www.internradar.info/jobs/american-express-apprentice-4438342357",
       "title": "Apprentice — American Express",
@@ -122,6 +302,42 @@
       "authors": [
         {
           "name": "American Express"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/palantir-product-designer-internship-us-government-ats-lever-palantir-9db71277-3a9a-481b-a2a3-25c3125b0e8a",
+      "url": "https://www.internradar.info/jobs/palantir-product-designer-internship-us-government-ats-lever-palantir-9db71277-3a9a-481b-a2a3-25c3125b0e8a",
+      "title": "Product Designer, Internship - US Government — Palantir",
+      "content_text": "Company: Palantir · Location: Palo Alto, CA",
+      "date_published": "2026-07-31T21:35:37.281Z",
+      "authors": [
+        {
+          "name": "Palantir"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/cloudflare-customer-advocacy-intern-fall-2026-ats-greenhouse-cloudflare-8093127",
+      "url": "https://www.internradar.info/jobs/cloudflare-customer-advocacy-intern-fall-2026-ats-greenhouse-cloudflare-8093127",
+      "title": "Customer Advocacy Intern (Fall 2026) — Cloudflare",
+      "content_text": "Company: Cloudflare · Location: In-Office · Duration: Fall 2026",
+      "date_published": "2026-07-31T16:36:12.000Z",
+      "authors": [
+        {
+          "name": "Cloudflare"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/western-digital-summer-2027-intern-hardware-engineering-ats-smartrecruiters-westerndigital-744000140949875",
+      "url": "https://www.internradar.info/jobs/western-digital-summer-2027-intern-hardware-engineering-ats-smartrecruiters-westerndigital-744000140949875",
+      "title": "Summer 2027 Intern - Hardware Engineering — Western Digital",
+      "content_text": "Company: Western Digital · Location: San Jose, us · Duration: Summer 2027",
+      "date_published": "2026-07-31T15:44:17.247Z",
+      "authors": [
+        {
+          "name": "Western Digital"
         }
       ]
     },
@@ -174,6 +390,30 @@
       ]
     },
     {
+      "id": "https://www.internradar.info/jobs/point72-corporate-access-off-cycle-internship-6-months-japanese-speaking-ats-greenhouse-point72-8603979002",
+      "url": "https://www.internradar.info/jobs/point72-corporate-access-off-cycle-internship-6-months-japanese-speaking-ats-greenhouse-point72-8603979002",
+      "title": "Corporate Access, off-cycle internship (6-months) – Japanese speaking — Point72",
+      "content_text": "Company: Point72 · Location: Hong Kong",
+      "date_published": "2026-07-31T11:40:14.000Z",
+      "authors": [
+        {
+          "name": "Point72"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/western-digital-process-engineer-intern-ats-smartrecruiters-westerndigital-744000140863524",
+      "url": "https://www.internradar.info/jobs/western-digital-process-engineer-intern-ats-smartrecruiters-westerndigital-744000140863524",
+      "title": "Process Engineer (Intern) — Western Digital",
+      "content_text": "Company: Western Digital · Location: Bayan Lepas, my",
+      "date_published": "2026-07-31T09:28:53.386Z",
+      "authors": [
+        {
+          "name": "Western Digital"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/newton-school-of-technology-product-intern-4446988446",
       "url": "https://www.internradar.info/jobs/newton-school-of-technology-product-intern-4446988446",
       "title": "Product Intern — Newton School of Technology",
@@ -206,6 +446,30 @@
       "authors": [
         {
           "name": "Fujitsu"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/bybit-nlp-algorithm-engineer-intern-ats-greenhouse-bybit-4868977101",
+      "url": "https://www.internradar.info/jobs/bybit-nlp-algorithm-engineer-intern-ats-greenhouse-bybit-4868977101",
+      "title": "NLP Algorithm Engineer Intern — Bybit",
+      "content_text": "Company: Bybit · Location: APAC - Remote",
+      "date_published": "2026-07-31T04:01:41.000Z",
+      "authors": [
+        {
+          "name": "Bybit"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/western-digital-intern-web-developer-ats-smartrecruiters-westerndigital-744000140814058",
+      "url": "https://www.internradar.info/jobs/western-digital-intern-web-developer-ats-smartrecruiters-westerndigital-744000140814058",
+      "title": "Intern - Web Developer — Western Digital",
+      "content_text": "Company: Western Digital · Location: Amphoe Si Maha Phot, th",
+      "date_published": "2026-07-31T02:08:28.538Z",
+      "authors": [
+        {
+          "name": "Western Digital"
         }
       ]
     },
@@ -246,59 +510,11 @@
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/quest-global-ai-ml-intern-4446793926",
-      "url": "https://www.internradar.info/jobs/quest-global-ai-ml-intern-4446793926",
-      "title": "AI/ML Intern — Quest Global",
-      "content_text": "Company: Quest Global · Location: Pune Division, Maharashtra, India",
-      "date_published": "2026-07-30T17:08:04.966Z",
-      "authors": [
-        {
-          "name": "Quest Global"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/whatfix-ai-intern-4446765544",
-      "url": "https://www.internradar.info/jobs/whatfix-ai-intern-4446765544",
-      "title": "AI Intern — Whatfix",
-      "content_text": "Company: Whatfix · Location: Bengaluru, Karnataka, India\n• Work on AI agentification initiatives, replacing manual workflows with AI agents\n• Join a small, high-impact team working directly with senior leadership\n• Focus on intelligent process automation for internal functions like Sales, HR, Finance",
-      "date_published": "2026-07-30T12:44:33.351Z",
-      "authors": [
-        {
-          "name": "Whatfix"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/philips-apprentice-trainee-software-developer-4446760255",
-      "url": "https://www.internradar.info/jobs/philips-apprentice-trainee-software-developer-4446760255",
-      "title": "Apprentice Trainee (Software Developer) — Philips",
-      "content_text": "Company: Philips · Location: Bengaluru, Karnataka, India\n• Work as a software developer apprentice trainee\n• Requires active student status/enrollment at a university, college, or vocational education",
-      "date_published": "2026-07-30T11:41:13.407Z",
-      "authors": [
-        {
-          "name": "Philips"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/icertis-intern-4446851335",
-      "url": "https://www.internradar.info/jobs/icertis-intern-4446851335",
-      "title": "Intern — Icertis",
-      "content_text": "Company: Icertis · Location: Pune City, Maharashtra, India · Duration: 6 months\n• Support Program Manager by tracking plans, milestones, and deliverables\n• Coordinate meetings, document minutes, and follow up on action items with stakeholders\n• Collect project data, prepare status reports, dashboards, and executive presentations\n• Maintain RAID logs, track escalations, and assist in identifying project risks",
-      "date_published": "2026-07-29T19:52:51.543Z",
-      "authors": [
-        {
-          "name": "Icertis"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/bajaj-finserv-trainee-technology-4446847089",
-      "url": "https://www.internradar.info/jobs/bajaj-finserv-trainee-technology-4446847089",
-      "title": "Trainee Technology — Bajaj Finserv",
-      "content_text": "Company: Bajaj Finserv · Location: Pune Division, Maharashtra, India",
-      "date_published": "2026-07-29T18:30:35.872Z",
+      "id": "https://www.internradar.info/jobs/bajaj-finserv-functional-trainee-4447067288",
+      "url": "https://www.internradar.info/jobs/bajaj-finserv-functional-trainee-4447067288",
+      "title": "Functional Trainee — Bajaj Finserv",
+      "content_text": "Company: Bajaj Finserv · Location: Ranchi, Jharkhand, India",
+      "date_published": "2026-07-30T18:31:13.162Z",
       "authors": [
         {
           "name": "Bajaj Finserv"
@@ -306,302 +522,86 @@
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/pw-physicswallah-generative-ai-engineer-intern-4446804823",
-      "url": "https://www.internradar.info/jobs/pw-physicswallah-generative-ai-engineer-intern-4446804823",
-      "title": "Generative AI Engineer Intern — PW (PhysicsWallah)",
-      "content_text": "Company: PW (PhysicsWallah) · Location: Noida, Uttar Pradesh, India · Stipend: ₹20,000 / month · Duration: 6 months\n• Design, build, and deploy AI agents and automated workflows for internal operations\n• Integrate LLM APIs (Claude) with internal tools and data sources\n• Build no-code/low-code automations (n8n) and custom Python solutions\n• Test, debug, and iterate on agents based on business team feedback",
-      "date_published": "2026-07-29T15:04:37.691Z",
+      "id": "https://www.internradar.info/jobs/bajaj-finserv-functional-trainee-4447085142",
+      "url": "https://www.internradar.info/jobs/bajaj-finserv-functional-trainee-4447085142",
+      "title": "Functional Trainee — Bajaj Finserv",
+      "content_text": "Company: Bajaj Finserv · Location: Sandila, Uttar Pradesh, India",
+      "date_published": "2026-07-30T18:31:01.765Z",
       "authors": [
         {
-          "name": "PW (PhysicsWallah)"
+          "name": "Bajaj Finserv"
         }
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/s-and-p-global-apprentice-software-development-engineering-4446406022",
-      "url": "https://www.internradar.info/jobs/s-and-p-global-apprentice-software-development-engineering-4446406022",
-      "title": "Apprentice, Software Development/Engineering — S&P Global",
-      "content_text": "Company: S&P Global · Location: Hyderabad, Telangana, India",
-      "date_published": "2026-07-29T14:51:34.450Z",
+      "id": "https://www.internradar.info/jobs/zscaler-site-reliability-engineer-skillbridge-intern-ats-greenhouse-zscaler-5045817007",
+      "url": "https://www.internradar.info/jobs/zscaler-site-reliability-engineer-skillbridge-intern-ats-greenhouse-zscaler-5045817007",
+      "title": "Site Reliability Engineer-SkillBridge Intern — Zscaler",
+      "content_text": "Company: Zscaler · Location: Remote - USA",
+      "date_published": "2026-07-30T17:35:34.000Z",
       "authors": [
         {
-          "name": "S&P Global"
+          "name": "Zscaler"
         }
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/nokia-agentic-ai-and-automation-trainee-egypt-4444132578",
-      "url": "https://www.internradar.info/jobs/nokia-agentic-ai-and-automation-trainee-egypt-4444132578",
-      "title": "Agentic AI & Automation Trainee - Egypt — Nokia",
-      "content_text": "Company: Nokia · Location: Bengaluru, Karnataka, India\n• Support engineering teams in adopting AI coding assistants like GitHub Copilot and Claude Code\n• Design and implement Agentic AI workflows using frameworks like LangGraph\n• Contribute to LLM-based applications and RAG pipelines for intelligent automation\n• Configure and optimize development environments, IDEs, and engineering tools",
-      "date_published": "2026-07-29T14:43:39.106Z",
+      "id": "https://www.internradar.info/jobs/zscaler-site-reliability-engineer-federal-skillbridge-intern-ats-greenhouse-zscaler-5046050007",
+      "url": "https://www.internradar.info/jobs/zscaler-site-reliability-engineer-federal-skillbridge-intern-ats-greenhouse-zscaler-5046050007",
+      "title": "Site Reliability Engineer Federal- SkillBridge Intern — Zscaler",
+      "content_text": "Company: Zscaler · Location: Remote - Virginia, USA",
+      "date_published": "2026-07-30T17:35:34.000Z",
       "authors": [
         {
-          "name": "Nokia"
+          "name": "Zscaler"
         }
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/greyorange-product-management-intern-4444110838",
-      "url": "https://www.internradar.info/jobs/greyorange-product-management-intern-4444110838",
-      "title": "Product Management Intern — GreyOrange",
-      "content_text": "Company: GreyOrange · Location: Gurugram, Haryana, India · Duration: 6 months\n• Define product requirements, user stories, and feature specifications with Product Managers\n• Conduct market, customer, and competitor research to find product opportunities\n• Analyze product usage and feedback to generate actionable insights for roadmap planning\n• Collaborate with Engineering, Design, and Customer Success teams for product launches",
-      "date_published": "2026-07-29T11:46:26.595Z",
+      "id": "https://www.internradar.info/jobs/zscaler-phishing-analyst-skillbridge-intern-ats-greenhouse-zscaler-5065302007",
+      "url": "https://www.internradar.info/jobs/zscaler-phishing-analyst-skillbridge-intern-ats-greenhouse-zscaler-5065302007",
+      "title": "Phishing Analyst-SkillBridge Intern — Zscaler",
+      "content_text": "Company: Zscaler · Location: Remote - USA",
+      "date_published": "2026-07-30T17:35:34.000Z",
       "authors": [
         {
-          "name": "GreyOrange"
+          "name": "Zscaler"
         }
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/newgen-innovation-ai-and-design-thinking-product-management-intern-4443670910",
-      "url": "https://www.internradar.info/jobs/newgen-innovation-ai-and-design-thinking-product-management-intern-4443670910",
-      "title": "Product Management Intern — NewGen Innovation : AI & Design Thinking",
-      "content_text": "Company: NewGen Innovation : AI & Design Thinking · Location: Mumbai, Maharashtra, India · Stipend: ₹35,000 / total · Duration: 1 to 2 years\n• Work with founders, AI engineers, and designers to build AI-powered products\n• Conduct customer and market research, gather requirements, and plan product roadmaps\n• Create wireframes, user journeys, and monitor product performance using analytics\n• 6-month on-site internship in Powai, with potential for a full-time offer",
-      "date_published": "2026-07-29T09:37:44.191Z",
+      "id": "https://www.internradar.info/jobs/zscaler-insider-risk-analyst-skillbridge-intern-ats-greenhouse-zscaler-5100618007",
+      "url": "https://www.internradar.info/jobs/zscaler-insider-risk-analyst-skillbridge-intern-ats-greenhouse-zscaler-5100618007",
+      "title": "Insider Risk Analyst - SkillBridge Intern — Zscaler",
+      "content_text": "Company: Zscaler · Location: Remote - USA",
+      "date_published": "2026-07-30T17:35:34.000Z",
       "authors": [
         {
-          "name": "NewGen Innovation : AI & Design Thinking"
+          "name": "Zscaler"
         }
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/allen-grc-intern-4446049382",
-      "url": "https://www.internradar.info/jobs/allen-grc-intern-4446049382",
-      "title": "GRC Intern — ALLEN",
-      "content_text": "Company: ALLEN · Location: Bangalore Urban, Karnataka, India · Duration: 6–9 months\n• Support the Information Security and Compliance team, maintaining security, privacy, and governance frameworks\n• Collect audit evidence, maintain ISMS/PIMS documentation, risk registers, and compliance records\n• Work with ISO 27001, ISO 27701, DPDPA, and coordinate vendor security assessments\n• 6-9 month internship with potential for full-time offer based on performance",
-      "date_published": "2026-07-29T09:02:52.017Z",
+      "id": "https://www.internradar.info/jobs/zscaler-federal-security-operations-skillbridge-intern-ats-greenhouse-zscaler-5069684007",
+      "url": "https://www.internradar.info/jobs/zscaler-federal-security-operations-skillbridge-intern-ats-greenhouse-zscaler-5069684007",
+      "title": "Federal Security Operations - SkillBridge Intern — Zscaler",
+      "content_text": "Company: Zscaler · Location: Remote - USA",
+      "date_published": "2026-07-30T17:35:34.000Z",
       "authors": [
         {
-          "name": "ALLEN"
+          "name": "Zscaler"
         }
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/mizuho-information-technology-apprentice-4435094310",
-      "url": "https://www.internradar.info/jobs/mizuho-information-technology-apprentice-4435094310",
-      "title": "Information Technology apprentice — Mizuho",
-      "content_text": "Company: Mizuho · Location: Navi Mumbai, Maharashtra, India\n• Help with helpdesk, Active Directory management, and unlocking applications\n• Troubleshoot and resolve IT issues, create IT documentation\n• Work in rotational shifts and on-call schedule for 1 year\n• Looking for recent IT graduates or postgraduates in or near Navi Mumbai",
-      "date_published": "2026-07-29T07:41:42.252Z",
+      "id": "https://www.internradar.info/jobs/zscaler-detection-engineer-skillbridge-intern-ats-greenhouse-zscaler-5114254007",
+      "url": "https://www.internradar.info/jobs/zscaler-detection-engineer-skillbridge-intern-ats-greenhouse-zscaler-5114254007",
+      "title": "Detection Engineer- SkillBridge Intern — Zscaler",
+      "content_text": "Company: Zscaler · Location: Remote - USA",
+      "date_published": "2026-07-30T17:35:34.000Z",
       "authors": [
         {
-          "name": "Mizuho"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/pixxel-image-processing-intern-qa-qc-4446528118",
-      "url": "https://www.internradar.info/jobs/pixxel-image-processing-intern-qa-qc-4446528118",
-      "title": "Image processing Intern (QA/QC) — Pixxel",
-      "content_text": "Company: Pixxel · Location: Bengaluru, Karnataka, India · Duration: 0–1 years\n• Identify and flag issues like missing data, corrupted files, or incorrect geotagging\n• Document findings and collaborate with imaging and data engineering teams to resolve quality issues",
-      "date_published": "2026-07-29T00:45:04.016Z",
-      "authors": [
-        {
-          "name": "Pixxel"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/adobe-ai-engineer-apprentice-4445799105",
-      "url": "https://www.internradar.info/jobs/adobe-ai-engineer-apprentice-4445799105",
-      "title": "AI Engineer Apprentice — Adobe",
-      "content_text": "Company: Adobe · Location: Bengaluru East, Karnataka, India · Duration: 6 months\n• Learn Python, LLM APIs, and prompt design, then contribute to client projects\n• Build RAG components, test harnesses, and integrate tools under senior guidance\n• Shadow client sessions, prepare demos, and contribute to reusable asset library\n• Work with an AI Architect and engineering mentor for a year",
-      "date_published": "2026-07-28T22:35:24.224Z",
-      "authors": [
-        {
-          "name": "Adobe"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/panasonic-avionics-corporation-ai-software-intern-trainee-pune-india-4443296738",
-      "url": "https://www.internradar.info/jobs/panasonic-avionics-corporation-ai-software-intern-trainee-pune-india-4443296738",
-      "title": "AI Software Intern / Trainee - Pune, India — Panasonic Avionics Corporation",
-      "content_text": "Company: Panasonic Avionics Corporation · Location: Pune Division, Maharashtra, India\n• Help develop AI applications using RAG, conversational AI, and AI Agents on AWS\n• Support building, testing, and evaluating machine learning models and MLOps workflows\n• Participate in code reviews, debugging, and CI/CD processes\n• Work with Python, Java, C++, or JavaScript",
-      "date_published": "2026-07-28T16:33:48.251Z",
-      "authors": [
-        {
-          "name": "Panasonic Avionics Corporation"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/fiserv-technology-apprentice-program-4445745465",
-      "url": "https://www.internradar.info/jobs/fiserv-technology-apprentice-program-4445745465",
-      "title": "Technology Apprentice Program — Fiserv",
-      "content_text": "Company: Fiserv · Location: Chennai, Tamil Nadu, India\n• Accelerate your growth in fintech through two structured assignments over two years\n• Gain hands-on experience, build technical and professional skills, and collaborate across teams\n• Receive formal training, mentorship, and exposure to senior leadership\n• This is an early career development program",
-      "date_published": "2026-07-28T15:19:49.824Z",
-      "authors": [
-        {
-          "name": "Fiserv"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/mu-sigma-inc-apprentice-leader-4443290829",
-      "url": "https://www.internradar.info/jobs/mu-sigma-inc-apprentice-leader-4443290829",
-      "title": "Apprentice Leader — Mu Sigma Inc.",
-      "content_text": "Company: Mu Sigma Inc. · Location: Bengaluru, Karnataka, India · Duration: 5–7 years\n• Leverage data analysis, data science, and engineering to develop scalable solutions\n• Translate complex business requirements into actionable insights and technology outcomes\n• Contribute to system design and solution architecture, ensuring scalability and performance\n• Work with cloud technologies to build and optimize data-driven applications",
-      "date_published": "2026-07-28T14:04:58.344Z",
-      "authors": [
-        {
-          "name": "Mu Sigma Inc."
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/eclerx-intern-4437435575",
-      "url": "https://www.internradar.info/jobs/eclerx-intern-4437435575",
-      "title": "intern — eClerx",
-      "content_text": "Company: eClerx · Location: Mumbai, Maharashtra, India\n• Create visually compelling and highly usable interfaces for web and mobile applications\n• Develop wireframes, prototypes, and high-fidelity mockups\n• Collaborate with UX designers, product managers, and developers\n• Ensure designs are consistent with brand guidelines and design standards",
-      "date_published": "2026-07-28T12:50:07.608Z",
-      "authors": [
-        {
-          "name": "eClerx"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/harman-india-internship-tools-and-development-python-4443257825",
-      "url": "https://www.internradar.info/jobs/harman-india-internship-tools-and-development-python-4443257825",
-      "title": "Internship - Tools & Development (Python) — HARMAN India",
-      "content_text": "Company: HARMAN India · Location: Bengaluru, Karnataka, India\n• Develop and maintain automated test scripts using Python for embedded software\n• Create and execute test plans, cases, and reports to ensure software quality\n• Troubleshoot issues with software and hardware engineers\n• Work with Linux-based systems and contribute to CI/automation frameworks",
-      "date_published": "2026-07-28T10:53:09.751Z",
-      "authors": [
-        {
-          "name": "HARMAN India"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/collins-aerospace-intern-phm-and-digital-twin-4445484720",
-      "url": "https://www.internradar.info/jobs/collins-aerospace-intern-phm-and-digital-twin-4445484720",
-      "title": "Intern: PHM and Digital Twin — Collins Aerospace",
-      "content_text": "Company: Collins Aerospace · Location: Bengaluru, Karnataka, India · Duration: 6–8 months\n• Develop and validate deep learning models for prognostics in aerospace applications\n• Explore and integrate reliability modeling techniques, analyze datasets, and perform predictive analytics\n• Work with AI, Machine Learning, and Deep Learning for 6-8 months in Bengaluru",
-      "date_published": "2026-07-28T09:31:53.614Z",
-      "authors": [
-        {
-          "name": "Collins Aerospace"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/sprinklr-ux-research-intern-ats-workday-sprinklr-wd1-careers-113313-job",
-      "url": "https://www.internradar.info/jobs/sprinklr-ux-research-intern-ats-workday-sprinklr-wd1-careers-113313-job",
-      "title": "UX Research Intern — Sprinklr",
-      "content_text": "Company: Sprinklr · Location: India - Haryana - Gurgaon · Duration: 6 months\n• Shape Sprinklr's enterprise platform by planning and conducting generative and evaluative research studies\n• Analyze qualitative and quantitative data to build user personas, task analyses, and user journey maps\n• Collaborate with product managers and engineers, and present findings to product leadership\n• 6-month internship, working with global product development teams",
-      "date_published": "2026-07-28T00:00:00.000Z",
-      "authors": [
-        {
-          "name": "Sprinklr"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/ideaforge-intern-web-mobile-app-developer-4442884354",
-      "url": "https://www.internradar.info/jobs/ideaforge-intern-web-mobile-app-developer-4442884354",
-      "title": "Intern - Web/Mobile App Developer — ideaForge",
-      "content_text": "Company: ideaForge · Location: Navi Mumbai, Maharashtra, India · Duration: 3 months\n• Code, test and deploy specific modules of the FleetDesk platform\n• Build secure web and mobile apps using AI development tools\n• Needs front-end, back-end, database and mobile app fundamentals\n• Paid, minimum three-month commitment",
-      "date_published": "2026-07-27T20:41:50.425Z",
-      "authors": [
-        {
-          "name": "ideaForge"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/deutsche-bank-apprentice-hiring-for-2026-2027-4445996778",
-      "url": "https://www.internradar.info/jobs/deutsche-bank-apprentice-hiring-for-2026-2027-4445996778",
-      "title": "Apprentice Hiring for 2026- 2027 — Deutsche Bank",
-      "content_text": "Company: Deutsche Bank · Location: Mumbai, Maharashtra, India\n• Build use cases with AI platforms to enhance existing risk analysis\n• Perform daily Historical Simulation VaR analysis and review other market risk metrics\n• Participate in projects like IBOR migration and automation of BAU activities using AI\n• Work with large datasets using MS Excel, MS Access, VBA, SQL, Python, and SAS",
-      "date_published": "2026-07-27T18:13:18.258Z",
-      "authors": [
-        {
-          "name": "Deutsche Bank"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/volvo-group-graduate-apprentice-trainee-4445954934",
-      "url": "https://www.internradar.info/jobs/volvo-group-graduate-apprentice-trainee-4445954934",
-      "title": "Graduate Apprentice Trainee — Volvo Group",
-      "content_text": "Company: Volvo Group · Location: Bengaluru, Karnataka, India\n• Create concepts based on QDCF prerequisites, focusing on conceptual thinking and multi-material assemblies\n• Apply knowledge of plastic/sheet metal part manufacturing processes, including tooling and molding\n• Work with proto manufacturing methods and consider plastic/sheet metal design aspects\n• Use CAD tools like CATIA V5/Creo for part modeling, surfacing, assembly, and detailing",
-      "date_published": "2026-07-27T16:22:53.419Z",
-      "authors": [
-        {
-          "name": "Volvo Group"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/ebay-data-science-intern-4442852361",
-      "url": "https://www.internradar.info/jobs/ebay-data-science-intern-4442852361",
-      "title": "Data Science Intern — eBay",
-      "content_text": "Company: eBay · Location: Bengaluru, Karnataka, India · Duration: 0–3 years\n• Transform massive datasets into insights using analytics, machine learning, and experimentation\n• Build models to segment users on the platform and apply statistical, ML, and deep analytical techniques\n• Work with SQL, Python, and NoSQL tools like Hadoop, Hive, Spark, Pig, H2O\n• Currently pursuing a Bachelor’s or Master’s, graduating in 2028",
-      "date_published": "2026-07-27T14:47:42.710Z",
-      "authors": [
-        {
-          "name": "eBay"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/siemens-healthineers-intern-technical-4442834690",
-      "url": "https://www.internradar.info/jobs/siemens-healthineers-intern-technical-4442834690",
-      "title": "Intern - Technical — Siemens Healthineers",
-      "content_text": "Company: Siemens Healthineers · Location: Bengaluru, Karnataka, India\n• Prepare and curate imaging datasets, including preprocessing, augmentation, and quality checks\n• Explore advanced deep learning model architectures for 3D medical image analysis\n• Develop reproducible pipelines for model training, validation, and benchmarking\n• Work with PyTorch, Python, NumPy, SciPy, OpenCV, and Git",
-      "date_published": "2026-07-27T13:39:43.034Z",
-      "authors": [
-        {
-          "name": "Siemens Healthineers"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/state-street-software-engineer-technical-implementation-apprentice-4445943048",
-      "url": "https://www.internradar.info/jobs/state-street-software-engineer-technical-implementation-apprentice-4445943048",
-      "title": "Software Engineer (Technical Implementation) - Apprentice — State Street",
-      "content_text": "Company: State Street · Location: Hyderabad, Telangana, India · Duration: 0–2 years\n• Participate in product implementation and support activities for Charles River Investment Management Solution\n• Learn and assist in configuring application components based on business requirements\n• Write and execute SQL queries to analyze and validate application data\n• Assist in developing simple programs, utilities, and automation scripts using Java or C#",
-      "date_published": "2026-07-27T11:31:47.795Z",
-      "authors": [
-        {
-          "name": "State Street"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/newton-school-subject-matter-expert-intern-4445109675",
-      "url": "https://www.internradar.info/jobs/newton-school-subject-matter-expert-intern-4445109675",
-      "title": "Subject Matter Expert Intern — Newton School",
-      "content_text": "Company: Newton School · Location: Bengaluru, Karnataka, India\n• Interact with prospective learners, assessing technical aptitude and problem-solving skills\n• Use SQL and Excel to track metrics, analyze data, and uncover actionable insights, building simple dashboards",
-      "date_published": "2026-07-27T11:24:56.890Z",
-      "authors": [
-        {
-          "name": "Newton School"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/state-street-it-pmo-analyst-apprentice-4445930061",
-      "url": "https://www.internradar.info/jobs/state-street-it-pmo-analyst-apprentice-4445930061",
-      "title": "IT PMO Analyst- Apprentice — State Street",
-      "content_text": "Company: State Street · Location: Hyderabad, Telangana, India\n• Implement solutions to automate BAU processes using SharePoint, Python, C++, or Java\n• Maintain project artifacts, document lessons learned, and provide status reporting on assigned tasks\n• Track and monitor timesheets and dashboards, consolidating technical artifacts to meet SDLC standards",
-      "date_published": "2026-07-27T11:18:02.517Z",
-      "authors": [
-        {
-          "name": "State Street"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/adobe-apprentice-technical-consultant-4444878968",
-      "url": "https://www.internradar.info/jobs/adobe-apprentice-technical-consultant-4444878968",
-      "title": "Apprentice: Technical Consultant — Adobe",
-      "content_text": "Company: Adobe · Location: Bengaluru East, Karnataka, India · Duration: 6 months\n• Shadow and assist senior consultants in translating customer business requirements into technical solutions\n• Learn to create and integrate content-driven applications on Adobe Marketing Cloud and Commerce Cloud\n• Support post-implementation activities including testing, documentation, and customer assistance\n• Work with HTML, CSS, JavaScript, databases, SQL, and potentially Java, Python, PHP, React, Angular",
-      "date_published": "2026-07-27T10:48:01.196Z",
-      "authors": [
-        {
-          "name": "Adobe"
+          "name": "Zscaler"
         }
       ]
     }
