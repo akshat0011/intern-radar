@@ -1,7 +1,7 @@
 {
- "generatedAt": 1785840560973,
- "count": 90,
- "techCount": 90,
+ "generatedAt": 1785841488060,
+ "count": 92,
+ "techCount": 92,
  "otherCount": 0,
  "companies": [
   "ALLEN",
@@ -28,6 +28,7 @@
   "IMC Trading",
   "Icertis",
   "Intel",
+  "Joveo",
   "LeadSquared",
   "Magna International",
   "Microsoft",
@@ -89,6 +90,98 @@
   "Pune Division, Maharashtra, India"
  ],
  "jobs": [
+  {
+   "id": "4446635104",
+   "title": "Digital Signal Processing - Intern",
+   "company": "HARMAN India",
+   "matchedWatchlist": "Harman",
+   "isTech": true,
+   "roleSource": "gemini-enrich",
+   "logo": "/logos/harman-india.jpg",
+   "location": "Bengaluru, Karnataka, India",
+   "workplaceType": "Hybrid",
+   "stipend": null,
+   "duration": "9 months",
+   "applicants": null,
+   "easyApply": false,
+   "skills": [
+    "python",
+    "c++",
+    ".net",
+    "agile"
+   ],
+   "summary": "Introduction: A Career at HARMAN Automotive We’re a global, multi-disciplinary team that’s putting the innovative power of technology to work and transforming tomorrow. At HARMAN Automotive, we give you the keys to fast-track your career. Engineer audio systems and integrated technology platforms that augment the driving experience",
+   "bullets": [
+    "Design, implement, and test embedded software for amplifier applications",
+    "Code in C and C++ while working with real-time operating systems and scripting languages",
+    "Troubleshoot code using oscilloscopes, logic analyzers, debuggers, and emulators"
+   ],
+   "roleLabel": "Embedded software engineering",
+   "degreeLevel": "UG/PG",
+   "degreeText": "B.E/M.E",
+   "keySkills": [
+    "c",
+    "c++",
+    "python",
+    "perl",
+    "rtos"
+   ],
+   "stipendStatus": "unknown",
+   "postedText": "9 minutes ago",
+   "postedAt": 1785840774702,
+   "firstSeenAt": 1785841314717,
+   "url": "https://www.linkedin.com/jobs/view/4446635104/",
+   "applyUrl": "https://www.linkedin.com/jobs/view/4446635104/",
+   "description": null
+  },
+  {
+   "id": "4446616938",
+   "title": "Software Engineering Intern (Full Stack)",
+   "company": "Joveo",
+   "matchedWatchlist": "Joveo",
+   "isTech": true,
+   "roleSource": "gemini-enrich",
+   "logo": "/logos/joveo.jpg",
+   "location": "Bengaluru, Karnataka, India",
+   "workplaceType": "On-site",
+   "stipend": null,
+   "duration": null,
+   "applicants": "Over 100 applicants",
+   "easyApply": true,
+   "skills": [
+    "typescript",
+    "sql",
+    "react",
+    "next.js",
+    "node.js",
+    "express",
+    "git",
+    "machine learning"
+   ],
+   "summary": "Title: Software Engineering Intern (Full Stack) Location: Bengaluru, India (Work from Office, 5 days a week) We're looking for an intern who thinks like a founder, moves fast, and builds like an artist, someone ready to build the future of the company from 0 to 1. What you'll do Build",
+   "bullets": [
+    "Build greenfield AI products across frontend and backend from prototype to release",
+    "Develop full-stack web applications using React, Next.js, Node.js, and Express.js",
+    "Integrate LLMs, embeddings, and vector databases into real applications"
+   ],
+   "roleLabel": "Full stack engineering",
+   "degreeLevel": null,
+   "degreeText": null,
+   "keySkills": [
+    "typescript",
+    "react",
+    "next.js",
+    "node.js",
+    "express.js"
+   ],
+   "stipendStatus": "unknown",
+   "postedText": "34 minutes ago",
+   "postedAt": 1785839335325,
+   "firstSeenAt": 1785841375328,
+   "url": "https://www.linkedin.com/jobs/view/4446616938/",
+   "applyUrl": "https://www.linkedin.com/jobs/view/4446616938/",
+   "description": null
+  },
   {
    "id": "ats:microsoft:India:1970393556955253",
    "title": "Technology Consulting INTERN",

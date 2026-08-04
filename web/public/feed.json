@@ -6,6 +6,30 @@
   "description": "New engineering internships, listed within minutes of going live.",
   "items": [
     {
+      "id": "https://www.internradar.info/jobs/harman-india-digital-signal-processing-intern-4446635104",
+      "url": "https://www.internradar.info/jobs/harman-india-digital-signal-processing-intern-4446635104",
+      "title": "Digital Signal Processing - Intern — HARMAN India",
+      "content_text": "Company: HARMAN India · Location: Bengaluru, Karnataka, India · Duration: 9 months\n• Design, implement, and test embedded software for amplifier applications\n• Code in C and C++ while working with real-time operating systems and scripting languages\n• Troubleshoot code using oscilloscopes, logic analyzers, debuggers, and emulators",
+      "date_published": "2026-08-04T10:52:54.702Z",
+      "authors": [
+        {
+          "name": "HARMAN India"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/joveo-software-engineering-intern-full-stack-4446616938",
+      "url": "https://www.internradar.info/jobs/joveo-software-engineering-intern-full-stack-4446616938",
+      "title": "Software Engineering Intern (Full Stack) — Joveo",
+      "content_text": "Company: Joveo · Location: Bengaluru, Karnataka, India\n• Build greenfield AI products across frontend and backend from prototype to release\n• Develop full-stack web applications using React, Next.js, Node.js, and Express.js\n• Integrate LLMs, embeddings, and vector databases into real applications",
+      "date_published": "2026-08-04T10:28:55.325Z",
+      "authors": [
+        {
+          "name": "Joveo"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/microsoft-technology-consulting-intern-ats-microsoft-india-1970393556955253",
       "url": "https://www.internradar.info/jobs/microsoft-technology-consulting-intern-ats-microsoft-india-1970393556955253",
       "title": "Technology Consulting INTERN — Microsoft",
@@ -578,30 +602,6 @@
       "authors": [
         {
           "name": "ideaForge"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/deutsche-bank-apprentice-hiring-for-2026-2027-4445996778",
-      "url": "https://www.internradar.info/jobs/deutsche-bank-apprentice-hiring-for-2026-2027-4445996778",
-      "title": "Apprentice Hiring for 2026- 2027 — Deutsche Bank",
-      "content_text": "Company: Deutsche Bank · Location: Mumbai, Maharashtra, India\n• Build use cases with AI platforms to enhance existing risk analysis\n• Perform daily Historical Simulation VaR analysis and review other market risk metrics\n• Participate in projects like IBOR migration and automation of BAU activities using AI\n• Work with large datasets using MS Excel, MS Access, VBA, SQL, Python, and SAS",
-      "date_published": "2026-07-27T18:13:18.258Z",
-      "authors": [
-        {
-          "name": "Deutsche Bank"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/volvo-group-graduate-apprentice-trainee-4445954934",
-      "url": "https://www.internradar.info/jobs/volvo-group-graduate-apprentice-trainee-4445954934",
-      "title": "Graduate Apprentice Trainee — Volvo Group",
-      "content_text": "Company: Volvo Group · Location: Bengaluru, Karnataka, India\n• Create concepts based on QDCF prerequisites, focusing on conceptual thinking and multi-material assemblies\n• Apply knowledge of plastic/sheet metal part manufacturing processes, including tooling and molding\n• Work with proto manufacturing methods and consider plastic/sheet metal design aspects\n• Use CAD tools like CATIA V5/Creo for part modeling, surfacing, assembly, and detailing",
-      "date_published": "2026-07-27T16:22:53.419Z",
-      "authors": [
-        {
-          "name": "Volvo Group"
         }
       ]
     }

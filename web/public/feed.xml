@@ -6,7 +6,27 @@
   <atom:link href="https://www.internradar.info/feed.xml" rel="self" type="application/rss+xml"/>
   <description>New engineering internships, listed within minutes of going live.</description>
   <language>en-in</language>
-  <lastBuildDate>Tue, 04 Aug 2026 10:49:21 GMT</lastBuildDate>
+  <lastBuildDate>Tue, 04 Aug 2026 11:04:48 GMT</lastBuildDate>
+  <item>
+    <title>Digital Signal Processing - Intern — HARMAN India</title>
+    <link>https://www.internradar.info/jobs/harman-india-digital-signal-processing-intern-4446635104</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/harman-india-digital-signal-processing-intern-4446635104</guid>
+    <pubDate>Tue, 04 Aug 2026 10:52:54 GMT</pubDate>
+    <description>Company: HARMAN India · Location: Bengaluru, Karnataka, India · Duration: 9 months
+• Design, implement, and test embedded software for amplifier applications
+• Code in C and C++ while working with real-time operating systems and scripting languages
+• Troubleshoot code using oscilloscopes, logic analyzers, debuggers, and emulators</description>
+  </item>
+  <item>
+    <title>Software Engineering Intern (Full Stack) — Joveo</title>
+    <link>https://www.internradar.info/jobs/joveo-software-engineering-intern-full-stack-4446616938</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/joveo-software-engineering-intern-full-stack-4446616938</guid>
+    <pubDate>Tue, 04 Aug 2026 10:28:55 GMT</pubDate>
+    <description>Company: Joveo · Location: Bengaluru, Karnataka, India
+• Build greenfield AI products across frontend and backend from prototype to release
+• Develop full-stack web applications using React, Next.js, Node.js, and Express.js
+• Integrate LLMs, embeddings, and vector databases into real applications</description>
+  </item>
   <item>
     <title>Technology Consulting INTERN — Microsoft</title>
     <link>https://www.internradar.info/jobs/microsoft-technology-consulting-intern-ats-microsoft-india-1970393556955253</link>
@@ -495,28 +515,6 @@
 • Build secure web and mobile apps using AI development tools
 • Needs front-end, back-end, database and mobile app fundamentals
 • Paid, minimum three-month commitment</description>
-  </item>
-  <item>
-    <title>Apprentice Hiring for 2026- 2027 — Deutsche Bank</title>
-    <link>https://www.internradar.info/jobs/deutsche-bank-apprentice-hiring-for-2026-2027-4445996778</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/deutsche-bank-apprentice-hiring-for-2026-2027-4445996778</guid>
-    <pubDate>Mon, 27 Jul 2026 18:13:18 GMT</pubDate>
-    <description>Company: Deutsche Bank · Location: Mumbai, Maharashtra, India
-• Build use cases with AI platforms to enhance existing risk analysis
-• Perform daily Historical Simulation VaR analysis and review other market risk metrics
-• Participate in projects like IBOR migration and automation of BAU activities using AI
-• Work with large datasets using MS Excel, MS Access, VBA, SQL, Python, and SAS</description>
-  </item>
-  <item>
-    <title>Graduate Apprentice Trainee — Volvo Group</title>
-    <link>https://www.internradar.info/jobs/volvo-group-graduate-apprentice-trainee-4445954934</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/volvo-group-graduate-apprentice-trainee-4445954934</guid>
-    <pubDate>Mon, 27 Jul 2026 16:22:53 GMT</pubDate>
-    <description>Company: Volvo Group · Location: Bengaluru, Karnataka, India
-• Create concepts based on QDCF prerequisites, focusing on conceptual thinking and multi-material assemblies
-• Apply knowledge of plastic/sheet metal part manufacturing processes, including tooling and molding
-• Work with proto manufacturing methods and consider plastic/sheet metal design aspects
-• Use CAD tools like CATIA V5/Creo for part modeling, surfacing, assembly, and detailing</description>
   </item>
 </channel>
 </rss>
