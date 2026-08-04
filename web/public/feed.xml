@@ -6,7 +6,7 @@
   <atom:link href="https://www.internradar.info/feed.xml" rel="self" type="application/rss+xml"/>
   <description>New engineering internships, listed within minutes of going live.</description>
   <language>en-in</language>
-  <lastBuildDate>Tue, 04 Aug 2026 00:19:42 GMT</lastBuildDate>
+  <lastBuildDate>Tue, 04 Aug 2026 01:22:15 GMT</lastBuildDate>
   <item>
     <title>Technical Support Representative Intern — IBM</title>
     <link>https://www.internradar.info/jobs/ibm-technical-support-representative-intern-4435963237</link>
@@ -209,6 +209,27 @@
 • Analyze volume data to guide engineering decisions</description>
   </item>
   <item>
+    <title>Recrutirment Trainee — Valeo</title>
+    <link>https://www.internradar.info/jobs/valeo-recrutirment-trainee-ats-workday-valeo-wd3-valeo-jobs-req2026079451</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/valeo-recrutirment-trainee-ats-workday-valeo-wd3-valeo-jobs-req2026079451</guid>
+    <pubDate>Mon, 03 Aug 2026 00:00:00 GMT</pubDate>
+    <description>Company: Valeo · Location: San Luis Potosi</description>
+  </item>
+  <item>
+    <title>Facilities Trainee — Valeo</title>
+    <link>https://www.internradar.info/jobs/valeo-facilities-trainee-ats-workday-valeo-wd3-valeo-jobs-req2026078721</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/valeo-facilities-trainee-ats-workday-valeo-wd3-valeo-jobs-req2026078721</guid>
+    <pubDate>Mon, 03 Aug 2026 00:00:00 GMT</pubDate>
+    <description>Company: Valeo · Location: San Luis Potosi</description>
+  </item>
+  <item>
+    <title>VPS trainee — Valeo</title>
+    <link>https://www.internradar.info/jobs/valeo-vps-trainee-ats-workday-valeo-wd3-valeo-jobs-req2026078723</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/valeo-vps-trainee-ats-workday-valeo-wd3-valeo-jobs-req2026078723</guid>
+    <pubDate>Mon, 03 Aug 2026 00:00:00 GMT</pubDate>
+    <description>Company: Valeo · Location: San Luis Potosi</description>
+  </item>
+  <item>
     <title>Intern - Digital Automation and Solutions Team — Micron Technology</title>
     <link>https://www.internradar.info/jobs/micron-technology-intern-digital-automation-and-solutions-team-ats-workday-micron-wd1-external-jr102272</link>
     <guid isPermaLink="true">https://www.internradar.info/jobs/micron-technology-intern-digital-automation-and-solutions-team-ats-workday-micron-wd1-external-jr102272</guid>
@@ -381,33 +402,6 @@
 • Collaborate with Engineering and Design to build and launch products
 • Produce high-quality product specifications and manage scope for timely delivery
 • Track performance metrics and leverage data for product improvements</description>
-  </item>
-  <item>
-    <title>SoC Validation Engineer Intern — Intel</title>
-    <link>https://www.internradar.info/jobs/intel-soc-validation-engineer-intern-4446997136</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/intel-soc-validation-engineer-intern-4446997136</guid>
-    <pubDate>Fri, 31 Jul 2026 07:29:03 GMT</pubDate>
-    <description>Company: Intel · Location: Bengaluru, Karnataka, India
-• Work on SoC validation as an M.Tech graduate in Electronics, Telecommunications, or Computer Science
-• This role is eligible for a hybrid work model, splitting time between on-site and off-site</description>
-  </item>
-  <item>
-    <title>Research Intern (Quantum Computing) — Fujitsu</title>
-    <link>https://www.internradar.info/jobs/fujitsu-research-intern-quantum-computing-4447272252</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/fujitsu-research-intern-quantum-computing-4447272252</guid>
-    <pubDate>Fri, 31 Jul 2026 07:00:03 GMT</pubDate>
-    <description>Company: Fujitsu · Location: Bangalore Urban, Karnataka, India · Duration: 3 months
-• Conduct original research in open quantum systems, thermalisation, and quantum algorithms
-• Work with the Quantum R&amp;D Division, contributing to the Quantum Computing Stack
-• Requires strong background in open quantum systems, statistical physics, and linear algebra
-• Programming experience in Python is preferred; 3-6 month physical internship in Bangalore</description>
-  </item>
-  <item>
-    <title>NLP Algorithm Engineer Intern — Bybit</title>
-    <link>https://www.internradar.info/jobs/bybit-nlp-algorithm-engineer-intern-ats-greenhouse-bybit-4868977101</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/bybit-nlp-algorithm-engineer-intern-ats-greenhouse-bybit-4868977101</guid>
-    <pubDate>Fri, 31 Jul 2026 04:01:41 GMT</pubDate>
-    <description>Company: Bybit · Location: APAC - Remote</description>
   </item>
 </channel>
 </rss>
