@@ -6,6 +6,18 @@
   "description": "New engineering internships, listed within minutes of going live.",
   "items": [
     {
+      "id": "https://www.internradar.info/jobs/noise-editing-intern-4448257614",
+      "url": "https://www.internradar.info/jobs/noise-editing-intern-4448257614",
+      "title": "Editing Intern — Noise",
+      "content_text": "Company: Noise · Location: Gurugram, Haryana, India (On-site)",
+      "date_published": "2026-08-04T02:17:05.896Z",
+      "authors": [
+        {
+          "name": "Noise"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/ibm-technical-support-representative-intern-4435963237",
       "url": "https://www.internradar.info/jobs/ibm-technical-support-representative-intern-4435963237",
       "title": "Technical Support Representative Intern — IBM",
@@ -590,18 +602,6 @@
       "authors": [
         {
           "name": "Western Digital"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/newton-school-of-technology-product-intern-4446988446",
-      "url": "https://www.internradar.info/jobs/newton-school-of-technology-product-intern-4446988446",
-      "title": "Product Intern — Newton School of Technology",
-      "content_text": "Company: Newton School of Technology · Location: Bengaluru, Karnataka, India\n• Ideate and develop product requirements, leading the overall product development\n• Collaborate with Engineering and Design to build and launch products\n• Produce high-quality product specifications and manage scope for timely delivery\n• Track performance metrics and leverage data for product improvements",
-      "date_published": "2026-07-31T07:40:40.557Z",
-      "authors": [
-        {
-          "name": "Newton School of Technology"
         }
       ]
     }

@@ -6,7 +6,14 @@
   <atom:link href="https://www.internradar.info/feed.xml" rel="self" type="application/rss+xml"/>
   <description>New engineering internships, listed within minutes of going live.</description>
   <language>en-in</language>
-  <lastBuildDate>Tue, 04 Aug 2026 01:22:15 GMT</lastBuildDate>
+  <lastBuildDate>Tue, 04 Aug 2026 02:17:08 GMT</lastBuildDate>
+  <item>
+    <title>Editing Intern — Noise</title>
+    <link>https://www.internradar.info/jobs/noise-editing-intern-4448257614</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/noise-editing-intern-4448257614</guid>
+    <pubDate>Tue, 04 Aug 2026 02:17:05 GMT</pubDate>
+    <description>Company: Noise · Location: Gurugram, Haryana, India (On-site)</description>
+  </item>
   <item>
     <title>Technical Support Representative Intern — IBM</title>
     <link>https://www.internradar.info/jobs/ibm-technical-support-representative-intern-4435963237</link>
@@ -391,17 +398,6 @@
     <guid isPermaLink="true">https://www.internradar.info/jobs/western-digital-process-engineer-intern-ats-smartrecruiters-westerndigital-744000140863524</guid>
     <pubDate>Fri, 31 Jul 2026 09:28:53 GMT</pubDate>
     <description>Company: Western Digital · Location: Bayan Lepas, my</description>
-  </item>
-  <item>
-    <title>Product Intern — Newton School of Technology</title>
-    <link>https://www.internradar.info/jobs/newton-school-of-technology-product-intern-4446988446</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/newton-school-of-technology-product-intern-4446988446</guid>
-    <pubDate>Fri, 31 Jul 2026 07:40:40 GMT</pubDate>
-    <description>Company: Newton School of Technology · Location: Bengaluru, Karnataka, India
-• Ideate and develop product requirements, leading the overall product development
-• Collaborate with Engineering and Design to build and launch products
-• Produce high-quality product specifications and manage scope for timely delivery
-• Track performance metrics and leverage data for product improvements</description>
   </item>
 </channel>
 </rss>
