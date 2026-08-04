@@ -1,7 +1,7 @@
 {
- "generatedAt": 1785811021352,
- "count": 174,
- "techCount": 174,
+ "generatedAt": 1785811629323,
+ "count": 175,
+ "techCount": 175,
  "otherCount": 0,
  "companies": [
   "ALLEN",
@@ -14,6 +14,7 @@
   "BNP Paribas",
   "Bajaj Finserv",
   "Barclays",
+  "Boeing India",
   "Bybit",
   "Cloudflare",
   "Collins Aerospace",
@@ -85,6 +86,7 @@
  ],
  "locations": [
   "2 Locations",
+  "30 Locations",
   "4 Locations",
   "APAC - Remote",
   "APAC - Remote; Europe - Remote",
@@ -794,6 +796,46 @@
    "firstSeenAt": 1785724339706,
    "url": "https://www.linkedin.com/jobs/view/4448136135/",
    "applyUrl": "https://www.linkedin.com/jobs/view/4448136135/",
+   "description": null
+  },
+  {
+   "id": "ats:workday:boeing:wd1:EXTERNAL_CAREERS:JR2026520976",
+   "title": "Boeing Summer 2027 Internship Program (Paid) – Data Analytics Intern",
+   "company": "Boeing India",
+   "matchedWatchlist": "Boeing India",
+   "isTech": true,
+   "roleSource": "gemini-enrich",
+   "logo": "/logos/boeing-india.png",
+   "location": "30 Locations",
+   "workplaceType": null,
+   "stipend": "$44,000 – $89,000",
+   "duration": "10-12 weeks",
+   "applicants": null,
+   "easyApply": false,
+   "skills": [
+    "machine learning"
+   ],
+   "summary": "Boeing Summer 2027 Internship Program (Paid) – Data Analytics Intern Launch your career with Boeing, celebrated by WayUp as a Top 100 Internship Program in the US for 2026! During the Summer Intern Program, you will be assigned projects that expand on the skills you have developed at school. Some of these positions have been identified as virtual opportunities and do not require applicants to live in close proximity to a Boeing facility.",
+   "bullets": [
+    "Deliver data analytics, machine learning, and AI solutions for business problems",
+    "Work on hands-on data science and software projects with a dedicated mentor",
+    "Participate in a 10-12 week program with manufacturing tours and leadership sessions"
+   ],
+   "roleLabel": "Data analytics",
+   "degreeLevel": "Pursuing",
+   "degreeText": null,
+   "keySkills": [
+    "data analytics",
+    "data science",
+    "machine learning",
+    "artificial intelligence"
+   ],
+   "stipendStatus": "paid",
+   "postedText": null,
+   "postedAt": 1785715200000,
+   "firstSeenAt": 1785811526132,
+   "url": "https://boeing.wd1.myworkdayjobs.com/en-US/EXTERNAL_CAREERS/job/USA---Everett-WA/Boeing-Summer-2027-Internship-Program--Paid----Data-Analytics-Intern_JR2026520976-1",
+   "applyUrl": "https://boeing.wd1.myworkdayjobs.com/en-US/EXTERNAL_CAREERS/job/USA---Everett-WA/Boeing-Summer-2027-Internship-Program--Paid----Data-Analytics-Intern_JR2026520976-1",
    "description": null
   },
   {
