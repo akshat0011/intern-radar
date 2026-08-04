@@ -6,6 +6,18 @@
   "description": "New engineering internships, listed within minutes of going live.",
   "items": [
     {
+      "id": "https://www.internradar.info/jobs/honeywell-technologies-intern-bachelor-s-4448856865",
+      "url": "https://www.internradar.info/jobs/honeywell-technologies-intern-bachelor-s-4448856865",
+      "title": "Intern (Bachelor's) — Honeywell Technologies",
+      "content_text": "Company: Honeywell Technologies · Location: Bengaluru, Karnataka, India",
+      "date_published": "2026-08-04T11:49:46.576Z",
+      "authors": [
+        {
+          "name": "Honeywell Technologies"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/harman-india-digital-signal-processing-intern-4446635104",
       "url": "https://www.internradar.info/jobs/harman-india-digital-signal-processing-intern-4446635104",
       "title": "Digital Signal Processing - Intern — HARMAN India",
@@ -590,18 +602,6 @@
       "authors": [
         {
           "name": "Sprinklr"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/ideaforge-intern-web-mobile-app-developer-4442884354",
-      "url": "https://www.internradar.info/jobs/ideaforge-intern-web-mobile-app-developer-4442884354",
-      "title": "Intern - Web/Mobile App Developer — ideaForge",
-      "content_text": "Company: ideaForge · Location: Navi Mumbai, Maharashtra, India · Duration: 3 months\n• Code, test and deploy specific modules of the FleetDesk platform\n• Build secure web and mobile apps using AI development tools\n• Needs front-end, back-end, database and mobile app fundamentals\n• Paid, minimum three-month commitment",
-      "date_published": "2026-07-27T20:41:50.425Z",
-      "authors": [
-        {
-          "name": "ideaForge"
         }
       ]
     }
