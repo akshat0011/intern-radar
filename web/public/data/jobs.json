@@ -1,7 +1,7 @@
 {
- "generatedAt": 1785837887058,
- "count": 89,
- "techCount": 89,
+ "generatedAt": 1785839738071,
+ "count": 90,
+ "techCount": 90,
  "otherCount": 0,
  "companies": [
   "ALLEN",
@@ -78,6 +78,7 @@
   "India",
   "India - Haryana - Gurgaon",
   "India, Karnataka, Bangalore",
+  "India, Telangana, Hyderabad",
   "Mumbai Metropolitan Region",
   "Mumbai, MH",
   "Mumbai, Maharashtra, India",
@@ -88,6 +89,47 @@
   "Pune Division, Maharashtra, India"
  ],
  "jobs": [
+  {
+   "id": "ats:microsoft:India:1970393556955253",
+   "title": "Technology Consulting INTERN",
+   "company": "Microsoft",
+   "matchedWatchlist": "Microsoft",
+   "isTech": true,
+   "roleSource": "gemini-enrich",
+   "logo": "/logos/microsoft.jpg",
+   "location": "India, Telangana, Hyderabad",
+   "workplaceType": "onsite",
+   "stipend": null,
+   "duration": null,
+   "applicants": null,
+   "easyApply": false,
+   "skills": [
+    "azure",
+    "agile"
+   ],
+   "summary": "Come build community, explore your passions and do your best work at Microsoft with thousands of University interns from every corner of the world. This opportunity will allow you to bring your aspirations, talent, potential—and excitement for the journey ahead. A Technology Consultant Intern participates in project planning by identifying risks and dependencies and proposing appropriate mitigations. They implement technical solutions by coordinating and aligning with customers’ business goals, and cultivate relationships with customers, partners, and stakeholders to identify drivers of satisfaction.",
+   "bullets": [
+    "Identify project risks and propose technical mitigations aligned with business goals",
+    "Provide technical input in pre-sales and define customer cloud requirements",
+    "Engage with stakeholders to resolve project issues and accelerate cloud adoption"
+   ],
+   "roleLabel": "Technology consulting",
+   "degreeLevel": "UG",
+   "degreeText": null,
+   "keySkills": [
+    "azure",
+    "scrum",
+    "agile",
+    "dynamics"
+   ],
+   "stipendStatus": "unknown",
+   "postedText": null,
+   "postedAt": 1785835025000,
+   "firstSeenAt": 1785838825946,
+   "url": "https://jobs.careers.microsoft.com/global/en/job/1970393556955253",
+   "applyUrl": "https://jobs.careers.microsoft.com/global/en/job/1970393556955253",
+   "description": null
+  },
   {
    "id": "4448323159",
    "title": "Graduate Engineer Trainee",

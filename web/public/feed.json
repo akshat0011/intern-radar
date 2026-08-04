@@ -6,6 +6,18 @@
   "description": "New engineering internships, listed within minutes of going live.",
   "items": [
     {
+      "id": "https://www.internradar.info/jobs/microsoft-technology-consulting-intern-ats-microsoft-india-1970393556955253",
+      "url": "https://www.internradar.info/jobs/microsoft-technology-consulting-intern-ats-microsoft-india-1970393556955253",
+      "title": "Technology Consulting INTERN — Microsoft",
+      "content_text": "Company: Microsoft · Location: India, Telangana, Hyderabad\n• Identify project risks and propose technical mitigations aligned with business goals\n• Provide technical input in pre-sales and define customer cloud requirements\n• Engage with stakeholders to resolve project issues and accelerate cloud adoption",
+      "date_published": "2026-08-04T09:17:05.000Z",
+      "authors": [
+        {
+          "name": "Microsoft"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/emerson-graduate-engineer-trainee-4448323159",
       "url": "https://www.internradar.info/jobs/emerson-graduate-engineer-trainee-4448323159",
       "title": "Graduate Engineer Trainee — Emerson",
@@ -590,18 +602,6 @@
       "authors": [
         {
           "name": "Volvo Group"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/ebay-data-science-intern-4442852361",
-      "url": "https://www.internradar.info/jobs/ebay-data-science-intern-4442852361",
-      "title": "Data Science Intern — eBay",
-      "content_text": "Company: eBay · Location: Bengaluru, Karnataka, India · Duration: 0–3 years\n• Transform massive datasets into insights using analytics, machine learning, and experimentation\n• Build models to segment users on the platform and apply statistical, ML, and deep analytical techniques\n• Work with SQL, Python, and NoSQL tools like Hadoop, Hive, Spark, Pig, H2O\n• Currently pursuing a Bachelor’s or Master’s, graduating in 2028",
-      "date_published": "2026-07-27T14:47:42.710Z",
-      "authors": [
-        {
-          "name": "eBay"
         }
       ]
     }

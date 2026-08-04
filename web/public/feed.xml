@@ -6,7 +6,17 @@
   <atom:link href="https://www.internradar.info/feed.xml" rel="self" type="application/rss+xml"/>
   <description>New engineering internships, listed within minutes of going live.</description>
   <language>en-in</language>
-  <lastBuildDate>Tue, 04 Aug 2026 10:04:47 GMT</lastBuildDate>
+  <lastBuildDate>Tue, 04 Aug 2026 10:35:38 GMT</lastBuildDate>
+  <item>
+    <title>Technology Consulting INTERN — Microsoft</title>
+    <link>https://www.internradar.info/jobs/microsoft-technology-consulting-intern-ats-microsoft-india-1970393556955253</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/microsoft-technology-consulting-intern-ats-microsoft-india-1970393556955253</guid>
+    <pubDate>Tue, 04 Aug 2026 09:17:05 GMT</pubDate>
+    <description>Company: Microsoft · Location: India, Telangana, Hyderabad
+• Identify project risks and propose technical mitigations aligned with business goals
+• Provide technical input in pre-sales and define customer cloud requirements
+• Engage with stakeholders to resolve project issues and accelerate cloud adoption</description>
+  </item>
   <item>
     <title>Graduate Engineer Trainee — Emerson</title>
     <link>https://www.internradar.info/jobs/emerson-graduate-engineer-trainee-4448323159</link>
@@ -507,17 +517,6 @@
 • Apply knowledge of plastic/sheet metal part manufacturing processes, including tooling and molding
 • Work with proto manufacturing methods and consider plastic/sheet metal design aspects
 • Use CAD tools like CATIA V5/Creo for part modeling, surfacing, assembly, and detailing</description>
-  </item>
-  <item>
-    <title>Data Science Intern — eBay</title>
-    <link>https://www.internradar.info/jobs/ebay-data-science-intern-4442852361</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/ebay-data-science-intern-4442852361</guid>
-    <pubDate>Mon, 27 Jul 2026 14:47:42 GMT</pubDate>
-    <description>Company: eBay · Location: Bengaluru, Karnataka, India · Duration: 0–3 years
-• Transform massive datasets into insights using analytics, machine learning, and experimentation
-• Build models to segment users on the platform and apply statistical, ML, and deep analytical techniques
-• Work with SQL, Python, and NoSQL tools like Hadoop, Hive, Spark, Pig, H2O
-• Currently pursuing a Bachelor’s or Master’s, graduating in 2028</description>
   </item>
 </channel>
 </rss>
