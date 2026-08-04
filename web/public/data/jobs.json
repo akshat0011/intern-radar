@@ -1,7 +1,7 @@
 {
- "generatedAt": 1785825410506,
- "count": 176,
- "techCount": 176,
+ "generatedAt": 1785826107258,
+ "count": 177,
+ "techCount": 177,
  "otherCount": 0,
  "companies": [
   "ALLEN",
@@ -148,6 +148,35 @@
   "Warsaw, Poland"
  ],
  "jobs": [
+  {
+   "id": "ats:smartrecruiters:continental:744000141417650",
+   "title": "Mandatory Internship – Cybersecurity Reporting, Training & Awareness - REF98629N",
+   "company": "Continental",
+   "matchedWatchlist": "Continental",
+   "isTech": true,
+   "roleSource": "ats-smartrecruiters",
+   "logo": "/logos/continental.png",
+   "location": "Hannover, de",
+   "workplaceType": null,
+   "stipend": null,
+   "duration": null,
+   "applicants": null,
+   "easyApply": false,
+   "skills": [],
+   "summary": null,
+   "bullets": [],
+   "roleLabel": null,
+   "degreeLevel": null,
+   "degreeText": null,
+   "keySkills": [],
+   "stipendStatus": "unknown",
+   "postedText": null,
+   "postedAt": 1785825867874,
+   "firstSeenAt": 1785825906502,
+   "url": "https://jobs.smartrecruiters.com/continental/744000141417650",
+   "applyUrl": "https://jobs.smartrecruiters.com/continental/744000141417650",
+   "description": null
+  },
   {
    "id": "ats:smartrecruiters:continental:744000141413829",
    "title": "Mandatory Internship – Cybersecurity Reporting, Training & Awareness",

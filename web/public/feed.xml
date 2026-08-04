@@ -6,7 +6,14 @@
   <atom:link href="https://www.internradar.info/feed.xml" rel="self" type="application/rss+xml"/>
   <description>New engineering internships, listed within minutes of going live.</description>
   <language>en-in</language>
-  <lastBuildDate>Tue, 04 Aug 2026 06:36:50 GMT</lastBuildDate>
+  <lastBuildDate>Tue, 04 Aug 2026 06:48:27 GMT</lastBuildDate>
+  <item>
+    <title>Mandatory Internship – Cybersecurity Reporting, Training &amp; Awareness - REF98629N — Continental</title>
+    <link>https://www.internradar.info/jobs/continental-mandatory-internship-cybersecurity-reporting-training-and-awareness-re-ats-smartrecruiters-continental-744000141417650</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/continental-mandatory-internship-cybersecurity-reporting-training-and-awareness-re-ats-smartrecruiters-continental-744000141417650</guid>
+    <pubDate>Tue, 04 Aug 2026 06:44:27 GMT</pubDate>
+    <description>Company: Continental · Location: Hannover, de</description>
+  </item>
   <item>
     <title>Mandatory Internship – Cybersecurity Reporting, Training &amp; Awareness — Continental</title>
     <link>https://www.internradar.info/jobs/continental-mandatory-internship-cybersecurity-reporting-training-and-awareness-ats-smartrecruiters-continental-744000141413829</link>
@@ -474,16 +481,6 @@
     <pubDate>Thu, 30 Jul 2026 17:35:34 GMT</pubDate>
     <description>Company: Zscaler · Location: Remote - USA
 • Review suspicious emails and perform open-source research
-• Remote</description>
-  </item>
-  <item>
-    <title>Insider Risk Analyst - SkillBridge Intern — Zscaler</title>
-    <link>https://www.internradar.info/jobs/zscaler-insider-risk-analyst-skillbridge-intern-ats-greenhouse-zscaler-5100618007</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/zscaler-insider-risk-analyst-skillbridge-intern-ats-greenhouse-zscaler-5100618007</guid>
-    <pubDate>Thu, 30 Jul 2026 17:35:34 GMT</pubDate>
-    <description>Company: Zscaler · Location: Remote - USA
-• Monitor behavioral telemetry and access logs to identify insider risks
-• UEBA, DLP
 • Remote</description>
   </item>
 </channel>
