@@ -6,7 +6,14 @@
   <atom:link href="https://www.internradar.info/feed.xml" rel="self" type="application/rss+xml"/>
   <description>New engineering internships, listed within minutes of going live.</description>
   <language>en-in</language>
-  <lastBuildDate>Tue, 04 Aug 2026 06:04:07 GMT</lastBuildDate>
+  <lastBuildDate>Tue, 04 Aug 2026 06:36:50 GMT</lastBuildDate>
+  <item>
+    <title>Mandatory Internship – Cybersecurity Reporting, Training &amp; Awareness — Continental</title>
+    <link>https://www.internradar.info/jobs/continental-mandatory-internship-cybersecurity-reporting-training-and-awareness-ats-smartrecruiters-continental-744000141413829</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/continental-mandatory-internship-cybersecurity-reporting-training-and-awareness-ats-smartrecruiters-continental-744000141413829</guid>
+    <pubDate>Tue, 04 Aug 2026 06:05:55 GMT</pubDate>
+    <description>Company: Continental · Location: Hannover, de</description>
+  </item>
   <item>
     <title>Graduate Engineer Trainee — Emerson</title>
     <link>https://www.internradar.info/jobs/emerson-graduate-engineer-trainee-4448323159</link>
@@ -477,15 +484,6 @@
     <description>Company: Zscaler · Location: Remote - USA
 • Monitor behavioral telemetry and access logs to identify insider risks
 • UEBA, DLP
-• Remote</description>
-  </item>
-  <item>
-    <title>Federal Security Operations - SkillBridge Intern — Zscaler</title>
-    <link>https://www.internradar.info/jobs/zscaler-federal-security-operations-skillbridge-intern-ats-greenhouse-zscaler-5069684007</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/zscaler-federal-security-operations-skillbridge-intern-ats-greenhouse-zscaler-5069684007</guid>
-    <pubDate>Thu, 30 Jul 2026 17:35:34 GMT</pubDate>
-    <description>Company: Zscaler · Location: Remote - USA
-• Establish success criteria, metrics, and timelines for deployment projects
 • Remote</description>
   </item>
 </channel>
