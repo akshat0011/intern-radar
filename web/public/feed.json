@@ -6,22 +6,10 @@
   "description": "New engineering internships, listed within minutes of going live.",
   "items": [
     {
-      "id": "https://www.internradar.info/jobs/noise-editing-intern-4448257614",
-      "url": "https://www.internradar.info/jobs/noise-editing-intern-4448257614",
-      "title": "Editing Intern — Noise",
-      "content_text": "Company: Noise · Location: Gurugram, Haryana, India (On-site)",
-      "date_published": "2026-08-04T02:17:05.896Z",
-      "authors": [
-        {
-          "name": "Noise"
-        }
-      ]
-    },
-    {
       "id": "https://www.internradar.info/jobs/ibm-technical-support-representative-intern-4435963237",
       "url": "https://www.internradar.info/jobs/ibm-technical-support-representative-intern-4435963237",
       "title": "Technical Support Representative Intern — IBM",
-      "content_text": "Company: IBM · Location: Greater Lucknow Area",
+      "content_text": "Company: IBM · Location: Greater Lucknow Area\n• Observe application monitoring processes, incident analysis, and rectification\n• Support low to medium production technical support tasks and configuration\n• Gain hands-on experience in scheduling and application administration",
       "date_published": "2026-08-03T17:39:09.877Z",
       "authors": [
         {
@@ -33,7 +21,7 @@
       "id": "https://www.internradar.info/jobs/ibm-technical-support-representative-intern-4435946951",
       "url": "https://www.internradar.info/jobs/ibm-technical-support-representative-intern-4435946951",
       "title": "Technical Support Representative Intern — IBM",
-      "content_text": "Company: IBM · Location: Pune Division, Maharashtra, India",
+      "content_text": "Company: IBM · Location: Pune Division, Maharashtra, India\n• Observe application monitoring processes, incident analysis, and rectification\n• Support low to medium production technical support tasks and configuration\n• Gain hands-on experience in scheduling and application administration",
       "date_published": "2026-08-03T17:11:27.109Z",
       "authors": [
         {
@@ -45,7 +33,7 @@
       "id": "https://www.internradar.info/jobs/ibm-technical-support-representative-intern-4435948880",
       "url": "https://www.internradar.info/jobs/ibm-technical-support-representative-intern-4435948880",
       "title": "Technical Support Representative Intern — IBM",
-      "content_text": "Company: IBM · Location: Hyderabad, Telangana, India",
+      "content_text": "Company: IBM · Location: Hyderabad, Telangana, India\n• Observe application monitoring processes, incident analysis, and rectification\n• Support low to medium production technical support tasks and configuration\n• Gain hands-on experience in scheduling and application administration",
       "date_published": "2026-08-03T17:04:49.543Z",
       "authors": [
         {
@@ -57,7 +45,7 @@
       "id": "https://www.internradar.info/jobs/ibm-technical-support-representative-intern-4435952817",
       "url": "https://www.internradar.info/jobs/ibm-technical-support-representative-intern-4435952817",
       "title": "Technical Support Representative Intern — IBM",
-      "content_text": "Company: IBM · Location: Mumbai Metropolitan Region",
+      "content_text": "Company: IBM · Location: Mumbai Metropolitan Region\n• Observe application monitoring processes, incident analysis, and rectification\n• Support low to medium production technical support tasks and configuration\n• Gain hands-on experience in scheduling and application administration",
       "date_published": "2026-08-03T17:02:54.666Z",
       "authors": [
         {
@@ -69,7 +57,7 @@
       "id": "https://www.internradar.info/jobs/ibm-technical-support-representative-intern-4435960679",
       "url": "https://www.internradar.info/jobs/ibm-technical-support-representative-intern-4435960679",
       "title": "Technical Support Representative Intern — IBM",
-      "content_text": "Company: IBM · Location: Coimbatore, Tamil Nadu, India",
+      "content_text": "Company: IBM · Location: Coimbatore, Tamil Nadu, India\n• Observe application monitoring, incident analysis, and fault resolution\n• Assist with production monitoring and application administration tasks\n• Support non-code application configuration and scheduling operations",
       "date_published": "2026-08-03T16:48:29.587Z",
       "authors": [
         {
@@ -81,7 +69,7 @@
       "id": "https://www.internradar.info/jobs/ibm-technical-support-representative-intern-4435955892",
       "url": "https://www.internradar.info/jobs/ibm-technical-support-representative-intern-4435955892",
       "title": "Technical Support Representative Intern — IBM",
-      "content_text": "Company: IBM · Location: Mysore, Karnataka, India",
+      "content_text": "Company: IBM · Location: Mysore, Karnataka, India\n• Observe application monitoring, incident analysis, and fault resolution\n• Assist with production monitoring and application administration tasks\n• Support non-code application configuration and scheduling operations",
       "date_published": "2026-08-03T16:47:54.983Z",
       "authors": [
         {
@@ -93,7 +81,7 @@
       "id": "https://www.internradar.info/jobs/emerson-graduate-engineer-trainee-4448323159",
       "url": "https://www.internradar.info/jobs/emerson-graduate-engineer-trainee-4448323159",
       "title": "Graduate Engineer Trainee — Emerson",
-      "content_text": "Company: Emerson · Location: Pune Division, Maharashtra, India",
+      "content_text": "Company: Emerson · Location: Pune Division, Maharashtra, India\n• Configure HMI and SCADA systems across multiple platforms\n• Create historical reports and trends using SQL and VB scripting\n• Test serial and Ethernet communication protocols like Modbus",
       "date_published": "2026-08-03T16:37:21.804Z",
       "authors": [
         {
@@ -105,7 +93,7 @@
       "id": "https://www.internradar.info/jobs/squarepoint-capital-intern-software-developer-singapore-2027-ats-greenhouse-squarepointcapital-6201998",
       "url": "https://www.internradar.info/jobs/squarepoint-capital-intern-software-developer-singapore-2027-ats-greenhouse-squarepointcapital-6201998",
       "title": "Intern Software Developer - Singapore - 2027 — Squarepoint Capital",
-      "content_text": "Company: Squarepoint Capital · Location: Singapore · Duration: 12 weeks",
+      "content_text": "Company: Squarepoint Capital · Location: Singapore · Duration: 12 weeks\n• Build custom software solutions and work on independent programming projects\n• Use Python or C++ to support active trading systems in algorithmic trading\n• Complete a minimum 12-week internship based in Singapore",
       "date_published": "2026-08-03T14:44:04.000Z",
       "authors": [
         {
@@ -117,7 +105,7 @@
       "id": "https://www.internradar.info/jobs/ibm-technical-support-representative-intern-4435948881",
       "url": "https://www.internradar.info/jobs/ibm-technical-support-representative-intern-4435948881",
       "title": "Technical Support Representative Intern — IBM",
-      "content_text": "Company: IBM · Location: Greater Kolkata Area",
+      "content_text": "Company: IBM · Location: Greater Kolkata Area\n• Observe scheduling and production monitoring activities for client applications\n• Gain experience in application monitoring, incident analysis, and simple rectification\n• Perform internship in shifts with 60 percentage throughout academics",
       "date_published": "2026-08-03T14:19:30.349Z",
       "authors": [
         {
@@ -129,7 +117,7 @@
       "id": "https://www.internradar.info/jobs/intel-attraction-req-intern-4447993213",
       "url": "https://www.internradar.info/jobs/intel-attraction-req-intern-4447993213",
       "title": "Attraction Req : Intern — Intel",
-      "content_text": "Company: Intel · Location: Bengaluru, Karnataka, India",
+      "content_text": "Company: Intel · Location: Bengaluru, Karnataka, India\n• Conduct research, logic design, RTL coding, and simulation for SoC development\n• Develop AI software, open-source libraries, and integrate software across the stack\n• Hybrid work model based out of Bangalore, India",
       "date_published": "2026-08-03T13:29:54.890Z",
       "authors": [
         {
@@ -138,22 +126,10 @@
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/piramal-pharma-ltd-apprentice-adl-4445892819",
-      "url": "https://www.internradar.info/jobs/piramal-pharma-ltd-apprentice-adl-4445892819",
-      "title": "Apprentice - ADL — Piramal Pharma Ltd",
-      "content_text": "Company: Piramal Pharma Ltd · Location: Ahmedabad, Gujarat, India",
-      "date_published": "2026-08-03T11:53:08.950Z",
-      "authors": [
-        {
-          "name": "Piramal Pharma Ltd"
-        }
-      ]
-    },
-    {
       "id": "https://www.internradar.info/jobs/microsoft-research-sciences-intern-ats-microsoft-india-1970393556638637",
       "url": "https://www.internradar.info/jobs/microsoft-research-sciences-intern-ats-microsoft-india-1970393556638637",
       "title": "Research Sciences INTERN — Microsoft",
-      "content_text": "Company: Microsoft · Location: India, Karnataka, Bangalore",
+      "content_text": "Company: Microsoft · Location: India, Karnataka, Bangalore\n• Analyze and improve performance of advanced algorithms on large-scale datasets\n• Implement prototypes of scalable systems in AI and machine learning applications\n• Paid internship based in India with mentorship from researchers",
       "date_published": "2026-08-03T11:15:20.000Z",
       "authors": [
         {
@@ -165,7 +141,7 @@
       "id": "https://www.internradar.info/jobs/delhivery-product-management-intern-4445893504",
       "url": "https://www.internradar.info/jobs/delhivery-product-management-intern-4445893504",
       "title": "Product Management Intern — Delhivery",
-      "content_text": "Company: Delhivery · Location: Gurugram, Haryana, India · Duration: 3 to 6 months",
+      "content_text": "Company: Delhivery · Location: Gurugram, Haryana, India · Duration: 3 to 6 months\n• Support the end-to-end product lifecycle from ideation to launch\n• Conduct market research and competitor analysis to guide product strategy\n• Analyze user feedback and metrics to define requirements and user stories\n• Collaborate with design, engineering, and marketing across a 3 to 6 month duration",
       "date_published": "2026-08-03T10:56:13.774Z",
       "authors": [
         {
@@ -177,7 +153,7 @@
       "id": "https://www.internradar.info/jobs/emerson-intern-power-greenfield-4448170119",
       "url": "https://www.internradar.info/jobs/emerson-intern-power-greenfield-4448170119",
       "title": "Intern-Power Greenfield — Emerson",
-      "content_text": "Company: Emerson · Location: Noida, Uttar Pradesh, India",
+      "content_text": "Company: Emerson · Location: Noida, Uttar Pradesh, India\n• Design and develop engineering productivity tools based on user requirements\n• Support deployment and provide training and demos to project teams\n• Automate manual engineering tasks to improve accuracy and efficiency",
       "date_published": "2026-08-03T10:37:35.094Z",
       "authors": [
         {
@@ -201,7 +177,7 @@
       "id": "https://www.internradar.info/jobs/hdfc-bank-limited-trainee-analyst-4445890480",
       "url": "https://www.internradar.info/jobs/hdfc-bank-limited-trainee-analyst-4445890480",
       "title": "Trainee Analyst — HDFC Bank Limited",
-      "content_text": "Company: HDFC Bank Limited · Location: Mumbai, Maharashtra, India",
+      "content_text": "Company: HDFC Bank Limited · Location: Mumbai, Maharashtra, India\n• Support data extraction, cleaning, and preparation for reporting and dashboards\n• Maintain historical datasets and perform basic trend analysis\n• Use Excel, SQL, and Python to support automation and business intelligence initiatives",
       "date_published": "2026-08-03T10:33:39.742Z",
       "authors": [
         {
@@ -246,22 +222,10 @@
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/jump-trading-campus-quantitative-trader-intern-ats-greenhouse-jumptrading-8027941",
-      "url": "https://www.internradar.info/jobs/jump-trading-campus-quantitative-trader-intern-ats-greenhouse-jumptrading-8027941",
-      "title": "Campus Quantitative Trader (Intern) — Jump Trading",
-      "content_text": "Company: Jump Trading · Location: Singapore",
-      "date_published": "2026-08-03T07:00:24.000Z",
-      "authors": [
-        {
-          "name": "Jump Trading"
-        }
-      ]
-    },
-    {
       "id": "https://www.internradar.info/jobs/jump-trading-campus-quantitative-researcher-intern-ats-greenhouse-jumptrading-8027939",
       "url": "https://www.internradar.info/jobs/jump-trading-campus-quantitative-researcher-intern-ats-greenhouse-jumptrading-8027939",
       "title": "Campus Quantitative Researcher (Intern) — Jump Trading",
-      "content_text": "Company: Jump Trading · Location: Singapore",
+      "content_text": "Company: Jump Trading · Location: Singapore\n• Build predictive models and devise automated trading strategies\n• Python, C++, and machine learning\n• 10-week internship based in Singapore for full-time placement consideration",
       "date_published": "2026-08-03T07:00:20.000Z",
       "authors": [
         {
@@ -273,7 +237,7 @@
       "id": "https://www.internradar.info/jobs/jump-trading-campus-systems-engineer-intern-ats-greenhouse-jumptrading-8027952",
       "url": "https://www.internradar.info/jobs/jump-trading-campus-systems-engineer-intern-ats-greenhouse-jumptrading-8027952",
       "title": "Campus Systems Engineer (Intern) — Jump Trading",
-      "content_text": "Company: Jump Trading · Location: Singapore",
+      "content_text": "Company: Jump Trading · Location: Singapore\n• Manage and monitor the real-time trading platform in Singapore\n• Troubleshoot network infrastructure and low-latency applications\n• Build automation scripts using Linux and Python over 10 weeks",
       "date_published": "2026-08-03T07:00:11.000Z",
       "authors": [
         {
@@ -285,7 +249,7 @@
       "id": "https://www.internradar.info/jobs/jump-trading-campus-python-software-engineer-intern-ats-greenhouse-jumptrading-8027955",
       "url": "https://www.internradar.info/jobs/jump-trading-campus-python-software-engineer-intern-ats-greenhouse-jumptrading-8027955",
       "title": "Campus Python Software Engineer (Intern) — Jump Trading",
-      "content_text": "Company: Jump Trading · Location: Singapore",
+      "content_text": "Company: Jump Trading · Location: Singapore\n• Build high-impact products and solutions connecting data with the trading environment\n• Python on Linux\n• 10-week summer program located at the Singapore office",
       "date_published": "2026-08-03T07:00:07.000Z",
       "authors": [
         {
@@ -297,23 +261,11 @@
       "id": "https://www.internradar.info/jobs/jump-trading-campus-c-software-engineer-intern-ats-greenhouse-jumptrading-8027946",
       "url": "https://www.internradar.info/jobs/jump-trading-campus-c-software-engineer-intern-ats-greenhouse-jumptrading-8027946",
       "title": "Campus C++ Software Engineer (Intern) — Jump Trading",
-      "content_text": "Company: Jump Trading · Location: Singapore",
+      "content_text": "Company: Jump Trading · Location: Singapore\n• Design, code, test, and maintain a distributed trading system\n• C++ and Linux\n• 10-week core development internship based in Singapore",
       "date_published": "2026-08-03T07:00:02.000Z",
       "authors": [
         {
           "name": "Jump Trading"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/great-learning-ai-film-making-internship-4447689632",
-      "url": "https://www.internradar.info/jobs/great-learning-ai-film-making-internship-4447689632",
-      "title": "AI Film Making(Internship) — Great Learning",
-      "content_text": "Company: Great Learning · Location: Bengaluru, Karnataka, India\n• Use AI tools like Veo, Runway, Kling, Pika, Luma, Midjourney, Flux to create marketing videos\n• Develop concepts, storyboards, and write prompts for AI image and video generation\n• Edit videos with Adobe Premiere Pro, After Effects, DaVinci Resolve, CapCut\n• Collaborate with scriptwriters, animators, and designers",
-      "date_published": "2026-08-03T05:58:59.789Z",
-      "authors": [
-        {
-          "name": "Great Learning"
         }
       ]
     },
@@ -342,30 +294,6 @@
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/valeo-recrutirment-trainee-ats-workday-valeo-wd3-valeo-jobs-req2026079451",
-      "url": "https://www.internradar.info/jobs/valeo-recrutirment-trainee-ats-workday-valeo-wd3-valeo-jobs-req2026079451",
-      "title": "Recrutirment Trainee — Valeo",
-      "content_text": "Company: Valeo · Location: San Luis Potosi",
-      "date_published": "2026-08-03T00:00:00.000Z",
-      "authors": [
-        {
-          "name": "Valeo"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/valeo-facilities-trainee-ats-workday-valeo-wd3-valeo-jobs-req2026078721",
-      "url": "https://www.internradar.info/jobs/valeo-facilities-trainee-ats-workday-valeo-wd3-valeo-jobs-req2026078721",
-      "title": "Facilities Trainee — Valeo",
-      "content_text": "Company: Valeo · Location: San Luis Potosi",
-      "date_published": "2026-08-03T00:00:00.000Z",
-      "authors": [
-        {
-          "name": "Valeo"
-        }
-      ]
-    },
-    {
       "id": "https://www.internradar.info/jobs/valeo-vps-trainee-ats-workday-valeo-wd3-valeo-jobs-req2026078723",
       "url": "https://www.internradar.info/jobs/valeo-vps-trainee-ats-workday-valeo-wd3-valeo-jobs-req2026078723",
       "title": "VPS trainee — Valeo",
@@ -381,7 +309,7 @@
       "id": "https://www.internradar.info/jobs/micron-technology-intern-digital-automation-and-solutions-team-ats-workday-micron-wd1-external-jr102272",
       "url": "https://www.internradar.info/jobs/micron-technology-intern-digital-automation-and-solutions-team-ats-workday-micron-wd1-external-jr102272",
       "title": "Intern - Digital Automation and Solutions Team — Micron Technology",
-      "content_text": "Company: Micron Technology · Location: Fab 10N/X, Singapore",
+      "content_text": "Company: Micron Technology · Location: Fab 10N/X, Singapore\n• Design a structured database schema for warehouse inventory and storage tracking\n• Develop visualization dashboards using Power BI or Tableau for real-time decisions\n• Build a simulation model to represent storage flows across warehouse zones",
       "date_published": "2026-08-03T00:00:00.000Z",
       "authors": [
         {
@@ -393,7 +321,7 @@
       "id": "https://www.internradar.info/jobs/micron-technology-intern-ml-ai-engineer-product-engineering-stpg-ats-workday-micron-wd1-external-jr93102",
       "url": "https://www.internradar.info/jobs/micron-technology-intern-ml-ai-engineer-product-engineering-stpg-ats-workday-micron-wd1-external-jr93102",
       "title": "Intern – ML/AI Engineer (Product Engineering, STPG) — Micron Technology",
-      "content_text": "Company: Micron Technology · Location: Fab 10N/X, Singapore",
+      "content_text": "Company: Micron Technology · Location: Fab 10N/X, Singapore\n• Build predictive models for yield and test-time optimization using structured data\n• Develop AI agents that automate engineering tasks like report generation and anomaly detection\n• Perform data cleaning and transformation on high-volume semiconductor datasets",
       "date_published": "2026-08-03T00:00:00.000Z",
       "authors": [
         {
@@ -405,7 +333,7 @@
       "id": "https://www.internradar.info/jobs/micron-technology-intern-pie-pi-product-integration-engineering-process-integration-ats-workday-micron-wd1-external-jr96407",
       "url": "https://www.internradar.info/jobs/micron-technology-intern-pie-pi-product-integration-engineering-process-integration-ats-workday-micron-wd1-external-jr96407",
       "title": "Intern- PIE PI (Product Integration Engineering, Process Integration) — Micron Technology",
-      "content_text": "Company: Micron Technology · Location: Fab 10N/X, Singapore · Duration: 5 months",
+      "content_text": "Company: Micron Technology · Location: Fab 10N/X, Singapore · Duration: 5 months\n• Study advanced NAND CMOS metallisation concepts and reliability failure mechanisms\n• Use Micron in-house SMAI analytics tools and dashboards to study failure trends\n• Observe cross-functional collaboration within Process Integration teams",
       "date_published": "2026-08-03T00:00:00.000Z",
       "authors": [
         {
@@ -417,7 +345,7 @@
       "id": "https://www.internradar.info/jobs/barclays-2027-technology-developer-summer-internship-programme-india-ats-workday-barclays-wd3-external-career-site-barclays-jr-0000124913",
       "url": "https://www.internradar.info/jobs/barclays-2027-technology-developer-summer-internship-programme-india-ats-workday-barclays-wd3-external-career-site-barclays-jr-0000124913",
       "title": "2027 Technology Developer Summer Internship Programme India — Barclays",
-      "content_text": "Company: Barclays",
+      "content_text": "Company: Barclays\n• Design, develop and improve software utilizing various engineering methodologies\n• Ensure code scalability and maintainability using industry-aligned languages and tools\n• Collaborate with product managers and designers to define software requirements",
       "date_published": "2026-08-03T00:00:00.000Z",
       "authors": [
         {
@@ -477,7 +405,7 @@
       "id": "https://www.internradar.info/jobs/postman-labs-ai-engineer-intern-ats-greenhouse-postman-7823417003",
       "url": "https://www.internradar.info/jobs/postman-labs-ai-engineer-intern-ats-greenhouse-postman-7823417003",
       "title": "AI Engineer, Intern — Postman Labs",
-      "content_text": "Company: Postman Labs · Location: Berkeley, California, United States · Stipend: 4,048",
+      "content_text": "Company: Postman Labs · Location: Berkeley, California, United States · Stipend: 4,048\n• Build and validate AI models using PyTorch or JAX for large-scale systems\n• Develop inference APIs, batch scoring workflows, and integrate with backend services\n• Run large experiments and support CI/CD pipelines and model versioning",
       "date_published": "2026-08-01T14:52:20.000Z",
       "authors": [
         {
@@ -501,7 +429,7 @@
       "id": "https://www.internradar.info/jobs/sifive-intern-design-verification-infrastructure-engineer-platform-ats-workday-sifive-wd1-sifivecareers-posted-2-days-ago",
       "url": "https://www.internradar.info/jobs/sifive-intern-design-verification-infrastructure-engineer-platform-ats-workday-sifive-wd1-sifivecareers-posted-2-days-ago",
       "title": "Intern - Design Verification Infrastructure Engineer - Platform — SiFive",
-      "content_text": "Company: SiFive · Location: 4 Locations",
+      "content_text": "Company: SiFive · Location: 4 Locations\n• Architect and maintain the Verification Platform for Design Verification\n• Develop new functionality in Chisel and CIRCT to support platform libraries\n• Build verification intent libraries in Scala and Python for querying design intent",
       "date_published": "2026-08-01T00:00:00.000Z",
       "authors": [
         {
@@ -525,7 +453,7 @@
       "id": "https://www.internradar.info/jobs/palantir-product-designer-internship-us-government-ats-lever-palantir-9db71277-3a9a-481b-a2a3-25c3125b0e8a",
       "url": "https://www.internradar.info/jobs/palantir-product-designer-internship-us-government-ats-lever-palantir-9db71277-3a9a-481b-a2a3-25c3125b0e8a",
       "title": "Product Designer, Internship - US Government — Palantir",
-      "content_text": "Company: Palantir · Location: Palo Alto, CA",
+      "content_text": "Company: Palantir · Location: Palo Alto, CA\n• Lead design sprints and create micro-interactions for complex analytical software tasks\n• Advocate for UX consistency by building flexible and reusable UI components\n• Collaborate closely within a tight-knit product design team",
       "date_published": "2026-07-31T21:35:37.281Z",
       "authors": [
         {
@@ -602,6 +530,78 @@
       "authors": [
         {
           "name": "Western Digital"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/newton-school-of-technology-product-intern-4446988446",
+      "url": "https://www.internradar.info/jobs/newton-school-of-technology-product-intern-4446988446",
+      "title": "Product Intern — Newton School of Technology",
+      "content_text": "Company: Newton School of Technology · Location: Bengaluru, Karnataka, India\n• Ideate and develop product requirements, leading the overall product development\n• Collaborate with Engineering and Design to build and launch products\n• Produce high-quality product specifications and manage scope for timely delivery\n• Track performance metrics and leverage data for product improvements",
+      "date_published": "2026-07-31T07:40:40.557Z",
+      "authors": [
+        {
+          "name": "Newton School of Technology"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/intel-soc-validation-engineer-intern-4446997136",
+      "url": "https://www.internradar.info/jobs/intel-soc-validation-engineer-intern-4446997136",
+      "title": "SoC Validation Engineer Intern — Intel",
+      "content_text": "Company: Intel · Location: Bengaluru, Karnataka, India\n• Work on SoC validation as an M.Tech graduate in Electronics, Telecommunications, or Computer Science\n• This role is eligible for a hybrid work model, splitting time between on-site and off-site",
+      "date_published": "2026-07-31T07:29:03.688Z",
+      "authors": [
+        {
+          "name": "Intel"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/fujitsu-research-intern-quantum-computing-4447272252",
+      "url": "https://www.internradar.info/jobs/fujitsu-research-intern-quantum-computing-4447272252",
+      "title": "Research Intern (Quantum Computing) — Fujitsu",
+      "content_text": "Company: Fujitsu · Location: Bangalore Urban, Karnataka, India · Duration: 3 months\n• Conduct original research in open quantum systems, thermalisation, and quantum algorithms\n• Work with the Quantum R&D Division, contributing to the Quantum Computing Stack\n• Requires strong background in open quantum systems, statistical physics, and linear algebra\n• Programming experience in Python is preferred; 3-6 month physical internship in Bangalore",
+      "date_published": "2026-07-31T07:00:03.103Z",
+      "authors": [
+        {
+          "name": "Fujitsu"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/bybit-nlp-algorithm-engineer-intern-ats-greenhouse-bybit-4868977101",
+      "url": "https://www.internradar.info/jobs/bybit-nlp-algorithm-engineer-intern-ats-greenhouse-bybit-4868977101",
+      "title": "NLP Algorithm Engineer Intern — Bybit",
+      "content_text": "Company: Bybit · Location: APAC - Remote\n• Participate in developing LLM-based applications including Q&A systems and Agents\n• Design and optimize prompts and workflow systems\n• Implement core NLP tasks like text classification and information extraction",
+      "date_published": "2026-07-31T04:01:41.000Z",
+      "authors": [
+        {
+          "name": "Bybit"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/western-digital-intern-web-developer-ats-smartrecruiters-westerndigital-744000140814058",
+      "url": "https://www.internradar.info/jobs/western-digital-intern-web-developer-ats-smartrecruiters-westerndigital-744000140814058",
+      "title": "Intern - Web Developer — Western Digital",
+      "content_text": "Company: Western Digital · Location: Amphoe Si Maha Phot, th",
+      "date_published": "2026-07-31T02:08:28.538Z",
+      "authors": [
+        {
+          "name": "Western Digital"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/noise-intern-product-nfa-4446948754",
+      "url": "https://www.internradar.info/jobs/noise-intern-product-nfa-4446948754",
+      "title": "Intern - Product (NFA) — Noise",
+      "content_text": "Company: Noise · Location: Gurugram, Haryana, India\n• Work with Product Managers on the full product lifecycle, from research to launch\n• Write PRDs, user stories, and feature specs; analyze product data using SQL\n• Collaborate with design on wireframes in Figma and engineering on sprints in Jira\n• Conduct market research, synthesize user feedback, and support A/B testing",
+      "date_published": "2026-07-31T01:02:08.758Z",
+      "authors": [
+        {
+          "name": "Noise"
         }
       ]
     }
