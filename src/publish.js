@@ -3,7 +3,7 @@ import { join } from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { ROOT } from './paths.js';
 import { log } from './logger.js';
-import { formatStipend } from './extract.js';
+import { formatStipend, isIndianLocation } from './extract.js';
 import { matchCompany, isBlockedCompany } from './config.js';
 import { syncLogos, logoPathFor, logoDirSize } from './logos.js';
 import { writePages } from './pages.js';
@@ -85,6 +85,7 @@ export async function writeJobsFile(store, cfg) {
   const techOnly = cfg.publish?.techRolesOnly !== false;
 
   let dropped = 0;
+  let droppedForeign = 0;
   let droppedNonTech = 0;
   const jobs = store
     .recentJobs(Date.now() - maxAgeMs)
@@ -109,6 +110,17 @@ export async function writeJobsFile(store, cfg) {
       if (matchedNow) return true;
       dropped++;
       log.debug(`Not publishing "${row.title}" — "${row.company}" no longer matches the watchlist.`);
+      return false;
+    })
+    // India only, enforced HERE and not just at collection. The collectors gate
+    // what is stored, but the table already held roles in Singapore, Malaysia
+    // and Hannover from when that gate was open — 90 of 174 published. Applying
+    // it at publish means those stop appearing without deleting anything, and
+    // one flag brings them all back.
+    .filter(({ row }) => {
+      if (cfg.publish?.indiaOnly === false) return true;
+      if (isIndianLocation(row.location)) return true;
+      droppedForeign++;
       return false;
     })
     // Engineering only. Applied here rather than in the SQL so that older rows
@@ -208,6 +220,10 @@ export async function writeJobsFile(store, cfg) {
   const publicJobs = jobs
     .map(({ row, matchedNow }) => toPublicJob(row, { includeFullDescription, matchedNow, logoIndex }))
     .sort((a, b) => (b.postedAt ?? 0) - (a.postedAt ?? 0));
+
+  if (droppedForeign) {
+    log.info(`Held back ${droppedForeign} posting${droppedForeign === 1 ? '' : 's'} outside India.`);
+  }
 
   if (droppedNonTech) {
     log.info(`Held back ${droppedNonTech} non-engineering posting${droppedNonTech === 1 ? '' : 's'} — the site is engineering-only.`);

@@ -401,3 +401,42 @@ export function jobIdFromUrl(url) {
   }
   return null;
 }
+
+/**
+ * Is this location in India?
+ *
+ * Deliberately strict: a location that names nowhere recognisably Indian is
+ * treated as foreign. The permissive version of this let "Bayan Lepas, my",
+ * "MSB, Singapore" and "Hannover, de" onto a site whose entire promise is
+ * internships in India — 90 of 174 published roles at one point. An ATS board
+ * is global by nature, so unknown has to mean no.
+ *
+ * An empty location is the one exception and is kept. Both collectors leave it
+ * blank often, the LinkedIn sweep is already scoped to India by its search, and
+ * dropping blanks loses real roles to fix a problem they are not causing.
+ */
+const INDIA_PLACES = new RegExp([
+  'india', 'bharat',
+  // cities
+  'bengaluru', 'bangalore', 'mumbai', 'bombay', 'delhi', 'gurugram', 'gurgaon',
+  'noida', 'hyderabad', 'chennai', 'madras', 'pune', 'kolkata', 'calcutta',
+  'ahmedabad', 'jaipur', 'indore', 'kochi', 'cochin', 'coimbatore', 'chandigarh',
+  'thiruvananthapuram', 'trivandrum', 'mysuru', 'mysore', 'nagpur', 'bhubaneswar',
+  'visakhapatnam', 'vizag', 'lucknow', 'kanpur', 'surat', 'vadodara', 'nashik',
+  'bhopal', 'patna', 'ranchi', 'guwahati', 'dehradun', 'mohali', 'manesar',
+  'gandhinagar', 'thane', 'faridabad', 'ghaziabad', 'aurangabad', 'rajkot',
+  'ludhiana', 'amritsar', 'jodhpur', 'madurai', 'tiruchirappalli', 'salem',
+  'hosur', 'hubli', 'belgaum', 'warangal', 'vijayawada', 'tirupati', 'puducherry',
+  'pondicherry', 'bareilly', 'sahibabad', 'sanand', 'pantnagar', 'sri city',
+  // states and union territories
+  'karnataka', 'maharashtra', 'tamil nadu', 'telangana', 'gujarat', 'haryana',
+  'punjab', 'rajasthan', 'uttar pradesh', 'west bengal', 'kerala', 'goa',
+  'andhra pradesh', 'madhya pradesh', 'odisha', 'orissa', 'bihar', 'jharkhand',
+  'assam', 'uttarakhand', 'himachal', 'chhattisgarh',
+].map((s) => s.replace(/ /g, '\\s+')).join('|'), 'i');
+
+export function isIndianLocation(location) {
+  const text = String(location ?? '').trim();
+  if (!text) return true;                     // unknown-but-blank: keep
+  return new RegExp(`\\b(${INDIA_PLACES.source})\\b`, 'i').test(text);
+}

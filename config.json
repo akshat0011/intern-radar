@@ -232,6 +232,8 @@
     "_autoPush_note": "After each run, commit web/public/data/jobs.json and push. Vercel is watching the repo, so the push is what makes the public site update.",
     "maxAgeDays": 14,
     "_maxAgeDays_note": "How long a job stays on the public site after it was first seen.",
+    "indiaOnly": true,
+    "_indiaOnly_publish_note": "Enforced at publish as well as collection, so anything captured while the collection gate was open stops appearing. Set false to show roles outside India again; nothing is deleted either way.",
     "techRolesOnly": true,
     "_techRolesOnly_note": "Only postings the classifier called technical reach the site. Applied at publish time, not in SQL, so rows stored back when the site carried every role simply stop appearing - nothing is deleted and flipping this to false brings them all back. A row whose verdict has not run yet (is_tech NULL) is NOT published: unclassified must not be treated as maybe-technical.",
     "includeFullDescription": false,
@@ -249,8 +251,8 @@
     "model": "claude-haiku-4-5-20251001"
   },
   "ats": {
-    "indiaOnly": false,
-    "_indiaOnly_note": "false = collect an internship at a watchlist company wherever it is posted. The company gate has already run, so these are employers you chose to track, and many roles are remote or worth relocating for. true = only postings whose location reads as Indian, which is how this ran originally. Note the site copy still says 'internships in India'; change that too if you leave this false.",
+    "indiaOnly": true,
+    "_indiaOnly_note": "true = only collect postings whose location reads as Indian, using isIndianLocation in src/extract.js. Off for a while, and the result was 90 of 174 published roles in Singapore, Malaysia and Hannover on a site that promises internships in India. publish.indiaOnly enforces the same rule again at publish time, so rows already stored while this was off stop appearing without being deleted.",
     "maxPostingAgeDays": 30,
     "_maxPostingAgeDays_note": "How old an ATS posting may be and still be collected. The LinkedIn scan never needed this because it searches with a time window; an ATS board has none and lists whatever is still open, so the first real poll surfaced roles 159 and 214 days old. Being first to a seven-month-old listing is not being early.",
     "_note": "Applicant-tracking-system job boards - the source LinkedIn copies from. Discovery is cached in the company_ats table by bin/discover-ats.js; bin/poll-ats.js reads it. No browser and no ToS problem: these are the public endpoints a company careers page calls to render itself."

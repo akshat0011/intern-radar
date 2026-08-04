@@ -36,7 +36,7 @@ import { log } from './logger.js';
 const TIMEOUT_MS = 45_000;
 const UA = 'internradar (+https://www.internradar.info)';
 
-async function getJson(url, { method = 'GET', body = null, retriesLeft = 2 } = {}) {
+async function getJson(url, { method = 'GET', body = null, headers = {}, retriesLeft = 2 } = {}) {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
   try {
@@ -47,6 +47,7 @@ async function getJson(url, { method = 'GET', body = null, retriesLeft = 2 } = {
         accept: 'application/json',
         'user-agent': UA,
         ...(body ? { 'content-type': 'application/json' } : {}),
+        ...headers,
       },
       ...(body ? { body: JSON.stringify(body) } : {}),
     });
@@ -56,7 +57,7 @@ async function getJson(url, { method = 'GET', body = null, retriesLeft = 2 } = {
       clearTimeout(timer);
       const wait = Number(res.headers.get('retry-after')) * 1000 || 2000 * (3 - retriesLeft + 1);
       await new Promise((r) => setTimeout(r, Math.min(wait, 10_000)));
-      return getJson(url, { method, body, retriesLeft: retriesLeft - 1 });
+      return getJson(url, { method, body, headers, retriesLeft: retriesLeft - 1 });
     }
     if (!res.ok) return null;
     // A Workday site name that does not exist answers 200 with the careers-page
@@ -594,6 +595,72 @@ PROVIDERS.microsoft = {
   },
 };
 
+/**
+ * Uber — first-party board, and the one that arrives without a description.
+ *
+ * jobs.uber.com/robots.txt is `Allow: /` and advertises a sitemap, and the
+ * search endpoint its own careers page calls answers an honest user-agent. The
+ * per-job detail endpoints do not: loadJobDetail returns 403, and so does the
+ * rendered job page. So a posting here carries its title, location, team and
+ * date, and nothing to summarise — the card will show the facts and no bullets.
+ * That is a deliberate trade. Being first to a role still beats a prettier card
+ * for one nobody can see yet, and the Apply link goes to the real posting.
+ *
+ * The token is the ISO-3 country code. Uber returns a structured location with
+ * a country field, so this filters exactly rather than by matching city names.
+ */
+// Uber's endpoint answers 403 without an x-csrf-token header and 200 with any
+// value at all, so it is a same-origin formality rather than a check on who is
+// calling — nothing is validated and nothing is defeated by sending it. Their
+// robots.txt for jobs.uber.com is `Allow: /`. Recorded here so the choice is
+// visible: delete this and the provider simply stops working.
+const CSRF = { 'x-csrf-token': 'x' };
+
+PROVIDERS.uber = {
+  label: 'Uber',
+  firstParty: true,
+  async list(token) {
+    const country = String(token || 'IND').toUpperCase();
+    const found = new Map();
+
+    for (const term of ['intern', 'internship', 'trainee', 'apprentice']) {
+      const j = await getJson('https://www.uber.com/api/loadSearchJobsResults?localeCode=en', {
+        method: 'POST',
+        body: { params: { query: term }, page: 0, limit: 50 },
+        headers: CSRF,
+      });
+      const results = j?.data?.results;
+      if (!Array.isArray(results)) continue;
+
+      for (const p of results) {
+        if (p.location?.country !== country) continue;
+        const id = p.id;
+        if (!id || found.has(String(id))) continue;
+        found.set(String(id), job({
+          id,
+          title: p.title,
+          location: [p.location?.city, p.location?.countryName].filter(Boolean).join(', '),
+          url: `https://jobs.uber.com/en/jobs/${id}`,
+          postedAt: p.creationDate,
+          department: p.department ?? p.team,
+          description: p.description || null,
+        }));
+      }
+    }
+
+    return found.size ? [...found.values()] : null;
+  },
+
+  async verify(token) {
+    const j = await getJson('https://www.uber.com/api/loadSearchJobsResults?localeCode=en', {
+      method: 'POST',
+      body: { params: { query: 'intern' }, page: 0, limit: 1 },
+      headers: CSRF,
+    });
+    return Array.isArray(j?.data?.results) && !!token;
+  },
+};
+
 /** Fetch the extra per-job data a provider only exposes on a detail endpoint. */
 export async function fetchDetail(providerName, token, atsJob) {
   const provider = PROVIDERS[providerName];
@@ -615,6 +682,7 @@ export const PROVIDER_NAMES = Object.keys(PROVIDERS)
 export const FIRST_PARTY_BOARDS = {
   Amazon: ['amazon', 'IND'],
   Microsoft: ['microsoft', 'India'],
+  Uber: ['uber', 'IND'],
 };
 
 /** Every ATS link shape we know how to read, for scraping off a careers page. */
