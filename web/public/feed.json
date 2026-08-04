@@ -6,6 +6,90 @@
   "description": "New engineering internships, listed within minutes of going live.",
   "items": [
     {
+      "id": "https://www.internradar.info/jobs/intuit-intern-software-engineering-4448546206",
+      "url": "https://www.internradar.info/jobs/intuit-intern-software-engineering-4448546206",
+      "title": "Intern, Software Engineering — Intuit",
+      "content_text": "Company: Intuit · Location: Bengaluru, Karnataka, India · Duration: Summer 2027",
+      "date_published": "2026-08-04T16:03:13.892Z",
+      "authors": [
+        {
+          "name": "Intuit"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/fiserv-summer-intern-4448548053",
+      "url": "https://www.internradar.info/jobs/fiserv-summer-intern-4448548053",
+      "title": "Summer Intern — Fiserv",
+      "content_text": "Company: Fiserv · Location: Chennai, Tamil Nadu, India",
+      "date_published": "2026-08-04T15:19:18.162Z",
+      "authors": [
+        {
+          "name": "Fiserv"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/ge-healthcare-graduate-trainee-engineer-4440562347",
+      "url": "https://www.internradar.info/jobs/ge-healthcare-graduate-trainee-engineer-4440562347",
+      "title": "Graduate Trainee Engineer — GE HealthCare",
+      "content_text": "Company: GE HealthCare · Location: Bengaluru, Karnataka, India",
+      "date_published": "2026-08-04T14:15:11.904Z",
+      "authors": [
+        {
+          "name": "GE HealthCare"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/ge-healthcare-manufacturing-trainee-engineer-4440545891",
+      "url": "https://www.internradar.info/jobs/ge-healthcare-manufacturing-trainee-engineer-4440545891",
+      "title": "Manufacturing Trainee Engineer — GE HealthCare",
+      "content_text": "Company: GE HealthCare · Location: Bengaluru, Karnataka, India",
+      "date_published": "2026-08-04T14:14:49.766Z",
+      "authors": [
+        {
+          "name": "GE HealthCare"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/siemens-healthineers-trainee-technical-4446652372",
+      "url": "https://www.internradar.info/jobs/siemens-healthineers-trainee-technical-4446652372",
+      "title": "Trainee - Technical — Siemens Healthineers",
+      "content_text": "Company: Siemens Healthineers · Location: Bengaluru, Karnataka, India",
+      "date_published": "2026-08-04T14:14:25.169Z",
+      "authors": [
+        {
+          "name": "Siemens Healthineers"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/ge-healthcare-graudate-trainee-engineer-4440561456",
+      "url": "https://www.internradar.info/jobs/ge-healthcare-graudate-trainee-engineer-4440561456",
+      "title": "Graudate Trainee Engineer — GE HealthCare",
+      "content_text": "Company: GE HealthCare · Location: Bengaluru, Karnataka, India · Duration: 0-1 years",
+      "date_published": "2026-08-04T14:14:20.607Z",
+      "authors": [
+        {
+          "name": "GE HealthCare"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/bain-and-company-dtu-intern-analyst-batch-of-2027-4448890250",
+      "url": "https://www.internradar.info/jobs/bain-and-company-dtu-intern-analyst-batch-of-2027-4448890250",
+      "title": "DTU - Intern Analyst - Batch of 2027 — Bain & Company",
+      "content_text": "Company: Bain & Company · Location: Gurugram, Haryana, India",
+      "date_published": "2026-08-04T14:13:59.830Z",
+      "authors": [
+        {
+          "name": "Bain & Company"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/honeywell-technologies-intern-bachelor-s-4448856865",
       "url": "https://www.internradar.info/jobs/honeywell-technologies-intern-bachelor-s-4448856865",
       "title": "Intern (Bachelor's) — Honeywell Technologies",
@@ -518,90 +602,6 @@
       "authors": [
         {
           "name": "Adobe"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/panasonic-avionics-corporation-ai-software-intern-trainee-pune-india-4443296738",
-      "url": "https://www.internradar.info/jobs/panasonic-avionics-corporation-ai-software-intern-trainee-pune-india-4443296738",
-      "title": "AI Software Intern / Trainee - Pune, India — Panasonic Avionics Corporation",
-      "content_text": "Company: Panasonic Avionics Corporation · Location: Pune Division, Maharashtra, India\n• Help develop AI applications using RAG, conversational AI, and AI Agents on AWS\n• Support building, testing, and evaluating machine learning models and MLOps workflows\n• Participate in code reviews, debugging, and CI/CD processes\n• Work with Python, Java, C++, or JavaScript",
-      "date_published": "2026-07-28T16:33:48.251Z",
-      "authors": [
-        {
-          "name": "Panasonic Avionics Corporation"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/fiserv-technology-apprentice-program-4445745465",
-      "url": "https://www.internradar.info/jobs/fiserv-technology-apprentice-program-4445745465",
-      "title": "Technology Apprentice Program — Fiserv",
-      "content_text": "Company: Fiserv · Location: Chennai, Tamil Nadu, India\n• Accelerate your growth in fintech through two structured assignments over two years\n• Gain hands-on experience, build technical and professional skills, and collaborate across teams\n• Receive formal training, mentorship, and exposure to senior leadership\n• This is an early career development program",
-      "date_published": "2026-07-28T15:19:49.824Z",
-      "authors": [
-        {
-          "name": "Fiserv"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/mu-sigma-inc-apprentice-leader-4443290829",
-      "url": "https://www.internradar.info/jobs/mu-sigma-inc-apprentice-leader-4443290829",
-      "title": "Apprentice Leader — Mu Sigma Inc.",
-      "content_text": "Company: Mu Sigma Inc. · Location: Bengaluru, Karnataka, India · Duration: 5–7 years\n• Leverage data analysis, data science, and engineering to develop scalable solutions\n• Translate complex business requirements into actionable insights and technology outcomes\n• Contribute to system design and solution architecture, ensuring scalability and performance\n• Work with cloud technologies to build and optimize data-driven applications",
-      "date_published": "2026-07-28T14:04:58.344Z",
-      "authors": [
-        {
-          "name": "Mu Sigma Inc."
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/eclerx-intern-4437435575",
-      "url": "https://www.internradar.info/jobs/eclerx-intern-4437435575",
-      "title": "intern — eClerx",
-      "content_text": "Company: eClerx · Location: Mumbai, Maharashtra, India\n• Create visually compelling and highly usable interfaces for web and mobile applications\n• Develop wireframes, prototypes, and high-fidelity mockups\n• Collaborate with UX designers, product managers, and developers\n• Ensure designs are consistent with brand guidelines and design standards",
-      "date_published": "2026-07-28T12:50:07.608Z",
-      "authors": [
-        {
-          "name": "eClerx"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/harman-india-internship-tools-and-development-python-4443257825",
-      "url": "https://www.internradar.info/jobs/harman-india-internship-tools-and-development-python-4443257825",
-      "title": "Internship - Tools & Development (Python) — HARMAN India",
-      "content_text": "Company: HARMAN India · Location: Bengaluru, Karnataka, India\n• Develop and maintain automated test scripts using Python for embedded software\n• Create and execute test plans, cases, and reports to ensure software quality\n• Troubleshoot issues with software and hardware engineers\n• Work with Linux-based systems and contribute to CI/automation frameworks",
-      "date_published": "2026-07-28T10:53:09.751Z",
-      "authors": [
-        {
-          "name": "HARMAN India"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/collins-aerospace-intern-phm-and-digital-twin-4445484720",
-      "url": "https://www.internradar.info/jobs/collins-aerospace-intern-phm-and-digital-twin-4445484720",
-      "title": "Intern: PHM and Digital Twin — Collins Aerospace",
-      "content_text": "Company: Collins Aerospace · Location: Bengaluru, Karnataka, India · Duration: 6–8 months\n• Develop and validate deep learning models for prognostics in aerospace applications\n• Explore and integrate reliability modeling techniques, analyze datasets, and perform predictive analytics\n• Work with AI, Machine Learning, and Deep Learning for 6-8 months in Bengaluru",
-      "date_published": "2026-07-28T09:31:53.614Z",
-      "authors": [
-        {
-          "name": "Collins Aerospace"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/sprinklr-ux-research-intern-ats-workday-sprinklr-wd1-careers-113313-job",
-      "url": "https://www.internradar.info/jobs/sprinklr-ux-research-intern-ats-workday-sprinklr-wd1-careers-113313-job",
-      "title": "UX Research Intern — Sprinklr",
-      "content_text": "Company: Sprinklr · Location: India - Haryana - Gurgaon · Duration: 6 months\n• Shape Sprinklr's enterprise platform by planning and conducting generative and evaluative research studies\n• Analyze qualitative and quantitative data to build user personas, task analyses, and user journey maps\n• Collaborate with product managers and engineers, and present findings to product leadership\n• 6-month internship, working with global product development teams",
-      "date_published": "2026-07-28T00:00:00.000Z",
-      "authors": [
-        {
-          "name": "Sprinklr"
         }
       ]
     }
