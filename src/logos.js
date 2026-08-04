@@ -87,6 +87,22 @@ async function download(url) {
 }
 
 /**
+ * Guess a company's own domain from its name.
+ *
+ * Only used for the favicon fallback, and only ever as a guess: a name that
+ * resolves to nobody simply returns 404 and the company keeps its initials.
+ * Legal suffixes are stripped because nobody registers "westerndigitalinc.com".
+ */
+function guessDomain(company) {
+  const bare = String(company)
+    .toLowerCase()
+    .replace(/&/g, ' and ')
+    .replace(/\b(inc|llc|ltd|limited|pvt|private|corporation|corp|co|company|group|technologies|technology|labs|holdings|india|global|solutions|services)\b/g, ' ')
+    .replace(/[^a-z0-9]+/g, '');
+  return bare.length >= 3 ? `${bare}.com` : null;
+}
+
+/**
  * Fetch any logos we do not already hold.
  * @param {Array<{company: string, logoUrl: string}>} candidates
  * @returns {Promise<Map<string,string>>} company slug -> public path
@@ -97,11 +113,16 @@ export async function syncLogos(candidates) {
 
   // One entry per company; prefer whichever candidate actually has a URL.
   const wanted = new Map();
+  // Companies seen with no logo URL at all. Every ATS board is in here: those
+  // APIs return the posting and nothing about the employer, so half the site
+  // carried grey initials while the LinkedIn half had proper marks.
+  const noUrl = new Map();
   for (const { company, logoUrl } of candidates) {
-    if (!company || !logoUrl) continue;
+    if (!company) continue;
     const slug = logoSlug(company);
     if (!slug || have.has(slug) || wanted.has(slug)) continue;
-    wanted.set(slug, logoUrl);
+    if (logoUrl) wanted.set(slug, logoUrl);
+    else if (!noUrl.has(slug)) noUrl.set(slug, company);
   }
 
   let fetched = 0;
@@ -117,7 +138,25 @@ export async function syncLogos(candidates) {
     fetched++;
   }
 
+  // Fallback for the ones with no URL: the company's own favicon, by guessed
+  // domain. Google's service answers 404 for a domain that does not resolve,
+  // and download() already refuses a non-200, so a bad guess costs one request
+  // and changes nothing. Deliberately last — a real logo from the posting beats
+  // a 128px favicon every time.
+  let byFavicon = 0;
+  for (const [slug, company] of noUrl) {
+    const domain = guessDomain(company);
+    if (!domain) continue;
+    const got = await download(`https://www.google.com/s2/favicons?domain=${encodeURIComponent(domain)}&sz=128`);
+    if (!got) continue;
+    const file = `${slug}.${got.ext}`;
+    writeFileSync(join(LOGO_DIR, file), got.bytes);
+    have.set(slug, file);
+    byFavicon++;
+  }
+
   if (fetched) log.ok(`Downloaded ${fetched} new company logo${fetched === 1 ? '' : 's'}.`);
+  if (byFavicon) log.ok(`Recovered ${byFavicon} logo${byFavicon === 1 ? '' : 's'} from company favicons (ATS boards carry none).`);
 
   const out = new Map();
   for (const [slug, file] of have) out.set(slug, `/logos/${file}`);

@@ -102,7 +102,24 @@ async function geminiPost(model, body, { attempts = 3 } = {}) {
 
       if (res.status === 403) return { ok: false, reason: 'API key rejected', fatal: true };
       if (res.status === 400) {
-        return { ok: false, reason: `HTTP 400: ${(await res.text()).replace(/\s+/g, ' ').slice(0, 200)}`, fatal: true };
+        const text = (await res.text()).replace(/\s+/g, ' ').slice(0, 200);
+
+        // thinkingConfig is not universally supported, and the failure is
+        // opaque: the whole request is refused with "Request contains an
+        // invalid argument", naming nothing. The gemini-3 models reject
+        // thinkingBudget: 0 outright, so moving off the 20-per-day 2.5-flash
+        // quota traded one silent enrichment failure for another. It is an
+        // optimisation, not a requirement — requests are the scarce resource on
+        // the free tier, not thought tokens — so drop it and send the call
+        // again rather than losing the batch. Retried once, on the first
+        // attempt only, so a genuinely malformed request still fails fast.
+        if (body?.generationConfig?.thinkingConfig && attempt === 1) {
+          log.debug('Gemini rejected thinkingConfig — retrying without it.');
+          clearTimeout(timer);
+          const { thinkingConfig, ...keep } = body.generationConfig;
+          return geminiPost(model, { ...body, generationConfig: keep }, { attempts });
+        }
+        return { ok: false, reason: `HTTP 400: ${text}`, fatal: true };
       }
       // 500s are usually transient on Google's side; worth one more go.
       if (res.status >= 500 && attempt < attempts) {
@@ -439,6 +456,24 @@ const ENRICH_SCHEMA = {
   required: ['items'],
 };
 
+/**
+ * Let the offline vocabulary overrule a model verdict, in one direction only.
+ *
+ * If the configured terms confidently call a title non-engineering, that stands
+ * whatever the model thinks. Those terms are added deliberately, in response to
+ * something wrong actually reaching the site, so they are evidence rather than
+ * opinion. The reverse is not true: a title the vocabulary cannot settle is
+ * exactly what the model is here to decide.
+ */
+function vetoNonTech(title, modelVerdict, cfg = {}) {
+  const verdict = classifyRole(title, {
+    extraPositive: cfg.matching?.extraTechTerms ?? [],
+    extraNegative: cfg.matching?.extraNonTechTerms ?? [],
+  }).verdict;
+  if (verdict === 'non-tech') return false;
+  return typeof modelVerdict === 'boolean' ? modelVerdict : null;
+}
+
 /** Trim, drop empties, cap length and count — the model is asked for this shape, not trusted for it. */
 function tidyList(value, { max, maxLen, lower = false }) {
   if (!Array.isArray(value)) return [];
@@ -503,7 +538,12 @@ export async function enrichJobs(items, cfg = {}) {
         contents: [{ role: 'user', parts: [{ text: `Summarise these ${slice.length} postings:\n\n${body}` }] }],
         generationConfig: {
           temperature: 0.2,
-          maxOutputTokens: 4_000,
+          // Eighteen postings of bullets, skills and labels do not fit in 4,000
+          // tokens. The reply was cut mid-JSON, the parse threw, and the batch
+          // was dropped without a word — the quiet half of why 122 of 198
+          // published jobs had no bullets. Headroom is nearly free here:
+          // requests are the metered resource on this tier, not output tokens.
+          maxOutputTokens: 8_000,
           responseMimeType: 'application/json',
           responseSchema: ENRICH_SCHEMA,
           thinkingConfig: NO_THINKING,
@@ -524,19 +564,66 @@ export async function enrichJobs(items, cfg = {}) {
         continue;
       }
 
-      const raw = (payload.candidates?.[0]?.content?.parts ?? [])
+      const candidate = payload.candidates?.[0];
+      const raw = (candidate?.content?.parts ?? [])
         .map((p) => p.text).filter(Boolean).join('').trim();
-      if (!raw) continue;
 
-      const parsed = JSON.parse(raw);
+      // Say why a batch produced nothing. Both of these used to `continue` in
+      // silence, so a run reported "nothing enriched" with no cause to chase.
+      if (candidate?.finishReason && candidate.finishReason !== 'STOP') {
+        log.warn(`Gemini stopped early (${candidate.finishReason}) on a batch of ${slice.length} — lower enrich PER_CALL or raise maxOutputTokens.`);
+      }
+      if (!raw) {
+        log.warn(`Gemini returned an empty body for a batch of ${slice.length} posting(s).`);
+        continue;
+      }
+
+      let parsed;
+      try {
+        parsed = JSON.parse(raw);
+      } catch {
+        log.warn(`Gemini returned unparseable JSON (${raw.length} chars) for a batch of ${slice.length} — batch skipped.`);
+        continue;
+      }
+      // Counted so a batch that comes back full and still stores nothing says
+      // which rule ate it. Enriching "2 of 19" with no further explanation is
+      // indistinguishable from the API being down.
+      let badId = 0;
+      let tooThin = 0;
+
       for (const v of parsed.items ?? []) {
-        if (!Number.isInteger(v?.id) || v.id < 0 || v.id >= slice.length) continue;
+        if (!Number.isInteger(v?.id) || v.id < 0 || v.id >= slice.length) { badId++; continue; }
 
         // The model still occasionally reviews the advert instead of describing
         // the job ("this posting is incomplete"). Useless to a student, so drop it.
         const bullets = tidyList(v.bullets, { max: 4, maxLen: 110 })
           .filter((b) => !/\b(this )?(posting|advert|listing|description)\b.*\b(incomplete|vague|unclear|does not|doesn't|no specific|not specified|lacks)\b/i.test(b));
-        if (bullets.length < 2) continue; // too thin to be worth a card; keep the plain summary
+
+        // Fewer than two bullets means the posting had nothing to summarise —
+        // Valeo's "Facilities Trainee" is 1,252 characters of corporate blurb,
+        // Aptiv's "Machinist Trainee" is one line and a privacy notice. The
+        // model is right to return nothing and the card is right to refuse it.
+        //
+        // But it is still RECORDED, with empty bullets, so the row leaves the
+        // queue. Skipping it outright left bullets NULL, needingEnrichment
+        // returned the same postings on every run, and the whole daily
+        // allowance went on re-asking about descriptions that can never yield
+        // an answer. The queue jammed at the head and nothing behind it was
+        // ever reached — which is why 122 of 198 published jobs had no bullets
+        // while the log claimed the quota was simply spent.
+        if (bullets.length < 2) {
+          tooThin++;
+          out.set(start + v.id, {
+            bullets: [],
+            roleLabel: '',
+            degreeLevel: '',
+            degreeText: '',
+            keySkills: [],
+            stipendStatus: slice[v.id].stipend ? 'paid' : 'unknown',
+            isTech: typeof v.isTech === 'boolean' ? v.isTech : null,
+          });
+          continue;
+        }
 
         // "none" is the schema's stand-in for "not stated"; normalise it back to empty.
         const level = ['UG', 'PG', 'UG/PG', 'Pursuing'].includes(v.degreeLevel) ? v.degreeLevel : '';
@@ -559,8 +646,23 @@ export async function enrichJobs(items, cfg = {}) {
           degreeText,
           keySkills: tidyList(v.keySkills, { max: 5, maxLen: 24, lower: true }),
           stipendStatus,
-          isTech: typeof v.isTech === 'boolean' ? v.isTech : null,
+          // The vocabulary has a veto. saveEnrichment writes this straight over
+          // whatever the role verdict was, so without this the model quietly
+          // reinstated seven "Technical Support Representative Intern" cards
+          // minutes after the vocabulary had ruled them out. Same principle as
+          // builtInPolarity in roles.js: a hand-written rule with tests behind
+          // it outranks a model's opinion. The veto is one-way — the model may
+          // still promote a role the vocabulary was merely unsure about.
+          isTech: vetoNonTech(slice[v.id].title, v.isTech, cfg),
         });
+      }
+
+      const returned = (parsed.items ?? []).length;
+      if (returned < slice.length || badId || tooThin) {
+        log.info(`  batch of ${slice.length}: model returned ${returned}`
+          + (badId ? `, ${badId} with an out-of-range id` : '')
+          + (tooThin ? `, ${tooThin} with fewer than 2 usable bullets` : ''));
+        if (tooThin) log.debug(`  sample bullets: ${JSON.stringify((parsed.items ?? [])[0]?.bullets)}`);
       }
     } catch (err) {
       // Transport is geminiPost's job; a throw here is a malformed reply, which is

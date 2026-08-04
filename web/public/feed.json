@@ -6,78 +6,6 @@
   "description": "New engineering internships, listed within minutes of going live.",
   "items": [
     {
-      "id": "https://www.internradar.info/jobs/ibm-technical-support-representative-intern-4435963237",
-      "url": "https://www.internradar.info/jobs/ibm-technical-support-representative-intern-4435963237",
-      "title": "Technical Support Representative Intern — IBM",
-      "content_text": "Company: IBM · Location: Greater Lucknow Area\n• Observe application monitoring processes, incident analysis, and rectification\n• Support low to medium production technical support tasks and configuration\n• Gain hands-on experience in scheduling and application administration",
-      "date_published": "2026-08-03T17:39:09.877Z",
-      "authors": [
-        {
-          "name": "IBM"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/ibm-technical-support-representative-intern-4435946951",
-      "url": "https://www.internradar.info/jobs/ibm-technical-support-representative-intern-4435946951",
-      "title": "Technical Support Representative Intern — IBM",
-      "content_text": "Company: IBM · Location: Pune Division, Maharashtra, India\n• Observe application monitoring processes, incident analysis, and rectification\n• Support low to medium production technical support tasks and configuration\n• Gain hands-on experience in scheduling and application administration",
-      "date_published": "2026-08-03T17:11:27.109Z",
-      "authors": [
-        {
-          "name": "IBM"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/ibm-technical-support-representative-intern-4435948880",
-      "url": "https://www.internradar.info/jobs/ibm-technical-support-representative-intern-4435948880",
-      "title": "Technical Support Representative Intern — IBM",
-      "content_text": "Company: IBM · Location: Hyderabad, Telangana, India\n• Observe application monitoring processes, incident analysis, and rectification\n• Support low to medium production technical support tasks and configuration\n• Gain hands-on experience in scheduling and application administration",
-      "date_published": "2026-08-03T17:04:49.543Z",
-      "authors": [
-        {
-          "name": "IBM"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/ibm-technical-support-representative-intern-4435952817",
-      "url": "https://www.internradar.info/jobs/ibm-technical-support-representative-intern-4435952817",
-      "title": "Technical Support Representative Intern — IBM",
-      "content_text": "Company: IBM · Location: Mumbai Metropolitan Region\n• Observe application monitoring processes, incident analysis, and rectification\n• Support low to medium production technical support tasks and configuration\n• Gain hands-on experience in scheduling and application administration",
-      "date_published": "2026-08-03T17:02:54.666Z",
-      "authors": [
-        {
-          "name": "IBM"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/ibm-technical-support-representative-intern-4435960679",
-      "url": "https://www.internradar.info/jobs/ibm-technical-support-representative-intern-4435960679",
-      "title": "Technical Support Representative Intern — IBM",
-      "content_text": "Company: IBM · Location: Coimbatore, Tamil Nadu, India\n• Observe application monitoring, incident analysis, and fault resolution\n• Assist with production monitoring and application administration tasks\n• Support non-code application configuration and scheduling operations",
-      "date_published": "2026-08-03T16:48:29.587Z",
-      "authors": [
-        {
-          "name": "IBM"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/ibm-technical-support-representative-intern-4435955892",
-      "url": "https://www.internradar.info/jobs/ibm-technical-support-representative-intern-4435955892",
-      "title": "Technical Support Representative Intern — IBM",
-      "content_text": "Company: IBM · Location: Mysore, Karnataka, India\n• Observe application monitoring, incident analysis, and fault resolution\n• Assist with production monitoring and application administration tasks\n• Support non-code application configuration and scheduling operations",
-      "date_published": "2026-08-03T16:47:54.983Z",
-      "authors": [
-        {
-          "name": "IBM"
-        }
-      ]
-    },
-    {
       "id": "https://www.internradar.info/jobs/emerson-graduate-engineer-trainee-4448323159",
       "url": "https://www.internradar.info/jobs/emerson-graduate-engineer-trainee-4448323159",
       "title": "Graduate Engineer Trainee — Emerson",
@@ -98,18 +26,6 @@
       "authors": [
         {
           "name": "Squarepoint Capital"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/ibm-technical-support-representative-intern-4435948881",
-      "url": "https://www.internradar.info/jobs/ibm-technical-support-representative-intern-4435948881",
-      "title": "Technical Support Representative Intern — IBM",
-      "content_text": "Company: IBM · Location: Greater Kolkata Area\n• Observe scheduling and production monitoring activities for client applications\n• Gain experience in application monitoring, incident analysis, and simple rectification\n• Perform internship in shifts with 60 percentage throughout academics",
-      "date_published": "2026-08-03T14:19:30.349Z",
-      "authors": [
-        {
-          "name": "IBM"
         }
       ]
     },
@@ -290,18 +206,6 @@
       "authors": [
         {
           "name": "Pixxel"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/valeo-vps-trainee-ats-workday-valeo-wd3-valeo-jobs-req2026078723",
-      "url": "https://www.internradar.info/jobs/valeo-vps-trainee-ats-workday-valeo-wd3-valeo-jobs-req2026078723",
-      "title": "VPS trainee — Valeo",
-      "content_text": "Company: Valeo · Location: San Luis Potosi",
-      "date_published": "2026-08-03T00:00:00.000Z",
-      "authors": [
-        {
-          "name": "Valeo"
         }
       ]
     },
@@ -602,6 +506,102 @@
       "authors": [
         {
           "name": "Noise"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/volvo-group-graduate-apprentice-trainee-sw-verification-4447210792",
+      "url": "https://www.internradar.info/jobs/volvo-group-graduate-apprentice-trainee-sw-verification-4447210792",
+      "title": "Graduate apprentice trainee - SW Verification — Volvo Group",
+      "content_text": "Company: Volvo Group · Location: Bengaluru, Karnataka, India\n• Support test planning, execution, and analysis for vehicle systems\n• Assist in creating and executing test cases for electrical and software systems\n• Analyze test data, report anomalies, and document results for continuous improvement",
+      "date_published": "2026-07-30T23:03:57.190Z",
+      "authors": [
+        {
+          "name": "Volvo Group"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/barclays-2027-technology-developer-summer-internship-programme-india-4445050175",
+      "url": "https://www.internradar.info/jobs/barclays-2027-technology-developer-summer-internship-programme-india-4445050175",
+      "title": "2027 Technology Developer Summer Internship Programme India — Barclays",
+      "content_text": "Company: Barclays · Location: Pune Division, Maharashtra, India\n• Develop and deliver high-quality software solutions using industry-aligned languages and tools\n• Collaborate with product managers, designers, and engineers on requirements and strategies\n• Participate in code reviews, adhere to secure coding practices, and implement unit testing",
+      "date_published": "2026-07-30T22:04:03.067Z",
+      "authors": [
+        {
+          "name": "Barclays"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/zscaler-site-reliability-engineer-skillbridge-intern-ats-greenhouse-zscaler-5045817007",
+      "url": "https://www.internradar.info/jobs/zscaler-site-reliability-engineer-skillbridge-intern-ats-greenhouse-zscaler-5045817007",
+      "title": "Site Reliability Engineer-SkillBridge Intern — Zscaler",
+      "content_text": "Company: Zscaler · Location: Remote - USA\n• Build infrastructure and navigate ambiguous operational challenges\n• San Jose, CA or Bellevue, WA",
+      "date_published": "2026-07-30T17:35:34.000Z",
+      "authors": [
+        {
+          "name": "Zscaler"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/zscaler-site-reliability-engineer-federal-skillbridge-intern-ats-greenhouse-zscaler-5046050007",
+      "url": "https://www.internradar.info/jobs/zscaler-site-reliability-engineer-federal-skillbridge-intern-ats-greenhouse-zscaler-5046050007",
+      "title": "Site Reliability Engineer Federal- SkillBridge Intern — Zscaler",
+      "content_text": "Company: Zscaler · Location: Remote - Virginia, USA\n• Manage operational tasks and deploy containerized services\n• Python, Docker or containerized tools\n• Onsite in Crystal City, Virginia",
+      "date_published": "2026-07-30T17:35:34.000Z",
+      "authors": [
+        {
+          "name": "Zscaler"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/zscaler-phishing-analyst-skillbridge-intern-ats-greenhouse-zscaler-5065302007",
+      "url": "https://www.internradar.info/jobs/zscaler-phishing-analyst-skillbridge-intern-ats-greenhouse-zscaler-5065302007",
+      "title": "Phishing Analyst-SkillBridge Intern — Zscaler",
+      "content_text": "Company: Zscaler · Location: Remote - USA\n• Review suspicious emails and perform open-source research\n• Remote",
+      "date_published": "2026-07-30T17:35:34.000Z",
+      "authors": [
+        {
+          "name": "Zscaler"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/zscaler-insider-risk-analyst-skillbridge-intern-ats-greenhouse-zscaler-5100618007",
+      "url": "https://www.internradar.info/jobs/zscaler-insider-risk-analyst-skillbridge-intern-ats-greenhouse-zscaler-5100618007",
+      "title": "Insider Risk Analyst - SkillBridge Intern — Zscaler",
+      "content_text": "Company: Zscaler · Location: Remote - USA\n• Monitor behavioral telemetry and access logs to identify insider risks\n• UEBA, DLP\n• Remote",
+      "date_published": "2026-07-30T17:35:34.000Z",
+      "authors": [
+        {
+          "name": "Zscaler"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/zscaler-federal-security-operations-skillbridge-intern-ats-greenhouse-zscaler-5069684007",
+      "url": "https://www.internradar.info/jobs/zscaler-federal-security-operations-skillbridge-intern-ats-greenhouse-zscaler-5069684007",
+      "title": "Federal Security Operations - SkillBridge Intern — Zscaler",
+      "content_text": "Company: Zscaler · Location: Remote - USA\n• Establish success criteria, metrics, and timelines for deployment projects\n• Remote",
+      "date_published": "2026-07-30T17:35:34.000Z",
+      "authors": [
+        {
+          "name": "Zscaler"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/zscaler-detection-engineer-skillbridge-intern-ats-greenhouse-zscaler-5114254007",
+      "url": "https://www.internradar.info/jobs/zscaler-detection-engineer-skillbridge-intern-ats-greenhouse-zscaler-5114254007",
+      "title": "Detection Engineer- SkillBridge Intern — Zscaler",
+      "content_text": "Company: Zscaler · Location: Remote - USA\n• Analyze EDR telemetry, alerts, and log sources across security domains\n• SIEM, EDR\n• Remote",
+      "date_published": "2026-07-30T17:35:34.000Z",
+      "authors": [
+        {
+          "name": "Zscaler"
         }
       ]
     }

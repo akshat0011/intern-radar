@@ -119,7 +119,7 @@
     "_useGemini_note": "Currently OFF - the offline vocabulary in src/roles.js decides. Gemini was never the speed bottleneck (it runs as one batch after the walk, not per job), but the offline classifier is instant and free, so there is little reason to switch it on unless the vocabulary starts missing things. When true: ask Gemini whether each captured role is a software role. Needs GEMINI_API_KEY in the environment - put it in a .env file at the project root (gitignored) and it is picked up automatically. Titles are sent as ONE batched request per run, not one per job. If the key is missing, the quota is spent, or the call fails for any reason, the offline vocabulary in src/roles.js decides instead - a job is never left unclassified because an API was down.",
     "useGeminiForAmbiguous": true,
     "_useGeminiForAmbiguous_note": "The one place Gemini still earns its keep. A title the vocabulary cannot settle - a bare 'Trainee', 'Apprentice', or something resting only on the word 'Engineer' - gets its DESCRIPTION read instead. Gemini also names the phrase its decision turned on, and that phrase is added to the offline vocabulary, so the same kind of title is answered instantly and free from then on. The vocabulary therefore gets better and the API gets called less the longer this runs. Vetted before anything is learned: the phrase must actually appear in the posting, must not contradict a built-in rule, and must be a sane length.",
-    "model": "gemini-2.5-flash"
+    "model": "gemini-3.6-flash"
   },
   "matching": {
     "storeNonTechRoles": false,
@@ -144,7 +144,9 @@
     "extraTechTerms": [],
     "extraNonTechTerms": [
       "financial",
-      "indirect tax"
+      "indirect tax",
+      "technical support",
+      "support representative"
     ],
     "_extraNonTechTerms_note": "Matching is whole-word, so the built-in 'finance' never matched 'Financial Analyst' and 'taxation' never matched 'Indirect Tax'. Those fell through as uncertain, and since an uncertain title is now published rather than held, six Amazon finance roles would have gone onto an engineering-only site. Remove 'financial' if a title like 'Financial Systems Software Engineer' ever gets wrongly dropped.",
     "_extraTerms_note": "Your own additions to the classifier, checked ahead of the built-in lists.",
@@ -254,6 +256,8 @@
     "_note": "Applicant-tracking-system job boards - the source LinkedIn copies from. Discovery is cached in the company_ats table by bin/discover-ats.js; bin/poll-ats.js reads it. No browser and no ToS problem: these are the public endpoints a company careers page calls to render itself."
   },
   "enrich": {
+    "model": "gemini-3.6-flash",
+    "_model_note": "NOT gemini-2.5-flash. Its free tier allows 20 requests PER DAY (quotaId GenerateRequestsPerDayPerProjectPerModel-FreeTier, quotaValue 20), which 96 runs a day exhaust before breakfast - the log showed 'daily free quota exhausted' every run for hours, and 122 of 198 published jobs had no bullets as a result. The lite models carry a far larger daily allowance. Check what your key can still reach by listing /v1beta/models and calling each one; 2.5-flash-lite has been withdrawn for new keys.",
     "perRunLimit": 24,
     "backfillPerRun": 6,
     "_backfillPerRun_note": "How many jobs stored from card data alone get their page opened at the end of a run to fetch the description we skipped. Confidently non-tech titles are listed without being opened, which leaves description NULL - and needingEnrichment requires a description, so without this pass those rows never gain bullets, stipend or duration. Kept small and time-gated: it only uses slack left after the scan.",

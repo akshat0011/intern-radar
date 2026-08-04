@@ -52,7 +52,10 @@ async function main() {
     return;
   }
 
-  log.info(`Enriching ${pending.length} posting(s) with ${process.env.GEMINI_MODEL || 'gemini-2.5-flash'}…`);
+  // Report the model actually used. This line had its own hardcoded fallback,
+  // so it kept printing gemini-2.5-flash after the config moved off it — which
+  // sent the whole investigation after the wrong model.
+  log.info(`Enriching ${pending.length} posting(s) with ${process.env.GEMINI_MODEL || cfg.enrich?.model || 'gemini-2.5-flash'}…`);
 
   const results = await enrichJobs(pending, cfg);
   if (!results.size) {
