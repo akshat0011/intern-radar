@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * One scan of LinkedIn for new internships at the watchlist companies.
- * Invoked by launchd every 15 minutes, or by hand via `npm run`.
+ * Invoked by launchd every 30 minutes, or by hand via `npm run`.
  */
 import { loadConfig, matchCompany, matchTitle, resolveWindowHours, isBlockedCompany } from './config.js';
 import { join } from 'node:path';
@@ -290,16 +290,33 @@ async function main() {
     return;
   }
 
+  // Claim the lock BEFORE the jitter sleep, not after.
+  //
+  // The sleep below is up to a minute long, and it used to sit between the
+  // "is anyone else running?" check above and this line. Two runs starting
+  // inside that minute therefore both saw an unheld lock, both slept, and both
+  // carried on — then fought over the same Brave profile, and one killed the
+  // other's browser mid-page. That is the "Target page, context or browser has
+  // been closed" followed by a soft_block abort 37 seconds into a run. launchd
+  // makes it easy to hit: after the machine wakes it fires the slots it missed,
+  // which can be two starts ten seconds apart.
+  //
+  // Writing the timestamp first makes the window as small as SQLite's own
+  // write, so the second run reads a held lock and stands down properly.
+  store.setSetting(LOCK_KEY, Date.now());
+
   // Land at a slightly different minute each day rather than exactly 12:00:00.
   if (SCHEDULED && !DRY_RUN && cfg.pacing.startupJitter) {
     const jitter = humanDelay(cfg.pacing.startupJitter);
     if (jitter > 1000) {
       log.info(`Waiting ${Math.round(jitter / 60_000)} min before starting (schedule jitter).`);
       await sleep(jitter);
+      // Re-stamp so the lock's age is measured from real work starting, not
+      // from a run that has spent its first minute asleep.
+      store.setSetting(LOCK_KEY, Date.now());
     }
   }
 
-  store.setSetting(LOCK_KEY, Date.now());
   store.startRun(runId);
 
   // Size the lookback from the gap since the last successful run. A fixed wide
@@ -646,6 +663,7 @@ async function main() {
       notes.push(
         err.state === State.CHALLENGE ? 'A LinkedIn security check went unsolved, so the scan stopped early. Whatever was found before that is below.'
         : err.state === State.LOGGED_OUT ? 'The LinkedIn session expired mid-run. Run `npm run login` to sign in again.'
+        : err.state === State.BROWSER_GONE ? 'The browser closed part way through, so the scan stopped there. Nothing to do with LinkedIn — usually the window was closed by hand, or a second run started and took the profile. Whatever was collected first was kept.'
         : 'LinkedIn started rate limiting, so the scan stopped early to protect the account.',
       );
       log.error(err.message);

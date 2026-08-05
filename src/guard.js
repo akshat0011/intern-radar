@@ -14,6 +14,12 @@ export const State = {
   LOGGED_OUT: 'logged_out',
   RATE_LIMITED: 'rate_limited',
   SOFT_BLOCK: 'soft_block',
+  // The browser went away underneath us. Kept separate from SOFT_BLOCK because
+  // the two demand opposite reactions: a soft block is LinkedIn pushing back and
+  // means slow down, while this is our own process dying and means nothing about
+  // the account at all. Reporting a crashed Brave as a block sent a run's
+  // postmortem looking for a ban that never happened.
+  BROWSER_GONE: 'browser_gone',
 };
 
 export class RunAborted extends Error {
@@ -101,7 +107,7 @@ export async function classify(page) {
   try {
     url = page.url();
   } catch {
-    return { state: State.SOFT_BLOCK, evidence: 'page closed' };
+    return { state: State.BROWSER_GONE, evidence: 'the page or browser was closed' };
   }
 
   for (const [re, state] of URL_MARKERS) {
@@ -125,8 +131,14 @@ export async function classify(page) {
         '.global-nav__me, .global-nav__me-photo, img.global-nav__me-photo, [data-control-name="nav.settings"], .global-nav__primary-items',
       ),
     }));
-  } catch {
-    return { state: State.SOFT_BLOCK, evidence: 'could not read page text' };
+  } catch (err) {
+    // "Target page, context or browser has been closed" is Playwright telling
+    // us the browser is gone, not LinkedIn refusing to answer.
+    const gone = /Target page, context or browser has been closed|Execution context was destroyed|browser has (?:been )?(?:closed|disconnected)/i
+      .test(String(err?.message ?? ''));
+    return gone
+      ? { state: State.BROWSER_GONE, evidence: 'the page or browser was closed mid-run' }
+      : { state: State.SOFT_BLOCK, evidence: 'could not read page text' };
   }
 
   for (const [re, state] of TEXT_MARKERS) {
