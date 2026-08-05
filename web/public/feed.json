@@ -6,6 +6,18 @@
   "description": "New engineering internships, listed within minutes of going live.",
   "items": [
     {
+      "id": "https://www.internradar.info/jobs/licious-quality-assurance-intern-4448990506",
+      "url": "https://www.internradar.info/jobs/licious-quality-assurance-intern-4448990506",
+      "title": "Quality Assurance Intern — Licious",
+      "content_text": "Company: Licious · Location: Bengaluru, Karnataka, India · Stipend: ₹15,000 / month · Duration: 6 months",
+      "date_published": "2026-08-05T10:34:54.630Z",
+      "authors": [
+        {
+          "name": "Licious"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/bain-and-company-iit-gandhinagar-intern-analyst-batch-of-2028-4449479120",
       "url": "https://www.internradar.info/jobs/bain-and-company-iit-gandhinagar-intern-analyst-batch-of-2028-4449479120",
       "title": "IIT Gandhinagar - Intern Analyst - Batch of 2028 — Bain & Company",
@@ -14,6 +26,18 @@
       "authors": [
         {
           "name": "Bain & Company"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/forge-software-technologies-pvt-ltd-resource-management-intern-4446667412",
+      "url": "https://www.internradar.info/jobs/forge-software-technologies-pvt-ltd-resource-management-intern-4446667412",
+      "title": "Resource Management Intern — Forge Software Technologies Pvt Ltd",
+      "content_text": "Company: Forge Software Technologies Pvt Ltd · Location: Greater Hyderabad Area · Duration: 0–1 years",
+      "date_published": "2026-08-05T09:53:59.476Z",
+      "authors": [
+        {
+          "name": "Forge Software Technologies Pvt Ltd"
         }
       ]
     },
@@ -578,30 +602,6 @@
       "authors": [
         {
           "name": "Nokia"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/greyorange-product-management-intern-4444110838",
-      "url": "https://www.internradar.info/jobs/greyorange-product-management-intern-4444110838",
-      "title": "Product Management Intern — GreyOrange",
-      "content_text": "Company: GreyOrange · Location: Gurugram, Haryana, India · Duration: 6 months\n• Define product requirements, user stories, and feature specifications with Product Managers\n• Conduct market, customer, and competitor research to find product opportunities\n• Analyze product usage and feedback to generate actionable insights for roadmap planning\n• Collaborate with Engineering, Design, and Customer Success teams for product launches",
-      "date_published": "2026-07-29T11:46:26.595Z",
-      "authors": [
-        {
-          "name": "GreyOrange"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/newgen-innovation-ai-and-design-thinking-product-management-intern-4443670910",
-      "url": "https://www.internradar.info/jobs/newgen-innovation-ai-and-design-thinking-product-management-intern-4443670910",
-      "title": "Product Management Intern — NewGen Innovation : AI & Design Thinking",
-      "content_text": "Company: NewGen Innovation : AI & Design Thinking · Location: Mumbai, Maharashtra, India · Stipend: ₹35,000 / total · Duration: 1 to 2 years\n• Work with founders, AI engineers, and designers to build AI-powered products\n• Conduct customer and market research, gather requirements, and plan product roadmaps\n• Create wireframes, user journeys, and monitor product performance using analytics\n• 6-month on-site internship in Powai, with potential for a full-time offer",
-      "date_published": "2026-07-29T09:37:44.191Z",
-      "authors": [
-        {
-          "name": "NewGen Innovation : AI & Design Thinking"
         }
       ]
     }

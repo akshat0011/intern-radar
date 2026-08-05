@@ -6,13 +6,27 @@
   <atom:link href="https://www.internradar.info/feed.xml" rel="self" type="application/rss+xml"/>
   <description>New engineering internships, listed within minutes of going live.</description>
   <language>en-in</language>
-  <lastBuildDate>Wed, 05 Aug 2026 10:19:37 GMT</lastBuildDate>
+  <lastBuildDate>Wed, 05 Aug 2026 11:02:12 GMT</lastBuildDate>
+  <item>
+    <title>Quality Assurance Intern — Licious</title>
+    <link>https://www.internradar.info/jobs/licious-quality-assurance-intern-4448990506</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/licious-quality-assurance-intern-4448990506</guid>
+    <pubDate>Wed, 05 Aug 2026 10:34:54 GMT</pubDate>
+    <description>Company: Licious · Location: Bengaluru, Karnataka, India · Stipend: ₹15,000 / month · Duration: 6 months</description>
+  </item>
   <item>
     <title>IIT Gandhinagar - Intern Analyst - Batch of 2028 — Bain &amp; Company</title>
     <link>https://www.internradar.info/jobs/bain-and-company-iit-gandhinagar-intern-analyst-batch-of-2028-4449479120</link>
     <guid isPermaLink="true">https://www.internradar.info/jobs/bain-and-company-iit-gandhinagar-intern-analyst-batch-of-2028-4449479120</guid>
     <pubDate>Wed, 05 Aug 2026 10:05:52 GMT</pubDate>
     <description>Company: Bain &amp; Company · Location: Gurugram, Haryana, India</description>
+  </item>
+  <item>
+    <title>Resource Management Intern — Forge Software Technologies Pvt Ltd</title>
+    <link>https://www.internradar.info/jobs/forge-software-technologies-pvt-ltd-resource-management-intern-4446667412</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/forge-software-technologies-pvt-ltd-resource-management-intern-4446667412</guid>
+    <pubDate>Wed, 05 Aug 2026 09:53:59 GMT</pubDate>
+    <description>Company: Forge Software Technologies Pvt Ltd · Location: Greater Hyderabad Area · Duration: 0–1 years</description>
   </item>
   <item>
     <title>CA Intern — UBS</title>
@@ -463,28 +477,6 @@
 • Design and implement Agentic AI workflows using frameworks like LangGraph
 • Contribute to LLM-based applications and RAG pipelines for intelligent automation
 • Configure and optimize development environments, IDEs, and engineering tools</description>
-  </item>
-  <item>
-    <title>Product Management Intern — GreyOrange</title>
-    <link>https://www.internradar.info/jobs/greyorange-product-management-intern-4444110838</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/greyorange-product-management-intern-4444110838</guid>
-    <pubDate>Wed, 29 Jul 2026 11:46:26 GMT</pubDate>
-    <description>Company: GreyOrange · Location: Gurugram, Haryana, India · Duration: 6 months
-• Define product requirements, user stories, and feature specifications with Product Managers
-• Conduct market, customer, and competitor research to find product opportunities
-• Analyze product usage and feedback to generate actionable insights for roadmap planning
-• Collaborate with Engineering, Design, and Customer Success teams for product launches</description>
-  </item>
-  <item>
-    <title>Product Management Intern — NewGen Innovation : AI &amp; Design Thinking</title>
-    <link>https://www.internradar.info/jobs/newgen-innovation-ai-and-design-thinking-product-management-intern-4443670910</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/newgen-innovation-ai-and-design-thinking-product-management-intern-4443670910</guid>
-    <pubDate>Wed, 29 Jul 2026 09:37:44 GMT</pubDate>
-    <description>Company: NewGen Innovation : AI &amp; Design Thinking · Location: Mumbai, Maharashtra, India · Stipend: ₹35,000 / total · Duration: 1 to 2 years
-• Work with founders, AI engineers, and designers to build AI-powered products
-• Conduct customer and market research, gather requirements, and plan product roadmaps
-• Create wireframes, user journeys, and monitor product performance using analytics
-• 6-month on-site internship in Powai, with potential for a full-time offer</description>
   </item>
 </channel>
 </rss>
