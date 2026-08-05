@@ -6,10 +6,34 @@
   "description": "New engineering internships, listed within minutes of going live.",
   "items": [
     {
+      "id": "https://www.internradar.info/jobs/siemens-graduate-trainee-engineer-4447382156",
+      "url": "https://www.internradar.info/jobs/siemens-graduate-trainee-engineer-4447382156",
+      "title": "Graduate Trainee Engineer — Siemens",
+      "content_text": "Company: Siemens · Location: Bangalore Urban, Karnataka, India · Duration: 6 months\n• Assist senior engineers with project tasks and input reviews\n• Prepare engineering deliverables, estimates, and basic components\n• Track work hours and perform initial quality checks on assigned work",
+      "date_published": "2026-08-05T07:22:48.545Z",
+      "authors": [
+        {
+          "name": "Siemens"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/siemens-graduate-trainee-engineer-4447378221",
+      "url": "https://www.internradar.info/jobs/siemens-graduate-trainee-engineer-4447378221",
+      "title": "Graduate Trainee Engineer — Siemens",
+      "content_text": "Company: Siemens · Location: Pune Division, Maharashtra, India · Duration: 6 months\n• Assist senior engineers with project tasks and input reviews\n• Prepare engineering deliverables, estimates, and basic components\n• Track work hours and perform initial quality checks on assigned work",
+      "date_published": "2026-08-05T07:22:11.263Z",
+      "authors": [
+        {
+          "name": "Siemens"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/acko-internship-grc-governance-risk-and-compliance-4448575982",
       "url": "https://www.internradar.info/jobs/acko-internship-grc-governance-risk-and-compliance-4448575982",
       "title": "Internship - GRC (Governance, Risk & Compliance) — Acko",
-      "content_text": "Company: Acko · Location: Bengaluru, Karnataka, India",
+      "content_text": "Company: Acko · Location: Bengaluru, Karnataka, India\n• Maintain GRC policies, documentation, and internal compliance trackers\n• Assist with basic risk assessments and internal audit processes\n• Monitor compliance across ISO 27001 and IRDAI regulatory guidelines",
       "date_published": "2026-08-04T22:33:29.563Z",
       "authors": [
         {
@@ -21,23 +45,11 @@
       "id": "https://www.internradar.info/jobs/intuit-intern-software-engineering-4448546206",
       "url": "https://www.internradar.info/jobs/intuit-intern-software-engineering-4448546206",
       "title": "Intern, Software Engineering — Intuit",
-      "content_text": "Company: Intuit · Location: Bengaluru, Karnataka, India · Duration: Summer 2027",
+      "content_text": "Company: Intuit · Location: Bengaluru, Karnataka, India · Duration: Summer 2027\n• Design, code, test, and debug software applications across backend or frontend\n• Participate in agile sprint ceremonies, design reviews, and code reviews\n• Work with backend and frontend stacks using Java, C++, C#, or JavaScript",
       "date_published": "2026-08-04T16:03:13.892Z",
       "authors": [
         {
           "name": "Intuit"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/fiserv-summer-intern-4448548053",
-      "url": "https://www.internradar.info/jobs/fiserv-summer-intern-4448548053",
-      "title": "Summer Intern — Fiserv",
-      "content_text": "Company: Fiserv · Location: Chennai, Tamil Nadu, India",
-      "date_published": "2026-08-04T15:19:18.162Z",
-      "authors": [
-        {
-          "name": "Fiserv"
         }
       ]
     },
@@ -54,50 +66,14 @@
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/ge-healthcare-manufacturing-trainee-engineer-4440545891",
-      "url": "https://www.internradar.info/jobs/ge-healthcare-manufacturing-trainee-engineer-4440545891",
-      "title": "Manufacturing Trainee Engineer — GE HealthCare",
-      "content_text": "Company: GE HealthCare · Location: Bengaluru, Karnataka, India",
-      "date_published": "2026-08-04T14:14:49.766Z",
-      "authors": [
-        {
-          "name": "GE HealthCare"
-        }
-      ]
-    },
-    {
       "id": "https://www.internradar.info/jobs/siemens-healthineers-trainee-technical-4446652372",
       "url": "https://www.internradar.info/jobs/siemens-healthineers-trainee-technical-4446652372",
       "title": "Trainee - Technical — Siemens Healthineers",
-      "content_text": "Company: Siemens Healthineers · Location: Bengaluru, Karnataka, India",
+      "content_text": "Company: Siemens Healthineers · Location: Bengaluru, Karnataka, India\n• Build healthcare software prototypes and feature implementations\n• Contribute to software design and technical specification reviews\n• Use TDD, BDD, and object-oriented design principles in daily development",
       "date_published": "2026-08-04T14:14:25.169Z",
       "authors": [
         {
           "name": "Siemens Healthineers"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/ge-healthcare-graudate-trainee-engineer-4440561456",
-      "url": "https://www.internradar.info/jobs/ge-healthcare-graudate-trainee-engineer-4440561456",
-      "title": "Graudate Trainee Engineer — GE HealthCare",
-      "content_text": "Company: GE HealthCare · Location: Bengaluru, Karnataka, India · Duration: 0-1 years",
-      "date_published": "2026-08-04T14:14:20.607Z",
-      "authors": [
-        {
-          "name": "GE HealthCare"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/honeywell-technologies-intern-bachelor-s-4448856865",
-      "url": "https://www.internradar.info/jobs/honeywell-technologies-intern-bachelor-s-4448856865",
-      "title": "Intern (Bachelor's) — Honeywell Technologies",
-      "content_text": "Company: Honeywell Technologies · Location: Bengaluru, Karnataka, India",
-      "date_published": "2026-08-04T11:49:46.576Z",
-      "authors": [
-        {
-          "name": "Honeywell Technologies"
         }
       ]
     },
@@ -602,6 +578,30 @@
       "authors": [
         {
           "name": "Adobe"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/panasonic-avionics-corporation-ai-software-intern-trainee-pune-india-4443296738",
+      "url": "https://www.internradar.info/jobs/panasonic-avionics-corporation-ai-software-intern-trainee-pune-india-4443296738",
+      "title": "AI Software Intern / Trainee - Pune, India — Panasonic Avionics Corporation",
+      "content_text": "Company: Panasonic Avionics Corporation · Location: Pune Division, Maharashtra, India\n• Help develop AI applications using RAG, conversational AI, and AI Agents on AWS\n• Support building, testing, and evaluating machine learning models and MLOps workflows\n• Participate in code reviews, debugging, and CI/CD processes\n• Work with Python, Java, C++, or JavaScript",
+      "date_published": "2026-07-28T16:33:48.251Z",
+      "authors": [
+        {
+          "name": "Panasonic Avionics Corporation"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/fiserv-technology-apprentice-program-4445745465",
+      "url": "https://www.internradar.info/jobs/fiserv-technology-apprentice-program-4445745465",
+      "title": "Technology Apprentice Program — Fiserv",
+      "content_text": "Company: Fiserv · Location: Chennai, Tamil Nadu, India\n• Accelerate your growth in fintech through two structured assignments over two years\n• Gain hands-on experience, build technical and professional skills, and collaborate across teams\n• Receive formal training, mentorship, and exposure to senior leadership\n• This is an early career development program",
+      "date_published": "2026-07-28T15:19:49.824Z",
+      "authors": [
+        {
+          "name": "Fiserv"
         }
       ]
     }
