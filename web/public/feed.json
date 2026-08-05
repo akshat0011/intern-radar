@@ -6,6 +6,18 @@
   "description": "New engineering internships, listed within minutes of going live.",
   "items": [
     {
+      "id": "https://www.internradar.info/jobs/microsoft-research-sciences-intern-4432065177",
+      "url": "https://www.internradar.info/jobs/microsoft-research-sciences-intern-4432065177",
+      "title": "Research Sciences INTERN — Microsoft",
+      "content_text": "Company: Microsoft · Location: India",
+      "date_published": "2026-08-05T16:58:31.066Z",
+      "authors": [
+        {
+          "name": "Microsoft"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/magna-international-intern-smart-factory-solutions-4422173133",
       "url": "https://www.internradar.info/jobs/magna-international-intern-smart-factory-solutions-4422173133",
       "title": "Intern, Smart Factory Solutions — Magna International",
@@ -590,18 +602,6 @@
       "authors": [
         {
           "name": "Noise"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/volvo-group-graduate-apprentice-trainee-sw-verification-4447210792",
-      "url": "https://www.internradar.info/jobs/volvo-group-graduate-apprentice-trainee-sw-verification-4447210792",
-      "title": "Graduate apprentice trainee - SW Verification — Volvo Group",
-      "content_text": "Company: Volvo Group · Location: Bengaluru, Karnataka, India\n• Support test planning, execution, and analysis for vehicle systems\n• Assist in creating and executing test cases for electrical and software systems\n• Analyze test data, report anomalies, and document results for continuous improvement",
-      "date_published": "2026-07-30T23:03:57.190Z",
-      "authors": [
-        {
-          "name": "Volvo Group"
         }
       ]
     }

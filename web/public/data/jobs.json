@@ -1,7 +1,7 @@
 {
- "generatedAt": 1785949212454,
- "count": 122,
- "techCount": 122,
+ "generatedAt": 1785953720609,
+ "count": 123,
+ "techCount": 123,
  "otherCount": 0,
  "companies": [
   "ALLEN",
@@ -114,6 +114,41 @@
   "Pune, Gera Commerzone SEZ"
  ],
  "jobs": [
+  {
+   "id": "4432065177",
+   "title": "Research Sciences INTERN",
+   "company": "Microsoft",
+   "matchedWatchlist": "Microsoft",
+   "isTech": true,
+   "roleSource": "offline-uncertain",
+   "logo": "/logos/microsoft.jpg",
+   "location": "India",
+   "workplaceType": "Remote",
+   "stipend": null,
+   "duration": null,
+   "applicants": null,
+   "easyApply": false,
+   "skills": [
+    "sql",
+    "azure",
+    "machine learning",
+    "computer vision",
+    "algorithms"
+   ],
+   "summary": "Come build community, explore your passions and do your best work at Microsoft with thousands of University interns from every corner of the world. As a Research Science PhD Intern, you will conduct research and leads research collaborations that yield new insights, theories, analyses, data, algorithms, and/or prototypes that advance the state-of-the-art of incorporating AI capabilities into Azure SQL Database platform. The ideal candidates should have the ability to work with researchers and product team colleagues at Microsoft to push forward research agendas, being a team player in a collaborative and…",
+   "bullets": [],
+   "roleLabel": null,
+   "degreeLevel": null,
+   "degreeText": null,
+   "keySkills": [],
+   "stipendStatus": "unknown",
+   "postedText": "41 minutes ago",
+   "postedAt": 1785949111066,
+   "firstSeenAt": 1785951571072,
+   "url": "https://www.linkedin.com/jobs/view/4432065177/",
+   "applyUrl": "https://www.linkedin.com/jobs/view/4432065177/",
+   "description": null
+  },
   {
    "id": "4422173133",
    "title": "Intern, Smart Factory Solutions",
