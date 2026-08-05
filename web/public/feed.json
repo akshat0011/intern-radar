@@ -6,6 +6,18 @@
   "description": "New engineering internships, listed within minutes of going live.",
   "items": [
     {
+      "id": "https://www.internradar.info/jobs/piramal-pharma-ltd-apprentice-adl-4448031022",
+      "url": "https://www.internradar.info/jobs/piramal-pharma-ltd-apprentice-adl-4448031022",
+      "title": "Apprentice - ADL — Piramal Pharma Ltd",
+      "content_text": "Company: Piramal Pharma Ltd · Location: Ahmedabad, Gujarat, India",
+      "date_published": "2026-08-05T11:53:11.665Z",
+      "authors": [
+        {
+          "name": "Piramal Pharma Ltd"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/analog-devices-digital-ic-physical-verification-and-design-engineer-trainee-4447396386",
       "url": "https://www.internradar.info/jobs/analog-devices-digital-ic-physical-verification-and-design-engineer-trainee-4447396386",
       "title": "Digital IC Physical Verification and Design – Engineer Trainee — Analog Devices",
@@ -590,18 +602,6 @@
       "authors": [
         {
           "name": "PW (PhysicsWallah)"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/s-and-p-global-apprentice-software-development-engineering-4446406022",
-      "url": "https://www.internradar.info/jobs/s-and-p-global-apprentice-software-development-engineering-4446406022",
-      "title": "Apprentice, Software Development/Engineering — S&P Global",
-      "content_text": "Company: S&P Global · Location: Hyderabad, Telangana, India",
-      "date_published": "2026-07-29T14:51:34.450Z",
-      "authors": [
-        {
-          "name": "S&P Global"
         }
       ]
     }

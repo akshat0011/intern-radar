@@ -6,7 +6,14 @@
   <atom:link href="https://www.internradar.info/feed.xml" rel="self" type="application/rss+xml"/>
   <description>New engineering internships, listed within minutes of going live.</description>
   <language>en-in</language>
-  <lastBuildDate>Wed, 05 Aug 2026 11:49:45 GMT</lastBuildDate>
+  <lastBuildDate>Wed, 05 Aug 2026 12:05:54 GMT</lastBuildDate>
+  <item>
+    <title>Apprentice - ADL — Piramal Pharma Ltd</title>
+    <link>https://www.internradar.info/jobs/piramal-pharma-ltd-apprentice-adl-4448031022</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/piramal-pharma-ltd-apprentice-adl-4448031022</guid>
+    <pubDate>Wed, 05 Aug 2026 11:53:11 GMT</pubDate>
+    <description>Company: Piramal Pharma Ltd · Location: Ahmedabad, Gujarat, India</description>
+  </item>
   <item>
     <title>Digital IC Physical Verification and Design – Engineer Trainee — Analog Devices</title>
     <link>https://www.internradar.info/jobs/analog-devices-digital-ic-physical-verification-and-design-engineer-trainee-4447396386</link>
@@ -466,13 +473,6 @@
 • Integrate LLM APIs (Claude) with internal tools and data sources
 • Build no-code/low-code automations (n8n) and custom Python solutions
 • Test, debug, and iterate on agents based on business team feedback</description>
-  </item>
-  <item>
-    <title>Apprentice, Software Development/Engineering — S&amp;P Global</title>
-    <link>https://www.internradar.info/jobs/s-and-p-global-apprentice-software-development-engineering-4446406022</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/s-and-p-global-apprentice-software-development-engineering-4446406022</guid>
-    <pubDate>Wed, 29 Jul 2026 14:51:34 GMT</pubDate>
-    <description>Company: S&amp;P Global · Location: Hyderabad, Telangana, India</description>
   </item>
 </channel>
 </rss>
