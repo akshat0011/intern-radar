@@ -70,7 +70,7 @@ try {
       continue;
     }
 
-    const cards = await li.enumerateCards(page, cfg);
+    const { cards } = await li.enumerateCards(page, cfg);
     // Take the logo from a card whose employer actually resolves to the company
     // we are looking for — a keyword search returns near-misses too.
     const hit = cards.find(

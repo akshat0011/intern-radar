@@ -314,7 +314,7 @@ async function main() {
 
   const clock = budget(cfg.limits.maxRuntimeMinutes);
   const notes = [];
-  const counters = { pagesScanned: 0, cardsSeen: 0, detailsExtracted: 0, newJobs: 0, skippedStale: 0, skippedCompany: 0, skippedTitle: 0, techRoles: 0, nonTechRoles: 0, geminiJudged: 0, termsLearned: 0, nearMisses: 0, skippedViewed: 0, listedWithoutOpening: 0, logosBackfilled: 0, skippedKnown: 0, failedDetails: 0, descriptionsBackfilled: 0 };
+  const counters = { pagesScanned: 0, cardsSeen: 0, detailsExtracted: 0, newJobs: 0, skippedStale: 0, skippedCompany: 0, skippedTitle: 0, techRoles: 0, nonTechRoles: 0, geminiJudged: 0, termsLearned: 0, nearMisses: 0, skippedViewed: 0, listedWithoutOpening: 0, logosBackfilled: 0, skippedKnown: 0, failedDetails: 0, descriptionsBackfilled: 0, cardsWithoutId: 0 };
 
   log.section(`Run ${runId}`);
   log.info(`${cfg.watchlist.length} watchlist terms across ${cfg.uniqueCompanyCount} companies · mode "${cfg.searchMode ?? 'companies'}" · ${allSearches.length} searches · budget ${cfg.limits.maxRuntimeMinutes}m`);
@@ -390,7 +390,11 @@ async function main() {
           break;
         }
 
-        const cards = await li.enumerateCards(page, cfg);
+        const { cards, unidentified } = await li.enumerateCards(page, cfg);
+        if (unidentified?.length) {
+          counters.cardsWithoutId += unidentified.length;
+          log.warn(`${unidentified.length} card(s) on this page had no readable job id and could not be processed: ${unidentified.filter(Boolean).slice(0, 3).join(' | ')}`);
+        }
         await assertListRendered(page, cards.length, { pageIndex: pageIndex + 1, searchLabel: label });
         counters.pagesScanned++;
         counters.cardsSeen += cards.length;
@@ -767,7 +771,8 @@ async function main() {
     `${counters.skippedStale} older than ${cfg.filters.postedWithinHours}h, ${counters.skippedKnown} already known, ` +
     `${counters.skippedViewed} already viewed · ${counters.listedWithoutOpening} listed without opening` +
     (counters.descriptionsBackfilled ? ` · ${counters.descriptionsBackfilled} descriptions backfilled` : '') +
-    (counters.failedDetails ? ` · ${counters.failedDetails} failed to read` : '');
+    (counters.failedDetails ? ` · ${counters.failedDetails} failed to read` : '') +
+    (counters.cardsWithoutId ? ` · ${counters.cardsWithoutId} cards had no readable job id` : '');
 
   log.section('Summary');
   log.info(summaryLine);

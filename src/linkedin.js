@@ -250,15 +250,40 @@ export async function enumerateCards(page, cfg) {
         .filter((el) => el && !seen.has(el) && seen.add(el));
     }
 
-    return cards.map((card, index) => {
+    const unidentified = [];
+    const rows = cards.map((card, index) => {
       const link = card.querySelector('a[href*="/jobs/view/"]');
       const href = link?.getAttribute('href') ?? '';
 
+      // A card with no id is dropped further down, and until recently it was
+      // dropped in complete silence — no counter, no log, no seen_cards row. It
+      // is the only path that can lose a posting leaving no trace anywhere,
+      // which is exactly what happened to an upGrad "Intern- AI Engineer" that
+      // passed every filter we have. So look everywhere the id can hide:
+      //
+      //  - on a DESCENDANT rather than the <li> itself. Only the wrapper was
+      //    read before, so a layout that puts data-job-id one level in yielded
+      //    nothing at all.
+      //  - in data-entity-urn, as urn:li:jobPosting:1234567890.
+      //  - in any currentJobId link on the card, not only the /jobs/view/ one.
+      //    A promoted card often links to the search URL with the job selected
+      //    rather than to the canonical job page.
+      const idHolder = card.matches?.('[data-occludable-job-id], [data-job-id]')
+        ? card
+        : card.querySelector('[data-occludable-job-id], [data-job-id]');
+      const urn = card.getAttribute('data-entity-urn')
+        || card.querySelector('[data-entity-urn]')?.getAttribute('data-entity-urn')
+        || '';
+      const anyHref = href
+        || card.querySelector('a[href*="currentJobId="]')?.getAttribute('href')
+        || '';
+
       const jobId =
-        card.getAttribute('data-occludable-job-id') ||
-        card.getAttribute('data-job-id') ||
-        (href.match(/\/jobs\/view\/(?:[^/?#]*-)?(\d+)/) || [])[1] ||
-        (href.match(/currentJobId=(\d+)/) || [])[1] ||
+        idHolder?.getAttribute('data-occludable-job-id') ||
+        idHolder?.getAttribute('data-job-id') ||
+        (urn.match(/jobPosting:(\d+)/) || [])[1] ||
+        (anyHref.match(/\/jobs\/view\/(?:[^/?#]*-)?(\d+)/) || [])[1] ||
+        (anyHref.match(/currentJobId=(\d+)/) || [])[1] ||
         null;
 
       // --- title ---
@@ -329,10 +354,21 @@ export async function enumerateCards(page, cfg) {
     }).filter((c) => {
       // Belt-and-braces de-duplication: LinkedIn re-renders rows while the
       // virtualised list scrolls, so the same job can be captured twice.
-      if (!c.jobId || seenIds.has(c.jobId)) return false;
+      if (seenIds.has(c.jobId)) return false;
+      if (!c.jobId) {
+        // Kept, flagged, and counted rather than dropped. Discarding these in
+        // silence is what made a lost posting indistinguishable from one that
+        // was never advertised — there was no row, no counter and no log line
+        // to look at. The scan still cannot process a card with no id, but at
+        // least the run now says so out loud.
+        unidentified.push(String(c.title ?? '').slice(0, 60));
+        return false;
+      }
       seenIds.add(c.jobId);
       return true;
     });
+
+    return { cards: rows, unidentified };
   });
 }
 
