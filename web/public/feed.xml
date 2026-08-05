@@ -6,7 +6,7 @@
   <atom:link href="https://www.internradar.info/feed.xml" rel="self" type="application/rss+xml"/>
   <description>New engineering internships, listed within minutes of going live.</description>
   <language>en-in</language>
-  <lastBuildDate>Wed, 05 Aug 2026 15:05:00 GMT</lastBuildDate>
+  <lastBuildDate>Wed, 05 Aug 2026 15:07:28 GMT</lastBuildDate>
   <item>
     <title>Graduate Engineer Trainee — GE HealthCare</title>
     <link>https://www.internradar.info/jobs/ge-healthcare-graduate-engineer-trainee-4440563377</link>
@@ -311,6 +311,13 @@
 • Use Java, Python, Scala, JavaScript; focus on OOP/OOD, distributed systems, cloud, and full stack</description>
   </item>
   <item>
+    <title>Intern- AI Engineer — upGrad International</title>
+    <link>https://www.internradar.info/jobs/upgrad-international-intern-ai-engineer-4447602250</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/upgrad-international-intern-ai-engineer-4447602250</guid>
+    <pubDate>Sun, 02 Aug 2026 15:07:27 GMT</pubDate>
+    <description>Company: upGrad International · Location: Mumbai, Maharashtra, India · Stipend: 30,000 / month · Duration: 3-6 months</description>
+  </item>
+  <item>
     <title>Intern — HARMAN India</title>
     <link>https://www.internradar.info/jobs/harman-india-intern-4445841376</link>
     <guid isPermaLink="true">https://www.internradar.info/jobs/harman-india-intern-4445841376</guid>
@@ -453,13 +460,6 @@
 • Develop and deliver high-quality software solutions using industry-aligned languages and tools
 • Collaborate with product managers, designers, and engineers on requirements and strategies
 • Participate in code reviews, adhere to secure coding practices, and implement unit testing</description>
-  </item>
-  <item>
-    <title>AI/ML Intern — Quest Global</title>
-    <link>https://www.internradar.info/jobs/quest-global-ai-ml-intern-4446793926</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/quest-global-ai-ml-intern-4446793926</guid>
-    <pubDate>Thu, 30 Jul 2026 17:08:04 GMT</pubDate>
-    <description>Company: Quest Global · Location: Pune Division, Maharashtra, India</description>
   </item>
 </channel>
 </rss>
