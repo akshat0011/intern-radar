@@ -6,6 +6,18 @@
   "description": "New engineering internships, listed within minutes of going live.",
   "items": [
     {
+      "id": "https://www.internradar.info/jobs/ubs-ca-intern-4449455707",
+      "url": "https://www.internradar.info/jobs/ubs-ca-intern-4449455707",
+      "title": "CA Intern — UBS",
+      "content_text": "Company: UBS · Location: Pune Division, Maharashtra, India",
+      "date_published": "2026-08-05T08:49:02.576Z",
+      "authors": [
+        {
+          "name": "UBS"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/vedantu-student-care-intern-4448977827",
       "url": "https://www.internradar.info/jobs/vedantu-student-care-intern-4448977827",
       "title": "Student Care Intern — Vedantu",
@@ -590,18 +602,6 @@
       "authors": [
         {
           "name": "Mizuho"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/pixxel-image-processing-intern-qa-qc-4446528118",
-      "url": "https://www.internradar.info/jobs/pixxel-image-processing-intern-qa-qc-4446528118",
-      "title": "Image processing Intern (QA/QC) — Pixxel",
-      "content_text": "Company: Pixxel · Location: Bengaluru, Karnataka, India · Duration: 0–1 years\n• Identify and flag issues like missing data, corrupted files, or incorrect geotagging\n• Document findings and collaborate with imaging and data engineering teams to resolve quality issues",
-      "date_published": "2026-07-29T00:45:04.016Z",
-      "authors": [
-        {
-          "name": "Pixxel"
         }
       ]
     }
