@@ -22,7 +22,8 @@
     "test": "node test/extract.test.mjs && node test/roles.test.mjs && node test/tailor.test.mjs && node test/pages.test.mjs",
     "web": "node web/serve.js",
     "install-schedule": "bash bin/install-schedule.sh",
-    "uninstall-schedule": "bash bin/uninstall-schedule.sh"
+    "uninstall-schedule": "bash bin/uninstall-schedule.sh",
+    "add-job": "node --no-warnings=ExperimentalWarning bin/add-job.js"
   },
   "dependencies": {
     "playwright-core": "^1.56.0"
