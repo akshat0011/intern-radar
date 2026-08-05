@@ -6,6 +6,18 @@
   "description": "New engineering internships, listed within minutes of going live.",
   "items": [
     {
+      "id": "https://www.internradar.info/jobs/magna-international-intern-smart-factory-solutions-4422173133",
+      "url": "https://www.internradar.info/jobs/magna-international-intern-smart-factory-solutions-4422173133",
+      "title": "Intern, Smart Factory Solutions — Magna International",
+      "content_text": "Company: Magna International · Location: Bengaluru, Karnataka, India",
+      "date_published": "2026-08-05T15:04:03.106Z",
+      "authors": [
+        {
+          "name": "Magna International"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/ge-healthcare-graduate-engineer-trainee-4440563377",
       "url": "https://www.internradar.info/jobs/ge-healthcare-graduate-engineer-trainee-4440563377",
       "title": "Graduate Engineer Trainee — GE HealthCare",
@@ -590,18 +602,6 @@
       "authors": [
         {
           "name": "Volvo Group"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/barclays-2027-technology-developer-summer-internship-programme-india-4445050175",
-      "url": "https://www.internradar.info/jobs/barclays-2027-technology-developer-summer-internship-programme-india-4445050175",
-      "title": "2027 Technology Developer Summer Internship Programme India — Barclays",
-      "content_text": "Company: Barclays · Location: Pune Division, Maharashtra, India\n• Develop and deliver high-quality software solutions using industry-aligned languages and tools\n• Collaborate with product managers, designers, and engineers on requirements and strategies\n• Participate in code reviews, adhere to secure coding practices, and implement unit testing",
-      "date_published": "2026-07-30T22:04:03.067Z",
-      "authors": [
-        {
-          "name": "Barclays"
         }
       ]
     }

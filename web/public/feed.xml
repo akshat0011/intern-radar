@@ -6,7 +6,14 @@
   <atom:link href="https://www.internradar.info/feed.xml" rel="self" type="application/rss+xml"/>
   <description>New engineering internships, listed within minutes of going live.</description>
   <language>en-in</language>
-  <lastBuildDate>Wed, 05 Aug 2026 15:09:59 GMT</lastBuildDate>
+  <lastBuildDate>Wed, 05 Aug 2026 16:06:47 GMT</lastBuildDate>
+  <item>
+    <title>Intern, Smart Factory Solutions — Magna International</title>
+    <link>https://www.internradar.info/jobs/magna-international-intern-smart-factory-solutions-4422173133</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/magna-international-intern-smart-factory-solutions-4422173133</guid>
+    <pubDate>Wed, 05 Aug 2026 15:04:03 GMT</pubDate>
+    <description>Company: Magna International · Location: Bengaluru, Karnataka, India</description>
+  </item>
   <item>
     <title>Graduate Engineer Trainee — GE HealthCare</title>
     <link>https://www.internradar.info/jobs/ge-healthcare-graduate-engineer-trainee-4440563377</link>
@@ -450,16 +457,6 @@
 • Support test planning, execution, and analysis for vehicle systems
 • Assist in creating and executing test cases for electrical and software systems
 • Analyze test data, report anomalies, and document results for continuous improvement</description>
-  </item>
-  <item>
-    <title>2027 Technology Developer Summer Internship Programme India — Barclays</title>
-    <link>https://www.internradar.info/jobs/barclays-2027-technology-developer-summer-internship-programme-india-4445050175</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/barclays-2027-technology-developer-summer-internship-programme-india-4445050175</guid>
-    <pubDate>Thu, 30 Jul 2026 22:04:03 GMT</pubDate>
-    <description>Company: Barclays · Location: Pune Division, Maharashtra, India
-• Develop and deliver high-quality software solutions using industry-aligned languages and tools
-• Collaborate with product managers, designers, and engineers on requirements and strategies
-• Participate in code reviews, adhere to secure coding practices, and implement unit testing</description>
   </item>
 </channel>
 </rss>
