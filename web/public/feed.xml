@@ -6,7 +6,7 @@
   <atom:link href="https://www.internradar.info/feed.xml" rel="self" type="application/rss+xml"/>
   <description>New engineering internships, listed within minutes of going live.</description>
   <language>en-in</language>
-  <lastBuildDate>Wed, 05 Aug 2026 07:35:53 GMT</lastBuildDate>
+  <lastBuildDate>Wed, 05 Aug 2026 07:50:01 GMT</lastBuildDate>
   <item>
     <title>Graduate Trainee Engineer — Siemens</title>
     <link>https://www.internradar.info/jobs/siemens-graduate-trainee-engineer-4447382156</link>
@@ -26,6 +26,13 @@
 • Assist senior engineers with project tasks and input reviews
 • Prepare engineering deliverables, estimates, and basic components
 • Track work hours and perform initial quality checks on assigned work</description>
+  </item>
+  <item>
+    <title>Graduate Trainee Engineer — Siemens</title>
+    <link>https://www.internradar.info/jobs/siemens-graduate-trainee-engineer-4447365696</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/siemens-graduate-trainee-engineer-4447365696</guid>
+    <pubDate>Wed, 05 Aug 2026 07:21:43 GMT</pubDate>
+    <description>Company: Siemens · Location: Chennai, Tamil Nadu, India · Duration: 6 months</description>
   </item>
   <item>
     <title>Internship - GRC (Governance, Risk &amp; Compliance) — Acko</title>
@@ -496,17 +503,6 @@
 • Support building, testing, and evaluating machine learning models and MLOps workflows
 • Participate in code reviews, debugging, and CI/CD processes
 • Work with Python, Java, C++, or JavaScript</description>
-  </item>
-  <item>
-    <title>Technology Apprentice Program — Fiserv</title>
-    <link>https://www.internradar.info/jobs/fiserv-technology-apprentice-program-4445745465</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/fiserv-technology-apprentice-program-4445745465</guid>
-    <pubDate>Tue, 28 Jul 2026 15:19:49 GMT</pubDate>
-    <description>Company: Fiserv · Location: Chennai, Tamil Nadu, India
-• Accelerate your growth in fintech through two structured assignments over two years
-• Gain hands-on experience, build technical and professional skills, and collaborate across teams
-• Receive formal training, mentorship, and exposure to senior leadership
-• This is an early career development program</description>
   </item>
 </channel>
 </rss>
