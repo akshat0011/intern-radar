@@ -6,7 +6,14 @@
   <atom:link href="https://www.internradar.info/feed.xml" rel="self" type="application/rss+xml"/>
   <description>New engineering internships, listed within minutes of going live.</description>
   <language>en-in</language>
-  <lastBuildDate>Wed, 05 Aug 2026 08:04:13 GMT</lastBuildDate>
+  <lastBuildDate>Wed, 05 Aug 2026 08:19:15 GMT</lastBuildDate>
+  <item>
+    <title>Student Care Intern — Vedantu</title>
+    <link>https://www.internradar.info/jobs/vedantu-student-care-intern-4448977827</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/vedantu-student-care-intern-4448977827</guid>
+    <pubDate>Wed, 05 Aug 2026 08:04:10 GMT</pubDate>
+    <description>Company: Vedantu · Location: Bengaluru, Karnataka, India</description>
+  </item>
   <item>
     <title>Intern — Zomato</title>
     <link>https://www.internradar.info/jobs/zomato-intern-4448966784</link>
@@ -488,17 +495,6 @@
     <description>Company: Pixxel · Location: Bengaluru, Karnataka, India · Duration: 0–1 years
 • Identify and flag issues like missing data, corrupted files, or incorrect geotagging
 • Document findings and collaborate with imaging and data engineering teams to resolve quality issues</description>
-  </item>
-  <item>
-    <title>AI Engineer Apprentice — Adobe</title>
-    <link>https://www.internradar.info/jobs/adobe-ai-engineer-apprentice-4445799105</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/adobe-ai-engineer-apprentice-4445799105</guid>
-    <pubDate>Tue, 28 Jul 2026 22:35:24 GMT</pubDate>
-    <description>Company: Adobe · Location: Bengaluru East, Karnataka, India · Duration: 6 months
-• Learn Python, LLM APIs, and prompt design, then contribute to client projects
-• Build RAG components, test harnesses, and integrate tools under senior guidance
-• Shadow client sessions, prepare demos, and contribute to reusable asset library
-• Work with an AI Architect and engineering mentor for a year</description>
   </item>
 </channel>
 </rss>

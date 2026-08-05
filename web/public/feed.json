@@ -6,6 +6,18 @@
   "description": "New engineering internships, listed within minutes of going live.",
   "items": [
     {
+      "id": "https://www.internradar.info/jobs/vedantu-student-care-intern-4448977827",
+      "url": "https://www.internradar.info/jobs/vedantu-student-care-intern-4448977827",
+      "title": "Student Care Intern — Vedantu",
+      "content_text": "Company: Vedantu · Location: Bengaluru, Karnataka, India",
+      "date_published": "2026-08-05T08:04:10.224Z",
+      "authors": [
+        {
+          "name": "Vedantu"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/zomato-intern-4448966784",
       "url": "https://www.internradar.info/jobs/zomato-intern-4448966784",
       "title": "Intern — Zomato",
@@ -590,18 +602,6 @@
       "authors": [
         {
           "name": "Pixxel"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/adobe-ai-engineer-apprentice-4445799105",
-      "url": "https://www.internradar.info/jobs/adobe-ai-engineer-apprentice-4445799105",
-      "title": "AI Engineer Apprentice — Adobe",
-      "content_text": "Company: Adobe · Location: Bengaluru East, Karnataka, India · Duration: 6 months\n• Learn Python, LLM APIs, and prompt design, then contribute to client projects\n• Build RAG components, test harnesses, and integrate tools under senior guidance\n• Shadow client sessions, prepare demos, and contribute to reusable asset library\n• Work with an AI Architect and engineering mentor for a year",
-      "date_published": "2026-07-28T22:35:24.224Z",
-      "authors": [
-        {
-          "name": "Adobe"
         }
       ]
     }
