@@ -6,6 +6,42 @@
   "description": "New engineering internships, listed within minutes of going live.",
   "items": [
     {
+      "id": "https://www.internradar.info/jobs/continental-industry-intern-ai-engineer-4449119257",
+      "url": "https://www.internradar.info/jobs/continental-industry-intern-ai-engineer-4449119257",
+      "title": "Intern - AI Engineer — Continental Industry",
+      "content_text": "Company: Continental Industry · Location: Bengaluru, Karnataka, India",
+      "date_published": "2026-08-05T13:45:03.485Z",
+      "authors": [
+        {
+          "name": "Continental Industry"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/ge-healthcare-pa-trainee-4440560471",
+      "url": "https://www.internradar.info/jobs/ge-healthcare-pa-trainee-4440560471",
+      "title": "PA Trainee — GE HealthCare",
+      "content_text": "Company: GE HealthCare · Location: Bengaluru, Karnataka, India · Duration: 6 months",
+      "date_published": "2026-08-05T13:36:09.659Z",
+      "authors": [
+        {
+          "name": "GE HealthCare"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/ge-healthcare-graduate-engineering-trainee-4440557575",
+      "url": "https://www.internradar.info/jobs/ge-healthcare-graduate-engineering-trainee-4440557575",
+      "title": "GRADUATE ENGINEERING TRAINEE — GE HealthCare",
+      "content_text": "Company: GE HealthCare · Location: Bengaluru, Karnataka, India",
+      "date_published": "2026-08-05T13:35:52.929Z",
+      "authors": [
+        {
+          "name": "GE HealthCare"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/piramal-pharma-ltd-apprentice-adl-4448031022",
       "url": "https://www.internradar.info/jobs/piramal-pharma-ltd-apprentice-adl-4448031022",
       "title": "Apprentice - ADL — Piramal Pharma Ltd",
@@ -566,42 +602,6 @@
       "authors": [
         {
           "name": "Whatfix"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/philips-apprentice-trainee-software-developer-4446760255",
-      "url": "https://www.internradar.info/jobs/philips-apprentice-trainee-software-developer-4446760255",
-      "title": "Apprentice Trainee (Software Developer) — Philips",
-      "content_text": "Company: Philips · Location: Bengaluru, Karnataka, India\n• Work as a software developer apprentice trainee\n• Requires active student status/enrollment at a university, college, or vocational education",
-      "date_published": "2026-07-30T11:41:13.407Z",
-      "authors": [
-        {
-          "name": "Philips"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/icertis-intern-4446851335",
-      "url": "https://www.internradar.info/jobs/icertis-intern-4446851335",
-      "title": "Intern — Icertis",
-      "content_text": "Company: Icertis · Location: Pune City, Maharashtra, India · Duration: 6 months\n• Support Program Manager by tracking plans, milestones, and deliverables\n• Coordinate meetings, document minutes, and follow up on action items with stakeholders\n• Collect project data, prepare status reports, dashboards, and executive presentations\n• Maintain RAID logs, track escalations, and assist in identifying project risks",
-      "date_published": "2026-07-29T19:52:51.543Z",
-      "authors": [
-        {
-          "name": "Icertis"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/bajaj-finserv-trainee-technology-4446847089",
-      "url": "https://www.internradar.info/jobs/bajaj-finserv-trainee-technology-4446847089",
-      "title": "Trainee Technology — Bajaj Finserv",
-      "content_text": "Company: Bajaj Finserv · Location: Pune Division, Maharashtra, India",
-      "date_published": "2026-07-29T18:30:35.872Z",
-      "authors": [
-        {
-          "name": "Bajaj Finserv"
         }
       ]
     }
