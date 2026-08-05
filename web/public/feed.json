@@ -6,6 +6,18 @@
   "description": "New engineering internships, listed within minutes of going live.",
   "items": [
     {
+      "id": "https://www.internradar.info/jobs/citi-young-apprentice-c00-mumbai-4448935208",
+      "url": "https://www.internradar.info/jobs/citi-young-apprentice-c00-mumbai-4448935208",
+      "title": "Young Apprentice - C00 - MUMBAI — Citi",
+      "content_text": "Company: Citi · Location: Mumbai, Maharashtra, India · Duration: 12 months",
+      "date_published": "2026-08-05T03:52:26.761Z",
+      "authors": [
+        {
+          "name": "Citi"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/hyperverse-holdings-shopify-agency-shopify-ops-intern-4448587583",
       "url": "https://www.internradar.info/jobs/hyperverse-holdings-shopify-agency-shopify-ops-intern-4448587583",
       "title": "Shopify Ops Intern — Hyperverse Holdings | Shopify Agency",
@@ -590,18 +602,6 @@
       "authors": [
         {
           "name": "ALLEN"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/mizuho-information-technology-apprentice-4435094310",
-      "url": "https://www.internradar.info/jobs/mizuho-information-technology-apprentice-4435094310",
-      "title": "Information Technology apprentice — Mizuho",
-      "content_text": "Company: Mizuho · Location: Navi Mumbai, Maharashtra, India\n• Help with helpdesk, Active Directory management, and unlocking applications\n• Troubleshoot and resolve IT issues, create IT documentation\n• Work in rotational shifts and on-call schedule for 1 year\n• Looking for recent IT graduates or postgraduates in or near Navi Mumbai",
-      "date_published": "2026-07-29T07:41:42.252Z",
-      "authors": [
-        {
-          "name": "Mizuho"
         }
       ]
     }

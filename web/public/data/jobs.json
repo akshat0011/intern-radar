@@ -1,7 +1,7 @@
 {
- "generatedAt": 1785901687392,
- "count": 102,
- "techCount": 102,
+ "generatedAt": 1785902533240,
+ "count": 103,
+ "techCount": 103,
  "otherCount": 0,
  "companies": [
   "ALLEN",
@@ -15,6 +15,7 @@
   "Bain & Company",
   "Bajaj Finserv",
   "Barclays",
+  "Citi",
   "Collins Aerospace",
   "DeHaat",
   "Delhivery",
@@ -97,6 +98,37 @@
   "Pune Division, Maharashtra, India"
  ],
  "jobs": [
+  {
+   "id": "4448935208",
+   "title": "Young Apprentice - C00 - MUMBAI",
+   "company": "Citi",
+   "matchedWatchlist": "Citi",
+   "isTech": true,
+   "roleSource": "offline-uncertain",
+   "logo": "/logos/citi.jpg",
+   "location": "Mumbai, Maharashtra, India",
+   "workplaceType": "Hybrid",
+   "stipend": null,
+   "duration": "12 months",
+   "applicants": null,
+   "easyApply": false,
+   "skills": [
+    "excel"
+   ],
+   "summary": "A career with us means joining a team of more than 230,000 dedicated people from around the globe. Whether it's honing your skills or building your network, we know that success can't come without growth. Here at Citi, the Apprenticeship Program is intended to help you build a broad skill set and accelerate your career growth by gaining exposure to numerous day-to-day activities. As an apprentice you will gain hands on work experience with deliverables and will be expected to add value to their teams during the 12 months.",
+   "bullets": [],
+   "roleLabel": null,
+   "degreeLevel": null,
+   "degreeText": null,
+   "keySkills": [],
+   "stipendStatus": "unknown",
+   "postedText": "9 minutes ago",
+   "postedAt": 1785901946761,
+   "firstSeenAt": 1785902486767,
+   "url": "https://www.linkedin.com/jobs/view/4448935208/",
+   "applyUrl": "https://www.linkedin.com/jobs/view/4448935208/",
+   "description": null
+  },
   {
    "id": "4448587583",
    "title": "Shopify Ops Intern",
