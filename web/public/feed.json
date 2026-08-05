@@ -66,18 +66,6 @@
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/ge-healthcare-pa-trainee-4440560471",
-      "url": "https://www.internradar.info/jobs/ge-healthcare-pa-trainee-4440560471",
-      "title": "PA Trainee — GE HealthCare",
-      "content_text": "Company: GE HealthCare · Location: Bengaluru, Karnataka, India · Duration: 6 months",
-      "date_published": "2026-08-05T13:36:09.659Z",
-      "authors": [
-        {
-          "name": "GE HealthCare"
-        }
-      ]
-    },
-    {
       "id": "https://www.internradar.info/jobs/ge-healthcare-graduate-engineering-trainee-4440557575",
       "url": "https://www.internradar.info/jobs/ge-healthcare-graduate-engineering-trainee-4440557575",
       "title": "GRADUATE ENGINEERING TRAINEE — GE HealthCare",
@@ -218,18 +206,6 @@
       "authors": [
         {
           "name": "Siemens"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/barclays-2027-compliance-analyst-summer-internship-programme-india-ats-workday-barclays-wd3-external-career-site-barclays-jr-0000126564",
-      "url": "https://www.internradar.info/jobs/barclays-2027-compliance-analyst-summer-internship-programme-india-ats-workday-barclays-wd3-external-career-site-barclays-jr-0000126564",
-      "title": "2027 Compliance Analyst Summer Internship Programme India — Barclays",
-      "content_text": "Company: Barclays · Location: Pune, Gera Commerzone SEZ",
-      "date_published": "2026-08-05T00:00:00.000Z",
-      "authors": [
-        {
-          "name": "Barclays"
         }
       ]
     },
@@ -602,6 +578,30 @@
       "authors": [
         {
           "name": "Fujitsu"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/noise-intern-product-nfa-4446948754",
+      "url": "https://www.internradar.info/jobs/noise-intern-product-nfa-4446948754",
+      "title": "Intern - Product (NFA) — Noise",
+      "content_text": "Company: Noise · Location: Gurugram, Haryana, India\n• Work with Product Managers on the full product lifecycle, from research to launch\n• Write PRDs, user stories, and feature specs; analyze product data using SQL\n• Collaborate with design on wireframes in Figma and engineering on sprints in Jira\n• Conduct market research, synthesize user feedback, and support A/B testing",
+      "date_published": "2026-07-31T01:02:08.758Z",
+      "authors": [
+        {
+          "name": "Noise"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/volvo-group-graduate-apprentice-trainee-sw-verification-4447210792",
+      "url": "https://www.internradar.info/jobs/volvo-group-graduate-apprentice-trainee-sw-verification-4447210792",
+      "title": "Graduate apprentice trainee - SW Verification — Volvo Group",
+      "content_text": "Company: Volvo Group · Location: Bengaluru, Karnataka, India\n• Support test planning, execution, and analysis for vehicle systems\n• Assist in creating and executing test cases for electrical and software systems\n• Analyze test data, report anomalies, and document results for continuous improvement",
+      "date_published": "2026-07-30T23:03:57.190Z",
+      "authors": [
+        {
+          "name": "Volvo Group"
         }
       ]
     }
