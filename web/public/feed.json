@@ -6,6 +6,18 @@
   "description": "New engineering internships, listed within minutes of going live.",
   "items": [
     {
+      "id": "https://www.internradar.info/jobs/ge-healthcare-graduate-engineer-trainee-4440563377",
+      "url": "https://www.internradar.info/jobs/ge-healthcare-graduate-engineer-trainee-4440563377",
+      "title": "Graduate Engineer Trainee — GE HealthCare",
+      "content_text": "Company: GE HealthCare · Location: Bengaluru, Karnataka, India",
+      "date_published": "2026-08-05T13:58:10.362Z",
+      "authors": [
+        {
+          "name": "GE HealthCare"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/continental-industry-intern-ai-engineer-4449119257",
       "url": "https://www.internradar.info/jobs/continental-industry-intern-ai-engineer-4449119257",
       "title": "Intern - AI Engineer — Continental Industry",
@@ -590,18 +602,6 @@
       "authors": [
         {
           "name": "Quest Global"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/whatfix-ai-intern-4446765544",
-      "url": "https://www.internradar.info/jobs/whatfix-ai-intern-4446765544",
-      "title": "AI Intern — Whatfix",
-      "content_text": "Company: Whatfix · Location: Bengaluru, Karnataka, India\n• Work on AI agentification initiatives, replacing manual workflows with AI agents\n• Join a small, high-impact team working directly with senior leadership\n• Focus on intelligent process automation for internal functions like Sales, HR, Finance",
-      "date_published": "2026-07-30T12:44:33.351Z",
-      "authors": [
-        {
-          "name": "Whatfix"
         }
       ]
     }

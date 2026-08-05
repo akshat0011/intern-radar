@@ -6,7 +6,14 @@
   <atom:link href="https://www.internradar.info/feed.xml" rel="self" type="application/rss+xml"/>
   <description>New engineering internships, listed within minutes of going live.</description>
   <language>en-in</language>
-  <lastBuildDate>Wed, 05 Aug 2026 14:24:18 GMT</lastBuildDate>
+  <lastBuildDate>Wed, 05 Aug 2026 14:34:23 GMT</lastBuildDate>
+  <item>
+    <title>Graduate Engineer Trainee — GE HealthCare</title>
+    <link>https://www.internradar.info/jobs/ge-healthcare-graduate-engineer-trainee-4440563377</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/ge-healthcare-graduate-engineer-trainee-4440563377</guid>
+    <pubDate>Wed, 05 Aug 2026 13:58:10 GMT</pubDate>
+    <description>Company: GE HealthCare · Location: Bengaluru, Karnataka, India</description>
+  </item>
   <item>
     <title>Intern - AI Engineer — Continental Industry</title>
     <link>https://www.internradar.info/jobs/continental-industry-intern-ai-engineer-4449119257</link>
@@ -453,16 +460,6 @@
     <guid isPermaLink="true">https://www.internradar.info/jobs/quest-global-ai-ml-intern-4446793926</guid>
     <pubDate>Thu, 30 Jul 2026 17:08:04 GMT</pubDate>
     <description>Company: Quest Global · Location: Pune Division, Maharashtra, India</description>
-  </item>
-  <item>
-    <title>AI Intern — Whatfix</title>
-    <link>https://www.internradar.info/jobs/whatfix-ai-intern-4446765544</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/whatfix-ai-intern-4446765544</guid>
-    <pubDate>Thu, 30 Jul 2026 12:44:33 GMT</pubDate>
-    <description>Company: Whatfix · Location: Bengaluru, Karnataka, India
-• Work on AI agentification initiatives, replacing manual workflows with AI agents
-• Join a small, high-impact team working directly with senior leadership
-• Focus on intelligent process automation for internal functions like Sales, HR, Finance</description>
   </item>
 </channel>
 </rss>
