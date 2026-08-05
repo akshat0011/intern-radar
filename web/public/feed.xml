@@ -6,7 +6,14 @@
   <atom:link href="https://www.internradar.info/feed.xml" rel="self" type="application/rss+xml"/>
   <description>New engineering internships, listed within minutes of going live.</description>
   <language>en-in</language>
-  <lastBuildDate>Wed, 05 Aug 2026 23:10:03 GMT</lastBuildDate>
+  <lastBuildDate>Wed, 05 Aug 2026 23:42:17 GMT</lastBuildDate>
+  <item>
+    <title>Young Apprentice - C00 - GURUGRAM — Citi</title>
+    <link>https://www.internradar.info/jobs/citi-young-apprentice-c00-gurugram-4449324079</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/citi-young-apprentice-c00-gurugram-4449324079</guid>
+    <pubDate>Wed, 05 Aug 2026 22:42:05 GMT</pubDate>
+    <description>Company: Citi · Location: Haryana, India · Duration: 12 months</description>
+  </item>
   <item>
     <title>Intern - IT &amp; Desktop Support — Quantiphi</title>
     <link>https://www.internradar.info/jobs/quantiphi-intern-it-and-desktop-support-4448046701</link>
@@ -131,6 +138,13 @@
     <guid isPermaLink="true">https://www.internradar.info/jobs/siemens-graduate-trainee-engineer-4447365696</guid>
     <pubDate>Wed, 05 Aug 2026 07:21:43 GMT</pubDate>
     <description>Company: Siemens · Location: Chennai, Tamil Nadu, India · Duration: 6 months</description>
+  </item>
+  <item>
+    <title>Bygg ekte løsninger. Med ekte innvirkning. Summer Internship for utviklere 💻 — Accenture</title>
+    <link>https://www.internradar.info/jobs/accenture-bygg-ekte-l-sninger-med-ekte-innvirkning-summer-internship-for-utvikle-ats-workday-accenture-wd103-accenturecareers-r00340352</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/accenture-bygg-ekte-l-sninger-med-ekte-innvirkning-summer-internship-for-utvikle-ats-workday-accenture-wd103-accenturecareers-r00340352</guid>
+    <pubDate>Wed, 05 Aug 2026 00:00:00 GMT</pubDate>
+    <description>Company: Accenture</description>
   </item>
   <item>
     <title>Young Apprentice - C00 - MUMBAI — Citi</title>
@@ -436,27 +450,6 @@
 • Work with the Quantum R&amp;D Division, contributing to the Quantum Computing Stack
 • Requires strong background in open quantum systems, statistical physics, and linear algebra
 • Programming experience in Python is preferred; 3-6 month physical internship in Bangalore</description>
-  </item>
-  <item>
-    <title>Intern - Product (NFA) — Noise</title>
-    <link>https://www.internradar.info/jobs/noise-intern-product-nfa-4446948754</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/noise-intern-product-nfa-4446948754</guid>
-    <pubDate>Fri, 31 Jul 2026 01:02:08 GMT</pubDate>
-    <description>Company: Noise · Location: Gurugram, Haryana, India
-• Work with Product Managers on the full product lifecycle, from research to launch
-• Write PRDs, user stories, and feature specs; analyze product data using SQL
-• Collaborate with design on wireframes in Figma and engineering on sprints in Jira
-• Conduct market research, synthesize user feedback, and support A/B testing</description>
-  </item>
-  <item>
-    <title>Graduate apprentice trainee - SW Verification — Volvo Group</title>
-    <link>https://www.internradar.info/jobs/volvo-group-graduate-apprentice-trainee-sw-verification-4447210792</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/volvo-group-graduate-apprentice-trainee-sw-verification-4447210792</guid>
-    <pubDate>Thu, 30 Jul 2026 23:03:57 GMT</pubDate>
-    <description>Company: Volvo Group · Location: Bengaluru, Karnataka, India
-• Support test planning, execution, and analysis for vehicle systems
-• Assist in creating and executing test cases for electrical and software systems
-• Analyze test data, report anomalies, and document results for continuous improvement</description>
   </item>
 </channel>
 </rss>

@@ -6,6 +6,18 @@
   "description": "New engineering internships, listed within minutes of going live.",
   "items": [
     {
+      "id": "https://www.internradar.info/jobs/citi-young-apprentice-c00-gurugram-4449324079",
+      "url": "https://www.internradar.info/jobs/citi-young-apprentice-c00-gurugram-4449324079",
+      "title": "Young Apprentice - C00 - GURUGRAM — Citi",
+      "content_text": "Company: Citi · Location: Haryana, India · Duration: 12 months",
+      "date_published": "2026-08-05T22:42:05.365Z",
+      "authors": [
+        {
+          "name": "Citi"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/quantiphi-intern-it-and-desktop-support-4448046701",
       "url": "https://www.internradar.info/jobs/quantiphi-intern-it-and-desktop-support-4448046701",
       "title": "Intern - IT & Desktop Support — Quantiphi",
@@ -206,6 +218,18 @@
       "authors": [
         {
           "name": "Siemens"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/accenture-bygg-ekte-l-sninger-med-ekte-innvirkning-summer-internship-for-utvikle-ats-workday-accenture-wd103-accenturecareers-r00340352",
+      "url": "https://www.internradar.info/jobs/accenture-bygg-ekte-l-sninger-med-ekte-innvirkning-summer-internship-for-utvikle-ats-workday-accenture-wd103-accenturecareers-r00340352",
+      "title": "Bygg ekte løsninger. Med ekte innvirkning. Summer Internship for utviklere 💻 — Accenture",
+      "content_text": "Company: Accenture",
+      "date_published": "2026-08-05T00:00:00.000Z",
+      "authors": [
+        {
+          "name": "Accenture"
         }
       ]
     },
@@ -578,30 +602,6 @@
       "authors": [
         {
           "name": "Fujitsu"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/noise-intern-product-nfa-4446948754",
-      "url": "https://www.internradar.info/jobs/noise-intern-product-nfa-4446948754",
-      "title": "Intern - Product (NFA) — Noise",
-      "content_text": "Company: Noise · Location: Gurugram, Haryana, India\n• Work with Product Managers on the full product lifecycle, from research to launch\n• Write PRDs, user stories, and feature specs; analyze product data using SQL\n• Collaborate with design on wireframes in Figma and engineering on sprints in Jira\n• Conduct market research, synthesize user feedback, and support A/B testing",
-      "date_published": "2026-07-31T01:02:08.758Z",
-      "authors": [
-        {
-          "name": "Noise"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/volvo-group-graduate-apprentice-trainee-sw-verification-4447210792",
-      "url": "https://www.internradar.info/jobs/volvo-group-graduate-apprentice-trainee-sw-verification-4447210792",
-      "title": "Graduate apprentice trainee - SW Verification — Volvo Group",
-      "content_text": "Company: Volvo Group · Location: Bengaluru, Karnataka, India\n• Support test planning, execution, and analysis for vehicle systems\n• Assist in creating and executing test cases for electrical and software systems\n• Analyze test data, report anomalies, and document results for continuous improvement",
-      "date_published": "2026-07-30T23:03:57.190Z",
-      "authors": [
-        {
-          "name": "Volvo Group"
         }
       ]
     }
