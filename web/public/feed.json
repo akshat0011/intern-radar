@@ -6,6 +6,30 @@
   "description": "New engineering internships, listed within minutes of going live.",
   "items": [
     {
+      "id": "https://www.internradar.info/jobs/tata-cliq-fashion-crm-intern-4447373209",
+      "url": "https://www.internradar.info/jobs/tata-cliq-fashion-crm-intern-4447373209",
+      "title": "CRM Intern — Tata CLiQ Fashion",
+      "content_text": "Company: Tata CLiQ Fashion · Location: Mumbai Metropolitan Region · Duration: 3–4 months",
+      "date_published": "2026-08-05T06:50:44.671Z",
+      "authors": [
+        {
+          "name": "Tata CLiQ Fashion"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/biocon-biologics-apprentice-4447345827",
+      "url": "https://www.internradar.info/jobs/biocon-biologics-apprentice-4447345827",
+      "title": "Apprentice — Biocon Biologics",
+      "content_text": "Company: Biocon Biologics · Location: Bengaluru, Karnataka, India · Duration: 6 months",
+      "date_published": "2026-08-05T06:01:20.712Z",
+      "authors": [
+        {
+          "name": "Biocon Biologics"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/citi-young-apprentice-c00-mumbai-4448935208",
       "url": "https://www.internradar.info/jobs/citi-young-apprentice-c00-mumbai-4448935208",
       "title": "Young Apprentice - C00 - MUMBAI — Citi",
@@ -578,30 +602,6 @@
       "authors": [
         {
           "name": "GreyOrange"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/newgen-innovation-ai-and-design-thinking-product-management-intern-4443670910",
-      "url": "https://www.internradar.info/jobs/newgen-innovation-ai-and-design-thinking-product-management-intern-4443670910",
-      "title": "Product Management Intern — NewGen Innovation : AI & Design Thinking",
-      "content_text": "Company: NewGen Innovation : AI & Design Thinking · Location: Mumbai, Maharashtra, India · Stipend: ₹35,000 / total · Duration: 1 to 2 years\n• Work with founders, AI engineers, and designers to build AI-powered products\n• Conduct customer and market research, gather requirements, and plan product roadmaps\n• Create wireframes, user journeys, and monitor product performance using analytics\n• 6-month on-site internship in Powai, with potential for a full-time offer",
-      "date_published": "2026-07-29T09:37:44.191Z",
-      "authors": [
-        {
-          "name": "NewGen Innovation : AI & Design Thinking"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/allen-grc-intern-4446049382",
-      "url": "https://www.internradar.info/jobs/allen-grc-intern-4446049382",
-      "title": "GRC Intern — ALLEN",
-      "content_text": "Company: ALLEN · Location: Bangalore Urban, Karnataka, India · Duration: 6–9 months\n• Support the Information Security and Compliance team, maintaining security, privacy, and governance frameworks\n• Collect audit evidence, maintain ISMS/PIMS documentation, risk registers, and compliance records\n• Work with ISO 27001, ISO 27701, DPDPA, and coordinate vendor security assessments\n• 6-9 month internship with potential for full-time offer based on performance",
-      "date_published": "2026-07-29T09:02:52.017Z",
-      "authors": [
-        {
-          "name": "ALLEN"
         }
       ]
     }
