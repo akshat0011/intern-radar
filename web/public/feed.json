@@ -6,6 +6,18 @@
   "description": "New engineering internships, listed within minutes of going live.",
   "items": [
     {
+      "id": "https://www.internradar.info/jobs/zomato-intern-4448966784",
+      "url": "https://www.internradar.info/jobs/zomato-intern-4448966784",
+      "title": "Intern — Zomato",
+      "content_text": "Company: Zomato · Location: Imphal, Manipur, India",
+      "date_published": "2026-08-05T07:45:27.036Z",
+      "authors": [
+        {
+          "name": "Zomato"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/siemens-graduate-trainee-engineer-4447382156",
       "url": "https://www.internradar.info/jobs/siemens-graduate-trainee-engineer-4447382156",
       "title": "Graduate Trainee Engineer — Siemens",
@@ -590,18 +602,6 @@
       "authors": [
         {
           "name": "Adobe"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/panasonic-avionics-corporation-ai-software-intern-trainee-pune-india-4443296738",
-      "url": "https://www.internradar.info/jobs/panasonic-avionics-corporation-ai-software-intern-trainee-pune-india-4443296738",
-      "title": "AI Software Intern / Trainee - Pune, India — Panasonic Avionics Corporation",
-      "content_text": "Company: Panasonic Avionics Corporation · Location: Pune Division, Maharashtra, India\n• Help develop AI applications using RAG, conversational AI, and AI Agents on AWS\n• Support building, testing, and evaluating machine learning models and MLOps workflows\n• Participate in code reviews, debugging, and CI/CD processes\n• Work with Python, Java, C++, or JavaScript",
-      "date_published": "2026-07-28T16:33:48.251Z",
-      "authors": [
-        {
-          "name": "Panasonic Avionics Corporation"
         }
       ]
     }

@@ -6,7 +6,14 @@
   <atom:link href="https://www.internradar.info/feed.xml" rel="self" type="application/rss+xml"/>
   <description>New engineering internships, listed within minutes of going live.</description>
   <language>en-in</language>
-  <lastBuildDate>Wed, 05 Aug 2026 07:50:01 GMT</lastBuildDate>
+  <lastBuildDate>Wed, 05 Aug 2026 08:04:13 GMT</lastBuildDate>
+  <item>
+    <title>Intern — Zomato</title>
+    <link>https://www.internradar.info/jobs/zomato-intern-4448966784</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/zomato-intern-4448966784</guid>
+    <pubDate>Wed, 05 Aug 2026 07:45:27 GMT</pubDate>
+    <description>Company: Zomato · Location: Imphal, Manipur, India</description>
+  </item>
   <item>
     <title>Graduate Trainee Engineer — Siemens</title>
     <link>https://www.internradar.info/jobs/siemens-graduate-trainee-engineer-4447382156</link>
@@ -492,17 +499,6 @@
 • Build RAG components, test harnesses, and integrate tools under senior guidance
 • Shadow client sessions, prepare demos, and contribute to reusable asset library
 • Work with an AI Architect and engineering mentor for a year</description>
-  </item>
-  <item>
-    <title>AI Software Intern / Trainee - Pune, India — Panasonic Avionics Corporation</title>
-    <link>https://www.internradar.info/jobs/panasonic-avionics-corporation-ai-software-intern-trainee-pune-india-4443296738</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/panasonic-avionics-corporation-ai-software-intern-trainee-pune-india-4443296738</guid>
-    <pubDate>Tue, 28 Jul 2026 16:33:48 GMT</pubDate>
-    <description>Company: Panasonic Avionics Corporation · Location: Pune Division, Maharashtra, India
-• Help develop AI applications using RAG, conversational AI, and AI Agents on AWS
-• Support building, testing, and evaluating machine learning models and MLOps workflows
-• Participate in code reviews, debugging, and CI/CD processes
-• Work with Python, Java, C++, or JavaScript</description>
   </item>
 </channel>
 </rss>
