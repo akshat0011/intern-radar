@@ -195,10 +195,10 @@
     "_startupJitter_note": "Scheduled runs wait a random extra 0-60s, so activity does not land at exactly HH:00:00 every time. Was 0-4 min when runs were half-hourly; at 15-minute slots that much jitter could push a run most of the way into the next slot, where the lock would then skip it."
   },
   "limits": {
-    "maxRuntimeMinutes": 12,
+    "maxRuntimeMinutes": 20,
     "maxPagesPerSearch": 40,
     "maxDetailsPerRun": 100,
-    "_maxRuntimeMinutes_note": "Must stay under the 15-minute schedule gap, or a long run overlaps the next slot and the lock skips it - so the effective interval silently becomes 30 minutes. Successful runs average about 6 min and the worst observed was 6.3, so 12 leaves headroom while still failing fast. This was 45 when runs were half-hourly.",
+    "_maxRuntimeMinutes_note": "Must stay under the schedule gap MINUS the 8-minute lock grace, or a long run overlaps the next slot and the lock skips it. At 12 on a 15-minute schedule that is exactly what happened: 20 minutes of lock against a 15-minute interval meant one measured day ran 37 of its 96 slots, with 17.8 hours inside gaps over half an hour, and postings that appeared in those gaps were never seen. Now 20 on a 30-minute schedule - lock expires at 28, inside the interval - which also lets a run paginate deeper instead of ending partial.",
     "_note": "Safety backstops, not the normal stopping point. Paging normally ends when LinkedIn's 'Next' button runs out, which means every job in the window has been seen. These caps only bite if a search is unusually deep - and when one does bite, the report says so explicitly rather than pretending the search finished.",
     "_maxPagesPerSearch_note": "40 pages x 25 = 1000 results, which is roughly LinkedIn's own ceiling for a single search. With the 24-hour filter on, most searches end far sooner."
   },
@@ -253,8 +253,8 @@
   "ats": {
     "indiaOnly": true,
     "_indiaOnly_note": "true = only collect postings whose location reads as Indian, using isIndianLocation in src/extract.js. Off for a while, and the result was 90 of 174 published roles in Singapore, Malaysia and Hannover on a site that promises internships in India. publish.indiaOnly enforces the same rule again at publish time, so rows already stored while this was off stop appearing without being deleted.",
-    "maxPostingAgeDays": 30,
-    "_maxPostingAgeDays_note": "How old an ATS posting may be and still be collected. The LinkedIn scan never needed this because it searches with a time window; an ATS board has none and lists whatever is still open, so the first real poll surfaced roles 159 and 214 days old. Being first to a seven-month-old listing is not being early.",
+    "maxPostingAgeDays": 60,
+    "_maxPostingAgeDays_note": "Raised from 30 to 60 because a first-party board dates a posting by when the REQUISITION was created, not when it was last advertised. Microsoft's API reports 'Applied Sciences INTERN' as 36 days old while LinkedIn was actively promoting it as 4 days old; at 30 we dropped it, along with Software Engineering INTERN (35d) and Data Science INTERN (36d). 60 admits those and still refuses the genuinely dead - Research Sciences INTERN reports 159 days. How old an ATS posting may be and still be collected. The LinkedIn scan never needed this because it searches with a time window; an ATS board has none and lists whatever is still open, so the first real poll surfaced roles 159 and 214 days old. Being first to a seven-month-old listing is not being early.",
     "_note": "Applicant-tracking-system job boards - the source LinkedIn copies from. Discovery is cached in the company_ats table by bin/discover-ats.js; bin/poll-ats.js reads it. No browser and no ToS problem: these are the public endpoints a company careers page calls to render itself."
   },
   "enrich": {

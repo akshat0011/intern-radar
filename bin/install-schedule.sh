@@ -134,25 +134,32 @@ cat > "$PLIST" <<PLIST_EOF
     <key>WorkingDirectory</key>
     <string>$HERE</string>
 
-    <!-- Every 15 minutes. An omitted Hour key is a wildcard, so these four
-         entries cover all 96 slots in a day.
-         Asleep at the time: launchd fires once shortly after the lid opens,
-         and coalesces several missed slots into a single run rather than
-         replaying each one. Powered off: that slot is dropped and the next
-         slot is the recovery. Either way the scan widens its own lookback
-         window to cover the gap - see filters.adaptiveWindow.
-         The run must finish inside its slot or the lock in index.js will skip
-         the next one, so limits.maxRuntimeMinutes is 12 and
-         pacing.startupJitter is capped at 60s. Successful runs average about
-         6 minutes, so there is headroom - but if you lengthen the pacing or
-         raise maxDetailsPerRun, re-check that budget before assuming it still
-         fits. -->
+    <!-- Every 30 minutes. An omitted Hour key is a wildcard, so these two
+         entries cover all 48 slots in a day.
+
+         It was every 15. That did not produce four runs an hour, it produced
+         about one and a half: on one measured day the scan ran 37 times out of
+         96, and 17.8 hours of that day sat inside gaps longer than half an
+         hour. The lock is the reason. It is held for
+         limits.maxRuntimeMinutes + 8, and the scan is only the first part of a
+         run - classification, enrichment, the report and the publish all happen
+         after the clock is spent - so a run routinely overlapped the next slot
+         and the lock skipped it. Half the slots were being thrown away, and a
+         posting that appeared inside one of those gaps was never seen at all.
+
+         Thirty minutes gives each run its whole slot with room to spare: the
+         lock now expires at 20 + 8 = 28 minutes, inside the interval. Fewer,
+         completer runs beat twice as many that trip over each other.
+
+         Asleep at the time: launchd fires once shortly after the lid opens, and
+         coalesces several missed slots into a single run rather than replaying
+         each one. Powered off: that slot is dropped and the next slot is the
+         recovery. Either way the scan widens its own lookback window to cover
+         the gap - see filters.adaptiveWindow. -->
     <key>StartCalendarInterval</key>
     <array>
         <dict><key>Minute</key><integer>0</integer></dict>
-        <dict><key>Minute</key><integer>15</integer></dict>
         <dict><key>Minute</key><integer>30</integer></dict>
-        <dict><key>Minute</key><integer>45</integer></dict>
     </array>
 
     <key>RunAtLoad</key>
@@ -197,7 +204,7 @@ launchctl bootstrap "gui/$UID_NUM" "$PLIST"
 launchctl enable "gui/$UID_NUM/$LABEL"
 
 echo
-echo "Scheduled: every 15 minutes (:00, :15, :30, :45), plus up to 60s of random jitter."
+echo "Scheduled: every 30 minutes (:00, :30), plus up to 60s of random jitter."
 echo "If the Mac is asleep at a slot, the run fires shortly after you open the lid."
 echo
 echo "  Verify it registered:  launchctl print gui/$UID_NUM/$LABEL | head -20"

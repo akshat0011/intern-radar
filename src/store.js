@@ -322,9 +322,24 @@ export class Store {
     `).run(Date.now(), status, pagesScanned, cardsSeen, detailsExtracted, newJobs, skippedNote, error, runId);
   }
 
-  lastCompletedRun() {
+  /**
+   * The last run that actually finished its sweep — 'ok' only, never 'partial'.
+   *
+   * This is the baseline the next lookback window is measured from, and
+   * including 'partial' here silently lost postings. A partial run is one that
+   * stopped at its time or details limit PART WAY THROUGH the window it was
+   * given. Treating it as the new baseline means the next run starts from where
+   * that run BEGAN, so everything it never paginated to is never looked at by
+   * anything, ever. Twenty-nine of the last two hundred runs ended partial.
+   *
+   * With this restricted to 'ok', an incomplete sweep leaves the baseline where
+   * it was and the next run re-covers the same window. The cost is re-walking
+   * pages already seen, which is cheap — hasJob skips them before any page is
+   * opened — and filters.maxWindowHours still caps how far back it can stretch.
+   */
+  lastFullSweep() {
     return this.db.prepare(
-      "SELECT * FROM runs WHERE status IN ('ok','partial') ORDER BY started_at DESC LIMIT 1",
+      "SELECT * FROM runs WHERE status = 'ok' ORDER BY started_at DESC LIMIT 1",
     ).get();
   }
 

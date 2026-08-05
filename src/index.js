@@ -306,7 +306,7 @@ async function main() {
   // window would make every hourly run re-paginate a day of postings to find
   // the newest hour; a fixed narrow one would lose everything posted while the
   // lid was shut. This does both jobs.
-  const lastRun = store.lastCompletedRun();
+  const lastRun = store.lastFullSweep();
   cfg.filters.postedWithinHours = resolveWindowHours(lastRun?.started_at ?? null, cfg.filters);
   log.info(lastRun?.started_at
     ? `Lookback window: ${cfg.filters.postedWithinHours}h (last run ${((Date.now() - lastRun.started_at) / 3_600_000).toFixed(1)}h ago).`
