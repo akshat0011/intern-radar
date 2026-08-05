@@ -6,6 +6,18 @@
   "description": "New engineering internships, listed within minutes of going live.",
   "items": [
     {
+      "id": "https://www.internradar.info/jobs/analog-devices-digital-ic-physical-verification-and-design-engineer-trainee-4447396386",
+      "url": "https://www.internradar.info/jobs/analog-devices-digital-ic-physical-verification-and-design-engineer-trainee-4447396386",
+      "title": "Digital IC Physical Verification and Design – Engineer Trainee — Analog Devices",
+      "content_text": "Company: Analog Devices · Location: Greater Bengaluru Area · Duration: 1 year",
+      "date_published": "2026-08-05T11:10:53.495Z",
+      "authors": [
+        {
+          "name": "Analog Devices"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/licious-quality-assurance-intern-4448990506",
       "url": "https://www.internradar.info/jobs/licious-quality-assurance-intern-4448990506",
       "title": "Quality Assurance Intern — Licious",
@@ -590,18 +602,6 @@
       "authors": [
         {
           "name": "S&P Global"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/nokia-agentic-ai-and-automation-trainee-egypt-4444132578",
-      "url": "https://www.internradar.info/jobs/nokia-agentic-ai-and-automation-trainee-egypt-4444132578",
-      "title": "Agentic AI & Automation Trainee - Egypt — Nokia",
-      "content_text": "Company: Nokia · Location: Bengaluru, Karnataka, India\n• Support engineering teams in adopting AI coding assistants like GitHub Copilot and Claude Code\n• Design and implement Agentic AI workflows using frameworks like LangGraph\n• Contribute to LLM-based applications and RAG pipelines for intelligent automation\n• Configure and optimize development environments, IDEs, and engineering tools",
-      "date_published": "2026-07-29T14:43:39.106Z",
-      "authors": [
-        {
-          "name": "Nokia"
         }
       ]
     }

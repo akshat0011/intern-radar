@@ -6,7 +6,14 @@
   <atom:link href="https://www.internradar.info/feed.xml" rel="self" type="application/rss+xml"/>
   <description>New engineering internships, listed within minutes of going live.</description>
   <language>en-in</language>
-  <lastBuildDate>Wed, 05 Aug 2026 11:02:12 GMT</lastBuildDate>
+  <lastBuildDate>Wed, 05 Aug 2026 11:37:20 GMT</lastBuildDate>
+  <item>
+    <title>Digital IC Physical Verification and Design – Engineer Trainee — Analog Devices</title>
+    <link>https://www.internradar.info/jobs/analog-devices-digital-ic-physical-verification-and-design-engineer-trainee-4447396386</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/analog-devices-digital-ic-physical-verification-and-design-engineer-trainee-4447396386</guid>
+    <pubDate>Wed, 05 Aug 2026 11:10:53 GMT</pubDate>
+    <description>Company: Analog Devices · Location: Greater Bengaluru Area · Duration: 1 year</description>
+  </item>
   <item>
     <title>Quality Assurance Intern — Licious</title>
     <link>https://www.internradar.info/jobs/licious-quality-assurance-intern-4448990506</link>
@@ -466,17 +473,6 @@
     <guid isPermaLink="true">https://www.internradar.info/jobs/s-and-p-global-apprentice-software-development-engineering-4446406022</guid>
     <pubDate>Wed, 29 Jul 2026 14:51:34 GMT</pubDate>
     <description>Company: S&amp;P Global · Location: Hyderabad, Telangana, India</description>
-  </item>
-  <item>
-    <title>Agentic AI &amp; Automation Trainee - Egypt — Nokia</title>
-    <link>https://www.internradar.info/jobs/nokia-agentic-ai-and-automation-trainee-egypt-4444132578</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/nokia-agentic-ai-and-automation-trainee-egypt-4444132578</guid>
-    <pubDate>Wed, 29 Jul 2026 14:43:39 GMT</pubDate>
-    <description>Company: Nokia · Location: Bengaluru, Karnataka, India
-• Support engineering teams in adopting AI coding assistants like GitHub Copilot and Claude Code
-• Design and implement Agentic AI workflows using frameworks like LangGraph
-• Contribute to LLM-based applications and RAG pipelines for intelligent automation
-• Configure and optimize development environments, IDEs, and engineering tools</description>
   </item>
 </channel>
 </rss>
