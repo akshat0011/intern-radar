@@ -562,3 +562,23 @@ button, input, select, textarea { font: inherit; color: inherit; }
   .sheet .r-sec { margin-top: 13pt; break-inside: avoid; }
   @page { margin: 14mm 15mm; }
 }
+
+/* The crawlable index of every current listing, in the footer.
+   Collapsed by default: it exists so a crawler has real links to follow, and
+   so a reader who wants the whole list in one place can open it. It was
+   originally rendered into the results list, where it flashed as a stack of
+   bare links before app.js replaced them. */
+.all-roles { margin: 1.1rem 0 0; }
+.all-roles > summary {
+  cursor: pointer; font: 600 0.78rem/1.4 var(--mono, ui-monospace, monospace);
+  letter-spacing: 0.04em; text-transform: uppercase; opacity: 0.55;
+}
+.all-roles > summary:hover { opacity: 0.85; }
+.all-roles > ul {
+  margin: 0.8rem 0 0; padding: 0 0 0 1rem; max-height: 22rem; overflow-y: auto;
+  columns: 2; column-gap: 2rem;
+}
+.all-roles > ul > li { margin: 0 0 0.45rem; font-size: 0.82rem; break-inside: avoid; }
+.all-roles > ul > li > a { color: inherit; }
+.all-roles .tiny { opacity: 0.5; }
+@media (max-width: 720px) { .all-roles > ul { columns: 1; } }
