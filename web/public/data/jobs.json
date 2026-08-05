@@ -1,5 +1,5 @@
 {
- "generatedAt": 1785973337660,
+ "generatedAt": 1785973428025,
  "count": 122,
  "techCount": 122,
  "otherCount": 0,
@@ -671,6 +671,37 @@
    "description": null
   },
   {
+   "id": "ats:workday:citi:wd5:2:26983166",
+   "title": "Young Apprentice - C00 - MUMBAI",
+   "company": "Citi",
+   "matchedWatchlist": "Citi",
+   "isTech": true,
+   "roleSource": "offline-uncertain",
+   "logo": "/logos/citi.jpg",
+   "location": "Mumbai Maharashtra India",
+   "workplaceType": null,
+   "stipend": null,
+   "duration": "12 months",
+   "applicants": null,
+   "easyApply": false,
+   "skills": [
+    "excel"
+   ],
+   "summary": "A career with us means joining a team of more than 230,000 dedicated people from around the globe. Whether it's honing your skills or building your network, we know that success can't come without growth. Here at Citi, the Apprenticeship Program is intended to help you build a broad skill set and accelerate your career growth by gaining exposure to numerous day-to-day activities. As an apprentice you will gain hands on work experience with deliverables and will be expected to add value to their teams during the 12 months.",
+   "bullets": [],
+   "roleLabel": null,
+   "degreeLevel": null,
+   "degreeText": null,
+   "keySkills": [],
+   "stipendStatus": "unknown",
+   "postedText": null,
+   "postedAt": 1785888000000,
+   "firstSeenAt": 1785922246847,
+   "url": "https://citi.wd5.myworkdayjobs.com/en-US/2/job/Mumbai-Maharashtra-India/Young-Apprentice---C00---MUMBAI_26983166",
+   "applyUrl": "https://citi.wd5.myworkdayjobs.com/en-US/2/job/Mumbai-Maharashtra-India/Young-Apprentice---C00---MUMBAI_26983166",
+   "description": null
+  },
+  {
    "id": "ats:workday:accenture:wd103:AccentureCareers:R00340352",
    "title": "Bygg ekte løsninger. Med ekte innvirkning. Summer Internship for utviklere 💻",
    "company": "Accenture",
@@ -701,37 +732,6 @@
    "firstSeenAt": 1785973273437,
    "url": "https://accenture.wd103.myworkdayjobs.com/en-US/AccentureCareers/job/Oslo/Bygg-ekte-lsninger-Med-ekte-innvirkning-Summer-Internship-for-utviklere---_R00340352",
    "applyUrl": "https://accenture.wd103.myworkdayjobs.com/en-US/AccentureCareers/job/Oslo/Bygg-ekte-lsninger-Med-ekte-innvirkning-Summer-Internship-for-utviklere---_R00340352",
-   "description": null
-  },
-  {
-   "id": "ats:workday:citi:wd5:2:26983166",
-   "title": "Young Apprentice - C00 - MUMBAI",
-   "company": "Citi",
-   "matchedWatchlist": "Citi",
-   "isTech": true,
-   "roleSource": "offline-uncertain",
-   "logo": "/logos/citi.jpg",
-   "location": "Mumbai Maharashtra India",
-   "workplaceType": null,
-   "stipend": null,
-   "duration": "12 months",
-   "applicants": null,
-   "easyApply": false,
-   "skills": [
-    "excel"
-   ],
-   "summary": "A career with us means joining a team of more than 230,000 dedicated people from around the globe. Whether it's honing your skills or building your network, we know that success can't come without growth. Here at Citi, the Apprenticeship Program is intended to help you build a broad skill set and accelerate your career growth by gaining exposure to numerous day-to-day activities. As an apprentice you will gain hands on work experience with deliverables and will be expected to add value to their teams during the 12 months.",
-   "bullets": [],
-   "roleLabel": null,
-   "degreeLevel": null,
-   "degreeText": null,
-   "keySkills": [],
-   "stipendStatus": "unknown",
-   "postedText": null,
-   "postedAt": 1785888000000,
-   "firstSeenAt": 1785922246847,
-   "url": "https://citi.wd5.myworkdayjobs.com/en-US/2/job/Mumbai-Maharashtra-India/Young-Apprentice---C00---MUMBAI_26983166",
-   "applyUrl": "https://citi.wd5.myworkdayjobs.com/en-US/2/job/Mumbai-Maharashtra-India/Young-Apprentice---C00---MUMBAI_26983166",
    "description": null
   },
   {
