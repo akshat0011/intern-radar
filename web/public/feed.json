@@ -6,6 +6,30 @@
   "description": "New engineering internships, listed within minutes of going live.",
   "items": [
     {
+      "id": "https://www.internradar.info/jobs/hyperverse-holdings-shopify-agency-shopify-ops-intern-4448587583",
+      "url": "https://www.internradar.info/jobs/hyperverse-holdings-shopify-agency-shopify-ops-intern-4448587583",
+      "title": "Shopify Ops Intern — Hyperverse Holdings | Shopify Agency",
+      "content_text": "Company: Hyperverse Holdings | Shopify Agency · Location: Kozhikode, Kerala, India · Duration: 3 months",
+      "date_published": "2026-08-04T23:33:25.675Z",
+      "authors": [
+        {
+          "name": "Hyperverse Holdings | Shopify Agency"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/acko-internship-grc-governance-risk-and-compliance-4448575982",
+      "url": "https://www.internradar.info/jobs/acko-internship-grc-governance-risk-and-compliance-4448575982",
+      "title": "Internship - GRC (Governance, Risk & Compliance) — Acko",
+      "content_text": "Company: Acko · Location: Bengaluru, Karnataka, India",
+      "date_published": "2026-08-04T22:33:29.563Z",
+      "authors": [
+        {
+          "name": "Acko"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/intuit-intern-software-engineering-4448546206",
       "url": "https://www.internradar.info/jobs/intuit-intern-software-engineering-4448546206",
       "title": "Intern, Software Engineering — Intuit",
@@ -578,30 +602,6 @@
       "authors": [
         {
           "name": "Mizuho"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/pixxel-image-processing-intern-qa-qc-4446528118",
-      "url": "https://www.internradar.info/jobs/pixxel-image-processing-intern-qa-qc-4446528118",
-      "title": "Image processing Intern (QA/QC) — Pixxel",
-      "content_text": "Company: Pixxel · Location: Bengaluru, Karnataka, India · Duration: 0–1 years\n• Identify and flag issues like missing data, corrupted files, or incorrect geotagging\n• Document findings and collaborate with imaging and data engineering teams to resolve quality issues",
-      "date_published": "2026-07-29T00:45:04.016Z",
-      "authors": [
-        {
-          "name": "Pixxel"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/adobe-ai-engineer-apprentice-4445799105",
-      "url": "https://www.internradar.info/jobs/adobe-ai-engineer-apprentice-4445799105",
-      "title": "AI Engineer Apprentice — Adobe",
-      "content_text": "Company: Adobe · Location: Bengaluru East, Karnataka, India · Duration: 6 months\n• Learn Python, LLM APIs, and prompt design, then contribute to client projects\n• Build RAG components, test harnesses, and integrate tools under senior guidance\n• Shadow client sessions, prepare demos, and contribute to reusable asset library\n• Work with an AI Architect and engineering mentor for a year",
-      "date_published": "2026-07-28T22:35:24.224Z",
-      "authors": [
-        {
-          "name": "Adobe"
         }
       ]
     }

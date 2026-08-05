@@ -6,7 +6,21 @@
   <atom:link href="https://www.internradar.info/feed.xml" rel="self" type="application/rss+xml"/>
   <description>New engineering internships, listed within minutes of going live.</description>
   <language>en-in</language>
-  <lastBuildDate>Tue, 04 Aug 2026 18:45:04 GMT</lastBuildDate>
+  <lastBuildDate>Wed, 05 Aug 2026 02:35:21 GMT</lastBuildDate>
+  <item>
+    <title>Shopify Ops Intern — Hyperverse Holdings | Shopify Agency</title>
+    <link>https://www.internradar.info/jobs/hyperverse-holdings-shopify-agency-shopify-ops-intern-4448587583</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/hyperverse-holdings-shopify-agency-shopify-ops-intern-4448587583</guid>
+    <pubDate>Tue, 04 Aug 2026 23:33:25 GMT</pubDate>
+    <description>Company: Hyperverse Holdings | Shopify Agency · Location: Kozhikode, Kerala, India · Duration: 3 months</description>
+  </item>
+  <item>
+    <title>Internship - GRC (Governance, Risk &amp; Compliance) — Acko</title>
+    <link>https://www.internradar.info/jobs/acko-internship-grc-governance-risk-and-compliance-4448575982</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/acko-internship-grc-governance-risk-and-compliance-4448575982</guid>
+    <pubDate>Tue, 04 Aug 2026 22:33:29 GMT</pubDate>
+    <description>Company: Acko · Location: Bengaluru, Karnataka, India</description>
+  </item>
   <item>
     <title>Intern, Software Engineering — Intuit</title>
     <link>https://www.internradar.info/jobs/intuit-intern-software-engineering-4448546206</link>
@@ -464,26 +478,6 @@
 • Troubleshoot and resolve IT issues, create IT documentation
 • Work in rotational shifts and on-call schedule for 1 year
 • Looking for recent IT graduates or postgraduates in or near Navi Mumbai</description>
-  </item>
-  <item>
-    <title>Image processing Intern (QA/QC) — Pixxel</title>
-    <link>https://www.internradar.info/jobs/pixxel-image-processing-intern-qa-qc-4446528118</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/pixxel-image-processing-intern-qa-qc-4446528118</guid>
-    <pubDate>Wed, 29 Jul 2026 00:45:04 GMT</pubDate>
-    <description>Company: Pixxel · Location: Bengaluru, Karnataka, India · Duration: 0–1 years
-• Identify and flag issues like missing data, corrupted files, or incorrect geotagging
-• Document findings and collaborate with imaging and data engineering teams to resolve quality issues</description>
-  </item>
-  <item>
-    <title>AI Engineer Apprentice — Adobe</title>
-    <link>https://www.internradar.info/jobs/adobe-ai-engineer-apprentice-4445799105</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/adobe-ai-engineer-apprentice-4445799105</guid>
-    <pubDate>Tue, 28 Jul 2026 22:35:24 GMT</pubDate>
-    <description>Company: Adobe · Location: Bengaluru East, Karnataka, India · Duration: 6 months
-• Learn Python, LLM APIs, and prompt design, then contribute to client projects
-• Build RAG components, test harnesses, and integrate tools under senior guidance
-• Shadow client sessions, prepare demos, and contribute to reusable asset library
-• Work with an AI Architect and engineering mentor for a year</description>
   </item>
 </channel>
 </rss>
