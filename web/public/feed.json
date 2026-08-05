@@ -6,54 +6,6 @@
   "description": "New engineering internships, listed within minutes of going live.",
   "items": [
     {
-      "id": "https://www.internradar.info/jobs/tata-cliq-fashion-crm-intern-4447373209",
-      "url": "https://www.internradar.info/jobs/tata-cliq-fashion-crm-intern-4447373209",
-      "title": "CRM Intern — Tata CLiQ Fashion",
-      "content_text": "Company: Tata CLiQ Fashion · Location: Mumbai Metropolitan Region · Duration: 3–4 months",
-      "date_published": "2026-08-05T06:50:44.671Z",
-      "authors": [
-        {
-          "name": "Tata CLiQ Fashion"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/biocon-biologics-apprentice-4447345827",
-      "url": "https://www.internradar.info/jobs/biocon-biologics-apprentice-4447345827",
-      "title": "Apprentice — Biocon Biologics",
-      "content_text": "Company: Biocon Biologics · Location: Bengaluru, Karnataka, India · Duration: 6 months",
-      "date_published": "2026-08-05T06:01:20.712Z",
-      "authors": [
-        {
-          "name": "Biocon Biologics"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/citi-young-apprentice-c00-mumbai-4448935208",
-      "url": "https://www.internradar.info/jobs/citi-young-apprentice-c00-mumbai-4448935208",
-      "title": "Young Apprentice - C00 - MUMBAI — Citi",
-      "content_text": "Company: Citi · Location: Mumbai, Maharashtra, India · Duration: 12 months",
-      "date_published": "2026-08-05T03:52:26.761Z",
-      "authors": [
-        {
-          "name": "Citi"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/hyperverse-holdings-shopify-agency-shopify-ops-intern-4448587583",
-      "url": "https://www.internradar.info/jobs/hyperverse-holdings-shopify-agency-shopify-ops-intern-4448587583",
-      "title": "Shopify Ops Intern — Hyperverse Holdings | Shopify Agency",
-      "content_text": "Company: Hyperverse Holdings | Shopify Agency · Location: Kozhikode, Kerala, India · Duration: 3 months",
-      "date_published": "2026-08-04T23:33:25.675Z",
-      "authors": [
-        {
-          "name": "Hyperverse Holdings | Shopify Agency"
-        }
-      ]
-    },
-    {
       "id": "https://www.internradar.info/jobs/acko-internship-grc-governance-risk-and-compliance-4448575982",
       "url": "https://www.internradar.info/jobs/acko-internship-grc-governance-risk-and-compliance-4448575982",
       "title": "Internship - GRC (Governance, Risk & Compliance) — Acko",
@@ -134,18 +86,6 @@
       "authors": [
         {
           "name": "GE HealthCare"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/bain-and-company-dtu-intern-analyst-batch-of-2027-4448890250",
-      "url": "https://www.internradar.info/jobs/bain-and-company-dtu-intern-analyst-batch-of-2027-4448890250",
-      "title": "DTU - Intern Analyst - Batch of 2027 — Bain & Company",
-      "content_text": "Company: Bain & Company · Location: Gurugram, Haryana, India",
-      "date_published": "2026-08-04T14:13:59.830Z",
-      "authors": [
-        {
-          "name": "Bain & Company"
         }
       ]
     },
@@ -602,6 +542,66 @@
       "authors": [
         {
           "name": "GreyOrange"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/newgen-innovation-ai-and-design-thinking-product-management-intern-4443670910",
+      "url": "https://www.internradar.info/jobs/newgen-innovation-ai-and-design-thinking-product-management-intern-4443670910",
+      "title": "Product Management Intern — NewGen Innovation : AI & Design Thinking",
+      "content_text": "Company: NewGen Innovation : AI & Design Thinking · Location: Mumbai, Maharashtra, India · Stipend: ₹35,000 / total · Duration: 1 to 2 years\n• Work with founders, AI engineers, and designers to build AI-powered products\n• Conduct customer and market research, gather requirements, and plan product roadmaps\n• Create wireframes, user journeys, and monitor product performance using analytics\n• 6-month on-site internship in Powai, with potential for a full-time offer",
+      "date_published": "2026-07-29T09:37:44.191Z",
+      "authors": [
+        {
+          "name": "NewGen Innovation : AI & Design Thinking"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/allen-grc-intern-4446049382",
+      "url": "https://www.internradar.info/jobs/allen-grc-intern-4446049382",
+      "title": "GRC Intern — ALLEN",
+      "content_text": "Company: ALLEN · Location: Bangalore Urban, Karnataka, India · Duration: 6–9 months\n• Support the Information Security and Compliance team, maintaining security, privacy, and governance frameworks\n• Collect audit evidence, maintain ISMS/PIMS documentation, risk registers, and compliance records\n• Work with ISO 27001, ISO 27701, DPDPA, and coordinate vendor security assessments\n• 6-9 month internship with potential for full-time offer based on performance",
+      "date_published": "2026-07-29T09:02:52.017Z",
+      "authors": [
+        {
+          "name": "ALLEN"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/mizuho-information-technology-apprentice-4435094310",
+      "url": "https://www.internradar.info/jobs/mizuho-information-technology-apprentice-4435094310",
+      "title": "Information Technology apprentice — Mizuho",
+      "content_text": "Company: Mizuho · Location: Navi Mumbai, Maharashtra, India\n• Help with helpdesk, Active Directory management, and unlocking applications\n• Troubleshoot and resolve IT issues, create IT documentation\n• Work in rotational shifts and on-call schedule for 1 year\n• Looking for recent IT graduates or postgraduates in or near Navi Mumbai",
+      "date_published": "2026-07-29T07:41:42.252Z",
+      "authors": [
+        {
+          "name": "Mizuho"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/pixxel-image-processing-intern-qa-qc-4446528118",
+      "url": "https://www.internradar.info/jobs/pixxel-image-processing-intern-qa-qc-4446528118",
+      "title": "Image processing Intern (QA/QC) — Pixxel",
+      "content_text": "Company: Pixxel · Location: Bengaluru, Karnataka, India · Duration: 0–1 years\n• Identify and flag issues like missing data, corrupted files, or incorrect geotagging\n• Document findings and collaborate with imaging and data engineering teams to resolve quality issues",
+      "date_published": "2026-07-29T00:45:04.016Z",
+      "authors": [
+        {
+          "name": "Pixxel"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/adobe-ai-engineer-apprentice-4445799105",
+      "url": "https://www.internradar.info/jobs/adobe-ai-engineer-apprentice-4445799105",
+      "title": "AI Engineer Apprentice — Adobe",
+      "content_text": "Company: Adobe · Location: Bengaluru East, Karnataka, India · Duration: 6 months\n• Learn Python, LLM APIs, and prompt design, then contribute to client projects\n• Build RAG components, test harnesses, and integrate tools under senior guidance\n• Shadow client sessions, prepare demos, and contribute to reusable asset library\n• Work with an AI Architect and engineering mentor for a year",
+      "date_published": "2026-07-28T22:35:24.224Z",
+      "authors": [
+        {
+          "name": "Adobe"
         }
       ]
     }
