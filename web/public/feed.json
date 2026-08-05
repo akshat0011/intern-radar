@@ -6,6 +6,18 @@
   "description": "New engineering internships, listed within minutes of going live.",
   "items": [
     {
+      "id": "https://www.internradar.info/jobs/bain-and-company-iit-gandhinagar-intern-analyst-batch-of-2028-4449479120",
+      "url": "https://www.internradar.info/jobs/bain-and-company-iit-gandhinagar-intern-analyst-batch-of-2028-4449479120",
+      "title": "IIT Gandhinagar - Intern Analyst - Batch of 2028 — Bain & Company",
+      "content_text": "Company: Bain & Company · Location: Gurugram, Haryana, India",
+      "date_published": "2026-08-05T10:05:52.552Z",
+      "authors": [
+        {
+          "name": "Bain & Company"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/ubs-ca-intern-4449455707",
       "url": "https://www.internradar.info/jobs/ubs-ca-intern-4449455707",
       "title": "CA Intern — UBS",
@@ -590,18 +602,6 @@
       "authors": [
         {
           "name": "NewGen Innovation : AI & Design Thinking"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/allen-grc-intern-4446049382",
-      "url": "https://www.internradar.info/jobs/allen-grc-intern-4446049382",
-      "title": "GRC Intern — ALLEN",
-      "content_text": "Company: ALLEN · Location: Bangalore Urban, Karnataka, India · Duration: 6–9 months\n• Support the Information Security and Compliance team, maintaining security, privacy, and governance frameworks\n• Collect audit evidence, maintain ISMS/PIMS documentation, risk registers, and compliance records\n• Work with ISO 27001, ISO 27701, DPDPA, and coordinate vendor security assessments\n• 6-9 month internship with potential for full-time offer based on performance",
-      "date_published": "2026-07-29T09:02:52.017Z",
-      "authors": [
-        {
-          "name": "ALLEN"
         }
       ]
     }
