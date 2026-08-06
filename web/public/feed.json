@@ -6,6 +6,18 @@
   "description": "New engineering internships, listed within minutes of going live.",
   "items": [
     {
+      "id": "https://www.internradar.info/jobs/citi-young-apprentice-c00-chennai-4449762238",
+      "url": "https://www.internradar.info/jobs/citi-young-apprentice-c00-chennai-4449762238",
+      "title": "Young Apprentice - C00 - Chennai — Citi",
+      "content_text": "Company: Citi · Location: Chennai, Tamil Nadu, India",
+      "date_published": "2026-08-06T16:05:38.382Z",
+      "authors": [
+        {
+          "name": "Citi"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/cipla-hospital-tender-management-intern-4450264728",
       "url": "https://www.internradar.info/jobs/cipla-hospital-tender-management-intern-4450264728",
       "title": "Hospital Tender Management Intern — Cipla",
@@ -38,6 +50,30 @@
       "authors": [
         {
           "name": "upGrad GSP"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/pearson-apprentice-scoring-service-4449737741",
+      "url": "https://www.internradar.info/jobs/pearson-apprentice-scoring-service-4449737741",
+      "title": "Apprentice, Scoring Service — Pearson",
+      "content_text": "Company: Pearson · Location: India",
+      "date_published": "2026-08-06T14:33:00.319Z",
+      "authors": [
+        {
+          "name": "Pearson"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/pearson-apprentice-information-security-4449757132",
+      "url": "https://www.internradar.info/jobs/pearson-apprentice-information-security-4449757132",
+      "title": "Apprentice, Information Security — Pearson",
+      "content_text": "Company: Pearson · Location: Noida, Uttar Pradesh, India",
+      "date_published": "2026-08-06T14:32:38.080Z",
+      "authors": [
+        {
+          "name": "Pearson"
         }
       ]
     },
@@ -566,42 +602,6 @@
       "authors": [
         {
           "name": "upGrad International"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/harman-india-intern-4445841376",
-      "url": "https://www.internradar.info/jobs/harman-india-intern-4445841376",
-      "title": "Intern — HARMAN India",
-      "content_text": "Company: HARMAN India · Location: Bengaluru, Karnataka, India\n• Work on software programs and develop software systems for automotive applications\n• Use embedded RTOS, Android, C/C++, and Linux in your daily tasks\n• Learn to test software using debuggers, emulators, and simulators\n• Perform software releases and quality assurance activities",
-      "date_published": "2026-08-02T10:52:27.718Z",
-      "authors": [
-        {
-          "name": "HARMAN India"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/imc-trading-2027-quant-research-intern-bits-pilani-4447600419",
-      "url": "https://www.internradar.info/jobs/imc-trading-2027-quant-research-intern-bits-pilani-4447600419",
-      "title": "2027 - Quant Research Intern - BITS Pilani — IMC Trading",
-      "content_text": "Company: IMC Trading · Location: Mumbai Metropolitan Region\n• Design new predictive models, optimize strategies, or leverage alternative data\n• Explore large financial and market datasets to develop quantitative models\n• Work with Python, C++, Java, Matlab, or R\n• Present findings through reports and presentations",
-      "date_published": "2026-08-01T19:16:26.956Z",
-      "authors": [
-        {
-          "name": "IMC Trading"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/american-express-apprentice-4438342357",
-      "url": "https://www.internradar.info/jobs/american-express-apprentice-4438342357",
-      "title": "Apprentice — American Express",
-      "content_text": "Company: American Express · Location: Bengaluru, Karnataka, India · Duration: 12 months\n• Support analytical and reporting activities to identify trends and business insights\n• Work with data and visualization tools like SQL, Python, Excel, Power BI, or Tableau\n• Gain exposure to data governance, data quality, and process improvement practices\n• 12-month paid apprenticeship with development and networking opportunities",
-      "date_published": "2026-08-01T13:18:00.217Z",
-      "authors": [
-        {
-          "name": "American Express"
         }
       ]
     }

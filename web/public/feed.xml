@@ -6,7 +6,14 @@
   <atom:link href="https://www.internradar.info/feed.xml" rel="self" type="application/rss+xml"/>
   <description>New engineering internships, listed within minutes of going live.</description>
   <language>en-in</language>
-  <lastBuildDate>Thu, 06 Aug 2026 16:01:00 GMT</lastBuildDate>
+  <lastBuildDate>Thu, 06 Aug 2026 16:33:44 GMT</lastBuildDate>
+  <item>
+    <title>Young Apprentice - C00 - Chennai — Citi</title>
+    <link>https://www.internradar.info/jobs/citi-young-apprentice-c00-chennai-4449762238</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/citi-young-apprentice-c00-chennai-4449762238</guid>
+    <pubDate>Thu, 06 Aug 2026 16:05:38 GMT</pubDate>
+    <description>Company: Citi · Location: Chennai, Tamil Nadu, India</description>
+  </item>
   <item>
     <title>Hospital Tender Management Intern — Cipla</title>
     <link>https://www.internradar.info/jobs/cipla-hospital-tender-management-intern-4450264728</link>
@@ -27,6 +34,20 @@
     <guid isPermaLink="true">https://www.internradar.info/jobs/upgrad-gsp-walk-in-drive-partner-acquisition-intern-upgrad-gsp-4449747667</guid>
     <pubDate>Thu, 06 Aug 2026 14:34:08 GMT</pubDate>
     <description>Company: upGrad GSP · Location: Noida, Uttar Pradesh, India · Stipend: ₹12,000 / month · Duration: 3 months</description>
+  </item>
+  <item>
+    <title>Apprentice, Scoring Service — Pearson</title>
+    <link>https://www.internradar.info/jobs/pearson-apprentice-scoring-service-4449737741</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/pearson-apprentice-scoring-service-4449737741</guid>
+    <pubDate>Thu, 06 Aug 2026 14:33:00 GMT</pubDate>
+    <description>Company: Pearson · Location: India</description>
+  </item>
+  <item>
+    <title>Apprentice, Information Security — Pearson</title>
+    <link>https://www.internradar.info/jobs/pearson-apprentice-information-security-4449757132</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/pearson-apprentice-information-security-4449757132</guid>
+    <pubDate>Thu, 06 Aug 2026 14:32:38 GMT</pubDate>
+    <description>Company: Pearson · Location: Noida, Uttar Pradesh, India</description>
   </item>
   <item>
     <title>Intern – Partner Acquisition | upGrad | Global Study Partners (GSP) — upGrad GSP</title>
@@ -393,39 +414,6 @@
     <guid isPermaLink="true">https://www.internradar.info/jobs/upgrad-international-intern-ai-engineer-4447602250</guid>
     <pubDate>Sun, 02 Aug 2026 15:07:27 GMT</pubDate>
     <description>Company: upGrad International · Location: Mumbai, Maharashtra, India · Stipend: 30,000 / month · Duration: 3-6 months</description>
-  </item>
-  <item>
-    <title>Intern — HARMAN India</title>
-    <link>https://www.internradar.info/jobs/harman-india-intern-4445841376</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/harman-india-intern-4445841376</guid>
-    <pubDate>Sun, 02 Aug 2026 10:52:27 GMT</pubDate>
-    <description>Company: HARMAN India · Location: Bengaluru, Karnataka, India
-• Work on software programs and develop software systems for automotive applications
-• Use embedded RTOS, Android, C/C++, and Linux in your daily tasks
-• Learn to test software using debuggers, emulators, and simulators
-• Perform software releases and quality assurance activities</description>
-  </item>
-  <item>
-    <title>2027 - Quant Research Intern - BITS Pilani — IMC Trading</title>
-    <link>https://www.internradar.info/jobs/imc-trading-2027-quant-research-intern-bits-pilani-4447600419</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/imc-trading-2027-quant-research-intern-bits-pilani-4447600419</guid>
-    <pubDate>Sat, 01 Aug 2026 19:16:26 GMT</pubDate>
-    <description>Company: IMC Trading · Location: Mumbai Metropolitan Region
-• Design new predictive models, optimize strategies, or leverage alternative data
-• Explore large financial and market datasets to develop quantitative models
-• Work with Python, C++, Java, Matlab, or R
-• Present findings through reports and presentations</description>
-  </item>
-  <item>
-    <title>Apprentice — American Express</title>
-    <link>https://www.internradar.info/jobs/american-express-apprentice-4438342357</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/american-express-apprentice-4438342357</guid>
-    <pubDate>Sat, 01 Aug 2026 13:18:00 GMT</pubDate>
-    <description>Company: American Express · Location: Bengaluru, Karnataka, India · Duration: 12 months
-• Support analytical and reporting activities to identify trends and business insights
-• Work with data and visualization tools like SQL, Python, Excel, Power BI, or Tableau
-• Gain exposure to data governance, data quality, and process improvement practices
-• 12-month paid apprenticeship with development and networking opportunities</description>
   </item>
 </channel>
 </rss>
