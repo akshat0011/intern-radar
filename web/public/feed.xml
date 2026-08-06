@@ -6,7 +6,14 @@
   <atom:link href="https://www.internradar.info/feed.xml" rel="self" type="application/rss+xml"/>
   <description>New engineering internships, listed within minutes of going live.</description>
   <language>en-in</language>
-  <lastBuildDate>Thu, 06 Aug 2026 10:34:24 GMT</lastBuildDate>
+  <lastBuildDate>Thu, 06 Aug 2026 11:03:52 GMT</lastBuildDate>
+  <item>
+    <title>Software Engineer Trainee — Emerson</title>
+    <link>https://www.internradar.info/jobs/emerson-software-engineer-trainee-4450233537</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/emerson-software-engineer-trainee-4450233537</guid>
+    <pubDate>Thu, 06 Aug 2026 10:52:36 GMT</pubDate>
+    <description>Company: Emerson · Location: Pune Division, Maharashtra, India</description>
+  </item>
   <item>
     <title>Diploma Engineer Trainee — Aditya Birla Group</title>
     <link>https://www.internradar.info/jobs/aditya-birla-group-diploma-engineer-trainee-4450230298</link>
@@ -443,17 +450,6 @@
 • Work with the Quantum R&amp;D Division, contributing to the Quantum Computing Stack
 • Requires strong background in open quantum systems, statistical physics, and linear algebra
 • Programming experience in Python is preferred; 3-6 month physical internship in Bangalore</description>
-  </item>
-  <item>
-    <title>Intern - Product (NFA) — Noise</title>
-    <link>https://www.internradar.info/jobs/noise-intern-product-nfa-4446948754</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/noise-intern-product-nfa-4446948754</guid>
-    <pubDate>Fri, 31 Jul 2026 01:02:08 GMT</pubDate>
-    <description>Company: Noise · Location: Gurugram, Haryana, India
-• Work with Product Managers on the full product lifecycle, from research to launch
-• Write PRDs, user stories, and feature specs; analyze product data using SQL
-• Collaborate with design on wireframes in Figma and engineering on sprints in Jira
-• Conduct market research, synthesize user feedback, and support A/B testing</description>
   </item>
 </channel>
 </rss>

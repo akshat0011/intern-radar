@@ -1,7 +1,7 @@
 {
- "generatedAt": 1786012464818,
- "count": 121,
- "techCount": 121,
+ "generatedAt": 1786014232045,
+ "count": 122,
+ "techCount": 122,
  "otherCount": 0,
  "companies": [
   "ALLEN",
@@ -111,6 +111,45 @@
   "Pune Division, Maharashtra, India"
  ],
  "jobs": [
+  {
+   "id": "4450233537",
+   "title": "Software Engineer Trainee",
+   "company": "Emerson",
+   "matchedWatchlist": "Emerson",
+   "isTech": true,
+   "roleSource": "offline",
+   "logo": "/logos/emerson.jpg",
+   "location": "Pune Division, Maharashtra, India",
+   "workplaceType": "On-site",
+   "stipend": null,
+   "duration": null,
+   "applicants": null,
+   "easyApply": false,
+   "skills": [
+    "python",
+    "java",
+    "javascript",
+    "c++",
+    "c#",
+    "sql",
+    "git",
+    "data structures",
+    "agile"
+   ],
+   "summary": "In This Role, Your Responsibilities Will Be: Learn and apply software engineering best practices in product development activities. Contributes to the design, development, testing, and maintenance of Emerson software products. Develop and maintain software features under the guidance of senior engineers.",
+   "bullets": [],
+   "roleLabel": null,
+   "degreeLevel": null,
+   "degreeText": null,
+   "keySkills": [],
+   "stipendStatus": "unknown",
+   "postedText": "9 minutes ago",
+   "postedAt": 1786013556540,
+   "firstSeenAt": 1786014096545,
+   "url": "https://www.linkedin.com/jobs/view/4450233537/",
+   "applyUrl": "https://www.linkedin.com/jobs/view/4450233537/",
+   "description": null
+  },
   {
    "id": "4450230298",
    "title": "Diploma Engineer Trainee",
