@@ -6,7 +6,14 @@
   <atom:link href="https://www.internradar.info/feed.xml" rel="self" type="application/rss+xml"/>
   <description>New engineering internships, listed within minutes of going live.</description>
   <language>en-in</language>
-  <lastBuildDate>Thu, 06 Aug 2026 04:28:13 GMT</lastBuildDate>
+  <lastBuildDate>Thu, 06 Aug 2026 05:38:05 GMT</lastBuildDate>
+  <item>
+    <title>Intern – Digitisation &amp; Automation (Admin Function) — Tonbo Imaging</title>
+    <link>https://www.internradar.info/jobs/tonbo-imaging-intern-digitisation-and-automation-admin-function-4449989732</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/tonbo-imaging-intern-digitisation-and-automation-admin-function-4449989732</guid>
+    <pubDate>Thu, 06 Aug 2026 05:37:58 GMT</pubDate>
+    <description>Company: Tonbo Imaging · Location: Bengaluru, Karnataka, India (On-site)</description>
+  </item>
   <item>
     <title>Data Science Intern — Sony Research India</title>
     <link>https://www.internradar.info/jobs/sony-research-india-data-science-intern-4449971505</link>
@@ -437,15 +444,6 @@
 • Collaborate with Engineering and Design to build and launch products
 • Produce high-quality product specifications and manage scope for timely delivery
 • Track performance metrics and leverage data for product improvements</description>
-  </item>
-  <item>
-    <title>SoC Validation Engineer Intern — Intel</title>
-    <link>https://www.internradar.info/jobs/intel-soc-validation-engineer-intern-4446997136</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/intel-soc-validation-engineer-intern-4446997136</guid>
-    <pubDate>Fri, 31 Jul 2026 07:29:03 GMT</pubDate>
-    <description>Company: Intel · Location: Bengaluru, Karnataka, India
-• Work on SoC validation as an M.Tech graduate in Electronics, Telecommunications, or Computer Science
-• This role is eligible for a hybrid work model, splitting time between on-site and off-site</description>
   </item>
 </channel>
 </rss>

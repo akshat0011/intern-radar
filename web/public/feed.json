@@ -6,6 +6,18 @@
   "description": "New engineering internships, listed within minutes of going live.",
   "items": [
     {
+      "id": "https://www.internradar.info/jobs/tonbo-imaging-intern-digitisation-and-automation-admin-function-4449989732",
+      "url": "https://www.internradar.info/jobs/tonbo-imaging-intern-digitisation-and-automation-admin-function-4449989732",
+      "title": "Intern – Digitisation & Automation (Admin Function) — Tonbo Imaging",
+      "content_text": "Company: Tonbo Imaging · Location: Bengaluru, Karnataka, India (On-site)",
+      "date_published": "2026-08-06T05:37:58.984Z",
+      "authors": [
+        {
+          "name": "Tonbo Imaging"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/sony-research-india-data-science-intern-4449971505",
       "url": "https://www.internradar.info/jobs/sony-research-india-data-science-intern-4449971505",
       "title": "Data Science Intern — Sony Research India",
@@ -590,18 +602,6 @@
       "authors": [
         {
           "name": "Newton School of Technology"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/intel-soc-validation-engineer-intern-4446997136",
-      "url": "https://www.internradar.info/jobs/intel-soc-validation-engineer-intern-4446997136",
-      "title": "SoC Validation Engineer Intern — Intel",
-      "content_text": "Company: Intel · Location: Bengaluru, Karnataka, India\n• Work on SoC validation as an M.Tech graduate in Electronics, Telecommunications, or Computer Science\n• This role is eligible for a hybrid work model, splitting time between on-site and off-site",
-      "date_published": "2026-07-31T07:29:03.688Z",
-      "authors": [
-        {
-          "name": "Intel"
         }
       ]
     }
