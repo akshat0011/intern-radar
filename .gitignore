@@ -12,3 +12,11 @@ node_modules/
 # needs — would also be ignored, and the deployed site would silently have no
 # listings and no logos.
 /data/
+
+# Working files: company review lists, regenerated on demand.
+skipped-companies.csv
+skipped-companies.md
+
+# Vetting working data: judgements about named companies. This repo is public.
+vetting/
+candidates.json
