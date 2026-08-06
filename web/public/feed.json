@@ -6,6 +6,18 @@
   "description": "New engineering internships, listed within minutes of going live.",
   "items": [
     {
+      "id": "https://www.internradar.info/jobs/discover-dollar-inc-gtm-engineer-intern-4449749255",
+      "url": "https://www.internradar.info/jobs/discover-dollar-inc-gtm-engineer-intern-4449749255",
+      "title": "GTM Engineer Intern — Discover Dollar Inc",
+      "content_text": "Company: Discover Dollar Inc · Location: Bengaluru East, Karnataka, India",
+      "date_published": "2026-08-06T12:52:15.472Z",
+      "authors": [
+        {
+          "name": "Discover Dollar Inc"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/newton-school-ai-video-creator-intern-bengaluru-4449733238",
       "url": "https://www.internradar.info/jobs/newton-school-ai-video-creator-intern-bengaluru-4449733238",
       "title": "AI Video Creator Intern - Bengaluru — Newton School",
@@ -590,18 +602,6 @@
       "authors": [
         {
           "name": "Magna International"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/newton-school-of-technology-product-intern-4446988446",
-      "url": "https://www.internradar.info/jobs/newton-school-of-technology-product-intern-4446988446",
-      "title": "Product Intern — Newton School of Technology",
-      "content_text": "Company: Newton School of Technology · Location: Bengaluru, Karnataka, India\n• Ideate and develop product requirements, leading the overall product development\n• Collaborate with Engineering and Design to build and launch products\n• Produce high-quality product specifications and manage scope for timely delivery\n• Track performance metrics and leverage data for product improvements",
-      "date_published": "2026-07-31T07:40:40.557Z",
-      "authors": [
-        {
-          "name": "Newton School of Technology"
         }
       ]
     }
