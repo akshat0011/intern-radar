@@ -6,7 +6,21 @@
   <atom:link href="https://www.internradar.info/feed.xml" rel="self" type="application/rss+xml"/>
   <description>New engineering internships, listed within minutes of going live.</description>
   <language>en-in</language>
-  <lastBuildDate>Thu, 06 Aug 2026 12:03:55 GMT</lastBuildDate>
+  <lastBuildDate>Thu, 06 Aug 2026 12:34:42 GMT</lastBuildDate>
+  <item>
+    <title>AI Video Creator Intern - Bengaluru — Newton School</title>
+    <link>https://www.internradar.info/jobs/newton-school-ai-video-creator-intern-bengaluru-4449733238</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/newton-school-ai-video-creator-intern-bengaluru-4449733238</guid>
+    <pubDate>Thu, 06 Aug 2026 12:04:18 GMT</pubDate>
+    <description>Company: Newton School · Location: Bengaluru, Karnataka, India · Duration: 3–6 months</description>
+  </item>
+  <item>
+    <title>Intern (Bachelor&#39;s) — Honeywell Technologies</title>
+    <link>https://www.internradar.info/jobs/honeywell-technologies-intern-bachelor-s-4450253010</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/honeywell-technologies-intern-bachelor-s-4450253010</guid>
+    <pubDate>Thu, 06 Aug 2026 12:02:24 GMT</pubDate>
+    <description>Company: Honeywell Technologies · Location: Bengaluru, Karnataka, India</description>
+  </item>
   <item>
     <title>Software Engineer Trainee — Emerson</title>
     <link>https://www.internradar.info/jobs/emerson-software-engineer-trainee-4450233537</link>
@@ -430,26 +444,6 @@
 • Collaborate with Engineering and Design to build and launch products
 • Produce high-quality product specifications and manage scope for timely delivery
 • Track performance metrics and leverage data for product improvements</description>
-  </item>
-  <item>
-    <title>SoC Validation Engineer Intern — Intel</title>
-    <link>https://www.internradar.info/jobs/intel-soc-validation-engineer-intern-4446997136</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/intel-soc-validation-engineer-intern-4446997136</guid>
-    <pubDate>Fri, 31 Jul 2026 07:29:03 GMT</pubDate>
-    <description>Company: Intel · Location: Bengaluru, Karnataka, India
-• Work on SoC validation as an M.Tech graduate in Electronics, Telecommunications, or Computer Science
-• This role is eligible for a hybrid work model, splitting time between on-site and off-site</description>
-  </item>
-  <item>
-    <title>Research Intern (Quantum Computing) — Fujitsu</title>
-    <link>https://www.internradar.info/jobs/fujitsu-research-intern-quantum-computing-4447272252</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/fujitsu-research-intern-quantum-computing-4447272252</guid>
-    <pubDate>Fri, 31 Jul 2026 07:00:03 GMT</pubDate>
-    <description>Company: Fujitsu · Location: Bangalore Urban, Karnataka, India · Duration: 3 months
-• Conduct original research in open quantum systems, thermalisation, and quantum algorithms
-• Work with the Quantum R&amp;D Division, contributing to the Quantum Computing Stack
-• Requires strong background in open quantum systems, statistical physics, and linear algebra
-• Programming experience in Python is preferred; 3-6 month physical internship in Bangalore</description>
   </item>
 </channel>
 </rss>
