@@ -6,7 +6,21 @@
   <atom:link href="https://www.internradar.info/feed.xml" rel="self" type="application/rss+xml"/>
   <description>New engineering internships, listed within minutes of going live.</description>
   <language>en-in</language>
-  <lastBuildDate>Thu, 06 Aug 2026 09:04:32 GMT</lastBuildDate>
+  <lastBuildDate>Thu, 06 Aug 2026 09:34:57 GMT</lastBuildDate>
+  <item>
+    <title>Diploma Engineer Trainee — Aditya Birla Group</title>
+    <link>https://www.internradar.info/jobs/aditya-birla-group-diploma-engineer-trainee-4450230298</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/aditya-birla-group-diploma-engineer-trainee-4450230298</guid>
+    <pubDate>Thu, 06 Aug 2026 09:18:52 GMT</pubDate>
+    <description>Company: Aditya Birla Group · Location: Jharkhand, India</description>
+  </item>
+  <item>
+    <title>Intern - Content Moderation (Hindi) — ShareChat</title>
+    <link>https://www.internradar.info/jobs/sharechat-intern-content-moderation-hindi-4449398053</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/sharechat-intern-content-moderation-hindi-4449398053</guid>
+    <pubDate>Thu, 06 Aug 2026 09:13:57 GMT</pubDate>
+    <description>Company: ShareChat · Location: Bengaluru, Karnataka, India · Duration: 3 months</description>
+  </item>
   <item>
     <title>Intern – Digitisation &amp; Automation (Admin Function) — Tonbo Imaging</title>
     <link>https://www.internradar.info/jobs/tonbo-imaging-intern-digitisation-and-automation-admin-function-4449989732</link>
@@ -20,6 +34,13 @@
     <guid isPermaLink="true">https://www.internradar.info/jobs/sony-research-india-data-science-intern-4449971505</guid>
     <pubDate>Thu, 06 Aug 2026 03:27:33 GMT</pubDate>
     <description>Company: Sony Research India · Location: Bengaluru, Karnataka, India · Stipend: ₹9,00,000 / year</description>
+  </item>
+  <item>
+    <title>Apprentice - ADL — Piramal</title>
+    <link>https://www.internradar.info/jobs/piramal-apprentice-adl-ats-workday-piramalpharma-wd102-piramal-external-careers-r00002291</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/piramal-apprentice-adl-ats-workday-piramalpharma-wd102-piramal-external-careers-r00002291</guid>
+    <pubDate>Thu, 06 Aug 2026 00:00:00 GMT</pubDate>
+    <description>Company: Piramal · Location: Ahmedabad,Gj</description>
   </item>
   <item>
     <title>Intern - Engineering — CoinDCX</title>
@@ -433,33 +454,6 @@
 • Write PRDs, user stories, and feature specs; analyze product data using SQL
 • Collaborate with design on wireframes in Figma and engineering on sprints in Jira
 • Conduct market research, synthesize user feedback, and support A/B testing</description>
-  </item>
-  <item>
-    <title>Graduate apprentice trainee - SW Verification — Volvo Group</title>
-    <link>https://www.internradar.info/jobs/volvo-group-graduate-apprentice-trainee-sw-verification-4447210792</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/volvo-group-graduate-apprentice-trainee-sw-verification-4447210792</guid>
-    <pubDate>Thu, 30 Jul 2026 23:03:57 GMT</pubDate>
-    <description>Company: Volvo Group · Location: Bengaluru, Karnataka, India
-• Support test planning, execution, and analysis for vehicle systems
-• Assist in creating and executing test cases for electrical and software systems
-• Analyze test data, report anomalies, and document results for continuous improvement</description>
-  </item>
-  <item>
-    <title>2027 Technology Developer Summer Internship Programme India — Barclays</title>
-    <link>https://www.internradar.info/jobs/barclays-2027-technology-developer-summer-internship-programme-india-4445050175</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/barclays-2027-technology-developer-summer-internship-programme-india-4445050175</guid>
-    <pubDate>Thu, 30 Jul 2026 22:04:03 GMT</pubDate>
-    <description>Company: Barclays · Location: Pune Division, Maharashtra, India
-• Develop and deliver high-quality software solutions using industry-aligned languages and tools
-• Collaborate with product managers, designers, and engineers on requirements and strategies
-• Participate in code reviews, adhere to secure coding practices, and implement unit testing</description>
-  </item>
-  <item>
-    <title>AI/ML Intern — Quest Global</title>
-    <link>https://www.internradar.info/jobs/quest-global-ai-ml-intern-4446793926</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/quest-global-ai-ml-intern-4446793926</guid>
-    <pubDate>Thu, 30 Jul 2026 17:08:04 GMT</pubDate>
-    <description>Company: Quest Global · Location: Pune Division, Maharashtra, India</description>
   </item>
 </channel>
 </rss>

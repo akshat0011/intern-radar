@@ -6,6 +6,30 @@
   "description": "New engineering internships, listed within minutes of going live.",
   "items": [
     {
+      "id": "https://www.internradar.info/jobs/aditya-birla-group-diploma-engineer-trainee-4450230298",
+      "url": "https://www.internradar.info/jobs/aditya-birla-group-diploma-engineer-trainee-4450230298",
+      "title": "Diploma Engineer Trainee — Aditya Birla Group",
+      "content_text": "Company: Aditya Birla Group · Location: Jharkhand, India",
+      "date_published": "2026-08-06T09:18:52.091Z",
+      "authors": [
+        {
+          "name": "Aditya Birla Group"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/sharechat-intern-content-moderation-hindi-4449398053",
+      "url": "https://www.internradar.info/jobs/sharechat-intern-content-moderation-hindi-4449398053",
+      "title": "Intern - Content Moderation (Hindi) — ShareChat",
+      "content_text": "Company: ShareChat · Location: Bengaluru, Karnataka, India · Duration: 3 months",
+      "date_published": "2026-08-06T09:13:57.894Z",
+      "authors": [
+        {
+          "name": "ShareChat"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/tonbo-imaging-intern-digitisation-and-automation-admin-function-4449989732",
       "url": "https://www.internradar.info/jobs/tonbo-imaging-intern-digitisation-and-automation-admin-function-4449989732",
       "title": "Intern – Digitisation & Automation (Admin Function) — Tonbo Imaging",
@@ -26,6 +50,18 @@
       "authors": [
         {
           "name": "Sony Research India"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/piramal-apprentice-adl-ats-workday-piramalpharma-wd102-piramal-external-careers-r00002291",
+      "url": "https://www.internradar.info/jobs/piramal-apprentice-adl-ats-workday-piramalpharma-wd102-piramal-external-careers-r00002291",
+      "title": "Apprentice - ADL — Piramal",
+      "content_text": "Company: Piramal · Location: Ahmedabad,Gj",
+      "date_published": "2026-08-06T00:00:00.000Z",
+      "authors": [
+        {
+          "name": "Piramal"
         }
       ]
     },
@@ -566,42 +602,6 @@
       "authors": [
         {
           "name": "Noise"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/volvo-group-graduate-apprentice-trainee-sw-verification-4447210792",
-      "url": "https://www.internradar.info/jobs/volvo-group-graduate-apprentice-trainee-sw-verification-4447210792",
-      "title": "Graduate apprentice trainee - SW Verification — Volvo Group",
-      "content_text": "Company: Volvo Group · Location: Bengaluru, Karnataka, India\n• Support test planning, execution, and analysis for vehicle systems\n• Assist in creating and executing test cases for electrical and software systems\n• Analyze test data, report anomalies, and document results for continuous improvement",
-      "date_published": "2026-07-30T23:03:57.190Z",
-      "authors": [
-        {
-          "name": "Volvo Group"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/barclays-2027-technology-developer-summer-internship-programme-india-4445050175",
-      "url": "https://www.internradar.info/jobs/barclays-2027-technology-developer-summer-internship-programme-india-4445050175",
-      "title": "2027 Technology Developer Summer Internship Programme India — Barclays",
-      "content_text": "Company: Barclays · Location: Pune Division, Maharashtra, India\n• Develop and deliver high-quality software solutions using industry-aligned languages and tools\n• Collaborate with product managers, designers, and engineers on requirements and strategies\n• Participate in code reviews, adhere to secure coding practices, and implement unit testing",
-      "date_published": "2026-07-30T22:04:03.067Z",
-      "authors": [
-        {
-          "name": "Barclays"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/quest-global-ai-ml-intern-4446793926",
-      "url": "https://www.internradar.info/jobs/quest-global-ai-ml-intern-4446793926",
-      "title": "AI/ML Intern — Quest Global",
-      "content_text": "Company: Quest Global · Location: Pune Division, Maharashtra, India",
-      "date_published": "2026-07-30T17:08:04.966Z",
-      "authors": [
-        {
-          "name": "Quest Global"
         }
       ]
     }
