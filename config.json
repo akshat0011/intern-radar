@@ -139,6 +139,100 @@
       ]
     },
     {
+      "name": "Criteo"
+    },
+    {
+      "name": "Oceaneering"
+    },
+    {
+      "name": "Monotype"
+    },
+    {
+      "name": "Pearson",
+      "aliases": [
+        "Pearson India"
+      ]
+    },
+    {
+      "name": "Enverus"
+    },
+    {
+      "name": "Livspace"
+    },
+    {
+      "name": "Collegedunia"
+    },
+    {
+      "name": "V-Mart Retail",
+      "aliases": [
+        "V-Mart"
+      ]
+    },
+    {
+      "name": "TeamLease Regtech",
+      "aliases": [
+        "TeamLease"
+      ]
+    },
+    {
+      "name": "Bizlem"
+    },
+    {
+      "name": "Bugsmirror"
+    },
+    {
+      "name": "SmartQ",
+      "aliases": [
+        "Smart Q"
+      ]
+    },
+    {
+      "name": "Nippon Data Systems"
+    },
+    {
+      "name": "TaxOSmart",
+      "aliases": [
+        "Tax-O-Smart"
+      ]
+    },
+    {
+      "name": "Cyber Infrastructure",
+      "aliases": [
+        "Cyber Infrastructure (CIS)",
+        "CIS India"
+      ]
+    },
+    {
+      "name": "Picktime"
+    },
+    {
+      "name": "VAYUZ Technologies",
+      "aliases": [
+        "Vayuz"
+      ]
+    },
+    {
+      "name": "Aerocraft Engineering"
+    },
+    {
+      "name": "AppVersal"
+    },
+    {
+      "name": "Menstrupedia"
+    },
+    {
+      "name": "MiM-Essay"
+    },
+    {
+      "name": "unbundl"
+    },
+    {
+      "name": "National Technology Centre for Ports, Waterways and Coasts",
+      "aliases": [
+        "NTCPWC"
+      ]
+    },
+    {
       "name": "JSW Group",
       "aliases": [
         "JSW Steel",
