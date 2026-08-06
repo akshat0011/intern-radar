@@ -6,7 +6,14 @@
   <atom:link href="https://www.internradar.info/feed.xml" rel="self" type="application/rss+xml"/>
   <description>New engineering internships, listed within minutes of going live.</description>
   <language>en-in</language>
-  <lastBuildDate>Thu, 06 Aug 2026 03:03:09 GMT</lastBuildDate>
+  <lastBuildDate>Thu, 06 Aug 2026 04:28:13 GMT</lastBuildDate>
+  <item>
+    <title>Data Science Intern — Sony Research India</title>
+    <link>https://www.internradar.info/jobs/sony-research-india-data-science-intern-4449971505</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/sony-research-india-data-science-intern-4449971505</guid>
+    <pubDate>Thu, 06 Aug 2026 03:27:33 GMT</pubDate>
+    <description>Company: Sony Research India · Location: Bengaluru, Karnataka, India · Stipend: ₹9,00,000 / year</description>
+  </item>
   <item>
     <title>Young Apprentice - C00 - GURUGRAM — Citi</title>
     <link>https://www.internradar.info/jobs/citi-young-apprentice-c00-gurugram-4449324079</link>
@@ -439,17 +446,6 @@
     <description>Company: Intel · Location: Bengaluru, Karnataka, India
 • Work on SoC validation as an M.Tech graduate in Electronics, Telecommunications, or Computer Science
 • This role is eligible for a hybrid work model, splitting time between on-site and off-site</description>
-  </item>
-  <item>
-    <title>Research Intern (Quantum Computing) — Fujitsu</title>
-    <link>https://www.internradar.info/jobs/fujitsu-research-intern-quantum-computing-4447272252</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/fujitsu-research-intern-quantum-computing-4447272252</guid>
-    <pubDate>Fri, 31 Jul 2026 07:00:03 GMT</pubDate>
-    <description>Company: Fujitsu · Location: Bangalore Urban, Karnataka, India · Duration: 3 months
-• Conduct original research in open quantum systems, thermalisation, and quantum algorithms
-• Work with the Quantum R&amp;D Division, contributing to the Quantum Computing Stack
-• Requires strong background in open quantum systems, statistical physics, and linear algebra
-• Programming experience in Python is preferred; 3-6 month physical internship in Bangalore</description>
   </item>
 </channel>
 </rss>

@@ -6,6 +6,18 @@
   "description": "New engineering internships, listed within minutes of going live.",
   "items": [
     {
+      "id": "https://www.internradar.info/jobs/sony-research-india-data-science-intern-4449971505",
+      "url": "https://www.internradar.info/jobs/sony-research-india-data-science-intern-4449971505",
+      "title": "Data Science Intern — Sony Research India",
+      "content_text": "Company: Sony Research India · Location: Bengaluru, Karnataka, India · Stipend: ₹9,00,000 / year",
+      "date_published": "2026-08-06T03:27:33.818Z",
+      "authors": [
+        {
+          "name": "Sony Research India"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/citi-young-apprentice-c00-gurugram-4449324079",
       "url": "https://www.internradar.info/jobs/citi-young-apprentice-c00-gurugram-4449324079",
       "title": "Young Apprentice - C00 - GURUGRAM — Citi",
@@ -590,18 +602,6 @@
       "authors": [
         {
           "name": "Intel"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/fujitsu-research-intern-quantum-computing-4447272252",
-      "url": "https://www.internradar.info/jobs/fujitsu-research-intern-quantum-computing-4447272252",
-      "title": "Research Intern (Quantum Computing) — Fujitsu",
-      "content_text": "Company: Fujitsu · Location: Bangalore Urban, Karnataka, India · Duration: 3 months\n• Conduct original research in open quantum systems, thermalisation, and quantum algorithms\n• Work with the Quantum R&D Division, contributing to the Quantum Computing Stack\n• Requires strong background in open quantum systems, statistical physics, and linear algebra\n• Programming experience in Python is preferred; 3-6 month physical internship in Bangalore",
-      "date_published": "2026-07-31T07:00:03.103Z",
-      "authors": [
-        {
-          "name": "Fujitsu"
         }
       ]
     }
