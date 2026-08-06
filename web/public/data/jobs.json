@@ -1,7 +1,7 @@
 {
- "generatedAt": 1786028640418,
- "count": 129,
- "techCount": 129,
+ "generatedAt": 1786030499778,
+ "count": 130,
+ "techCount": 130,
  "otherCount": 0,
  "companies": [
   "ALLEN",
@@ -17,6 +17,7 @@
   "BNP Paribas",
   "Bajaj Finserv",
   "Barclays",
+  "Cipla",
   "CoinDCX",
   "Collins Aerospace",
   "Continental Industry",
@@ -116,6 +117,37 @@
   "Visakhapatnam, Andhra Pradesh, India"
  ],
  "jobs": [
+  {
+   "id": "4450264728",
+   "title": "Hospital Tender Management Intern",
+   "company": "Cipla",
+   "matchedWatchlist": "Cipla",
+   "isTech": true,
+   "roleSource": "offline-uncertain",
+   "logo": "/logos/cipla.jpg",
+   "location": "Mumbai, Maharashtra, India",
+   "workplaceType": "Remote",
+   "stipend": null,
+   "duration": null,
+   "applicants": "2 applicants",
+   "easyApply": true,
+   "skills": [
+    "excel"
+   ],
+   "summary": "The Hospital Tender Management Intern will support the management of hospital tenders, distributor coordination, off-contract claims processing, and documentation administration. This role provides an excellent opportunity to gain hands-on experience in pharmaceutical hospital operations, procurement processes, distributor management, and cross-functional collaboration with Finance, Commercial, and Supply Chain teams. Key Responsibilities Tender Management Support",
+   "bullets": [],
+   "roleLabel": null,
+   "degreeLevel": null,
+   "degreeText": null,
+   "keySkills": [],
+   "stipendStatus": "unknown",
+   "postedText": "28 minutes ago",
+   "postedAt": 1786028678903,
+   "firstSeenAt": 1786030358908,
+   "url": "https://www.linkedin.com/jobs/view/4450264728/",
+   "applyUrl": "https://www.linkedin.com/jobs/view/4450264728/",
+   "description": null
+  },
   {
    "id": "4450267489",
    "title": "Graduate Apprentice",

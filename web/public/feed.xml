@@ -6,7 +6,14 @@
   <atom:link href="https://www.internradar.info/feed.xml" rel="self" type="application/rss+xml"/>
   <description>New engineering internships, listed within minutes of going live.</description>
   <language>en-in</language>
-  <lastBuildDate>Thu, 06 Aug 2026 15:04:00 GMT</lastBuildDate>
+  <lastBuildDate>Thu, 06 Aug 2026 15:34:59 GMT</lastBuildDate>
+  <item>
+    <title>Hospital Tender Management Intern — Cipla</title>
+    <link>https://www.internradar.info/jobs/cipla-hospital-tender-management-intern-4450264728</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/cipla-hospital-tender-management-intern-4450264728</guid>
+    <pubDate>Thu, 06 Aug 2026 15:04:38 GMT</pubDate>
+    <description>Company: Cipla · Location: Mumbai, Maharashtra, India</description>
+  </item>
   <item>
     <title>Graduate Apprentice — Pfizer</title>
     <link>https://www.internradar.info/jobs/pfizer-graduate-apprentice-4450267489</link>
@@ -419,13 +426,6 @@
 • Work with data and visualization tools like SQL, Python, Excel, Power BI, or Tableau
 • Gain exposure to data governance, data quality, and process improvement practices
 • 12-month paid apprenticeship with development and networking opportunities</description>
-  </item>
-  <item>
-    <title>Intern Software development engineering (AI/ML/NLP &amp; Cybersecurity), Graduation Year (2026) — American Express</title>
-    <link>https://www.internradar.info/jobs/american-express-intern-software-development-engineering-ai-ml-nlp-and-cybersecurity-gr-4447414103</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/american-express-intern-software-development-engineering-ai-ml-nlp-and-cybersecurity-gr-4447414103</guid>
-    <pubDate>Fri, 31 Jul 2026 23:46:43 GMT</pubDate>
-    <description>Company: American Express · Location: Gurugram, Haryana, India (Hybrid)</description>
   </item>
 </channel>
 </rss>

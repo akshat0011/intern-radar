@@ -6,6 +6,18 @@
   "description": "New engineering internships, listed within minutes of going live.",
   "items": [
     {
+      "id": "https://www.internradar.info/jobs/cipla-hospital-tender-management-intern-4450264728",
+      "url": "https://www.internradar.info/jobs/cipla-hospital-tender-management-intern-4450264728",
+      "title": "Hospital Tender Management Intern — Cipla",
+      "content_text": "Company: Cipla · Location: Mumbai, Maharashtra, India",
+      "date_published": "2026-08-06T15:04:38.903Z",
+      "authors": [
+        {
+          "name": "Cipla"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/pfizer-graduate-apprentice-4450267489",
       "url": "https://www.internradar.info/jobs/pfizer-graduate-apprentice-4450267489",
       "title": "Graduate Apprentice — Pfizer",
@@ -587,18 +599,6 @@
       "title": "Apprentice — American Express",
       "content_text": "Company: American Express · Location: Bengaluru, Karnataka, India · Duration: 12 months\n• Support analytical and reporting activities to identify trends and business insights\n• Work with data and visualization tools like SQL, Python, Excel, Power BI, or Tableau\n• Gain exposure to data governance, data quality, and process improvement practices\n• 12-month paid apprenticeship with development and networking opportunities",
       "date_published": "2026-08-01T13:18:00.217Z",
-      "authors": [
-        {
-          "name": "American Express"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/american-express-intern-software-development-engineering-ai-ml-nlp-and-cybersecurity-gr-4447414103",
-      "url": "https://www.internradar.info/jobs/american-express-intern-software-development-engineering-ai-ml-nlp-and-cybersecurity-gr-4447414103",
-      "title": "Intern Software development engineering (AI/ML/NLP & Cybersecurity), Graduation Year (2026) — American Express",
-      "content_text": "Company: American Express · Location: Gurugram, Haryana, India (Hybrid)",
-      "date_published": "2026-07-31T23:46:43.591Z",
       "authors": [
         {
           "name": "American Express"
