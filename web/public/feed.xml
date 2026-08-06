@@ -6,7 +6,7 @@
   <atom:link href="https://www.internradar.info/feed.xml" rel="self" type="application/rss+xml"/>
   <description>New engineering internships, listed within minutes of going live.</description>
   <language>en-in</language>
-  <lastBuildDate>Thu, 06 Aug 2026 06:33:02 GMT</lastBuildDate>
+  <lastBuildDate>Thu, 06 Aug 2026 06:35:18 GMT</lastBuildDate>
   <item>
     <title>Intern – Digitisation &amp; Automation (Admin Function) — Tonbo Imaging</title>
     <link>https://www.internradar.info/jobs/tonbo-imaging-intern-digitisation-and-automation-admin-function-4449989732</link>
@@ -27,6 +27,13 @@
     <guid isPermaLink="true">https://www.internradar.info/jobs/citi-young-apprentice-c00-gurugram-4449324079</guid>
     <pubDate>Wed, 05 Aug 2026 22:42:05 GMT</pubDate>
     <description>Company: Citi · Location: Haryana, India · Duration: 12 months</description>
+  </item>
+  <item>
+    <title>Intern - Engineering — CoinDCX</title>
+    <link>https://www.internradar.info/jobs/coindcx-intern-engineering-4449153319</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/coindcx-intern-engineering-4449153319</guid>
+    <pubDate>Wed, 05 Aug 2026 18:35:17 GMT</pubDate>
+    <description>Company: CoinDCX · Location: Bengaluru, Karnataka, India</description>
   </item>
   <item>
     <title>Intern - IT &amp; Desktop Support — Quantiphi</title>
@@ -433,17 +440,6 @@
 • Administer, support, and maintain business applications, providing 1st and 2nd level user support
 • Analyze malfunctions, troubleshoot, and manage ticket queues based on impact
 • Prepare technical documentation and support application testing</description>
-  </item>
-  <item>
-    <title>Product Intern — Newton School of Technology</title>
-    <link>https://www.internradar.info/jobs/newton-school-of-technology-product-intern-4446988446</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/newton-school-of-technology-product-intern-4446988446</guid>
-    <pubDate>Fri, 31 Jul 2026 07:40:40 GMT</pubDate>
-    <description>Company: Newton School of Technology · Location: Bengaluru, Karnataka, India
-• Ideate and develop product requirements, leading the overall product development
-• Collaborate with Engineering and Design to build and launch products
-• Produce high-quality product specifications and manage scope for timely delivery
-• Track performance metrics and leverage data for product improvements</description>
   </item>
 </channel>
 </rss>
