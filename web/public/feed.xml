@@ -6,7 +6,14 @@
   <atom:link href="https://www.internradar.info/feed.xml" rel="self" type="application/rss+xml"/>
   <description>New engineering internships, listed within minutes of going live.</description>
   <language>en-in</language>
-  <lastBuildDate>Thu, 06 Aug 2026 19:42:54 GMT</lastBuildDate>
+  <lastBuildDate>Thu, 06 Aug 2026 22:28:47 GMT</lastBuildDate>
+  <item>
+    <title>Trainee — YES BANK</title>
+    <link>https://www.internradar.info/jobs/yes-bank-trainee-4448472362</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/yes-bank-trainee-4448472362</guid>
+    <pubDate>Thu, 06 Aug 2026 21:44:32 GMT</pubDate>
+    <description>Company: YES BANK · Location: Mumbai Metropolitan Region</description>
+  </item>
   <item>
     <title>GIT Trainee (Contractual) — Colgate-Palmolive</title>
     <link>https://www.internradar.info/jobs/colgate-palmolive-git-trainee-contractual-4395013887</link>
@@ -403,17 +410,6 @@
     <guid isPermaLink="true">https://www.internradar.info/jobs/piramal-graduate-engineer-trainee-sap-ats-workday-piramalpharma-wd102-piramal-external-careers-r00003522</guid>
     <pubDate>Mon, 03 Aug 2026 00:00:00 GMT</pubDate>
     <description>Company: Piramal · Location: Mumbai, MH</description>
-  </item>
-  <item>
-    <title>Software Engineer Intern — eBay</title>
-    <link>https://www.internradar.info/jobs/ebay-software-engineer-intern-4445854769</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/ebay-software-engineer-intern-4445854769</guid>
-    <pubDate>Sun, 02 Aug 2026 21:06:14 GMT</pubDate>
-    <description>Company: eBay · Location: Bengaluru, Karnataka, India · Duration: 0-3 years
-• Build robust, scalable software and improve code services and system architecture
-• Participate in brainstorming sessions and contribute ideas for technology, algorithms, and products
-• Work with product and design teams to understand user requirements and deliver results
-• Use Java, Python, Scala, JavaScript; focus on OOP/OOD, distributed systems, cloud, and full stack</description>
   </item>
 </channel>
 </rss>
