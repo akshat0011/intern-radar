@@ -6,6 +6,18 @@
   "description": "New engineering internships, listed within minutes of going live.",
   "items": [
     {
+      "id": "https://www.internradar.info/jobs/upgrad-gsp-intern-partner-acquisition-upgrad-global-study-partners-gsp-4449755208",
+      "url": "https://www.internradar.info/jobs/upgrad-gsp-intern-partner-acquisition-upgrad-global-study-partners-gsp-4449755208",
+      "title": "Intern – Partner Acquisition | upGrad | Global Study Partners (GSP) — upGrad GSP",
+      "content_text": "Company: upGrad GSP · Location: Noida, Uttar Pradesh, India · Stipend: ₹12,000 / month · Duration: 3 months",
+      "date_published": "2026-08-06T13:30:48.936Z",
+      "authors": [
+        {
+          "name": "upGrad GSP"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/discover-dollar-inc-gtm-engineer-intern-4449749255",
       "url": "https://www.internradar.info/jobs/discover-dollar-inc-gtm-engineer-intern-4449749255",
       "title": "GTM Engineer Intern — Discover Dollar Inc",
@@ -26,6 +38,18 @@
       "authors": [
         {
           "name": "Newton School"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/honeywell-technologies-intern-bachelor-s-law-4450245073",
+      "url": "https://www.internradar.info/jobs/honeywell-technologies-intern-bachelor-s-law-4450245073",
+      "title": "Intern (Bachelor's)- Law — Honeywell Technologies",
+      "content_text": "Company: Honeywell Technologies · Location: Bengaluru, Karnataka, India",
+      "date_published": "2026-08-06T12:03:47.341Z",
+      "authors": [
+        {
+          "name": "Honeywell Technologies"
         }
       ]
     },
@@ -578,30 +602,6 @@
       "authors": [
         {
           "name": "Whatfix"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/valeo-intern-4447504839",
-      "url": "https://www.internradar.info/jobs/valeo-intern-4447504839",
-      "title": "Intern — Valeo",
-      "content_text": "Company: Valeo · Location: Chennai, Tamil Nadu, India\n• Work in R&D within the Artificial Intelligence department\n• Focus on high-tech solutions for mobility, intuitive driving, and CO2 reduction\n• Join a global company with over 20,000 engineers in R&D",
-      "date_published": "2026-07-31T12:29:02.385Z",
-      "authors": [
-        {
-          "name": "Valeo"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/magna-international-intern-industrial-solutions-4447295778",
-      "url": "https://www.internradar.info/jobs/magna-international-intern-industrial-solutions-4447295778",
-      "title": "Intern, Industrial Solutions — Magna International",
-      "content_text": "Company: Magna International · Location: Bengaluru, Karnataka, India\n• Rotate through SAP, Data Interchange & Development (EDI), and Manufacturing Execution System (MES) teams\n• Administer, support, and maintain business applications, providing 1st and 2nd level user support\n• Analyze malfunctions, troubleshoot, and manage ticket queues based on impact\n• Prepare technical documentation and support application testing",
-      "date_published": "2026-07-31T12:05:37.910Z",
-      "authors": [
-        {
-          "name": "Magna International"
         }
       ]
     }
