@@ -1,5 +1,5 @@
 {
- "generatedAt": 1785999925436,
+ "generatedAt": 1786001744421,
  "count": 118,
  "techCount": 118,
  "otherCount": 0,
@@ -4662,7 +4662,7 @@
    "company": "Microsoft",
    "matchedWatchlist": "Microsoft",
    "isTech": true,
-   "roleSource": "ats-microsoft",
+   "roleSource": "gemini-enrich",
    "logo": "/logos/microsoft.jpg",
    "location": "India, Multiple Locations, Multiple Locations",
    "workplaceType": "onsite",
@@ -4675,11 +4675,19 @@
     "algorithms"
    ],
    "summary": "Come build community, explore your passions and do your best work at Microsoft with thousands of University interns from every corner of the world. As a Software Engineering Intern, you will work with teammates to solve problems and build innovative software solutions. You will apply your passion for customers and product quality as you provide technical guidance to Technical Program Managers and Product Managers. You will learn and adopt relevant new technologies, tools, methods, and processes to leverage in your solutions.",
-   "bullets": [],
-   "roleLabel": null,
-   "degreeLevel": null,
+   "bullets": [
+    "Design, develop, and test software features across products and services",
+    "Work with stakeholders to define requirements and build scalable code",
+    "Adopt new engineering tools to improve system performance and reliability"
+   ],
+   "roleLabel": "Software engineering",
+   "degreeLevel": "UG/PG",
    "degreeText": null,
-   "keySkills": [],
+   "keySkills": [
+    "oop",
+    "data structures",
+    "algorithms"
+   ],
    "stipendStatus": "unknown",
    "postedText": null,
    "postedAt": 1782882475000,
@@ -4694,7 +4702,7 @@
    "company": "Microsoft",
    "matchedWatchlist": "Microsoft",
    "isTech": true,
-   "roleSource": "ats-microsoft",
+   "roleSource": "gemini-enrich",
    "logo": "/logos/microsoft.jpg",
    "location": "India, Multiple Locations, Multiple Locations",
    "workplaceType": "onsite",
@@ -4707,11 +4715,19 @@
     "algorithms"
    ],
    "summary": "Come build community, explore your passions and do your best work at Microsoft with thousands of University interns from every corner of the world. As a Data Scientist Intern at Microsoft, you will use machine learning, statistics, experiments, and more to build and improve great products while making business impact. As a Data Scientist intern you will collaborate with stakeholders, formulate approaches to solve problems and use algorithms and data sources in the context of business and engineering needs. You will also be able to combine your engineering abilities with analytical skills to make customer…",
-   "bullets": [],
-   "roleLabel": null,
-   "degreeLevel": null,
-   "degreeText": null,
-   "keySkills": [],
+   "bullets": [
+    "Build product features using machine learning, statistics, and experimental data",
+    "Formulate algorithmic approaches to solve complex business problems",
+    "Share data insights with product stakeholders to improve customer experiences"
+   ],
+   "roleLabel": "Data science",
+   "degreeLevel": "PG",
+   "degreeText": "PhD",
+   "keySkills": [
+    "machine learning",
+    "statistics",
+    "algorithms"
+   ],
    "stipendStatus": "unknown",
    "postedText": null,
    "postedAt": 1782798656000,
@@ -4726,7 +4742,7 @@
    "company": "Microsoft",
    "matchedWatchlist": "Microsoft",
    "isTech": true,
-   "roleSource": "gemini-description",
+   "roleSource": "gemini-enrich",
    "logo": "/logos/microsoft.jpg",
    "location": "India, Multiple Locations, Multiple Locations",
    "workplaceType": "onsite",
@@ -4739,11 +4755,19 @@
     "algorithms"
    ],
    "summary": "Come build community, explore your passions and do your best work at Microsoft with thousands of University interns from every corner of the world. As an Applied Science Intern at Microsoft, you will be at the forefront of technological innovation, working collaboratively to bring research to life in our products and services. You'll gain expertise in cutting-edge research areas, apply advanced concepts to real-world needs, and use state-of-the-art tools to make a tangible impact on product quality and business outcomes. You'll contribute to the creation of intelligent solutions through data analysis, modeling,…",
-   "bullets": [],
-   "roleLabel": null,
-   "degreeLevel": null,
+   "bullets": [
+    "Improve algorithm performance on large-scale datasets and ML applications",
+    "Design ML experiments and build prototype scalable AI systems",
+    "Prepare, clean, and structure data to build production machine learning models"
+   ],
+   "roleLabel": "Applied science research",
+   "degreeLevel": "UG",
    "degreeText": null,
-   "keySkills": [],
+   "keySkills": [
+    "machine learning",
+    "algorithms",
+    "data analysis"
+   ],
    "stipendStatus": "unknown",
    "postedText": null,
    "postedAt": 1782798576000,
@@ -4758,7 +4782,7 @@
    "company": "Glance",
    "matchedWatchlist": "Glance",
    "isTech": true,
-   "roleSource": "ats-greenhouse",
+   "roleSource": "gemini-enrich",
    "logo": "/logos/glance.jpg",
    "location": "Bengaluru",
    "workplaceType": null,
@@ -4768,11 +4792,19 @@
    "easyApply": false,
    "skills": [],
    "summary": "<div class=\"content-intro\"><p data-start=\"272\" data-end=\"669\">Glance AI is an AI commerce platform shaping the next wave of e-commerce with inspiration-led shopping, less about searching for what you want and more about discovering who you could be. Operating in 140 countries, Glance AI transforms every screen into a stage for instant, personal, and joyful discovery, where inspiration becomes something you can explore, feel, and shop in the moment.</p> We're looking for a UX Design Intern to work alongside our designers across the full surface area of the product.</p> <p class=\"font-claude-response-body…",
-   "bullets": [],
-   "roleLabel": null,
+   "bullets": [
+    "Design UI and visual layouts for shopping cards, brand stores, and TV displays",
+    "Help build and maintain design system components, patterns, and documentation",
+    "Work with visual, motion, and engineering teams from design to product ship"
+   ],
+   "roleLabel": "UX design",
    "degreeLevel": null,
    "degreeText": null,
-   "keySkills": [],
+   "keySkills": [
+    "ux design",
+    "visual design",
+    "design systems"
+   ],
    "stipendStatus": "unknown",
    "postedText": null,
    "postedAt": 1782218042000,
