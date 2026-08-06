@@ -6,6 +6,18 @@
   "description": "New engineering internships, listed within minutes of going live.",
   "items": [
     {
+      "id": "https://www.internradar.info/jobs/colgate-palmolive-git-trainee-contractual-4395013887",
+      "url": "https://www.internradar.info/jobs/colgate-palmolive-git-trainee-contractual-4395013887",
+      "title": "GIT Trainee (Contractual) — Colgate-Palmolive",
+      "content_text": "Company: Colgate-Palmolive · Location: Mumbai Metropolitan Region",
+      "date_published": "2026-08-06T16:52:06.593Z",
+      "authors": [
+        {
+          "name": "Colgate-Palmolive"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/citi-young-apprentice-c00-chennai-4449762238",
       "url": "https://www.internradar.info/jobs/citi-young-apprentice-c00-chennai-4449762238",
       "title": "Young Apprentice - C00 - Chennai — Citi",
@@ -590,18 +602,6 @@
       "authors": [
         {
           "name": "eBay"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/upgrad-international-intern-ai-engineer-4447602250",
-      "url": "https://www.internradar.info/jobs/upgrad-international-intern-ai-engineer-4447602250",
-      "title": "Intern- AI Engineer — upGrad International",
-      "content_text": "Company: upGrad International · Location: Mumbai, Maharashtra, India · Stipend: 30,000 / month · Duration: 3-6 months",
-      "date_published": "2026-08-02T15:07:27.370Z",
-      "authors": [
-        {
-          "name": "upGrad International"
         }
       ]
     }

@@ -6,7 +6,14 @@
   <atom:link href="https://www.internradar.info/feed.xml" rel="self" type="application/rss+xml"/>
   <description>New engineering internships, listed within minutes of going live.</description>
   <language>en-in</language>
-  <lastBuildDate>Thu, 06 Aug 2026 16:33:44 GMT</lastBuildDate>
+  <lastBuildDate>Thu, 06 Aug 2026 17:21:22 GMT</lastBuildDate>
+  <item>
+    <title>GIT Trainee (Contractual) — Colgate-Palmolive</title>
+    <link>https://www.internradar.info/jobs/colgate-palmolive-git-trainee-contractual-4395013887</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/colgate-palmolive-git-trainee-contractual-4395013887</guid>
+    <pubDate>Thu, 06 Aug 2026 16:52:06 GMT</pubDate>
+    <description>Company: Colgate-Palmolive · Location: Mumbai Metropolitan Region</description>
+  </item>
   <item>
     <title>Young Apprentice - C00 - Chennai — Citi</title>
     <link>https://www.internradar.info/jobs/citi-young-apprentice-c00-chennai-4449762238</link>
@@ -407,13 +414,6 @@
 • Participate in brainstorming sessions and contribute ideas for technology, algorithms, and products
 • Work with product and design teams to understand user requirements and deliver results
 • Use Java, Python, Scala, JavaScript; focus on OOP/OOD, distributed systems, cloud, and full stack</description>
-  </item>
-  <item>
-    <title>Intern- AI Engineer — upGrad International</title>
-    <link>https://www.internradar.info/jobs/upgrad-international-intern-ai-engineer-4447602250</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/upgrad-international-intern-ai-engineer-4447602250</guid>
-    <pubDate>Sun, 02 Aug 2026 15:07:27 GMT</pubDate>
-    <description>Company: upGrad International · Location: Mumbai, Maharashtra, India · Stipend: 30,000 / month · Duration: 3-6 months</description>
   </item>
 </channel>
 </rss>
