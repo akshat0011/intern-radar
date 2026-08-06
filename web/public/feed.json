@@ -6,6 +6,30 @@
   "description": "New engineering internships, listed within minutes of going live.",
   "items": [
     {
+      "id": "https://www.internradar.info/jobs/pfizer-graduate-apprentice-4450267489",
+      "url": "https://www.internradar.info/jobs/pfizer-graduate-apprentice-4450267489",
+      "title": "Graduate Apprentice — Pfizer",
+      "content_text": "Company: Pfizer · Location: Visakhapatnam, Andhra Pradesh, India",
+      "date_published": "2026-08-06T14:51:03.317Z",
+      "authors": [
+        {
+          "name": "Pfizer"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/upgrad-gsp-walk-in-drive-partner-acquisition-intern-upgrad-gsp-4449747667",
+      "url": "https://www.internradar.info/jobs/upgrad-gsp-walk-in-drive-partner-acquisition-intern-upgrad-gsp-4449747667",
+      "title": "Walk-In Drive | Partner Acquisition Intern | upGrad GSP — upGrad GSP",
+      "content_text": "Company: upGrad GSP · Location: Noida, Uttar Pradesh, India · Stipend: ₹12,000 / month · Duration: 3 months",
+      "date_published": "2026-08-06T14:34:08.510Z",
+      "authors": [
+        {
+          "name": "upGrad GSP"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/upgrad-gsp-intern-partner-acquisition-upgrad-global-study-partners-gsp-4449755208",
       "url": "https://www.internradar.info/jobs/upgrad-gsp-intern-partner-acquisition-upgrad-global-study-partners-gsp-4449755208",
       "title": "Intern – Partner Acquisition | upGrad | Global Study Partners (GSP) — upGrad GSP",
@@ -578,30 +602,6 @@
       "authors": [
         {
           "name": "American Express"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/multiplier-ai-full-stack-developer-intern-4447525184",
-      "url": "https://www.internradar.info/jobs/multiplier-ai-full-stack-developer-intern-4447525184",
-      "title": "Full Stack Developer Intern — Multiplier AI",
-      "content_text": "Company: Multiplier AI · Location: Noida, Uttar Pradesh, India · Duration: 0–1 years\n• Develop responsive web apps using React.js, JavaScript, HTML5, CSS3, and Tailwind CSS\n• Build secure RESTful APIs with Node.js and Express.js, implementing authentication and RBAC\n• Design and optimize databases using MongoDB, PostgreSQL, and MySQL\n• Assist with AI/ML integrations using Python and collaborate in an Agile environment",
-      "date_published": "2026-07-31T12:47:32.689Z",
-      "authors": [
-        {
-          "name": "Multiplier AI"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/whatfix-product-designer-intern-4447512297",
-      "url": "https://www.internradar.info/jobs/whatfix-product-designer-intern-4447512297",
-      "title": "Product Designer Intern — Whatfix",
-      "content_text": "Company: Whatfix · Location: Bengaluru, Karnataka, India · Duration: 3 to 6 months\n• Work on an AI platform that helps users adopt enterprise applications and AI tools\n• Contribute to products like Digital Adoption, Product Analytics, and Mirror\n• Help build AI-first products such as Seek and Mirror 2.0",
-      "date_published": "2026-07-31T12:44:51.837Z",
-      "authors": [
-        {
-          "name": "Whatfix"
         }
       ]
     }

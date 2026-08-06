@@ -6,7 +6,21 @@
   <atom:link href="https://www.internradar.info/feed.xml" rel="self" type="application/rss+xml"/>
   <description>New engineering internships, listed within minutes of going live.</description>
   <language>en-in</language>
-  <lastBuildDate>Thu, 06 Aug 2026 14:34:34 GMT</lastBuildDate>
+  <lastBuildDate>Thu, 06 Aug 2026 15:04:00 GMT</lastBuildDate>
+  <item>
+    <title>Graduate Apprentice — Pfizer</title>
+    <link>https://www.internradar.info/jobs/pfizer-graduate-apprentice-4450267489</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/pfizer-graduate-apprentice-4450267489</guid>
+    <pubDate>Thu, 06 Aug 2026 14:51:03 GMT</pubDate>
+    <description>Company: Pfizer · Location: Visakhapatnam, Andhra Pradesh, India</description>
+  </item>
+  <item>
+    <title>Walk-In Drive | Partner Acquisition Intern | upGrad GSP — upGrad GSP</title>
+    <link>https://www.internradar.info/jobs/upgrad-gsp-walk-in-drive-partner-acquisition-intern-upgrad-gsp-4449747667</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/upgrad-gsp-walk-in-drive-partner-acquisition-intern-upgrad-gsp-4449747667</guid>
+    <pubDate>Thu, 06 Aug 2026 14:34:08 GMT</pubDate>
+    <description>Company: upGrad GSP · Location: Noida, Uttar Pradesh, India · Stipend: ₹12,000 / month · Duration: 3 months</description>
+  </item>
   <item>
     <title>Intern – Partner Acquisition | upGrad | Global Study Partners (GSP) — upGrad GSP</title>
     <link>https://www.internradar.info/jobs/upgrad-gsp-intern-partner-acquisition-upgrad-global-study-partners-gsp-4449755208</link>
@@ -412,27 +426,6 @@
     <guid isPermaLink="true">https://www.internradar.info/jobs/american-express-intern-software-development-engineering-ai-ml-nlp-and-cybersecurity-gr-4447414103</guid>
     <pubDate>Fri, 31 Jul 2026 23:46:43 GMT</pubDate>
     <description>Company: American Express · Location: Gurugram, Haryana, India (Hybrid)</description>
-  </item>
-  <item>
-    <title>Full Stack Developer Intern — Multiplier AI</title>
-    <link>https://www.internradar.info/jobs/multiplier-ai-full-stack-developer-intern-4447525184</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/multiplier-ai-full-stack-developer-intern-4447525184</guid>
-    <pubDate>Fri, 31 Jul 2026 12:47:32 GMT</pubDate>
-    <description>Company: Multiplier AI · Location: Noida, Uttar Pradesh, India · Duration: 0–1 years
-• Develop responsive web apps using React.js, JavaScript, HTML5, CSS3, and Tailwind CSS
-• Build secure RESTful APIs with Node.js and Express.js, implementing authentication and RBAC
-• Design and optimize databases using MongoDB, PostgreSQL, and MySQL
-• Assist with AI/ML integrations using Python and collaborate in an Agile environment</description>
-  </item>
-  <item>
-    <title>Product Designer Intern — Whatfix</title>
-    <link>https://www.internradar.info/jobs/whatfix-product-designer-intern-4447512297</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/whatfix-product-designer-intern-4447512297</guid>
-    <pubDate>Fri, 31 Jul 2026 12:44:51 GMT</pubDate>
-    <description>Company: Whatfix · Location: Bengaluru, Karnataka, India · Duration: 3 to 6 months
-• Work on an AI platform that helps users adopt enterprise applications and AI tools
-• Contribute to products like Digital Adoption, Product Analytics, and Mirror
-• Help build AI-first products such as Seek and Mirror 2.0</description>
   </item>
 </channel>
 </rss>
