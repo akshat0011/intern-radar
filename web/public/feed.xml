@@ -6,7 +6,14 @@
   <atom:link href="https://www.internradar.info/feed.xml" rel="self" type="application/rss+xml"/>
   <description>New engineering internships, listed within minutes of going live.</description>
   <language>en-in</language>
-  <lastBuildDate>Fri, 07 Aug 2026 09:33:32 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 07 Aug 2026 10:04:25 GMT</lastBuildDate>
+  <item>
+    <title>E Commerce Ads Intern — unbundl</title>
+    <link>https://www.internradar.info/jobs/unbundl-e-commerce-ads-intern-4450077059</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/unbundl-e-commerce-ads-intern-4450077059</guid>
+    <pubDate>Fri, 07 Aug 2026 09:56:47 GMT</pubDate>
+    <description>Company: unbundl · Location: New Delhi, Delhi, India · Duration: 6 months</description>
+  </item>
   <item>
     <title>Intern - SAP MM — Seagate Technology</title>
     <link>https://www.internradar.info/jobs/seagate-technology-intern-sap-mm-4450084755</link>
@@ -55,6 +62,13 @@
     <guid isPermaLink="true">https://www.internradar.info/jobs/sony-research-india-ai-research-intern-4448494663</guid>
     <pubDate>Fri, 07 Aug 2026 02:37:24 GMT</pubDate>
     <description>Company: Sony Research India · Location: Bengaluru, Karnataka, India · Stipend: 2,026</description>
+  </item>
+  <item>
+    <title>Apprentice — State Street</title>
+    <link>https://www.internradar.info/jobs/state-street-apprentice-ats-workday-statestreet-wd1-global-r-792595</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/state-street-apprentice-ats-workday-statestreet-wd1-global-r-792595</guid>
+    <pubDate>Fri, 07 Aug 2026 00:00:00 GMT</pubDate>
+    <description>Company: State Street · Location: HINJEWADI PUNE</description>
   </item>
   <item>
     <title>Young Apprentice - C00 - PUNE — Citi</title>
@@ -399,24 +413,6 @@
 • Design, develop and improve software utilizing various engineering methodologies
 • Ensure code scalability and maintainability using industry-aligned languages and tools
 • Collaborate with product managers and designers to define software requirements</description>
-  </item>
-  <item>
-    <title>Graduate Engineer Trainee-SAP — Piramal</title>
-    <link>https://www.internradar.info/jobs/piramal-graduate-engineer-trainee-sap-ats-workday-piramalpharma-wd102-piramal-external-careers-r00003522</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/piramal-graduate-engineer-trainee-sap-ats-workday-piramalpharma-wd102-piramal-external-careers-r00003522</guid>
-    <pubDate>Mon, 03 Aug 2026 00:00:00 GMT</pubDate>
-    <description>Company: Piramal · Location: Mumbai, MH</description>
-  </item>
-  <item>
-    <title>Software Engineer Intern — eBay</title>
-    <link>https://www.internradar.info/jobs/ebay-software-engineer-intern-4445854769</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/ebay-software-engineer-intern-4445854769</guid>
-    <pubDate>Sun, 02 Aug 2026 21:06:14 GMT</pubDate>
-    <description>Company: eBay · Location: Bengaluru, Karnataka, India · Duration: 0-3 years
-• Build robust, scalable software and improve code services and system architecture
-• Participate in brainstorming sessions and contribute ideas for technology, algorithms, and products
-• Work with product and design teams to understand user requirements and deliver results
-• Use Java, Python, Scala, JavaScript; focus on OOP/OOD, distributed systems, cloud, and full stack</description>
   </item>
 </channel>
 </rss>

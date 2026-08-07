@@ -1,7 +1,7 @@
 {
- "generatedAt": 1786095212739,
- "count": 134,
- "techCount": 134,
+ "generatedAt": 1786097065164,
+ "count": 136,
+ "techCount": 136,
  "otherCount": 0,
  "companies": [
   "ALLEN",
@@ -89,6 +89,7 @@
   "eBay",
   "eClerx",
   "ideaForge",
+  "unbundl",
   "upGrad International"
  ],
  "locations": [
@@ -102,6 +103,7 @@
   "Gurgaon, Haryana, India",
   "Gurugram, Haryana, India",
   "Gurugram, Haryana, India (Hybrid)",
+  "HINJEWADI PUNE",
   "Hyderabad, Telangana, India",
   "India",
   "India - Haryana - Gurgaon",
@@ -113,6 +115,7 @@
   "Mumbai, MH",
   "Mumbai, Maharashtra, India",
   "Navi Mumbai, Maharashtra, India",
+  "New Delhi, Delhi, India",
   "Noida, Uttar Pradesh",
   "Noida, Uttar Pradesh, India",
   "Pune City, Maharashtra, India",
@@ -120,6 +123,37 @@
   "Pune Maharashtra India"
  ],
  "jobs": [
+  {
+   "id": "4450077059",
+   "title": "E Commerce Ads Intern",
+   "company": "unbundl",
+   "matchedWatchlist": "unbundl",
+   "isTech": true,
+   "roleSource": "offline-uncertain",
+   "logo": "/logos/unbundl.jpg",
+   "location": "New Delhi, Delhi, India",
+   "workplaceType": "On-site",
+   "stipend": null,
+   "duration": "6 months",
+   "applicants": "1 applicant",
+   "easyApply": true,
+   "skills": [
+    "excel"
+   ],
+   "summary": "Unbundl, operating under Infinite Creations Pvt Ltd, is a leading digital marketing agency based in New Delhi, India. We are looking for a self-driven and enthusiastic E-Commerce Intern to support our marketplace performance initiatives. This is a fantastic opportunity to gain hands-on experience with top marketplaces such as Amazon, Flipkart, Swiggy Instamart, Zepto, and Blinkit, while contributing to real campaigns that drive sales and customer engagement. High performers may be offered a Pre-Placement Offer (PPO) at the end of the internship.",
+   "bullets": [],
+   "roleLabel": null,
+   "degreeLevel": null,
+   "degreeText": null,
+   "keySkills": [],
+   "stipendStatus": "unknown",
+   "postedText": "6 minutes ago",
+   "postedAt": 1786096607046,
+   "firstSeenAt": 1786096967056,
+   "url": "https://www.linkedin.com/jobs/view/4450077059/",
+   "applyUrl": "https://www.linkedin.com/jobs/view/4450077059/",
+   "description": null
+  },
   {
    "id": "4450084755",
    "title": "Intern - SAP MM",
@@ -344,6 +378,35 @@
    "firstSeenAt": 1786071744016,
    "url": "https://www.linkedin.com/jobs/view/4448494663/",
    "applyUrl": "https://www.linkedin.com/jobs/view/4448494663/",
+   "description": null
+  },
+  {
+   "id": "ats:workday:statestreet:wd1:Global:R-792595",
+   "title": "Apprentice",
+   "company": "State Street",
+   "matchedWatchlist": "State Street",
+   "isTech": true,
+   "roleSource": "offline-uncertain",
+   "logo": "/logos/state-street.jpg",
+   "location": "HINJEWADI PUNE",
+   "workplaceType": null,
+   "stipend": null,
+   "duration": null,
+   "applicants": null,
+   "easyApply": false,
+   "skills": [],
+   "summary": "Grow your career at State Street From technology and product innovation to corporate responsibility and community development, we’re making our mark on the financial services industry. We’re a global company with diverse people and varied experiences with a network of over 35,000 employees spanning more than 100 markets. For us, success comes from the impact our employees have – on our clients, our communities and each other.",
+   "bullets": [],
+   "roleLabel": null,
+   "degreeLevel": null,
+   "degreeText": null,
+   "keySkills": [],
+   "stipendStatus": "unknown",
+   "postedText": null,
+   "postedAt": 1786060800000,
+   "firstSeenAt": 1786096822937,
+   "url": "https://statestreet.wd1.myworkdayjobs.com/en-US/Global/job/HINJEWADI-PUNE/Apprentice_R-792595-1",
+   "applyUrl": "https://statestreet.wd1.myworkdayjobs.com/en-US/Global/job/HINJEWADI-PUNE/Apprentice_R-792595-1",
    "description": null
   },
   {

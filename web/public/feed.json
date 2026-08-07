@@ -6,6 +6,18 @@
   "description": "New engineering internships, listed within minutes of going live.",
   "items": [
     {
+      "id": "https://www.internradar.info/jobs/unbundl-e-commerce-ads-intern-4450077059",
+      "url": "https://www.internradar.info/jobs/unbundl-e-commerce-ads-intern-4450077059",
+      "title": "E Commerce Ads Intern — unbundl",
+      "content_text": "Company: unbundl · Location: New Delhi, Delhi, India · Duration: 6 months",
+      "date_published": "2026-08-07T09:56:47.046Z",
+      "authors": [
+        {
+          "name": "unbundl"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/seagate-technology-intern-sap-mm-4450084755",
       "url": "https://www.internradar.info/jobs/seagate-technology-intern-sap-mm-4450084755",
       "title": "Intern - SAP MM — Seagate Technology",
@@ -86,6 +98,18 @@
       "authors": [
         {
           "name": "Sony Research India"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/state-street-apprentice-ats-workday-statestreet-wd1-global-r-792595",
+      "url": "https://www.internradar.info/jobs/state-street-apprentice-ats-workday-statestreet-wd1-global-r-792595",
+      "title": "Apprentice — State Street",
+      "content_text": "Company: State Street · Location: HINJEWADI PUNE",
+      "date_published": "2026-08-07T00:00:00.000Z",
+      "authors": [
+        {
+          "name": "State Street"
         }
       ]
     },
@@ -578,30 +602,6 @@
       "authors": [
         {
           "name": "Barclays"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/piramal-graduate-engineer-trainee-sap-ats-workday-piramalpharma-wd102-piramal-external-careers-r00003522",
-      "url": "https://www.internradar.info/jobs/piramal-graduate-engineer-trainee-sap-ats-workday-piramalpharma-wd102-piramal-external-careers-r00003522",
-      "title": "Graduate Engineer Trainee-SAP — Piramal",
-      "content_text": "Company: Piramal · Location: Mumbai, MH",
-      "date_published": "2026-08-03T00:00:00.000Z",
-      "authors": [
-        {
-          "name": "Piramal"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/ebay-software-engineer-intern-4445854769",
-      "url": "https://www.internradar.info/jobs/ebay-software-engineer-intern-4445854769",
-      "title": "Software Engineer Intern — eBay",
-      "content_text": "Company: eBay · Location: Bengaluru, Karnataka, India · Duration: 0-3 years\n• Build robust, scalable software and improve code services and system architecture\n• Participate in brainstorming sessions and contribute ideas for technology, algorithms, and products\n• Work with product and design teams to understand user requirements and deliver results\n• Use Java, Python, Scala, JavaScript; focus on OOP/OOD, distributed systems, cloud, and full stack",
-      "date_published": "2026-08-02T21:06:14.357Z",
-      "authors": [
-        {
-          "name": "eBay"
         }
       ]
     }
