@@ -6,6 +6,30 @@
   "description": "New engineering internships, listed within minutes of going live.",
   "items": [
     {
+      "id": "https://www.internradar.info/jobs/honeywell-technologies-intern-bachelor-s-4450318441",
+      "url": "https://www.internradar.info/jobs/honeywell-technologies-intern-bachelor-s-4450318441",
+      "title": "Intern (Bachelor's) — Honeywell Technologies",
+      "content_text": "Company: Honeywell Technologies · Location: Pune Division, Maharashtra, India",
+      "date_published": "2026-08-07T11:50:49.900Z",
+      "authors": [
+        {
+          "name": "Honeywell Technologies"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/upgrad-gsp-intern-4450308876",
+      "url": "https://www.internradar.info/jobs/upgrad-gsp-intern-4450308876",
+      "title": "Intern — upGrad GSP",
+      "content_text": "Company: upGrad GSP · Location: Noida, Uttar Pradesh, India · Stipend: ₹12,000 / month · Duration: 3 months",
+      "date_published": "2026-08-07T11:49:54.781Z",
+      "authors": [
+        {
+          "name": "upGrad GSP"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/harman-india-certification-intern-4448767325",
       "url": "https://www.internradar.info/jobs/harman-india-certification-intern-4448767325",
       "title": "Certification Intern — HARMAN India",
@@ -578,30 +602,6 @@
       "authors": [
         {
           "name": "Emerson"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/hdfc-bank-limited-trainee-analyst-4445890480",
-      "url": "https://www.internradar.info/jobs/hdfc-bank-limited-trainee-analyst-4445890480",
-      "title": "Trainee Analyst — HDFC Bank Limited",
-      "content_text": "Company: HDFC Bank Limited · Location: Mumbai, Maharashtra, India\n• Support data extraction, cleaning, and preparation for reporting and dashboards\n• Maintain historical datasets and perform basic trend analysis\n• Use Excel, SQL, and Python to support automation and business intelligence initiatives",
-      "date_published": "2026-08-03T10:33:39.742Z",
-      "authors": [
-        {
-          "name": "HDFC Bank Limited"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/eli-lilly-and-company-intern-full-stack-engineer-4448149499",
-      "url": "https://www.internradar.info/jobs/eli-lilly-and-company-intern-full-stack-engineer-4448149499",
-      "title": "Intern - Full Stack Engineer — Eli Lilly and Company",
-      "content_text": "Company: Eli Lilly and Company · Location: Bengaluru East, Karnataka, India\n• Deliver development tasks for backend services and frontend UI features\n• Write clean, readable code following team standards and review feedback\n• Use foundational engineering tools like Git, pull requests, and issue trackers\n• Participate in agile ceremonies and perform unit/integration testing",
-      "date_published": "2026-08-03T08:42:32.871Z",
-      "authors": [
-        {
-          "name": "Eli Lilly and Company"
         }
       ]
     }
