@@ -6,7 +6,21 @@
   <atom:link href="https://www.internradar.info/feed.xml" rel="self" type="application/rss+xml"/>
   <description>New engineering internships, listed within minutes of going live.</description>
   <language>en-in</language>
-  <lastBuildDate>Fri, 07 Aug 2026 10:46:54 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 07 Aug 2026 11:03:02 GMT</lastBuildDate>
+  <item>
+    <title>Certification Intern — HARMAN India</title>
+    <link>https://www.internradar.info/jobs/harman-india-certification-intern-4448767325</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/harman-india-certification-intern-4448767325</guid>
+    <pubDate>Fri, 07 Aug 2026 10:53:26 GMT</pubDate>
+    <description>Company: HARMAN India · Location: Bengaluru, Karnataka, India</description>
+  </item>
+  <item>
+    <title>Trainee Executive - Production Microbial — Lupin</title>
+    <link>https://www.internradar.info/jobs/lupin-trainee-executive-production-microbial-4448768318</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/lupin-trainee-executive-production-microbial-4448768318</guid>
+    <pubDate>Fri, 07 Aug 2026 10:49:31 GMT</pubDate>
+    <description>Company: Lupin · Location: Pune/Pimpri-Chinchwad Area · Duration: 5 to 8 years</description>
+  </item>
   <item>
     <title>E Commerce Ads Intern — unbundl</title>
     <link>https://www.internradar.info/jobs/unbundl-e-commerce-ads-intern-4450077059</link>
@@ -392,27 +406,6 @@
 • Write clean, readable code following team standards and review feedback
 • Use foundational engineering tools like Git, pull requests, and issue trackers
 • Participate in agile ceremonies and perform unit/integration testing</description>
-  </item>
-  <item>
-    <title>Calibration Intern — Pixxel</title>
-    <link>https://www.internradar.info/jobs/pixxel-calibration-intern-4448136135</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/pixxel-calibration-intern-4448136135</guid>
-    <pubDate>Mon, 03 Aug 2026 01:59:19 GMT</pubDate>
-    <description>Company: Pixxel · Location: Bengaluru, Karnataka, India · Duration: 6 months
-• Develop and implement algorithms to calibrate camera systems for optimal image quality
-• Participate in pre-flight calibration including geometrical, spatial, and radiometric calibration
-• Develop and deploy software for imaging system calibration and testing
-• Analyze volume data to guide engineering decisions</description>
-  </item>
-  <item>
-    <title>2027 Technology Developer Summer Internship Programme India — Barclays</title>
-    <link>https://www.internradar.info/jobs/barclays-2027-technology-developer-summer-internship-programme-india-ats-workday-barclays-wd3-external-career-site-barclays-jr-0000124913</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/barclays-2027-technology-developer-summer-internship-programme-india-ats-workday-barclays-wd3-external-career-site-barclays-jr-0000124913</guid>
-    <pubDate>Mon, 03 Aug 2026 00:00:00 GMT</pubDate>
-    <description>Company: Barclays
-• Design, develop and improve software utilizing various engineering methodologies
-• Ensure code scalability and maintainability using industry-aligned languages and tools
-• Collaborate with product managers and designers to define software requirements</description>
   </item>
 </channel>
 </rss>

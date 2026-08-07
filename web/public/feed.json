@@ -6,6 +6,30 @@
   "description": "New engineering internships, listed within minutes of going live.",
   "items": [
     {
+      "id": "https://www.internradar.info/jobs/harman-india-certification-intern-4448767325",
+      "url": "https://www.internradar.info/jobs/harman-india-certification-intern-4448767325",
+      "title": "Certification Intern — HARMAN India",
+      "content_text": "Company: HARMAN India · Location: Bengaluru, Karnataka, India",
+      "date_published": "2026-08-07T10:53:26.727Z",
+      "authors": [
+        {
+          "name": "HARMAN India"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/lupin-trainee-executive-production-microbial-4448768318",
+      "url": "https://www.internradar.info/jobs/lupin-trainee-executive-production-microbial-4448768318",
+      "title": "Trainee Executive - Production Microbial — Lupin",
+      "content_text": "Company: Lupin · Location: Pune/Pimpri-Chinchwad Area · Duration: 5 to 8 years",
+      "date_published": "2026-08-07T10:49:31.559Z",
+      "authors": [
+        {
+          "name": "Lupin"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/unbundl-e-commerce-ads-intern-4450077059",
       "url": "https://www.internradar.info/jobs/unbundl-e-commerce-ads-intern-4450077059",
       "title": "E Commerce Ads Intern — unbundl",
@@ -578,30 +602,6 @@
       "authors": [
         {
           "name": "Eli Lilly and Company"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/pixxel-calibration-intern-4448136135",
-      "url": "https://www.internradar.info/jobs/pixxel-calibration-intern-4448136135",
-      "title": "Calibration Intern — Pixxel",
-      "content_text": "Company: Pixxel · Location: Bengaluru, Karnataka, India · Duration: 6 months\n• Develop and implement algorithms to calibrate camera systems for optimal image quality\n• Participate in pre-flight calibration including geometrical, spatial, and radiometric calibration\n• Develop and deploy software for imaging system calibration and testing\n• Analyze volume data to guide engineering decisions",
-      "date_published": "2026-08-03T01:59:19.699Z",
-      "authors": [
-        {
-          "name": "Pixxel"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/barclays-2027-technology-developer-summer-internship-programme-india-ats-workday-barclays-wd3-external-career-site-barclays-jr-0000124913",
-      "url": "https://www.internradar.info/jobs/barclays-2027-technology-developer-summer-internship-programme-india-ats-workday-barclays-wd3-external-career-site-barclays-jr-0000124913",
-      "title": "2027 Technology Developer Summer Internship Programme India — Barclays",
-      "content_text": "Company: Barclays\n• Design, develop and improve software utilizing various engineering methodologies\n• Ensure code scalability and maintainability using industry-aligned languages and tools\n• Collaborate with product managers and designers to define software requirements",
-      "date_published": "2026-08-03T00:00:00.000Z",
-      "authors": [
-        {
-          "name": "Barclays"
         }
       ]
     }
