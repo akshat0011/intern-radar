@@ -6,7 +6,14 @@
   <atom:link href="https://www.internradar.info/feed.xml" rel="self" type="application/rss+xml"/>
   <description>New engineering internships, listed within minutes of going live.</description>
   <language>en-in</language>
-  <lastBuildDate>Fri, 07 Aug 2026 03:03:26 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 07 Aug 2026 03:32:42 GMT</lastBuildDate>
+  <item>
+    <title>Intern - SAP PP — Seagate Technology</title>
+    <link>https://www.internradar.info/jobs/seagate-technology-intern-sap-pp-4450040519</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/seagate-technology-intern-sap-pp-4450040519</guid>
+    <pubDate>Fri, 07 Aug 2026 03:31:40 GMT</pubDate>
+    <description>Company: Seagate Technology · Location: Pune Division, Maharashtra, India</description>
+  </item>
   <item>
     <title>AI Research Intern — Sony Research India</title>
     <link>https://www.internradar.info/jobs/sony-research-india-ai-research-intern-4448494663</link>
@@ -392,16 +399,6 @@
 • Design and develop engineering productivity tools based on user requirements
 • Support deployment and provide training and demos to project teams
 • Automate manual engineering tasks to improve accuracy and efficiency</description>
-  </item>
-  <item>
-    <title>Trainee Analyst — HDFC Bank Limited</title>
-    <link>https://www.internradar.info/jobs/hdfc-bank-limited-trainee-analyst-4445890480</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/hdfc-bank-limited-trainee-analyst-4445890480</guid>
-    <pubDate>Mon, 03 Aug 2026 10:33:39 GMT</pubDate>
-    <description>Company: HDFC Bank Limited · Location: Mumbai, Maharashtra, India
-• Support data extraction, cleaning, and preparation for reporting and dashboards
-• Maintain historical datasets and perform basic trend analysis
-• Use Excel, SQL, and Python to support automation and business intelligence initiatives</description>
   </item>
 </channel>
 </rss>

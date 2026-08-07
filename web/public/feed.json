@@ -6,6 +6,18 @@
   "description": "New engineering internships, listed within minutes of going live.",
   "items": [
     {
+      "id": "https://www.internradar.info/jobs/seagate-technology-intern-sap-pp-4450040519",
+      "url": "https://www.internradar.info/jobs/seagate-technology-intern-sap-pp-4450040519",
+      "title": "Intern - SAP PP — Seagate Technology",
+      "content_text": "Company: Seagate Technology · Location: Pune Division, Maharashtra, India",
+      "date_published": "2026-08-07T03:31:40.071Z",
+      "authors": [
+        {
+          "name": "Seagate Technology"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/sony-research-india-ai-research-intern-4448494663",
       "url": "https://www.internradar.info/jobs/sony-research-india-ai-research-intern-4448494663",
       "title": "AI Research Intern — Sony Research India",
@@ -590,18 +602,6 @@
       "authors": [
         {
           "name": "Emerson"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/hdfc-bank-limited-trainee-analyst-4445890480",
-      "url": "https://www.internradar.info/jobs/hdfc-bank-limited-trainee-analyst-4445890480",
-      "title": "Trainee Analyst — HDFC Bank Limited",
-      "content_text": "Company: HDFC Bank Limited · Location: Mumbai, Maharashtra, India\n• Support data extraction, cleaning, and preparation for reporting and dashboards\n• Maintain historical datasets and perform basic trend analysis\n• Use Excel, SQL, and Python to support automation and business intelligence initiatives",
-      "date_published": "2026-08-03T10:33:39.742Z",
-      "authors": [
-        {
-          "name": "HDFC Bank Limited"
         }
       ]
     }
