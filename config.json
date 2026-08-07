@@ -268,12 +268,6 @@
       "name": "CashFlo"
     },
     {
-      "name": "BrightCHAMPS",
-      "aliases": [
-        "Bright CHAMPS"
-      ]
-    },
-    {
       "name": "Sanas",
       "aliases": [
         "Sanas AI"
@@ -284,9 +278,6 @@
       "aliases": [
         "Greedy Game"
       ]
-    },
-    {
-      "name": "Uplers"
     },
     {
       "name": "InfiVR",
@@ -305,6 +296,160 @@
       "name": "International Council on Clean Transportation",
       "aliases": [
         "ICCT"
+      ]
+    },
+    {
+      "name": "D Square Consulting Services Pvt Ltd",
+      "aliases": [
+        "D Square Consulting Services",
+        "DSquare",
+        "D Square Analytix"
+      ]
+    },
+    {
+      "name": "Subspace",
+      "aliases": [
+        "Grow90",
+        "Subspace Money"
+      ]
+    },
+    {
+      "name": "Lexsi Labs",
+      "aliases": [
+        "Lexsi.ai",
+        "AryaXAI",
+        "AryaXAI Alignment Labs"
+      ]
+    },
+    {
+      "name": "TurboHire",
+      "aliases": [
+        "TurboHire Technologies",
+        "Turbo Hire Technologies Pte Ltd"
+      ]
+    },
+    {
+      "name": "Nuvama Wealth",
+      "aliases": [
+        "Nuvama Wealth Management",
+        "Nuvama Private",
+        "Nuvama Wealth and Investment"
+      ]
+    },
+    {
+      "name": "ALLEN Digital",
+      "aliases": [
+        "ALLEN Career Institute",
+        "ALLEN",
+        "Allen Digital Learning"
+      ]
+    },
+    {
+      "name": "SolarSquare",
+      "aliases": [
+        "SolarSquare Energy",
+        "SolarSquare Energy Private Limited"
+      ]
+    },
+    {
+      "name": "Bristlecone",
+      "aliases": [
+        "Bristlecone India Limited",
+        "Mahindra Bristlecone",
+        "BristleconeLabs.ai"
+      ]
+    },
+    {
+      "name": "DigiPlus IT",
+      "aliases": [
+        "DigiPlus",
+        "digiplus.co.in"
+      ]
+    },
+    {
+      "name": "Snackible",
+      "aliases": [
+        "LightSaber Food Ventures",
+        "LightSaber Food Ventures Pvt Ltd"
+      ]
+    },
+    {
+      "name": "tech.at.core",
+      "aliases": [
+        "techatcore",
+        "tech at core",
+        "techatcore.com"
+      ]
+    },
+    {
+      "name": "FynTune Solution Private Limited",
+      "aliases": [
+        "FynTune",
+        "Fyntune Solutions",
+        "fyntune.com"
+      ]
+    },
+    {
+      "name": "WATRANA TRACTION PRIVATE LIMITED",
+      "aliases": [
+        "Watrana",
+        "Watrana Traction Company",
+        "watrana.com"
+      ]
+    },
+    {
+      "name": "ARGMAC",
+      "aliases": [
+        "Argmac Luxury",
+        "Grinder Inc (IndiaMART seller name)",
+        "argmac.com"
+      ]
+    },
+    {
+      "name": "HBeonLabs Technologies Private Limited",
+      "aliases": [
+        "Hbeonlabs",
+        "HBeon Labs",
+        "Hbeonlabs Technologies Pvt Ltd"
+      ]
+    },
+    {
+      "name": "METNMAT Research & Innovations",
+      "aliases": [
+        "Metnmat",
+        "Metnmat Innovations Private Limited",
+        "Metnmat Research and Development"
+      ]
+    },
+    {
+      "name": "LUXASIA",
+      "aliases": [
+        "LUXASIA Group",
+        "L Beauty",
+        "Luxasia Cosmetics India Private Limited"
+      ]
+    },
+    {
+      "name": "Intouch Quality Services Private Limited",
+      "aliases": [
+        "Intouch Group",
+        "Intouch Quality Services Pvt Ltd",
+        "intouchgroup.in"
+      ]
+    },
+    {
+      "name": "CAST",
+      "aliases": [
+        "CAST Software",
+        "CAST Software India Private Limited",
+        "CAST Highlight"
+      ]
+    },
+    {
+      "name": "Adfluence Hub",
+      "aliases": [
+        "AdfluenceHub",
+        "adfluencehub"
       ]
     },
     {
