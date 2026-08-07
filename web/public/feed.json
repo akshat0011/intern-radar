@@ -222,18 +222,6 @@
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/state-street-apprentice-ats-workday-statestreet-wd1-global-r-792595",
-      "url": "https://www.internradar.info/jobs/state-street-apprentice-ats-workday-statestreet-wd1-global-r-792595",
-      "title": "Apprentice — State Street",
-      "content_text": "Company: State Street · Location: HINJEWADI PUNE",
-      "date_published": "2026-08-07T00:00:00.000Z",
-      "authors": [
-        {
-          "name": "State Street"
-        }
-      ]
-    },
-    {
       "id": "https://www.internradar.info/jobs/citi-young-apprentice-c00-pune-ats-workday-citi-wd5-2-26984617",
       "url": "https://www.internradar.info/jobs/citi-young-apprentice-c00-pune-ats-workday-citi-wd5-2-26984617",
       "title": "Young Apprentice - C00 - PUNE — Citi",
@@ -242,6 +230,18 @@
       "authors": [
         {
           "name": "Citi"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/state-street-apprentice-ats-workday-statestreet-wd1-global-r-792595",
+      "url": "https://www.internradar.info/jobs/state-street-apprentice-ats-workday-statestreet-wd1-global-r-792595",
+      "title": "Apprentice — State Street",
+      "content_text": "Company: State Street · Location: HINJEWADI PUNE",
+      "date_published": "2026-08-07T00:00:00.000Z",
+      "authors": [
+        {
+          "name": "State Street"
         }
       ]
     },
