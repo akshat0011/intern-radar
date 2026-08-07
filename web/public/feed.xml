@@ -6,7 +6,21 @@
   <atom:link href="https://www.internradar.info/feed.xml" rel="self" type="application/rss+xml"/>
   <description>New engineering internships, listed within minutes of going live.</description>
   <language>en-in</language>
-  <lastBuildDate>Fri, 07 Aug 2026 05:38:02 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 07 Aug 2026 06:03:10 GMT</lastBuildDate>
+  <item>
+    <title>Trainee - TSD — Piramal Pharma Ltd</title>
+    <link>https://www.internradar.info/jobs/piramal-pharma-ltd-trainee-tsd-4448709984</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/piramal-pharma-ltd-trainee-tsd-4448709984</guid>
+    <pubDate>Fri, 07 Aug 2026 05:52:52 GMT</pubDate>
+    <description>Company: Piramal Pharma Ltd · Location: Thiruvottriyur, Tamil Nadu, India</description>
+  </item>
+  <item>
+    <title>Motion and Graphics Designer Intern — D Square Consulting Services Pvt Ltd</title>
+    <link>https://www.internradar.info/jobs/d-square-consulting-services-pvt-ltd-motion-and-graphics-designer-intern-4448729282</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/d-square-consulting-services-pvt-ltd-motion-and-graphics-designer-intern-4448729282</guid>
+    <pubDate>Fri, 07 Aug 2026 05:21:13 GMT</pubDate>
+    <description>Company: D Square Consulting Services Pvt Ltd · Location: Greater Bengaluru Area · Stipend: ₹10,000 / total · Duration: 0–6 months</description>
+  </item>
   <item>
     <title>UX Research Intern — Times Internet</title>
     <link>https://www.internradar.info/jobs/times-internet-ux-research-intern-4448705984</link>
@@ -372,26 +386,6 @@
 • Conduct research, logic design, RTL coding, and simulation for SoC development
 • Develop AI software, open-source libraries, and integrate software across the stack
 • Hybrid work model based out of Bangalore, India</description>
-  </item>
-  <item>
-    <title>Fullstack Developer- Internship — GreedyGame</title>
-    <link>https://www.internradar.info/jobs/greedygame-fullstack-developer-internship-4447970697</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/greedygame-fullstack-developer-internship-4447970697</guid>
-    <pubDate>Mon, 03 Aug 2026 13:19:19 GMT</pubDate>
-    <description>Company: GreedyGame · Location: Bengaluru, Karnataka, India · Duration: 0-1 years
-• Build backend services integrating Google Ad Manager and networks
-• Develop React dashboards for publishers and internal workflows
-• Work with Go, PostgreSQL, MongoDB, and large datasets</description>
-  </item>
-  <item>
-    <title>Research Sciences INTERN — Microsoft</title>
-    <link>https://www.internradar.info/jobs/microsoft-research-sciences-intern-ats-microsoft-india-1970393556638637</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/microsoft-research-sciences-intern-ats-microsoft-india-1970393556638637</guid>
-    <pubDate>Mon, 03 Aug 2026 11:15:20 GMT</pubDate>
-    <description>Company: Microsoft · Location: India, Karnataka, Bangalore
-• Analyze and improve performance of advanced algorithms on large-scale datasets
-• Implement prototypes of scalable systems in AI and machine learning applications
-• Paid internship based in India with mentorship from researchers</description>
   </item>
 </channel>
 </rss>

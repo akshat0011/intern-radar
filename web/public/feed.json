@@ -6,6 +6,30 @@
   "description": "New engineering internships, listed within minutes of going live.",
   "items": [
     {
+      "id": "https://www.internradar.info/jobs/piramal-pharma-ltd-trainee-tsd-4448709984",
+      "url": "https://www.internradar.info/jobs/piramal-pharma-ltd-trainee-tsd-4448709984",
+      "title": "Trainee - TSD — Piramal Pharma Ltd",
+      "content_text": "Company: Piramal Pharma Ltd · Location: Thiruvottriyur, Tamil Nadu, India",
+      "date_published": "2026-08-07T05:52:52.240Z",
+      "authors": [
+        {
+          "name": "Piramal Pharma Ltd"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/d-square-consulting-services-pvt-ltd-motion-and-graphics-designer-intern-4448729282",
+      "url": "https://www.internradar.info/jobs/d-square-consulting-services-pvt-ltd-motion-and-graphics-designer-intern-4448729282",
+      "title": "Motion and Graphics Designer Intern — D Square Consulting Services Pvt Ltd",
+      "content_text": "Company: D Square Consulting Services Pvt Ltd · Location: Greater Bengaluru Area · Stipend: ₹10,000 / total · Duration: 0–6 months",
+      "date_published": "2026-08-07T05:21:13.619Z",
+      "authors": [
+        {
+          "name": "D Square Consulting Services Pvt Ltd"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/times-internet-ux-research-intern-4448705984",
       "url": "https://www.internradar.info/jobs/times-internet-ux-research-intern-4448705984",
       "title": "UX Research Intern — Times Internet",
@@ -578,30 +602,6 @@
       "authors": [
         {
           "name": "Intel"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/greedygame-fullstack-developer-internship-4447970697",
-      "url": "https://www.internradar.info/jobs/greedygame-fullstack-developer-internship-4447970697",
-      "title": "Fullstack Developer- Internship — GreedyGame",
-      "content_text": "Company: GreedyGame · Location: Bengaluru, Karnataka, India · Duration: 0-1 years\n• Build backend services integrating Google Ad Manager and networks\n• Develop React dashboards for publishers and internal workflows\n• Work with Go, PostgreSQL, MongoDB, and large datasets",
-      "date_published": "2026-08-03T13:19:19.375Z",
-      "authors": [
-        {
-          "name": "GreedyGame"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/microsoft-research-sciences-intern-ats-microsoft-india-1970393556638637",
-      "url": "https://www.internradar.info/jobs/microsoft-research-sciences-intern-ats-microsoft-india-1970393556638637",
-      "title": "Research Sciences INTERN — Microsoft",
-      "content_text": "Company: Microsoft · Location: India, Karnataka, Bangalore\n• Analyze and improve performance of advanced algorithms on large-scale datasets\n• Implement prototypes of scalable systems in AI and machine learning applications\n• Paid internship based in India with mentorship from researchers",
-      "date_published": "2026-08-03T11:15:20.000Z",
-      "authors": [
-        {
-          "name": "Microsoft"
         }
       ]
     }
