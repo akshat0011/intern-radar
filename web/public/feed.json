@@ -6,6 +6,18 @@
   "description": "New engineering internships, listed within minutes of going live.",
   "items": [
     {
+      "id": "https://www.internradar.info/jobs/citi-young-apprentice-c00-gurugram-4450638705",
+      "url": "https://www.internradar.info/jobs/citi-young-apprentice-c00-gurugram-4450638705",
+      "title": "Young Apprentice - C00 - GURUGRAM — Citi",
+      "content_text": "Company: Citi · Location: Haryana, India · Duration: 12 months",
+      "date_published": "2026-08-06T23:02:40.992Z",
+      "authors": [
+        {
+          "name": "Citi"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/yes-bank-trainee-4448472362",
       "url": "https://www.internradar.info/jobs/yes-bank-trainee-4448472362",
       "title": "Trainee — YES BANK",
@@ -14,6 +26,18 @@
       "authors": [
         {
           "name": "YES BANK"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/deutsche-bank-apprentice-hiring-for-2026-2027-4450611291",
+      "url": "https://www.internradar.info/jobs/deutsche-bank-apprentice-hiring-for-2026-2027-4450611291",
+      "title": "Apprentice hiring for 2026 – 2027 — Deutsche Bank",
+      "content_text": "Company: Deutsche Bank · Location: Jaipur, Rajasthan, India",
+      "date_published": "2026-08-06T18:03:18.205Z",
+      "authors": [
+        {
+          "name": "Deutsche Bank"
         }
       ]
     },
@@ -510,6 +534,18 @@
       ]
     },
     {
+      "id": "https://www.internradar.info/jobs/greedygame-fullstack-developer-internship-4447970697",
+      "url": "https://www.internradar.info/jobs/greedygame-fullstack-developer-internship-4447970697",
+      "title": "Fullstack Developer- Internship — GreedyGame",
+      "content_text": "Company: GreedyGame · Location: Bengaluru, Karnataka, India · Duration: 0-1 years\n• Build backend services integrating Google Ad Manager and networks\n• Develop React dashboards for publishers and internal workflows\n• Work with Go, PostgreSQL, MongoDB, and large datasets",
+      "date_published": "2026-08-03T13:19:19.375Z",
+      "authors": [
+        {
+          "name": "GreedyGame"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/microsoft-research-sciences-intern-ats-microsoft-india-1970393556638637",
       "url": "https://www.internradar.info/jobs/microsoft-research-sciences-intern-ats-microsoft-india-1970393556638637",
       "title": "Research Sciences INTERN — Microsoft",
@@ -566,42 +602,6 @@
       "authors": [
         {
           "name": "Eli Lilly and Company"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/pixxel-calibration-intern-4448136135",
-      "url": "https://www.internradar.info/jobs/pixxel-calibration-intern-4448136135",
-      "title": "Calibration Intern — Pixxel",
-      "content_text": "Company: Pixxel · Location: Bengaluru, Karnataka, India · Duration: 6 months\n• Develop and implement algorithms to calibrate camera systems for optimal image quality\n• Participate in pre-flight calibration including geometrical, spatial, and radiometric calibration\n• Develop and deploy software for imaging system calibration and testing\n• Analyze volume data to guide engineering decisions",
-      "date_published": "2026-08-03T01:59:19.699Z",
-      "authors": [
-        {
-          "name": "Pixxel"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/barclays-2027-technology-developer-summer-internship-programme-india-ats-workday-barclays-wd3-external-career-site-barclays-jr-0000124913",
-      "url": "https://www.internradar.info/jobs/barclays-2027-technology-developer-summer-internship-programme-india-ats-workday-barclays-wd3-external-career-site-barclays-jr-0000124913",
-      "title": "2027 Technology Developer Summer Internship Programme India — Barclays",
-      "content_text": "Company: Barclays\n• Design, develop and improve software utilizing various engineering methodologies\n• Ensure code scalability and maintainability using industry-aligned languages and tools\n• Collaborate with product managers and designers to define software requirements",
-      "date_published": "2026-08-03T00:00:00.000Z",
-      "authors": [
-        {
-          "name": "Barclays"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/piramal-graduate-engineer-trainee-sap-ats-workday-piramalpharma-wd102-piramal-external-careers-r00003522",
-      "url": "https://www.internradar.info/jobs/piramal-graduate-engineer-trainee-sap-ats-workday-piramalpharma-wd102-piramal-external-careers-r00003522",
-      "title": "Graduate Engineer Trainee-SAP — Piramal",
-      "content_text": "Company: Piramal · Location: Mumbai, MH",
-      "date_published": "2026-08-03T00:00:00.000Z",
-      "authors": [
-        {
-          "name": "Piramal"
         }
       ]
     }

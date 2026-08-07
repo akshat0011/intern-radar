@@ -6,13 +6,27 @@
   <atom:link href="https://www.internradar.info/feed.xml" rel="self" type="application/rss+xml"/>
   <description>New engineering internships, listed within minutes of going live.</description>
   <language>en-in</language>
-  <lastBuildDate>Thu, 06 Aug 2026 23:41:43 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 07 Aug 2026 00:04:05 GMT</lastBuildDate>
+  <item>
+    <title>Young Apprentice - C00 - GURUGRAM — Citi</title>
+    <link>https://www.internradar.info/jobs/citi-young-apprentice-c00-gurugram-4450638705</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/citi-young-apprentice-c00-gurugram-4450638705</guid>
+    <pubDate>Thu, 06 Aug 2026 23:02:40 GMT</pubDate>
+    <description>Company: Citi · Location: Haryana, India · Duration: 12 months</description>
+  </item>
   <item>
     <title>Trainee — YES BANK</title>
     <link>https://www.internradar.info/jobs/yes-bank-trainee-4448472362</link>
     <guid isPermaLink="true">https://www.internradar.info/jobs/yes-bank-trainee-4448472362</guid>
     <pubDate>Thu, 06 Aug 2026 21:44:32 GMT</pubDate>
     <description>Company: YES BANK · Location: Mumbai Metropolitan Region</description>
+  </item>
+  <item>
+    <title>Apprentice hiring for 2026 – 2027 — Deutsche Bank</title>
+    <link>https://www.internradar.info/jobs/deutsche-bank-apprentice-hiring-for-2026-2027-4450611291</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/deutsche-bank-apprentice-hiring-for-2026-2027-4450611291</guid>
+    <pubDate>Thu, 06 Aug 2026 18:03:18 GMT</pubDate>
+    <description>Company: Deutsche Bank · Location: Jaipur, Rajasthan, India</description>
   </item>
   <item>
     <title>GIT Trainee (Contractual) — Colgate-Palmolive</title>
@@ -332,6 +346,16 @@
 • Hybrid work model based out of Bangalore, India</description>
   </item>
   <item>
+    <title>Fullstack Developer- Internship — GreedyGame</title>
+    <link>https://www.internradar.info/jobs/greedygame-fullstack-developer-internship-4447970697</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/greedygame-fullstack-developer-internship-4447970697</guid>
+    <pubDate>Mon, 03 Aug 2026 13:19:19 GMT</pubDate>
+    <description>Company: GreedyGame · Location: Bengaluru, Karnataka, India · Duration: 0-1 years
+• Build backend services integrating Google Ad Manager and networks
+• Develop React dashboards for publishers and internal workflows
+• Work with Go, PostgreSQL, MongoDB, and large datasets</description>
+  </item>
+  <item>
     <title>Research Sciences INTERN — Microsoft</title>
     <link>https://www.internradar.info/jobs/microsoft-research-sciences-intern-ats-microsoft-india-1970393556638637</link>
     <guid isPermaLink="true">https://www.internradar.info/jobs/microsoft-research-sciences-intern-ats-microsoft-india-1970393556638637</guid>
@@ -382,34 +406,6 @@
 • Write clean, readable code following team standards and review feedback
 • Use foundational engineering tools like Git, pull requests, and issue trackers
 • Participate in agile ceremonies and perform unit/integration testing</description>
-  </item>
-  <item>
-    <title>Calibration Intern — Pixxel</title>
-    <link>https://www.internradar.info/jobs/pixxel-calibration-intern-4448136135</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/pixxel-calibration-intern-4448136135</guid>
-    <pubDate>Mon, 03 Aug 2026 01:59:19 GMT</pubDate>
-    <description>Company: Pixxel · Location: Bengaluru, Karnataka, India · Duration: 6 months
-• Develop and implement algorithms to calibrate camera systems for optimal image quality
-• Participate in pre-flight calibration including geometrical, spatial, and radiometric calibration
-• Develop and deploy software for imaging system calibration and testing
-• Analyze volume data to guide engineering decisions</description>
-  </item>
-  <item>
-    <title>2027 Technology Developer Summer Internship Programme India — Barclays</title>
-    <link>https://www.internradar.info/jobs/barclays-2027-technology-developer-summer-internship-programme-india-ats-workday-barclays-wd3-external-career-site-barclays-jr-0000124913</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/barclays-2027-technology-developer-summer-internship-programme-india-ats-workday-barclays-wd3-external-career-site-barclays-jr-0000124913</guid>
-    <pubDate>Mon, 03 Aug 2026 00:00:00 GMT</pubDate>
-    <description>Company: Barclays
-• Design, develop and improve software utilizing various engineering methodologies
-• Ensure code scalability and maintainability using industry-aligned languages and tools
-• Collaborate with product managers and designers to define software requirements</description>
-  </item>
-  <item>
-    <title>Graduate Engineer Trainee-SAP — Piramal</title>
-    <link>https://www.internradar.info/jobs/piramal-graduate-engineer-trainee-sap-ats-workday-piramalpharma-wd102-piramal-external-careers-r00003522</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/piramal-graduate-engineer-trainee-sap-ats-workday-piramalpharma-wd102-piramal-external-careers-r00003522</guid>
-    <pubDate>Mon, 03 Aug 2026 00:00:00 GMT</pubDate>
-    <description>Company: Piramal · Location: Mumbai, MH</description>
   </item>
 </channel>
 </rss>
