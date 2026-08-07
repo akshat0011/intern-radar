@@ -6,7 +6,42 @@
   <atom:link href="https://www.internradar.info/feed.xml" rel="self" type="application/rss+xml"/>
   <description>New engineering internships, listed within minutes of going live.</description>
   <language>en-in</language>
-  <lastBuildDate>Fri, 07 Aug 2026 13:43:29 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 07 Aug 2026 14:14:35 GMT</lastBuildDate>
+  <item>
+    <title>Trainee Engineer — GE HealthCare</title>
+    <link>https://www.internradar.info/jobs/ge-healthcare-trainee-engineer-4450696520</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/ge-healthcare-trainee-engineer-4450696520</guid>
+    <pubDate>Fri, 07 Aug 2026 13:22:06 GMT</pubDate>
+    <description>Company: GE HealthCare · Location: Bengaluru, Karnataka, India</description>
+  </item>
+  <item>
+    <title>Intern - Customer Engineering — GoKwik</title>
+    <link>https://www.internradar.info/jobs/gokwik-intern-customer-engineering-4450330540</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/gokwik-intern-customer-engineering-4450330540</guid>
+    <pubDate>Fri, 07 Aug 2026 13:18:28 GMT</pubDate>
+    <description>Company: GoKwik · Location: Gurugram, Haryana, India</description>
+  </item>
+  <item>
+    <title>Apprentice, Index Management — S&amp;P Global</title>
+    <link>https://www.internradar.info/jobs/s-and-p-global-apprentice-index-management-4441165764</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/s-and-p-global-apprentice-index-management-4441165764</guid>
+    <pubDate>Fri, 07 Aug 2026 13:12:22 GMT</pubDate>
+    <description>Company: S&amp;P Global · Location: Mumbai, Maharashtra, India</description>
+  </item>
+  <item>
+    <title>Apprentice — MUFG</title>
+    <link>https://www.internradar.info/jobs/mufg-apprentice-4450322658</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/mufg-apprentice-4450322658</guid>
+    <pubDate>Fri, 07 Aug 2026 13:12:01 GMT</pubDate>
+    <description>Company: MUFG · Location: Greater Bengaluru Area</description>
+  </item>
+  <item>
+    <title>Enterprise Talent (Apprentice) — HSBC</title>
+    <link>https://www.internradar.info/jobs/hsbc-enterprise-talent-apprentice-4450324406</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/hsbc-enterprise-talent-apprentice-4450324406</guid>
+    <pubDate>Fri, 07 Aug 2026 13:11:32 GMT</pubDate>
+    <description>Company: HSBC · Location: Mumbai, Maharashtra, India · Duration: 0-5 years</description>
+  </item>
   <item>
     <title>Intern (Bachelor&#39;s) — Honeywell Technologies</title>
     <link>https://www.internradar.info/jobs/honeywell-technologies-intern-bachelor-s-4450318441</link>
@@ -348,57 +383,6 @@
 • Configure HMI and SCADA systems across multiple platforms
 • Create historical reports and trends using SQL and VB scripting
 • Test serial and Ethernet communication protocols like Modbus</description>
-  </item>
-  <item>
-    <title>Attraction Req : Intern — Intel</title>
-    <link>https://www.internradar.info/jobs/intel-attraction-req-intern-4447993213</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/intel-attraction-req-intern-4447993213</guid>
-    <pubDate>Mon, 03 Aug 2026 13:29:54 GMT</pubDate>
-    <description>Company: Intel · Location: Bengaluru, Karnataka, India
-• Conduct research, logic design, RTL coding, and simulation for SoC development
-• Develop AI software, open-source libraries, and integrate software across the stack
-• Hybrid work model based out of Bangalore, India</description>
-  </item>
-  <item>
-    <title>Fullstack Developer- Internship — GreedyGame</title>
-    <link>https://www.internradar.info/jobs/greedygame-fullstack-developer-internship-4447970697</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/greedygame-fullstack-developer-internship-4447970697</guid>
-    <pubDate>Mon, 03 Aug 2026 13:19:19 GMT</pubDate>
-    <description>Company: GreedyGame · Location: Bengaluru, Karnataka, India · Duration: 0-1 years
-• Build backend services integrating Google Ad Manager and networks
-• Develop React dashboards for publishers and internal workflows
-• Work with Go, PostgreSQL, MongoDB, and large datasets</description>
-  </item>
-  <item>
-    <title>Research Sciences INTERN — Microsoft</title>
-    <link>https://www.internradar.info/jobs/microsoft-research-sciences-intern-ats-microsoft-india-1970393556638637</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/microsoft-research-sciences-intern-ats-microsoft-india-1970393556638637</guid>
-    <pubDate>Mon, 03 Aug 2026 11:15:20 GMT</pubDate>
-    <description>Company: Microsoft · Location: India, Karnataka, Bangalore
-• Analyze and improve performance of advanced algorithms on large-scale datasets
-• Implement prototypes of scalable systems in AI and machine learning applications
-• Paid internship based in India with mentorship from researchers</description>
-  </item>
-  <item>
-    <title>Product Management Intern — Delhivery</title>
-    <link>https://www.internradar.info/jobs/delhivery-product-management-intern-4445893504</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/delhivery-product-management-intern-4445893504</guid>
-    <pubDate>Mon, 03 Aug 2026 10:56:13 GMT</pubDate>
-    <description>Company: Delhivery · Location: Gurugram, Haryana, India · Duration: 3 to 6 months
-• Support the end-to-end product lifecycle from ideation to launch
-• Conduct market research and competitor analysis to guide product strategy
-• Analyze user feedback and metrics to define requirements and user stories
-• Collaborate with design, engineering, and marketing across a 3 to 6 month duration</description>
-  </item>
-  <item>
-    <title>Intern-Power Greenfield — Emerson</title>
-    <link>https://www.internradar.info/jobs/emerson-intern-power-greenfield-4448170119</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/emerson-intern-power-greenfield-4448170119</guid>
-    <pubDate>Mon, 03 Aug 2026 10:37:35 GMT</pubDate>
-    <description>Company: Emerson · Location: Noida, Uttar Pradesh, India
-• Design and develop engineering productivity tools based on user requirements
-• Support deployment and provide training and demos to project teams
-• Automate manual engineering tasks to improve accuracy and efficiency</description>
   </item>
 </channel>
 </rss>

@@ -6,6 +6,66 @@
   "description": "New engineering internships, listed within minutes of going live.",
   "items": [
     {
+      "id": "https://www.internradar.info/jobs/ge-healthcare-trainee-engineer-4450696520",
+      "url": "https://www.internradar.info/jobs/ge-healthcare-trainee-engineer-4450696520",
+      "title": "Trainee Engineer — GE HealthCare",
+      "content_text": "Company: GE HealthCare · Location: Bengaluru, Karnataka, India",
+      "date_published": "2026-08-07T13:22:06.507Z",
+      "authors": [
+        {
+          "name": "GE HealthCare"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/gokwik-intern-customer-engineering-4450330540",
+      "url": "https://www.internradar.info/jobs/gokwik-intern-customer-engineering-4450330540",
+      "title": "Intern - Customer Engineering — GoKwik",
+      "content_text": "Company: GoKwik · Location: Gurugram, Haryana, India",
+      "date_published": "2026-08-07T13:18:28.260Z",
+      "authors": [
+        {
+          "name": "GoKwik"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/s-and-p-global-apprentice-index-management-4441165764",
+      "url": "https://www.internradar.info/jobs/s-and-p-global-apprentice-index-management-4441165764",
+      "title": "Apprentice, Index Management — S&P Global",
+      "content_text": "Company: S&P Global · Location: Mumbai, Maharashtra, India",
+      "date_published": "2026-08-07T13:12:22.544Z",
+      "authors": [
+        {
+          "name": "S&P Global"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/mufg-apprentice-4450322658",
+      "url": "https://www.internradar.info/jobs/mufg-apprentice-4450322658",
+      "title": "Apprentice — MUFG",
+      "content_text": "Company: MUFG · Location: Greater Bengaluru Area",
+      "date_published": "2026-08-07T13:12:01.239Z",
+      "authors": [
+        {
+          "name": "MUFG"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/hsbc-enterprise-talent-apprentice-4450324406",
+      "url": "https://www.internradar.info/jobs/hsbc-enterprise-talent-apprentice-4450324406",
+      "title": "Enterprise Talent (Apprentice) — HSBC",
+      "content_text": "Company: HSBC · Location: Mumbai, Maharashtra, India · Duration: 0-5 years",
+      "date_published": "2026-08-07T13:11:32.823Z",
+      "authors": [
+        {
+          "name": "HSBC"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/honeywell-technologies-intern-bachelor-s-4450318441",
       "url": "https://www.internradar.info/jobs/honeywell-technologies-intern-bachelor-s-4450318441",
       "title": "Intern (Bachelor's) — Honeywell Technologies",
@@ -539,66 +599,6 @@
       "title": "Graduate Engineer Trainee — Emerson",
       "content_text": "Company: Emerson · Location: Pune Division, Maharashtra, India\n• Configure HMI and SCADA systems across multiple platforms\n• Create historical reports and trends using SQL and VB scripting\n• Test serial and Ethernet communication protocols like Modbus",
       "date_published": "2026-08-03T16:37:21.804Z",
-      "authors": [
-        {
-          "name": "Emerson"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/intel-attraction-req-intern-4447993213",
-      "url": "https://www.internradar.info/jobs/intel-attraction-req-intern-4447993213",
-      "title": "Attraction Req : Intern — Intel",
-      "content_text": "Company: Intel · Location: Bengaluru, Karnataka, India\n• Conduct research, logic design, RTL coding, and simulation for SoC development\n• Develop AI software, open-source libraries, and integrate software across the stack\n• Hybrid work model based out of Bangalore, India",
-      "date_published": "2026-08-03T13:29:54.890Z",
-      "authors": [
-        {
-          "name": "Intel"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/greedygame-fullstack-developer-internship-4447970697",
-      "url": "https://www.internradar.info/jobs/greedygame-fullstack-developer-internship-4447970697",
-      "title": "Fullstack Developer- Internship — GreedyGame",
-      "content_text": "Company: GreedyGame · Location: Bengaluru, Karnataka, India · Duration: 0-1 years\n• Build backend services integrating Google Ad Manager and networks\n• Develop React dashboards for publishers and internal workflows\n• Work with Go, PostgreSQL, MongoDB, and large datasets",
-      "date_published": "2026-08-03T13:19:19.375Z",
-      "authors": [
-        {
-          "name": "GreedyGame"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/microsoft-research-sciences-intern-ats-microsoft-india-1970393556638637",
-      "url": "https://www.internradar.info/jobs/microsoft-research-sciences-intern-ats-microsoft-india-1970393556638637",
-      "title": "Research Sciences INTERN — Microsoft",
-      "content_text": "Company: Microsoft · Location: India, Karnataka, Bangalore\n• Analyze and improve performance of advanced algorithms on large-scale datasets\n• Implement prototypes of scalable systems in AI and machine learning applications\n• Paid internship based in India with mentorship from researchers",
-      "date_published": "2026-08-03T11:15:20.000Z",
-      "authors": [
-        {
-          "name": "Microsoft"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/delhivery-product-management-intern-4445893504",
-      "url": "https://www.internradar.info/jobs/delhivery-product-management-intern-4445893504",
-      "title": "Product Management Intern — Delhivery",
-      "content_text": "Company: Delhivery · Location: Gurugram, Haryana, India · Duration: 3 to 6 months\n• Support the end-to-end product lifecycle from ideation to launch\n• Conduct market research and competitor analysis to guide product strategy\n• Analyze user feedback and metrics to define requirements and user stories\n• Collaborate with design, engineering, and marketing across a 3 to 6 month duration",
-      "date_published": "2026-08-03T10:56:13.774Z",
-      "authors": [
-        {
-          "name": "Delhivery"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/emerson-intern-power-greenfield-4448170119",
-      "url": "https://www.internradar.info/jobs/emerson-intern-power-greenfield-4448170119",
-      "title": "Intern-Power Greenfield — Emerson",
-      "content_text": "Company: Emerson · Location: Noida, Uttar Pradesh, India\n• Design and develop engineering productivity tools based on user requirements\n• Support deployment and provide training and demos to project teams\n• Automate manual engineering tasks to improve accuracy and efficiency",
-      "date_published": "2026-08-03T10:37:35.094Z",
       "authors": [
         {
           "name": "Emerson"
