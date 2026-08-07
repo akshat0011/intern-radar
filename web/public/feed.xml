@@ -6,7 +6,14 @@
   <atom:link href="https://www.internradar.info/feed.xml" rel="self" type="application/rss+xml"/>
   <description>New engineering internships, listed within minutes of going live.</description>
   <language>en-in</language>
-  <lastBuildDate>Fri, 07 Aug 2026 14:33:56 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 07 Aug 2026 15:04:35 GMT</lastBuildDate>
+  <item>
+    <title>AI Intern — CertifyOS</title>
+    <link>https://www.internradar.info/jobs/certifyos-ai-intern-ats-ashby-certifyos-4bcdec99-9f2e-416c-8e26-498c94c5898a</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/certifyos-ai-intern-ats-ashby-certifyos-4bcdec99-9f2e-416c-8e26-498c94c5898a</guid>
+    <pubDate>Fri, 07 Aug 2026 14:51:22 GMT</pubDate>
+    <description>Company: CertifyOS · Location: Pune, India</description>
+  </item>
   <item>
     <title>Trainee Engineer — GE HealthCare</title>
     <link>https://www.internradar.info/jobs/ge-healthcare-trainee-engineer-4450696520</link>
@@ -373,16 +380,6 @@
     <guid isPermaLink="true">https://www.internradar.info/jobs/flam-software-engineering-intern-4445878655</guid>
     <pubDate>Tue, 04 Aug 2026 06:36:19 GMT</pubDate>
     <description>Company: Flam · Location: Bengaluru, Karnataka, India</description>
-  </item>
-  <item>
-    <title>Graduate Engineer Trainee — Emerson</title>
-    <link>https://www.internradar.info/jobs/emerson-graduate-engineer-trainee-4448323159</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/emerson-graduate-engineer-trainee-4448323159</guid>
-    <pubDate>Mon, 03 Aug 2026 16:37:21 GMT</pubDate>
-    <description>Company: Emerson · Location: Pune Division, Maharashtra, India
-• Configure HMI and SCADA systems across multiple platforms
-• Create historical reports and trends using SQL and VB scripting
-• Test serial and Ethernet communication protocols like Modbus</description>
   </item>
 </channel>
 </rss>

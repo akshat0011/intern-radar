@@ -6,6 +6,18 @@
   "description": "New engineering internships, listed within minutes of going live.",
   "items": [
     {
+      "id": "https://www.internradar.info/jobs/certifyos-ai-intern-ats-ashby-certifyos-4bcdec99-9f2e-416c-8e26-498c94c5898a",
+      "url": "https://www.internradar.info/jobs/certifyos-ai-intern-ats-ashby-certifyos-4bcdec99-9f2e-416c-8e26-498c94c5898a",
+      "title": "AI Intern — CertifyOS",
+      "content_text": "Company: CertifyOS · Location: Pune, India",
+      "date_published": "2026-08-07T14:51:22.086Z",
+      "authors": [
+        {
+          "name": "CertifyOS"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/ge-healthcare-trainee-engineer-4450696520",
       "url": "https://www.internradar.info/jobs/ge-healthcare-trainee-engineer-4450696520",
       "title": "Trainee Engineer — GE HealthCare",
@@ -590,18 +602,6 @@
       "authors": [
         {
           "name": "Flam"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/emerson-graduate-engineer-trainee-4448323159",
-      "url": "https://www.internradar.info/jobs/emerson-graduate-engineer-trainee-4448323159",
-      "title": "Graduate Engineer Trainee — Emerson",
-      "content_text": "Company: Emerson · Location: Pune Division, Maharashtra, India\n• Configure HMI and SCADA systems across multiple platforms\n• Create historical reports and trends using SQL and VB scripting\n• Test serial and Ethernet communication protocols like Modbus",
-      "date_published": "2026-08-03T16:37:21.804Z",
-      "authors": [
-        {
-          "name": "Emerson"
         }
       ]
     }
