@@ -6,6 +6,18 @@
   "description": "New engineering internships, listed within minutes of going live.",
   "items": [
     {
+      "id": "https://www.internradar.info/jobs/sony-research-india-ai-research-intern-4448494663",
+      "url": "https://www.internradar.info/jobs/sony-research-india-ai-research-intern-4448494663",
+      "title": "AI Research Intern — Sony Research India",
+      "content_text": "Company: Sony Research India · Location: Bengaluru, Karnataka, India · Stipend: 2,026",
+      "date_published": "2026-08-07T02:37:24.007Z",
+      "authors": [
+        {
+          "name": "Sony Research India"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/citi-young-apprentice-c00-gurugram-4450638705",
       "url": "https://www.internradar.info/jobs/citi-young-apprentice-c00-gurugram-4450638705",
       "title": "Young Apprentice - C00 - GURUGRAM — Citi",
@@ -590,18 +602,6 @@
       "authors": [
         {
           "name": "HDFC Bank Limited"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/eli-lilly-and-company-intern-full-stack-engineer-4448149499",
-      "url": "https://www.internradar.info/jobs/eli-lilly-and-company-intern-full-stack-engineer-4448149499",
-      "title": "Intern - Full Stack Engineer — Eli Lilly and Company",
-      "content_text": "Company: Eli Lilly and Company · Location: Bengaluru East, Karnataka, India\n• Deliver development tasks for backend services and frontend UI features\n• Write clean, readable code following team standards and review feedback\n• Use foundational engineering tools like Git, pull requests, and issue trackers\n• Participate in agile ceremonies and perform unit/integration testing",
-      "date_published": "2026-08-03T08:42:32.871Z",
-      "authors": [
-        {
-          "name": "Eli Lilly and Company"
         }
       ]
     }

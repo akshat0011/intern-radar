@@ -6,7 +6,14 @@
   <atom:link href="https://www.internradar.info/feed.xml" rel="self" type="application/rss+xml"/>
   <description>New engineering internships, listed within minutes of going live.</description>
   <language>en-in</language>
-  <lastBuildDate>Fri, 07 Aug 2026 02:33:02 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 07 Aug 2026 03:03:26 GMT</lastBuildDate>
+  <item>
+    <title>AI Research Intern — Sony Research India</title>
+    <link>https://www.internradar.info/jobs/sony-research-india-ai-research-intern-4448494663</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/sony-research-india-ai-research-intern-4448494663</guid>
+    <pubDate>Fri, 07 Aug 2026 02:37:24 GMT</pubDate>
+    <description>Company: Sony Research India · Location: Bengaluru, Karnataka, India · Stipend: 2,026</description>
+  </item>
   <item>
     <title>Young Apprentice - C00 - GURUGRAM — Citi</title>
     <link>https://www.internradar.info/jobs/citi-young-apprentice-c00-gurugram-4450638705</link>
@@ -395,17 +402,6 @@
 • Support data extraction, cleaning, and preparation for reporting and dashboards
 • Maintain historical datasets and perform basic trend analysis
 • Use Excel, SQL, and Python to support automation and business intelligence initiatives</description>
-  </item>
-  <item>
-    <title>Intern - Full Stack Engineer — Eli Lilly and Company</title>
-    <link>https://www.internradar.info/jobs/eli-lilly-and-company-intern-full-stack-engineer-4448149499</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/eli-lilly-and-company-intern-full-stack-engineer-4448149499</guid>
-    <pubDate>Mon, 03 Aug 2026 08:42:32 GMT</pubDate>
-    <description>Company: Eli Lilly and Company · Location: Bengaluru East, Karnataka, India
-• Deliver development tasks for backend services and frontend UI features
-• Write clean, readable code following team standards and review feedback
-• Use foundational engineering tools like Git, pull requests, and issue trackers
-• Participate in agile ceremonies and perform unit/integration testing</description>
   </item>
 </channel>
 </rss>
