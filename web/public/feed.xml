@@ -6,7 +6,14 @@
   <atom:link href="https://www.internradar.info/feed.xml" rel="self" type="application/rss+xml"/>
   <description>New engineering internships, listed within minutes of going live.</description>
   <language>en-in</language>
-  <lastBuildDate>Fri, 07 Aug 2026 05:17:34 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 07 Aug 2026 05:38:02 GMT</lastBuildDate>
+  <item>
+    <title>UX Research Intern — Times Internet</title>
+    <link>https://www.internradar.info/jobs/times-internet-ux-research-intern-4448705984</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/times-internet-ux-research-intern-4448705984</guid>
+    <pubDate>Fri, 07 Aug 2026 04:45:23 GMT</pubDate>
+    <description>Company: Times Internet · Location: Noida, Uttar Pradesh, India · Duration: 6 months</description>
+  </item>
   <item>
     <title>Intern - SAP PP — Seagate Technology</title>
     <link>https://www.internradar.info/jobs/seagate-technology-intern-sap-pp-4450040519</link>
@@ -20,6 +27,13 @@
     <guid isPermaLink="true">https://www.internradar.info/jobs/sony-research-india-ai-research-intern-4448494663</guid>
     <pubDate>Fri, 07 Aug 2026 02:37:24 GMT</pubDate>
     <description>Company: Sony Research India · Location: Bengaluru, Karnataka, India · Stipend: 2,026</description>
+  </item>
+  <item>
+    <title>Young Apprentice - C00 - PUNE — Citi</title>
+    <link>https://www.internradar.info/jobs/citi-young-apprentice-c00-pune-ats-workday-citi-wd5-2-26984617</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/citi-young-apprentice-c00-pune-ats-workday-citi-wd5-2-26984617</guid>
+    <pubDate>Fri, 07 Aug 2026 00:00:00 GMT</pubDate>
+    <description>Company: Citi · Location: Pune Maharashtra India</description>
   </item>
   <item>
     <title>Young Apprentice - C00 - GURUGRAM — Citi</title>
@@ -378,27 +392,6 @@
 • Analyze and improve performance of advanced algorithms on large-scale datasets
 • Implement prototypes of scalable systems in AI and machine learning applications
 • Paid internship based in India with mentorship from researchers</description>
-  </item>
-  <item>
-    <title>Product Management Intern — Delhivery</title>
-    <link>https://www.internradar.info/jobs/delhivery-product-management-intern-4445893504</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/delhivery-product-management-intern-4445893504</guid>
-    <pubDate>Mon, 03 Aug 2026 10:56:13 GMT</pubDate>
-    <description>Company: Delhivery · Location: Gurugram, Haryana, India · Duration: 3 to 6 months
-• Support the end-to-end product lifecycle from ideation to launch
-• Conduct market research and competitor analysis to guide product strategy
-• Analyze user feedback and metrics to define requirements and user stories
-• Collaborate with design, engineering, and marketing across a 3 to 6 month duration</description>
-  </item>
-  <item>
-    <title>Intern-Power Greenfield — Emerson</title>
-    <link>https://www.internradar.info/jobs/emerson-intern-power-greenfield-4448170119</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/emerson-intern-power-greenfield-4448170119</guid>
-    <pubDate>Mon, 03 Aug 2026 10:37:35 GMT</pubDate>
-    <description>Company: Emerson · Location: Noida, Uttar Pradesh, India
-• Design and develop engineering productivity tools based on user requirements
-• Support deployment and provide training and demos to project teams
-• Automate manual engineering tasks to improve accuracy and efficiency</description>
   </item>
 </channel>
 </rss>

@@ -6,6 +6,18 @@
   "description": "New engineering internships, listed within minutes of going live.",
   "items": [
     {
+      "id": "https://www.internradar.info/jobs/times-internet-ux-research-intern-4448705984",
+      "url": "https://www.internradar.info/jobs/times-internet-ux-research-intern-4448705984",
+      "title": "UX Research Intern — Times Internet",
+      "content_text": "Company: Times Internet · Location: Noida, Uttar Pradesh, India · Duration: 6 months",
+      "date_published": "2026-08-07T04:45:23.049Z",
+      "authors": [
+        {
+          "name": "Times Internet"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/seagate-technology-intern-sap-pp-4450040519",
       "url": "https://www.internradar.info/jobs/seagate-technology-intern-sap-pp-4450040519",
       "title": "Intern - SAP PP — Seagate Technology",
@@ -26,6 +38,18 @@
       "authors": [
         {
           "name": "Sony Research India"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/citi-young-apprentice-c00-pune-ats-workday-citi-wd5-2-26984617",
+      "url": "https://www.internradar.info/jobs/citi-young-apprentice-c00-pune-ats-workday-citi-wd5-2-26984617",
+      "title": "Young Apprentice - C00 - PUNE — Citi",
+      "content_text": "Company: Citi · Location: Pune Maharashtra India",
+      "date_published": "2026-08-07T00:00:00.000Z",
+      "authors": [
+        {
+          "name": "Citi"
         }
       ]
     },
@@ -578,30 +602,6 @@
       "authors": [
         {
           "name": "Microsoft"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/delhivery-product-management-intern-4445893504",
-      "url": "https://www.internradar.info/jobs/delhivery-product-management-intern-4445893504",
-      "title": "Product Management Intern — Delhivery",
-      "content_text": "Company: Delhivery · Location: Gurugram, Haryana, India · Duration: 3 to 6 months\n• Support the end-to-end product lifecycle from ideation to launch\n• Conduct market research and competitor analysis to guide product strategy\n• Analyze user feedback and metrics to define requirements and user stories\n• Collaborate with design, engineering, and marketing across a 3 to 6 month duration",
-      "date_published": "2026-08-03T10:56:13.774Z",
-      "authors": [
-        {
-          "name": "Delhivery"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/emerson-intern-power-greenfield-4448170119",
-      "url": "https://www.internradar.info/jobs/emerson-intern-power-greenfield-4448170119",
-      "title": "Intern-Power Greenfield — Emerson",
-      "content_text": "Company: Emerson · Location: Noida, Uttar Pradesh, India\n• Design and develop engineering productivity tools based on user requirements\n• Support deployment and provide training and demos to project teams\n• Automate manual engineering tasks to improve accuracy and efficiency",
-      "date_published": "2026-08-03T10:37:35.094Z",
-      "authors": [
-        {
-          "name": "Emerson"
         }
       ]
     }
