@@ -6,6 +6,42 @@
   "description": "New engineering internships, listed within minutes of going live.",
   "items": [
     {
+      "id": "https://www.internradar.info/jobs/seagate-technology-intern-sap-mm-4450084755",
+      "url": "https://www.internradar.info/jobs/seagate-technology-intern-sap-mm-4450084755",
+      "title": "Intern - SAP MM — Seagate Technology",
+      "content_text": "Company: Seagate Technology · Location: Pune Division, Maharashtra, India",
+      "date_published": "2026-08-07T09:31:33.637Z",
+      "authors": [
+        {
+          "name": "Seagate Technology"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/dehaat-video-anchor-intern-4450074721",
+      "url": "https://www.internradar.info/jobs/dehaat-video-anchor-intern-4450074721",
+      "title": "Video Anchor Intern — DeHaat",
+      "content_text": "Company: DeHaat · Location: Gurugram, Haryana, India",
+      "date_published": "2026-08-07T08:32:31.139Z",
+      "authors": [
+        {
+          "name": "DeHaat"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/sanas-software-engineering-intern-si-and-agentic-ai-platform-4450086026",
+      "url": "https://www.internradar.info/jobs/sanas-software-engineering-intern-si-and-agentic-ai-platform-4450086026",
+      "title": "Software Engineering Intern - SI & Agentic AI Platform — Sanas",
+      "content_text": "Company: Sanas · Location: Bengaluru, Karnataka, India",
+      "date_published": "2026-08-07T07:32:36.365Z",
+      "authors": [
+        {
+          "name": "Sanas"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/d-square-consulting-services-pvt-ltd-motion-and-graphics-designer-intern-4448729282",
       "url": "https://www.internradar.info/jobs/d-square-consulting-services-pvt-ltd-motion-and-graphics-designer-intern-4448729282",
       "title": "Motion and Graphics Designer Intern — D Square Consulting Services Pvt Ltd",
@@ -566,42 +602,6 @@
       "authors": [
         {
           "name": "eBay"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/upgrad-international-intern-ai-engineer-4447602250",
-      "url": "https://www.internradar.info/jobs/upgrad-international-intern-ai-engineer-4447602250",
-      "title": "Intern- AI Engineer — upGrad International",
-      "content_text": "Company: upGrad International · Location: Mumbai, Maharashtra, India · Stipend: 30,000 / month · Duration: 3-6 months",
-      "date_published": "2026-08-02T15:07:27.370Z",
-      "authors": [
-        {
-          "name": "upGrad International"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/harman-india-intern-4445841376",
-      "url": "https://www.internradar.info/jobs/harman-india-intern-4445841376",
-      "title": "Intern — HARMAN India",
-      "content_text": "Company: HARMAN India · Location: Bengaluru, Karnataka, India\n• Work on software programs and develop software systems for automotive applications\n• Use embedded RTOS, Android, C/C++, and Linux in your daily tasks\n• Learn to test software using debuggers, emulators, and simulators\n• Perform software releases and quality assurance activities",
-      "date_published": "2026-08-02T10:52:27.718Z",
-      "authors": [
-        {
-          "name": "HARMAN India"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/imc-trading-2027-quant-research-intern-bits-pilani-4447600419",
-      "url": "https://www.internradar.info/jobs/imc-trading-2027-quant-research-intern-bits-pilani-4447600419",
-      "title": "2027 - Quant Research Intern - BITS Pilani — IMC Trading",
-      "content_text": "Company: IMC Trading · Location: Mumbai Metropolitan Region\n• Design new predictive models, optimize strategies, or leverage alternative data\n• Explore large financial and market datasets to develop quantitative models\n• Work with Python, C++, Java, Matlab, or R\n• Present findings through reports and presentations",
-      "date_published": "2026-08-01T19:16:26.956Z",
-      "authors": [
-        {
-          "name": "IMC Trading"
         }
       ]
     }

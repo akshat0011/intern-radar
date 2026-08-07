@@ -6,7 +6,28 @@
   <atom:link href="https://www.internradar.info/feed.xml" rel="self" type="application/rss+xml"/>
   <description>New engineering internships, listed within minutes of going live.</description>
   <language>en-in</language>
-  <lastBuildDate>Fri, 07 Aug 2026 09:18:26 GMT</lastBuildDate>
+  <lastBuildDate>Fri, 07 Aug 2026 09:33:32 GMT</lastBuildDate>
+  <item>
+    <title>Intern - SAP MM — Seagate Technology</title>
+    <link>https://www.internradar.info/jobs/seagate-technology-intern-sap-mm-4450084755</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/seagate-technology-intern-sap-mm-4450084755</guid>
+    <pubDate>Fri, 07 Aug 2026 09:31:33 GMT</pubDate>
+    <description>Company: Seagate Technology · Location: Pune Division, Maharashtra, India</description>
+  </item>
+  <item>
+    <title>Video Anchor Intern — DeHaat</title>
+    <link>https://www.internradar.info/jobs/dehaat-video-anchor-intern-4450074721</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/dehaat-video-anchor-intern-4450074721</guid>
+    <pubDate>Fri, 07 Aug 2026 08:32:31 GMT</pubDate>
+    <description>Company: DeHaat · Location: Gurugram, Haryana, India</description>
+  </item>
+  <item>
+    <title>Software Engineering Intern - SI &amp; Agentic AI Platform — Sanas</title>
+    <link>https://www.internradar.info/jobs/sanas-software-engineering-intern-si-and-agentic-ai-platform-4450086026</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/sanas-software-engineering-intern-si-and-agentic-ai-platform-4450086026</guid>
+    <pubDate>Fri, 07 Aug 2026 07:32:36 GMT</pubDate>
+    <description>Company: Sanas · Location: Bengaluru, Karnataka, India</description>
+  </item>
   <item>
     <title>Motion and Graphics Designer Intern — D Square Consulting Services Pvt Ltd</title>
     <link>https://www.internradar.info/jobs/d-square-consulting-services-pvt-ltd-motion-and-graphics-designer-intern-4448729282</link>
@@ -396,35 +417,6 @@
 • Participate in brainstorming sessions and contribute ideas for technology, algorithms, and products
 • Work with product and design teams to understand user requirements and deliver results
 • Use Java, Python, Scala, JavaScript; focus on OOP/OOD, distributed systems, cloud, and full stack</description>
-  </item>
-  <item>
-    <title>Intern- AI Engineer — upGrad International</title>
-    <link>https://www.internradar.info/jobs/upgrad-international-intern-ai-engineer-4447602250</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/upgrad-international-intern-ai-engineer-4447602250</guid>
-    <pubDate>Sun, 02 Aug 2026 15:07:27 GMT</pubDate>
-    <description>Company: upGrad International · Location: Mumbai, Maharashtra, India · Stipend: 30,000 / month · Duration: 3-6 months</description>
-  </item>
-  <item>
-    <title>Intern — HARMAN India</title>
-    <link>https://www.internradar.info/jobs/harman-india-intern-4445841376</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/harman-india-intern-4445841376</guid>
-    <pubDate>Sun, 02 Aug 2026 10:52:27 GMT</pubDate>
-    <description>Company: HARMAN India · Location: Bengaluru, Karnataka, India
-• Work on software programs and develop software systems for automotive applications
-• Use embedded RTOS, Android, C/C++, and Linux in your daily tasks
-• Learn to test software using debuggers, emulators, and simulators
-• Perform software releases and quality assurance activities</description>
-  </item>
-  <item>
-    <title>2027 - Quant Research Intern - BITS Pilani — IMC Trading</title>
-    <link>https://www.internradar.info/jobs/imc-trading-2027-quant-research-intern-bits-pilani-4447600419</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/imc-trading-2027-quant-research-intern-bits-pilani-4447600419</guid>
-    <pubDate>Sat, 01 Aug 2026 19:16:26 GMT</pubDate>
-    <description>Company: IMC Trading · Location: Mumbai Metropolitan Region
-• Design new predictive models, optimize strategies, or leverage alternative data
-• Explore large financial and market datasets to develop quantitative models
-• Work with Python, C++, Java, Matlab, or R
-• Present findings through reports and presentations</description>
   </item>
 </channel>
 </rss>
