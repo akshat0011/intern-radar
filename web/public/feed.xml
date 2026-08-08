@@ -6,7 +6,14 @@
   <atom:link href="https://www.internzo.in/feed.xml" rel="self" type="application/rss+xml"/>
   <description>New engineering internships, listed within minutes of going live.</description>
   <language>en-in</language>
-  <lastBuildDate>Sat, 08 Aug 2026 14:33:24 GMT</lastBuildDate>
+  <lastBuildDate>Sat, 08 Aug 2026 14:44:27 GMT</lastBuildDate>
+  <item>
+    <title>Engineering Intern – Live Project | Part-Time | Bangalore | Tier-1 Colleges — NoBroker.com</title>
+    <link>https://www.internzo.in/jobs/nobroker-com-engineering-intern-live-project-part-time-bangalore-tier-1-colleges-4449258306</link>
+    <guid isPermaLink="true">https://www.internzo.in/jobs/nobroker-com-engineering-intern-live-project-part-time-bangalore-tier-1-colleges-4449258306</guid>
+    <pubDate>Sat, 08 Aug 2026 14:19:56 GMT</pubDate>
+    <description>Company: NoBroker.com · Location: Bengaluru, Karnataka, India · Stipend: ₹25,000 / month</description>
+  </item>
   <item>
     <title>Full Stack Developer Intern - React &amp; Node JS — Interloop - Zoho Partner| Manage Engine | Managed HR Services</title>
     <link>https://www.internzo.in/jobs/interloop-zoho-partner-manage-engine-managed-hr-services-full-stack-developer-intern-react-and-node-js-4451081170</link>
@@ -444,17 +451,6 @@
 • Write clean, readable code following team standards and review feedback
 • Use foundational engineering tools like Git, pull requests, and issue trackers
 • Participate in agile ceremonies and perform unit/integration testing</description>
-  </item>
-  <item>
-    <title>Calibration Intern — Pixxel</title>
-    <link>https://www.internzo.in/jobs/pixxel-calibration-intern-4448136135</link>
-    <guid isPermaLink="true">https://www.internzo.in/jobs/pixxel-calibration-intern-4448136135</guid>
-    <pubDate>Mon, 03 Aug 2026 01:59:19 GMT</pubDate>
-    <description>Company: Pixxel · Location: Bengaluru, Karnataka, India · Duration: 6 months
-• Develop and implement algorithms to calibrate camera systems for optimal image quality
-• Participate in pre-flight calibration including geometrical, spatial, and radiometric calibration
-• Develop and deploy software for imaging system calibration and testing
-• Analyze volume data to guide engineering decisions</description>
   </item>
 </channel>
 </rss>
