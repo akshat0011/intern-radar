@@ -9,7 +9,7 @@
       "id": "https://www.internradar.info/jobs/upgrad-international-intern-technical-content-applied-ai-4450593245",
       "url": "https://www.internradar.info/jobs/upgrad-international-intern-technical-content-applied-ai-4450593245",
       "title": "Intern- Technical Content (Applied AI) — upGrad International",
-      "content_text": "Company: upGrad International · Location: Mumbai Metropolitan Region · Stipend: 30,000 / month · Duration: 6 months",
+      "content_text": "Company: upGrad International · Location: Mumbai Metropolitan Region · Stipend: 30,000 / month · Duration: 6 months\n• Script AI video production pipelines using tools like Remotion, Manim, and HeyGen\n• Review SME scripts, write pre-production scripts, and build Python lab demos\n• Perform QA on AI-generated video previews and refine live learning materials",
       "date_published": "2026-08-08T07:09:43.923Z",
       "authors": [
         {
@@ -153,7 +153,7 @@
       "id": "https://www.internradar.info/jobs/colgate-palmolive-git-trainee-contractual-4395013887",
       "url": "https://www.internradar.info/jobs/colgate-palmolive-git-trainee-contractual-4395013887",
       "title": "GIT Trainee (Contractual) — Colgate-Palmolive",
-      "content_text": "Company: Colgate-Palmolive · Location: Mumbai Metropolitan Region",
+      "content_text": "Company: Colgate-Palmolive · Location: Mumbai Metropolitan Region\n• Build and maintain software products within an agile engineering team\n• Connect user requirements to technical features and system module integration\n• Develop features using Python, React, Node.js, and cloud technologies",
       "date_published": "2026-08-06T16:52:06.593Z",
       "authors": [
         {
@@ -165,47 +165,11 @@
       "id": "https://www.internradar.info/jobs/citi-young-apprentice-c00-chennai-4449762238",
       "url": "https://www.internradar.info/jobs/citi-young-apprentice-c00-chennai-4449762238",
       "title": "Young Apprentice - C00 - Chennai — Citi",
-      "content_text": "Company: Citi · Location: Chennai, Tamil Nadu, India",
+      "content_text": "Company: Citi · Location: Chennai, Tamil Nadu, India\n• Build full-stack web applications using React, Python, and MongoDB\n• Work with cloud infrastructure using Terraform, shell scripts, and AWS serverless\n• Collaborate with engineering mentors to solve technical issues and refine systems",
       "date_published": "2026-08-06T16:05:38.382Z",
       "authors": [
         {
           "name": "Citi"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/pearson-apprentice-information-security-4449757132",
-      "url": "https://www.internradar.info/jobs/pearson-apprentice-information-security-4449757132",
-      "title": "Apprentice, Information Security — Pearson",
-      "content_text": "Company: Pearson · Location: Noida, Uttar Pradesh, India",
-      "date_published": "2026-08-06T14:32:38.080Z",
-      "authors": [
-        {
-          "name": "Pearson"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/discover-dollar-inc-gtm-engineer-intern-4449749255",
-      "url": "https://www.internradar.info/jobs/discover-dollar-inc-gtm-engineer-intern-4449749255",
-      "title": "GTM Engineer Intern — Discover Dollar Inc",
-      "content_text": "Company: Discover Dollar Inc · Location: Bengaluru East, Karnataka, India",
-      "date_published": "2026-08-06T12:52:15.472Z",
-      "authors": [
-        {
-          "name": "Discover Dollar Inc"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/newton-school-ai-video-creator-intern-bengaluru-4449733238",
-      "url": "https://www.internradar.info/jobs/newton-school-ai-video-creator-intern-bengaluru-4449733238",
-      "title": "AI Video Creator Intern - Bengaluru — Newton School",
-      "content_text": "Company: Newton School · Location: Bengaluru, Karnataka, India · Duration: 3–6 months",
-      "date_published": "2026-08-06T12:04:18.405Z",
-      "authors": [
-        {
-          "name": "Newton School"
         }
       ]
     },
@@ -602,6 +566,42 @@
       "authors": [
         {
           "name": "Eli Lilly and Company"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/pixxel-calibration-intern-4448136135",
+      "url": "https://www.internradar.info/jobs/pixxel-calibration-intern-4448136135",
+      "title": "Calibration Intern — Pixxel",
+      "content_text": "Company: Pixxel · Location: Bengaluru, Karnataka, India · Duration: 6 months\n• Develop and implement algorithms to calibrate camera systems for optimal image quality\n• Participate in pre-flight calibration including geometrical, spatial, and radiometric calibration\n• Develop and deploy software for imaging system calibration and testing\n• Analyze volume data to guide engineering decisions",
+      "date_published": "2026-08-03T01:59:19.699Z",
+      "authors": [
+        {
+          "name": "Pixxel"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/barclays-2027-technology-developer-summer-internship-programme-india-ats-workday-barclays-wd3-external-career-site-barclays-jr-0000124913",
+      "url": "https://www.internradar.info/jobs/barclays-2027-technology-developer-summer-internship-programme-india-ats-workday-barclays-wd3-external-career-site-barclays-jr-0000124913",
+      "title": "2027 Technology Developer Summer Internship Programme India — Barclays",
+      "content_text": "Company: Barclays\n• Design, develop and improve software utilizing various engineering methodologies\n• Ensure code scalability and maintainability using industry-aligned languages and tools\n• Collaborate with product managers and designers to define software requirements",
+      "date_published": "2026-08-03T00:00:00.000Z",
+      "authors": [
+        {
+          "name": "Barclays"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/piramal-graduate-engineer-trainee-sap-ats-workday-piramalpharma-wd102-piramal-external-careers-r00003522",
+      "url": "https://www.internradar.info/jobs/piramal-graduate-engineer-trainee-sap-ats-workday-piramalpharma-wd102-piramal-external-careers-r00003522",
+      "title": "Graduate Engineer Trainee-SAP — Piramal",
+      "content_text": "Company: Piramal · Location: Mumbai, MH",
+      "date_published": "2026-08-03T00:00:00.000Z",
+      "authors": [
+        {
+          "name": "Piramal"
         }
       ]
     }

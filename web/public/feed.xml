@@ -6,13 +6,16 @@
   <atom:link href="https://www.internradar.info/feed.xml" rel="self" type="application/rss+xml"/>
   <description>New engineering internships, listed within minutes of going live.</description>
   <language>en-in</language>
-  <lastBuildDate>Sat, 08 Aug 2026 08:08:55 GMT</lastBuildDate>
+  <lastBuildDate>Sat, 08 Aug 2026 08:34:24 GMT</lastBuildDate>
   <item>
     <title>Intern- Technical Content (Applied AI) — upGrad International</title>
     <link>https://www.internradar.info/jobs/upgrad-international-intern-technical-content-applied-ai-4450593245</link>
     <guid isPermaLink="true">https://www.internradar.info/jobs/upgrad-international-intern-technical-content-applied-ai-4450593245</guid>
     <pubDate>Sat, 08 Aug 2026 07:09:43 GMT</pubDate>
-    <description>Company: upGrad International · Location: Mumbai Metropolitan Region · Stipend: 30,000 / month · Duration: 6 months</description>
+    <description>Company: upGrad International · Location: Mumbai Metropolitan Region · Stipend: 30,000 / month · Duration: 6 months
+• Script AI video production pipelines using tools like Remotion, Manim, and HeyGen
+• Review SME scripts, write pre-production scripts, and build Python lab demos
+• Perform QA on AI-generated video previews and refine live learning materials</description>
   </item>
   <item>
     <title>Devops Engineer Internship in Thane, Navi Mumbai, Mumbai — FynTune Solution Private Limited</title>
@@ -132,35 +135,20 @@
     <link>https://www.internradar.info/jobs/colgate-palmolive-git-trainee-contractual-4395013887</link>
     <guid isPermaLink="true">https://www.internradar.info/jobs/colgate-palmolive-git-trainee-contractual-4395013887</guid>
     <pubDate>Thu, 06 Aug 2026 16:52:06 GMT</pubDate>
-    <description>Company: Colgate-Palmolive · Location: Mumbai Metropolitan Region</description>
+    <description>Company: Colgate-Palmolive · Location: Mumbai Metropolitan Region
+• Build and maintain software products within an agile engineering team
+• Connect user requirements to technical features and system module integration
+• Develop features using Python, React, Node.js, and cloud technologies</description>
   </item>
   <item>
     <title>Young Apprentice - C00 - Chennai — Citi</title>
     <link>https://www.internradar.info/jobs/citi-young-apprentice-c00-chennai-4449762238</link>
     <guid isPermaLink="true">https://www.internradar.info/jobs/citi-young-apprentice-c00-chennai-4449762238</guid>
     <pubDate>Thu, 06 Aug 2026 16:05:38 GMT</pubDate>
-    <description>Company: Citi · Location: Chennai, Tamil Nadu, India</description>
-  </item>
-  <item>
-    <title>Apprentice, Information Security — Pearson</title>
-    <link>https://www.internradar.info/jobs/pearson-apprentice-information-security-4449757132</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/pearson-apprentice-information-security-4449757132</guid>
-    <pubDate>Thu, 06 Aug 2026 14:32:38 GMT</pubDate>
-    <description>Company: Pearson · Location: Noida, Uttar Pradesh, India</description>
-  </item>
-  <item>
-    <title>GTM Engineer Intern — Discover Dollar Inc</title>
-    <link>https://www.internradar.info/jobs/discover-dollar-inc-gtm-engineer-intern-4449749255</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/discover-dollar-inc-gtm-engineer-intern-4449749255</guid>
-    <pubDate>Thu, 06 Aug 2026 12:52:15 GMT</pubDate>
-    <description>Company: Discover Dollar Inc · Location: Bengaluru East, Karnataka, India</description>
-  </item>
-  <item>
-    <title>AI Video Creator Intern - Bengaluru — Newton School</title>
-    <link>https://www.internradar.info/jobs/newton-school-ai-video-creator-intern-bengaluru-4449733238</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/newton-school-ai-video-creator-intern-bengaluru-4449733238</guid>
-    <pubDate>Thu, 06 Aug 2026 12:04:18 GMT</pubDate>
-    <description>Company: Newton School · Location: Bengaluru, Karnataka, India · Duration: 3–6 months</description>
+    <description>Company: Citi · Location: Chennai, Tamil Nadu, India
+• Build full-stack web applications using React, Python, and MongoDB
+• Work with cloud infrastructure using Terraform, shell scripts, and AWS serverless
+• Collaborate with engineering mentors to solve technical issues and refine systems</description>
   </item>
   <item>
     <title>Software Engineer Trainee — Emerson</title>
@@ -442,6 +430,34 @@
 • Write clean, readable code following team standards and review feedback
 • Use foundational engineering tools like Git, pull requests, and issue trackers
 • Participate in agile ceremonies and perform unit/integration testing</description>
+  </item>
+  <item>
+    <title>Calibration Intern — Pixxel</title>
+    <link>https://www.internradar.info/jobs/pixxel-calibration-intern-4448136135</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/pixxel-calibration-intern-4448136135</guid>
+    <pubDate>Mon, 03 Aug 2026 01:59:19 GMT</pubDate>
+    <description>Company: Pixxel · Location: Bengaluru, Karnataka, India · Duration: 6 months
+• Develop and implement algorithms to calibrate camera systems for optimal image quality
+• Participate in pre-flight calibration including geometrical, spatial, and radiometric calibration
+• Develop and deploy software for imaging system calibration and testing
+• Analyze volume data to guide engineering decisions</description>
+  </item>
+  <item>
+    <title>2027 Technology Developer Summer Internship Programme India — Barclays</title>
+    <link>https://www.internradar.info/jobs/barclays-2027-technology-developer-summer-internship-programme-india-ats-workday-barclays-wd3-external-career-site-barclays-jr-0000124913</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/barclays-2027-technology-developer-summer-internship-programme-india-ats-workday-barclays-wd3-external-career-site-barclays-jr-0000124913</guid>
+    <pubDate>Mon, 03 Aug 2026 00:00:00 GMT</pubDate>
+    <description>Company: Barclays
+• Design, develop and improve software utilizing various engineering methodologies
+• Ensure code scalability and maintainability using industry-aligned languages and tools
+• Collaborate with product managers and designers to define software requirements</description>
+  </item>
+  <item>
+    <title>Graduate Engineer Trainee-SAP — Piramal</title>
+    <link>https://www.internradar.info/jobs/piramal-graduate-engineer-trainee-sap-ats-workday-piramalpharma-wd102-piramal-external-careers-r00003522</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/piramal-graduate-engineer-trainee-sap-ats-workday-piramalpharma-wd102-piramal-external-careers-r00003522</guid>
+    <pubDate>Mon, 03 Aug 2026 00:00:00 GMT</pubDate>
+    <description>Company: Piramal · Location: Mumbai, MH</description>
   </item>
 </channel>
 </rss>
