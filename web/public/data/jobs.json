@@ -1,7 +1,7 @@
 {
- "generatedAt": 1786202330707,
- "count": 138,
- "techCount": 138,
+ "generatedAt": 1786203183698,
+ "count": 139,
+ "techCount": 139,
  "otherCount": 0,
  "companies": [
   "ALLEN",
@@ -105,6 +105,7 @@
   "Delhi, Delhi, India",
   "Greater Bengaluru Area",
   "Gurgaon, Haryana, India",
+  "Gurugram, DLF Downtown",
   "Gurugram, Haryana, India",
   "Gurugram, Haryana, India (Hybrid)",
   "Hyderabad, Telangana, India",
@@ -357,6 +358,37 @@
    "firstSeenAt": 1786158774708,
    "url": "https://www.linkedin.com/jobs/view/4450796752/",
    "applyUrl": "https://www.linkedin.com/jobs/view/4450796752/",
+   "description": null
+  },
+  {
+   "id": "ats:workday:barclays:wd3:External_Career_Site_Barclays:JR-0000127015",
+   "title": "2027 BIIC Analyst Summer Internship India",
+   "company": "Barclays",
+   "matchedWatchlist": "Barclays",
+   "isTech": true,
+   "roleSource": "offline-uncertain",
+   "logo": "/logos/barclays.jpg",
+   "location": "Gurugram, DLF Downtown",
+   "workplaceType": null,
+   "stipend": null,
+   "duration": null,
+   "applicants": null,
+   "easyApply": false,
+   "skills": [
+    "tableau"
+   ],
+   "summary": "Purpose of the role To participate in the day-to-day activities of the transaction banking division providing insights and expertise that help senior colleagues make informed decisions, develop new products and services, and identify new market opportunities. Execution of small research projects, research to support strategic decision making, preparation of presentations and reports to communicate research findings, collaboration with senior management to implement research findings for transaction banking, participating in the development of payment solutions for global companies as well as end-to-end product…",
+   "bullets": [],
+   "roleLabel": null,
+   "degreeLevel": null,
+   "degreeText": null,
+   "keySkills": [],
+   "stipendStatus": "unknown",
+   "postedText": null,
+   "postedAt": 1786147200000,
+   "firstSeenAt": 1786203054190,
+   "url": "https://barclays.wd3.myworkdayjobs.com/en-US/External_Career_Site_Barclays/job/Gurugram-DLF-Downtown/XMLNAME-2027-BIIC-Analyst-Summer-Internship-India_JR-0000127015",
+   "applyUrl": "https://barclays.wd3.myworkdayjobs.com/en-US/External_Career_Site_Barclays/job/Gurugram-DLF-Downtown/XMLNAME-2027-BIIC-Analyst-Summer-Internship-India_JR-0000127015",
    "description": null
   },
   {

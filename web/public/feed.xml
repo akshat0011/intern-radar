@@ -6,7 +6,7 @@
   <atom:link href="https://www.internzo.in/feed.xml" rel="self" type="application/rss+xml"/>
   <description>New engineering internships, listed within minutes of going live.</description>
   <language>en-in</language>
-  <lastBuildDate>Sat, 08 Aug 2026 15:18:50 GMT</lastBuildDate>
+  <lastBuildDate>Sat, 08 Aug 2026 15:33:03 GMT</lastBuildDate>
   <item>
     <title>Engineering Intern – Live Project | Part-Time | Bangalore | Tier-1 Colleges — NoBroker.com</title>
     <link>https://www.internzo.in/jobs/nobroker-com-engineering-intern-live-project-part-time-bangalore-tier-1-colleges-4449258306</link>
@@ -57,6 +57,13 @@
 • Gather business requirements and translate them into functional specifications
 • Perform functional, regression, and UAT testing on new software updates and patches
 • Prepare SRS, FRS, user manuals, and software release documentation</description>
+  </item>
+  <item>
+    <title>2027 BIIC Analyst Summer Internship India — Barclays</title>
+    <link>https://www.internzo.in/jobs/barclays-2027-biic-analyst-summer-internship-india-ats-workday-barclays-wd3-external-career-site-barclays-jr-0000127015</link>
+    <guid isPermaLink="true">https://www.internzo.in/jobs/barclays-2027-biic-analyst-summer-internship-india-ats-workday-barclays-wd3-external-career-site-barclays-jr-0000127015</guid>
+    <pubDate>Sat, 08 Aug 2026 00:00:00 GMT</pubDate>
+    <description>Company: Barclays · Location: Gurugram, DLF Downtown</description>
   </item>
   <item>
     <title>AI Intern — CertifyOS</title>
@@ -440,17 +447,6 @@
 • Support data extraction, cleaning, and preparation for reporting and dashboards
 • Maintain historical datasets and perform basic trend analysis
 • Use Excel, SQL, and Python to support automation and business intelligence initiatives</description>
-  </item>
-  <item>
-    <title>Intern - Full Stack Engineer — Eli Lilly and Company</title>
-    <link>https://www.internzo.in/jobs/eli-lilly-and-company-intern-full-stack-engineer-4448149499</link>
-    <guid isPermaLink="true">https://www.internzo.in/jobs/eli-lilly-and-company-intern-full-stack-engineer-4448149499</guid>
-    <pubDate>Mon, 03 Aug 2026 08:42:32 GMT</pubDate>
-    <description>Company: Eli Lilly and Company · Location: Bengaluru East, Karnataka, India
-• Deliver development tasks for backend services and frontend UI features
-• Write clean, readable code following team standards and review feedback
-• Use foundational engineering tools like Git, pull requests, and issue trackers
-• Participate in agile ceremonies and perform unit/integration testing</description>
   </item>
 </channel>
 </rss>
