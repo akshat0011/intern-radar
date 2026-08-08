@@ -6,7 +6,21 @@
   <atom:link href="https://www.internzo.in/feed.xml" rel="self" type="application/rss+xml"/>
   <description>New engineering internships, listed within minutes of going live.</description>
   <language>en-in</language>
-  <lastBuildDate>Sat, 08 Aug 2026 12:34:10 GMT</lastBuildDate>
+  <lastBuildDate>Sat, 08 Aug 2026 13:30:16 GMT</lastBuildDate>
+  <item>
+    <title>Full Stack Developer Intern - React &amp; Node JS — Interloop - Zoho Partner| Manage Engine | Managed HR Services</title>
+    <link>https://www.internzo.in/jobs/interloop-zoho-partner-manage-engine-managed-hr-services-full-stack-developer-intern-react-and-node-js-4451081170</link>
+    <guid isPermaLink="true">https://www.internzo.in/jobs/interloop-zoho-partner-manage-engine-managed-hr-services-full-stack-developer-intern-react-and-node-js-4451081170</guid>
+    <pubDate>Sat, 08 Aug 2026 13:26:42 GMT</pubDate>
+    <description>Company: Interloop - Zoho Partner| Manage Engine | Managed HR Services · Location: Delhi, Delhi, India</description>
+  </item>
+  <item>
+    <title>Young Graduate Trainee — Infineon Technologies</title>
+    <link>https://www.internzo.in/jobs/infineon-technologies-young-graduate-trainee-4451080135</link>
+    <guid isPermaLink="true">https://www.internzo.in/jobs/infineon-technologies-young-graduate-trainee-4451080135</guid>
+    <pubDate>Sat, 08 Aug 2026 13:09:47 GMT</pubDate>
+    <description>Company: Infineon Technologies · Location: Bengaluru East, Karnataka, India · Duration: 0-3 years</description>
+  </item>
   <item>
     <title>Intern- Technical Content (Applied AI) — upGrad International</title>
     <link>https://www.internzo.in/jobs/upgrad-international-intern-technical-content-applied-ai-4450593245</link>
@@ -441,23 +455,6 @@
 • Participate in pre-flight calibration including geometrical, spatial, and radiometric calibration
 • Develop and deploy software for imaging system calibration and testing
 • Analyze volume data to guide engineering decisions</description>
-  </item>
-  <item>
-    <title>2027 Technology Developer Summer Internship Programme India — Barclays</title>
-    <link>https://www.internzo.in/jobs/barclays-2027-technology-developer-summer-internship-programme-india-ats-workday-barclays-wd3-external-career-site-barclays-jr-0000124913</link>
-    <guid isPermaLink="true">https://www.internzo.in/jobs/barclays-2027-technology-developer-summer-internship-programme-india-ats-workday-barclays-wd3-external-career-site-barclays-jr-0000124913</guid>
-    <pubDate>Mon, 03 Aug 2026 00:00:00 GMT</pubDate>
-    <description>Company: Barclays
-• Design, develop and improve software utilizing various engineering methodologies
-• Ensure code scalability and maintainability using industry-aligned languages and tools
-• Collaborate with product managers and designers to define software requirements</description>
-  </item>
-  <item>
-    <title>Graduate Engineer Trainee-SAP — Piramal</title>
-    <link>https://www.internzo.in/jobs/piramal-graduate-engineer-trainee-sap-ats-workday-piramalpharma-wd102-piramal-external-careers-r00003522</link>
-    <guid isPermaLink="true">https://www.internzo.in/jobs/piramal-graduate-engineer-trainee-sap-ats-workday-piramalpharma-wd102-piramal-external-careers-r00003522</guid>
-    <pubDate>Mon, 03 Aug 2026 00:00:00 GMT</pubDate>
-    <description>Company: Piramal · Location: Mumbai, MH</description>
   </item>
 </channel>
 </rss>

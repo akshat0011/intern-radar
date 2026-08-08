@@ -6,6 +6,30 @@
   "description": "New engineering internships, listed within minutes of going live.",
   "items": [
     {
+      "id": "https://www.internzo.in/jobs/interloop-zoho-partner-manage-engine-managed-hr-services-full-stack-developer-intern-react-and-node-js-4451081170",
+      "url": "https://www.internzo.in/jobs/interloop-zoho-partner-manage-engine-managed-hr-services-full-stack-developer-intern-react-and-node-js-4451081170",
+      "title": "Full Stack Developer Intern - React & Node JS — Interloop - Zoho Partner| Manage Engine | Managed HR Services",
+      "content_text": "Company: Interloop - Zoho Partner| Manage Engine | Managed HR Services · Location: Delhi, Delhi, India",
+      "date_published": "2026-08-08T13:26:42.965Z",
+      "authors": [
+        {
+          "name": "Interloop - Zoho Partner| Manage Engine | Managed HR Services"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internzo.in/jobs/infineon-technologies-young-graduate-trainee-4451080135",
+      "url": "https://www.internzo.in/jobs/infineon-technologies-young-graduate-trainee-4451080135",
+      "title": "Young Graduate Trainee — Infineon Technologies",
+      "content_text": "Company: Infineon Technologies · Location: Bengaluru East, Karnataka, India · Duration: 0-3 years",
+      "date_published": "2026-08-08T13:09:47.017Z",
+      "authors": [
+        {
+          "name": "Infineon Technologies"
+        }
+      ]
+    },
+    {
       "id": "https://www.internzo.in/jobs/upgrad-international-intern-technical-content-applied-ai-4450593245",
       "url": "https://www.internzo.in/jobs/upgrad-international-intern-technical-content-applied-ai-4450593245",
       "title": "Intern- Technical Content (Applied AI) — upGrad International",
@@ -578,30 +602,6 @@
       "authors": [
         {
           "name": "Pixxel"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internzo.in/jobs/barclays-2027-technology-developer-summer-internship-programme-india-ats-workday-barclays-wd3-external-career-site-barclays-jr-0000124913",
-      "url": "https://www.internzo.in/jobs/barclays-2027-technology-developer-summer-internship-programme-india-ats-workday-barclays-wd3-external-career-site-barclays-jr-0000124913",
-      "title": "2027 Technology Developer Summer Internship Programme India — Barclays",
-      "content_text": "Company: Barclays\n• Design, develop and improve software utilizing various engineering methodologies\n• Ensure code scalability and maintainability using industry-aligned languages and tools\n• Collaborate with product managers and designers to define software requirements",
-      "date_published": "2026-08-03T00:00:00.000Z",
-      "authors": [
-        {
-          "name": "Barclays"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internzo.in/jobs/piramal-graduate-engineer-trainee-sap-ats-workday-piramalpharma-wd102-piramal-external-careers-r00003522",
-      "url": "https://www.internzo.in/jobs/piramal-graduate-engineer-trainee-sap-ats-workday-piramalpharma-wd102-piramal-external-careers-r00003522",
-      "title": "Graduate Engineer Trainee-SAP — Piramal",
-      "content_text": "Company: Piramal · Location: Mumbai, MH",
-      "date_published": "2026-08-03T00:00:00.000Z",
-      "authors": [
-        {
-          "name": "Piramal"
         }
       ]
     }
