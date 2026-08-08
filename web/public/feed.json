@@ -18,18 +18,6 @@
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/urban-talkies-creative-design-intern-4450522465",
-      "url": "https://www.internradar.info/jobs/urban-talkies-creative-design-intern-4450522465",
-      "title": "Creative Design Intern — Urban Talkies",
-      "content_text": "Company: Urban Talkies · Location: Delhi, Delhi, India",
-      "date_published": "2026-08-08T02:12:31.368Z",
-      "authors": [
-        {
-          "name": "Urban Talkies"
-        }
-      ]
-    },
-    {
       "id": "https://www.internradar.info/jobs/fyntune-solution-private-limited-devops-engineer-internship-in-thane-navi-mumbai-mumbai-4450392562",
       "url": "https://www.internradar.info/jobs/fyntune-solution-private-limited-devops-engineer-internship-in-thane-navi-mumbai-mumbai-4450392562",
       "title": "Devops Engineer Internship in Thane, Navi Mumbai, Mumbai — FynTune Solution Private Limited",
@@ -102,30 +90,6 @@
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/mufg-apprentice-4450322658",
-      "url": "https://www.internradar.info/jobs/mufg-apprentice-4450322658",
-      "title": "Apprentice — MUFG",
-      "content_text": "Company: MUFG · Location: Greater Bengaluru Area",
-      "date_published": "2026-08-07T13:12:01.239Z",
-      "authors": [
-        {
-          "name": "MUFG"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/hsbc-enterprise-talent-apprentice-4450324406",
-      "url": "https://www.internradar.info/jobs/hsbc-enterprise-talent-apprentice-4450324406",
-      "title": "Enterprise Talent (Apprentice) — HSBC",
-      "content_text": "Company: HSBC · Location: Mumbai, Maharashtra, India · Duration: 0-5 years",
-      "date_published": "2026-08-07T13:11:32.823Z",
-      "authors": [
-        {
-          "name": "HSBC"
-        }
-      ]
-    },
-    {
       "id": "https://www.internradar.info/jobs/honeywell-technologies-intern-bachelor-s-4450318441",
       "url": "https://www.internradar.info/jobs/honeywell-technologies-intern-bachelor-s-4450318441",
       "title": "Intern (Bachelor's) — Honeywell Technologies",
@@ -189,7 +153,7 @@
       "id": "https://www.internradar.info/jobs/seagate-technology-intern-sap-mm-4450084755",
       "url": "https://www.internradar.info/jobs/seagate-technology-intern-sap-mm-4450084755",
       "title": "Intern - SAP MM — Seagate Technology",
-      "content_text": "Company: Seagate Technology · Location: Pune Division, Maharashtra, India",
+      "content_text": "Company: Seagate Technology · Location: Pune Division, Maharashtra, India\n• Support SAP MM consultants with testing, documentation, and issue tracking\n• Validate material master and vendor master data across procurement workflows\n• Prepare test scenarios and support user acceptance testing for SAP S/4HANA",
       "date_published": "2026-08-07T09:31:33.637Z",
       "authors": [
         {
@@ -198,38 +162,14 @@
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/dehaat-video-anchor-intern-4450074721",
-      "url": "https://www.internradar.info/jobs/dehaat-video-anchor-intern-4450074721",
-      "title": "Video Anchor Intern — DeHaat",
-      "content_text": "Company: DeHaat · Location: Gurugram, Haryana, India",
-      "date_published": "2026-08-07T08:32:31.139Z",
-      "authors": [
-        {
-          "name": "DeHaat"
-        }
-      ]
-    },
-    {
       "id": "https://www.internradar.info/jobs/sanas-software-engineering-intern-si-and-agentic-ai-platform-4450086026",
       "url": "https://www.internradar.info/jobs/sanas-software-engineering-intern-si-and-agentic-ai-platform-4450086026",
       "title": "Software Engineering Intern - SI & Agentic AI Platform — Sanas",
-      "content_text": "Company: Sanas · Location: Bengaluru, Karnataka, India",
+      "content_text": "Company: Sanas · Location: Bengaluru, Karnataka, India\n• Build and deploy features for speech intelligence and agentic AI platforms\n• Develop backend and frontend code using Python, Go, TypeScript, and React\n• Work with APIs, distributed systems, Kafka, and data backends\n• Four-month onsite internship in Bangalore",
       "date_published": "2026-08-07T07:32:36.365Z",
       "authors": [
         {
           "name": "Sanas"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/d-square-consulting-services-pvt-ltd-motion-and-graphics-designer-intern-4448729282",
-      "url": "https://www.internradar.info/jobs/d-square-consulting-services-pvt-ltd-motion-and-graphics-designer-intern-4448729282",
-      "title": "Motion and Graphics Designer Intern — D Square Consulting Services Pvt Ltd",
-      "content_text": "Company: D Square Consulting Services Pvt Ltd · Location: Greater Bengaluru Area · Stipend: ₹10,000 / total · Duration: 0–6 months",
-      "date_published": "2026-08-07T05:21:13.619Z",
-      "authors": [
-        {
-          "name": "D Square Consulting Services Pvt Ltd"
         }
       ]
     },
@@ -278,18 +218,6 @@
       "authors": [
         {
           "name": "Citi"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/state-street-apprentice-ats-workday-statestreet-wd1-global-r-792595",
-      "url": "https://www.internradar.info/jobs/state-street-apprentice-ats-workday-statestreet-wd1-global-r-792595",
-      "title": "Apprentice — State Street",
-      "content_text": "Company: State Street · Location: HINJEWADI PUNE",
-      "date_published": "2026-08-07T00:00:00.000Z",
-      "authors": [
-        {
-          "name": "State Street"
         }
       ]
     },
@@ -602,6 +530,78 @@
       "authors": [
         {
           "name": "Siemens Healthineers"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/harman-india-digital-signal-processing-intern-4446635104",
+      "url": "https://www.internradar.info/jobs/harman-india-digital-signal-processing-intern-4446635104",
+      "title": "Digital Signal Processing - Intern — HARMAN India",
+      "content_text": "Company: HARMAN India · Location: Bengaluru, Karnataka, India · Duration: 9 months\n• Design, implement, and test embedded software for amplifier applications\n• Code in C and C++ while working with real-time operating systems and scripting languages\n• Troubleshoot code using oscilloscopes, logic analyzers, debuggers, and emulators",
+      "date_published": "2026-08-04T10:52:54.702Z",
+      "authors": [
+        {
+          "name": "HARMAN India"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/joveo-software-engineering-intern-full-stack-4446616938",
+      "url": "https://www.internradar.info/jobs/joveo-software-engineering-intern-full-stack-4446616938",
+      "title": "Software Engineering Intern (Full Stack) — Joveo",
+      "content_text": "Company: Joveo · Location: Bengaluru, Karnataka, India\n• Build greenfield AI products across frontend and backend from prototype to release\n• Develop full-stack web applications using React, Next.js, Node.js, and Express.js\n• Integrate LLMs, embeddings, and vector databases into real applications",
+      "date_published": "2026-08-04T10:28:55.325Z",
+      "authors": [
+        {
+          "name": "Joveo"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/microsoft-technology-consulting-intern-ats-microsoft-india-1970393556955253",
+      "url": "https://www.internradar.info/jobs/microsoft-technology-consulting-intern-ats-microsoft-india-1970393556955253",
+      "title": "Technology Consulting INTERN — Microsoft",
+      "content_text": "Company: Microsoft · Location: India, Telangana, Hyderabad\n• Identify project risks and propose technical mitigations aligned with business goals\n• Provide technical input in pre-sales and define customer cloud requirements\n• Engage with stakeholders to resolve project issues and accelerate cloud adoption",
+      "date_published": "2026-08-04T09:17:05.000Z",
+      "authors": [
+        {
+          "name": "Microsoft"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/flam-software-engineering-intern-4445878655",
+      "url": "https://www.internradar.info/jobs/flam-software-engineering-intern-4445878655",
+      "title": "Software Engineering Intern — Flam",
+      "content_text": "Company: Flam · Location: Bengaluru, Karnataka, India",
+      "date_published": "2026-08-04T06:36:19.839Z",
+      "authors": [
+        {
+          "name": "Flam"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/emerson-graduate-engineer-trainee-4448323159",
+      "url": "https://www.internradar.info/jobs/emerson-graduate-engineer-trainee-4448323159",
+      "title": "Graduate Engineer Trainee — Emerson",
+      "content_text": "Company: Emerson · Location: Pune Division, Maharashtra, India\n• Configure HMI and SCADA systems across multiple platforms\n• Create historical reports and trends using SQL and VB scripting\n• Test serial and Ethernet communication protocols like Modbus",
+      "date_published": "2026-08-03T16:37:21.804Z",
+      "authors": [
+        {
+          "name": "Emerson"
+        }
+      ]
+    },
+    {
+      "id": "https://www.internradar.info/jobs/intel-attraction-req-intern-4447993213",
+      "url": "https://www.internradar.info/jobs/intel-attraction-req-intern-4447993213",
+      "title": "Attraction Req : Intern — Intel",
+      "content_text": "Company: Intel · Location: Bengaluru, Karnataka, India\n• Conduct research, logic design, RTL coding, and simulation for SoC development\n• Develop AI software, open-source libraries, and integrate software across the stack\n• Hybrid work model based out of Bangalore, India",
+      "date_published": "2026-08-03T13:29:54.890Z",
+      "authors": [
+        {
+          "name": "Intel"
         }
       ]
     }
