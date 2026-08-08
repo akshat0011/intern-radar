@@ -6,6 +6,18 @@
   "description": "New engineering internships, listed within minutes of going live.",
   "items": [
     {
+      "id": "https://www.internradar.info/jobs/slb-eto-engineer-trainee-4450569584",
+      "url": "https://www.internradar.info/jobs/slb-eto-engineer-trainee-4450569584",
+      "title": "ETO Engineer Trainee — SLB",
+      "content_text": "Company: SLB · Location: Coimbatore, Tamil Nadu, India",
+      "date_published": "2026-08-08T04:57:24.457Z",
+      "authors": [
+        {
+          "name": "SLB"
+        }
+      ]
+    },
+    {
       "id": "https://www.internradar.info/jobs/urban-talkies-creative-design-intern-4450522465",
       "url": "https://www.internradar.info/jobs/urban-talkies-creative-design-intern-4450522465",
       "title": "Creative Design Intern — Urban Talkies",
@@ -590,18 +602,6 @@
       "authors": [
         {
           "name": "Siemens Healthineers"
-        }
-      ]
-    },
-    {
-      "id": "https://www.internradar.info/jobs/harman-india-digital-signal-processing-intern-4446635104",
-      "url": "https://www.internradar.info/jobs/harman-india-digital-signal-processing-intern-4446635104",
-      "title": "Digital Signal Processing - Intern — HARMAN India",
-      "content_text": "Company: HARMAN India · Location: Bengaluru, Karnataka, India · Duration: 9 months\n• Design, implement, and test embedded software for amplifier applications\n• Code in C and C++ while working with real-time operating systems and scripting languages\n• Troubleshoot code using oscilloscopes, logic analyzers, debuggers, and emulators",
-      "date_published": "2026-08-04T10:52:54.702Z",
-      "authors": [
-        {
-          "name": "HARMAN India"
         }
       ]
     }
