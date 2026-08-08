@@ -1,13 +1,13 @@
 {
   "version": "https://jsonfeed.org/version/1.1",
-  "title": "Intern Radar — engineering internships in India",
-  "home_page_url": "https://www.internradar.info/",
-  "feed_url": "https://www.internradar.info/feed.json",
+  "title": "Internzo — engineering internships in India",
+  "home_page_url": "https://www.internzo.in/",
+  "feed_url": "https://www.internzo.in/feed.json",
   "description": "New engineering internships, listed within minutes of going live.",
   "items": [
     {
-      "id": "https://www.internradar.info/jobs/upgrad-international-intern-technical-content-applied-ai-4450593245",
-      "url": "https://www.internradar.info/jobs/upgrad-international-intern-technical-content-applied-ai-4450593245",
+      "id": "https://www.internzo.in/jobs/upgrad-international-intern-technical-content-applied-ai-4450593245",
+      "url": "https://www.internzo.in/jobs/upgrad-international-intern-technical-content-applied-ai-4450593245",
       "title": "Intern- Technical Content (Applied AI) — upGrad International",
       "content_text": "Company: upGrad International · Location: Mumbai Metropolitan Region · Stipend: 30,000 / month · Duration: 6 months\n• Script AI video production pipelines using tools like Remotion, Manim, and HeyGen\n• Review SME scripts, write pre-production scripts, and build Python lab demos\n• Perform QA on AI-generated video previews and refine live learning materials",
       "date_published": "2026-08-08T07:09:43.923Z",
@@ -18,8 +18,8 @@
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/fyntune-solution-private-limited-devops-engineer-internship-in-thane-navi-mumbai-mumbai-4450392562",
-      "url": "https://www.internradar.info/jobs/fyntune-solution-private-limited-devops-engineer-internship-in-thane-navi-mumbai-mumbai-4450392562",
+      "id": "https://www.internzo.in/jobs/fyntune-solution-private-limited-devops-engineer-internship-in-thane-navi-mumbai-mumbai-4450392562",
+      "url": "https://www.internzo.in/jobs/fyntune-solution-private-limited-devops-engineer-internship-in-thane-navi-mumbai-mumbai-4450392562",
       "title": "Devops Engineer Internship in Thane, Navi Mumbai, Mumbai — FynTune Solution Private Limited",
       "content_text": "Company: FynTune Solution Private Limited · Location: Thane, Maharashtra, India\n• Administer Linux servers, support application deployments, and maintain CI/CD pipelines\n• Manage AWS infrastructure including EC2, S3, IAM, VPC, and Route 53\n• Write Bash scripts to automate routine operations and manage Cron jobs",
       "date_published": "2026-08-08T00:13:17.111Z",
@@ -30,8 +30,8 @@
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/taxosmart-business-analytics-internship-in-mumbai-4450796752",
-      "url": "https://www.internradar.info/jobs/taxosmart-business-analytics-internship-in-mumbai-4450796752",
+      "id": "https://www.internzo.in/jobs/taxosmart-business-analytics-internship-in-mumbai-4450796752",
+      "url": "https://www.internzo.in/jobs/taxosmart-business-analytics-internship-in-mumbai-4450796752",
       "title": "Business Analytics Internship in Mumbai — TAXOSMART",
       "content_text": "Company: TAXOSMART · Location: Mumbai Metropolitan Region\n• Gather business requirements and translate them into functional specifications\n• Perform functional, regression, and UAT testing on new software updates and patches\n• Prepare SRS, FRS, user manuals, and software release documentation",
       "date_published": "2026-08-08T00:12:54.705Z",
@@ -42,8 +42,8 @@
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/certifyos-ai-intern-ats-ashby-certifyos-4bcdec99-9f2e-416c-8e26-498c94c5898a",
-      "url": "https://www.internradar.info/jobs/certifyos-ai-intern-ats-ashby-certifyos-4bcdec99-9f2e-416c-8e26-498c94c5898a",
+      "id": "https://www.internzo.in/jobs/certifyos-ai-intern-ats-ashby-certifyos-4bcdec99-9f2e-416c-8e26-498c94c5898a",
+      "url": "https://www.internzo.in/jobs/certifyos-ai-intern-ats-ashby-certifyos-4bcdec99-9f2e-416c-8e26-498c94c5898a",
       "title": "AI Intern — CertifyOS",
       "content_text": "Company: CertifyOS · Location: Pune, India\n• Develop, test, and maintain ML-driven services and data workflows in Python\n• Build evaluation pipelines and metrics to track model performance in production\n• Deploy ML workloads on GCP using Cloud Run, GKE, Cloud Functions, and BigQuery",
       "date_published": "2026-08-07T14:51:22.086Z",
@@ -54,8 +54,8 @@
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/gokwik-intern-customer-engineering-4450330540",
-      "url": "https://www.internradar.info/jobs/gokwik-intern-customer-engineering-4450330540",
+      "id": "https://www.internzo.in/jobs/gokwik-intern-customer-engineering-4450330540",
+      "url": "https://www.internzo.in/jobs/gokwik-intern-customer-engineering-4450330540",
       "title": "Intern - Customer Engineering — GoKwik",
       "content_text": "Company: GoKwik · Location: Gurugram, Haryana, India\n• Configure merchant accounts and integrations for Shopify, WooCommerce, and custom sites\n• Troubleshoot technical onboarding issues using API responses, JSON payloads, and logs\n• Maintain onboarding documentation, SOPs, and playbooks to streamline go-lives",
       "date_published": "2026-08-07T13:18:28.260Z",
@@ -66,8 +66,8 @@
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/harman-india-certification-intern-4448767325",
-      "url": "https://www.internradar.info/jobs/harman-india-certification-intern-4448767325",
+      "id": "https://www.internzo.in/jobs/harman-india-certification-intern-4448767325",
+      "url": "https://www.internzo.in/jobs/harman-india-certification-intern-4448767325",
       "title": "Certification Intern — HARMAN India",
       "content_text": "Company: HARMAN India · Location: Bengaluru, Karnataka, India\n• Develop software solutions using C, C++, and Java on the Android platform\n• Test embedded software components using debuggers, emulators, and simulators\n• Participate in software quality assurance processes and build release activities",
       "date_published": "2026-08-07T10:53:26.727Z",
@@ -78,8 +78,8 @@
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/seagate-technology-intern-sap-mm-4450084755",
-      "url": "https://www.internradar.info/jobs/seagate-technology-intern-sap-mm-4450084755",
+      "id": "https://www.internzo.in/jobs/seagate-technology-intern-sap-mm-4450084755",
+      "url": "https://www.internzo.in/jobs/seagate-technology-intern-sap-mm-4450084755",
       "title": "Intern - SAP MM — Seagate Technology",
       "content_text": "Company: Seagate Technology · Location: Pune Division, Maharashtra, India\n• Support SAP MM consultants with testing, documentation, and issue tracking\n• Validate material master and vendor master data across procurement workflows\n• Prepare test scenarios and support user acceptance testing for SAP S/4HANA",
       "date_published": "2026-08-07T09:31:33.637Z",
@@ -90,8 +90,8 @@
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/sanas-software-engineering-intern-si-and-agentic-ai-platform-4450086026",
-      "url": "https://www.internradar.info/jobs/sanas-software-engineering-intern-si-and-agentic-ai-platform-4450086026",
+      "id": "https://www.internzo.in/jobs/sanas-software-engineering-intern-si-and-agentic-ai-platform-4450086026",
+      "url": "https://www.internzo.in/jobs/sanas-software-engineering-intern-si-and-agentic-ai-platform-4450086026",
       "title": "Software Engineering Intern - SI & Agentic AI Platform — Sanas",
       "content_text": "Company: Sanas · Location: Bengaluru, Karnataka, India\n• Build and deploy features for speech intelligence and agentic AI platforms\n• Develop backend and frontend code using Python, Go, TypeScript, and React\n• Work with APIs, distributed systems, Kafka, and data backends\n• Four-month onsite internship in Bangalore",
       "date_published": "2026-08-07T07:32:36.365Z",
@@ -102,8 +102,8 @@
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/times-internet-ux-research-intern-4448705984",
-      "url": "https://www.internradar.info/jobs/times-internet-ux-research-intern-4448705984",
+      "id": "https://www.internzo.in/jobs/times-internet-ux-research-intern-4448705984",
+      "url": "https://www.internzo.in/jobs/times-internet-ux-research-intern-4448705984",
       "title": "UX Research Intern — Times Internet",
       "content_text": "Company: Times Internet · Location: Noida, Uttar Pradesh, India · Duration: 6 months\n• Conduct user interviews, surveys, and usability tests for digital products\n• Recruit participants, transcribe sessions, and build insight decks\n• Maintain research repositories and share findings with design and dev teams\n• 6-month full-time internship in Noida",
       "date_published": "2026-08-07T04:45:23.049Z",
@@ -114,8 +114,8 @@
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/seagate-technology-intern-sap-pp-4450040519",
-      "url": "https://www.internradar.info/jobs/seagate-technology-intern-sap-pp-4450040519",
+      "id": "https://www.internzo.in/jobs/seagate-technology-intern-sap-pp-4450040519",
+      "url": "https://www.internzo.in/jobs/seagate-technology-intern-sap-pp-4450040519",
       "title": "Intern - SAP PP — Seagate Technology",
       "content_text": "Company: Seagate Technology · Location: Pune Division, Maharashtra, India\n• Support SAP PP functional modules, master data validation, and testing\n• Validate BOMs, routings, work centers, and material requirements planning\n• Document test results, analyze support issues, and assist business users",
       "date_published": "2026-08-07T03:31:40.071Z",
@@ -126,8 +126,8 @@
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/sony-research-india-ai-research-intern-4448494663",
-      "url": "https://www.internradar.info/jobs/sony-research-india-ai-research-intern-4448494663",
+      "id": "https://www.internzo.in/jobs/sony-research-india-ai-research-intern-4448494663",
+      "url": "https://www.internzo.in/jobs/sony-research-india-ai-research-intern-4448494663",
       "title": "AI Research Intern — Sony Research India",
       "content_text": "Company: Sony Research India · Location: Bengaluru, Karnataka, India · Stipend: 2,026\n• Develop ML, deep learning, and LLM models for OTT user behavior\n• Apply causal inference techniques to analyze user retention and engagement\n• Experiment with algorithms and large interaction datasets using Python and PyTorch\n• 6-month paid remote internship starting August 2026",
       "date_published": "2026-08-07T02:37:24.007Z",
@@ -138,8 +138,8 @@
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/citi-young-apprentice-c00-pune-ats-workday-citi-wd5-2-26984617",
-      "url": "https://www.internradar.info/jobs/citi-young-apprentice-c00-pune-ats-workday-citi-wd5-2-26984617",
+      "id": "https://www.internzo.in/jobs/citi-young-apprentice-c00-pune-ats-workday-citi-wd5-2-26984617",
+      "url": "https://www.internzo.in/jobs/citi-young-apprentice-c00-pune-ats-workday-citi-wd5-2-26984617",
       "title": "Young Apprentice - C00 - PUNE — Citi",
       "content_text": "Company: Citi · Location: Pune Maharashtra India\n• Build data engineering pipelines using PySpark, Python, and Pandas\n• Work with S3 data lakes, PostgreSQL databases, and Pydantic validation\n• Perform interactive data visualization using SQL and Jupyter Notebooks",
       "date_published": "2026-08-07T00:00:00.000Z",
@@ -150,8 +150,8 @@
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/colgate-palmolive-git-trainee-contractual-4395013887",
-      "url": "https://www.internradar.info/jobs/colgate-palmolive-git-trainee-contractual-4395013887",
+      "id": "https://www.internzo.in/jobs/colgate-palmolive-git-trainee-contractual-4395013887",
+      "url": "https://www.internzo.in/jobs/colgate-palmolive-git-trainee-contractual-4395013887",
       "title": "GIT Trainee (Contractual) — Colgate-Palmolive",
       "content_text": "Company: Colgate-Palmolive · Location: Mumbai Metropolitan Region\n• Build and maintain software products within an agile engineering team\n• Connect user requirements to technical features and system module integration\n• Develop features using Python, React, Node.js, and cloud technologies",
       "date_published": "2026-08-06T16:52:06.593Z",
@@ -162,8 +162,8 @@
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/citi-young-apprentice-c00-chennai-4449762238",
-      "url": "https://www.internradar.info/jobs/citi-young-apprentice-c00-chennai-4449762238",
+      "id": "https://www.internzo.in/jobs/citi-young-apprentice-c00-chennai-4449762238",
+      "url": "https://www.internzo.in/jobs/citi-young-apprentice-c00-chennai-4449762238",
       "title": "Young Apprentice - C00 - Chennai — Citi",
       "content_text": "Company: Citi · Location: Chennai, Tamil Nadu, India\n• Build full-stack web applications using React, Python, and MongoDB\n• Work with cloud infrastructure using Terraform, shell scripts, and AWS serverless\n• Collaborate with engineering mentors to solve technical issues and refine systems",
       "date_published": "2026-08-06T16:05:38.382Z",
@@ -174,8 +174,8 @@
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/emerson-software-engineer-trainee-4450233537",
-      "url": "https://www.internradar.info/jobs/emerson-software-engineer-trainee-4450233537",
+      "id": "https://www.internzo.in/jobs/emerson-software-engineer-trainee-4450233537",
+      "url": "https://www.internzo.in/jobs/emerson-software-engineer-trainee-4450233537",
       "title": "Software Engineer Trainee — Emerson",
       "content_text": "Company: Emerson · Location: Pune Division, Maharashtra, India",
       "date_published": "2026-08-06T10:52:36.540Z",
@@ -186,8 +186,8 @@
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/aditya-birla-group-diploma-engineer-trainee-4450230298",
-      "url": "https://www.internradar.info/jobs/aditya-birla-group-diploma-engineer-trainee-4450230298",
+      "id": "https://www.internzo.in/jobs/aditya-birla-group-diploma-engineer-trainee-4450230298",
+      "url": "https://www.internzo.in/jobs/aditya-birla-group-diploma-engineer-trainee-4450230298",
       "title": "Diploma Engineer Trainee — Aditya Birla Group",
       "content_text": "Company: Aditya Birla Group · Location: Jharkhand, India",
       "date_published": "2026-08-06T09:18:52.091Z",
@@ -198,8 +198,8 @@
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/tonbo-imaging-intern-digitisation-and-automation-admin-function-4449989732",
-      "url": "https://www.internradar.info/jobs/tonbo-imaging-intern-digitisation-and-automation-admin-function-4449989732",
+      "id": "https://www.internzo.in/jobs/tonbo-imaging-intern-digitisation-and-automation-admin-function-4449989732",
+      "url": "https://www.internzo.in/jobs/tonbo-imaging-intern-digitisation-and-automation-admin-function-4449989732",
       "title": "Intern – Digitisation & Automation (Admin Function) — Tonbo Imaging",
       "content_text": "Company: Tonbo Imaging · Location: Bengaluru, Karnataka, India (On-site)",
       "date_published": "2026-08-06T05:37:58.984Z",
@@ -210,8 +210,8 @@
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/sony-research-india-data-science-intern-4449971505",
-      "url": "https://www.internradar.info/jobs/sony-research-india-data-science-intern-4449971505",
+      "id": "https://www.internzo.in/jobs/sony-research-india-data-science-intern-4449971505",
+      "url": "https://www.internzo.in/jobs/sony-research-india-data-science-intern-4449971505",
       "title": "Data Science Intern — Sony Research India",
       "content_text": "Company: Sony Research India · Location: Bengaluru, Karnataka, India · Stipend: ₹9,00,000 / year",
       "date_published": "2026-08-06T03:27:33.818Z",
@@ -222,8 +222,8 @@
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/coindcx-intern-engineering-4449153319",
-      "url": "https://www.internradar.info/jobs/coindcx-intern-engineering-4449153319",
+      "id": "https://www.internzo.in/jobs/coindcx-intern-engineering-4449153319",
+      "url": "https://www.internzo.in/jobs/coindcx-intern-engineering-4449153319",
       "title": "Intern - Engineering — CoinDCX",
       "content_text": "Company: CoinDCX · Location: Bengaluru, Karnataka, India",
       "date_published": "2026-08-05T18:35:17.560Z",
@@ -234,8 +234,8 @@
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/quantiphi-intern-it-and-desktop-support-4448046701",
-      "url": "https://www.internradar.info/jobs/quantiphi-intern-it-and-desktop-support-4448046701",
+      "id": "https://www.internzo.in/jobs/quantiphi-intern-it-and-desktop-support-4448046701",
+      "url": "https://www.internzo.in/jobs/quantiphi-intern-it-and-desktop-support-4448046701",
       "title": "Intern - IT & Desktop Support — Quantiphi",
       "content_text": "Company: Quantiphi · Location: Mumbai, Maharashtra, India",
       "date_published": "2026-08-05T18:24:45.022Z",
@@ -246,8 +246,8 @@
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/microsoft-research-sciences-intern-4432065177",
-      "url": "https://www.internradar.info/jobs/microsoft-research-sciences-intern-4432065177",
+      "id": "https://www.internzo.in/jobs/microsoft-research-sciences-intern-4432065177",
+      "url": "https://www.internzo.in/jobs/microsoft-research-sciences-intern-4432065177",
       "title": "Research Sciences INTERN — Microsoft",
       "content_text": "Company: Microsoft · Location: India",
       "date_published": "2026-08-05T16:58:31.066Z",
@@ -258,8 +258,8 @@
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/magna-international-intern-smart-factory-solutions-4422173133",
-      "url": "https://www.internradar.info/jobs/magna-international-intern-smart-factory-solutions-4422173133",
+      "id": "https://www.internzo.in/jobs/magna-international-intern-smart-factory-solutions-4422173133",
+      "url": "https://www.internzo.in/jobs/magna-international-intern-smart-factory-solutions-4422173133",
       "title": "Intern, Smart Factory Solutions — Magna International",
       "content_text": "Company: Magna International · Location: Bengaluru, Karnataka, India",
       "date_published": "2026-08-05T15:04:03.106Z",
@@ -270,8 +270,8 @@
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/ge-healthcare-graduate-engineer-trainee-4440563377",
-      "url": "https://www.internradar.info/jobs/ge-healthcare-graduate-engineer-trainee-4440563377",
+      "id": "https://www.internzo.in/jobs/ge-healthcare-graduate-engineer-trainee-4440563377",
+      "url": "https://www.internzo.in/jobs/ge-healthcare-graduate-engineer-trainee-4440563377",
       "title": "Graduate Engineer Trainee — GE HealthCare",
       "content_text": "Company: GE HealthCare · Location: Bengaluru, Karnataka, India",
       "date_published": "2026-08-05T13:58:10.362Z",
@@ -282,8 +282,8 @@
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/continental-industry-intern-ai-engineer-4449119257",
-      "url": "https://www.internradar.info/jobs/continental-industry-intern-ai-engineer-4449119257",
+      "id": "https://www.internzo.in/jobs/continental-industry-intern-ai-engineer-4449119257",
+      "url": "https://www.internzo.in/jobs/continental-industry-intern-ai-engineer-4449119257",
       "title": "Intern - AI Engineer — Continental Industry",
       "content_text": "Company: Continental Industry · Location: Bengaluru, Karnataka, India",
       "date_published": "2026-08-05T13:45:03.485Z",
@@ -294,8 +294,8 @@
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/ge-healthcare-graduate-engineering-trainee-4440557575",
-      "url": "https://www.internradar.info/jobs/ge-healthcare-graduate-engineering-trainee-4440557575",
+      "id": "https://www.internzo.in/jobs/ge-healthcare-graduate-engineering-trainee-4440557575",
+      "url": "https://www.internzo.in/jobs/ge-healthcare-graduate-engineering-trainee-4440557575",
       "title": "GRADUATE ENGINEERING TRAINEE — GE HealthCare",
       "content_text": "Company: GE HealthCare · Location: Bengaluru, Karnataka, India",
       "date_published": "2026-08-05T13:35:52.929Z",
@@ -306,8 +306,8 @@
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/analog-devices-digital-ic-physical-verification-and-design-engineer-trainee-4447396386",
-      "url": "https://www.internradar.info/jobs/analog-devices-digital-ic-physical-verification-and-design-engineer-trainee-4447396386",
+      "id": "https://www.internzo.in/jobs/analog-devices-digital-ic-physical-verification-and-design-engineer-trainee-4447396386",
+      "url": "https://www.internzo.in/jobs/analog-devices-digital-ic-physical-verification-and-design-engineer-trainee-4447396386",
       "title": "Digital IC Physical Verification and Design – Engineer Trainee — Analog Devices",
       "content_text": "Company: Analog Devices · Location: Greater Bengaluru Area · Duration: 1 year",
       "date_published": "2026-08-05T11:10:53.495Z",
@@ -318,8 +318,8 @@
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/licious-quality-assurance-intern-4448990506",
-      "url": "https://www.internradar.info/jobs/licious-quality-assurance-intern-4448990506",
+      "id": "https://www.internzo.in/jobs/licious-quality-assurance-intern-4448990506",
+      "url": "https://www.internzo.in/jobs/licious-quality-assurance-intern-4448990506",
       "title": "Quality Assurance Intern — Licious",
       "content_text": "Company: Licious · Location: Bengaluru, Karnataka, India · Stipend: ₹15,000 / month · Duration: 6 months",
       "date_published": "2026-08-05T10:34:54.630Z",
@@ -330,8 +330,8 @@
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/siemens-graduate-trainee-engineer-4447382156",
-      "url": "https://www.internradar.info/jobs/siemens-graduate-trainee-engineer-4447382156",
+      "id": "https://www.internzo.in/jobs/siemens-graduate-trainee-engineer-4447382156",
+      "url": "https://www.internzo.in/jobs/siemens-graduate-trainee-engineer-4447382156",
       "title": "Graduate Trainee Engineer — Siemens",
       "content_text": "Company: Siemens · Location: Bangalore Urban, Karnataka, India · Duration: 6 months\n• Assist senior engineers with project tasks and input reviews\n• Prepare engineering deliverables, estimates, and basic components\n• Track work hours and perform initial quality checks on assigned work",
       "date_published": "2026-08-05T07:22:48.545Z",
@@ -342,8 +342,8 @@
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/siemens-graduate-trainee-engineer-4447378221",
-      "url": "https://www.internradar.info/jobs/siemens-graduate-trainee-engineer-4447378221",
+      "id": "https://www.internzo.in/jobs/siemens-graduate-trainee-engineer-4447378221",
+      "url": "https://www.internzo.in/jobs/siemens-graduate-trainee-engineer-4447378221",
       "title": "Graduate Trainee Engineer — Siemens",
       "content_text": "Company: Siemens · Location: Pune Division, Maharashtra, India · Duration: 6 months\n• Assist senior engineers with project tasks and input reviews\n• Prepare engineering deliverables, estimates, and basic components\n• Track work hours and perform initial quality checks on assigned work",
       "date_published": "2026-08-05T07:22:11.263Z",
@@ -354,8 +354,8 @@
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/siemens-graduate-trainee-engineer-4447365696",
-      "url": "https://www.internradar.info/jobs/siemens-graduate-trainee-engineer-4447365696",
+      "id": "https://www.internzo.in/jobs/siemens-graduate-trainee-engineer-4447365696",
+      "url": "https://www.internzo.in/jobs/siemens-graduate-trainee-engineer-4447365696",
       "title": "Graduate Trainee Engineer — Siemens",
       "content_text": "Company: Siemens · Location: Chennai, Tamil Nadu, India · Duration: 6 months",
       "date_published": "2026-08-05T07:21:43.679Z",
@@ -366,8 +366,8 @@
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/accenture-bygg-ekte-l-sninger-med-ekte-innvirkning-summer-internship-for-utvikle-ats-workday-accenture-wd103-accenturecareers-r00340352",
-      "url": "https://www.internradar.info/jobs/accenture-bygg-ekte-l-sninger-med-ekte-innvirkning-summer-internship-for-utvikle-ats-workday-accenture-wd103-accenturecareers-r00340352",
+      "id": "https://www.internzo.in/jobs/accenture-bygg-ekte-l-sninger-med-ekte-innvirkning-summer-internship-for-utvikle-ats-workday-accenture-wd103-accenturecareers-r00340352",
+      "url": "https://www.internzo.in/jobs/accenture-bygg-ekte-l-sninger-med-ekte-innvirkning-summer-internship-for-utvikle-ats-workday-accenture-wd103-accenturecareers-r00340352",
       "title": "Bygg ekte løsninger. Med ekte innvirkning. Summer Internship for utviklere 💻 — Accenture",
       "content_text": "Company: Accenture",
       "date_published": "2026-08-05T00:00:00.000Z",
@@ -378,8 +378,8 @@
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/acko-internship-grc-governance-risk-and-compliance-4448575982",
-      "url": "https://www.internradar.info/jobs/acko-internship-grc-governance-risk-and-compliance-4448575982",
+      "id": "https://www.internzo.in/jobs/acko-internship-grc-governance-risk-and-compliance-4448575982",
+      "url": "https://www.internzo.in/jobs/acko-internship-grc-governance-risk-and-compliance-4448575982",
       "title": "Internship - GRC (Governance, Risk & Compliance) — Acko",
       "content_text": "Company: Acko · Location: Bengaluru, Karnataka, India\n• Maintain GRC policies, documentation, and internal compliance trackers\n• Assist with basic risk assessments and internal audit processes\n• Monitor compliance across ISO 27001 and IRDAI regulatory guidelines",
       "date_published": "2026-08-04T22:33:29.563Z",
@@ -390,8 +390,8 @@
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/intuit-intern-software-engineering-4448546206",
-      "url": "https://www.internradar.info/jobs/intuit-intern-software-engineering-4448546206",
+      "id": "https://www.internzo.in/jobs/intuit-intern-software-engineering-4448546206",
+      "url": "https://www.internzo.in/jobs/intuit-intern-software-engineering-4448546206",
       "title": "Intern, Software Engineering — Intuit",
       "content_text": "Company: Intuit · Location: Bengaluru, Karnataka, India · Duration: Summer 2027\n• Design, code, test, and debug software applications across backend or frontend\n• Participate in agile sprint ceremonies, design reviews, and code reviews\n• Work with backend and frontend stacks using Java, C++, C#, or JavaScript",
       "date_published": "2026-08-04T16:03:13.892Z",
@@ -402,8 +402,8 @@
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/ge-healthcare-graduate-trainee-engineer-4440562347",
-      "url": "https://www.internradar.info/jobs/ge-healthcare-graduate-trainee-engineer-4440562347",
+      "id": "https://www.internzo.in/jobs/ge-healthcare-graduate-trainee-engineer-4440562347",
+      "url": "https://www.internzo.in/jobs/ge-healthcare-graduate-trainee-engineer-4440562347",
       "title": "Graduate Trainee Engineer — GE HealthCare",
       "content_text": "Company: GE HealthCare · Location: Bengaluru, Karnataka, India",
       "date_published": "2026-08-04T14:15:11.904Z",
@@ -414,8 +414,8 @@
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/siemens-healthineers-trainee-technical-4446652372",
-      "url": "https://www.internradar.info/jobs/siemens-healthineers-trainee-technical-4446652372",
+      "id": "https://www.internzo.in/jobs/siemens-healthineers-trainee-technical-4446652372",
+      "url": "https://www.internzo.in/jobs/siemens-healthineers-trainee-technical-4446652372",
       "title": "Trainee - Technical — Siemens Healthineers",
       "content_text": "Company: Siemens Healthineers · Location: Bengaluru, Karnataka, India\n• Build healthcare software prototypes and feature implementations\n• Contribute to software design and technical specification reviews\n• Use TDD, BDD, and object-oriented design principles in daily development",
       "date_published": "2026-08-04T14:14:25.169Z",
@@ -426,8 +426,8 @@
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/harman-india-digital-signal-processing-intern-4446635104",
-      "url": "https://www.internradar.info/jobs/harman-india-digital-signal-processing-intern-4446635104",
+      "id": "https://www.internzo.in/jobs/harman-india-digital-signal-processing-intern-4446635104",
+      "url": "https://www.internzo.in/jobs/harman-india-digital-signal-processing-intern-4446635104",
       "title": "Digital Signal Processing - Intern — HARMAN India",
       "content_text": "Company: HARMAN India · Location: Bengaluru, Karnataka, India · Duration: 9 months\n• Design, implement, and test embedded software for amplifier applications\n• Code in C and C++ while working with real-time operating systems and scripting languages\n• Troubleshoot code using oscilloscopes, logic analyzers, debuggers, and emulators",
       "date_published": "2026-08-04T10:52:54.702Z",
@@ -438,8 +438,8 @@
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/joveo-software-engineering-intern-full-stack-4446616938",
-      "url": "https://www.internradar.info/jobs/joveo-software-engineering-intern-full-stack-4446616938",
+      "id": "https://www.internzo.in/jobs/joveo-software-engineering-intern-full-stack-4446616938",
+      "url": "https://www.internzo.in/jobs/joveo-software-engineering-intern-full-stack-4446616938",
       "title": "Software Engineering Intern (Full Stack) — Joveo",
       "content_text": "Company: Joveo · Location: Bengaluru, Karnataka, India\n• Build greenfield AI products across frontend and backend from prototype to release\n• Develop full-stack web applications using React, Next.js, Node.js, and Express.js\n• Integrate LLMs, embeddings, and vector databases into real applications",
       "date_published": "2026-08-04T10:28:55.325Z",
@@ -450,8 +450,8 @@
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/microsoft-technology-consulting-intern-ats-microsoft-india-1970393556955253",
-      "url": "https://www.internradar.info/jobs/microsoft-technology-consulting-intern-ats-microsoft-india-1970393556955253",
+      "id": "https://www.internzo.in/jobs/microsoft-technology-consulting-intern-ats-microsoft-india-1970393556955253",
+      "url": "https://www.internzo.in/jobs/microsoft-technology-consulting-intern-ats-microsoft-india-1970393556955253",
       "title": "Technology Consulting INTERN — Microsoft",
       "content_text": "Company: Microsoft · Location: India, Telangana, Hyderabad\n• Identify project risks and propose technical mitigations aligned with business goals\n• Provide technical input in pre-sales and define customer cloud requirements\n• Engage with stakeholders to resolve project issues and accelerate cloud adoption",
       "date_published": "2026-08-04T09:17:05.000Z",
@@ -462,8 +462,8 @@
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/flam-software-engineering-intern-4445878655",
-      "url": "https://www.internradar.info/jobs/flam-software-engineering-intern-4445878655",
+      "id": "https://www.internzo.in/jobs/flam-software-engineering-intern-4445878655",
+      "url": "https://www.internzo.in/jobs/flam-software-engineering-intern-4445878655",
       "title": "Software Engineering Intern — Flam",
       "content_text": "Company: Flam · Location: Bengaluru, Karnataka, India",
       "date_published": "2026-08-04T06:36:19.839Z",
@@ -474,8 +474,8 @@
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/emerson-graduate-engineer-trainee-4448323159",
-      "url": "https://www.internradar.info/jobs/emerson-graduate-engineer-trainee-4448323159",
+      "id": "https://www.internzo.in/jobs/emerson-graduate-engineer-trainee-4448323159",
+      "url": "https://www.internzo.in/jobs/emerson-graduate-engineer-trainee-4448323159",
       "title": "Graduate Engineer Trainee — Emerson",
       "content_text": "Company: Emerson · Location: Pune Division, Maharashtra, India\n• Configure HMI and SCADA systems across multiple platforms\n• Create historical reports and trends using SQL and VB scripting\n• Test serial and Ethernet communication protocols like Modbus",
       "date_published": "2026-08-03T16:37:21.804Z",
@@ -486,8 +486,8 @@
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/intel-attraction-req-intern-4447993213",
-      "url": "https://www.internradar.info/jobs/intel-attraction-req-intern-4447993213",
+      "id": "https://www.internzo.in/jobs/intel-attraction-req-intern-4447993213",
+      "url": "https://www.internzo.in/jobs/intel-attraction-req-intern-4447993213",
       "title": "Attraction Req : Intern — Intel",
       "content_text": "Company: Intel · Location: Bengaluru, Karnataka, India\n• Conduct research, logic design, RTL coding, and simulation for SoC development\n• Develop AI software, open-source libraries, and integrate software across the stack\n• Hybrid work model based out of Bangalore, India",
       "date_published": "2026-08-03T13:29:54.890Z",
@@ -498,8 +498,8 @@
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/greedygame-fullstack-developer-internship-4447970697",
-      "url": "https://www.internradar.info/jobs/greedygame-fullstack-developer-internship-4447970697",
+      "id": "https://www.internzo.in/jobs/greedygame-fullstack-developer-internship-4447970697",
+      "url": "https://www.internzo.in/jobs/greedygame-fullstack-developer-internship-4447970697",
       "title": "Fullstack Developer- Internship — GreedyGame",
       "content_text": "Company: GreedyGame · Location: Bengaluru, Karnataka, India · Duration: 0-1 years\n• Build backend services integrating Google Ad Manager and networks\n• Develop React dashboards for publishers and internal workflows\n• Work with Go, PostgreSQL, MongoDB, and large datasets",
       "date_published": "2026-08-03T13:19:19.375Z",
@@ -510,8 +510,8 @@
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/microsoft-research-sciences-intern-ats-microsoft-india-1970393556638637",
-      "url": "https://www.internradar.info/jobs/microsoft-research-sciences-intern-ats-microsoft-india-1970393556638637",
+      "id": "https://www.internzo.in/jobs/microsoft-research-sciences-intern-ats-microsoft-india-1970393556638637",
+      "url": "https://www.internzo.in/jobs/microsoft-research-sciences-intern-ats-microsoft-india-1970393556638637",
       "title": "Research Sciences INTERN — Microsoft",
       "content_text": "Company: Microsoft · Location: India, Karnataka, Bangalore\n• Analyze and improve performance of advanced algorithms on large-scale datasets\n• Implement prototypes of scalable systems in AI and machine learning applications\n• Paid internship based in India with mentorship from researchers",
       "date_published": "2026-08-03T11:15:20.000Z",
@@ -522,8 +522,8 @@
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/delhivery-product-management-intern-4445893504",
-      "url": "https://www.internradar.info/jobs/delhivery-product-management-intern-4445893504",
+      "id": "https://www.internzo.in/jobs/delhivery-product-management-intern-4445893504",
+      "url": "https://www.internzo.in/jobs/delhivery-product-management-intern-4445893504",
       "title": "Product Management Intern — Delhivery",
       "content_text": "Company: Delhivery · Location: Gurugram, Haryana, India · Duration: 3 to 6 months\n• Support the end-to-end product lifecycle from ideation to launch\n• Conduct market research and competitor analysis to guide product strategy\n• Analyze user feedback and metrics to define requirements and user stories\n• Collaborate with design, engineering, and marketing across a 3 to 6 month duration",
       "date_published": "2026-08-03T10:56:13.774Z",
@@ -534,8 +534,8 @@
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/emerson-intern-power-greenfield-4448170119",
-      "url": "https://www.internradar.info/jobs/emerson-intern-power-greenfield-4448170119",
+      "id": "https://www.internzo.in/jobs/emerson-intern-power-greenfield-4448170119",
+      "url": "https://www.internzo.in/jobs/emerson-intern-power-greenfield-4448170119",
       "title": "Intern-Power Greenfield — Emerson",
       "content_text": "Company: Emerson · Location: Noida, Uttar Pradesh, India\n• Design and develop engineering productivity tools based on user requirements\n• Support deployment and provide training and demos to project teams\n• Automate manual engineering tasks to improve accuracy and efficiency",
       "date_published": "2026-08-03T10:37:35.094Z",
@@ -546,8 +546,8 @@
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/hdfc-bank-limited-trainee-analyst-4445890480",
-      "url": "https://www.internradar.info/jobs/hdfc-bank-limited-trainee-analyst-4445890480",
+      "id": "https://www.internzo.in/jobs/hdfc-bank-limited-trainee-analyst-4445890480",
+      "url": "https://www.internzo.in/jobs/hdfc-bank-limited-trainee-analyst-4445890480",
       "title": "Trainee Analyst — HDFC Bank Limited",
       "content_text": "Company: HDFC Bank Limited · Location: Mumbai, Maharashtra, India\n• Support data extraction, cleaning, and preparation for reporting and dashboards\n• Maintain historical datasets and perform basic trend analysis\n• Use Excel, SQL, and Python to support automation and business intelligence initiatives",
       "date_published": "2026-08-03T10:33:39.742Z",
@@ -558,8 +558,8 @@
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/eli-lilly-and-company-intern-full-stack-engineer-4448149499",
-      "url": "https://www.internradar.info/jobs/eli-lilly-and-company-intern-full-stack-engineer-4448149499",
+      "id": "https://www.internzo.in/jobs/eli-lilly-and-company-intern-full-stack-engineer-4448149499",
+      "url": "https://www.internzo.in/jobs/eli-lilly-and-company-intern-full-stack-engineer-4448149499",
       "title": "Intern - Full Stack Engineer — Eli Lilly and Company",
       "content_text": "Company: Eli Lilly and Company · Location: Bengaluru East, Karnataka, India\n• Deliver development tasks for backend services and frontend UI features\n• Write clean, readable code following team standards and review feedback\n• Use foundational engineering tools like Git, pull requests, and issue trackers\n• Participate in agile ceremonies and perform unit/integration testing",
       "date_published": "2026-08-03T08:42:32.871Z",
@@ -570,8 +570,8 @@
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/pixxel-calibration-intern-4448136135",
-      "url": "https://www.internradar.info/jobs/pixxel-calibration-intern-4448136135",
+      "id": "https://www.internzo.in/jobs/pixxel-calibration-intern-4448136135",
+      "url": "https://www.internzo.in/jobs/pixxel-calibration-intern-4448136135",
       "title": "Calibration Intern — Pixxel",
       "content_text": "Company: Pixxel · Location: Bengaluru, Karnataka, India · Duration: 6 months\n• Develop and implement algorithms to calibrate camera systems for optimal image quality\n• Participate in pre-flight calibration including geometrical, spatial, and radiometric calibration\n• Develop and deploy software for imaging system calibration and testing\n• Analyze volume data to guide engineering decisions",
       "date_published": "2026-08-03T01:59:19.699Z",
@@ -582,8 +582,8 @@
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/barclays-2027-technology-developer-summer-internship-programme-india-ats-workday-barclays-wd3-external-career-site-barclays-jr-0000124913",
-      "url": "https://www.internradar.info/jobs/barclays-2027-technology-developer-summer-internship-programme-india-ats-workday-barclays-wd3-external-career-site-barclays-jr-0000124913",
+      "id": "https://www.internzo.in/jobs/barclays-2027-technology-developer-summer-internship-programme-india-ats-workday-barclays-wd3-external-career-site-barclays-jr-0000124913",
+      "url": "https://www.internzo.in/jobs/barclays-2027-technology-developer-summer-internship-programme-india-ats-workday-barclays-wd3-external-career-site-barclays-jr-0000124913",
       "title": "2027 Technology Developer Summer Internship Programme India — Barclays",
       "content_text": "Company: Barclays\n• Design, develop and improve software utilizing various engineering methodologies\n• Ensure code scalability and maintainability using industry-aligned languages and tools\n• Collaborate with product managers and designers to define software requirements",
       "date_published": "2026-08-03T00:00:00.000Z",
@@ -594,8 +594,8 @@
       ]
     },
     {
-      "id": "https://www.internradar.info/jobs/piramal-graduate-engineer-trainee-sap-ats-workday-piramalpharma-wd102-piramal-external-careers-r00003522",
-      "url": "https://www.internradar.info/jobs/piramal-graduate-engineer-trainee-sap-ats-workday-piramalpharma-wd102-piramal-external-careers-r00003522",
+      "id": "https://www.internzo.in/jobs/piramal-graduate-engineer-trainee-sap-ats-workday-piramalpharma-wd102-piramal-external-careers-r00003522",
+      "url": "https://www.internzo.in/jobs/piramal-graduate-engineer-trainee-sap-ats-workday-piramalpharma-wd102-piramal-external-careers-r00003522",
       "title": "Graduate Engineer Trainee-SAP — Piramal",
       "content_text": "Company: Piramal · Location: Mumbai, MH",
       "date_published": "2026-08-03T00:00:00.000Z",

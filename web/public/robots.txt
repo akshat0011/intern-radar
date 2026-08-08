@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.internradar.info/sitemap.xml
+Sitemap: https://www.internzo.in/sitemap.xml
