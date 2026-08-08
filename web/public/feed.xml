@@ -6,7 +6,28 @@
   <atom:link href="https://www.internradar.info/feed.xml" rel="self" type="application/rss+xml"/>
   <description>New engineering internships, listed within minutes of going live.</description>
   <language>en-in</language>
-  <lastBuildDate>Sat, 08 Aug 2026 02:19:47 GMT</lastBuildDate>
+  <lastBuildDate>Sat, 08 Aug 2026 03:13:40 GMT</lastBuildDate>
+  <item>
+    <title>Creative Design Intern — Urban Talkies</title>
+    <link>https://www.internradar.info/jobs/urban-talkies-creative-design-intern-4450522465</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/urban-talkies-creative-design-intern-4450522465</guid>
+    <pubDate>Sat, 08 Aug 2026 02:12:31 GMT</pubDate>
+    <description>Company: Urban Talkies · Location: Delhi, Delhi, India</description>
+  </item>
+  <item>
+    <title>Devops Engineer Internship in Thane, Navi Mumbai, Mumbai — FynTune Solution Private Limited</title>
+    <link>https://www.internradar.info/jobs/fyntune-solution-private-limited-devops-engineer-internship-in-thane-navi-mumbai-mumbai-4450392562</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/fyntune-solution-private-limited-devops-engineer-internship-in-thane-navi-mumbai-mumbai-4450392562</guid>
+    <pubDate>Sat, 08 Aug 2026 00:13:17 GMT</pubDate>
+    <description>Company: FynTune Solution Private Limited · Location: Thane, Maharashtra, India</description>
+  </item>
+  <item>
+    <title>Business Analytics Internship in Mumbai — TAXOSMART</title>
+    <link>https://www.internradar.info/jobs/taxosmart-business-analytics-internship-in-mumbai-4450796752</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/taxosmart-business-analytics-internship-in-mumbai-4450796752</guid>
+    <pubDate>Sat, 08 Aug 2026 00:12:54 GMT</pubDate>
+    <description>Company: TAXOSMART · Location: Mumbai Metropolitan Region</description>
+  </item>
   <item>
     <title>AI Intern — CertifyOS</title>
     <link>https://www.internradar.info/jobs/certifyos-ai-intern-ats-ashby-certifyos-4bcdec99-9f2e-416c-8e26-498c94c5898a</link>
@@ -353,33 +374,6 @@
 • Design, implement, and test embedded software for amplifier applications
 • Code in C and C++ while working with real-time operating systems and scripting languages
 • Troubleshoot code using oscilloscopes, logic analyzers, debuggers, and emulators</description>
-  </item>
-  <item>
-    <title>Software Engineering Intern (Full Stack) — Joveo</title>
-    <link>https://www.internradar.info/jobs/joveo-software-engineering-intern-full-stack-4446616938</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/joveo-software-engineering-intern-full-stack-4446616938</guid>
-    <pubDate>Tue, 04 Aug 2026 10:28:55 GMT</pubDate>
-    <description>Company: Joveo · Location: Bengaluru, Karnataka, India
-• Build greenfield AI products across frontend and backend from prototype to release
-• Develop full-stack web applications using React, Next.js, Node.js, and Express.js
-• Integrate LLMs, embeddings, and vector databases into real applications</description>
-  </item>
-  <item>
-    <title>Technology Consulting INTERN — Microsoft</title>
-    <link>https://www.internradar.info/jobs/microsoft-technology-consulting-intern-ats-microsoft-india-1970393556955253</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/microsoft-technology-consulting-intern-ats-microsoft-india-1970393556955253</guid>
-    <pubDate>Tue, 04 Aug 2026 09:17:05 GMT</pubDate>
-    <description>Company: Microsoft · Location: India, Telangana, Hyderabad
-• Identify project risks and propose technical mitigations aligned with business goals
-• Provide technical input in pre-sales and define customer cloud requirements
-• Engage with stakeholders to resolve project issues and accelerate cloud adoption</description>
-  </item>
-  <item>
-    <title>Software Engineering Intern — Flam</title>
-    <link>https://www.internradar.info/jobs/flam-software-engineering-intern-4445878655</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/flam-software-engineering-intern-4445878655</guid>
-    <pubDate>Tue, 04 Aug 2026 06:36:19 GMT</pubDate>
-    <description>Company: Flam · Location: Bengaluru, Karnataka, India</description>
   </item>
 </channel>
 </rss>
