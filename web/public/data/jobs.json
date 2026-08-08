@@ -1,7 +1,7 @@
 {
- "generatedAt": 1786174480673,
- "count": 137,
- "techCount": 137,
+ "generatedAt": 1786176535150,
+ "count": 138,
+ "techCount": 138,
  "otherCount": 0,
  "companies": [
   "ALLEN",
@@ -125,6 +125,40 @@
   "Thane, Maharashtra, India"
  ],
  "jobs": [
+  {
+   "id": "4450593245",
+   "title": "Intern- Technical Content (Applied AI)",
+   "company": "upGrad International",
+   "matchedWatchlist": "upGrad",
+   "isTech": true,
+   "roleSource": "offline",
+   "logo": "/logos/upgrad-international.jpg",
+   "location": "Mumbai Metropolitan Region",
+   "workplaceType": "On-site",
+   "stipend": "30,000 / month",
+   "duration": "6 months",
+   "applicants": "19 applicants",
+   "easyApply": true,
+   "skills": [
+    "python",
+    "machine learning",
+    "pandas",
+    "numpy"
+   ],
+   "summary": "Job Location-Mumbai Qualification-B.Tech/M.Tech/BSc/MSc in CS, Data Science, Mathematics, or related field [Pursuing or recently graduated] Stipend-30,000 per month As a Technical Content Intern, you will act as the crucial bridge between our Subject Matter Experts (SMEs) and our AI-driven video production pipeline.",
+   "bullets": [],
+   "roleLabel": null,
+   "degreeLevel": null,
+   "degreeText": null,
+   "keySkills": [],
+   "stipendStatus": "paid",
+   "postedText": "56 minutes ago",
+   "postedAt": 1786172983923,
+   "firstSeenAt": 1786176343933,
+   "url": "https://www.linkedin.com/jobs/view/4450593245/",
+   "applyUrl": "https://www.linkedin.com/jobs/view/4450593245/",
+   "description": null
+  },
   {
    "id": "4450392562",
    "title": "Devops Engineer Internship in Thane, Navi Mumbai, Mumbai",

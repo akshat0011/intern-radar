@@ -6,7 +6,14 @@
   <atom:link href="https://www.internradar.info/feed.xml" rel="self" type="application/rss+xml"/>
   <description>New engineering internships, listed within minutes of going live.</description>
   <language>en-in</language>
-  <lastBuildDate>Sat, 08 Aug 2026 07:34:40 GMT</lastBuildDate>
+  <lastBuildDate>Sat, 08 Aug 2026 08:08:55 GMT</lastBuildDate>
+  <item>
+    <title>Intern- Technical Content (Applied AI) — upGrad International</title>
+    <link>https://www.internradar.info/jobs/upgrad-international-intern-technical-content-applied-ai-4450593245</link>
+    <guid isPermaLink="true">https://www.internradar.info/jobs/upgrad-international-intern-technical-content-applied-ai-4450593245</guid>
+    <pubDate>Sat, 08 Aug 2026 07:09:43 GMT</pubDate>
+    <description>Company: upGrad International · Location: Mumbai Metropolitan Region · Stipend: 30,000 / month · Duration: 6 months</description>
+  </item>
   <item>
     <title>Devops Engineer Internship in Thane, Navi Mumbai, Mumbai — FynTune Solution Private Limited</title>
     <link>https://www.internradar.info/jobs/fyntune-solution-private-limited-devops-engineer-internship-in-thane-navi-mumbai-mumbai-4450392562</link>
@@ -435,17 +442,6 @@
 • Write clean, readable code following team standards and review feedback
 • Use foundational engineering tools like Git, pull requests, and issue trackers
 • Participate in agile ceremonies and perform unit/integration testing</description>
-  </item>
-  <item>
-    <title>Calibration Intern — Pixxel</title>
-    <link>https://www.internradar.info/jobs/pixxel-calibration-intern-4448136135</link>
-    <guid isPermaLink="true">https://www.internradar.info/jobs/pixxel-calibration-intern-4448136135</guid>
-    <pubDate>Mon, 03 Aug 2026 01:59:19 GMT</pubDate>
-    <description>Company: Pixxel · Location: Bengaluru, Karnataka, India · Duration: 6 months
-• Develop and implement algorithms to calibrate camera systems for optimal image quality
-• Participate in pre-flight calibration including geometrical, spatial, and radiometric calibration
-• Develop and deploy software for imaging system calibration and testing
-• Analyze volume data to guide engineering decisions</description>
   </item>
 </channel>
 </rss>
